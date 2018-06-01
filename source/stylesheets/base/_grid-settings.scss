@@ -1,0 +1,28 @@
+$max-width: 1080px;
+$gutter: 3em;
+
+// Screen sizes
+$medium-screen: 640px;
+$large-screen: 860px;
+$xlarge-screen: 1200px;
+$xxlarge-screen: 1400px;
+
+// Mobile first breakpoints
+$medium-up:   new-breakpoint(min-width $medium-screen);
+$large-up:    new-breakpoint(min-width $large-screen);
+$xlarge-up:   new-breakpoint(min-width $xlarge-screen);
+$xxlarge-up:  new-breakpoint(min-width $xxlarge-screen);
+
+// Desktop first breakpoints
+$medium-down: new-breakpoint(max-width $medium-screen - 1);
+$large-down:  new-breakpoint(max-width $large-screen - 1);
+$xlarge-down: new-breakpoint(max-width $xlarge-screen - 1);
+
+// Isolated breakpoints
+$small-only:  new-breakpoint(max-width $medium-screen - 1);
+$medium-only: new-breakpoint(min-width $medium-screen max-width $large-screen - 1);
+$large-only:  new-breakpoint(min-width $large-screen max-width $xlarge-screen - 1);
+
+// Menu breakpoints
+$menu-mobile:  new-breakpoint(max-width 766px);
+$menu-desktop: new-breakpoint(min-width 767px);
