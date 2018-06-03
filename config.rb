@@ -27,15 +27,16 @@ page '/*.txt', layout: false
 #   },
 # )
 
-# Helpers
-# Methods defined in the helpers block are available in templates
-# https://middlemanapp.com/basics/helper-methods/
+helpers do
 
-# helpers do
-#   def some_helper
-#     'Helping'
-#   end
-# end
+  # Active navigation items
+  def nav_link(link_text, url, options = {})
+    options[:class] ||= ""
+    options[:class] << " active" if url == current_page.url
+    link_to(link_text, url, options)
+  end
+
+end
 
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
