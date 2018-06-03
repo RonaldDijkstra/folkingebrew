@@ -1,7 +1,8 @@
 $_button-background-color: $action-color;
 $_button-background-color-hover: shade($action-color, 20%);
 
-#{$all-buttons} {
+#{$all-buttons},
+.button {
   appearance: none;
   background-color: $_button-background-color;
   border: 0;
@@ -27,8 +28,12 @@ $_button-background-color-hover: shade($action-color, 20%);
     color: contrast-switch($_button-background-color-hover);
   }
 
+  &.green {
+    @include button($green);
+  }
+
   &:focus {
-    outline: $focus-outline;
+    outline: none;
     outline-offset: $focus-outline-offset;
   }
 
@@ -39,5 +44,9 @@ $_button-background-color-hover: shade($action-color, 20%);
     &:hover {
       background-color: $_button-background-color;
     }
+  }
+
+  &.big {
+    font-size: $base-font-size * 1.3;
   }
 }
