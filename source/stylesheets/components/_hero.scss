@@ -1,26 +1,10 @@
 .hero {
   background-attachment: scroll;
-  background-color: $light-gray;
   background-image: url("../images/hero-1024.jpg");
-  background-position: center bottom;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 7em 0;
+  color: $white;
   position: relative;
   text-align: center;
-  text-shadow: 0 0.25em 0.5em rgba($black, 0.25);
-
-  @include media($medium-up) {
-    background-attachment: fixed;
-  }
-
-  h1 {
-    color: $white;
-    font-family: "Orbitron", sans-serif;
-    font-size: $base-font-size * 2.4;
-
-    @include media($medium-up) {
-      font-size: $base-font-size * 3;
-    }
-  }
 }

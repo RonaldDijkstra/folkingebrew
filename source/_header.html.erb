@@ -1,36 +1,38 @@
-<header class="main-header">
-  <div class="header-container">
+<header class="header">
+  <div class="row">
 
-    <div class="header-logo">
-      <a class="logo" href="/">
-        <img src="/images/logo-folkingebrew.svg" />
-      </a>
+    <a class="logo" href="/">FOLKINGEBREW</a>
+
+    <div class="mobile-toggle">
+      <span></span>
     </div>
 
+    <nav>
+      <ul>
+        <li>
+          <%= nav_link "Home", "/" %>
+        </li>
+        <li>
+          <%= nav_link "Over Folkingebrew", "#" %>
+        </li>
+        <li>
+          <%= nav_link "Bieren", "#" %>
+        </li>
+        <!--
+          <li>
+            <%= nav_link "Events", "#" %>
+          </li>
+          <li>
+            <%= nav_link "Blog", "#" %>
+          </li>
+        -->
+        <li>
+          <%= nav_link "Verkoop", "#" %>
+        </li>
+        <li>
+          <%= nav_link "Contact", "#" %>
+        </li>
+      </ul>
+    </nav>
   </div>
-  <nav>
-    <ul>
-      <li>
-        <%= nav_link "Home", "/" %>
-      </li>
-      <li>
-        <%= nav_link "Over Folkingebrew", "#" %>
-      </li>
-      <li>
-        <%= nav_link "Bieren", "#" %>
-      </li>
-      <!-- <li>
-        <%= nav_link "Events", "#" %>
-      </li>
-      <li>
-        <%= nav_link "Blog", "#" %>
-      </li> -->
-      <li>
-        <%= nav_link "Verkoop", "#" %>
-      </li>
-      <li>
-        <%= nav_link "Contact", "#" %>
-      </li>
-    </ul>
-  </nav>
 </header>
