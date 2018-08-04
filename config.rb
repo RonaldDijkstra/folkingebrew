@@ -13,6 +13,9 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+activate :directory_indexes
+activate :sprockets
+
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
@@ -34,6 +37,11 @@ helpers do
     options[:class] ||= ""
     options[:class] << " active" if url == current_page.url
     link_to(link_text, url, options)
+  end
+
+  # Use frontmatter for meta description
+  def meta_description(page = current_page)
+    return page.data.description if page.data.description
   end
 
 end

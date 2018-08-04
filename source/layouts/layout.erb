@@ -5,7 +5,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= current_page.data.title || "Folkingebrew" %></title>
+    <meta name="description" content="<%= h(meta_description) %>">
+    
     <%= stylesheet_link_tag "site" %>
+
   </head>
   <body class="<%= page_classes %>">
     <div class="main" role="main">

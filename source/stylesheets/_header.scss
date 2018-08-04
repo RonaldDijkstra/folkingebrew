@@ -11,6 +11,14 @@
   a {
     text-decoration: none;
     text-transform: uppercase;
+
+    &.logo {
+      &:active,
+      &:focus,
+      &:hover {
+        color: $dark-gray;
+      }
+    }
   }
 }
 
@@ -95,8 +103,8 @@ nav {
     display: block;
     font-size: $base-font-size;
     font-weight: 500;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
     text-decoration: none;
     text-transform: uppercase;
     transition: background-color 0.2s ease;
@@ -110,8 +118,8 @@ nav {
     &:active,
     &:focus,
     &:hover {
-      background: green;
-      color: white;
+      background: $green;
+      color: $white;
     }
   }
 }
