@@ -1,0 +1,38 @@
+footer.footer {
+  background: $dark-gray;
+  color: $white;
+  padding-bottom: 3em;
+  padding-top: 3em;
+
+  a {
+    color: $white;
+  }
+
+  .row {
+    @include media($medium-up) {
+      display: flex;
+    }
+  }
+
+  .col {
+    @include media($medium-up) {
+      flex: 1;
+    }
+  }
+
+  .social-icons {
+    a {
+      background: $white;
+      border-radius: 3px;
+      color: $dark-gray;
+      font-size: 1.4em;
+      margin-right: 0.3em;
+      padding: 0.2em;
+      text-decoration: none;
+
+      &:hover {
+        background: $light-gray;
+      }
+    }
+  }
+}

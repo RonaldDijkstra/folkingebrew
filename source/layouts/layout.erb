@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= current_page.data.title || "Folkingebrew" %></title>
     <meta name="description" content="<%= h(meta_description) %>">
-    
+
     <%= stylesheet_link_tag "site" %>
 
   </head>
@@ -14,6 +14,7 @@
     <div class="main" role="main">
       <%= partial "header" %>
       <%= yield %>
+      <%= partial "footer" %>
     </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -31,7 +31,7 @@ a {
   }
 
   &:focus {
-    outline: $focus-outline;
+    outline: none;
     outline-offset: $focus-outline-offset;
   }
 }
