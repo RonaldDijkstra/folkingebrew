@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "icomoon";
+  src:  url("../fonts/icomoon.eot?mpu9fp");
+  src:  url("../fonts/icomoon.eot?mpu9fp#iefix") format("embedded-opentype"),
+    url("../fonts/icomoon.ttf?mpu9fp") format("truetype"),
+    url("../fonts/icomoon.woff?mpu9fp") format("woff"),
+    url("../fonts/icomoon.svg?mpu9fp#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  // use !important to prevent issues with browser extensions that change fonts
+  font-family: "icomoon" !important;
+  // Better Font Rendering
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+  vertical-align: middle;
+}
+
+.icon-facebook::before {
+  content: "\ea90";
+}
+
+.icon-instagram::before {
+  content: "\ea92";
+}
+
+.icon-whatsapp::before {
+  content: "\ea93";
+}
+
+.icon-twitter::before {
+  content: "\ea96";
+}
+
+.icon-rss::before {
+  content: "\ea9b";
+}
+
+.icon-youtube::before {
+  content: "\ea9d";
+}
+
+.icon-github::before {
+  content: "\eab0";
+}
+
+.icon-untappd::before {
+  content: "\e900";
+}

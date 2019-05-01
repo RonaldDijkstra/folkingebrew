@@ -1,0 +1,25 @@
+.social-links {
+  line-height: normal;
+  padding: 2em 0;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+
+  a {
+    text-decoration: none;
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    background-color: $action-color;
+    border-radius: 50%;
+    color: $white;
+    font-size: $base-font-size * 1.8;
+    margin: 0 0.2em;
+    padding: $base-spacing * 0.4;
+
+    &:hover {
+      background-color: darken($action-color, 10%);
+    }
+  }
+}

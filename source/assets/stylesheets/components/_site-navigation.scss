@@ -1,0 +1,207 @@
+.site-navigation {
+  background: $white;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  @include grid-media($for-desktop-up) {
+    height: auto;
+  }
+
+  .logo {
+    font-size: $base-font-size * 1.6;
+    padding-left: 1em;
+
+    @include grid-media($for-desktop-up) {
+      display: block;
+      padding: 0;
+      text-align: center;
+    }
+
+    .home {
+      @include grid-media($for-desktop-up) {
+        display: block;
+        height: 60px;
+        margin: 1em auto;
+        width: 300px;
+      }
+    }
+
+    .logo-desktop {
+      display: none;
+
+      @include grid-media($for-desktop-up) {
+        display: block;
+      }
+    }
+
+    .logo-mobile {
+      display: block;
+
+      @include grid-media($for-desktop-up) {
+        display: none;
+      }
+    }
+
+    a {
+      color: $dark-gray;
+      font-family: $heading-font-family, sans-serif;
+    }
+  }
+
+  a {
+    color: $dark-gray;
+    text-decoration: none;
+  }
+
+  .mobile-toggle {
+    background: $dark-gray;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 200ms ease-in;
+    width: 50px;
+
+    @include grid-media($for-desktop-up) {
+      display: none;
+    }
+
+    span {
+      background-color: $action-color;
+      bottom: auto;
+      height: 3px;
+      left: 50%;
+      position: absolute;
+      right: auto;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      transition: background-color 0.3s ease;
+      width: 26px;
+
+      &::after,
+      &::before {
+        background-color: $action-color;
+        content: "";
+        height: 3px;
+        left: 0;
+        position: absolute;
+        transition: 0.3s;
+        width: 26px;
+      }
+
+      &::after {
+        transform: translateY(9px);
+      }
+
+      &::before {
+        transform: translateY(-9px);
+      }
+    }
+  }
+
+  &.navigation-open {
+    .mobile-toggle span {
+      background-color: transparent;
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    .navigation-bar {
+      max-height: 34em;
+    }
+  }
+
+  .navigation-bar {
+    float: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s;
+    width: 100%;
+
+    @include grid-media($for-desktop-up) {
+      background-color: $dark-gray;
+      display: block;
+      max-height: none;
+      text-align: center;
+    }
+
+    .menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      @include grid-media($for-desktop-up) {
+        display: flex;
+        justify-content: center;
+      }
+
+      li {
+        display: block;
+        list-style-type: none;
+
+        @include grid-media($for-desktop-up) {
+          text-align: center;
+        }
+      }
+
+      a {
+        background: $dark-gray;
+        color: $action-color;
+        display: block;
+        font-family: $heading-font-family;
+        font-size: $base-font-size * 1.6;
+        font-weight: $font-weight-small;
+        padding: 0 $base-spacing * 0.9;
+        text-transform: uppercase;
+
+        @include grid-media($for-desktop-up) {
+          border-bottom: 0;
+          display: block;
+          transition: background-color 200ms ease;
+
+          &:hover {
+            background: darken($dark-gray, 20%);
+            color: $action-color;
+            text-decoration: none;
+          }
+
+          &.language-link {
+            span {
+              @include grid-media($for-desktop-up) {
+                display: none;
+              }
+            }
+
+            &:hover {
+              background-position: 0 3em;
+            }
+          }
+        }
+
+        &[aria-current]:not([aria-current="false"]) {
+          background-color: darken($dark-gray, 20%);
+          color: $action-color;
+
+          @include grid-media($for-desktop-up) {
+            background-image: linear-gradient($action-color, $action-color);
+            background-position: 0 bottom;
+            background-repeat: no-repeat;
+            background-size: 100% 0.05em;
+          }
+        }
+      }
+    }
+  }
+}

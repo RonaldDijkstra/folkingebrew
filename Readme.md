@@ -1,32 +1,54 @@
 # Folkingebrew
 
-Repository for a brewery website: https://www.folkingebrew.nl
+[![CircleCI branch](https://img.shields.io/circleci/project/github/RonaldDijkstra/folkingebrew/master.svg)](https://circleci.com/gh/RonaldDijkstra/folkingebrew) [![Netlify Status](https://api.netlify.com/api/v1/badges/0a564ece-5dea-4338-b9b1-333824808bbb/deploy-status)](https://app.netlify.com/sites/wildfestivalgroningen/deploys)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=RonaldDijkstra/folkingebrew)](https://dependabot.com)
 
-Built with [Middleman](https://github.com/middleman/middleman), hand-crafted frontend development.
+## About this website
 
-## Dependencies
+This website is built with [Middleman](https://middlemanapp.com/) with [Middleman Template by ThoughtBot](https://github.com/thoughtbot/middleman-template) and is multilanguage ready. This website is deployed with and to [Netlify](https://www.netlify.com/).  
 
-- Ruby 2.3.3 (install with [rbenv](https://github.com/sstephenson/rbenv))
-- Bundler
+## Before Setup
 
-To install other dependencies run `bundle install` from the root of the project.
+-   Install [Homebrew](https://brew.sh/index_nl)
 
-## Serve
+    `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)`
 
-Start server with `rake serve` and browse to [http://localhost:4567](http://localhost:4567).
+-   Install [rbenv](https://github.com/rbenv/rbenv) with [ruby-build](https://github.com/rbenv/ruby-build)
 
-## Contribute
+    `brew install rbenv ruby-build`
 
-In general, we follow the "fork-and-pull" Git workflow.
+-   Install Ruby 2.6.0
 
-1. **Fork** the repo on GitHub
-2. **Clone** the project to your own machine
-3. **Commit** changes to your own branch
-4. **Push** your work back up to your fork
-5. Submit a **Pull request** so that we can review your changes
+    `rbenv install 2.6.0`
 
-NOTE: Be sure to merge the latest from "upstream" before making a pull request!
+## Setup & Serve
 
-## Thanks to
+After you have cloned this repo, follow these steps to run the website:
 
-- [Middleman](https://middlemanapp.com/)
+-   Run the setup script to set up your machine with the necessary dependencies:
+
+    ```bash
+    bin/setup
+    ```
+
+-   Start the Middleman server.
+
+    ```bash
+    rake serve
+    ```
+
+    You should now be able to view the website at <http://localhost:4567>.
+
+## Build & Proof
+
+-   Build
+
+    ```bash
+    rake build
+    ```
+
+-   Proof
+
+    ```bash
+    rake proof
+    ```

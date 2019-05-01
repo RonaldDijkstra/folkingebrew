@@ -1,0 +1,49 @@
+.flex-wrapper {
+  text-align: center;
+
+  @include grid-media($for-desktop-up) {
+    text-align: left;
+  }
+
+  .flex-item {
+    padding: 2em 1em;
+
+    @include grid-media($for-desktop-up) {
+      display: flex;
+    }
+  }
+
+  .item-image {
+    border: 1px solid $black;
+    border-radius: 50%;
+    height: 280px;
+    margin: 0 auto 1em;
+    overflow: hidden;
+    width: 280px;
+
+    @include grid-media($for-desktop-up) {
+      flex: 0 0 160px;
+      height: 160px;
+      margin-right: 1em;
+      width: 160px;
+    }
+
+    &.border-light-gray {
+      border-color: $lighter-gray;
+    }
+
+    &.border-white {
+      border-color: $white;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .item-text {
+    h3 {
+      font-size: $base-font-size * 2;
+    }
+  }
+}
