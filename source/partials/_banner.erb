@@ -1,0 +1,28 @@
+<header class="banner <%= variant %>" role="banner" style="background-image: url(<%= image_path(locals[:background_image] || "banner-homepage.jpg") %>)">
+
+  <% if locals[:title] || locals[:text] || (locals[:button_link] && locals[:button_text]) %>
+    <div class="grid-row">
+      <% if locals[:pre_title] %>
+        <%= content_tag :h2 do pre_title end %>
+      <% end %>
+      <% if locals[:title] %>
+        <%= content_tag title_tag ||= :h1, class: "title" do title end %>
+      <% end %>
+      <% if locals[:sub_title_date] && locals[:sub_title_location] %>
+        <h2>
+          <span><%= locals[:sub_title_date] %></span>
+          <span class="divider">|</span>
+          <span><%= locals[:sub_title_location] %></span>
+        </h2>
+      <% end %>
+
+      <% if locals[:button_link] && locals[:button_text] %>
+        <%= partial "partials/button", locals: { to: button_link,
+                                                 text: button_text,
+                                                 variant: button_variant } %>
+      <% end %>
+
+    </div>
+  <% end %>
+
+</header>

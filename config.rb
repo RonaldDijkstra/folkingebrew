@@ -1,59 +1,49 @@
-# Activate and configure extensions
-# https://middlemanapp.com/advanced/configuration/#configuring-extensions
+# frozen_string_literal: true
 
-activate :autoprefixer do |prefix|
-  prefix.browsers = "last 2 versions"
-end
-
-# Layouts
-# https://middlemanapp.com/basics/layouts/
-
-# Per-page layout changes
-page '/*.xml', layout: false
-page '/*.json', layout: false
-page '/*.txt', layout: false
-
+# Activate i18n for root locale
+# activate :i18n, mount_at_root: root_locale, langs: %i[nl]
+activate :autoprefixer
 activate :directory_indexes
+activate :inline_svg
 activate :sprockets
 
-# With alternative layout
-# page '/path/to/file.html', layout: 'other_layout'
+ENV["SEGMENT_KEY"] = ""
 
-# Proxy pages
-# https://middlemanapp.com/advanced/dynamic-pages/
+# Ignore the selection file for Icomoon
+ignore "assets/fonts/selection.json"
 
-# proxy(
-#   '/this-page-has-no-template.html',
-#   '/template-file.html',
-#   locals: {
-#     which_fake_page: 'Rendering a fake page with a local variable'
-#   },
-# )
+set :css_dir, "assets/stylesheets"
+set :fonts_dir, "assets/fonts"
+set :images_dir, "assets/images"
+set :js_dir, "assets/javascripts"
+set :markdown,
+  autolink: true,
+  fenced_code_blocks: true,
+  footnotes: true,
+  highlight: true,
+  smartypants: true,
+  strikethrough: true,
+  tables: true,
+  with_toc_data: true
+set :markdown_engine, :redcarpet
 
-helpers do
+page "/*.json", layout: false
+page "/*.txt", layout: false
+page "/*.xml", layout: false
 
-  # Active navigation items
-  def nav_link(link_text, url, options = {})
-    options[:class] ||= ""
-    options[:class] << " active" if url == current_page.url
-    link_to(link_text, url, options)
-  end
+# Settings for production
+configure :production do
+  activate :asset_hash, ignore: [
+    %r{^assets/fonts/.*},
+    "assets/images/maps-marker.svg"
+  ]
+  activate :gzip
+  activate :minify_css
+  activate :minify_html
+  activate :minify_javascript
 
-  # Use frontmatter for meta description
-  def meta_description(page = current_page)
-    return page.data.description if page.data.description
-  end
+  # Raise exception for missing translations during build
+  require "lib/test_exception_localization_handler"
 
-end
-
-# Build-specific configuration
-# https://middlemanapp.com/advanced/configuration/#environment-specific-settings
-
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript
-# end
-
-configure :development do
-  activate :livereload
+  I18n.exception_handler = TestExceptionLocalizationHandler.new
 end

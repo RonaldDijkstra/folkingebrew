@@ -1,0 +1,22 @@
+$for-desktop-up: (
+  media: "screen and (min-width: 768px)"
+);
+
+.grid-row {
+  @include grid-container;
+  @include margin(null auto);
+  max-width: 960px;
+  padding: 2em $base-spacing;
+}
+
+.single-column {
+  .grid-row {
+    max-width: 800px;
+  }
+
+  &.small {
+    .grid-row {
+      max-width: 640px;
+    }
+  }
+}

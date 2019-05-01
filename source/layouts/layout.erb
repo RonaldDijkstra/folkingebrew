@@ -1,22 +1,26 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><%= current_page.data.title || "Folkingebrew" %></title>
-    <meta name="description" content="<%= h(meta_description) %>">
-
-    <%= stylesheet_link_tag "site" %>
-
+    <title><%= page_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+    <meta name="robots" content="<%= robots %>">
+    <%= partial "partials/favicon" %>
+    <%= stylesheet_link_tag "main" %>
+    <meta name="google-site-verification" content="CKiGgeeKIOuqzutua4rbxG5OjCgnQ0yVE1Ik3LvxadA">
+    <%= partial "partials/open_graph" %>
   </head>
   <body class="<%= page_classes %>">
-    <div class="main" role="main">
-      <%= partial "header" %>
+    <main class="main" role="main">
+      <%= partial "partials/site_navigation" %>
       <%= yield %>
-      <%= partial "footer" %>
-    </div>
+    </main>
+    <%= partial "partials/site_footer" %>
+    <%= javascript_include_tag "main" %>
+    <%= partial "partials/analytics" unless development? %>
+    <%= partial "partials/schema" if current_page.url == "index.html" %>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCl7L8yLzq9gDLi4XtKnlXKZzNX3ahqdfY&v=3.exp'></script>
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <%= javascript_include_tag "site" %>
 </html>

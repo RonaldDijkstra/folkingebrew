@@ -1,0 +1,23 @@
+<form name="contact-<%= I18n.locale %>" method="POST" data-netlify="true" action="<%= locale_pretty_url("/bedankt.html") %>">
+  <p>
+    <label for="name">
+      <%= t("form.name") %>
+    </label>
+    <input type="text" name="<%= t("form.name") %>" id="name" required>
+  </p>
+  <p>
+    <label for="email">
+      <%= t("form.email") %>
+    </label>
+    <input type="email" name="<%= t("form.email") %>" id="email" required>
+  </p>
+  <p>
+    <label for="message">
+      <%= t("form.message") %>
+    </label>
+    <textarea name="<%= t("form.message") %>" id="message" rows="6"></textarea>
+  </p>
+  <p>
+    <button type="submit" class="button"><%= t("form.submit") %></button>
+  </p>
+</form>

@@ -1,23 +1,36 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-# Middleman
-gem 'middleman', '~> 4.2'
-gem 'middleman-autoprefixer', '~> 2.7'
-gem 'middleman-livereload'
-gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
-gem 'middleman-sprockets'
+source "https://rubygems.org"
 
-# Bitters, Need, Bourbon
-gem 'bitters'
-gem 'bourbon'
-gem 'neat', '~> 1.7.2'
+ruby "2.6.0"
 
-# Others
-gem 'rake'
-# gem 'builder' # For feed.xml.builder
-# gem 'html-proofer' # Test HTML Output
+# Middleman Core & Extensions
+gem "middleman"
+gem "middleman-autoprefixer"
+gem "middleman-inline_svg"
+gem "middleman-minify-html"
+gem "middleman-sprockets"
+
+# Templating Engines
+gem "builder"
+gem "redcarpet"
+gem "sassc"
+
+# Asset Pipeline Gems
+gem "bourbon"
+gem "neat"
+
+# Extensions
+gem "html-proofer"
+gem "rake"
 
 # Frontend
-source 'https://rails-assets.org' do
-  gem 'rails-assets-jquery', '~> 2.2.4'
+source "https://rails-assets.org" do
+  gem "rails-assets-jquery"
+  gem "rails-assets-what-input"
 end
+
+# Linters (not required)
+gem "rubocop", require: false
+# gem "rubocop-performance", require: false
+gem "scss_lint", require: false
