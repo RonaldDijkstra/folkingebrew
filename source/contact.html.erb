@@ -1,0 +1,15 @@
+---
+title: "Contact"
+description: "Neem contact op met Folkingebrew"
+sitemap_priority: 1
+---
+
+<%= partial "partials/banner", locals: { variant: "variant-normal",
+                                         background_image: "banner-homepage.jpg",
+                                         title: "Contact"} %>
+
+<%= partial "partials/form", locals: { name: "contact",
+                                       title: "Contactformulier",
+                                       fields: ["name", "email", "message"],
+                                       button_text: "Verstuur",
+                                       button_variant: "big"} %>
