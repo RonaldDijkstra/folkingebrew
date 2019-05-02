@@ -1,0 +1,10 @@
+---
+title: "Contact"
+description: "Neem contact op met Folkingebrew"
+sitemap_priority: 1
+---
+
+<%= partial "partials/form", locals: { name: "contact",
+                                       fields: ["name", "email", "message"],
+                                       button_text: "Verstuur",
+                                       button_variant: "big"} %>
