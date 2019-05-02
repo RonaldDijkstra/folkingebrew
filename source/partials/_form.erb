@@ -1,5 +1,10 @@
 <section>
   <div class="grid-row">
+    <% if locals[:title] %>
+      <h2>
+        <%= locals[:title] %>
+      </h2>
+    <% end %>
     <form name="<%= locals[:name] %>" method="POST" data-netlify="true" action="/bedankt/">
        <% if locals[:fields].include? "name" %>
         <p>
