@@ -12,16 +12,16 @@
   <div class="navigation-bar">
     <ul class="menu">
       <li>
-        <%= link_to "Home", "/index.html", relative: false, class: "root-link" %>
+        <%= current_link_to "Home", "index.html", relative: false, class: "root-link" %>
       </li>
       <li>
-        <%= link_to "Onze Bieren", "/onze-bieren.html", class: "root-link" %>
+        <%= current_link_to "Onze Bieren", "onze-bieren.html", class: "root-link" %>
       </li>
       <li>
-        <%= link_to "Ons Verhaal", "/over-ons.html", class: "root-link" %>
+        <%= current_link_to "Ons Verhaal", "over-ons.html", class: "root-link" %>
       </li>
       <li>
-        <%= link_to "Contact", "/contact.html", class: "root-link" %>
+        <%= current_link_to "Contact", "contact.html", class: "root-link" %>
       </li>
     </ul>
   </div>
