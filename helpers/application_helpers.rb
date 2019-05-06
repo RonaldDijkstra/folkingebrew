@@ -71,4 +71,24 @@ module ApplicationHelpers
   def x404?
     current_page.url == "/404.html"
   end
+
+  # Add aria current to current page navigation item
+  def current_link_to(*arguments, aria_current: "page", **options, &block)
+    if block_given?
+      text = capture(&block)
+      path = arguments[0]
+    else
+      text = arguments[0]
+      path = arguments[1]
+    end
+
+    link_options = options
+
+    if path == current_page.path
+      link_options.merge!("aria-current" => aria_current)
+    end
+
+    link_to(text, path, link_options)
+  end
+
 end
