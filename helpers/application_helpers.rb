@@ -82,13 +82,8 @@ module ApplicationHelpers
       path = arguments[1]
     end
 
-    link_options = options
+    options.merge!("aria-current" => aria_current) if path == current_page.path
 
-    if path == current_page.path
-      link_options.merge!("aria-current" => aria_current)
-    end
-
-    link_to(text, path, link_options)
+    link_to(text, path, options)
   end
-
 end
