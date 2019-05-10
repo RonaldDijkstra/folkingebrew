@@ -34,8 +34,7 @@ page "/*.xml", layout: false
 # Settings for production
 configure :production do
   activate :asset_hash, ignore: [
-    %r{^assets/fonts/.*},
-    "assets/images/maps-marker.svg"
+    %r{^assets/fonts/.*}
   ]
   activate :gzip
   activate :minify_css
