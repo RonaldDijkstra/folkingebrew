@@ -1,6 +1,6 @@
 // Typography
-$base-font-family: "Open Sans", sans-serif;
-$heading-font-family: "Open Sans", sans-serif;
+$base-font-family: "Open Sans", $font-stack-helvetica;
+$heading-font-family: "Roboto Condensed", $font-stack-helvetica;
 
 // Line height
 $base-line-height: 1.5;
