@@ -1,59 +1,17 @@
 .site-navigation {
-  background: $white;
+  background: transparent;
   height: 50px;
   line-height: 50px;
-  position: relative;
+  position: absolute;
+  top: 0;
   width: 100%;
   z-index: 2;
 
   @include grid-media($for-desktop-up) {
+    background: $white;
     height: auto;
-  }
-
-  .logo {
-    font-size: $base-font-size * 1.6;
-    padding-left: 1em;
-
-    @include grid-media($for-desktop-up) {
-      display: block;
-      padding: 0;
-      text-align: center;
-    }
-
-    .home {
-      @include grid-media($for-desktop-up) {
-        display: block;
-        height: 60px;
-        margin: 1em auto;
-        width: 300px;
-      }
-    }
-
-    .logo-desktop {
-      display: none;
-
-      @include grid-media($for-desktop-up) {
-        display: block;
-      }
-    }
-
-    .logo-mobile {
-      display: block;
-
-      @include grid-media($for-desktop-up) {
-        display: none;
-      }
-    }
-
-    a {
-      color: $dark-gray;
-      font-family: $heading-font-family, sans-serif;
-    }
-  }
-
-  a {
-    color: $dark-gray;
-    text-decoration: none;
+    position: relative;
+    top: auto;
   }
 
   .mobile-toggle {
@@ -131,20 +89,23 @@
     width: 100%;
 
     @include grid-media($for-desktop-up) {
-      background-color: $dark-gray;
+      background-color: $white;
       display: block;
       max-height: none;
       text-align: center;
     }
 
     .menu {
+      background-color: $black;
       list-style-type: none;
       margin: 0;
-      padding: 0;
+      padding: 200px 0 0;
 
       @include grid-media($for-desktop-up) {
+        background: transparent;
         display: flex;
         justify-content: center;
+        padding: 0;
       }
 
       li {
@@ -157,36 +118,25 @@
       }
 
       a {
-        background: $dark-gray;
-        color: $action-color;
+        background: $white;
+        color: $dark-gray;
         display: block;
         font-family: $heading-font-family;
         font-size: $base-font-size * 1.6;
         font-weight: $font-weight-small;
         padding: 0 $base-spacing * 0.9;
+        text-decoration: none;
         text-transform: uppercase;
 
         @include grid-media($for-desktop-up) {
           border-bottom: 0;
           display: block;
+          font-size: $base-font-size * 2;
+          padding: 20px 45px;
           transition: background-color 200ms ease;
 
           &:hover {
-            background: darken($dark-gray, 20%);
-            color: $action-color;
-            text-decoration: none;
-          }
-
-          &.language-link {
-            span {
-              @include grid-media($for-desktop-up) {
-                display: none;
-              }
-            }
-
-            &:hover {
-              background-position: 0 3em;
-            }
+            text-decoration: underline;
           }
         }
 
