@@ -1,0 +1,12 @@
+<% data.beers.each do |item| %>
+  <div class="beer-item" %>
+    <%= "<div><img src='#{item.image}' alt='#{item.title}'></div>" %>
+    <%= "<div><strong>#{item.item}</strong></div>" %>
+    <%= "<div>#{item.style}</div>" %>
+    <%= "<div>#{item.ibu}</div>" %>
+    <%= "<div>#{item.abv}</div>" %>
+    <%= "<div>#{item.rating}</div>" %>
+    <%= "<div>#{item.description}</div>" %>
+    <%= "<a href='#{item.untappd_url}' target='_blank'>View beer</a>" %>
+  </div>
+<% end %>
