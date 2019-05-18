@@ -16,6 +16,9 @@ gem "builder"
 gem "redcarpet"
 gem "sassc"
 
+# Feed
+gem "rss"
+
 # Asset Pipeline Gems
 gem "bourbon"
 gem "neat"

@@ -1,0 +1,8 @@
+<% data.checkins.each do |item| %>
+  <div class="checkin-item" %>
+    <%= "<div><strong>#{item.title}</strong></div>" %>
+    <%= "<div>#{item.description}</div>" %>
+    <%= "<div>#{item.date}</div>" %>
+    <%= "<a href='#{item.link}' target='_blank'>View checkin</a>" %>
+  </div>
+<% end %>
