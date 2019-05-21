@@ -10,13 +10,14 @@ sitemap_priority: 0.5
 
 <section class="form">
   <div class="grid-row form-grid-row">
-      <%= partial "contact/content" %>
-    <article>
-      <%= partial "partials/form", locals: { name: "contact",
-                                             title: "Contactformulier",
-                                             fields: ["name", "email", "message"],
-                                             button_text: "Verstuur",
-                                             button_variant: "big"} %>
-    </article>
+    <%= partial "contact/content" %>
+    <h2>
+      Contactformulier
+    </h2>
+    <%= partial "partials/form", locals: { name: "contact",
+                                           title: "Contactformulier",
+                                           fields: ["name", "email", "message"],
+                                           button_text: "Verstuur",
+                                           button_variant: "big"} %>
   </div>
 </section>

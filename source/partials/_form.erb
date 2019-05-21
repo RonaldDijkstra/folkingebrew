@@ -1,46 +1,37 @@
-<section>
-  <div class="grid-row">
-    <% if locals[:title] %>
-      <h2>
-        <%= locals[:title] %>
-      </h2>
-    <% end %>
-    <form name="<%= locals[:name] %>" method="POST" data-netlify="true" action="/bedankt/">
-       <% if locals[:fields].include? "name" %>
-        <p>
-          <label for="name">
-            Je naam
-          </label>
-          <input type="text" name="naam" id="name" required>
-        </p>
-      <% end %>
+<form name="<%= locals[:name] %>" method="POST" data-netlify="true" action="/bedankt/">
+   <% if locals[:fields].include? "name" %>
+    <p>
+      <label for="name">
+        Je naam
+      </label>
+      <input type="text" name="naam" id="name" required>
+    </p>
+  <% end %>
 
-      <% if locals[:fields].include? "email" %>
-        <p>
-          <label for="email">
-            Je e-mailadres
-          </label>
-          <input type="email" name="e-mail" id="email" required>
-        </p>
-      <% end %>
+  <% if locals[:fields].include? "email" %>
+    <p>
+      <label for="email">
+        Je e-mailadres
+      </label>
+      <input type="email" name="e-mail" id="email" required>
+    </p>
+  <% end %>
 
-      <% if locals[:fields].include? "message" %>
-      <p>
-        <label for="message">
-          Je bericht
-        </label>
-        <textarea name="Je bericht" id="message" rows="6"></textarea>
-      </p>
+  <% if locals[:fields].include? "message" %>
+  <p>
+    <label for="message">
+      Je bericht
+    </label>
+    <textarea name="Je bericht" id="message" rows="6"></textarea>
+  </p>
+  <% end %>
+  <p>
+    <button type="submit" class="button <%= + locals[:button_variant] ||= "default" %>">
+      <% if locals[:button_text] %>
+        <%= locals[:button_text] %>
+      <% else %>
+        Versturen
       <% end %>
-      <p>
-        <button type="submit" class="button <%= + locals[:button_variant] ||= "default" %>">
-          <% if locals[:button_text] %>
-            <%= locals[:button_text] %>
-          <% else %>
-            Versturen
-          <% end %>
-        </button>
-      </p>
-    </form>
-  </div>
-</section>
+    </button>
+  </p>
+</form>

@@ -37,10 +37,14 @@
       }
 
       div {
-        display: inline-block;
-        margin-left: 4px;
-        padding-left: 12px;
-        position: relative;
+        display: block;
+
+        @include grid-media($for-desktop-up) {
+          display: inline-block;
+          margin-left: 4px;
+          padding-left: 12px;
+          position: relative;
+        }
 
         &:first-child {
           margin-left: 0;
@@ -52,12 +56,16 @@
         }
 
         &::before {
-          color: $dark-gray;
-          content: "•";
-          display: block;
-          left: 0;
-          position: absolute;
-          top: 0;
+          display: none;
+
+          @include grid-media($for-desktop-up) {
+            color: $dark-gray;
+            content: "•";
+            display: block;
+            left: 0;
+            position: absolute;
+            top: 0;
+          }
         }
       }
     }
