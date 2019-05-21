@@ -129,7 +129,7 @@
         @include grid-media($for-desktop-up) {
           border-bottom: 0;
           display: block;
-          font-size: $base-font-size * 1.5;
+          font-size: $base-font-size * 2;
           padding: 20px 45px;
           transition: background-color 200ms ease;
 
@@ -139,15 +139,8 @@
         }
 
         &[aria-current]:not([aria-current="false"]) {
-          background-color: darken($dark-gray, 20%);
-          color: $action-color;
-
-          @include grid-media($for-desktop-up) {
-            background-image: linear-gradient($action-color, $action-color);
-            background-position: 0 bottom;
-            background-repeat: no-repeat;
-            background-size: 100% 0.05em;
-          }
+          background-color: $white;
+          text-decoration: underline;
         }
       }
     }
