@@ -1,6 +1,6 @@
 .checkins {
-  background: $untappd-gray;
-  
+  background: lighten($untappd-gray, 4);
+
   .grid-row {
     .checkin-item {
       padding: 2em;
