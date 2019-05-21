@@ -15,6 +15,13 @@ open(url) do |rss|
       f.write("\s\sdescription: \"#{item.description}\"\n")
       f.write("\s\slink: \"#{item.description}\"\n")
       f.write("\s\spubdate: \"#{item.pubDate}\"\n")
+      if item.title.include? "Pastry Project #1"
+        f.write("\s\simage: https://labels.untappd.com/labels/3159580?size=hd\"\n")
+      elsif item.title.include? "Back in the Yard DIPA"
+        f.write("\s\simage: https://labels.untappd.com/labels/3050712?size=hd\"\n")
+      else
+        f.write("\s\simage: https://labels.untappd.com/labels/2404100?size=hd\"\n")
+      end
     end
     f.close
   end

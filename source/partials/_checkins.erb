@@ -1,5 +1,6 @@
 <% data.checkins.each do |item| %>
   <div class="checkin-item" %>
+    <%= "<div><img src='#{item.image}' alt='#{item.title}'></div>" %>
     <%= "<div><strong>#{item.title}</strong></div>" %>
     <%= "<div>#{item.description}</div>" %>
     <%= "<div>#{item.date}</div>" %>
