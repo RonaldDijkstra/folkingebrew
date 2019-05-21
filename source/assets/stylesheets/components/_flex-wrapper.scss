@@ -1,49 +1,77 @@
 .flex-wrapper {
-  text-align: center;
-
-  @include grid-media($for-desktop-up) {
-    text-align: left;
-  }
+  text-align: left;
 
   .flex-item {
-    padding: 2em 1em;
+    @include grid-container;
+    @include margin(null auto);
+    background: $white;
+    box-shadow: 0 0 5px 0 rgba(204, 204, 204, 1);
+    display: flex;
+    margin-bottom: 2em;
+    max-width: 800px;
+    padding: 2em;
 
-    @include grid-media($for-desktop-up) {
-      display: flex;
-    }
-  }
+    .col {
+      min-width: 0;
 
-  .item-image {
-    border: 1px solid $black;
-    border-radius: 50%;
-    height: 280px;
-    margin: 0 auto 1em;
-    overflow: hidden;
-    width: 280px;
+      &.col-img {
+        flex: 0 0 80px;
+        margin-right: 1em;
 
-    @include grid-media($for-desktop-up) {
-      flex: 0 0 160px;
-      height: 160px;
-      margin-right: 1em;
-      width: 160px;
-    }
-
-    &.border-light-gray {
-      border-color: $lighter-gray;
-    }
-
-    &.border-white {
-      border-color: $white;
-    }
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .item-text {
-    h3 {
-      font-size: $base-font-size * 2;
+        img {
+          max-width: 100%;
+        }
+      }
     }
   }
 }
+
+// .flex-wrapper {
+//   text-align: center;
+//
+//   @include grid-media($for-desktop-up) {
+//     text-align: left;
+//   }
+//
+//   .flex-item {
+//     padding: 2em 1em;
+//
+//     @include grid-media($for-desktop-up) {
+//       display: flex;
+//     }
+//   }
+//
+//   .item-image {
+//     border: 1px solid $black;
+//     border-radius: 50%;
+//     height: 280px;
+//     margin: 0 auto 1em;
+//     overflow: hidden;
+//     width: 280px;
+//
+//     @include grid-media($for-desktop-up) {
+//       flex: 0 0 160px;
+//       height: 160px;
+//       margin-right: 1em;
+//       width: 160px;
+//     }
+//
+//     &.border-light-gray {
+//       border-color: $lighter-gray;
+//     }
+//
+//     &.border-white {
+//       border-color: $white;
+//     }
+//
+//     img {
+//       width: 100%;
+//     }
+//   }
+//
+//   .item-text {
+//     h3 {
+//       font-size: $base-font-size * 2;
+//     }
+//   }
+// }
