@@ -1,0 +1,15 @@
+section.newsletter {
+  background: lighten($untappd-gray, 5);
+
+  label {
+    font-weight: bold;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
