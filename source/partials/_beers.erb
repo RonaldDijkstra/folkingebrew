@@ -1,12 +1,29 @@
 <% data.beers.each do |item| %>
-  <div class="beer-item" %>
-    <%= "<div><img src='#{item.image}' alt='#{item.title}'></div>" %>
-    <%= "<div><strong>#{item.item}</strong></div>" %>
-    <%= "<div>#{item.style}</div>" %>
-    <%= "<div>#{item.ibu}</div>" %>
-    <%= "<div>#{item.abv}</div>" %>
-    <%= "<div>#{item.rating}</div>" %>
-    <%= "<div>#{item.description}</div>" %>
-    <%= "<a href='#{item.untappd_url}' target='_blank'>View beer</a>" %>
+  <div class="flex-item" %>
+    <div class="col col-img">
+      <%= "<div><img src='#{item.image}' alt='#{item.title}'></div>" %>
+    </div>
+    <div class="col">
+      <%= "<div><strong>#{item.item}</strong></div>" %>
+      <%= "<div>#{item.style}</div>" %>
+
+      <% if item.ibu || item.abv || item.rating %>
+        <div class="item-meta">
+          <% if item.abv %>
+            <%= "<div>#{item.abv}% Vol. Alc.</div>" %>
+          <% end %>
+          <% if item.ibu %>
+            <%= "<div>#{item.ibu} IBU</div>" %>
+          <% end %>
+          <% if item.rating %>
+            <%= "<div>⭐ #{item.rating}</div>" %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <%= "<div class='item-description'>#{item.description}</div>" %>
+
+      <%= "<a href='#{item.untappd_url}' target='_blank' class='untappd-link'>Bekijk op Untappd</a>" %>
+    </div>
   </div>
 <% end %>
