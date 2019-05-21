@@ -7,8 +7,20 @@ sitemap_priority: 0.8
                                          background_image: "banner-pellets.jpg",
                                          title: "Over Ons"} %>
 
-<section class="single-column">
+<section class="single-column small">
   <div class="grid-row">
     <%= partial "over-ons/content" %>
+  </div>
+</section>
+
+<section class="newsletter single-column small">
+  <div class="grid-row">
+    <h2>
+      Nieuwsbrief
+    </h2>
+    <p>
+      Wil je op de hoogte worden gehouden van onze releases? Schrijf je in voor onze nieuwsbrief!
+    </p>
+    <%= partial "partials/newsletter-signup" %>
   </div>
 </section>

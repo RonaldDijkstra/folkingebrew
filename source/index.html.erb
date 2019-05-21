@@ -5,19 +5,27 @@ sitemap_priority: 1
 
 <%= partial "partials/banner", locals: { variant: "variant-big",
                                          background_image: "banner-homepage.jpg",
-                                         title: "We Love Hops",
-                                         sub_title: "Craft Bier uit Groningen sinds 2017"} %>
+                                         title: "We Love Hops"} %>
 
 <section class="introduction single-column">
   <div class="grid-row">
+    <h2>
+      Craft Bier uit Groningen sinds 2017
+    </h2>
     <article>
       <%= partial "homepage/introduction" %>
     </article>
   </div>
 </section>
 
-<section class="newsletter single-column">
+<section class="newsletter single-column small">
   <div class="grid-row">
+    <h2>
+      Nieuwsbrief
+    </h2>
+    <p>
+      Wil je op de hoogte worden gehouden van onze releases? Schrijf je in voor onze nieuwsbrief!
+    </p>
     <%= partial "partials/newsletter-signup" %>
   </div>
 </section>
