@@ -3,7 +3,11 @@ title: "Onze Bieren"
 description: "Bekijk een overzicht van onze bieren."
 sitemap_priority: 0.8
 ---
-<section class="">
+
+<%= partial "partials/banner", locals: { variant: "variant-normal",
+                                         background_image: "banner-homepage.jpg",
+                                         title: "Onze Bieren"} %>
+<section class="beers">
   <div class="grid-row">
     <div class="flex-wrapper">
       <%= partial "partials/beers" %>
