@@ -13,7 +13,6 @@ open(url) do |rss|
     feed.items[0..2].each do |item|
       f.write("- title: \"#{item.title}\"\n")
       f.write("\s\sdescription: \"#{item.description}\"\n")
-      f.write("\s\slink: \"#{item.description}\"\n")
       f.write("\s\spubdate: \"#{item.pubDate}\"\n")
       if item.title.include? "Pastry Project #1"
         f.write("\s\simage: https://labels.untappd.com/labels/3159580?size=hd\"\n")
