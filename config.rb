@@ -34,7 +34,8 @@ page "/*.xml", layout: false
 # Settings for production
 configure :production do
   activate :asset_hash, ignore: [
-    %r{^assets/fonts/.*}
+    %r{^assets/fonts/.*},
+    "assets/images/logo-folkingebrew-black.svg"
   ]
   activate :gzip
   activate :minify_css

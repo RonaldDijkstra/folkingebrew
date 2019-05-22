@@ -1,11 +1,10 @@
 - item: "Pastry Project #1"
-  date: 2019-05-18T12:41:07.129208Z
+  date: 2019-05-22T08:47:49.676581Z
   style: "Stout - Imperial / Double"
   brewery: "Folkingebrew"
   image: "https://labels.untappd.com/labels/3159580?size=hd"
-  rating: "4.2"
-  description: "Pastry Project #1 is a huge double mash stout with vanilla, cacao nibs and Heaven Hill bourbon wood chips added"
-  untappd_url: "https://untappd.com/b/folkingebrew-pastry-project-1/3159580"
+  rating: "4.19"
+  description: "Pastry Project #1 is a huge double mash stout with vanilla, cacao nibs and Heaven Hill bourbon wood chips added."
   abv: "12.0"
   ibu: "60"
 - item: "Back in the Yard DIPA"
@@ -15,16 +14,14 @@
   image: "https://labels.untappd.com/labels/3050712?size=hd"
   rating: "4.24"
   description: "Double IPA, Double Dry-Hopped with Citra, Mosaic and Nelson Sauvin. Thanks to Nelson Sauvin and a specific yeast strain this beer is on the dry side with just a little bit of a white wine character. The ABV isn't really noticeable and is hidden behind a huge flavour."
-  untappd_url: "https://untappd.com/b/folkingebrew-back-in-the-yard-dipa/3050712"
   abv: "8.0"
   ibu: "10"
 - item: "Just a Backyard IPA"
-  date: 2019-05-18T12:40:52.162077Z
+  date: 2019-05-22T09:07:19.712288Z
   style: "IPA - New England"
   brewery: "Folkingebrew"
   image: "https://labels.untappd.com/labels/2404100?size=hd"
   rating: "4.0"
-  description: "New England style IPA with 6.9% ABV. Double Dry-Hopped with Citra, Mosaic & Galaxy hops. "
-  untappd_url: "https://untappd.com/b/folkingebrew-just-a-backyard-ipa/2404100"
+  description: "New England style IPA met 6.9% Vol. Alc. Double Dry-Hopped met Citra, Mosaic & Galaxy hop. Just a Backyard IPA is ons allereerste bier. Na verscheidene testbatches hebben we bij Rockin' Ludina onze eerste grote, commerciële batch gebrouwen. "
   abv: "6.9"
   ibu: "32"
