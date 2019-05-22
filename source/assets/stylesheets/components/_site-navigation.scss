@@ -96,11 +96,13 @@
     }
 
     .menu {
+      background: $white;
       list-style-type: none;
       margin: 0;
-      padding: 170px 0 0;
+      padding: 3em 0;
 
       @include grid-media($for-desktop-up) {
+        background: transparent;
         display: flex;
         justify-content: center;
         padding: 0;
@@ -120,17 +122,18 @@
         color: $dark-gray;
         display: block;
         font-family: $heading-font-family;
-        font-size: $base-font-size * 1.6;
+        font-size: $base-font-size * 2;
         font-weight: $font-weight-small;
         padding: 10px $base-spacing * 0.9;
+        text-align: center;
         text-decoration: none;
         text-transform: uppercase;
 
         @include grid-media($for-desktop-up) {
           border-bottom: 0;
           display: block;
-          font-size: $base-font-size * 2;
           padding: 20px 45px;
+          text-align: left;
           transition: background-color 200ms ease;
 
           &:hover {
