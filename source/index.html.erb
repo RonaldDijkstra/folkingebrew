@@ -1,16 +1,17 @@
 ---
-description: "Folkingebrew. Craft Bier uit Groningen sinds 2017."
+title: "Welkom bij Folkingebrew."
+description: "Craft Bier uit Groningen sinds 2017."
 sitemap_priority: 1
 ---
 
 <%= partial "partials/banner", locals: { variant: "variant-big",
                                          background_image: "banner-homepage.jpg",
-                                         title: "We Love Hops"} %>
+                                         title: "Craft Bier uit Groningen"} %>
 
 <section class="introduction single-column">
   <div class="grid-row">
     <h2>
-      Craft Bier uit Groningen sinds 2017
+      Folkingebrew
     </h2>
     <article>
       <%= partial "homepage/introduction" %>
@@ -24,7 +25,7 @@ sitemap_priority: 1
       Nieuwsbrief
     </h2>
     <p>
-      Wil je op de hoogte worden gehouden van onze releases? Schrijf je in voor onze nieuwsbrief!
+      Wil je op de hoogte worden gehouden van ons nieuws en releases? Schrijf je in voor onze nieuwsbrief!
     </p>
     <%= partial "partials/newsletter-signup" %>
   </div>
@@ -33,19 +34,18 @@ sitemap_priority: 1
 <section class="checkins">
   <div class="grid-row">
     <h2>
-      Wie drinkt er?
+      Fans!
     </h2>
     <div class="flex-wrapper">
       <%= partial "partials/checkins" %>
     </div>
-    <a class="button big centered" href="https://untappd.com/Folkingebrew" target="_blank">Untappd profiel</a>
   </div>
 </section>
 
 <section class="social-links">
   <div class="grid-row">
     <h2>
-      Volg ons
+      Volg ons via social media
     </h2>
 
     <%= partial "partials/social-links" %>
