@@ -33,7 +33,6 @@ if response.code == "200"
       f.write("\s\simage: \"#{doc.label_image_hd}\"\n")
       f.write("\s\srating: \"#{doc.rating.to_f.round(2)}\"\n")
       f.write("\s\sdescription: \"#{doc.description.gsub(/\n/, " ").gsub(/"/, " ")}\"\n")
-      f.write("\s\suntappd_url: \"https://untappd.com/b/#{doc.untappd_beer_slug}/#{doc.untappd_id}\"\n")
       f.write("\s\sabv: \"#{doc.abv}\"\n")
       f.write("\s\sibu: \"#{doc.ibu.to_f.round(0)}\"\n")
     end
