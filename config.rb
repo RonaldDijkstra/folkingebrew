@@ -25,7 +25,7 @@ set :markdown,
   strikethrough: true,
   tables: true,
   with_toc_data: true
-set :markdown_engine, :redcarpet
+set :markdown_engine, :kramdown
 
 page "/*.json", layout: false
 page "/*.txt", layout: false
