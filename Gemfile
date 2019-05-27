@@ -17,6 +17,7 @@ gem "redcarpet"
 gem "sassc"
 
 # Feed
+gem "nokogiri"
 gem "rss"
 
 # Asset Pipeline Gems
