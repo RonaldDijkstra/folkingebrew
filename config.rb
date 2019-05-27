@@ -7,7 +7,8 @@ activate :directory_indexes
 activate :inline_svg
 activate :sprockets
 
-ENV["SEGMENT_KEY"] = "yKu9XpPSGamSidGhBqxkr708Z4sWjLeY"
+# Set Google Analytics id
+set :ga_code, "UA-24956010-7"
 
 # Ignore the selection file for Icomoon
 ignore "assets/fonts/selection.json"

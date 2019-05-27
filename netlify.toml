@@ -1,5 +1,3 @@
 [build]
   command = "rake build"
   publish = "build/"
-[template.environment]
-  SEGMENT_KEY = "yKu9XpPSGamSidGhBqxkr708Z4sWjLeY"
