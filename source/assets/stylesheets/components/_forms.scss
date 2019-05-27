@@ -100,3 +100,27 @@ select {
     outline-offset: $focus-outline-offset;
   }
 }
+
+.form-inline {
+  @include grid-media($for-desktop-up) {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  label {
+    @include grid-media($for-desktop-up) {
+      margin: 5px 10px 5px 0;
+    }
+  }
+
+  input {
+    @include grid-media($for-desktop-up) {
+      flex: 2.5;
+      margin: 5px 10px 5px 0;
+      padding: 10px;
+      vertical-align: middle;
+      width: auto;
+    }
+  }
+}
