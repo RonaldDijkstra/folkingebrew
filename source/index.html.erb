@@ -8,17 +8,15 @@ sitemap_priority: 1
                                          background_image: "banner-homepage.jpg",
                                          title: "Craft Bier uit Groningen"} %>
 
-<section class="newsletter single-column small">
+<section>
   <div class="grid-row">
-    <h2>
-      Nieuwsbrief
-    </h2>
-    <p>
-      Wil je op de hoogte worden gehouden van ons nieuws en releases? Schrijf je dan in voor onze nieuwsbrief!
-    </p>
-    <%= partial "partials/newsletter-signup" %>
+    <article>
+      <%= partial "homepage/introduction" %>
+    </article>
   </div>
 </section>
+
+<%= partial "partials/newsletter-signup" %>
 
 <section class="checkins">
   <div class="grid-row">
