@@ -20,6 +20,7 @@ module ApplicationHelpers
     data.site.name
   end
 
+  # Get the base url from data
   def base_url
     data.site.base_url
   end
