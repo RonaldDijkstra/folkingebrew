@@ -20,6 +20,10 @@ module ApplicationHelpers
     data.site.name
   end
 
+  def base_url
+    data.site.base_url
+  end
+
   # Get the title from frontmatter if any
   def frontmatter_title
     current_page.data.title
@@ -48,8 +52,7 @@ module ApplicationHelpers
 
   # Get full url
   def full_url(url)
-    # base = "https://#{I18n.t('CNAME', locale: locale)}"
-    URI.join(url).to_s
+    URI.join(base_url, url).to_s
   end
 
   # Define image for Open Graph
