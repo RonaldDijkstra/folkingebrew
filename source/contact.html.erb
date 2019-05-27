@@ -12,9 +12,6 @@ sitemap_priority: 0.5
 <section class="form">
   <div class="grid-row form-grid-row">
     <%= partial "contact/content" %>
-    <h2>
-      Contactformulier
-    </h2>
     <%= partial "partials/form", locals: { name: "contact",
                                            title: "Contactformulier",
                                            fields: ["name", "email", "message"],
@@ -23,6 +20,18 @@ sitemap_priority: 0.5
   </div>
 </section>
 
-<%= partial "partials/newsletter-signup" %>
+<section>
+  <div class="grid-row form-grid-row">
+    <h2>
+      Contactgegevens
+    </h2>
+    <strong>Folkingebrew</strong><br>
+    Folkingestraat 18<br>
+    9711 JW<br>
+    Groningen<br>
+    <%= link_to "folkingebrew@gmail.com", "mailto:folkingebrew@gmail.com" %>
+    KVK: 71770895
+  </div>
+</section>
 
-<%= partial "partials/social-links" %>
+<%= partial "partials/newsletter-signup" %>

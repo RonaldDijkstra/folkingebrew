@@ -1,7 +1,46 @@
 footer {
   background: $dark-gray;
   color: $white;
+  font-size: $base-font-size * 0.9;
   text-align: center;
+
+  .grid-row {
+    @include grid-media($for-desktop-up) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .col {
+      margin-bottom: 1em;
+
+      @include grid-media($for-desktop-up) {
+        flex: 1;
+        margin-bottom: 0;
+      }
+    }
+
+    .col-left {
+      @include grid-media($for-desktop-up) {
+        text-align: left;
+      }
+    }
+
+    .col-right {
+      @include grid-media($for-desktop-up) {
+        text-align: right;
+      }
+
+      .address {
+        margin-bottom: 1em;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+  }
 
   a {
     color: $white;

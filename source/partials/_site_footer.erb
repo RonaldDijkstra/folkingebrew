@@ -1,5 +1,19 @@
 <footer role="footer">
   <div class="grid-row">
-    &copy; <%= Time.new.year %> <%= data.site.name %> <a href="https://www.github.com/ronalddijkstra/folkingebrew" class="icon-github" target="_blank" rel="noopener noreferrer"></a>
+    <div class="col col-left">
+      <%= inline_svg "hopje.svg", alt: "Folkingebrew HOP" %>
+    </div>
+    <div class="col col-ctr">
+      &copy; <%= Time.new.year %> <%= data.site.name %> <a href="https://www.github.com/ronalddijkstra/folkingebrew" class="icon-github" target="_blank" rel="noopener noreferrer"></a>
+    </div>
+    <div class="col col-right">
+      <div class="address">
+        <div><strong>Folkingebrew</strong></div>
+        <div>Folkingestraat 18</div>
+        <div>9711 JW</div>
+        <div>Groningen</div>
+      </div>
+      <%= link_to "Neem contact op", "contact.html" %>
+    </div>
   </div>
 </footer>
