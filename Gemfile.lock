@@ -176,6 +176,7 @@ DEPENDENCIES
   middleman-minify-html
   middleman-sprockets
   neat
+  nokogiri
   rails-assets-jquery!
   rails-assets-what-input!
   rake
