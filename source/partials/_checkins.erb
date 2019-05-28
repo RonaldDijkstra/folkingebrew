@@ -1,11 +1,13 @@
 <% data.checkins.each do |item| %>
   <div class="flex-item" %>
-    <div class="col col-img">
-    <%= "<div><img src='#{item.image}' alt='#{item.title}'></div>" %>
-    </div>
+    <% if item.image %>
+      <div class="col col-img">
+      <%= "<div><img src='#{item.image}' alt='#{item.title}'></div>" %>
+      </div>
+    <% end %>
     <div class="col">
       <%= "<div><strong>#{item.title}</strong></div>" %>
-      <%= "<div>#{item.description}</div>" %>
+      <%= "<div>#{item.comment}</div>" %>
       <%= "<div>#{item.date}</div>" %>
     </div>
   </div>
