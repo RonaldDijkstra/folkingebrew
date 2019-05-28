@@ -11,8 +11,7 @@ doc = Nokogiri::HTML(open("https://untappd.com/Folkingebrew"))
 checkins = doc.css("#main-stream .item")
 
 File.open("data/checkins.yml", "w") do |f|
-  checkins.each do |checkin|
-
+  checkins[0..5].each do |checkin|
     title = checkin.at(".text").text.strip.gsub(/\s+/, " ")
     f.write("- title: \"#{title}\"\n")
 
@@ -31,6 +30,6 @@ File.open("data/checkins.yml", "w") do |f|
 
     date_time = checkin.at(".time").text
     date = Time.parse(date_time)
-    f.write("\s\sdate: \"#{date.day} #{date.strftime("%B")} #{date.year}\"\n")
+    f.write("\s\sdate: \"#{date.day} #{date.strftime('%B')} #{date.year}\"\n")
   end
 end
