@@ -33,8 +33,107 @@ section.checkins {
       padding: 1em;
     }
 
+    .rating {
+      &.small {
+        $background-image: url("../images/ratings-small.png");
+
+        background-image: $background-image;
+        background-repeat: no-repeat;
+        background-size: 132px 558px;
+        display: block;
+        height: 24px;
+        margin: 1em 0;
+        width: 132px;
+
+        &.r000 {
+          display: none;
+        }
+
+        &.r025 {
+          background-position: 0 -26px;
+        }
+
+        &.r050 {
+          background-position: 0 -54px;
+        }
+
+        &.r075 {
+          background-position: 0 -80px;
+        }
+
+        &.r100 {
+          background-position: 0 -106px;
+        }
+
+        &.r125 {
+          background-position: 0 -134px;
+        }
+
+        &.r150 {
+          background-position: 0 -160px;
+        }
+
+        &.r175 {
+          background-position: 0 -186px;
+        }
+
+        &.r200 {
+          background-position: 0 -213px;
+        }
+
+        &.r225 {
+          background-position: 0 -240px;
+        }
+
+        &.r250 {
+          background-position: 0 -266px;
+        }
+
+        &.r275 {
+          background-position: 0 -294px;
+        }
+
+        &.r300 {
+          background-position: 0 -320px;
+        }
+
+        &.r325 {
+          background-position: 0 -346px;
+        }
+
+        &.r350 {
+          background-position: 0 -372px;
+        }
+
+        &.r375 {
+          background-position: 0 -400px;
+        }
+
+        &.r400 {
+          background-position: 0 -426px;
+        }
+
+        &.r425 {
+          background-position: 0 -452px;
+        }
+
+        &.r450 {
+          background-position: 0 -480px;
+        }
+
+        &.r475 {
+          background-position: 0 -506px;
+        }
+
+        &.r500 {
+          background-position: 0 -534px;
+        }
+      }
+    }
+
     .date {
       color: $light-gray;
+      margin: 1em 0 0;
     }
   }
 }
