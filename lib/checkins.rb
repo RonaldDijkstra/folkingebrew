@@ -11,13 +11,19 @@ doc = Nokogiri::HTML(open("https://untappd.com/Folkingebrew"))
 checkins = doc.css("#main-stream .item")
 
 File.open("data/checkins.yml", "w") do |f|
-  checkins[0..5].each do |checkin|
+  checkins.each do |checkin|
     title = checkin.at(".text").text.strip.gsub(/\s+/, " ")
     f.write("- title: \"#{title}\"\n")
 
     if checkin.css("p.photo img").attr("data-original")
       checkin_image = checkin.css("p.photo img").attr("data-original")
       f.write("\s\simage: \"#{checkin_image}\"\n")
+    elsif title.include? "Pastry Project #1"
+      f.write("\s\simage: \"https://labels.untappd.com/labels/3159580?size=hd\"\n")
+    elsif title.include? "Back in the Yard DIPA"
+      f.write("\s\simage: \"https://labels.untappd.com/labels/3050712?size=hd\"\n")
+    elsif title.include? "Just a Backyard IPA"
+      f.write("\s\simage: \"https://labels.untappd.com/labels/2404100?size=hd\"\n")
     end
 
     if checkin.at("p.comment-text")
