@@ -1,9 +1,36 @@
-.checkins {
+section.checkins {
   background: lighten($untappd-gray, 4);
 
   .grid-row {
-    .checkin-item {
-      padding: 2em;
+    max-width: 1280px;
+  }
+
+  .checkin-wrapper {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .checkin-item {
+    background: $white;
+    box-shadow: 0 0 5px 0 rgba(204, 204, 204, 1);
+    font-size: $base-font-size * 0.8;
+    margin: 0.5em 0.8em 2em;
+    padding: 0.5em;
+    width: 100%;
+
+    @include grid-media($for-desktop-up) {
+      flex-grow: 1;
+      width: 30%;
+    }
+
+    .row-text {
+      padding: 1em;
+    }
+
+    .date {
+      color: $light-gray;
     }
   }
 }
