@@ -31,8 +31,10 @@ File.open("data/checkins.yml", "w") do |f|
       f.write("\s\scomment: \"#{checkin_comment}\"\n")
     end
 
-    rating = checkin.at(".rating-serving span.rating").attr("class")
-    f.write("\s\srating: \"#{rating}\"\n")
+    if checkin.at(".rating-serving span.rating")
+      rating = checkin.at(".rating-serving span.rating").attr("class")
+      f.write("\s\srating: \"#{rating}\"\n")
+    end
 
     date_time = checkin.at(".time").text
     date = Time.parse(date_time)
