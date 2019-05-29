@@ -1,0 +1,42 @@
+section.beers {
+  background: $lightest-gray;
+
+  .grid-row {
+    max-width: $row-wide;
+    padding: 4em 1em;
+    width: 100%;
+
+    @include grid-media($for-desktop-up) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .beer-item {
+    background: $white;
+    box-shadow: 0 0 5px 0 rgba(204, 204, 204, 1);
+    color: $dark-gray;
+    display: block;
+    margin: 0 0 2em;
+    padding: 2em;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    width: 100%;
+
+    @include grid-media($for-desktop-up) {
+      margin: 0 2em;
+      width: 40%;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    img {
+      margin-bottom: 1em;
+    }
+  }
+}
