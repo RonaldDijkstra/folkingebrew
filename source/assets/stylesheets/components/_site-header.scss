@@ -8,7 +8,7 @@ div.site-header {
     padding: 1em 0.5em;
 
     @include grid-media($for-desktop-up) {
-      padding: 2em 1em;
+      padding: 1em;
     }
   }
 
@@ -19,7 +19,7 @@ div.site-header {
     text-transform: uppercase;
 
     @include grid-media($for-desktop-up) {
-      margin: 40px auto;
+      margin: 20px auto;
       text-align: center;
     }
 
