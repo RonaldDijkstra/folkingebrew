@@ -13,22 +13,18 @@ task :serve do
   system "bundle exec middleman serve" || exit(1)
 end
 
-task :data do
-  puts "== Retrieving beers..."
-  system "ruby lib/beers.rb" || exit(1)
+task :checkins do
   puts "== Retrieving checkins..."
   system "ruby lib/checkins.rb" || exit(1)
-  puts "== Retrieved external data".green
+  puts "== Retrieved checkins 🍺".green
 end
 
 ## Build the website
 task :build do
   puts "== Project: " + project_name.green
-  puts "== Retrieving beers..."
-  system "ruby lib/beers.rb" || exit(1)
   puts "== Retrieving checkins..."
   system "ruby lib/checkins.rb" || exit(1)
-  puts "== Retrieved external data".green
+  puts "== Retrieved checkins 🍺".green
   puts "== Brewing...".green
   system "bundle exec middleman build" || exit(1)
 end
