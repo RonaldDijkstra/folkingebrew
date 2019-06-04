@@ -1,6 +1,6 @@
 footer {
-  background: $dark-gray;
-  color: $white;
+  background: $black;
+  color: $medium-gray;
   font-size: $base-font-size * 0.9;
   text-align: center;
 
@@ -43,11 +43,11 @@ footer {
   }
 
   a {
-    color: $white;
+    color: $medium-gray;
     text-decoration: none;
 
     &:hover {
-      color: darken($white, 15%);
+      color: darken($medium-gray, 15%);
     }
   }
 }
