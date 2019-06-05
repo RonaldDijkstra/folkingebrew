@@ -1,4 +1,4 @@
-Folkingebrew is opgericht met een heldere missie: bier brouwen dat wij zelf graag drinken! Dit betekent dat wij bieren brouwen met een uitgesproken karakter in smaak, aroma en kleur. Vanwege onze missie zijn we altijd op zoek naar optimalisaties in onze receptuur en nieuwe smaken.
+Folkingebrew is opgericht met een heldere missie: bieren brouwen die wij zelf graag drinken! Dit betekent dat wij bieren brouwen met een uitgesproken karakter in smaak, aroma en kleur. Vanwege onze missie zijn we altijd op zoek naar optimalisaties in onze receptuur en nieuwe smaken.
 
 ## Folkingebrew
 Het eerste deel van onze naam (Folkinge) verwijst naar de locatie waar we zijn begonnen met brouwen: in de _'backyard'_ van bierwinkel [Just in Beer](https://www.justinbeer.nl){:target="_blank"} aan de Folkingestraat in Groningen. _Brew_ refereert aan de Amerikaanse en Britse craft beer culture, waar we onze inspiratie grotendeels vandaan halen.
