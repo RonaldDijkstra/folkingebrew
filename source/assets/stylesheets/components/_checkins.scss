@@ -34,7 +34,12 @@ section.checkins {
 
       div {
         display: inline-block;
+        font-size: $base-font-size * 1.3;
         width: 49%;
+
+        @include grid-media($for-desktop-up) {
+          font-size: $base-font-size * 1.1;
+        }
 
         &.user {
           font-weight: $font-weight-bold;
