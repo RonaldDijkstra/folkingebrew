@@ -22,6 +22,6 @@ File.open("data/checkins.yml", "w") do |f|
 
     date_time = checkin.at(".time").text
     date = Time.parse(date_time)
-    f.write("\s\sdate: \"#{date.day} #{date.strftime('%B')} #{date.year}\"\n")
+    f.write("\s\sdate: \"#{date.day}-#{date.month}-#{date.year}\"\n")
   end
 end
