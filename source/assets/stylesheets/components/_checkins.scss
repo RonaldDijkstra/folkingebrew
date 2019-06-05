@@ -31,11 +31,22 @@ section.checkins {
 
     .row-text {
       padding: 1em;
-    }
 
-    .date {
-      color: $light-gray;
-      margin: 1em 0 0;
+      div {
+        display: inline-block;
+        width: 49%;
+
+        &.user {
+          font-weight: $font-weight-bold;
+          overflow: hidden;
+          vertical-align: top;
+        }
+
+        &.date {
+          color: $light-gray;
+          text-align: right;
+        }
+      }
     }
   }
 }

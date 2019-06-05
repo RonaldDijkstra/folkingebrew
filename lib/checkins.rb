@@ -12,16 +12,16 @@ checkins = doc.css("#main-stream .item")
 
 File.open("data/checkins.yml", "w") do |f|
   checkins.each do |checkin|
-    if checkin.css("p.photo img").attr("data-original")
-      title = checkin.at(".text").text.strip.gsub(/\s+/, " ")
-      f.write("- title: \"#{title}\"\n")
+    next unless checkin.css("p.photo img").attr("data-original")
 
-      checkin_image = checkin.css("p.photo img").attr("data-original")
-      f.write("\s\simage: \"#{checkin_image}\"\n")
+    user = checkin.at(".text .user").text.strip.gsub(/\s+/, " ")
+    f.write("- user: \"#{user}\"\n")
 
-      date_time = checkin.at(".time").text
-      date = Time.parse(date_time)
-      f.write("\s\sdate: \"#{date.day} #{date.strftime('%B')} #{date.year}\"\n")
-    end
+    checkin_image = checkin.css("p.photo img").attr("data-original")
+    f.write("\s\simage: \"#{checkin_image}\"\n")
+
+    date_time = checkin.at(".time").text
+    date = Time.parse(date_time)
+    f.write("\s\sdate: \"#{date.day} #{date.strftime('%B')} #{date.year}\"\n")
   end
 end
