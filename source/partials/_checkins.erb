@@ -6,13 +6,13 @@
 
     <div class="checkin-wrapper">
       <% data.checkins[0..5].each do |item| %>
-        <div class="checkin-item" %>
+        <div class="checkin-item">
           <div class="row row-img">
-            <%= "<div><img src='#{item.image}' alt='#{item.title}'></div>" %>
+            <img src="<%= item.image %>" alt="<%= item.title %>">
           </div>
           <div class="row row-text">
-            <%= "<div class='user'>#{item.user}</div>" %>
-            <%= "<div class='date'>#{item.date}</div>" %>
+            <div class="user"><%= item.user %></div>
+            <div class="date"><%= item.date %></div>
           </div>
         </div>
       <% end %>

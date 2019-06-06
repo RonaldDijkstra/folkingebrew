@@ -1,28 +1,29 @@
 <% data.beers.each do |item| %>
-  <div class="flex-item" %>
+  <div class="flex-item">
     <div class="col col-img">
-      <%= "<div><img src='#{item.image}' alt='#{item.title}'></div>" %>
+      <div><img src="<%= item.image %>" alt="<%= item.item %>"></div>
     </div>
     <div class="col">
-      <%= "<div><strong>#{item.item}</strong></div>" %>
-      <%= "<div>#{item.style}</div>" %>
+      <div><strong><%= item.item %></strong></div>
+      <div><%= item.style %></div>
 
       <% if item.ibu || item.abv || item.rating %>
         <div class="item-meta">
           <% if item.abv %>
-            <%= "<div>#{item.abv}% Vol. Alc.</div>" %>
+            <div><%= item.abv %>% Vol. Alc.</div>
           <% end %>
           <% if item.ibu %>
-            <%= "<div>#{item.ibu} IBU</div>" %>
+            <div><%= item.ibu %> IBU</div>
           <% end %>
           <% if item.rating %>
-            <%= "<div>⭐ #{item.rating}</div>" %>
+            <div>⭐ <%= item.rating %></div>
           <% end %>
         </div>
       <% end %>
 
-      <%= "<div class='item-description'>#{item.description}</div>" %>
-
+      <% if item.description %>
+        <div class="item-description"><%= item.description %></div>
+      <% end %>
     </div>
   </div>
 <% end %>
