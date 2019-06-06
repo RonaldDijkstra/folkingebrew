@@ -17,9 +17,9 @@ This website is built with [Middleman](https://middlemanapp.com/) with [Middlema
 
     `brew install rbenv ruby-build`
 
--   Install Ruby 2.6.0
+-   Install Ruby 2.6.2
 
-    `rbenv install 2.6.0`
+    `rbenv install 2.6.2`
 
 ## Setup & Serve
 
