@@ -2,8 +2,6 @@
 
 source "https://rubygems.org"
 
-ruby "2.6.0"
-
 # Middleman Core & Extensions
 gem "middleman"
 gem "middleman-autoprefixer"
