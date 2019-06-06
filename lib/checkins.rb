@@ -14,8 +14,11 @@ File.open("data/checkins.yml", "w") do |f|
   checkins.each do |checkin|
     next unless checkin.css("p.photo img").attr("data-original")
 
-    user = checkin.at(".text .user").text.strip.gsub(/\s+/, " ")
+    user = checkin.at(".text .user").text
     f.write("- user: \"#{user}\"\n")
+
+    title = checkin.at(".text").text.strip.gsub(/\s+/, " ")
+    f.write("\s\stitle: \"#{title}\"\n")
 
     checkin_image = checkin.css("p.photo img").attr("data-original")
     f.write("\s\simage: \"#{checkin_image}\"\n")
