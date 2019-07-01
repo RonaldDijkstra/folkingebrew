@@ -32,6 +32,22 @@ page "/*.json", layout: false
 page "/*.txt", layout: false
 page "/*.xml", layout: false
 
+page "nieuws/*", layout: :post_layout
+# page "nieuws/feed.xml", layout: false
+page "nieuws/index.html", layout: :blog_layout
+
+# Activate and setup the blog content type
+activate :blog do |blog|
+  blog.name = "nieuws"
+  blog.prefix = "nieuws"
+  blog.permalink = ":title"
+  blog.sources = "/{year}-{month}-{day}-{title}.html"
+  # blog.tag_template = "blog/tag.html"
+  blog.paginate = true
+  blog.page_link = "{num}"
+  blog.per_page = 10
+end
+
 # Settings for production
 configure :production do
   activate :asset_hash, ignore: [
