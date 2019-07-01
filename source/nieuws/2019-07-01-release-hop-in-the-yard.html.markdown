@@ -4,9 +4,9 @@ date: 2019-07-01 08:00 CEST
 tags: IPA
 author: Ronald
 featured: true
-image: images/blog/social/dianet-social-1200x630.jpg
-featured_image: images/blog/featured/20190507-dianet-featured.jpg
-header_image: moods/dianet-mood.jpg
+# image: images/blog/social/dianet-social-1200x630.jpg
+# featured_image: images/blog/featured/20190507-dianet-featured.jpg
+header_image: moods/banner-de-koffer-hop-in-the-yard.jpg
 ---
 
 __Gisteravond hebben we bij Café De Koffer in Groningen ons nieuwe bier gelanceerd.__

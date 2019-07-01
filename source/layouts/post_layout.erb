@@ -1,6 +1,6 @@
 <% wrap_layout :layout do %>
 
-  <header class="banner variant-normal">
+  <header class="banner variant-normal" style="background-image: url(<%= image_path(current_article.data.header_image || "banner-homepage.jpg") %>)">
     <div class="grid-row">
       <h1>
         <%= current_article.title %>
