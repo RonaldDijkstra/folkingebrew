@@ -1,9 +1,18 @@
+- item: "Hop in the Yard"
+  date: 2019-06-27T15:03:39.584515Z
+  style: "IPA - New England"
+  brewery: "Folkingebrew"
+  image: "https://labels.untappd.com/labels/3301954?size=hd"
+  rating: "0.0"
+  description: "Hop in the Yard is a double dry-hopped New England style IPA, inspired by the IPAs of the American east coast.  The beer is intensely dry-hopped with 20 grams of Citra and Mosaic per liter. The amount of hops causes a taste explosion. The combination of Mosaic and Citra gives the beer a fruity hoppy character, beautiful citrus tones and lots of tropical fruit. A small bitter stands up against the tropical flavors and the used oat flakes provide a creamy mouthfeel.  SPECS:  ABV: 6,9% IBU: 35 Hops: Citra & Mosaic Yeast: WLP066 London Fog Ale  Brewed at Rock City Brewing (Amersfoort, NL)."
+  abv: "6.9"
+  ibu: "35"
 - item: "Pastry Project #1"
   date: 2019-05-22T08:47:49.676581Z
   style: "Stout - Imperial / Double"
   brewery: "Folkingebrew"
   image: "https://labels.untappd.com/labels/3159580?size=hd"
-  rating: "4.18"
+  rating: "4.17"
   description: "Pastry Project #1 is a huge double mash stout with vanilla, cacao nibs and Heaven Hill bourbon wood chips added."
   abv: "12.0"
   ibu: "60"
