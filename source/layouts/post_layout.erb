@@ -1,9 +1,14 @@
 <% wrap_layout :layout do %>
 
   <header class="banner variant-normal">
-    <h1>
-      <%= current_article.title %>
-    </h1>
+    <div class="grid-row">
+      <h1>
+        <%= current_article.title %>
+      </h1>
+      <time datetime="<%= current_article.date.strftime("%F") %>">
+        <%= I18n.l(current_article.date, format: :blog_date) %>
+      </time>
+    </div>
   </header>
 
   <%= yield %>

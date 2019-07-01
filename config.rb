@@ -1,11 +1,20 @@
 # frozen_string_literal: true
 
+# We are dutch
+root_locale = :nl
+
+# Accessible as `root_locale` in helpers and `config[:root_locale]` in templates
+set :root_locale, root_locale
+
 # Activate i18n for root locale
-# activate :i18n, mount_at_root: root_locale, langs: %i[nl]
+activate :i18n, mount_at_root: root_locale, langs: %i[nl]
 activate :autoprefixer
 activate :directory_indexes
 activate :inline_svg
 activate :sprockets
+
+# Set timezone
+Time.zone = "CET"
 
 # Set Google Analytics id
 set :ga_code, "UA-24956010-7"
