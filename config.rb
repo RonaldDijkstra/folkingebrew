@@ -42,7 +42,7 @@ page "/*.txt", layout: false
 page "/*.xml", layout: false
 
 page "nieuws/*", layout: :post_layout
-# page "nieuws/feed.xml", layout: false
+page "nieuws/feed.xml", layout: false
 page "nieuws/index.html", layout: :blog_layout
 
 # Activate and setup the blog content type
@@ -50,7 +50,7 @@ activate :blog do |blog|
   blog.name = "nieuws"
   blog.prefix = "nieuws"
   blog.permalink = ":title"
-  blog.sources = "/{year}-{month}-{day}-{title}.html"
+  blog.sources = "/posts/{year}-{month}-{day}-{title}.html"
   # blog.tag_template = "blog/tag.html"
   blog.paginate = true
   blog.page_link = "{num}"

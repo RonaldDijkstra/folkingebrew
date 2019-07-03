@@ -11,6 +11,7 @@
     <%= stylesheet_link_tag "main" %>
     <meta name="google-site-verification" content="KSIwicnXARzh9Pv1igm5rWDKP-Zh1cA3tYVjs4uk_zE">
     <%= partial "partials/open_graph" %>
+    <%= feed_tag :atom, "#{blog("nieuws").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
   <body class="<%= page_classes %>">
     <main class="main" role="main">
