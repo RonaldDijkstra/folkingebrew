@@ -45,7 +45,6 @@ page "/*.xml", layout: false
 page "nieuws/index.html", layout: :blog_layout
 page "nieuws/*", layout: :post_layout
 
-
 # Activate and setup the blog content type
 activate :blog do |blog|
   blog.name = "nieuws"
