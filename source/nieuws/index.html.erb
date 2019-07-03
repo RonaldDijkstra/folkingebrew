@@ -1,0 +1,31 @@
+---
+title: "Nieuws"
+description: "Nieuws over Folkingebrew"
+blog: nieuws
+pageable: true
+---
+
+<section class="single-column">
+  <div class="grid-row">
+    <% page_articles.each do |article| %>
+      <article>
+        <div class="post-header">
+          <h2 class="post-title">
+            <%= link_to article.title, article.url %>
+          </h2>
+        </div>
+        <div class="post-meta">
+          <time datetime="<%= article.date.strftime("%F") %>">
+            <%= I18n.l(article.date, format: :blog_date) %>
+          </time>
+        </div>
+        <p>
+          <%= Nokogiri::HTML(article.summary).text %>
+        </p>
+        <div class="read-more">
+          <%= link_to "Lees verder", article.url %>
+        </div>
+      </article>
+    <% end %>
+  </div>
+</section>
