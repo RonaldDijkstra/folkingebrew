@@ -1,0 +1,20 @@
+body.nieuws {
+  article {
+    .banner {
+      &::before {
+        background-color: rgba($black, 0.5);
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      time {
+        position: relative;
+      }
+    }
+  }
+}

@@ -1,22 +1,22 @@
 <% wrap_layout :layout do %>
 
-  <header class="banner variant-normal" style="background-image: url(<%= image_path(current_article.data.header_image || "banner-homepage.jpg") %>)">
-    <div class="grid-row">
-      <h1>
-        <%= current_article.title %>
-      </h1>
-      <time datetime="<%= current_article.date.strftime("%F") %>">
-        <%= I18n.l(current_article.date, format: :blog_date) %>
-      </time>
-    </div>
-  </header>
+  <article role="article">
+    <header class="banner variant-normal" style="background-image: url(<%= image_path(current_article.data.header_image || "banner-homepage.jpg") %>)">
+      <div class="grid-row">
+        <h1>
+          <%= current_article.title %>
+        </h1>
+        <time datetime="<%= current_article.date.strftime("%F") %>">
+          <%= I18n.l(current_article.date, format: :blog_date) %>
+        </time>
+      </div>
+    </header>
 
-  <section class="content single-column">
-    <div class="grid-row">
-      <article>
+    <section class="content single-column">
+      <div class="grid-row post-body">
         <%= yield %>
-      </article>
-    </div>
-  </section>
+      </div>
+    </section>
+  </article>
 
 <% end %>
