@@ -1,4 +1,4 @@
-body.nieuws {
+body.news-article {
   article {
     .banner {
       &::before {
@@ -15,6 +15,10 @@ body.nieuws {
       time {
         position: relative;
       }
+    }
+
+    .grid-row {
+      max-width: $smallest-row;
     }
   }
 }
