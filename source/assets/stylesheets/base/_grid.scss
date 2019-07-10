@@ -11,7 +11,7 @@ $for-desktop-up: (
 
 .single-column {
   .grid-row {
-    max-width: 800px;
+    max-width: $small-row;
   }
 
   &.small {

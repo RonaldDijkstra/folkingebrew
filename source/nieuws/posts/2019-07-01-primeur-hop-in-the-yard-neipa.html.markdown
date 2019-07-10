@@ -1,15 +1,15 @@
 ---
-title: "Release Hop in the Yard"
+title: "Primeur Hop in the Yard NEIPA"
 date: 2019-07-01 08:00 CEST
 tags: IPA
 author: Ronald
 featured: true
 # image: images/blog/social/dianet-social-1200x630.jpg
-# featured_image: images/blog/featured/20190507-dianet-featured.jpg
+featured_image: blog/20190701-primeur-hop-in-the-yard.jpg
 header_image: moods/banner-de-koffer-hop-in-the-yard.jpg
 ---
 
-__Gisteravond hebben we bij Café De Koffer in Groningen ons nieuwe bier gelanceerd.__
+__Gisteravond is bij Café De Koffer in Groningen ons nieuwe bier in premiere gegaan.__
 
 ## Test
 
