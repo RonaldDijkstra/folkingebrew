@@ -23,6 +23,8 @@ Een New England IPA is een dik, juicy bier. Het wordt het best gedefinieerd door
 
 Hop in the Yard is intens (dubbel) gedryhopt met maar liefst 20 gram Citra en Mosaic per liter. Deze grote hoeveelheid hop zorgt voor een ware smaakexplosie. De combinatie van Mosaic en Citra geeft het bier een fruitig hoppig karakter, mooie citrustonen en veel tropisch fruit. Een klein bittertje zorgt voor voldoende tegengas, de gebruikte havervlokken voor een romig mondgevoel.
 
+[Bekijk Hop in the Yard op Untappd](https://untappd.com/b/folkingebrew-hop-in-the-yard/3301954){:target="_blank"}{:rel="noopener noreferrer"}
+
 ![Hop in the Yard in proper glassware](/assets/images/blog/20190701-proper-glassware.jpg)
 
 ### Specificaties
