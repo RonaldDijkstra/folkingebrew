@@ -9,19 +9,54 @@ featured_image: blog/20190701-primeur-hop-in-the-yard.jpg
 header_image: moods/banner-de-koffer-hop-in-the-yard.jpg
 ---
 
-__Gisteravond is bij Café De Koffer in Groningen ons nieuwe bier in premiere gegaan.__
+__Afgelopen zondag 30 juni is ons nieuwste bier Hop in the Yard in premiere gegaan. Het eerste fust Hop in the Yard werd aangeslagen tijdens de BBQ x IPA van Bierlokaal Café De Koffer in Groningen.__
 
-## Test
+## Wat is Hop in the Yard voor bier?
 
-Dit bier, Hop in the Yard, is een IPA die we hebben gebrouwen bij Rock City Amersfoort.
+Hop in the Yard is een double dry-hopped New England style IPA, geïnspireerd door de IPA's die we zo goed kennen van de Amerikaanse oostkust.
 
+### NEIPA
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel blandit tortor. Pellentesque porta sit amet metus et tristique. Praesent diam lorem, aliquam sit amet velit a, lacinia ultricies dui. Donec velit nisi, porttitor non aliquet et, ultricies sit amet augue. Proin non interdum magna. Phasellus malesuada nulla iaculis diam mollis suscipit. Donec a tellus in purus rutrum aliquam. Aenean luctus eget enim sed imperdiet. Quisque at sagittis ex, dapibus fringilla arcu. Vestibulum volutpat ligula id massa mollis, bibendum aliquet neque cursus. Pellentesque a neque orci. In hac habitasse platea dictumst.
+Een New England IPA is een dik, juicy bier. Het wordt het best gedefinieerd door zijn wazige (hazy) uiterlijk. Het bier is meestal wazig omdat het niet wordt gefilterd zoals andere bieren. Deze IPA's worden vaak dubbel gedryhopt - er wordt twee keer hop toegevoegd tijdens de hoofdvergisting - wat bijdraagt aan de nevel en het fruitige aroma. Liefhebbers allerlande zijn gek op deze wazige IPA's, omdat ze mooie bloemige en citrusachtige tonen hebben, een gladde, romige textuur, en ze zijn minder bitter dan andere typen IPA.
 
-Nulla porttitor orci at lobortis molestie. Mauris vitae euismod magna, eget mollis ligula. Cras lacinia sem nec venenatis sagittis. Etiam hendrerit purus ligula, a eleifend justo eleifend quis. Curabitur felis ligula, malesuada sit amet congue ac, iaculis sit amet ante. Nullam scelerisque dolor vitae enim dapibus cursus. In vitae massa massa. Mauris eu ex metus. Curabitur convallis nibh non dolor elementum, eget tristique neque gravida. Nunc pretium sed dui et tristique. Suspendisse potenti. Vestibulum tempor vulputate est, at cursus tortor lobortis quis. Mauris ut varius nisi. Maecenas eu finibus tellus, eget rutrum enim. Morbi congue tincidunt urna non lacinia. Curabitur fermentum feugiat arcu pulvinar placerat.
+### Hop in the Yard
 
-Donec efficitur varius metus, ac bibendum nisl ultrices non. Integer ullamcorper imperdiet purus vel efficitur. Etiam laoreet magna nec lacus efficitur bibendum. Nam quis porta metus. Aliquam erat volutpat. Integer at dui lacinia, euismod odio sit amet, aliquam magna. Sed eu rhoncus massa. Suspendisse nulla magna, cursus pharetra odio et, porttitor condimentum ligula.
+Hop in the Yard is intens (dubbel) gedryhopt met maar liefst 20 gram Citra en Mosaic per liter. Deze grote hoeveelheid hop zorgt voor een ware smaakexplosie. De combinatie van Mosaic en Citra geeft het bier een fruitig hoppig karakter, mooie citrustonen en veel tropisch fruit. Een klein bittertje zorgt voor voldoende tegengas, de gebruikte havervlokken voor een romig mondgevoel.
 
-Cras sit amet vestibulum lacus. Maecenas feugiat nunc quis ipsum aliquet rhoncus. Pellentesque id cursus tortor. Mauris eros nunc, vulputate in libero nec, convallis volutpat est. Maecenas nec tempor eros. Duis aliquam tellus nec turpis convallis gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus pulvinar enim, sit amet dapibus nunc laoreet a. Nunc nulla felis, posuere ac urna a, volutpat mollis quam. Maecenas ornare viverra hendrerit. Vestibulum quis turpis ac magna varius consectetur. Pellentesque eros erat, dignissim vel massa nec, porttitor tincidunt eros. Pellentesque sed tincidunt tortor, sit amet condimentum leo. Integer tempor sem id aliquet feugiat.
+Kortom, een prachtige IPA!
 
-Nunc id malesuada dolor, in posuere libero. Praesent tristique ultrices feugiat. Vestibulum fermentum, mauris eu volutpat eleifend, metus diam congue ex, ut facilisis dui eros id ex. Nunc erat tortor, iaculis et lorem ut, tempor sollicitudin turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus ultricies ex ut augue luctus, sed blandit sapien bibendum. Proin eget cursus orci, sit amet fringilla justo. Aenean fermentum urna ac est porttitor, nec volutpat nisl accumsan.
+### Specificaties
+
+__ABV__: 6,9%
+__IBU__: 35
+__Hop__: Citra & Mosaic
+__Gist__: WLP066 London Fog Ale
+
+Gebrouwen bij Rock City Brewing
+
+## Verkrijgbaarheid
+
+Hop in the Yard is zolang de voorraad strekt verkrijgbaar bij:
+
+- Just in Beer (Groningen)
+- Bierlokaal Café De Koffer (Groningen)
+- Chaplin’s Pub (Groningen)
+- Proeflokaal Bax (Groningen)
+- Internationaal Biercafé Olivier (Groningen)
+- De Toeter (Groningen)
+- Block & Barrels (Groningen)
+- Borrelcafé Oblomov (Groningen)
+- Barracuda (Groningen)
+- Gelkinge 9 (Groningen)
+- Dog’s Bollocks (Groningen)
+- Sterk (Amsterdam)
+- Drie Meter Bier (Utrecht)
+- Drankenspeciaalzaak Jelle (Leeuwarden)
+- Stanislaus Brewkovitsch (Enschede)
+- De Gezelligheid (Zwolle)
+
+Ook is Hop in the Yard verkrijgbaar van tap tijdens het Boilermaker Cocktail & Craft Beer Festival. Dit festival vindt plaats op vrijdag 13 en zaterdag 14 juli bij DOT in Groningen.
+
+Tenslotte is de IPA online te bestellen bij [Beerdome.nl](https://www.beerdome.nl).
+
+Wij danken alle klanten en afnemers voor hun vertrouwen in Folkingebrew!
