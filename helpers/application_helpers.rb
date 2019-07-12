@@ -76,6 +76,18 @@ module ApplicationHelpers
     current_page.url == "/404.html"
   end
 
+  def news?(page = current_page)
+    page.url.start_with?("/nieuws/")
+  end
+
+  def current_page_url
+    if current_page.url.start_with?("/nieuws/")
+      "/nieuws/"
+    else
+      current_page.url
+    end
+  end
+
   # Add aria current to current page navigation item
   def current_link_to(*arguments, aria_current: "page", **options, &block)
     if block_given?
@@ -86,7 +98,7 @@ module ApplicationHelpers
       path = arguments[1]
     end
 
-    options.merge!("aria-current" => aria_current) if path == current_page.path
+    options.merge!("aria-current" => aria_current) if path == current_page_url
 
     link_to(text, path, options)
   end

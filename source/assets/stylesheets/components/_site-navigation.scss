@@ -20,8 +20,8 @@
     display: block;
     font-size: 20px;
     height: 50px;
+    left: 0;
     position: absolute;
-    right: 0;
     top: 0;
     transition: all 200ms ease-in;
     width: 50px;
@@ -132,7 +132,7 @@
         @include grid-media($for-desktop-up) {
           border-bottom: 0;
           display: block;
-          padding: 16px 45px;
+          padding: 16px 32px;
           text-align: left;
           transition: background-color 200ms ease;
 

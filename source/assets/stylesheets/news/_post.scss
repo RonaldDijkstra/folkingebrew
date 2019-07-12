@@ -1,0 +1,49 @@
+body.news-article {
+  article {
+    .banner {
+      &::before {
+        background-color: rgba($black, 0.5);
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      time {
+        position: relative;
+      }
+    }
+
+    .grid-row {
+      max-width: $small-row;
+    }
+
+    img {
+      display: block;
+      left: 50%;
+      padding: 0.6em 0;
+      position: relative;
+      transform: translateX(-50%);
+    }
+
+    h1 {
+      font-size: $base-font-size * 3;
+    }
+
+    h2 {
+      font-size: $base-font-size * 2.2;
+    }
+
+    h3 {
+      font-size: $base-font-size * 1.8;
+    }
+
+    p,
+    ul {
+      margin-bottom: 1.5em;
+    }
+  }
+}
