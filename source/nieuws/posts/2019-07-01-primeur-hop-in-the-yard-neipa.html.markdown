@@ -30,9 +30,7 @@ Hop in the Yard is intens (dubbel) gedryhopt met maar liefst 20 gram Citra en Mo
 __ABV__: 6,9%<br>
 __IBU__: 35<br>
 __Hop__: Citra & Mosaic<br>
-__Gist__: WLP066 London Fog Ale<br>
-
-Gebrouwen bij Rock City Brewing
+__Gist__: WLP066 London Fog Ale
 
 ## Verkrijgbaarheid
 
