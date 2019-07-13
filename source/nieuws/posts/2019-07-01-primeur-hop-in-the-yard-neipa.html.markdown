@@ -5,7 +5,7 @@ date: 2019-07-01 08:00 CEST
 tags: IPA
 author: Ronald
 featured: true
-image: images/blog/social/20190701-primeur-hop-in-the-yard.jpg
+image: assets/images/social/20190701-primeur-hop-in-the-yard.jpg
 featured_image: blog/20190701-primeur-hop-in-the-yard.jpg
 header_image: moods/banner-de-koffer-hop-in-the-yard.jpg
 ---
