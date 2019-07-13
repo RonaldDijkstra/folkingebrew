@@ -1,0 +1,37 @@
+<% permalink_url = full_url(current_page.url) %>
+
+<section class="social-sharing">
+  <div class="grid-row">
+
+    <h3>
+      Sharing is caring!
+    </h3>
+
+    <ul>
+
+      <li>
+        <a href="https://twitter.com/intent/tweet?text=<%= URI.encode(current_page.title) %>&amp;url=<%= permalink_url %>"
+           target="_blank"
+           rel="nofollow noopener noreferrer"
+           title="Deel op Twitter"
+           class="icon-facebook"
+           data-popup='{"width":550,"height":235}'>
+          <span>Deel op Twitter</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=<%= permalink_url %>"
+           target="_blank"
+           rel="nofollow noopener noreferrer"
+           title="Deel op Facebook"
+           class="icon-facebook"
+           data-popup='{"width":580,"height":296}'>
+          <span>Deel op Facebook</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+</section>
