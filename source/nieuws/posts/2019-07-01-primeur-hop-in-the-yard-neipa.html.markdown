@@ -56,7 +56,7 @@ Hop in the Yard is zolang de voorraad strekt verkrijgbaar bij:
 - [Brewpub Stanislaus Brewskovitsch](https://www.stanislausbrewskovitch.nl/brewpub/){:target="_blank"}{:rel="noopener noreferrer"} (Enschede)
 - [Speciaalbierencafé De Gezelligheid](https://www.cafedegezelligheid.nl/){:target="_blank"}{:rel="noopener noreferrer"} (Zwolle)
 
-Ook is Hop in the Yard verkrijgbaar van tap tijdens [het Boilermaker Cocktail & Craft Beer Festival](https://www.facebook.com/Cocktail-Craft-Beer-Festival-265381274009234/){:target="_blank"}{:rel="noopener noreferrer"}. Dit festival vindt plaats op vrijdag 13 en zaterdag 14 juli bij DOT in Groningen.
+Ook is Hop in the Yard verkrijgbaar van tap tijdens [het Boilermaker Cocktail & Craft Beer Festival](https://www.facebook.com/Cocktail-Craft-Beer-Festival-265381274009234/){:target="_blank"}{:rel="noopener noreferrer"}. Dit festival vindt plaats op vrijdag 12 en zaterdag 13 juli bij DOT in Groningen.
 
 Tenslotte is de IPA [online te bestellen bij Beerdome.nl](https://www.beerdome.nl){:target="_blank"}{:rel="noopener noreferrer"}.
 
