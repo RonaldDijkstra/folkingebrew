@@ -7,11 +7,73 @@ sitemap_priority: 0.8
 
 <%= partial "partials/banner", locals: { variant: "variant-normal",
                                          background_image: "banner-hops.jpg",
-                                         title: "Bieren van Folkingebrew"} %>
+                                         title: "Onze Bieren"} %>
 <section class="beers">
+
   <div class="grid-row">
-    <div class="flex-wrapper">
-      <%= partial "partials/beers" %>
+
+    <div class="col col-txt">
+
+      <h2>
+        Hop in the Yard
+      </h2>
+
+      <p>
+        Hop in the Yard is een double dry-hopped New England style IPA, geïnspireerd door de IPA’s die we zo goed kennen van de Amerikaanse oostkust.
+      </p>
+
+      <p>
+        Hop in the Yard is intens (dubbel) gedryhopt met maar liefst 20 gram Citra en Mosaic per liter. Deze grote hoeveelheid hop zorgt voor een ware smaakexplosie. De combinatie van Mosaic en Citra geeft het bier een fruitig hoppig karakter, mooie citrustonen en veel tropisch fruit. Een klein bittertje zorgt voor voldoende tegengas, de gebruikte havervlokken voor een romig mondgevoel.
+      </p>
+
+      <h3>
+        Specificaties
+      </h3>
+
+      <p>
+        <strong>Stijl:</strong> New England IPA<br>
+        <strong>ABV:</strong> 6,9%<br>
+        <strong>IBU:</strong> 35<br>
+        <strong>Hop:</strong> Citra & Mosaic<br>
+        <strong>Gist:</strong> WLP066 London Fog Ale
+      </p>
     </div>
+
+    <div class="col col-img">
+      <%= image_tag "assets/images/beers/bottle-hop-in-the-yard.png", alt: "Fles Hop in the Yard" %>
+    </div>
+
   </div>
+
+  <div class="grid-row">
+
+    <div class="col col-img">
+      <%= image_tag "assets/images/beers/bottle-just-a-backyard-ipa.png", alt: "Fles Just a Backyard IPA" %>
+    </div>
+
+    <div class="col col-txt">
+
+      <h2>
+        Just a Backyard IPA
+      </h2>
+
+      <p>
+        Just a Backyard IPA is een double dry-hopped New England style IPA.
+      </p>
+
+      <h3>
+        Specificaties
+      </h3>
+
+      <p>
+        <strong>Stijl:</strong> New England IPA<br>
+        <strong>ABV:</strong> 6,9%<br>
+        <strong>IBU:</strong> 32<br>
+        <strong>Hop:</strong> Citra, Mosaic & Galaxy<br>
+        <strong>Gist:</strong> Yeast Bay Vermont Ale
+      </p>
+    </div>
+
+  </div>
+
 </section>
