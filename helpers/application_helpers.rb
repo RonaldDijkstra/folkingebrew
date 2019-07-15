@@ -46,9 +46,17 @@ module ApplicationHelpers
     local_title || website_name
   end
 
-  # Meta description is localized_description or description
-  def meta_description
-    current_page.data.description
+  # Use frontmatter for meta description
+  def meta_description(page = current_page)
+    if content_for?(:meta_description)
+      yield_content(:meta_description)
+    elsif page.data.description
+      page.data.description
+    elsif is_blog_article?
+      Nokogiri::HTML(page.summary(160)).text
+    else
+      data.site.meta_description
+    end
   end
 
   # Robots is current page data or default
