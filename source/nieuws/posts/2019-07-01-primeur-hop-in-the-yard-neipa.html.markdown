@@ -1,11 +1,10 @@
 ---
 title: "Primeur Hop in the Yard NEIPA"
-description: "Hop in the Yard is een double dry-hopped New England style IPA, geïnspireerd door de IPA's die we zo goed kennen van de Amerikaanse oostkust."
 date: 2019-07-01 08:00 CEST
 tags: IPA
 author: Ronald
 featured: true
-image: images/blog/social/20190701-primeur-hop-in-the-yard.jpg
+image: assets/images/social/20190701-primeur-hop-in-the-yard.jpg
 featured_image: blog/20190701-primeur-hop-in-the-yard.jpg
 header_image: moods/banner-de-koffer-hop-in-the-yard.jpg
 ---

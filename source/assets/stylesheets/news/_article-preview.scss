@@ -1,0 +1,30 @@
+
+article.article-preview {
+  margin-bottom: 3em;
+  text-align: left;
+
+  .post-header {
+    margin-bottom: 0.5em;
+
+    h2 {
+      font-size: $base-font-size * 2.2;
+      margin: 0;
+      text-align: left;
+    }
+
+    a {
+      color: $dark-gray;
+      text-decoration: none;
+    }
+
+    time {
+      color: $light-gray;
+      font-size: $base-font-size * 0.8;
+    }
+  }
+
+  p {
+    margin-bottom: 1em;
+    text-align: left;
+  }
+}

@@ -1,0 +1,10 @@
+<section class="featured-article single-column">
+  <div class="grid-row">
+    <h2>
+      Nieuws
+    </h2>
+    <% blog("nieuws").articles[0..0].each do |article| %>
+      <%= partial "nieuws/article-preview", locals: { article: article }  %>
+    <% end %>
+  </div>
+</section>
