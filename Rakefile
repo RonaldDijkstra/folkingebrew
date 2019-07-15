@@ -14,8 +14,6 @@ task :serve do
 end
 
 task :data do
-  puts "== Retrieving beers..."
-  system "ruby lib/beers.rb" || exit(1)
   puts "== Retrieving checkins..."
   system "ruby lib/checkins.rb" || exit(1)
   puts "== Retrieved external data".green
@@ -24,8 +22,6 @@ end
 ## Build the website
 task :build do
   puts "== Project: " + project_name.green
-  puts "== Retrieving beers..."
-  system "ruby lib/beers.rb" || exit(1)
   puts "== Retrieving checkins..."
   system "ruby lib/checkins.rb" || exit(1)
   puts "== Retrieved external data".green
