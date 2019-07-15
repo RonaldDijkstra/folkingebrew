@@ -25,6 +25,11 @@ module ApplicationHelpers
     data.site.base_url
   end
 
+  # Permalink url for sharing
+  def permalink_url
+    full_url(current_page.url)
+  end
+
   # Get the title from frontmatter if any
   def frontmatter_title
     current_page.data.title

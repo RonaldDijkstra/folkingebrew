@@ -8,6 +8,10 @@
 
   a {
     text-decoration: none;
+
+    span {
+      display: none;
+    }
   }
 
   [class^="icon-"],
