@@ -1,32 +1,5 @@
 body.nieuws_index {
   .grid-row {
     max-width: $smallest-row;
-
-    article {
-      margin-bottom: 3em;
-
-      .post-header {
-        margin-bottom: 0.5em;
-
-        h2 {
-          font-size: $base-font-size * 2.2;
-          margin: 0;
-        }
-
-        a {
-          color: $dark-gray;
-          text-decoration: none;
-        }
-
-        time {
-          color: $light-gray;
-          font-size: $base-font-size * 0.8;
-        }
-      }
-
-      p {
-        margin-bottom: 1em;
-      }
-    }
   }
 }
