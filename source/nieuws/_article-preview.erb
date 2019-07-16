@@ -1,8 +1,8 @@
 <article class="article-preview">
   <div class="post-header">
-    <h2 class="post-title">
+    <h3 class="post-title">
       <%= link_to article.title, article.url %>
-    </h2>
+    </h3>
     <time datetime="<%= article.date.strftime("%F") %>">
       <%= I18n.l(article.date, format: :blog_date) %>
     </time>

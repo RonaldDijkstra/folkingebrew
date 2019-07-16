@@ -1,4 +1,6 @@
 section.featured-article.single-column {
+  background: lighten($untappd-gray, 4);
+
   .grid-row {
     max-width: $smallest-row;
   }

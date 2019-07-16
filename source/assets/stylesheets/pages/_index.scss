@@ -8,5 +8,9 @@ body.index {
       font-size: $base-font-size * 2.4;
       text-align: center;
     }
+
+    &.featured-article {
+      background: lighten($untappd-gray, 5);
+    }
   }
 }
