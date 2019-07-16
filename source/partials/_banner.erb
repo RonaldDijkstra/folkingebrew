@@ -15,6 +15,10 @@
         <%= content_tag h2 ||= :h2, class: "sub_title" do sub_title end %>
       <% end %>
 
+      <% if locals[:sub_text] %>
+        <%= content_tag h3 ||= :h3, class: "sub_text" do sub_text end %>
+      <% end %>
+
       <% if locals[:button_link] && locals[:button_text] %>
         <%= partial "partials/button", locals: { to: button_link,
                                                  text: button_text,
