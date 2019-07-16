@@ -5,7 +5,6 @@ $_form-box-shadow-focus: $_form-box-shadow, 0 0 5px rgba($action-color, 0.7);
 .form-grid-row {
   @include grid-container;
   @include margin(null auto);
-  max-width: 640px;
 }
 
 fieldset {

@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-description: "Neem contact op met Folkingebrew."
+description: "Heb je vragen over Folkingebrew of onze bieren? Stuur ons dan een e-mail door middel van het contactformulier."
 image: "assets/images/contact-1200x630.jpg"
 sitemap_priority: 0.5
 ---
@@ -11,26 +11,27 @@ sitemap_priority: 0.5
 
 <section class="form">
   <div class="grid-row form-grid-row">
-    <%= partial "content/contact" %>
-    <%= partial "partials/form", locals: { name: "contact",
-                                           title: "Contactformulier",
-                                           fields: ["name", "email", "message"],
-                                           button_text: "Verstuur",
-                                           button_variant: "big"} %>
-  </div>
-</section>
-
-<section>
-  <div class="grid-row form-grid-row">
-    <h2>
-      Contactgegevens
-    </h2>
-    <strong>Folkingebrew</strong><br>
-    Folkingestraat 18<br>
-    9711 JW<br>
-    Groningen<br>
-    <%= link_to "folkingebrew@gmail.com", "mailto:folkingebrew@gmail.com" %><br>
-    KVK: 71770895
+    <div class="col">
+      <%= partial "content/contact" %>
+      <%= partial "partials/form", locals: { name: "contact",
+                                             title: "Contactformulier",
+                                             fields: ["name", "email", "message"],
+                                             button_text: "Verstuur",
+                                             button_variant: "big"} %>
+    </div>
+    <div class="col">
+      <h2>
+        Contactgegevens
+      </h2>
+      <p>
+        <strong>Folkingebrew</strong><br>
+          Folkingestraat 18<br>
+          9711 JW<br>
+          Groningen<br>
+        <%= link_to "folkingebrew@gmail.com", "mailto:folkingebrew@gmail.com" %><br>
+        KVK: 71770895
+      </p>
+    </div>
   </div>
 </section>
 

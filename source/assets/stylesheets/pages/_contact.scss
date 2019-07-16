@@ -1,0 +1,19 @@
+body.contact {
+  .form-grid-row {
+    @include grid-media($for-desktop-up) {
+      display: flex;
+      max-width: $small-row;
+    }
+
+    .col {
+      &:first-child {
+        margin-bottom: 2em;
+
+        @include grid-media($for-desktop-up) {
+          margin-bottom: 0;
+          margin-right: 4em;
+        }
+      }
+    }
+  }
+}
