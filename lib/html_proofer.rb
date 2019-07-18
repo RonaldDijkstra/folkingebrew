@@ -16,7 +16,7 @@ options = {
   check_html: true, validation: { report_missing_names: false },
   check_favicon: false,
   check_opengraph: true,
-  http_status_ignore: [0, 999, 403, 401],
+  http_status_ignore: [999, 403, 401],
   typhoeus: { timeout: 30 }
 }
 
