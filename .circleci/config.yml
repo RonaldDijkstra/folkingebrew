@@ -13,7 +13,8 @@ jobs:
         key: v1-folkingebrew-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run: set -e
+             bundle install --path vendor/bundle
 
       # Cache Dependencies
       - type: cache-save
