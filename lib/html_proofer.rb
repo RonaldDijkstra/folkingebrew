@@ -11,13 +11,11 @@ raise IOError, "Directory ./build does not exist." unless Dir.exist?("./build")
 options = {
   log_level: :debug,
   check_img_http: true,
-  disable_external: true,
   allow_hash_href: true,
   check_html: true, validation: { report_missing_names: false },
   check_favicon: false,
   check_opengraph: true,
-  http_status_ignore: [0, 999, 403, 401],
-  typhoeus: { timeout: 30 }
+  http_status_ignore: [999, 403, 401]
 }
 
 # Run html-proofer on build directory
