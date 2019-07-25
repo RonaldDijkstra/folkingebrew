@@ -2,7 +2,7 @@ Folkingebrew is in 2017 opgericht om de bieren te brouwen die wij zelf graag dri
 
 ## Folkingebrew
 
-Het eerste deel van onze naam (Folkinge) verwijst naar de locatie waar we zijn begonnen met brouwen: in de _'backyard'_ van bierwinkel [Just in Beer](https://www.justinbeer.nl){:target="_blank"} aan de Folkingestraat in Groningen. _Brew_ refereert aan de Amerikaanse en Britse craft beer culture, waar we onze inspiratie grotendeels vandaan halen.
+Het eerste deel van onze naam (Folkinge) verwijst naar de locatie waar we zijn begonnen met brouwen: in de _'backyard'_ van een bierzaak aan de Folkingestraat in Groningen. _Brew_ refereert aan de Amerikaanse en Britse craft beer culture, waar we onze inspiratie grotendeels vandaan halen.
 
 ## Releases
 
