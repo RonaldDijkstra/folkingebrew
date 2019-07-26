@@ -3,13 +3,15 @@
 require "open-uri"
 require "nokogiri"
 require "json"
+require_relative "colorizer"
 
 begin
+  puts "== Trying to fetch checkins..."
   url = "https://untappd.com/Folkingebrew"
   doc = Nokogiri::HTML(open(url))
   checkins = doc.css("#main-stream .item")
 
-  puts "= Retrieving checkins succeeded, writing checkins.yml"
+  puts "== Fetching checkins succeeded, writing checkins.yml".green
 
   File.open("data/checkins.yml", "w") do |f|
     checkins.each do |checkin|
@@ -28,10 +30,9 @@ begin
       date = Time.parse(date_time)
       f.write("\s\sdate: \"#{date.day}-#{date.month}-#{date.year}\"\n")
     end
+    puts "== Writing checkins.yml completed".green
   end
-
 rescue OpenURI::HTTPError => e
-
-  puts "Retrieving data failed due to #{e}"
-
+  puts "== Fetching checkins failed due to #{e}".red
+  puts "== Skipping writing checkins.yml and using old file instead".red
 end
