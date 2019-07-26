@@ -6,7 +6,7 @@ require "json"
 require_relative "colorizer"
 
 begin
-  puts "== Trying to fetch checkins..."
+  puts "== Trying to fetch checkins from Untappd...".yellow
   url = "https://untappd.com/Folkingebrew"
   doc = Nokogiri::HTML(open(url))
   checkins = doc.css("#main-stream .item")
@@ -30,9 +30,9 @@ begin
       date = Time.parse(date_time)
       f.write("\s\sdate: \"#{date.day}-#{date.month}-#{date.year}\"\n")
     end
-    puts "== Writing checkins.yml completed".green
+    puts "== Writing checkins.yml succeeded".green
   end
 rescue OpenURI::HTTPError => e
-  puts "== Fetching checkins failed due to #{e}".red
-  puts "== Skipping writing checkins.yml and using old file instead".red
+  puts "== Fetching checkins failed due to Untappd returning #{e}".red
+  puts "== Skipping writing checkins.yml and using old file instead"
 end

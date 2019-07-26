@@ -9,7 +9,7 @@ end
 ## Serve
 task :serve do
   puts "== Project: " + project_name.green
-  puts "== Start server..."
+  puts "== Start kettle..".yellow
   system "bundle exec middleman serve" || exit(1)
 end
 
@@ -19,9 +19,9 @@ end
 
 ## Build the website
 task :build do
-  puts "== Project: " + project_name.green
+  puts "== Project: " + project_name
   system "ruby lib/checkins.rb" || exit(1)
-  puts "== Brewing...".green
+  puts "== Brewing the website..."
   system "bundle exec middleman build" || exit(1)
 end
 
@@ -29,10 +29,11 @@ end
 task :proof do
   puts "== Project: " + project_name.green
   system "ruby lib/checkins.rb" || exit(1)
-  puts "== Brewing in verbose mode...".green
+  puts "== Brewing the website in verbose mode..."
   system "bundle exec middleman build --verbose" || exit(1)
+  puts "== Fermenting complete!".green
   # Run html-proofer with options
-  puts "== Proofing the brew...".green
+  puts "== Proofing the brew..."
   system "ruby lib/html_proofer.rb" || exit(1)
 end
 
