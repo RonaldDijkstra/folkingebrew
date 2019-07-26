@@ -8,7 +8,7 @@
       <% data.checkins[0..5].each do |item| %>
         <div class="checkin-item">
           <div class="row row-img">
-            <img src="<%= item.image %>" alt="<%= item.title %>">
+            <img src="<%= item.image %>" alt="<%= item.title %>" title="<%= item.title %>">
           </div>
           <div class="row row-text">
             <div class="user"><%= item.user %></div>
