@@ -14,17 +14,13 @@ task :serve do
 end
 
 task :data do
-  puts "== Retrieving checkins..."
   system "ruby lib/checkins.rb" || exit(1)
-  puts "== Retrieved external data".green
 end
 
 ## Build the website
 task :build do
   puts "== Project: " + project_name.green
-  puts "== Retrieving checkins..."
   system "ruby lib/checkins.rb" || exit(1)
-  puts "== Retrieved external data".green
   puts "== Brewing...".green
   system "bundle exec middleman build" || exit(1)
 end
@@ -32,6 +28,7 @@ end
 ## Build & Proof
 task :proof do
   puts "== Project: " + project_name.green
+  system "ruby lib/checkins.rb" || exit(1)
   puts "== Brewing in verbose mode...".green
   system "bundle exec middleman build --verbose" || exit(1)
   # Run html-proofer with options
