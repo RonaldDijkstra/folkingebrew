@@ -28,6 +28,7 @@ end
 ## Build & Proof
 task :proof do
   puts "== Project: " + project_name.green
+  system "ruby lib/checkins.rb" || exit(1)
   puts "== Brewing in verbose mode...".green
   system "bundle exec middleman build --verbose" || exit(1)
   # Run html-proofer with options
