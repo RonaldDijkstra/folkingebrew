@@ -11,13 +11,14 @@ url = "https://untappd.com/Folkingebrew"
 
 begin
   unless checkins
-    puts "== Opening connection with Folkingebrew Untapdd"
+
+    puts "== Opening connection with #{url}" if retries.zero?
     doc = Nokogiri::HTML(open(url))
     puts "== Fetching checkins"
     checkins = doc.css("#main-stream .item")
   end
 rescue OpenURI::HTTPError => e
-  if (retries += 1) <= 10
+  if (retries += 1) <= 1
     puts "== Error (#{e}), retrying in #{retries} second(s)...".red
     sleep(retries)
   else
@@ -26,7 +27,6 @@ rescue OpenURI::HTTPError => e
   retry
 ensure
   if checkins
-    puts "== Checkins fetched"
     puts "== Building checkins.yml"
 
     File.open("data/checkins.yml", "w") do |f|
@@ -46,7 +46,8 @@ ensure
         date = Time.parse(date_time)
         f.write("\s\sdate: \"#{date.day}-#{date.month}-#{date.year}\"\n")
       end
-      puts "== Checkins.yml building succeeded".green
+
+      puts "== Checkins.yml built".green
     end
   end
 end
