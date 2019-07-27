@@ -23,6 +23,7 @@ class Checkins
     end
     retry
   else
+    puts "== Successfully connected".green
     puts "== Fetching checkins..."
     checkins = doc.css("#main-stream .item")
   ensure
