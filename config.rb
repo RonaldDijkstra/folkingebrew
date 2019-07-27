@@ -59,6 +59,8 @@ end
 
 # Settings for production
 configure :production do
+  require "lib/checkins"
+  
   activate :asset_hash, ignore: [
     %r{^assets/fonts/.*},
     "assets/images/logo-folkingebrew-black.svg"
