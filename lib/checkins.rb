@@ -10,24 +10,22 @@ retries = 0
 url = "https://untappd.com/Folkingebrew"
 
 begin
-  unless checkins
-
-    puts "== Opening connection with #{url}" if retries.zero?
-    doc = Nokogiri::HTML(open(url))
-    puts "== Fetching checkins"
-    checkins = doc.css("#main-stream .item")
-  end
+  puts "== Opening connection with #{url}...".green if retries.zero?
+  doc = Nokogiri::HTML(open(url))
 rescue OpenURI::HTTPError => e
-  if (retries += 1) <= 1
-    puts "== Error (#{e}), retrying in #{retries} second(s)...".red
-    sleep(retries)
+  if (retries += 1) <= 10
+    puts "== Error (#{e}), retrying in 1 second... ".red
+    sleep(1)
   else
     raise e
   end
   retry
+else
+  puts "== Fetching checkins..."
+  checkins = doc.css("#main-stream .item")
 ensure
   if checkins
-    puts "== Building checkins.yml"
+    puts "== Building checkins.yml..."
 
     File.open("data/checkins.yml", "w") do |f|
       checkins.each do |checkin|
