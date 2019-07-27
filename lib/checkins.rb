@@ -5,34 +5,48 @@ require "nokogiri"
 require "json"
 require_relative "colorizer"
 
+checkins = nil
+retries = 0
+url = "https://untappd.com/Folkingebrew"
+
 begin
-  puts "== Trying to fetch checkins from Untappd...".yellow
-  url = "https://untappd.com/Folkingebrew"
-  doc = Nokogiri::HTML(open(url))
-  checkins = doc.css("#main-stream .item")
-
-  puts "== Fetching checkins succeeded, writing checkins.yml".green
-
-  File.open("data/checkins.yml", "w") do |f|
-    checkins.each do |checkin|
-      next unless checkin.css("p.photo img").attr("data-original")
-
-      user = checkin.at(".text .user").text
-      f.write("- user: \"#{user}\"\n")
-
-      title = checkin.at(".text").text.strip.gsub(/\s+/, " ")
-      f.write("\s\stitle: \"#{title}\"\n")
-
-      checkin_image = checkin.css("p.photo img").attr("data-original")
-      f.write("\s\simage: \"#{checkin_image}\"\n")
-
-      date_time = checkin.at(".time").text
-      date = Time.parse(date_time)
-      f.write("\s\sdate: \"#{date.day}-#{date.month}-#{date.year}\"\n")
-    end
-    puts "== Writing checkins.yml succeeded".green
+  unless checkins
+    puts "== Opening connection with Folkingebrew Untapdd"
+    doc = Nokogiri::HTML(open(url))
+    puts "== Fetching checkins"
+    checkins = doc.css("#main-stream .item")
   end
 rescue OpenURI::HTTPError => e
-  puts "== Fetching checkins failed due to Untappd returning #{e}".red
-  puts "== Skipping writing checkins.yml and using old file instead"
+  if (retries += 1) <= 10
+    puts "== Error (#{e}), retrying in #{retries} second(s)...".red
+    sleep(retries)
+  else
+    raise e
+  end
+  retry
+ensure
+  if checkins
+    puts "== Checkins fetched"
+    puts "== Building checkins.yml"
+
+    File.open("data/checkins.yml", "w") do |f|
+      checkins.each do |checkin|
+        next unless checkin.css("p.photo img").attr("data-original")
+
+        user = checkin.at(".text .user").text
+        f.write("- user: \"#{user}\"\n")
+
+        title = checkin.at(".text").text.strip.gsub(/\s+/, " ")
+        f.write("\s\stitle: \"#{title}\"\n")
+
+        checkin_image = checkin.css("p.photo img").attr("data-original")
+        f.write("\s\simage: \"#{checkin_image}\"\n")
+
+        date_time = checkin.at(".time").text
+        date = Time.parse(date_time)
+        f.write("\s\sdate: \"#{date.day}-#{date.month}-#{date.year}\"\n")
+      end
+      puts "== Checkins.yml building succeeded".green
+    end
+  end
 end
