@@ -17,9 +17,8 @@ begin
     checkins = doc.css("#main-stream .item")
   end
 rescue OpenURI::HTTPError => e
-  if (retries += 1) <= 5
-    puts "== #{e}".red
-    puts "== Error (#{e}), retrying in #{retries} second(s)..."
+  if (retries += 1) <= 10
+    puts "== Error (#{e}), retrying in #{retries} second(s)...".red
     sleep(retries)
   else
     raise e
@@ -27,6 +26,7 @@ rescue OpenURI::HTTPError => e
   retry
 ensure
   if checkins
+    puts "== Checkins fetched"
     puts "== Building checkins.yml"
 
     File.open("data/checkins.yml", "w") do |f|
@@ -46,7 +46,7 @@ ensure
         date = Time.parse(date_time)
         f.write("\s\sdate: \"#{date.day}-#{date.month}-#{date.year}\"\n")
       end
-      puts "== Building checkins.yml succeeded".green
+      puts "== Checkins.yml building succeeded".green
     end
   end
 end
