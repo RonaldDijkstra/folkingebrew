@@ -32,7 +32,7 @@ task :proof do
   puts "== Fermenting complete!".green
   # Run html-proofer with options
   puts "== Proofing the brew..."
-  system "ruby lib/html_proofer.rb" || exit(1)
+  system "ruby html_proofer.rb" || exit(1)
 end
 
 def git_branch_name
