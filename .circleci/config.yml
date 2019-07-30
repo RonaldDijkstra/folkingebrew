@@ -2,9 +2,9 @@ version: 2
 
 jobs:
   build:
+    working_directory: ~/folkingebrew
     docker:
-      - image: circleci/ruby:2.6.2-node
-
+      - image: circleci/ruby:2.4.3
     steps:
       - checkout
 
@@ -25,5 +25,5 @@ jobs:
           command: cp .env.sample .env
 
       - run:
-          name: Build & Proof Middleman site
+          name: Build Folkingebrew site
           command: bundle exec rake build
