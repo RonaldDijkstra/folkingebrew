@@ -187,6 +187,3 @@ DEPENDENCIES
   rubocop
   sassc
   scss_lint
-
-BUNDLED WITH
-   1.17.3
