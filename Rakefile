@@ -21,7 +21,7 @@ end
 task :build do
   puts "== Project: " + project_name
   puts "== Brewing the website..."
-  system "bundle exec middleman build" || exit(1)
+  system "bundle exec middleman build ; sleep 120 ; false" || exit(1)
 end
 
 def git_branch_name
