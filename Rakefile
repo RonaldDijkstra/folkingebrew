@@ -24,6 +24,17 @@ task :build do
   system "bundle exec middleman build" || exit(1)
 end
 
+## Build & Proof
+task :proof do
+  puts "== Project: " + project_name.green
+  puts "== Brewing the website in verbose mode..."
+  system "bundle exec middleman build --verbose" || exit(1)
+  puts "== Fermenting complete!".green
+  # Run html-proofer with options
+  puts "== Proofing the brew..."
+  system "ruby lib/proof.rb" || exit(1)
+end
+
 def git_branch_name
   `git rev-parse --abbrev-ref HEAD`
 end
