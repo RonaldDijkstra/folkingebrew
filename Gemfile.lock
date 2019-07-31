@@ -10,9 +10,9 @@ GEM
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     ast (2.4.0)
-    autoprefixer-rails (9.4.10.2)
+    autoprefixer-rails (9.6.1)
       execjs
-    backports (3.14.0)
+    backports (3.15.0)
     bourbon (6.0.0)
       thor (~> 0.19)
     builder (3.2.3)
@@ -22,7 +22,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     contracts (0.13.0)
-    dotenv (2.7.2)
+    dotenv (2.7.5)
     erubis (2.7.0)
     ethon (0.12.0)
       ffi (>= 1.3.0)
@@ -30,7 +30,7 @@ GEM
     fast_blank (1.0.0)
     fastimage (2.1.5)
     ffi (1.11.1)
-    haml (5.0.4)
+    haml (5.1.1)
       temple (>= 0.8.0)
       tilt
     hamster (3.0.0)
@@ -122,13 +122,13 @@ GEM
     rails-assets-jquery (3.4.1)
     rails-assets-what-input (5.2.1)
     rainbow (3.0.0)
-    rake (12.3.2)
+    rake (12.3.3)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    redcarpet (3.4.0)
+    redcarpet (3.5.0)
     rss (0.2.8)
-    rubocop (0.73.0)
+    rubocop (0.74.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.6)
@@ -189,4 +189,4 @@ DEPENDENCIES
   scss_lint
 
 BUNDLED WITH
-   1.17.3
+   1.16.2
