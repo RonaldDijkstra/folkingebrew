@@ -24,6 +24,7 @@ gem "neat"
 
 # Extensions
 gem "rake"
+gem "mini_racer"
 
 # Frontend
 source "https://rails-assets.org" do
