@@ -6,24 +6,24 @@ jobs:
       - image: circleci/ruby:2.6.2-node
 
     steps:
-    - checkout
+      - checkout
 
-    - restore_cache:
-      key: middleman-project-{{ arch }}-{{ checksum "Gemfile.lock" }}
+      - restore_cache:
+        key: middleman-project-{{ arch }}-{{ checksum "Gemfile.lock" }}
 
-    - run:
-      name: Install Ruby dependencies
-      command: bundle install --path vendor/bundle
+      - run:
+        name: Install Ruby dependencies
+        command: bundle install --path vendor/bundle
 
-    - save_cache:
-      key: middleman-project-{{ arch }}-{{ checksum "Gemfile.lock" }}
-      paths:
-        - vendor/bundle
+      - save_cache:
+        key: middleman-project-{{ arch }}-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
 
-    - run:
-      name: Setup the environment
-      command: cp .env.sample .env
+      - run:
+        name: Setup the environment
+        command: cp .env.sample .env
 
-    - run:
-      name: Build Folkingebrew Website
-      command: bundle exec rake build
+      - run:
+        name: Build Folkingebrew Website
+        command: bundle exec rake build
