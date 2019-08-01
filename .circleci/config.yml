@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/folkingebrew
+    docker:
+      - image: circleci/ruby:2.6.2-node
+    steps:
+      - checkout
+
+      # Restore Cached Dependencies
+      - type: cache-restore
+        name: Restore bundle cache
+        key: v1-folkingebrew-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+
+      # Cache Dependencies
+      - type: cache-save
+        name: Save bundle cache
+        key: v1-folkingebrew-{{ checksum "Gemfile.lock" }}
+        paths:
+          - ./vendor/bundle
+
+      - run: bundle exec rake build
