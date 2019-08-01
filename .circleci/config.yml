@@ -9,21 +9,21 @@ jobs:
       - checkout
 
       - restore_cache:
-        key: middleman-project-{{ arch }}-{{ checksum "Gemfile.lock" }}
+          key: middleman-project-{{ arch }}-{{ checksum "Gemfile.lock" }}
 
       - run:
-        name: Install Ruby dependencies
-        command: bundle install --path vendor/bundle
+          name: Install Ruby dependencies
+          command: bundle install --path vendor/bundle
 
       - save_cache:
-        key: middleman-project-{{ arch }}-{{ checksum "Gemfile.lock" }}
-        paths:
-          - vendor/bundle
+          key: middleman-project-{{ arch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
 
       - run:
-        name: Setup the environment
-        command: cp .env.sample .env
+          name: Setup the environment
+          command: cp .env.sample .env
 
       - run:
-        name: Build Folkingebrew Website
-        command: bundle exec rake build
+          name: Build the website
+          command: bundle exec rake build
