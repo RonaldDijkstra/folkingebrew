@@ -24,6 +24,25 @@ task :build do
   system "bundle exec middleman build" || exit(1)
 end
 
+# Test Suite
+namespace :test do
+  def test(test)
+    puts "== Project: " + project_name.green
+    puts "== Test: #{test}"
+  end
+
+  task :html do
+    test :html
+    system "bundle exec middleman build --verbose"
+    system "ruby test.rb"
+  end
+
+  task :ruby do
+    test :ruby
+    system "rubocop"
+  end
+end
+
 def git_branch_name
   `git rev-parse --abbrev-ref HEAD`
 end
