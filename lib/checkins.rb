@@ -13,7 +13,7 @@ class Checkins
 
   begin
     puts "== Opening connection with #{url}...".green if retries.zero?
-    doc = Nokogiri::HTML(open(url))
+    doc = Nokogiri::HTML(URI.parse(url).open)
   rescue OpenURI::HTTPError => e
     raise e unless (retries += 1) <= 2
 
