@@ -1,15 +1,18 @@
+# frozen_string_literal: true
+
 # From https://github.com/vishaltelangre/term-colorizer/blob/master/lib/term-colorizer/colorizer.rb
 module Term
+  # To colorize iterm
   module Colorizer
     # Standard ANSI color-codes configuration.
     TC_CONFIG = {
-      :colors    => {
-        :black  => 30, :red   => 31, :green   => 32,
-        :yellow => 33, :blue  => 34, :magenta => 35,
-        :cyan   => 36, :white => 37
+      colors: {
+        black: 30, red: 31, green: 32,
+        yellow: 33, blue: 34, magenta: 35,
+        cyan: 36, white: 37
       },
-      :bg_colors => {}
-    }
+      bg_colors: {}
+    }.freeze
 
     TC_CONFIG[:colors].map do |key, value|
       TC_CONFIG[:bg_colors][key] = value + 10
