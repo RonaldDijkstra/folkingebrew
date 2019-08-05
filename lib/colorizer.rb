@@ -1,20 +1,24 @@
+# frozen_string_literal: true
+
 # From https://github.com/vishaltelangre/term-colorizer/blob/master/lib/term-colorizer/colorizer.rb
 module Term
+  # To colorize iterm
   module Colorizer
     # Standard ANSI color-codes configuration.
     TC_CONFIG = {
-      :colors    => {
-        :black  => 30, :red   => 31, :green   => 32,
-        :yellow => 33, :blue  => 34, :magenta => 35,
-        :cyan   => 36, :white => 37
+      colors: {
+        black: 30, red: 31, green: 32,
+        yellow: 33, blue: 34, magenta: 35,
+        cyan: 36, white: 37
       },
-      :bg_colors => {}
-    }
+      bg_colors: {}
+    }.freeze
 
     TC_CONFIG[:colors].map do |key, value|
       TC_CONFIG[:bg_colors][key] = value + 10
     end
 
+    # Methods for Instances
     module InstanceMethods
       # Returns list of normal color methods.
       def color_methods
@@ -41,16 +45,21 @@ module Term
         methods += color_methods
         methods += bright_color_methods
         methods += bg_color_methods
-        methods += [
-                    :underline, :strikethrough, :term_colorizer_methods,
-                    :fancy_color_methods, :no_underline, :no_strikethrough,
-                    :no_color, :no_bg_color, :plain_text, :reset_fancyness
-                  ]
+        methods + %i[  underline
+                       strikethrough
+                       term_colorizer_methods
+                       fancy_color_methods
+                       no_underline
+                       no_strikethrough
+                       no_color
+                       no_bg_color
+                       plain_text
+                       reset_fancyness ]
       end
 
       # Alias of `term_colorizer_methods` method.
       def fancy_color_methods
-        self.term_colorizer_methods
+        term_colorizer_methods
       end
 
       # Overrides `method_missing` method's default behaviour to define the
@@ -113,21 +122,21 @@ module Term
       # Private method returns string by adding normal color effect
       def add_normal_color(str, color)
         str = reset_prev_formatting str, :color
-        "\e[#{TC_CONFIG[:colors][color].to_s}m#{str}"
+        "\e[#{TC_CONFIG[:colors][color]}m#{str}"
       end
 
       # Private method returns string by adding bright (bold) color effect
       def add_bright_color(str, color)
         color = color.to_s.sub("bright_", "").to_sym
         str   = reset_prev_formatting str, :color
-        "\e[1m\e[#{TC_CONFIG[:colors][color].to_s}m#{str}"
+        "\e[1m\e[#{TC_CONFIG[:colors][color]}m#{str}"
       end
 
       # Private method returns string by adding background color effect
       def add_bg_color(str, color)
         color = color.to_s.sub("bg_", "").to_sym
         str   = reset_prev_formatting str, :bg_color
-        "\e[#{TC_CONFIG[:bg_colors][color].to_s}m#{str}"
+        "\e[#{TC_CONFIG[:bg_colors][color]}m#{str}"
       end
 
       def add_underline(str)
@@ -161,7 +170,7 @@ module Term
           str = str + "\e[0m" unless str.end_with? "\e[0m"
         end
 
-        return str
+        str
       end
     end
 
@@ -171,6 +180,7 @@ module Term
   end
 end
 
+# String
 class String
   include Term::Colorizer
 end

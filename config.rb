@@ -26,16 +26,12 @@ set :css_dir, "assets/stylesheets"
 set :fonts_dir, "assets/fonts"
 set :images_dir, "assets/images"
 set :js_dir, "assets/javascripts"
-set :markdown,
-  autolink: true,
-  fenced_code_blocks: true,
-  footnotes: true,
-  highlight: true,
-  smartypants: true,
-  strikethrough: true,
-  tables: true,
-  with_toc_data: true
+
+# Use kramdown for markdown
+# https://kramdown.gettalong.org/
 set :markdown_engine, :kramdown
+set :markdown, input: "GFM",
+               auto_ids: true
 
 page "/*.json", layout: false
 page "/*.txt", layout: false
@@ -60,7 +56,7 @@ end
 # Settings for production
 configure :production do
   require "lib/checkins"
-  
+
   activate :asset_hash, ignore: [
     %r{^assets/fonts/.*},
     "assets/images/logo-folkingebrew-black.svg"

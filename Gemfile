@@ -12,7 +12,6 @@ gem "middleman-sprockets"
 
 # Templating Engines
 gem "builder"
-gem "redcarpet"
 gem "sassc"
 
 # Feed
