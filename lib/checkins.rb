@@ -3,7 +3,6 @@
 require "open-uri"
 require "nokogiri"
 require "json"
-require_relative "colorizer"
 
 # Get checkins
 class Checkins
@@ -12,7 +11,7 @@ class Checkins
   url = "https://untappd.com/Folkingebrew"
 
   begin
-    puts "== Opening connection with #{url}...".green if retries.zero?
+    puts "== Opening connection with #{url}..." if retries.zero?
     doc = Nokogiri::HTML(URI.parse(url).open)
   rescue OpenURI::HTTPError => e
     raise e unless (retries += 1) <= 2
@@ -21,7 +20,7 @@ class Checkins
     sleep(1)
     retry
   else
-    puts "== Successfully connected".green
+    puts "== Successfully connected"
     puts "== Fetching checkins..."
     checkins = doc.css("#main-stream .item")
   ensure
@@ -46,7 +45,7 @@ class Checkins
           f.write("\s\sdate: \"#{date.day}-#{date.month}-#{date.year}\"\n")
         end
 
-        puts "== Checkins.yml built".green
+        puts "== Checkins.yml built"
       end
     end
   end
