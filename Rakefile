@@ -1,15 +1,13 @@
 # frozen_string_literal: true
 
-require_relative "./lib/colorizer"
-
 def project_name
   "Folkingebrew 🍺"
 end
 
 ## Serve
 task :serve do
-  puts "== Project: " + project_name.green
-  puts "== Start kettle...".yellow
+  puts "== Project: " + project_name
+  puts "== Start kettle..."
   system "bundle exec middleman serve" || exit(1)
 end
 
@@ -27,7 +25,7 @@ end
 # Test Suite
 namespace :test do
   def test(test)
-    puts "== Project: " + project_name.green
+    puts "== Project: " + project_name
     puts "== Test: #{test}"
   end
 
