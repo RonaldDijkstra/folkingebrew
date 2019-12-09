@@ -38,13 +38,13 @@ page "/*.txt", layout: false
 page "/*.xml", layout: false
 
 # With layout
-page "nieuws/index.html", layout: :blog_layout
-page "nieuws/*", layout: :post_layout
+page "blog/index.html", layout: :blog_layout
+page "blog/*", layout: :post_layout
 
 # Activate and setup the blog content type
 activate :blog do |blog|
-  blog.name = "nieuws"
-  blog.prefix = "nieuws"
+  blog.name = "blog"
+  blog.prefix = "blog"
   blog.permalink = ":title"
   blog.sources = "/posts/{year}-{month}-{day}-{title}.html"
   # blog.tag_template = "blog/tag.html"

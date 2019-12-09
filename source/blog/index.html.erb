@@ -1,14 +1,14 @@
 ---
-title: "Nieuws"
-description: "Nieuws over Folkingebrew"
-blog: nieuws
+title: "Blog"
+description: "Folkingeblog"
+blog: blog
 pageable: true
 ---
 
 <section class="single-column">
   <div class="grid-row">
     <% page_articles.each do |article| %>
-      <%= partial "nieuws/article-preview", locals: { article: article } %>
+      <%= partial "blog/article-preview", locals: { article: article } %>
     <% end %>
   </div>
 </section>
