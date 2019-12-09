@@ -9,6 +9,7 @@
 
   @include grid-media($for-desktop-up) {
     background: $white;
+    border-bottom: 1px solid $black;
     height: auto;
     position: relative;
     top: auto;
