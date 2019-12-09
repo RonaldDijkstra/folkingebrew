@@ -1,11 +1,12 @@
 .header-background {
   $image: "/assets/images/banner-lupulone.png";
 
-  background: $black url($image) no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: $black url($image) no-repeat center center;
   background-size: cover;
+
+  @include grid-media($for-desktop-up) {
+    background-attachment: fixed;
+  }
 }
 
 div.site-header {
