@@ -15,9 +15,10 @@
   </head>
   <body class="<%= page_classes %> <%= "blog-article" if is_blog_article? %>">
     <main class="main" role="main">
-      <%= partial "partials/site_header" %>
-      <%= partial "partials/site_navigation" %>
-      <%= yield %>
+      <div class="header-background">
+        <%= partial "partials/site_header" %>
+        <%= partial "partials/site_navigation" %>
+        <%= yield %>
     </main>
     <%= partial "partials/site_footer" %>
     <%= javascript_include_tag "main" %>

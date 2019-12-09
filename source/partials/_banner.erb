@@ -1,4 +1,9 @@
-<header class="banner <%= variant %>" role="banner" style="background-image: url(<%= image_path(locals[:background_image] || "banner-homepage.jpg") %>)">
+
+<% if locals[:background_image] %>
+  <header class="banner <%= variant %>" role="banner" style="background-image: url(<%= image_path(locals[:background_image]) %>)">
+<% else %>
+  <header class="banner <%= variant %>" role="banner">
+<% end %>
 
   <% if locals[:title] || locals[:text] || (locals[:button_link] && locals[:button_text]) %>
     <div class="grid-row">

@@ -5,15 +5,15 @@ sitemap_priority: 1
 blog: blog
 ---
 
-<%= partial "partials/banner", locals: { variant: "variant-big",
-                                         background_image: "banner-lupulone.png",
-                                         title: "Wij zijn Folkingebrew",
-                                         sub_title: "Onze missie: bieren brouwen die wij zelf graag drinken",
-                                         button_text: "Onze Bieren →",
-                                         button_link: "/onze-bieren/",
-                                         button_variant: "green big"
-
-                                       } %>
+  <%= partial "partials/banner", locals: { variant: "variant-big",
+                                           # background_image: "banner-lupulone.png",
+                                           title: "Wij zijn Folkingebrew",
+                                           sub_title: "Onze missie: bieren brouwen die wij zelf graag drinken",
+                                           button_text: "Onze Bieren →",
+                                           button_link: "/onze-bieren/",
+                                           button_variant: "green big"
+                                         } %>
+</div>
 
 <%= partial "partials/featured-article" %>
 <%= partial "partials/checkins" %>

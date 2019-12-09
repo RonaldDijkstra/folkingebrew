@@ -1,5 +1,15 @@
+.header-background {
+  $image: "/assets/images/banner-lupulone.png";
+
+  background: $black url($image) no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 div.site-header {
-  background-color: $black;
+  background-color: transparent;
   color: $white;
   position: relative;
   text-align: center;

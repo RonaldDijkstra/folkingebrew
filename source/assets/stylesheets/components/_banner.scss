@@ -1,7 +1,4 @@
 header {
-  $banner-image: "../images/banner-homepage.jpg";
-
-  background: url($banner-image) no-repeat center center fixed;
   background-attachment: scroll;
   background-size: cover;
   color: $white;
@@ -9,7 +6,7 @@ header {
   position: relative;
 
   @include grid-media($for-desktop-up) {
-    background-attachment: inherit;
+    //background-attachment: inherit;
     background-position: center;
     padding: 0;
   }
