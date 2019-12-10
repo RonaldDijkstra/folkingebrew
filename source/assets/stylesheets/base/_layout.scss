@@ -14,6 +14,12 @@ html {
 html,
 body {
   height: 100%;
+
+  @include grid-media($for-desktop-up) {
+    &.increase-height {
+      padding-top: 72px;
+    }
+  }
 }
 
 body {

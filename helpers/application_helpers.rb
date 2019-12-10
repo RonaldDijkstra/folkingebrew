@@ -80,13 +80,13 @@ module ApplicationHelpers
     current_page.url == "/404.html"
   end
 
-  def news?(page = current_page)
-    page.url.start_with?("/nieuws/")
+  def blog?(page = current_page)
+    page.url.start_with?("/blog/")
   end
 
   def current_page_url
-    if current_page.url.start_with?("/nieuws/")
-      "/nieuws/"
+    if current_page.url.start_with?("/blog/")
+      "/blog/"
     else
       current_page.url
     end
