@@ -40,7 +40,7 @@ Met smaaktonen van ananas, steen- en citrusfruit, aangevuld met een sappig en ro
 
 Voor het eerst hebben we een bier afgevuld op blik. De voordelen (licht- en luchtdicht) en de uitstraling (blik = awesome) hebben voor ons de doorslag gegeven om dit nu te doen. Afvullen op blik past helemaal in onze filosofie om geen concessies te doen aan wat we zelf zo mooi vinden.
 
-### Specificaties
+## Specificaties
 
 | Alc         | 8,5%                            |
 | IBU         | 35                              |
