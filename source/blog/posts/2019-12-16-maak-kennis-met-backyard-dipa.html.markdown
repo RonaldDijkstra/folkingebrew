@@ -42,9 +42,9 @@ Voor het eerst hebben we een bier afgevuld op blik. De voordelen (licht- en luch
 
 ## Specificaties
 
-| Alc         | 8,5%                            |
 | IBU         | 35                              |
 | Hop         | Citra, Mosaic & Galaxy          |
 | Mout        | Pilsner, Wheat, Havervlokken    |
 | Gist        | Vermont Ale                     |
+| Alcohol         | 8,5%                            |
 | Afgevuld op | 44 CL Blik & 20 L Petainer Fust |
