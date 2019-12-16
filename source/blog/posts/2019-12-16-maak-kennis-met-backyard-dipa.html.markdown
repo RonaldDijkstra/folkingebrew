@@ -1,6 +1,6 @@
 ---
 title: "Maak kennis met Backyard DIPA, onze vetste release tot nu toe"
-date: 2019-12-11 08:00 CEST
+date: 2019-12-16 08:00 CEST
 tags: DIPA
 author: Ronald
 featured: true
