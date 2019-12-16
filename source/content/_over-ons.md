@@ -1,4 +1,4 @@
-Folkingebrew is opgericht door vijf fanatieke beer geeks uit Groningen. Onze missie is bieren brouwen die wij zelf graag drinken, zonder consessies. Dit betekent dat wij bieren brouwen met een zeer uitgesproken karakter, in smaak, aroma, enzovoorts. Vanwege onze passie voor goed bier zijn we altijd op zoek naar verbeteringen en vernieuwingen.
+Folkingebrew is opgericht door vijf fanatieke beer geeks uit Groningen. Onze missie is bieren brouwen die wij zelf graag drinken, zonder concessies. Dit betekent dat wij bieren brouwen met een zeer uitgesproken karakter, in smaak, aroma, enzovoorts. Vanwege onze passie voor goed bier zijn we altijd op zoek naar verbeteringen en vernieuwingen.
 
 ## Folkingebrew
 
