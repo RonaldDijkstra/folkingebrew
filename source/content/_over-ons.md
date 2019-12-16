@@ -14,6 +14,6 @@ In juni 2019 is daar Hop in the Yard bijgekomen. Hop in the Yard is een double d
 
 Eind 2019 of begin 2020 komt daar een volgende release bij!
 
-[Onze Bieren →](/onze-bieren/)
+[Onze Bieren →](/bieren/)
 
 Stay thirsty!
