@@ -6,7 +6,6 @@ author: Ronald
 featured: true
 image: assets/images/social/201912-backyard.jpg
 featured_image: blog/201912-introducing-backyard.png
-header_image: moods/banner-backyard.png
 ---
 
 __Maak kennis met een van de dikste bieren die we tot nu toe hebben gebrouwen. Drie late hopgiften en een dubbele dryhop dragen bij aan een lichte bitterheid en een smaakexplosie van steen- en tropisch fruit. De ruime toevoeging van havervlokken zorgt voor een heerlijke juicy body. Folkingebrew introduceert met trots Backyard DIPA, onze vetste release tot nu toe.__
