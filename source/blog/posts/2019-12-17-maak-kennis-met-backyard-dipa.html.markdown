@@ -1,6 +1,6 @@
 ---
 title: "Maak kennis met Backyard DIPA, onze vetste release tot nu toe"
-date: 2019-12-16 08:00 CEST
+date: 2019-12-17 08:00 CEST
 tags: DIPA
 author: Ronald
 featured: true
@@ -48,3 +48,7 @@ Voor het eerst hebben we een bier afgevuld op blik. De voordelen (licht- en luch
 | Gist        | Vermont Ale                     |
 | Alcohol         | 8,5%                            |
 | Afgevuld op | 44 CL Blik & 20 L Petainer Fust |
+
+## Verkrijgbaarheid
+
+Backyard DIPA is zeer binnenkort verkrijgbaar. Waar en wanneer zullen we tijdig over berichten, dus hou onze kanalen in de gaten!
