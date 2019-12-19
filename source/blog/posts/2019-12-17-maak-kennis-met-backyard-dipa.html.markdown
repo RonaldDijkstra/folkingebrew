@@ -51,4 +51,4 @@ Voor het eerst hebben we een bier afgevuld op blik. De voordelen (licht- en luch
 
 ## Verkrijgbaarheid
 
-Backyard DIPA is zeer binnenkort verkrijgbaar in heel Nederland en zelf iets er buiten. Waar en wanneer zullen we tijdig over berichten, dus hou onze kanalen in de gaten!
+Backyard DIPA is zeer binnenkort verkrijgbaar in heel Nederland en zelf iets er buiten. Waar en wanneer zullen we tijdig over berichten, dus hou onze kanalen en [dit bericht](/backyard-dipa-verkrijgbaarheid/) in de gaten!
