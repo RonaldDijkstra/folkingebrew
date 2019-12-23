@@ -1,10 +1,17 @@
-<section class="featured-article single-column">
-  <div class="grid-row">
-    <h2>
-      Blog
-    </h2>
-    <% blog("blog").articles[0..0].each do |article| %>
-      <%= partial "blog/article-preview", locals: { article: article }  %>
-    <% end %>
-  </div>
-</section>
+<%
+featured = blog("blog").articles_by_locale.find { |item| item.data["featured"] rescue false }
+
+if featured
+%>
+
+  <section class="featured-article single-column">
+    <div class="grid-row">
+      <h2>
+        Blog
+      </h2>
+
+      <%= partial "blog/article-preview", locals: { article: featured }  %>
+    </div>
+  </section>
+
+<% end %>
