@@ -7,7 +7,7 @@ image: assets/images/social/201912-backyard.jpg
 featured_image: blog/201912-introducing-backyard.png
 ---
 
-__Afgelopen dinsdag 22 december hebben we [Backyard DIPA aangekondigd](/blog/maak-kennis-met-backyard-dipa/), ons nieuwe bier. In dit bericht zullen we doorlopend updaten waar deze intens gehopte Double India Pale Ale verkrijgbaar is (zolang de voorraad strekt).__
+__Afgelopen dinsdag 17 december hebben we [Backyard DIPA aangekondigd](/blog/maak-kennis-met-backyard-dipa/), ons nieuwe bier. In dit bericht zullen we doorlopend updaten waar deze intens gehopte Double India Pale Ale verkrijgbaar is (zolang de voorraad strekt).__
 
 De meeste van onze afnemers zijn actief als verified venue op Untappd. Het loont dus zeker de moeite Backyard DIPA in de gaten te houden via Untappd.
 
