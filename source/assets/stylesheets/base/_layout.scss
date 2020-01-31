@@ -1,6 +1,7 @@
 html {
   background-color: $viewport-background-color;
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 *,
@@ -14,18 +15,15 @@ html {
 html,
 body {
   height: 100%;
-
-  @include grid-media($for-desktop-up) {
-    &.increase-height {
-      padding-top: 72px;
-    }
-  }
 }
 
 body {
+  background: linear-gradient(135deg, #54b848 0%, #2f7225 100%);
   display: flex;
   flex-direction: column;
+  font-size: 1.8rem;
   margin: 0;
+  //padding-top: 7.2rem;
 }
 
 main {
@@ -34,4 +32,19 @@ main {
 
 footer {
   flex-shrink: 0;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

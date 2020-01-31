@@ -1,45 +1,255 @@
-.header-background {
-  $image: "/assets/images/banner-lupulone.png";
+body.index {
+  .site-header {
+    &.at-the-top {
+      background: transparent;
+    }
 
-  background: $black url($image) no-repeat center center;
-  background-size: cover;
-
-  @include grid-media($for-desktop-up) {
-    background-attachment: fixed;
+    &.not-at-the-top {
+      background: $black;
+    }
   }
 }
 
-div.site-header {
-  background-color: transparent;
-  color: $white;
-  position: relative;
-  text-align: center;
+header.site-header {
+  background: $black;
+  display: flex;
+  height: 8rem;
+  justify-content: space-between;
+  left: 0;
+  padding: 1.2rem 2rem;
+  position: fixed;
+  top: 0;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  z-index: 1010;
 
-  .grid-row {
-    padding: 1em 0.5em;
+  @include grid-media($for-desktop-up) {
+    height: 8rem;
+    padding: 1.2rem 4rem;
+  }
 
-    @include grid-media($for-desktop-up) {
-      padding: 1em;
+  &.hide-nav {
+    opacity: 0;
+    transform: translatey(-100%);
+  }
+
+  &.show-nav {
+    opacity: 1;
+    transform: translatey(0);
+  }
+
+  a {
+    color: $white;
+    font-family: $heading-font-family;
+    text-decoration: none;
+
+    &[aria-current]:not([aria-current="false"]),
+    &:hover {
+      color: rgba($white, 0.75);
     }
   }
 
-  a.logo {
+  .nav-menu-toggle {
+    background-color: transparent;
+    border: 0;
+    color: transparent;
     display: block;
-    margin: 0 auto;
-    text-decoration: none;
-    text-transform: uppercase;
+    font: 0/0 a;
+    position: relative;
+    text-shadow: none;
+    width: 4rem;
+    z-index: 1020;
 
     @include grid-media($for-desktop-up) {
-      margin: 20px auto;
-      text-align: center;
+      display: none;
     }
 
-    svg {
-      width: 200px;
+    .bar {
+      background-color: $white;
+      display: block;
+      height: 0.2rem;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transition: all 0.2s ease-in-out;
+      width: 2rem;
 
-      @include grid-media($for-desktop-up) {
-        width: 280px;
+      &.bottom {
+        margin-top: 0.7rem;
+      }
+
+      &.top {
+        margin-top: -0.7rem;
+      }
+    }
+  }
+
+  .logo {
+    background-color: transparent;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0;
+    color: transparent;
+    display: block;
+    font: 0/0 a;
+    height: 100%;
+    opacity: 1;
+    position: absolute;
+    text-shadow: none;
+    transition: all 0.2s ease-in-out;
+    width: 3.6rem;
+    z-index: 1020;
+
+    @include grid-media($for-desktop-up) {
+      background-position: 0;
+      height: auto;
+      position: relative;
+      width: 10rem;
+    }
+
+    @include grid-media($for-mobile) {
+      height: 100%;
+      top: 50%;
+    }
+
+    &.position-mobile-center {
+      @include grid-media($for-mobile) {
+        background-position: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+  }
+
+  .nav-wrap {
+    background: transparent;
+    //background: gray;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-between;
+    z-index: 1015;
+
+    @include grid-media($for-mobile) {
+      background: $black;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      min-height: 100vh;
+      opacity: 0;
+      overflow: scroll;
+      padding: 7.2rem 2rem 1.2rem;
+      position: fixed;
+      top: 0;
+      transition: opacity 0.4s;
+      width: 100%;
+    }
+
+    .primary-navigation {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header-navigation {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      margin-bottom: 0;
+      padding-left: 0;
+      z-index: 1015;
+
+      @include grid-media($for-mobile) {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+      }
+
+      .menu-item {
+        position: relative;
+
+        @include grid-media($for-desktop-up) {
+          margin-right: 3.6rem;
+        }
+
+        @include grid-media($for-mobile) {
+          padding: 0.4rem 0;
+        }
+
+        &:first-of-type {
+          @include grid-media($for-desktop-up) {
+            margin-left: 3.6rem;
+          }
+        }
+
+        a {
+          align-items: center;
+          display: flex;
+          font-size: $base-font-size * 1.6;
+          height: 100%;
+          letter-spacing: 0.1rem;
+          position: relative;
+          text-transform: uppercase;
+          transition: all 0.2s ease-in-out;
+          width: 100%;
+
+        }
+      }
+    }
+  }
+
+  .nav-extras {
+    display: flex;
+    z-index: 1020;
+
+    .site-header-social-links {
+      display: flex;
+      margin-left: 3.6rem;
+      transition: all 0.2s ease-in-out;
+
+      .social-icon {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-right: 1.2rem;
       }
     }
   }
 }
+
+body.nav-open {
+  .site-header {
+    .nav-wrap {
+      opacity: 1;
+      transform: translateX(0);
+      z-index: 1030;
+    }
+
+    .nav-menu-toggle {
+      z-index: 1031;
+
+      .bar {
+        &.bottom,
+        &.top {
+          margin: 0;
+          opacity: 0;
+          transform: scale(0);
+        }
+
+        &.center {
+          &.x1 {
+            transform: rotate(45deg);
+          }
+
+          &.x2 {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+

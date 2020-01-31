@@ -3,10 +3,10 @@ title: "Bedankt"
 robots: noindex,nofollow
 ---
 
-  <%= partial "partials/banner", locals: { variant: "variant-normal",
-                                           background_image: "banner-homepage.jpg",
-                                           title: "Bedankt!"} %>
-</div>
+<%= partial "partials/banner", locals: { variant: "variant-normal",
+                                         background_image: "banner-homepage.jpg",
+                                         title: "Bedankt!"} %>
+
 <section class="newsletter single-column">
   <div class="grid-row">
     <p class="thanks-message text-align-center">
@@ -14,33 +14,3 @@ robots: noindex,nofollow
     </p>
   </div>
 </section>
-
-<script>
-// Get URL parameters
-var urlParams = {};
-window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-  urlParams[key] = decodeURIComponent(value);
-});
-document.addEventListener('DOMContentLoaded', function() {
-  var messageEl = document.querySelector('body.bedankt .thanks-message');
-
-  if (urlParams.newsletter) {
-    var message;
-
-    switch (urlParams.newsletter) {
-      case 'subscribed':
-        message = 'Bevestig je aanmelding via e-mail.';
-        break;
-      case 'confirmed':
-        message = 'Top! Je aanmelding is bevestigd.'
-        break;
-      case 'unsubscribed':
-        message = 'Je hebt je succesvol uitgeschreven van onze nieuwsbrief.';
-        break;
-    }
-
-    // Replace message with newsletter message if it was a newsletter action
-    messageEl.innerHTML = message || '';
-  }
-});
-</script>

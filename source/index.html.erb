@@ -1,19 +1,21 @@
 ---
-title: "Wij zijn Folkingebrew"
+title: "Craft Beer uit Groningen"
 description: "Wij brouwen bieren die wij zelf graag drinken."
 sitemap_priority: 1
 blog: blog
 ---
 
-  <%= partial "partials/banner", locals: { variant: "variant-big",
-                                           title: "Wij zijn Folkingebrew",
-                                           sub_title: "Onze missie: bieren brouwen die wij zelf graag drinken",
-                                           button_text: "Bieren →",
-                                           button_link: "/bieren/",
-                                           button_variant: "green big"
-                                         } %>
-</div>
+<section class="hero">
 
-<%= partial "partials/featured-article" %>
-<%= partial "partials/checkins" %>
-<%= partial "partials/social-links" %>
+  <div class="grid-row">
+    <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "hero-logo" %>
+  </div>
+
+</section>
+<%#= partial "partials/banner", locals: { variant: "variant-big",
+                                         title: "Wij zijn Folkingebrew",
+                                         sub_title: "Onze missie: bieren brouwen die wij zelf graag drinken",
+                                         button_text: "Bieren →",
+                                         button_link: "/bieren/",
+                                         button_variant: "green big"
+                                       } %>
