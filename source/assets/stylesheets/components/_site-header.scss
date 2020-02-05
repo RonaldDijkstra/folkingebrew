@@ -1,7 +1,15 @@
-body.index {
+body.header-transparent {
   .site-header {
     &.at-the-top {
       background: transparent;
+
+      .logo {
+        opacity: 0;
+
+        @include grid-media($for-desktop-up) {
+          opacity: 1;
+        }
+      }
     }
 
     &.not-at-the-top {
@@ -124,7 +132,6 @@ header.site-header {
 
   .nav-wrap {
     background: transparent;
-    //background: gray;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
@@ -142,6 +149,7 @@ header.site-header {
       padding: 7.2rem 2rem 1.2rem;
       position: fixed;
       top: 0;
+      transform: translateX(-100%);
       transition: opacity 0.4s;
       width: 100%;
     }
@@ -194,7 +202,6 @@ header.site-header {
           text-transform: uppercase;
           transition: all 0.2s ease-in-out;
           width: 100%;
-
         }
       }
     }
@@ -214,6 +221,10 @@ header.site-header {
         display: flex;
         justify-content: center;
         margin-right: 1.2rem;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
       }
     }
   }
@@ -251,5 +262,3 @@ body.nav-open {
     }
   }
 }
-
-

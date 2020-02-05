@@ -1,0 +1,35 @@
+section.hero-big {
+  .grid-row {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  body.index & {
+    &::before {
+      $background-image: "../images/hero-folkingestraat.jpg";
+
+      background-image: url($background-image);
+    }
+  }
+
+  &::before {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    content: "";
+    left: 0;
+    mix-blend-mode: screen;
+    opacity: 0.15;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+section.hero {
+  height: 100%;
+  position: relative;
+}
