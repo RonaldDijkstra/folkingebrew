@@ -13,21 +13,15 @@
     <%= partial "partials/open_graph" %>
     <%= feed_tag :atom, "#{blog("blog").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
-
   <body class="<%= page_classes %> <%= current_resource.data.header_class %> <%= "blog-article" if is_blog_article? %>">
-
     <%= partial "partials/site_header" %>
-
     <main class="main" role="main">
       <%= yield %>
     </main>
-
     <%= partial "partials/site_footer" %>
-
     <%= javascript_include_tag "main" %>
     <%= partial "partials/analytics" if config[:ga_code] %>
     <%= partial "partials/schema" if current_page.url == "/" %>
     <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCl7L8yLzq9gDLi4XtKnlXKZzNX3ahqdfY&v=3.exp'></script>
   </body>
-
 </html>

@@ -1,6 +1,8 @@
 body.contact {
   .contact-form {
-    padding: 0 1em;
+    @include grid-media($for-desktop-up) {
+      padding: 0 1em;
+    }
 
     .grid-row {
       background: $white;

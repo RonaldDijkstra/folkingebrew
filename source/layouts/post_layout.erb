@@ -1,40 +1,21 @@
 <% wrap_layout :layout do %>
 
-<article role="article">
-  <div class="article-banner" style="background-image: url(<%= image_path(current_article.data.header_image) %>)">
-    <div class="grid-row">
-      <h1>
-        <%= current_article.title %>
-      </h1>
-      <time datetime="<%= current_article.date.strftime("%F") %>">
-        <%= I18n.l(current_article.date, format: :blog_date) %>
-      </time>
+  <article role="article">
+    <div class="article-banner" style="background-image: url(<%= image_path(current_article.data.header_image) %>)">
+      <div class="grid-row">
+        <h1>
+          <%= current_article.title %>
+        </h1>
+        <time datetime="<%= current_article.date.strftime("%F") %>">
+          <%= I18n.l(current_article.date, format: :blog_date) %>
+        </time>
+      </div>
     </div>
-  </div>
-  <div class="article-content">
-    <div class="grid-row">
-      <%= yield %>
-    </div>
-  </div>
-</article>
-<!--     <article role="article">
-      <header class="banner variant-normal" style="background-image: url(<%= image_path(current_article.data.header_image) %>)">
-        <div class="grid-row">
-          <h1>
-            <%= current_article.title %>
-          </h1>
-          <time datetime="<%= current_article.date.strftime("%F") %>">
-            <%= I18n.l(current_article.date, format: :blog_date) %>
-          </time>
-        </div>
-      </header>
-    </article>
-
-    <section class="content single-column">
-      <div class="grid-row post-body">
+    <div class="article-content">
+      <div class="grid-row">
         <%= yield %>
       </div>
-    </section>
-  </article> -->
+    </div>
+  </article>
 
 <% end %>
