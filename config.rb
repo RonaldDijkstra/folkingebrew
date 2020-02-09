@@ -53,6 +53,18 @@ activate :blog do |blog|
   blog.per_page = 10
 end
 
+# Activate and setup the beer content type
+activate :blog do |blog|
+  blog.name = "bieren"
+  blog.prefix = "bieren"
+  blog.permalink = ":title"
+  blog.sources = "/bieren/{year}-{month}-{day}-{title}.html"
+  # blog.tag_template = "blog/tag.html"
+  blog.paginate = true
+  blog.page_link = "{num}"
+  blog.per_page = 10
+end
+
 # Settings for production
 configure :production do
   activate :asset_hash, ignore: [
