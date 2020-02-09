@@ -2,6 +2,7 @@ html {
   background-color: $viewport-background-color;
   box-sizing: border-box;
   font-size: 62.5%;
+  height: 100%;
 }
 
 *,
@@ -10,10 +11,6 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-}
-
-html {
-  height: 100%;
 }
 
 body {

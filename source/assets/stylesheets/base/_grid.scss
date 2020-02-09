@@ -13,14 +13,8 @@ $for-mobile: (
   padding: 2em $base-spacing;
 }
 
-.single-column {
+.smallest-row {
   .grid-row {
-    max-width: $small-row;
-  }
-
-  &.small {
-    .grid-row {
-      max-width: 640px;
-    }
+    max-width: $smallest-row;
   }
 }

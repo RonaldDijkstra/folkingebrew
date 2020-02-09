@@ -20,6 +20,10 @@
       color: darken($color, 15%);
     }
   }
+
+  &.center {
+    margin: 0 auto;
+  }
 }
 
 #{$all-buttons},

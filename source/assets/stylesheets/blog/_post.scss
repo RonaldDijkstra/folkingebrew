@@ -1,47 +1,31 @@
 body.blog-article {
   article {
-    .banner {
-      background-attachment: scroll;
-      background-size: cover;
-      position: relative;
+    div.article-banner {
+      background: transparent;
+      padding-top: 8rem;
+      text-align: center;
 
-      @include grid-media($for-desktop-up) {
-        background-position: center;
-        padding: 0;
+      h1 {
+        color: $white;
+        font-size: $base-font-size * 3;
       }
 
       time {
-        position: relative;
+        color: $white;
+      }
+
+      .grid-row {
+        max-width: $smallest-row;
+        padding: 4em 0;
       }
     }
 
-    .grid-row {
-      max-width: $small-row;
-    }
+    div.article-content {
+      background: $white;
 
-    img {
-      display: block;
-      left: 50%;
-      padding: 0.6em 0;
-      position: relative;
-      transform: translateX(-50%);
-    }
-
-    h1 {
-      font-size: $base-font-size * 3;
-    }
-
-    h2 {
-      font-size: $base-font-size * 2.2;
-    }
-
-    h3 {
-      font-size: $base-font-size * 1.8;
-    }
-
-    p,
-    ul {
-      margin-bottom: 1.5em;
+      .grid-row {
+        max-width: $smallest-row;
+      }
     }
   }
 }
