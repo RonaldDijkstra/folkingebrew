@@ -6,6 +6,10 @@ $for-mobile: (
   media: "screen and (max-width: 819px)"
 );
 
+$small-screens-up: (
+  media: "screen and (min-width: 540px)"
+);
+
 .grid-row {
   @include grid-container;
   @include margin(null auto);
@@ -18,3 +22,16 @@ $for-mobile: (
     max-width: $smallest-row;
   }
 }
+
+.small-row {
+  .grid-row {
+    max-width: $small-row;
+  }
+}
+
+.wide-row {
+  .grid-row {
+    max-width: $wide-row;
+  }
+}
+

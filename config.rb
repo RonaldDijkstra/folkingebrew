@@ -40,6 +40,8 @@ page "/*.xml", layout: false
 # With layout
 page "blog/index.html", layout: :blog_layout
 page "blog/*", layout: :post_layout
+page "bieren/index.html", layout: :beer_index
+page "bieren/*", layout: :beer_post
 
 # Activate and setup the blog content type
 activate :blog do |blog|

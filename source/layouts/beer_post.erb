@@ -1,0 +1,56 @@
+<% wrap_layout :layout do %>
+  <section class="beer wide-row">
+    <div class="grid-row beer-item">
+      <div class="beer-image">
+        <%= image_tag current_article.data.image, alt: current_article.title, class: "image" %>
+      </div>
+      <div class="beer-text">
+        <div>
+          <h1>
+            <%= current_article.title %>
+          </h1>
+          <p class="description">
+            <%= current_article.data.description %>
+          </p>
+          <h4>
+            Beer Facts
+          </h4>
+          <div class="beer-facts">
+            <% if current_article.data.style %>
+              <div class="beer-fact">
+                <span class="beer-fact-label">Style</span>
+                <span class="beer-fact-value"><%= current_article.data.style %></span>
+              </div>
+            <% end %>
+            <% if current_article.data.style %>
+              <div class="beer-fact">
+                <span class="beer-fact-label">ABV</span>
+                <span class="beer-fact-value"><%= current_article.data.abv %></span>
+              </div>
+            <% end %>
+            <% if current_article.data.hops %>
+              <div class="beer-fact">
+                <span class="beer-fact-label">Hops</span>
+                <span class="beer-fact-value"><%= current_article.data.hops %></span>
+              </div>
+            <% end %>
+            <% if current_article.data.yeast %>
+              <div class="beer-fact">
+                <span class="beer-fact-label">Yeast</span>
+                <span class="beer-fact-value"><%= current_article.data.yeast %></span>
+              </div>
+            <% end %>
+          </div>
+          <% if current_article.data.ut_link %>
+            <div class="ut-link">
+              <a href="<%= current_article.data.ut_link %>" class="icon-untappd" target="_blank"></a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="grid-row back-link">
+      <%= link_to "Terug naar overzicht", "/bieren/index.html", class: "button green" %>
+    </div>
+  </section>
+<% end %>

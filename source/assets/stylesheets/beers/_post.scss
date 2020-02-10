@@ -1,0 +1,91 @@
+body.bieren {
+  &.blog-article {
+    section.beer {
+      padding-top: 8rem;
+    }
+
+    .grid-row {
+      &.beer-item {
+        height: 100%;
+        padding: 0;
+
+        @include grid-media($for-desktop-up) {
+          display: flex;
+          padding: 4em 1em 0;
+        }
+      }
+
+      &.back-link {
+        text-align: center;
+      }
+
+      .beer-image {
+        background: $dark-gray;
+        display: flex;
+        flex: 0 0 50%;
+      }
+
+      .beer-text {
+        align-items: center;
+        background: $white;
+        display: flex;
+        flex: 0 0 50%;
+        padding: 2em;
+
+        h1 {
+          font-size: $base-font-size * 2;
+          margin-bottom: 0.25em;
+
+          @include grid-media($for-desktop-up) {
+            font-size: $base-font-size * 2.4;
+          }
+        }
+
+        .description {
+          margin-bottom: 0.75em;
+        }
+
+        h4 {
+          font-size: $base-font-size * 1.4;
+        }
+
+        .beer-facts {
+          display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 0.75em;
+          width: 100%;
+        }
+
+        .beer-fact {
+          flex: 0 0 50%;
+          margin-bottom: 1em;
+
+          span {
+            display: block;
+          }
+
+          .beer-fact-label {
+            color: $light-gray;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+
+        .icon-untappd {
+          background: $green;
+          border-radius: $base-border-radius;
+          color: $white;
+          font-size: $base-font-size * 1.1;
+          padding: 0.5em;
+          text-decoration: none;
+          transition: background-color 0.2s ease;
+
+          &:hover {
+            background: darken($green, 10);
+          }
+        }
+      }
+    }
+  }
+}

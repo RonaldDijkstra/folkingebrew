@@ -11,9 +11,7 @@
 @import "base/tables";
 @import "base/typography";
 
-@import "components/beers";
 @import "components/buttons";
-@import "components/checkins";
 @import "components/forms";
 @import "components/hero";
 @import "components/icons";
@@ -27,6 +25,10 @@
 @import "pages/index";
 @import "pages/404";
 
+@import "beers/index";
+@import "beers/post";
+
 @import "blog/article-preview";
 @import "blog/index";
 @import "blog/post";
+
