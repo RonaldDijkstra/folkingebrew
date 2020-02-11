@@ -50,6 +50,7 @@ header.site-header {
     color: $white;
     font-family: $heading-font-family;
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
 
     &[aria-current]:not([aria-current="false"]),
     &:hover {
