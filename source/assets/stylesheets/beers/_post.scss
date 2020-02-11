@@ -23,6 +23,11 @@ body.bieren {
         background: $dark-gray;
         display: flex;
         flex: 0 0 50%;
+
+        .image {
+          height: 100%;
+          width: 100%;
+        }
       }
 
       .beer-text {
