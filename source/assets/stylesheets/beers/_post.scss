@@ -24,9 +24,15 @@ body.bieren {
         display: flex;
         flex: 0 0 50%;
 
-        .image {
-          height: 100%;
-          width: 100%;
+        .image-wrap {
+          align-items: center;
+          display: flex;
+          overflow: hidden;
+          position: relative;
+
+          .image {
+            width: 100%;
+          }
         }
       }
 
