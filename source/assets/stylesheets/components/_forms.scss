@@ -22,8 +22,9 @@ legend {
 
 label {
   display: block;
-  font-weight: $font-weight-regular;
-  margin-bottom: $small-spacing / 2;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $small-spacing;
+  text-transform: uppercase;
 }
 
 input,
@@ -38,11 +39,11 @@ textarea {
   appearance: none;
   background-color: $_form-background-color;
   border: $base-border;
-  border-radius: $base-border-radius;
+  //border-radius: $base-border-radius;
   box-shadow: $_form-box-shadow;
   box-sizing: border-box;
   margin-bottom: $small-spacing;
-  padding: $base-spacing / 3;
+  padding: $base-spacing;
   transition: border-color $base-duration $base-timing;
   width: 100%;
 
@@ -97,29 +98,5 @@ select {
   &:focus {
     outline: $focus-outline;
     outline-offset: $focus-outline-offset;
-  }
-}
-
-.form-inline {
-  @include grid-media($for-desktop-up) {
-    align-items: center;
-    display: flex;
-    flex-flow: row wrap;
-  }
-
-  label {
-    @include grid-media($for-desktop-up) {
-      margin: 5px 10px 5px 0;
-    }
-  }
-
-  input {
-    @include grid-media($for-desktop-up) {
-      flex: 2.5;
-      margin: 5px 10px 5px 0;
-      padding: 10px;
-      vertical-align: middle;
-      width: auto;
-    }
   }
 }

@@ -5,11 +5,11 @@ image: "beers/just-a-backyard-ipa.png"
 tags: IPA
 ut_link:
 blog_link:
-description: "Just a Backyard IPA is een double dry-hopped New England style IPA. "
+description: "Just a Backyard IPA is een double dry-hopped New England style IPA, in een bijzonder handgegraveerd flesje."
 style: New England IPA
 abv: "6,9%"
-year: 2018
+release_date: Mei 2018
 hops: Citra, Mosaic, Galaxy
 malts:
-yeast: Vermont Yeast
+yeast: Vermont
 ---

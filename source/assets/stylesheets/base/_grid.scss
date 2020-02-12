@@ -29,6 +29,12 @@ $small-screens-up: (
   }
 }
 
+.medium-row {
+  .grid-row {
+    max-width: $medium-row;
+  }
+}
+
 .wide-row {
   .grid-row {
     max-width: $wide-row;

@@ -15,31 +15,37 @@
             <%= current_article.data.description %>
           </p>
           <h4>
-            Beer Facts
+            Facts
           </h4>
           <div class="beer-facts">
             <% if current_article.data.style %>
               <div class="beer-fact">
-                <span class="beer-fact-label">Style</span>
+                <span class="beer-fact-label">Stijl</span>
                 <span class="beer-fact-value"><%= current_article.data.style %></span>
               </div>
             <% end %>
             <% if current_article.data.style %>
               <div class="beer-fact">
-                <span class="beer-fact-label">ABV</span>
+                <span class="beer-fact-label">Alc</span>
                 <span class="beer-fact-value"><%= current_article.data.abv %></span>
               </div>
             <% end %>
             <% if current_article.data.hops %>
               <div class="beer-fact">
-                <span class="beer-fact-label">Hops</span>
+                <span class="beer-fact-label">Hop</span>
                 <span class="beer-fact-value"><%= current_article.data.hops %></span>
               </div>
             <% end %>
             <% if current_article.data.yeast %>
               <div class="beer-fact">
-                <span class="beer-fact-label">Yeast</span>
+                <span class="beer-fact-label">Gist</span>
                 <span class="beer-fact-value"><%= current_article.data.yeast %></span>
+              </div>
+            <% end %>
+            <% if current_article.data.release_date %>
+              <div class="beer-fact">
+                <span class="beer-fact-label">Release Datum</span>
+                <span class="beer-fact-value"><%= current_article.data.release_date %></span>
               </div>
             <% end %>
           </div>
@@ -52,7 +58,7 @@
       </div>
     </div>
     <div class="grid-row back-link">
-      <%= link_to "Terug naar overzicht", "/bieren/index.html", class: "button green" %>
+      <%= link_to "← Terug naar overzicht", "/bieren/index.html", class: "button green big" %>
     </div>
   </section>
 <% end %>

@@ -1,13 +1,18 @@
 body.contact {
   .contact-form {
-    @include grid-media($for-desktop-up) {
-      padding: 0 1em;
-    }
-
     .grid-row {
       background: $white;
-      margin-bottom: 2em;
-      padding: 2em;
+      margin-bottom: 4em;
+      padding: 4em 2em;
+
+      .row {
+        margin: 0 auto;
+        max-width: $smallest-row;
+      }
+
+      p {
+        margin-bottom: $small-spacing * 3;
+      }
     }
   }
 }
