@@ -2,6 +2,8 @@ body.blog-article {
   article {
     div.article-banner {
       background: transparent;
+      background-attachment: scroll;
+      background-size: cover;
       padding-top: 8rem;
       text-align: center;
 
@@ -15,7 +17,6 @@ body.blog-article {
       }
 
       .grid-row {
-        max-width: $smallest-row;
         padding: 4em 1em;
       }
     }
@@ -23,8 +24,11 @@ body.blog-article {
     div.article-content {
       background: $white;
 
-      .grid-row {
-        max-width: $smallest-row;
+      img {
+        display: block;
+        left: 50%;
+        position: relative;
+        transform: translateX(-50%);
       }
     }
   }

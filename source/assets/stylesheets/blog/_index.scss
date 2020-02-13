@@ -1,5 +1,7 @@
 body.blog_index {
-  .grid-row {
-    max-width: $smallest-row;
+  section.posts {
+    .grid-row {
+      padding-top: 0;
+    }
   }
 }

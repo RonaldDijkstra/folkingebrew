@@ -26,7 +26,7 @@ Een sfeerimpressie van onze brouwdag:
 
 ![Galaxy to the max](/assets/images/blog/201912-brewday-2.jpg)
 
-![Start SG gehaald](/assets/images/blog/201912-brewday-3.jpg)
+![Begin SG gehaald](/assets/images/blog/201912-brewday-3.jpg)
 
 ## Over Backyard DIPA
 
@@ -42,13 +42,9 @@ Voor het eerst hebben we een bier afgevuld op blik. De voordelen (licht- en luch
 
 ## Specificaties
 
-| IBU         | 35                              |
 | Hop         | Citra, Mosaic & Galaxy          |
-| Mout        | Pilsner, Wheat, Havervlokken    |
-| Gist        | Vermont Ale                     |
+| Mout        | Pilsner, Tarwemout, Havervlokken    |
+| Gist        | Vermont                     |
+| IBU         | 20                             |
 | Alcohol         | 8,5%                            |
-| Afgevuld op | 44 CL Blik & 20 L Petainer Fust |
-
-## Verkrijgbaarheid
-
-Backyard DIPA is zeer binnenkort verkrijgbaar in heel Nederland en zelf er buiten.
+| Verkrijgbaar op | 44 CL Blik & 20 L Petainer Fust |

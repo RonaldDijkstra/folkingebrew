@@ -27,8 +27,12 @@ h2 {
   font-weight: $font-weight-regular;
 }
 
+h3 {
+  font-size: $base-font-size * 1.6;
+}
+
 p {
-  margin: 0 0 $small-spacing;
+  margin: 0 0 $small-spacing * 3;
 }
 
 a {
@@ -48,11 +52,11 @@ a {
 
 // Using what-intent to target specific input
 // https://github.com/ten1seven/what-input
-[data-whatintent='mouse'] *:focus {
+[data-whatintent="mouse"] *:focus {
   outline: none;
 }
 
-[data-whatintent='keyboard'] *:focus {
+[data-whatintent="keyboard"] *:focus {
   outline: 3px solid $orange;
 }
 
@@ -62,8 +66,4 @@ hr {
   border-right: 0;
   border-top: 0;
   margin: $base-spacing 0;
-}
-
-.text-align-center {
-  text-align: center;
 }
