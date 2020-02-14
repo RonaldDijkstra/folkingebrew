@@ -23,7 +23,7 @@ body {
 }
 
 main {
-  background: linear-gradient(135deg, #54b848 0%, #2f7225 100%);
+  background: linear-gradient(135deg, $green 0%, darken($green, 20%) 100%);
   flex: 1 0 auto;
 }
 

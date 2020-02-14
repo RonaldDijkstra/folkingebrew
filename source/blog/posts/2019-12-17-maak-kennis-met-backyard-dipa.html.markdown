@@ -4,7 +4,7 @@ date: 2019-12-17 08:00 CEST
 tags: DIPA
 author: Ronald
 featured: true
-image: assets/images/social/201912-backyard.jpg
+image: assets/images/social/201912-backyard.png
 featured_image: blog/201912-introducing-backyard.png
 ---
 
@@ -30,7 +30,7 @@ Een sfeerimpressie van onze brouwdag:
 
 ## Over Backyard DIPA
 
-![Backyard DIPA Cans](/assets/images/blog/201912-backyard-cans.png)
+![Backyard DIPA Cans](/assets/images/blog/201912-backyard-can.png)
 
 Backyard DIPA is een compromisloze, hazy New England Style Double India Pale Ale, intens dubbel gedryhopt met drie van onze favoriete hopsoorten: Galaxy, Mosaic en Citra. Het bier is vergist met een van de beste giststammen voor IPA's die wij kennen (Vermont Ale).
 

@@ -15,6 +15,19 @@ section.hero-big {
     }
   }
 
+  body.x404 & {
+    &::before {
+      $background-image: "../images/hero-bubbles.png";
+
+      background-image: url($background-image);
+    }
+
+    h1 {
+      color: $white;
+      font-size: $base-font-size * 2;
+    }
+  }
+
   &::before {
     background-position: 50%;
     background-repeat: no-repeat;

@@ -60,7 +60,7 @@ module ApplicationHelpers
   def og_image
     full_url(
       asset_url(
-        current_page.data.image || "assets/images/folkingebrew-1200x630.jpg"
+        current_page.data.image || "assets/images/folkingebrew-1200x1200.png"
       )
     )
   end
