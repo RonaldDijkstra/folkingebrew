@@ -2,8 +2,11 @@ body.contact {
   .contact-form {
     .grid-row {
       background: $white;
-      margin-bottom: 4em;
-      padding: 4em 2em;
+
+      @include grid-media($for-desktop-up) {
+        margin-bottom: 4em;
+        padding: 4em 2em;
+      }
 
       .row {
         margin: 0 auto;
