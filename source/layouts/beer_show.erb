@@ -24,9 +24,9 @@
                 <span class="beer-fact-value"><%= current_article.data.style %></span>
               </div>
             <% end %>
-            <% if current_article.data.style %>
+            <% if current_article.data.abv %>
               <div class="beer-fact">
-                <span class="beer-fact-label">Alc</span>
+                <span class="beer-fact-label">Alcohol</span>
                 <span class="beer-fact-value"><%= current_article.data.abv %></span>
               </div>
             <% end %>
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="grid-row back-link">
-      <%= link_to "← Alle bieren", "/bieren/index.html", class: "button green size-medium" %>
+      <%= link_to "Alle bieren", "/bieren/index.html", class: "button green size-medium" %>
     </div>
   </section>
 <% end %>

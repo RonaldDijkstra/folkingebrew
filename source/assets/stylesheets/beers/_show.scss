@@ -41,7 +41,11 @@ body.bieren {
         background: $white;
         display: flex;
         flex: 0 0 50%;
-        padding: 2em;
+        padding: 2em 1em;
+
+        @include grid-media($for-desktop-up) {
+          padding: 2em;
+        }
 
         h1 {
           font-size: $base-font-size * 2;
