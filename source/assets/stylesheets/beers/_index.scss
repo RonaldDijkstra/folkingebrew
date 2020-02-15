@@ -3,8 +3,12 @@ body.bieren {
     .grid-row {
       margin-left: auto;
       margin-right: auto;
-      padding: 0 2em 2em;
+      padding: 0 1em 1em;
       width: 100%;
+
+      @include grid-media($for-desktop-up) {
+        padding: 0 2em 2em;
+      }
     }
 
     .feed {

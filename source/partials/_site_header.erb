@@ -1,5 +1,4 @@
 <header class="site-header at-the-top">
-
   <a href="#menu-toggle" title="Open Nav Menu" class="nav-menu-toggle" id="menu-toggle">
     <span class="sr-only">toggle menu</span>
     <span class="bar top"></span>
@@ -7,45 +6,28 @@
     <span class="bar center x2"></span>
     <span class="bar bottom"></span>
   </a>
-
   <%= link_to "", "/", relative: false, class: "logo position-mobile-center", style: "background-image: url(#{image_path("logo-folkingebrew-hopje.svg")})" %>
-
-
   <div class="nav-wrap" role="navigation">
-
     <ul id="menu-primary" class="header-navigation primary-navigation">
-
       <li class="menu-item">
         <%= current_link_to "Bieren", "/bieren/", class: "root-link" %>
       </li>
-
       <li class="menu-item">
         <%= current_link_to "Blog", "/blog/", class: "root-link" %>
       </li>
-
       <li class="menu-item">
         <%= current_link_to "Over Ons", "/over-ons/", class: "root-link" %>
       </li>
-
       <li class="menu-item">
         <%= current_link_to "Contact", "/contact/", class: "root-link" %>
       </li>
-
     </ul>
-
   </div>
-
   <div class="nav-extras">
     <div class="site-header-social-links">
-
       <a href="https://www.untappd.com/Folkingebrew" class="social-icon icon-untappd" target="_blank" rel="noopener noreferrer"></a>
-
       <a href="https://www.facebook.com/Folkingebrew-167577637289407/" class="social-icon icon-facebook" target="_blank" rel="noopener noreferrer"></a>
-
       <a href="https://www.instagram.com/folkingebrew/" class="social-icon icon-instagram" target="_blank" rel="noopener noreferrer"></a>
-
     </div>
   </div>
-
 </header>
-
