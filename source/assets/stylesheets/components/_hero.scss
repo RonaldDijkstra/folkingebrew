@@ -10,7 +10,6 @@ section.hero-big {
   body.index & {
     &::before {
       $background-image: "../images/hero-folkingestraat.jpg";
-
       background-image: url($background-image);
     }
   }
@@ -18,7 +17,6 @@ section.hero-big {
   body.x404 & {
     &::before {
       $background-image: "../images/hero-bubbles.png";
-
       background-image: url($background-image);
     }
 

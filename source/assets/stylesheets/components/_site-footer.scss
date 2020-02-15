@@ -1,52 +1,52 @@
-footer {
-  background: $black;
-  color: $white;
-  font-size: $base-font-size * 0.9;
-  text-align: center;
+// footer {
+//   background: $black;
+//   color: $white;
+//   font-size: $base-font-size * 0.9;
+//   text-align: center;
 
-  .grid-row {
-    @include grid-media($for-desktop-up) {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-    }
+//   .grid-row {
+//     @include grid-media($for-desktop-up) {
+//       align-items: center;
+//       display: flex;
+//       justify-content: center;
+//     }
 
-    .col {
-      margin-bottom: 1em;
+//     .col {
+//       margin-bottom: 1em;
 
-      @include grid-media($for-desktop-up) {
-        flex: 1;
-        margin-bottom: 0;
-      }
-    }
+//       @include grid-media($for-desktop-up) {
+//         flex: 1;
+//         margin-bottom: 0;
+//       }
+//     }
 
-    .col-left {
-      @include grid-media($for-desktop-up) {
-        text-align: left;
-      }
-    }
+//     .col-left {
+//       @include grid-media($for-desktop-up) {
+//         text-align: left;
+//       }
+//     }
 
-    .col-right {
-      @include grid-media($for-desktop-up) {
-        text-align: right;
-      }
+//     .col-right {
+//       @include grid-media($for-desktop-up) {
+//         text-align: right;
+//       }
 
-      .address {
-        margin-bottom: 1em;
-      }
+//       .address {
+//         margin-bottom: 1em;
+//       }
 
-      a {
-        text-decoration: underline;
-      }
-    }
-  }
+//       a {
+//         text-decoration: underline;
+//       }
+//     }
+//   }
 
-  a {
-    color: $medium-gray;
-    text-decoration: none;
+//   a {
+//     color: $medium-gray;
+//     text-decoration: none;
 
-    &:hover {
-      color: darken($medium-gray, 15%);
-    }
-  }
-}
+//     &:hover {
+//       color: darken($medium-gray, 15%);
+//     }
+//   }
+// }

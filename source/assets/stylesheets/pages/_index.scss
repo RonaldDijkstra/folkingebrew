@@ -1,16 +1,31 @@
 section.introduction {
   background: $white;
 
-  .grid-row {
-    text-align: center;
+  @include grid-media($for-desktop-up) {
+    $background-image: "../images/hop-background.svg";
+
+    background-color: $white;
+    background-image: url($background-image);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 360px auto;
   }
 
-  h2 {
-    text-align: center;
+  .grid-row {
+    padding: 2em 1em;
+    text-align: left;
+
+    @include grid-media($for-desktop-up) {
+      padding: 8em 3em;
+    }
+  }
+
+  .row {
+    max-width: $small-row;
   }
 
   p {
-    font-size: $base-font-size * 1.1;
+    // font-size: $base-font-size * 1.1;
     margin-bottom: 1em;
   }
 }

@@ -11,14 +11,19 @@ header_class: header-transparent
     <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "hero-logo" %>
   </div>
 </section>
-<section class="introduction small-row">
+<section class="introduction wide-row">
   <div class="grid-row">
-    <h2>
-      Welkom
-    </h2>
-    <p>
-      Folkingebrew is opgericht in 2017 met het doel om bieren te brouwen die wij zelf graag drinken. Bij ieder bier proberen we een beetje beter te worden en onze grenzen te verleggen.
-    </p>
-    <%= link_to "Ons verhaal →", "/over-ons.html", class: "read-more button green ghost big" %>
+    <div class="row">
+      <h2>
+        Welkom bij FOLKINGEBREW
+      </h2>
+      <p>
+        Folkingebrew is opgericht met het doel om bieren te brouwen die wij zelf graag drinken.<br>Bij ieder bier proberen we een beetje beter te worden en onze grenzen te verleggen.
+      </p>
+      <div class="read-more">
+        <%= link_to "Onze bieren", "/bieren/index.html", class: "button green size-medium" %>
+        <%= link_to "Ons verhaal", "/over-ons.html", class: "button green no-border ghost size-medium" %>
+      </div>
+    </div>
   </div>
 </section>

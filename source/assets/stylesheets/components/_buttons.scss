@@ -2,10 +2,12 @@
   background-color: $color;
   border: 2px solid $color;
   color: $white;
+  height: auto;
+  letter-spacing: 0.2rem;
 
   &:hover {
-    background-color: darken($color, 5%);
-    border-color: darken($color, 5%);
+    background-color: lighten($color, 5%);
+    border-color: lighten($color, 5%);
     color: $white;
   }
 
@@ -16,13 +18,21 @@
 
     &:hover {
       background-color: rgba($white, 0.1);
-      border-color: darken($color, 10%);
-      color: darken($color, 15%);
+      border-color: lighten($color, 10%);
+      color: lighten($color, 15%);
+    }
+
+    &.no-border {
+      border: 0;
     }
   }
 
-  &.center {
-    margin: 0 auto;
+  &.size-normal {
+    padding: 1rem 2rem;
+  }
+
+  &.size-medium {
+    padding: 2.1rem 2rem;
   }
 }
 
@@ -30,7 +40,7 @@
 .button {
   @include button($action-color);
   appearance: none;
-  border-radius: $base-border-radius;
+  border-radius: 0;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
@@ -38,9 +48,9 @@
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
-  padding: $small-spacing $base-spacing;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
   transition: all 15ms ease;
   user-select: none;
   vertical-align: baseline;
@@ -51,7 +61,7 @@
     opacity: 0.5;
   }
 
-  &.big {
+  &.size-big {
     font-size: $base-font-size * 1.2;
   }
 
@@ -72,10 +82,5 @@
         color: $white;
       }
     }
-  }
-
-  &.centered {
-    display: table;
-    margin: 0 auto;
   }
 }

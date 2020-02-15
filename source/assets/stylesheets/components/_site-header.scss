@@ -32,7 +32,6 @@ header.site-header {
   z-index: 1010;
 
   @include grid-media($for-desktop-up) {
-    height: 8rem;
     padding: 1.2rem 4rem;
   }
 
