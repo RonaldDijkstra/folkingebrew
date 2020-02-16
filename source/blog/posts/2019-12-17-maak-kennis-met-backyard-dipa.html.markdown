@@ -14,7 +14,8 @@ __Maak kennis met een van de dikste bieren die we tot nu toe hebben gebrouwen. D
 
 Na de release van Hop in the Yard afgelopen juli hebben we een tijdje nagedacht over een gepast vervolg. We waren en zijn erg tevreden met het resultaat van Hop in the Yard, maar vonden ook dat er bij een volgende release best een tandje bij kon.
 
-Dus zijn we aan de slag gegaan met een recept voor een Double IPA, die in het verlengde zou komen te liggen van Just a Backyard IPA: ongeveer hetzelfde hopprofiel (dus een mix van Citra, Mosaic én de zeldzame Galaxy), kleur (geel-oranje en troebel) en het gebruik van dezelfde giststam (Vermont Ale). Daarbij stond voor ons buiten kijf dat we van alles meer wilden: meer hop, meer body, meer alcohol en bovenal meer bier. Toen ons een buitenkansje geboden werd om aan een grote voorraad Galaxy hop te komen, kwam alles voor ons in een stroomversnelling en zijn we gaan brouwen.
+Dus zijn we aan de slag gegaan met een recept voor een Double IPA, die in het verlengde zou komen te liggen van Just a Backyard IPA: ongeveer hetzelfde hopprofiel, kleur en het gebruik van dezelfde gist.
+Daarbij stond voor ons buiten kijf dat we van alles meer wilden: meer hop, meer body, meer alcohol en bovenal meer bier. Toen ons een buitenkansje geboden werd om aan een grote voorraad Galaxy hop te komen, kwam alles voor ons in een stroomversnelling en zijn we gaan brouwen.
 
 ## Brouwdag
 
@@ -40,11 +41,4 @@ Met smaaktonen van ananas, steen- en citrusfruit, aangevuld met een sappig en ro
 
 Voor het eerst hebben we een bier afgevuld op blik. De voordelen (licht- en luchtdicht) en de uitstraling (blik = awesome) hebben voor ons de doorslag gegeven om dit nu te doen. Afvullen op blik past helemaal in onze filosofie om geen concessies te doen aan wat we zelf zo mooi vinden.
 
-## Specificaties
-
-| Hop         | Citra, Mosaic & Galaxy          |
-| Mout        | Pilsner, Tarwemout, Havervlokken    |
-| Gist        | Vermont                     |
-| IBU         | 20                             |
-| Alcohol         | 8,5%                            |
-| Verkrijgbaar op | 44 CL Blik & 20 L Petainer Fust |
+[Profiel Backyard DIPA](/bieren/backyard-dipa/){:class="button size-normal green"}

@@ -68,7 +68,9 @@ footer {
           padding: 0.2em;
 
           &:first-of-type {
-            padding-left: 0;
+            @include grid-media($for-desktop-up) {
+              padding-left: 0;
+            }
           }
 
           &:hover {
