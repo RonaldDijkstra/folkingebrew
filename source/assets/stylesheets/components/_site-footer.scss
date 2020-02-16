@@ -65,12 +65,15 @@ footer {
       .social {
         .social-icon {
           font-size: $base-font-size * 1.2;
-          padding: 0.2em;
+          margin-left: 0.1em;
+          margin-right: 0.1em;
 
           &:first-of-type {
-            @include grid-media($for-desktop-up) {
-              padding-left: 0;
-            }
+            margin-left: 0;
+          }
+
+          &:last-of-type {
+            margin-right: 0;
           }
 
           &:hover {
