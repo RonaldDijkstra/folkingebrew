@@ -2,15 +2,11 @@ footer {
   .content-wrap {
     $background-image: "../images/moods/footer.jpg";
 
-    background-image: url($background-image);
-    background-repeat: no-repeat;
-    background-position: bottom center;
     background-attachment: scroll;
+    background-image: url($background-image);
+    background-position: bottom center;
+    background-repeat: no-repeat;
     background-size: cover;
-    border-top-width: 1px;
-    border-right-width: 0;
-    border-bottom-width: 1px;
-    border-left-width: 0;
     color: $white;
     padding: 4em 0;
     position: relative;
