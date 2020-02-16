@@ -19,9 +19,9 @@ $window.scroll(function() {
   var $scroll = $window.scrollTop();
 
   if ($scroll >= $navbarHeight / 10) {
-    $(".site-header").addClass("not-at-the-top").removeClass("at-the-top");
+    $("body").addClass("not-at-the-top").removeClass("at-the-top");
   } else {
-    $(".site-header").addClass("at-the-top").removeClass("not-at-the-top");
+    $("body").addClass("at-the-top").removeClass("not-at-the-top");
   }
 });
 

@@ -30,6 +30,7 @@ gem "rake"
 source "https://rails-assets.org" do
   gem "rails-assets-jquery"
   gem "rails-assets-what-input"
+  gem "rails-assets-jquery.scrollTo"
 end
 
 # Linters (not required)

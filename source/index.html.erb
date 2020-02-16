@@ -8,9 +8,10 @@ header_class: header-transparent
 <section class="hero hero-big">
   <div class="grid-row">
     <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "hero-logo" %>
+    <a class="hero-continue-icon" href="#main-content" data-scroll-to></a>
   </div>
 </section>
-<section class="introduction wide-row">
+<section class="introduction wide-row" id="main-content">
   <div class="grid-row">
     <div class="row">
       <%= partial "content/introduction" %>
