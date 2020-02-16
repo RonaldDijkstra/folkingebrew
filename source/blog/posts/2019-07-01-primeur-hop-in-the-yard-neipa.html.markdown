@@ -3,7 +3,6 @@ title: "Primeur Hop in the Yard NEIPA"
 date: 2019-07-01 08:00 CEST
 tags: IPA
 author: Ronald
-image: assets/images/social/20190701-primeur-hop-in-the-yard.jpg
 featured_image: blog/20190701-primeur-hop-in-the-yard.jpg
 header_image: moods/banner-de-koffer-hop-in-the-yard.jpg
 ---
@@ -26,12 +25,12 @@ Hop in the Yard is intens (dubbel) gedryhopt met maar liefst 20 gram Citra en Mo
 
 ![Hop in the Yard in proper glassware](/assets/images/blog/20190701-proper-glassware.jpg)
 
-### Specificaties
+## Specificaties
 
-__ABV__: 6,9%<br>
-__IBU__: 35<br>
-__Hop__: Citra & Mosaic<br>
-__Gist__: WLP066 London Fog Ale
+
+| Hop         | Citra, Mosaic & Galaxy          |
+| Gist        | London Fog                    |
+| Alcohol         | 6,9%                            |
 
 ## Verkrijgbaarheid
 

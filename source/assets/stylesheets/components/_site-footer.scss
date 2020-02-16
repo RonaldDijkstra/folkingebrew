@@ -1,53 +1,81 @@
 footer {
-  background: $black;
-  color: $medium-gray;
-  font-size: $base-font-size * 0.9;
-  text-align: center;
+  .content-wrap {
+    $background-image: "../images/moods/footer.jpg";
 
-  .grid-row {
-    @include grid-media($for-desktop-up) {
-      align-items: center;
-      display: flex;
-      justify-content: center;
+    background-attachment: scroll;
+    background-image: url($background-image);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    padding: 4em 0;
+    position: relative;
+    z-index: 0;
+
+    a {
+      text-decoration: none;
     }
 
-    .col {
-      margin-bottom: 1em;
+    &::after {
+      background-color: rgba($black, 0.85);
+      border-radius: inherit;
+      bottom: 0;
+      content: " ";
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+
+    .grid-row {
+      padding: 0;
+      position: relative;
+      text-align: center;
+      z-index: 2;
 
       @include grid-media($for-desktop-up) {
-        flex: 1;
-        margin-bottom: 0;
-      }
-    }
-
-    .col-left {
-      @include grid-media($for-desktop-up) {
-        text-align: left;
-      }
-    }
-
-    .col-right {
-      @include grid-media($for-desktop-up) {
-        text-align: right;
+        display: flex;
+        justify-content: space-between;
+        padding: 2em 1em;
       }
 
-      .address {
-        margin-bottom: 1em;
+      h4 {
+        font-family: $base-font-family;
+        font-size: $base-font-size;
       }
 
-      a {
-        text-decoration: underline;
+      .col {
+        margin-bottom: 2em;
+
+        @include grid-media($for-desktop-up) {
+          flex: 1;
+          margin-bottom: 0;
+          text-align: left;
+        }
       }
-    }
 
-  }
+      &.copyright {
+        color: $lightest-gray;
+        display: block;
+        font-size: $base-font-size * 0.9;
+      }
 
-  a {
-    color: $medium-gray;
-    text-decoration: none;
+      .social {
+        .social-icon {
+          font-size: $base-font-size * 1.2;
+          padding: 0.2em;
 
-    &:hover {
-      color: darken($medium-gray, 15%);
+          &:first-of-type {
+            padding-left: 0;
+          }
+
+          &:hover {
+            color: rgba($green, 0.75);
+          }
+        }
+      }
     }
   }
 }

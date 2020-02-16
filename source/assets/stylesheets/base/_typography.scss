@@ -1,21 +1,8 @@
 html {
   color: $base-font-color;
   font-family: $base-font-family;
-  font-size: 100%;
   font-weight: $font-weight-regular;
   line-height: $base-line-height;
-
-  @media (min-width: 38em) {
-    font-size: 106.25%;
-  }
-
-  @media (min-width: 65em) {
-    font-size: 112.5%;
-  }
-
-  @media (min-width: 100em) {
-    font-size: 118.75%;
-  }
 }
 
 h1,
@@ -40,8 +27,12 @@ h2 {
   font-weight: $font-weight-regular;
 }
 
+h3 {
+  font-size: $base-font-size * 1.6;
+}
+
 p {
-  margin: 0 0 $small-spacing;
+  margin: 0 0 $small-spacing * 3;
 }
 
 a {
@@ -50,7 +41,7 @@ a {
   transition: color $base-duration $base-timing;
 
   &:hover {
-    color: shade($action-color, 25%);
+    color: lighten($action-color, 5%);
   }
 
   &:focus {
@@ -61,11 +52,11 @@ a {
 
 // Using what-intent to target specific input
 // https://github.com/ten1seven/what-input
-[data-whatintent='mouse'] *:focus {
+[data-whatintent="mouse"] *:focus {
   outline: none;
 }
 
-[data-whatintent='keyboard'] *:focus {
+[data-whatintent="keyboard"] *:focus {
   outline: 3px solid $orange;
 }
 
@@ -75,8 +66,4 @@ hr {
   border-right: 0;
   border-top: 0;
   margin: $base-spacing 0;
-}
-
-.text-align-center {
-  text-align: center;
 }

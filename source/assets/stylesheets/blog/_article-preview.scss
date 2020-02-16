@@ -1,14 +1,20 @@
 article.article-preview {
-  margin-bottom: 3em;
+  background: $white;
+  margin-bottom: 4em;
+  padding: 2em 1em;
   text-align: left;
+
+  @include grid-media($for-desktop-up) {
+    padding: 3em;
+  }
 
   .post-header {
     margin-bottom: 0.5em;
 
-    h3 {
+    h2 {
       font-size: $base-font-size * 2;
-      margin: 0;
-      text-align: left;
+      margin: 0 0 $small-spacing / 2;
+      text-transform: uppercase;
     }
 
     a {
@@ -23,7 +29,7 @@ article.article-preview {
   }
 
   p {
-    margin-bottom: 1em;
-    text-align: left;
+    margin-bottom: 0;
+    padding: 1em 0;
   }
 }

@@ -13,12 +13,10 @@
     <%= partial "partials/open_graph" %>
     <%= feed_tag :atom, "#{blog("blog").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
-  <body class="<%= page_classes %> <%= "blog-article" if is_blog_article? %>">
+  <body class="<%= page_classes %> <%= current_resource.data.header_class %> <%= "blog-article" if is_blog_article? %>">
+    <%= partial "partials/site_header" %>
     <main class="main" role="main">
-      <div class="header-background">
-        <%= partial "partials/site_header" %>
-        <%= partial "partials/site_navigation" %>
-        <%= yield %>
+      <%= yield %>
     </main>
     <%= partial "partials/site_footer" %>
     <%= javascript_include_tag "main" %>

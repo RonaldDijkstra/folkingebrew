@@ -1,0 +1,17 @@
+body.bedankt {
+  .hero {
+    .grid-row {
+      color: $white;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: $base-font-size * 2;
+
+      @include grid-media($for-desktop-up) {
+        font-size: $base-font-size * 3;
+      }
+    }
+  }
+}

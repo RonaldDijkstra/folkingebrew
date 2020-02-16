@@ -38,8 +38,10 @@ page "/*.txt", layout: false
 page "/*.xml", layout: false
 
 # With layout
-page "blog/index.html", layout: :blog_layout
-page "blog/*", layout: :post_layout
+page "blog/index.html", layout: :blog_index
+page "blog/*", layout: :blog_show
+page "bieren/index.html", layout: :beer_index
+page "bieren/*", layout: :beer_show
 
 # Activate and setup the blog content type
 activate :blog do |blog|
@@ -53,10 +55,20 @@ activate :blog do |blog|
   blog.per_page = 10
 end
 
+# Activate and setup the beer content type
+activate :blog do |blog|
+  blog.name = "bieren"
+  blog.prefix = "bieren"
+  blog.permalink = ":title"
+  blog.sources = "/bieren/{year}-{month}-{day}-{title}.html"
+  # blog.tag_template = "blog/tag.html"
+  blog.paginate = true
+  blog.page_link = "{num}"
+  blog.per_page = 10
+end
+
 # Settings for production
 configure :production do
-  require "lib/checkins"
-
   activate :asset_hash, ignore: [
     %r{^assets/fonts/.*},
     "assets/images/logo-folkingebrew-black.svg"

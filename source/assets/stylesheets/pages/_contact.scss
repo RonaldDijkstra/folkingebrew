@@ -1,18 +1,20 @@
 body.contact {
-  .form-grid-row {
-    @include grid-media($for-desktop-up) {
-      display: flex;
-      max-width: $small-row;
-    }
+  .contact-form {
+    .grid-row {
+      background: $white;
 
-    .col {
-      &:first-child {
-        margin-bottom: 2em;
+      @include grid-media($for-desktop-up) {
+        margin-bottom: 4em;
+        padding: 4em 2em;
+      }
 
-        @include grid-media($for-desktop-up) {
-          margin-bottom: 0;
-          margin-right: 4em;
-        }
+      .row {
+        margin: 0 auto;
+        max-width: $smallest-row;
+      }
+
+      p {
+        margin-bottom: $small-spacing * 3;
       }
     }
   }

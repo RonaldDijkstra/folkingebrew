@@ -4,7 +4,6 @@ date: 2019-12-16 08:00 CEST
 tags: can
 author: Ronald
 featured: true
-image: assets/images/social/can-1200x630.jpg
 featured_image: blog/201912-yes-we-can-featured.jpg
 header_image: moods/banner-cans.jpg
 ---

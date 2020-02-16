@@ -4,8 +4,14 @@ description: "Folkingeblog"
 blog: blog
 pageable: true
 ---
-
-<section class="single-column">
+<header class="normal-page-header">
+  <div class="grid-row">
+    <h1>
+      Blog
+    </h1>
+  </div>
+</header>
+<section class="posts small-row">
   <div class="grid-row">
     <% page_articles.each do |article| %>
       <%= partial "blog/article-preview", locals: { article: article } %>

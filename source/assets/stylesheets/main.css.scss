@@ -11,25 +11,25 @@
 @import "base/tables";
 @import "base/typography";
 
-@import "components/banner";
-@import "components/beers";
 @import "components/buttons";
-@import "components/checkins";
-@import "components/featured-article";
 @import "components/forms";
+@import "components/hero";
 @import "components/icons";
 @import "components/lists";
-@import "components/maps";
-@import "components/newsletter-signup";
+@import "components/page-header";
 @import "components/site-footer";
 @import "components/site-header";
-@import "components/site-navigation";
-@import "components/social-links";
 
+@import "pages/about-us";
 @import "pages/contact";
 @import "pages/index";
+@import "pages/thanks";
 @import "pages/404";
+
+@import "beers/index";
+@import "beers/show";
 
 @import "blog/article-preview";
 @import "blog/index";
-@import "blog/post";
+@import "blog/show";
+

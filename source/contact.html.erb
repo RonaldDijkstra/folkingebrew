@@ -3,32 +3,22 @@ title: "Contact"
 description: "Heb je vragen over Folkingebrew of onze bieren? Stuur ons dan een e-mail door middel van het contactformulier."
 sitemap_priority: 0.5
 ---
-</div>
-
-<section class="form">
-  <div class="grid-row form-grid-row">
-    <div class="col">
+<header class="normal-page-header">
+  <div class="grid-row">
+    <h1>
+      Contact
+    </h1>
+  </div>
+</header>
+<section class="contact-form medium-row">
+  <div class="grid-row">
+    <div class="row">
       <%= partial "content/contact" %>
       <%= partial "partials/form", locals: { name: "contact",
                                              title: "Contactformulier",
                                              fields: ["name", "email", "message"],
                                              button_text: "Verstuur",
-                                             button_variant: "big"} %>
-    </div>
-    <div class="col">
-      <h2>
-        Contactgegevens
-      </h2>
-      <p>
-        <strong>Folkingebrew</strong><br>
-          Folkingestraat 18<br>
-          9711 JW<br>
-          Groningen<br>
-        <%= link_to "folkingebrew@gmail.com", "mailto:folkingebrew@gmail.com" %><br>
-        KVK: 71770895
-      </p>
+                                             button_variant: "size-medium"} %>
     </div>
   </div>
 </section>
-
-<%= partial "partials/social-links" %>

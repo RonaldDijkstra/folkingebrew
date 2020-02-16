@@ -25,7 +25,7 @@ module ApplicationHelpers
   # If there's a title in frontmatter check if it's localized
   # and then join them with the website_name
   def local_title
-    [frontmatter_title, website_name].join(" - ") if frontmatter_title
+    [frontmatter_title, website_name].join(" | ") if frontmatter_title
   end
 
   # Page title is localized or title
@@ -60,7 +60,7 @@ module ApplicationHelpers
   def og_image
     full_url(
       asset_url(
-        current_page.data.image || "assets/images/folkingebrew-1200x630.jpg"
+        current_page.data.image || "assets/images/folkingebrew-1200x1200.png"
       )
     )
   end
@@ -87,6 +87,8 @@ module ApplicationHelpers
   def current_page_url
     if current_page.url.start_with?("/blog/")
       "/blog/"
+    elsif current_page.url.start_with?("/bieren/")
+      "/bieren/"
     else
       current_page.url
     end
