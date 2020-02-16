@@ -1,4 +1,4 @@
-Folkingebrew is opgericht om bieren te brouwen die wij zelf graag drinken. Daarom maken wij bieren met een uitgesproken karakter. Bijvoorbeeld in smaak, aroma en kleur.
+Folkingebrew is opgericht met het doel om bier te brouwen dat wij zelf graag drinken. Daarom maken wij bieren met een uitgesproken karakter. Bijvoorbeeld in smaak, aroma en kleur.
 
 Vanwege onze passie voor goed bier proberen we bij ieder bier een beetje beter te worden en onze grenzen te verleggen.
 

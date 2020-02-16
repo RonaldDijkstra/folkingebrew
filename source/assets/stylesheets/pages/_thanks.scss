@@ -1,24 +1,16 @@
 body.bedankt {
-  .thanks {
-    @include grid-media($for-desktop-up) {
-      padding: 0 1em;
+  .hero {
+    .grid-row {
+      color: $white;
+      flex-direction: column;
+      text-align: center;
     }
 
-    .grid-row {
-      background: $white;
+    h1 {
+      font-size: $base-font-size * 2;
 
       @include grid-media($for-desktop-up) {
-        margin-bottom: 4em;
-        padding: 4em 2em;
-      }
-
-      .row {
-        margin: 0 auto;
-        max-width: $smallest-row;
-
-        p:last-of-type {
-          margin-bottom: 0;
-        }
+        font-size: $base-font-size * 3;
       }
     }
   }

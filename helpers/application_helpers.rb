@@ -25,7 +25,7 @@ module ApplicationHelpers
   # If there's a title in frontmatter check if it's localized
   # and then join them with the website_name
   def local_title
-    [frontmatter_title, website_name].join(" - ") if frontmatter_title
+    [frontmatter_title, website_name].join(" | ") if frontmatter_title
   end
 
   # Page title is localized or title
