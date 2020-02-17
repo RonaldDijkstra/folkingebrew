@@ -29,8 +29,8 @@ gem "rake"
 # Frontend
 source "https://rails-assets.org" do
   gem "rails-assets-jquery"
-  gem "rails-assets-what-input"
   gem "rails-assets-jquery.scrollTo"
+  gem "rails-assets-what-input"
 end
 
 # Linters (not required)
