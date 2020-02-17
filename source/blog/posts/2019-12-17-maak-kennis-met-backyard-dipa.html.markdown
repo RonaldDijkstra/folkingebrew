@@ -7,7 +7,6 @@ featured: true
 image: assets/images/social/201912-backyard.png
 featured_image: blog/201912-introducing-backyard.png
 ---
-
 __Maak kennis met een van de dikste bieren die we tot nu toe hebben gebrouwen. De late hopgift en een dubbele dryhop dragen bij aan een lichte bitterheid en een smaakexplosie van ananas, steen- en citrusfruit. De ruime toevoeging van havervlokken zorgt voor een heerlijke juicy body.__
 
 ## Achtergrond
@@ -37,8 +36,6 @@ Backyard DIPA is een compromisloze, hazy New England Style Double India Pale Ale
 
 Met smaaktonen van ananas, steen- en citrusfruit, aangevuld met een sappig en romig mondgevoel, is dit bier alles wat de echte hopheads willen van een New England-stijl DIPA. Backyard DIPA is, zoals gezegd, de natuurlijke opvolger van onze eerste release Just a Backyard IPA en kan gezien worden als een evolutie naar DIPA van het bier waar voor ons alles mee begon. En na het succes van voorgaande releases hebben we nu dus meer bier gebrouwen dan ooit.
 
-### Yes we can!
+## Yes we can!
 
 Voor het eerst hebben we een bier afgevuld op blik. De voordelen (licht- en luchtdicht) en de uitstraling (blik = awesome) hebben voor ons de doorslag gegeven om dit nu te doen. Afvullen op blik past helemaal in onze filosofie om geen concessies te doen aan wat we zelf zo mooi vinden.
-
-[Profiel Backyard DIPA](/bieren/backyard-dipa/){:class="button size-normal green"}

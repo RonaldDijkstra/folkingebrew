@@ -3,27 +3,61 @@
   border: 2px solid $color;
   color: $white;
   height: auto;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
+
+  [class*="arrow"] {
+    transition: all 0.2s ease-in-out;
+  }
 
   &:hover {
     background-color: lighten($color, 5%);
     border-color: lighten($color, 5%);
-    color: $white;
+
+    .arrow-left {
+      transform: translateX(-0.3rem);
+    }
+
+    .arrow-right {
+      transform: translateX(0.3rem);
+    }
   }
 
-  &.ghost {
+  &.style-ghost {
     background-color: transparent;
     border-color: $color;
     color: $color;
+
+    .inline-svg {
+      fill: $color;
+    }
 
     &:hover {
       background-color: rgba($white, 0.1);
       border-color: lighten($color, 10%);
       color: lighten($color, 15%);
+
+      .inline-svg {
+        fill: lighten($color, 15%);
+      }
     }
 
     &.no-border {
       border: 0;
+    }
+  }
+
+  &.style-solid {
+    background-color: $color;
+    border-color: $color;
+    color: $white;
+
+    .inline-svg {
+      fill: $white;
+    }
+
+    &:hover {
+      background-color: lighten($color, 5%);
+      border-color: lighten($color, 5%);
     }
   }
 
@@ -51,7 +85,7 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all 15ms ease;
+  transition: all 0.2s ease;
   user-select: none;
   vertical-align: baseline;
   white-space: nowrap;

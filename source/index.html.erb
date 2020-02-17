@@ -16,8 +16,13 @@ header_class: header-transparent
     <div class="row">
       <%= partial "content/introduction" %>
       <div class="read-more">
-        <%= link_to "Onze bieren", "/bieren/index.html", class: "button green size-medium" %>
-        <%= link_to "Ons verhaal", "/over-ons.html", class: "button green no-border ghost size-medium" %>
+        <%= partial "partials/button", locals: { to: "/bieren/index.html",
+                                                 variant: "size-medium style-solid green",
+                                                 text: "Onze bieren",
+                                                 arrow_right: "icons/arrow-right.svg"} %>
+        <%= partial "partials/button", locals: { to: "/over-ons.html",
+                                                 variant: "size-medium style-ghost green no-border",
+                                                 text: "Ons verhaal"} %>
       </div>
     </div>
   </div>
