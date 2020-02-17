@@ -1,20 +1,18 @@
-body.header-transparent {
+body.header-transparent.at-the-top {
   .site-header {
-    &.at-the-top {
-      background: transparent;
+    background: transparent;
 
-      .logo {
-        opacity: 0;
+    .logo {
+      opacity: 0;
 
-        @include grid-media($for-desktop-up) {
-          opacity: 1;
-        }
+      @include grid-media($for-desktop-up) {
+        opacity: 1;
       }
     }
+  }
 
-    &.not-at-the-top {
-      background: $black;
-    }
+  &.not-at-the-top {
+    background: $black;
   }
 }
 

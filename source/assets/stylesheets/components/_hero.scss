@@ -5,6 +5,35 @@ section.hero-big {
     justify-content: center;
     min-height: 100vh;
     padding: 1em 2em;
+
+    .hero-continue-icon {
+      align-items: center;
+      background-color: $white;
+      border-radius: 50%;
+      bottom: 0;
+      box-shadow: 0 0.9rem 2.4rem -1.6rem rgba($black, 0.5);
+      display: flex;
+      font-size: $base-font-size * 1.6;
+      height: 6rem;
+      justify-content: center;
+      left: 50%;
+      margin: 0;
+      opacity: 0;
+      position: fixed;
+      text-decoration: none;
+      transform: translateX(-50%);
+      transition: all 0.2s ease-in-out;
+      width: 6rem;
+
+      &:hover {
+        transform: translateX(-50%) scale(1.1);
+      }
+
+      body.at-the-top & {
+        bottom: 3rem;
+        opacity: 1;
+      }
+    }
   }
 
   body.index & {
