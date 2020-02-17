@@ -58,7 +58,10 @@
       </div>
     </div>
     <div class="grid-row back-link">
-      <%= link_to "Alle bieren", "/bieren/index.html", class: "button green size-medium" %>
+      <%= partial "partials/button", locals: { to: "/bieren/index.html",
+                                               variant: "size-medium style-solid green",
+                                               arrow_left: "icons/arrow-left.svg",
+                                               text: "Alle bieren"} %>
     </div>
   </section>
 <% end %>

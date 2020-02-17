@@ -7,7 +7,6 @@ featured: true
 featured_image: blog/201912-yes-we-can-featured.jpg
 header_image: moods/banner-cans.jpg
 ---
-
 __Voor ons nieuwe bier hebben wij gekozen voor het afvullen op 44 CL blik. Dit past helemaal in onze filosofie: vooral doen wat we zelf zo mooi vinden. Voor een IPA vinden wij blik om vele redenen beter dan fles. In dit blog zetten we uiteen waarom.__
 
 ## 1. In blik krijgt zuurstof geen kans
@@ -42,6 +41,7 @@ Blik geeft ons meer opties om te spelen met de uitstraling van ons bier en de bi
 Met name de bieren waar hergisting en bewaarpotentieel een rol spelen kun je beter niet op blik afvullen. Dit geldt dus vooral voor spontaan vergiste bieren als lambiek en andere wilde bieren. Het bier 'leeft' nog heel lang door en zal niet snel stoppen met vergisten. Voor dit type bieren is glas veel meer geschikt.
 
 ## Conclusie
+
 Wij hebben de keuze gemaakt voor afvullen op blik, omdat wij vooral graag willen dat ons bier zo lang mogelijk zo goed mogelijk blijft. Wij zijn daarom erg blij dat wij ons bier nu op blik af hebben kunnen vullen.
 
 Het ‘zwerver bier imago’ van een half liter blik, dat is wat ons betreft voorgoed voorbij.
