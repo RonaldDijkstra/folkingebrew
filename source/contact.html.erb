@@ -16,9 +16,10 @@ sitemap_priority: 0.5
       <%= partial "content/contact" %>
       <%= partial "partials/form", locals: { name: "contact",
                                              title: "Contactformulier",
-                                             fields: ["name", "email", "message"],
+                                             fields: ["name", "email", "type", "message"],
                                              button_text: "Verstuur",
-                                             button_variant: "size-medium"} %>
+                                             button_variant: "size-medium style-solid green",
+                                             arrow_right: "icons/arrow-right.svg"} %>
     </div>
   </div>
 </section>

@@ -2,7 +2,7 @@
    <% if locals[:fields].include? "name" %>
     <p>
       <label for="name">
-        Naam
+        Naam *
       </label>
       <input type="text" name="naam" id="name" required>
     </p>
@@ -11,7 +11,7 @@
   <% if locals[:fields].include? "email" %>
     <p>
       <label for="email">
-        E-mailadres
+        E-mailadres *
       </label>
       <input type="email" name="e-mail" id="email" required>
     </p>
@@ -31,6 +31,9 @@
         <%= locals[:button_text] %>
       <% else %>
         Versturen
+      <% end %>
+      <% if locals[:arrow_right] %>
+        <%= inline_svg arrow_right, class: "inline-svg arrow-right" %>
       <% end %>
     </button>
   </p>
