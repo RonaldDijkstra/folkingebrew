@@ -97,7 +97,7 @@ body.bieren {
           transition: background-color 0.2s ease;
 
           &:hover {
-            background: darken($green, 10);
+            background: lighten($green, 5%);
           }
         }
       }
