@@ -1,0 +1,14 @@
+---
+title: "Interstellar DIPA"
+date: 2020-02-18 08:00 CEST
+image: "beers/interstellar.png"
+tags: DIPA
+ut_link: "https://untappd.com/b/folkingebrew-backyard-dipa/3586001"
+blog_link: "maak-kennis-met-backyard-dipa"
+description: "Illuminate, we light up the sky"
+style: New England DIPA
+abv: "8,5%"
+release_date: Maart 2020
+hops: Citra, Nelson Sauvin, Galaxy
+yeast: Vermont
+---
