@@ -22,7 +22,10 @@ body.bieren {
       .beer-image {
         background: $dark-gray;
         display: flex;
-        flex: 0 0 50%;
+
+        @include grid-media($for-desktop-up) {
+          flex: 0 0 50%;
+        }
 
         .image-wrap {
           align-items: center;
@@ -31,6 +34,13 @@ body.bieren {
           position: relative;
 
           .image {
+            max-width: 819px;
+            width: 100%;
+          }
+
+          img {
+            display: block;
+            height: auto;
             width: 100%;
           }
         }
@@ -74,6 +84,7 @@ body.bieren {
         .beer-fact {
           flex: 0 0 50%;
           margin-bottom: 1em;
+          padding-right: 1em;
 
           span {
             display: block;
