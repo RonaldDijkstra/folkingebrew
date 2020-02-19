@@ -1,7 +1,7 @@
 <% wrap_layout :layout do %>
   <section class="beer wide-row">
     <div class="grid-row beer-item">
-      <div class="beer-image">
+      <div class="beer-image background-<%= current_article.data.background %>">
         <div class="image-wrap">
           <%= image_tag current_article.data.image, alt: current_article.title, class: "image" %>
         </div>

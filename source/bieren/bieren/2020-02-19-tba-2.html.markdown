@@ -1,7 +1,7 @@
 ---
-title: "Interstellar DIPA"
-date: 2020-02-18 08:00 CEST
-image: "beers/interstellar.png"
+title: "Illuminate DIPA"
+date: 2020-02-19 08:00 CEST
+image: "beers/illuminate.png"
 tags: DIPA
 ut_link: "https://untappd.com/b/folkingebrew-backyard-dipa/3586001"
 blog_link: "maak-kennis-met-backyard-dipa"
