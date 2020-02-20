@@ -38,11 +38,19 @@ body.bieren {
         @include grid-media($small-screens-up) {
           flex: 0 0 50%;
           max-width: 50%;
+
+          img {
+            max-width: 362px;
+          }
         }
 
         @include grid-media($for-desktop-up) {
           flex: 0 0 33.33333333%;
           max-width: 33.33333333%;
+
+          img {
+            max-width: 430px;
+          }
         }
       }
 
