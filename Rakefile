@@ -15,7 +15,7 @@ end
 task :build do
   puts "== Project: " + project_name
   puts "== Brewing the website..."
-  system "bundle exec middleman build" || exit(1)
+  system "bundle exec middleman build --verbose" || exit(1)
 end
 
 # Test Suite

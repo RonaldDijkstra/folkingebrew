@@ -94,6 +94,16 @@ module ApplicationHelpers
     end
   end
 
+  def article_class
+    if is_blog_article?
+      if current_page.url.start_with?("/blog/")
+        "blog-article"
+      elsif current_page.url.start_with?("/bieren/")
+        "beer-show"
+      end
+    end
+  end
+
   # Add aria current to current page navigation item
   def current_link_to(*arguments, aria_current: "page", **options, &block)
     if block_given?
