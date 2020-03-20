@@ -40,10 +40,10 @@ body.bieren {
           max-width: 50%;
         }
 
-        @include grid-media($for-desktop-up) {
-          flex: 0 0 33.33333333%;
-          max-width: 33.33333333%;
-        }
+        // @include grid-media($for-desktop-up) {
+        //   flex: 0 0 33.33333333%;
+        //   max-width: 33.33333333%;
+        // }
       }
 
       .excerpt-box {
