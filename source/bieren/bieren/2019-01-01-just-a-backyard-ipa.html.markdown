@@ -12,4 +12,5 @@ release_date: Mei 2018
 hops: Citra, Mosaic, Galaxy
 malts:
 yeast: Vermont
+background: dark
 ---

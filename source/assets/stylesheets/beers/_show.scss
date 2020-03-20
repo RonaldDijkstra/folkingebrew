@@ -20,11 +20,18 @@ body.bieren {
       }
 
       .beer-image {
-        background: $dark-gray;
         display: flex;
 
         @include grid-media($for-desktop-up) {
           flex: 0 0 50%;
+        }
+
+        &.background-dark {
+          background: $dark-gray;
+        }
+
+        &.background-light {
+          background: $lightest-gray;
         }
 
         .image-wrap {

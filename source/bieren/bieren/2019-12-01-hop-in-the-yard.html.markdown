@@ -12,4 +12,5 @@ release_date: Juli 2019
 hops: Citra, Mosaic
 malts:
 yeast: London Fog
+background: dark
 ---

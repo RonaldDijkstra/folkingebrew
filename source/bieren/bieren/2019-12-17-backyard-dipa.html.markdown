@@ -11,4 +11,5 @@ abv: "8,5%"
 release_date: December 2019
 hops: Citra, Mosaic, Galaxy
 yeast: Vermont
+background: dark
 ---

@@ -25,7 +25,7 @@ body.bieren {
 
       .excerpt-box-wrap {
         display: flex;
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
       }
 
       .col-md-4 {
@@ -38,19 +38,6 @@ body.bieren {
         @include grid-media($small-screens-up) {
           flex: 0 0 50%;
           max-width: 50%;
-
-          img {
-            max-width: 362px;
-          }
-        }
-
-        @include grid-media($for-desktop-up) {
-          flex: 0 0 33.33333333%;
-          max-width: 33.33333333%;
-
-          img {
-            max-width: 430px;
-          }
         }
       }
 
@@ -63,7 +50,11 @@ body.bieren {
         transition: all 0.2s ease-in-out;
         width: 100%;
 
-        &.beer {
+        &.background-light {
+          background: $lightest-gray;
+        }
+
+        &.background-dark {
           background: $dark-gray;
         }
       }
