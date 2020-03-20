@@ -1,5 +1,5 @@
 body.bieren {
-  &.blog-article {
+  &.beer-show {
     section.beer {
       padding-top: 8rem;
     }
@@ -21,7 +21,10 @@ body.bieren {
 
       .beer-image {
         display: flex;
-        flex: 0 0 50%;
+
+        @include grid-media($for-desktop-up) {
+          flex: 0 0 50%;
+        }
 
         &.background-dark {
           background: $dark-gray;
@@ -38,6 +41,12 @@ body.bieren {
           position: relative;
 
           .image {
+            max-width: 819px;
+          }
+
+          img {
+            display: block;
+            height: auto;
             width: 100%;
           }
         }
@@ -81,6 +90,7 @@ body.bieren {
         .beer-fact {
           flex: 0 0 50%;
           margin-bottom: 1em;
+          padding-right: 1em;
 
           span {
             display: block;
@@ -104,7 +114,7 @@ body.bieren {
           transition: background-color 0.2s ease;
 
           &:hover {
-            background: darken($green, 10);
+            background: lighten($green, 5%);
           }
         }
       }

@@ -5,7 +5,7 @@
   height: auto;
   letter-spacing: 0.1rem;
 
-  [class*="arrow"] {
+  [class*="button-icon"] {
     transition: all 0.2s ease-in-out;
   }
 
@@ -13,11 +13,11 @@
     background-color: lighten($color, 5%);
     border-color: lighten($color, 5%);
 
-    .arrow-left {
+    .button-icon-left {
       transform: translateX(-0.3rem);
     }
 
-    .arrow-right {
+    .button-icon-right {
       transform: translateX(0.3rem);
     }
   }
