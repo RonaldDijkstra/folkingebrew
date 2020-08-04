@@ -11,5 +11,5 @@ abv: "8,7%"
 release_date: Augustus 2020
 hops: Citra, Galaxy, Ekuanot, Sabro
 yeast: Vermont
-background: light
+background: dark
 ---
