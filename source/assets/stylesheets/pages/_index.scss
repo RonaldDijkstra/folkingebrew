@@ -12,7 +12,7 @@ section.introduction {
   }
 
   h1 {
-    font-size: $base-font-size * 2;
+    font-size: $base-font-size * 2.4;
   }
 
   .grid-row {
@@ -25,10 +25,12 @@ section.introduction {
   }
 
   .row {
+    margin: 0 auto;
     max-width: $small-row;
+    text-align: center;
   }
 
   p {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
 }
