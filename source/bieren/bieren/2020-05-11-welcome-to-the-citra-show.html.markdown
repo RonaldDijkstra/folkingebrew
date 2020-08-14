@@ -5,7 +5,7 @@ image: "beers/welcome-to-the-citra-show-dipa.png"
 tags: DIPA
 ut_link: "https://untappd.com/b/folkingebrew-welcome-to-the-citra-show/3802655"
 blog_link:
-description: "Welcome to the Citra Show is een single hop showcase van Citra hops. "
+description: "Welcome to the Citra Show is een single hop showcase van Citra hops met een hint van Lactose."
 style: New England DIPA
 abv: "8,5%"
 release_date: Mei 2020

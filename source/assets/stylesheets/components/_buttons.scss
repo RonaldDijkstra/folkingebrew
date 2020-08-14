@@ -22,7 +22,7 @@
     }
   }
 
-  &.style-ghost {
+  &.ghost {
     background-color: transparent;
     border-color: $color;
     color: $color;
@@ -32,7 +32,7 @@
     }
 
     &:hover {
-      background-color: rgba($white, 0.1);
+      background-color: transparent;
       border-color: lighten($color, 10%);
       color: lighten($color, 15%);
 
@@ -44,9 +44,13 @@
     &.no-border {
       border: 0;
     }
+
+    &.transparent-border {
+      border-color: transparent;
+    }
   }
 
-  &.style-solid {
+  &.solid {
     background-color: $color;
     border-color: $color;
     color: $white;
@@ -61,11 +65,11 @@
     }
   }
 
-  &.size-normal {
+  &.normal-size {
     padding: 1rem 2rem;
   }
 
-  &.size-medium {
+  &.medium-size {
     padding: 2.1rem 2rem;
   }
 }
