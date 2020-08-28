@@ -18,7 +18,7 @@
     <%= Nokogiri::HTML(article.summary).text %>
   </p>
   <%= partial "partials/button", locals: { to: article.url,
-                                           variant: "size-normal green style-ghost",
+                                           variant: "normal-size solid green",
                                            text: "Lees verder",
                                            icon_right: "icons/arrow-right.svg"} %>
 </article>
