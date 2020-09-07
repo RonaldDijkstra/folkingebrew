@@ -30,7 +30,7 @@ header.site-header {
   z-index: 1010;
 
   @include grid-media($for-desktop-up) {
-    padding: 1.2rem 4rem;
+    padding: 1.2rem 3rem;
   }
 
   &.hide-nav {
@@ -177,7 +177,7 @@ header.site-header {
         position: relative;
 
         @include grid-media($for-desktop-up) {
-          margin-right: 3.6rem;
+          margin-right: 2.4rem;
         }
 
         @include grid-media($for-mobile) {
@@ -186,7 +186,7 @@ header.site-header {
 
         &:first-of-type {
           @include grid-media($for-desktop-up) {
-            margin-left: 3.6rem;
+            margin-left: 2.4rem;
           }
         }
 

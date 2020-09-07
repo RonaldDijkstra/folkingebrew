@@ -1,0 +1,88 @@
+body.veelgestelde-vragen_index {
+  section.faq {
+    .grid-row {
+      padding-top: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      .inner {
+        display: none;
+        overflow: hidden;
+      }
+
+      li {
+        margin-bottom: 2em;
+
+        a.toggle {
+          background: $black;
+          color: $white;
+          display: block;
+          font-size: 1.4rem;
+          padding: 1em 50px 1em 1em;
+          position: relative;
+          text-decoration: none;
+          width: 100%;
+
+          @include grid-media($for-desktop-up) {
+            font-size: 1.8rem;
+          }
+
+          &.active {
+            &::after {
+              transform: rotate(45deg);
+            }
+
+            &::before {
+              transform: rotate(-45deg);
+            }
+          }
+
+          &::after,
+          &::before {
+            backface-visibility: hidden;
+            background: $white;
+            content: "";
+            height: 2px;
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transition-duration: 0.2s;
+            transition-property: transform;
+            width: 13px;
+          }
+
+          &::after {
+            transform: rotate(-45deg);
+          }
+
+          &::before {
+            right: 32px;
+            transform: rotate(45deg);
+          }
+
+          &:hover {
+            color: rgba($white, 0.75);
+
+            &::after,
+            &::before {
+              background: rgba($white, 0.75);
+            }
+          }
+
+          h2 {
+            margin-bottom: 0;
+          }
+        }
+
+        p {
+          background: $white;
+          margin: 0;
+          padding: 1em;
+        }
+      }
+    }
+  }
+}
