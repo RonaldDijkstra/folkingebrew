@@ -1,6 +1,13 @@
 ---
-nl:
+en:
   time:
     formats:
       blog_date: "%e %B %Y"
+  navigation:
+    beers: "Our Beers"
+    about: "About"
+    faq: "FAQ"
+    blog: "Blog"
+    contact: "Contact"
 ---
+

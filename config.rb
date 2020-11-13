@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# We are dutch
-root_locale = :nl
+# We are dutch but talk english
+root_locale = :en
 
 # Accessible as `root_locale` in helpers and `config[:root_locale]` in templates
 set :root_locale, root_locale
