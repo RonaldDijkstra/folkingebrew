@@ -40,8 +40,8 @@ page "/*.xml", layout: false
 # With layout
 page "blog/index.html", layout: :blog_index
 page "blog/*", layout: :blog_show
-page "bieren/index.html", layout: :beer_index
-page "bieren/*", layout: :beer_show
+page "beers/index.html", layout: :beer_index
+page "beers/*", layout: :beer_show
 
 # Activate and setup the blog content type
 activate :blog do |blog|
@@ -57,10 +57,10 @@ end
 
 # Activate and setup the beer content type
 activate :blog do |blog|
-  blog.name = "bieren"
-  blog.prefix = "bieren"
+  blog.name = "beers"
+  blog.prefix = "beers"
   blog.permalink = ":title"
-  blog.sources = "/bieren/{year}-{month}-{day}-{title}.html"
+  blog.sources = "/beers/{year}-{month}-{day}-{title}.html"
   # blog.tag_template = "blog/tag.html"
   blog.paginate = true
   blog.page_link = "{num}"

@@ -98,7 +98,7 @@ module ApplicationHelpers
     if is_blog_article?
       if current_page.url.start_with?("/blog/")
         "blog-article"
-      elsif current_page.url.start_with?("/bieren/")
+      elsif current_page.url.start_with?("/beers/")
         "beer-show"
       end
     end

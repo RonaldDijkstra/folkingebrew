@@ -1,7 +1,7 @@
 ---
 title: "Onze Bieren"
 description: "Al onze bieren"
-blog: bieren
+blog: beers
 pageable: true
 ---
 <header class="normal-page-header">
@@ -17,7 +17,7 @@ pageable: true
       <div class="beer-grid feed">
         <div class="row">
           <% page_articles.each do |beer| %>
-            <%= partial "bieren/beer-preview", locals: { beer: beer } %>
+            <%= partial "beers/beer-preview", locals: { beer: beer } %>
           <% end %>
         </div>
       </div>
