@@ -9,5 +9,11 @@ en:
     faq: "FAQ"
     blog: "Blog"
     contact: "Contact"
+  buttons:
+    read_more: "Read more"
+  footer:
+    contact: "Contact"
+    email_us: "Send an email"
+    social: "Social"
 ---
 

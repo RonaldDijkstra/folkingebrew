@@ -9,13 +9,14 @@
         <div>Folkingestraat 18</div>
         <div>9711 JW</div>
         <div>Groningen</div>
+        <div>The Netherlands</div>
       </div>
       <div class="col">
-        <h4>Contact</h4>
-        <div><%= link_to "Stuur een e-mail", "/contact.html" %></div>
+        <h4><%= t("footer.contact") %></h4>
+        <div><%= link_to t("footer.email_us"), "/contact.html" %></div>
       </div>
       <div class="col social">
-        <h4>Social</h4>
+        <h4><%= t("footer.social") %></h4>
         <div>
           <a href="https://www.untappd.com/Folkingebrew" class="social-icon icon-untappd" target="_blank" rel="noopener noreferrer"></a>
           <a href="https://www.facebook.com/Folkingebrew-167577637289407/" class="social-icon icon-facebook" target="_blank" rel="noopener noreferrer"></a>
