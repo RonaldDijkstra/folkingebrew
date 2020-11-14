@@ -15,5 +15,8 @@ en:
     contact: "Contact"
     email_us: "Send an email"
     social: "Social"
+  pages:
+    about:
+      title: "About us"
 ---
 
