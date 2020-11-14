@@ -25,6 +25,8 @@ en:
     message: "Message"
     choose: "Choose an option"
   pages:
+    x404:
+      title: "404 - Page not found"
     about:
       title: "About us"
     beers:
