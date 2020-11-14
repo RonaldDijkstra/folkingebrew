@@ -87,8 +87,8 @@ module ApplicationHelpers
   def current_page_url
     if current_page.url.start_with?("/blog/")
       "/blog/"
-    elsif current_page.url.start_with?("/bieren/")
-      "/bieren/"
+    elsif current_page.url.start_with?("/beers/")
+      "/beers/"
     else
       current_page.url
     end

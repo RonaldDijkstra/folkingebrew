@@ -15,36 +15,36 @@
             <%= current_article.data.description %>
           </p>
           <h4>
-            Facts
+            <%= t("beers.facts.title") %>
           </h4>
           <div class="beer-facts">
             <% if current_article.data.style %>
               <div class="beer-fact">
-                <span class="beer-fact-label">Stijl</span>
+                <span class="beer-fact-label"><%= t("beers.facts.style") %></span>
                 <span class="beer-fact-value"><%= current_article.data.style %></span>
               </div>
             <% end %>
             <% if current_article.data.abv %>
               <div class="beer-fact">
-                <span class="beer-fact-label">Alcohol</span>
+                <span class="beer-fact-label"><%= t("beers.facts.abv") %></span>
                 <span class="beer-fact-value"><%= current_article.data.abv %></span>
               </div>
             <% end %>
             <% if current_article.data.hops %>
               <div class="beer-fact">
-                <span class="beer-fact-label">Hop</span>
+                <span class="beer-fact-label"><%= t("beers.facts.hops") %></span>
                 <span class="beer-fact-value"><%= current_article.data.hops %></span>
               </div>
             <% end %>
             <% if current_article.data.yeast %>
               <div class="beer-fact">
-                <span class="beer-fact-label">Gist</span>
+                <span class="beer-fact-label"><%= t("beers.facts.yeast") %></span>
                 <span class="beer-fact-value"><%= current_article.data.yeast %></span>
               </div>
             <% end %>
             <% if current_article.data.release_date %>
               <div class="beer-fact">
-                <span class="beer-fact-label">Release Datum</span>
+                <span class="beer-fact-label"><%= t("beers.facts.release_date") %></span>
                 <span class="beer-fact-value"><%= current_article.data.release_date %></span>
               </div>
             <% end %>
@@ -58,10 +58,10 @@
       </div>
     </div>
     <div class="grid-row back-link">
-      <%= partial "partials/button", locals: { to: "/bieren/index.html",
+      <%= partial "partials/button", locals: { to: "/beers/index.html",
                                                variant: "medium-size solid green",
                                                icon_left: "icons/arrow-left.svg",
-                                               text: "Alle bieren"} %>
+                                               text: t("beers.back_to_all_beers")} %>
     </div>
   </section>
 <% end %>
