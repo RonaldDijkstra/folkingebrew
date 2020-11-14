@@ -18,5 +18,7 @@ en:
   pages:
     about:
       title: "About us"
+    faq:
+      title: "Frequently asked questions"
 ---
 
