@@ -1,1 +1,1 @@
-Heb je vragen over Folkingebrew of onze bieren? Stuur ons dan een e-mail door middel van het contactformulier. We nemen zo spoedig mogelijk contact met je op.
+Do you have questions about Folkingebrew or our beers? [Vist our FAQ for the most frequently asked questions](/frequently-asked-questions/) or send us an email using the contact form. We will contact you as soon as possible.

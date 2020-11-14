@@ -11,17 +11,31 @@ en:
     contact: "Contact"
   buttons:
     read_more: "Read more"
+    submit: "Submit"
   footer:
     contact: "Contact"
     email_us: "Send an email"
     social: "Social"
+  form:
+    name: "Name"
+    email: "Email"
+    request_type: "Type of Request"
+    private: "Private"
+    business: "For business"
+    message: "Message"
+    choose: "Choose an option"
   pages:
     about:
       title: "About us"
     beers:
       title: "Our beers"
+    contact:
+      title: "Contact"
     faq:
       title: "Frequently asked questions"
+    thanks:
+      text: "Thank you for filling in our contact form. We will contact you as soon as possible."
+      title: "Thank you!"
   beers:
     facts:
       title: "Facts"
