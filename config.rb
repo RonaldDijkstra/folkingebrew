@@ -85,14 +85,5 @@ configure :production do
 end
 
 ready do
-  proxy "_redirects", "redirects"
+  proxy "_redirects", "redirects", ignore: true
 end
-
-# after_build do
-#   file = "redirects.yml"
-#   redirects = YAML.load_file("data/" + file)
-
-#   File.open("build/_redirects", "w+") do |f|
-#     redirects.each { |element| f.puts(element + " 301") }
-#   end
-# end
