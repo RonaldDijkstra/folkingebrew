@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-# We are dutch
-root_locale = :nl
+# We are dutch but talk english
+root_locale = :en
 
 # Accessible as `root_locale` in helpers and `config[:root_locale]` in templates
 set :root_locale, root_locale
 
 # Activate i18n for root locale
-activate :i18n, mount_at_root: root_locale, langs: %i[nl]
+activate :i18n, mount_at_root: root_locale, langs: %i[en]
 activate :autoprefixer
 activate :directory_indexes
 activate :inline_svg
@@ -40,8 +40,8 @@ page "/*.xml", layout: false
 # With layout
 page "blog/index.html", layout: :blog_index
 page "blog/*", layout: :blog_show
-page "bieren/index.html", layout: :beer_index
-page "bieren/*", layout: :beer_show
+page "beers/index.html", layout: :beer_index
+page "beers/*", layout: :beer_show
 
 # Activate and setup the blog content type
 activate :blog do |blog|
@@ -57,10 +57,10 @@ end
 
 # Activate and setup the beer content type
 activate :blog do |blog|
-  blog.name = "bieren"
-  blog.prefix = "bieren"
+  blog.name = "beers"
+  blog.prefix = "beers"
   blog.permalink = ":title"
-  blog.sources = "/bieren/{year}-{month}-{day}-{title}.html"
+  blog.sources = "/beers/{year}-{month}-{day}-{title}.html"
   # blog.tag_template = "blog/tag.html"
   blog.paginate = true
   blog.page_link = "{num}"
@@ -82,4 +82,8 @@ configure :production do
   require "lib/test_exception_localization_handler"
 
   I18n.exception_handler = TestExceptionLocalizationHandler.new
+end
+
+ready do
+  proxy "_redirects", "redirects", ignore: true
 end

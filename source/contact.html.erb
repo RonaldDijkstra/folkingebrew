@@ -1,12 +1,12 @@
 ---
-title: "Contact"
-description: "Heb je vragen over Folkingebrew of onze bieren? Stuur ons dan een e-mail door middel van het contactformulier."
+title: "Contact us"
+description: "Do you have questions about Folkingebrew or our beers? Send us an email using the contact form."
 sitemap_priority: 0.5
 ---
 <header class="normal-page-header">
   <div class="grid-row">
     <h1>
-      Contact
+      <%= t("pages.contact.title") %>
     </h1>
   </div>
 </header>
@@ -17,7 +17,7 @@ sitemap_priority: 0.5
       <%= partial "partials/form", locals: { name: "contact",
                                              title: "Contactformulier",
                                              fields: ["name", "email", "type", "message"],
-                                             button_text: "Verstuur",
+                                             button_text: t("buttons.submit"),
                                              button_variant: "medium-size solid green",
                                              icon_right: "icons/arrow-right.svg"} %>
     </div>

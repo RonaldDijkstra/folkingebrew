@@ -1,6 +1,6 @@
 ---
-title: "Craft Beer uit Groningen"
-description: "Folkingebrew is opgericht met het doel om bier te brouwen dat wij zelf graag drinken."
+title: "Modern Craft Beer from Groningen, The Netherlands"
+description: "Folkbrew was founded with the aim of brewing the beer that we like to drink."
 sitemap_priority: 1
 blog: blog
 header_class: header-transparent
@@ -16,13 +16,13 @@ header_class: header-transparent
     <div class="row">
       <%= partial "content/introduction" %>
       <div class="read-more">
-        <%= partial "partials/button", locals: { to: "/bieren/index.html",
+        <%= partial "partials/button", locals: { to: "/beers/index.html",
                                                  variant: "medium-size solid green",
-                                                 text: "Onze releases",
+                                                 text: t("navigation.beers"),
                                                  icon_right: "icons/arrow-right.svg"} %>
-        <%= partial "partials/button", locals: { to: "/over-ons.html",
+        <%= partial "partials/button", locals: { to: "/about.html",
                                                  variant: "medium-size ghost green transparent-border",
-                                                 text: "Lees meer"} %>
+                                                 text: t("buttons.read_more")} %>
       </div>
     </div>
   </div>
