@@ -14,7 +14,7 @@ en:
     submit: "Submit"
   footer:
     contact: "Contact"
-    email_us: "Send an email"
+    email_us: "Send us a message"
     social: "Social"
   form:
     name: "Name"
@@ -40,7 +40,6 @@ en:
       title: "Thank you!"
   beers:
     facts:
-      title: "Facts"
       style: "Style"
       abv: "ABV"
       hops: "Hops"
