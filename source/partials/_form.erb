@@ -1,5 +1,8 @@
-<form name="<%= locals[:name] %>" method="POST" data-netlify="true" action="/thanks/">
+<form name="<%= locals[:name] %>" method="POST" data-netlify="true" netlify-honeypot="honeypot" action="/thanks/">
   <fieldset>
+    <div class="hidden">
+       <label>Don’t fill this out if you're human: <input name="honeypot" /></label>
+    </div>
     <% if locals[:fields].include? "name" %>
       <div class="form-item">
         <label for="name">

@@ -48,3 +48,9 @@ footer {
 .no-scroll {
   overflow: hidden;
 }
+
+.hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
