@@ -7,7 +7,7 @@ ut_link: "https://untappd.com/b/folkingebrew-leap-of-faith/3990301"
 blog_link:
 description: "Leap of Faith is a hazy New England style DIPA with the modern classic blend of Citra, Mosaic and Galaxy in the double dry hop."
 style: New England DIPA
-abv: "8,5%"
+abv: "8.5%"
 release_date: October 2020
 hops: Citra, Mosaic, Galaxy
 yeast: Vermont
