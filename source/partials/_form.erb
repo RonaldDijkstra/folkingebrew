@@ -29,8 +29,8 @@
         <div class="select">
           <select id="inquiry-type" name="inquiry-type" required>
             <option selected disabled><%= t("form.choose") %></option>
-            <option value="particulier"><%= t("form.private") %></option>
-            <option value="zakelijk"><%= t("form.business") %></option>
+            <option value="private"><%= t("form.private") %></option>
+            <option value="business"><%= t("form.business") %></option>
           </select>
         </div>
       </div>
@@ -41,7 +41,7 @@
         <label for="message">
           <%= t("form.message") %>
         </label>
-        <textarea name="<%= t("form.message") %>" id="message" rows="6"></textarea>
+        <textarea name="<%= t("form.message") %>" id="message" rows="10"></textarea>
       </div>
     <% end %>
 
