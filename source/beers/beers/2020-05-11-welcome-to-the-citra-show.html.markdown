@@ -11,5 +11,7 @@ abv: "8.5%"
 release_date: May 2020
 hops: Citra, Citra, Citra
 yeast: Vermont
+malts: Pilsen, Wheat, Flaked Oats
+adjuncts: Lactose
 background: dark
 ---
