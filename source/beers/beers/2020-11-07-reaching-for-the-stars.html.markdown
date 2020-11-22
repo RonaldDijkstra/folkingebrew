@@ -10,7 +10,7 @@ style: New England IPA
 abv: "7%"
 release_date: November 2020
 hops: El Dorado, Mosaic, Citra
-yeast: Lallemand Verdant
+yeast: Lallemand Verdant IPA
 malts: Pilsen, Flaked Oats, Malted Oats
 background: dark
 ---
