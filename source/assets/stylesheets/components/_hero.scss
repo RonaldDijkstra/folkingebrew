@@ -1,85 +1,109 @@
-section.hero-big {
-  .grid-row {
-    align-items: center;
+section.hero-wrap {
+  height: 100vh;
+  margin: 0;
+  max-height: 80rem;
+  text-align: center;
+
+  &.position-top {
+    margin-top: -8rem;
+  }
+
+  .hero {
     display: flex;
-    height: -webkit-fill-available;
-    height: 100vh;
-    justify-content: center;
-    padding: 0 2em;
+    height: 100%;
+    width: 100%;
+  }
+
+  .hero-main {
+    background: blue;
+    align-items: center;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex: 1;
+    margin: 0;
     position: relative;
 
-    .hero-continue-icon {
-      align-items: center;
-      background-color: $white;
-      border-radius: 50%;
-      bottom: 0;
-      box-shadow: 0 0.9rem 2.4rem -1.6rem rgba($black, 0.5);
-      display: flex;
-      font-size: $base-font-size * 1.4;
-      height: 5rem;
-      justify-content: center;
-      left: 50%;
-      margin: 0;
-      opacity: 0;
-      position: fixed;
-      text-decoration: none;
-      transform: translateX(-50%);
-      transition: all 0.2s ease-in-out;
-      width: 5rem;
-
-      @include grid-media($for-desktop-up) {
-        font-size: $base-font-size * 1.4;
-        height: 6rem;
-        width: 6rem;
-      }
-
-      &:hover {
-        transform: translateX(-50%) scale(1.1);
-      }
-
-      body.at-the-top & {
-        bottom: 1rem;
-        opacity: 1;
-
-        @include grid-media($for-desktop-up) {
-          bottom: 2rem;
-        }
-      }
-    }
-  }
-
-  body.index & {
-    &::before {
-      $background-image: "../images/hero-folkingestraat.jpg";
-
-      background-image: url($background-image);
-    }
-  }
-
-  body.x404 & {
-    &::before {
-      $background-image: "../images/hero-bubbles.png";
+    body.index & {
+      $background-image: "../images/moods/beers.jpg";
 
       background-image: url($background-image);
     }
 
-    h1 {
-      color: $white;
-      font-size: $base-font-size * 2;
+    &::before {
+      background: $green;
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      opacity: 0.9;
+      position: absolute;
+      top: 0;
+      transition: all 400ms ease-in-out;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  .hero-logo-wrap {
+    height: auto;
+    left: 50%;
+    padding: 0 2em;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    z-index: 2;
+
+    @include grid-media($for-desktop-up) {
+      padding: 0;
+    }
+  }
+
+  .hero-logo {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 48rem;
+    width: 100%;
+  }
+}
+
+.hero-actions {
+  align-self: flex-end;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 0rem 2rem 8rem;
+  width: 100%;
+  z-index: 2;
+}
+.hero-continue-icon {
+  align-items: center;
+  bottom: 0;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  font-size: 2.4rem;
+  height: 2.4rem;
+  left: 50%;
+  margin: 0rem 0rem 2rem;
+  position: absolute;
+  text-decoration: none;
+  transform: translateX(-50%);
+  width: 2.4rem;
+  z-index: 2;
+
+  &:hover {
+    color: $white;
+
+    &::before {
+      transform: scale(1.2);
     }
   }
 
   &::before {
-    background-position: 50% bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    bottom: 0;
-    content: "";
-    left: 0;
-    mix-blend-mode: screen;
-    opacity: 0.15;
-    position: absolute;
-    right: 0;
-    top: 0;
+    transition: all 0.2s ease-in-out;
   }
 }

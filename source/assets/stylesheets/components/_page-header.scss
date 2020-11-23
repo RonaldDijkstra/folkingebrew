@@ -3,12 +3,7 @@ header.normal-page-header {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-top: 7.2rem;
     padding: 4rem 1rem;
-
-    @include grid-media($for-desktop-up) {
-      margin-top: 8rem;
-    }
 
     h1 {
       color: $white;
