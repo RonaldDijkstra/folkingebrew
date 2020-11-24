@@ -1,3 +1,3 @@
-# Modern Craft Beer from Groningen
+# Hello, we are Folkingebrew
 
-Folkingebrew was founded with the aim of brewing beer that we like to drink ourselves. With every beer we try to get a little better and push our limits.
+Our motto is to never stop improving; we’re always learning and tweaking our beer designs to create the best beer we possibly can, packaged into only kegs and cans to optimise freshness and keep our beer tasting as fresh as it does from the source.
