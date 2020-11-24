@@ -15,13 +15,15 @@ section.hero-wrap {
   }
 
   .hero-main {
-    background: blue;
     align-items: center;
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex: 1;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
     margin: 0;
     position: relative;
 
@@ -45,40 +47,24 @@ section.hero-wrap {
       z-index: 1;
     }
   }
+}
 
-  .hero-logo-wrap {
-    height: auto;
-    left: 50%;
-    padding: 0 2em;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    width: 100%;
-    z-index: 2;
-
-    @include grid-media($for-desktop-up) {
-      padding: 0;
-    }
-  }
+.hero-inner {
+  padding: 0 2em;
+  z-index: 2;
 
   .hero-logo {
-    display: block;
-    height: auto;
-    margin: 0 auto;
-    max-width: 48rem;
-    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  h1 {
+    color: $white;
+    font-size: $base-font-size * 2;
+    margin-bottom: 1.2em;
+    z-index: 2;
   }
 }
 
-.hero-actions {
-  align-self: flex-end;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  padding: 0rem 2rem 8rem;
-  width: 100%;
-  z-index: 2;
-}
 .hero-continue-icon {
   align-items: center;
   bottom: 0;

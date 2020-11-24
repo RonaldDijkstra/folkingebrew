@@ -177,7 +177,7 @@ header.site-header {
         position: relative;
 
         @include grid-media($for-desktop-up) {
-          margin-right: 2.4rem;
+          margin-right: 4rem;
         }
 
         @include grid-media($for-mobile) {
@@ -186,18 +186,17 @@ header.site-header {
 
         &:first-of-type {
           @include grid-media($for-desktop-up) {
-            margin-left: 2.4rem;
+            margin-left: 4rem;
           }
         }
 
         a {
           align-items: center;
           display: flex;
-          font-size: $base-font-size * 1.6;
+          font-size: $base-font-size * 1.2;
           height: 100%;
           letter-spacing: 0.1rem;
           position: relative;
-          text-transform: uppercase;
           transition: all 0.2s ease-in-out;
           width: 100%;
         }

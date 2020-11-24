@@ -8,15 +8,17 @@ header_class: header-transparent
 <section class="hero-wrap position-top">
   <div class="hero">
     <div class="hero-main">
-      <div class="hero-logo-wrap">
-        <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "hero-logo" %>
-      </div>
-      <div class="hero-actions">
+      <div class="hero-inner">
+         <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "hero-logo" %>
+        <h1>
+          Modern Craft Beer from Groningen since 2017
+        </h1>
         <%= partial "partials/button", locals: { to: "/beers/index.html",
                                          variant: "medium-size ghost white",
                                          text: t("navigation.beers"),
                                          icon_right: "icons/arrow-right.svg"} %>
       </div>
+
       <a class="hero-continue-icon icon-chevron-down" href="#main-content" data-scroll-to></a>
     </div>
   </div>
