@@ -65,19 +65,11 @@ module ApplicationHelpers
 
   # Define image for Open Graph
   def og_image
-    if is_blog_article? and current_page.url.start_with?("/beers/")
-      full_url(
-        asset_url(
-          ["assets/", current_page.data.image].join || "assets/images/folkingebrew-1200x1200.png"
-        )
+    full_url(
+      asset_url(
+        "assets/images/folkingebrew-1200x1200.png"
       )
-    else
-      full_url(
-        asset_url(
-          current_page.data.image || "assets/images/folkingebrew-1200x1200.png"
-        )
-      )
-    end
+    )
   end
 
   # Get full locale (eg. nl_NL)
