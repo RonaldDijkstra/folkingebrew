@@ -1,3 +1,3 @@
 # Hello, we are Folkingebrew
 
-Our motto is to never stop dreaming; we’re always learning and tweaking our beers to create the best beer we possibly can.
+Like so many others we are beer geeks who turned brewers, because of our love for the great, versatile product that is beer. We love to drink big, bold beer with profound aromas and flavors and naturally that's what we brew.
