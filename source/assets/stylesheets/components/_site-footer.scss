@@ -1,14 +1,7 @@
 footer {
   .content-wrap {
-    $background-image: "../images/moods/footer.jpg";
-
-    background-attachment: scroll;
-    background-image: url($background-image);
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    background-size: cover;
     color: $white;
-    padding: 5em 0;
+    padding: 3em 0;
     position: relative;
     z-index: 0;
 
@@ -54,6 +47,10 @@ footer {
           margin-bottom: 0;
           text-align: left;
         }
+      }
+
+      .col-logo {
+        text-align: center;
       }
 
       &.copyright {

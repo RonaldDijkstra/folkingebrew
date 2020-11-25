@@ -12,9 +12,9 @@ article.article-preview {
     margin-bottom: 0.5em;
 
     h2 {
-      font-size: $base-font-size * 2;
-      margin: 0 0 $small-spacing / 2;
-      text-transform: uppercase;
+      font-size: $base-font-size * 1.6;
+      font-weight: 600;
+      margin: 0;
     }
 
     a {

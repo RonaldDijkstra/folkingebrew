@@ -27,9 +27,6 @@ body.beers {
       .excerpt-box-wrap {
         display: flex;
         margin-bottom: 4rem;
-      }
-
-      .col-md-4 {
         min-height: 1px;
         padding-left: 2rem;
         padding-right: 2rem;
@@ -126,9 +123,14 @@ body.beers {
 
         .excerpt-box-title {
           color: $white;
-          font-size: 3rem;
+          font-size: 2rem;
+          font-weight: 600;
           line-height: 1.25;
           margin: 1.2rem 0 0.8rem;
+
+          @include grid-media($for-desktop-up) {
+            font-size: 2.4rem;
+          }
         }
 
         .meta {

@@ -1,5 +1,8 @@
-<form name="<%= locals[:name] %>" method="POST" data-netlify="true" action="/thanks/">
+<form name="<%= locals[:name] %>" method="POST" data-netlify="true" netlify-honeypot="honeypot" action="/thanks/">
   <fieldset>
+    <div class="hidden">
+       <label>Don’t fill this out if you're human: <input name="honeypot" /></label>
+    </div>
     <% if locals[:fields].include? "name" %>
       <div class="form-item">
         <label for="name">
@@ -26,8 +29,8 @@
         <div class="select">
           <select id="inquiry-type" name="inquiry-type" required>
             <option selected disabled><%= t("form.choose") %></option>
-            <option value="particulier"><%= t("form.private") %></option>
-            <option value="zakelijk"><%= t("form.business") %></option>
+            <option value="private"><%= t("form.private") %></option>
+            <option value="business"><%= t("form.business") %></option>
           </select>
         </div>
       </div>
@@ -38,7 +41,7 @@
         <label for="message">
           <%= t("form.message") %>
         </label>
-        <textarea name="<%= t("form.message") %>" id="message" rows="6"></textarea>
+        <textarea name="<%= t("form.message") %>" id="message" rows="10"></textarea>
       </div>
     <% end %>
 

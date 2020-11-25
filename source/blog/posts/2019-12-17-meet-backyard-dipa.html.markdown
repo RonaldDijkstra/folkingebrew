@@ -7,7 +7,7 @@ featured: true
 image: assets/images/social/201912-backyard.png
 featured_image: blog/201912-introducing-backyard.png
 ---
-__Meet one of the thickest beers we've brewed to date. The late hop yield and a double dry hop contribute to a slight bitterness and a taste explosion of pineapple, stone and citrus fruit. The generous addition of oat flakes ensures a delicious juicy body.__
+__Meet one of the boldest beers we've brewed to date. The late hop yield and a double dry hop contribute to a slight bitterness and a taste explosion of pineapple, stone and citrus fruit. The generous addition of flaked oats ensures a delicious juicy body.__
 
 ## Background
 
@@ -28,7 +28,7 @@ An impression of our brewing day:
 
 ![Starting SG](/assets/images/blog/201912-brewday-3.jpg)
 
-## Over Backyard DIPA
+## About Backyard DIPA
 
 ![Backyard DIPA Cans](/assets/images/blog/201912-backyard-can.png)
 

@@ -18,17 +18,17 @@ h6 {
 }
 
 h1 {
+  font-size: $base-font-size * 1.8;
   font-weight: $font-weight-small;
-  text-transform: uppercase;
 }
 
 h2 {
-  font-size: $base-font-size * 2;
+  font-size: $base-font-size * 1.4;
   font-weight: $font-weight-regular;
 }
 
 h3 {
-  font-size: $base-font-size * 1.6;
+  font-size: $base-font-size * 1.2;
 }
 
 p {

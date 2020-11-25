@@ -4,12 +4,12 @@ body.blog-article {
       background: transparent;
       background-attachment: scroll;
       background-size: cover;
-      padding-top: 8rem;
       text-align: center;
 
       h1 {
         color: $white;
         font-size: $base-font-size * 2;
+        font-weight: 600;
 
         @include grid-media($for-desktop-up) {
           font-size: $base-font-size * 2.4;
@@ -33,6 +33,10 @@ body.blog-article {
         left: 50%;
         position: relative;
         transform: translateX(-50%);
+      }
+
+      h2 {
+        font-size: 3rem;
       }
     }
   }

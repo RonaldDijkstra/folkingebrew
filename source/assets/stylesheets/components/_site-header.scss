@@ -51,7 +51,7 @@ header.site-header {
 
     &[aria-current]:not([aria-current="false"]),
     &:hover {
-      color: rgba($white, 0.75);
+      color: rgba($white, 0.6);
     }
   }
 
@@ -144,7 +144,7 @@ header.site-header {
       min-height: 100vh;
       opacity: 0;
       overflow: scroll;
-      padding: 7.2rem 2rem 1.2rem;
+      padding: 14rem 2rem 0;
       position: fixed;
       top: 0;
       transform: translateX(-100%);
@@ -177,7 +177,7 @@ header.site-header {
         position: relative;
 
         @include grid-media($for-desktop-up) {
-          margin-right: 2.4rem;
+          margin-right: 4rem;
         }
 
         @include grid-media($for-mobile) {
@@ -186,18 +186,16 @@ header.site-header {
 
         &:first-of-type {
           @include grid-media($for-desktop-up) {
-            margin-left: 2.4rem;
+            margin-left: 4rem;
           }
         }
 
         a {
           align-items: center;
           display: flex;
-          font-size: $base-font-size * 1.6;
+          font-size: $base-font-size * 1.2;
           height: 100%;
-          letter-spacing: 0.1rem;
           position: relative;
-          text-transform: uppercase;
           transition: all 0.2s ease-in-out;
           width: 100%;
         }

@@ -1,9 +1,5 @@
 body.beers {
   &.beer-show {
-    section.beer {
-      padding-top: 8rem;
-    }
-
     .grid-row {
       &.beer-item {
         height: 100%;
@@ -64,16 +60,17 @@ body.beers {
         }
 
         h1 {
-          font-size: $base-font-size * 2;
+          font-size: $base-font-size * 1.6;
+          font-weight: 600;
           margin-bottom: 0.25em;
 
           @include grid-media($for-desktop-up) {
-            font-size: $base-font-size * 2.4;
+            font-size: $base-font-size * 2;
           }
         }
 
         .description {
-          margin-bottom: 0.75em;
+          margin-bottom: 2em;
         }
 
         h4 {
@@ -81,26 +78,51 @@ body.beers {
         }
 
         .beer-facts {
+          border-color: $light-gray;
+          border-style: dotted;
+          border-width: 0;
+          border-left-width: 0.2rem;
+          border-top-width: 0.2rem;
           display: flex;
           flex-wrap: wrap;
-          margin-bottom: 0.75em;
+          margin-bottom: 2em;
           width: 100%;
         }
 
         .beer-fact {
-          flex: 0 0 50%;
-          margin-bottom: 1em;
-          padding-right: 1em;
+          align-content: flex-end;
+          align-items: flex-end;
+          border-color: $light-gray;
+          border-style: dotted;
+          border-width: 0;
+          border-right-width: 0.2rem;
+          border-bottom-width: 0.2rem;
+          display: flex;
+          font-weight: bold;
+          flex: 1 100%;
+          flex-wrap: wrap;
+          padding: 1em;
+
+          @include grid-media($for-desktop-up) {
+            flex: 1 33.3333333333%;
+          }
 
           span {
             display: block;
+            width: 100%;
+          }
+
+          .beer-fact-value {
+            font-size: 0.9em;
+          }
+
+          .beer-fact-abv {
+            font-size: 1.5em;
           }
 
           .beer-fact-label {
             color: $light-gray;
-            font-size: 0.9em;
-            font-weight: bold;
-            text-transform: uppercase;
+            font-size: 0.7em;
           }
         }
 

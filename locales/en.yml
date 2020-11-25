@@ -10,11 +10,12 @@ en:
     blog: "Blog"
     contact: "Contact"
   buttons:
-    read_more: "Read more"
+    read_more: "Read More"
+    read_more_about_us: "More About Us"
     submit: "Submit"
   footer:
     contact: "Contact"
-    email_us: "Send an email"
+    email_us: "Send us a message"
     social: "Social"
   form:
     name: "Name"
@@ -30,22 +31,23 @@ en:
     about:
       title: "About us"
     beers:
-      title: "Our beers"
+      title: "Our Beers"
     contact:
       title: "Contact"
     faq:
-      title: "Frequently asked questions"
+      title: "Frequently Asked Questions"
     thanks:
       text: "Thank you for filling in our contact form. We will contact you as soon as possible."
       title: "Thank you!"
   beers:
     facts:
-      title: "Facts"
       style: "Style"
       abv: "ABV"
       hops: "Hops"
       yeast: "Yeast"
+      malts: "Malts"
+      adjuncts: "Adjuncts"
       release_date: "Release Date"
-    back_to_all_beers: "Back to all Beers"
+    back_to_all_beers: "Back to All Beers"
 ---
 

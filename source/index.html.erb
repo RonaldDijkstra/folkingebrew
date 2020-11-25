@@ -1,14 +1,25 @@
 ---
-title: "Modern Craft Beer from Groningen, The Netherlands"
-description: "Folkingebrew was founded with the aim of brewing the beer that we like to drink."
+description: "Modern Craft Beer from Groningen since 2017"
 sitemap_priority: 1
 blog: blog
 header_class: header-transparent
 ---
-<section class="hero hero-big">
-  <div class="grid-row">
-    <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "hero-logo" %>
-    <a class="hero-continue-icon icon-arrow-down" href="#main-content" data-scroll-to></a>
+<section class="hero-wrap position-top">
+  <div class="hero">
+    <div class="hero-main">
+      <div class="hero-inner">
+         <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "hero-logo" %>
+        <h1>
+          Modern Craft Beer from Groningen since 2017
+        </h1>
+        <%= partial "partials/button", locals: { to: "/beers/index.html",
+                                       variant: "medium-size ghost white",
+                                       text: t("navigation.beers"),
+                                       icon_right: "icons/arrow-right.svg"} %>
+      </div>
+
+      <a class="hero-continue-icon icon-chevron-down" href="#main-content" data-scroll-to></a>
+    </div>
   </div>
 </section>
 <section class="introduction wide-row" id="main-content">
@@ -16,13 +27,10 @@ header_class: header-transparent
     <div class="row">
       <%= partial "content/introduction" %>
       <div class="read-more">
-        <%= partial "partials/button", locals: { to: "/beers/index.html",
-                                                 variant: "medium-size solid green",
-                                                 text: t("navigation.beers"),
-                                                 icon_right: "icons/arrow-right.svg"} %>
         <%= partial "partials/button", locals: { to: "/about.html",
-                                                 variant: "medium-size ghost green transparent-border",
-                                                 text: t("buttons.read_more")} %>
+                                                 variant: "medium-size ghost green",
+                                                 text: t("buttons.read_more_about_us"),
+                                                 icon_right: "icons/arrow-right.svg"} %>
       </div>
     </div>
   </div>

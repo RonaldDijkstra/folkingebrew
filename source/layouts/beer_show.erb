@@ -14,38 +14,47 @@
           <p class="description">
             <%= current_article.data.description %>
           </p>
-          <h4>
-            <%= t("beers.facts.title") %>
-          </h4>
           <div class="beer-facts">
-            <% if current_article.data.style %>
+              <% if current_article.data.abv %>
               <div class="beer-fact">
-                <span class="beer-fact-label"><%= t("beers.facts.style") %></span>
-                <span class="beer-fact-value"><%= current_article.data.style %></span>
+                <span class="beer-fact-value beer-fact-abv"><%= current_article.data.abv %></span>
+                <span class="beer-fact-label"><%= t("beers.facts.abv") %></span>
               </div>
             <% end %>
-            <% if current_article.data.abv %>
+            <% if current_article.data.style %>
               <div class="beer-fact">
-                <span class="beer-fact-label"><%= t("beers.facts.abv") %></span>
-                <span class="beer-fact-value"><%= current_article.data.abv %></span>
+                <span class="beer-fact-value"><%= current_article.data.style %></span>
+                <span class="beer-fact-label"><%= t("beers.facts.style") %></span>
               </div>
             <% end %>
             <% if current_article.data.hops %>
               <div class="beer-fact">
-                <span class="beer-fact-label"><%= t("beers.facts.hops") %></span>
                 <span class="beer-fact-value"><%= current_article.data.hops %></span>
+                <span class="beer-fact-label"><%= t("beers.facts.hops") %></span>
               </div>
             <% end %>
             <% if current_article.data.yeast %>
               <div class="beer-fact">
-                <span class="beer-fact-label"><%= t("beers.facts.yeast") %></span>
                 <span class="beer-fact-value"><%= current_article.data.yeast %></span>
+                <span class="beer-fact-label"><%= t("beers.facts.yeast") %></span>
+              </div>
+            <% end %>
+            <% if current_article.data.malts %>
+              <div class="beer-fact">
+                <span class="beer-fact-value"><%= current_article.data.malts %></span>
+                <span class="beer-fact-label"><%= t("beers.facts.malts") %></span>
+              </div>
+            <% end %>
+            <% if current_article.data.adjuncts %>
+              <div class="beer-fact">
+                <span class="beer-fact-value"><%= current_article.data.adjuncts %></span>
+                <span class="beer-fact-label"><%= t("beers.facts.adjuncts") %></span>
               </div>
             <% end %>
             <% if current_article.data.release_date %>
               <div class="beer-fact">
+                 <span class="beer-fact-value"><%= current_article.data.release_date %></span>
                 <span class="beer-fact-label"><%= t("beers.facts.release_date") %></span>
-                <span class="beer-fact-value"><%= current_article.data.release_date %></span>
               </div>
             <% end %>
           </div>
