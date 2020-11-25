@@ -51,7 +51,7 @@ header.site-header {
 
     &[aria-current]:not([aria-current="false"]),
     &:hover {
-      color: rgba($white, 0.75);
+      color: rgba($white, 0.6);
     }
   }
 
@@ -144,7 +144,7 @@ header.site-header {
       min-height: 100vh;
       opacity: 0;
       overflow: scroll;
-      padding: 7.2rem 2rem 1.2rem;
+      padding: 14rem 2rem 0;
       position: fixed;
       top: 0;
       transform: translateX(-100%);

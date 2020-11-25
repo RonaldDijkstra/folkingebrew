@@ -1,6 +1,6 @@
 Like so many others we are beer geeks who turned brewers, because of our love for the great, versatile product that is beer. We love to drink big, bold beer with profound aromas and flavors and naturally that's what we brew.
 
-Since launching in late 2017 our motto is to never stop learning: we’re always tweaking our beers to create the best beer we possibly can.
+Since our start with the brewing adventure back in late 2017 our motto is to never stop learning: we’re always tweaking our beers to create the best beer we possibly can.
 
 Our ambition is to start our own brewery and we are working towards that goal every single day. We are growing and expanding with almost every release, so what started as just a 250 liter release back in 2018 is now approximately 3000 liters per beer. It's been great fun!
 
