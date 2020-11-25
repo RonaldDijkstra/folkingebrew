@@ -7,7 +7,7 @@ Modern Craft Beer from Groningen since 2017 🍻
 
 ## About this website
 
-This website is built with [Middleman](https://middlemanapp.com/) with [Middleman Template by ThoughtBot](https://github.com/thoughtbot/middleman-template). This website is deployed with and to [Netlify](https://www.netlify.com/).
+This website is built with [Middleman](https://middlemanapp.com/) with [Middleman Template by ThoughtBot](https://github.com/thoughtbot/middleman-template). This website is deployed to [Netlify](https://www.netlify.com/).
 
 ## Before Setup
 
