@@ -20,15 +20,11 @@ body.frequently-asked-questions_index {
           background: $black;
           color: $white;
           display: block;
-          font-size: 1rem;
+          font-size: $base-font-size * 1.2;
           padding: 1em 50px 1em 1em;
           position: relative;
           text-decoration: none;
           width: 100%;
-
-          @include grid-media($for-desktop-up) {
-            font-size: 1.4rem;
-          }
 
           &.active {
             &::after {

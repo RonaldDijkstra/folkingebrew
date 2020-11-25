@@ -102,7 +102,6 @@ body.beers {
           flex: 1 100%;
           flex-wrap: wrap;
           padding: 1em;
-          text-transform: uppercase;
 
           @include grid-media($for-desktop-up) {
             flex: 1 33.3333333333%;

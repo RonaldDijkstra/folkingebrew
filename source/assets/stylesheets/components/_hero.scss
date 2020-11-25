@@ -54,14 +54,22 @@ section.hero-wrap {
   z-index: 2;
 
   .hero-logo {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+
+    @include grid-media($for-desktop-up) {
+      margin-bottom: 1.8em;
+    }
   }
 
   h1 {
     color: $white;
-    font-size: $base-font-size * 2;
+    font-size: $base-font-size * 1.4;
     margin-bottom: 1.2em;
     z-index: 2;
+
+    @include grid-media($for-desktop-up) {
+      font-size: $base-font-size * 1.8;
+    }
   }
 }
 
