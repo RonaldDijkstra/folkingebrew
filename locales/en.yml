@@ -22,8 +22,9 @@ en:
     email: "Email"
     request_type: "Type of Request"
     private: "Private"
-    business: "For business"
-    message: "Message"
+    business: "Retail"
+    distributor: "Distribution"
+    message: "How can we help you?"
     choose: "Choose an option"
   pages:
     x404:

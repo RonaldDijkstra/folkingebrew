@@ -1,1 +1,1 @@
-Do you have questions about Folkingebrew or our beers? [Vist our FAQ](/frequently-asked-questions/) for answers to the most frequently asked questions or send us an email using the contact form. We will contact you as soon as possible.
+Hello! Do you have questions about Folkingebrew or our beers? [Vist our FAQ](/frequently-asked-questions/) for answers to the most frequently asked questions or send us an email using the contact form. We will contact you as soon as possible.
