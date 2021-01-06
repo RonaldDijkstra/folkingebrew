@@ -11,6 +11,6 @@ abv: "8.2%"
 release_date: December 2020
 hops: Azacca, Mosaic, Galaxy
 yeast: LAIII
-malts: Pilsen, Golden Promise, Flaked Oats, Malted Oats
+malts: Pilsen, Golden Promise, Oats
 background: dark
 ---
