@@ -1,0 +1,28 @@
+---
+title: "Webshop"
+description: "Buy our beers and merchandise in our webshop."
+sitemap_priority: 0.8
+---
+
+<header class="normal-page-header">
+  <div class="grid-row">
+    <h1>
+      <%= t("pages.webshop.title") %>
+    </h1>
+  </div>
+</header>
+
+<section>
+  <div class="grid-row">
+    <% if data.products.empty? %>
+      <%= t("webshop.no_stock_message") %>
+    <% end %>
+    <% data.products.each do |p| %>
+      <a href="/webshop/<%= p.path %>">
+        <%= p.name %>
+        <%= number_to_currency(p.price, :unit => "€").gsub!(/\./,",") %>
+      </a>
+    <% end %>
+  </div>
+</section>
+
