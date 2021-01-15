@@ -9,6 +9,10 @@ body.header-transparent.at-the-top {
         opacity: 1;
       }
     }
+
+    .header-cart .snipcart-total-items {
+      background: $black;
+    }
   }
 
   &.not-at-the-top {
@@ -204,23 +208,31 @@ header.site-header {
   }
 
   .nav-extras {
+    // background: blue;
     display: flex;
     z-index: 1020;
 
-    .site-header-social-links {
+    .header-cart {
+      align-items: center;
       display: flex;
-      margin-left: 3.6rem;
+      margin-left: 3.2rem;
+      padding: 0 0.4rem;
+      position: relative;
       transition: all 0.2s ease-in-out;
 
-      .social-icon {
+      .snipcart-total-items {
         align-items: center;
+        background: $green;
+        border-radius: 50%;
         display: flex;
+        font-size: $base-font-size * 0.6;
+        font-weight: bold;
+        height: 1.3em;
         justify-content: center;
-        margin-right: 1.2rem;
-
-        &:last-of-type {
-          margin-right: 0;
-        }
+        min-width: 1.3em;
+        position: absolute;
+        right: 0;
+        top: 1em;
       }
     }
   }
