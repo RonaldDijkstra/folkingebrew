@@ -5,6 +5,7 @@ en:
       blog_date: "%e %B %Y"
   navigation:
     beers: "Our Beers"
+    webshop: "Webshop"
     about: "About"
     faq: "FAQ"
     blog: "Blog"
@@ -40,6 +41,8 @@ en:
     thanks:
       text: "Thank you for filling in our contact form. We will contact you as soon as possible."
       title: "Thank you!"
+    webshop:
+      title: "Webshop"
   beers:
     facts:
       style: "Style"
@@ -50,5 +53,8 @@ en:
       adjuncts: "Adjuncts"
       release_date: "Release Date"
     back_to_all_beers: "Back to All Beers"
+  webshop:
+    back_to_all_products: "View All Products"
+    no_stock_message: "Currently we are out of stock. Come back soon!"
 ---
 

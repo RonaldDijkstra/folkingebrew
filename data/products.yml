@@ -2,7 +2,7 @@
   id: 101
   price: 36.00
   max_quantity: 4
-  path: products/exploration-dipa-6-pack
+  path: exploration-dipa-6-pack
   image: images/beers/exploration.png
   description: 6 cans of Exploration (8.2% ABV). Double dry-hopped with Azacca, Mosaic and Galaxy.
 
@@ -10,14 +10,14 @@
   id: 102
   price: 36.00
   max_quantity: 4
-  path: products/exploration-dipa-6-pack
+  path: reaching-for-the-stars-6-pack
   image: images/beers/reaching-for-the-stars.png
   description: 6 cans of Reaching for the Stars (7% ABV).
 
-- name: Folkingebrew Tumbler
+- name: Folkingebrew Tumbler Glass
   id: 103
   price: 6
   max_quantity: 4
-  path: products/folkingebrew-tumbler-glass
+  path: folkingebrew-tumbler-glass
   image: images/beers/exploration.png
   description: Rastal Harmony 40 Tumbler with transparent Folkingebrew logo on front and Folkingebrew word mark on the back.

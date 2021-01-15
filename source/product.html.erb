@@ -1,0 +1,18 @@
+---
+title: "Product"
+---
+
+<header class="normal-page-header">
+  <div class="grid-row">
+    <h1>
+      <%= product.name %>
+    </h1>
+  </div>
+</header>
+
+<div class="grid-row back-link">
+  <%= partial "partials/button", locals: { to: "/webshop/index.html",
+                                           variant: "medium-size solid green",
+                                           icon_left: "icons/arrow-left.svg",
+                                           text: t("webshop.back_to_all_products")} %>
+</div>

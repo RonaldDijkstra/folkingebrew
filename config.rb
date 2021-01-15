@@ -55,6 +55,10 @@ activate :blog do |blog|
   blog.per_page = 10
 end
 
+data.products.each do |p|
+  proxy "/webshop/" + p.path + "/index.html", "product.html", :locals => { :product => p }, :ignore => true
+end
+
 # Activate and setup the beer content type
 activate :blog do |blog|
   blog.name = "beers"
