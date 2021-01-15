@@ -64,7 +64,7 @@ activate :blog do |blog|
   # blog.tag_template = "blog/tag.html"
   blog.paginate = true
   blog.page_link = "{num}"
-  blog.per_page = 10
+  blog.per_page = 12
 end
 
 # Settings for production

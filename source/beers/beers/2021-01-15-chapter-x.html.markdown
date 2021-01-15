@@ -1,0 +1,16 @@
+---
+title: "Chapter X"
+date: 2021-01-15 09:00 CEST
+image: "beers/chapter-x.png"
+tags: TIPA
+ut_link:
+blog_link:
+description: "A New England Style Triple IPA intensively double dry-hopped with Citra, Mosaic and Nelson Sauvin."
+style: New England TIPA
+abv: "9.5%"
+release_date: February 2020
+hops: Citra, Mosaic, Nelson Sauvin
+yeast: LAIII
+malts: Golden Promise, Oats
+background: dark
+---
