@@ -102,6 +102,8 @@ module ApplicationHelpers
       "/blog/"
     elsif current_page.url.start_with?("/beers/")
       "/beers/"
+    elsif current_page.url.start_with?("/webshop/")
+      "/webshop/"
     else
       current_page.url
     end
