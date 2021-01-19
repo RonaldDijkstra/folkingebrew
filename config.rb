@@ -42,6 +42,8 @@ page "blog/index.html", layout: :blog_index
 page "blog/*", layout: :blog_show
 page "beers/index.html", layout: :beer_index
 page "beers/*", layout: :beer_show
+page "webshop/index.html", layout: :webshop_index
+page "webshop/*", layout: :webshop_show
 
 # Activate and setup the blog content type
 activate :blog do |blog|
@@ -53,10 +55,6 @@ activate :blog do |blog|
   blog.paginate = true
   blog.page_link = "{num}"
   blog.per_page = 10
-end
-
-data.products.each do |p|
-  proxy "/webshop/" + p.path + "/index.html", "product.html", :locals => { :product => p }, :ignore => true
 end
 
 # Activate and setup the beer content type
@@ -71,6 +69,18 @@ activate :blog do |blog|
   blog.per_page = 12
 end
 
+# Activate and setup the product content type
+activate :blog do |blog|
+  blog.name = "webshop"
+  blog.prefix = "webshop"
+  blog.permalink = ":title"
+  blog.sources = "/products/{title}.html"
+  # blog.tag_template = "blog/tag.html"
+  blog.paginate = true
+  blog.page_link = "{num}"
+  blog.per_page = 12
+end
+
 # Settings for production
 configure :production do
   activate :asset_hash, ignore: [
@@ -79,7 +89,7 @@ configure :production do
   ]
   activate :gzip
   activate :minify_css
-  activate :minify_html
+  # activate :minify_html
   activate :minify_javascript
 
   # Raise exception for missing translations during build

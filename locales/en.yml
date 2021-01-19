@@ -1,5 +1,6 @@
 ---
 en:
+  CNAME: www.folkingebrew.nl
   time:
     formats:
       blog_date: "%e %B %Y"
@@ -42,7 +43,7 @@ en:
       text: "Thank you for filling in our contact form. We will contact you as soon as possible."
       title: "Thank you!"
     webshop:
-      title: "Webshop"
+      title: "Folkingebrew Webshop"
   beers:
     facts:
       style: "Style"
@@ -55,6 +56,7 @@ en:
     back_to_all_beers: "Back to All Beers"
   webshop:
     back_to_all_products: "View All Products"
+    add_to_cart: "Add to Cart"
     no_stock_message: "Currently we are out of stock. Come back soon!"
 ---
 

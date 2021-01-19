@@ -1,0 +1,28 @@
+---
+title: "Webshop"
+description: "Buy our beers and merchandise in our webshop."
+blog: webshop
+pageable: true
+sitemap_priority: 0.8
+---
+<header class="normal-page-header">
+  <div class="grid-row">
+    <h1>
+      <%= t("pages.webshop.title") %>
+    </h1>
+  </div>
+</header>
+
+<section class="products">
+  <div class="product-container">
+    <% if page_articles.empty? %>
+      <p class="no-stock">
+        <%= t("webshop.no_stock_message") %>
+      </p>
+    <% end %>
+    <% page_articles.each do |product| %>
+      <%= partial "webshop/product_preview", locals: { product: product } %>
+    <% end %>
+  </div>
+</section>
+

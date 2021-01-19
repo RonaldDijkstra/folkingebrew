@@ -24,6 +24,8 @@ module ApplicationHelpers
         [current_page.data.title, "Blog"].join(" | ")
       elsif current_page.url.start_with?("/beers/")
         [current_page.data.title, "Our Beers"].join(" | ")
+      elsif current_page.url.start_with?("/webshop/")
+        [current_page.data.title, "Webshop"].join(" | ")
       end
     else
       current_page.data.title
