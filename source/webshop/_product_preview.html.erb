@@ -26,14 +26,16 @@
       <%= h truncate(product.data.description, :length => 100) %> <%= link_to "Read more", product.url %>
     </div>
     <div class="add-to-cart">
+      <div>
+        <label for="quantity">
+          Quantity
+          <% if product.data.use_max_quantity %>
+            (max: <%= product.data.max_quantity %>)
+          <% end %>
+        </label>
+      </div>
       <div class="product-selectors">
         <div class="product-quantity">
-          <label for="quantity">
-            Quantity
-            <% if product.data.use_max_quantity %>
-              (max: <%= product.data.max_quantity %>)
-            <% end %>
-          </label>
           <% if product.data.max_quantity %>
             <input type="number" name="quantity" id="quantity" value="1" min="1" max="<%= product.data.max_quantity %>">
           <% else %>
@@ -42,9 +44,6 @@
         </div>
         <% if product.data.sizes %>
           <div class="product-size">
-            <label for="size-1">
-              Size
-            </label>
             <div class="select">
               <select name="id" id="size-1">
                 <option disabled>Size</option>
@@ -63,7 +62,7 @@
           Sold Out
         <% end %>
       <% else %>
-        <%= partial "webshop/snipcart_button", locals: { product: product, variant: "green normal-size full-width solid"} %>
+        <%= partial "webshop/snipcart_button", locals: { product: product, variant: "green medium-size full-width solid"} %>
       <% end %>
     </div>
   </div>

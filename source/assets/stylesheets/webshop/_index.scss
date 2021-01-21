@@ -9,7 +9,7 @@ body.webshop_index {
 
   .products {
     .product-container {
-      border-top: solid 2px #e8ebe6;
+      border-top: 2px solid $lightest-gray;
       max-width: $wide-row;
       padding: 0;
 
@@ -17,13 +17,13 @@ body.webshop_index {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        margin: 0 auto;
+        margin: 0 auto 4em;
       }
     }
 
     .product {
       background: $white;
-      border-bottom: solid 2px #e8ebe6;
+      border-bottom: 2px solid $lightest-gray;
       display: flex;
       flex-direction: column;
       margin-bottom: 0;
@@ -35,11 +35,11 @@ body.webshop_index {
       }
 
       &:nth-child(odd) {
-        border-right: solid 2px #e8ebe6;
+        border-right: 2px solid $lightest-gray;
       }
 
       .product-media {
-        background: #f5f5f5;
+        background: $light-gray;
         padding-top: 56.25%;
         position: relative;
       }
@@ -81,7 +81,7 @@ body.webshop_index {
       }
 
       .product-meta {
-        border: 1px solid $black;
+        border: 1px solid $medium-gray;
         border-left: 0;
         border-right: 0;
         display: flex;
@@ -98,7 +98,7 @@ body.webshop_index {
           width: 50%;
 
           &.product-price {
-            border-right: 1px solid $black;
+            border-right: 1px solid $medium-gray;
           }
 
           &.product-stock {
@@ -118,7 +118,7 @@ body.webshop_index {
 
           @include grid-media($for-desktop-up) {
             align-items: center;
-            border-right: 1px solid $black;
+            border-right: 1px solid $medium-gray;
             margin-bottom: 0;
             padding-right: 1em;
             padding-top: 1em;
@@ -136,6 +136,10 @@ body.webshop_index {
 
           .product-selectors {
             display: flex;
+
+            @include grid-media($for-desktop-up) {
+              padding-bottom: 1em;
+            }
           }
 
           .product-size {
@@ -143,15 +147,12 @@ body.webshop_index {
           }
 
           input[type=number] {
-            padding-bottom: 0.5em;
-            padding-top: 0.5em;
             width: 80px;
           }
 
           select {
-            padding-bottom: 0.6em;
-            padding-top: 0.6em;
-            width: 80px;
+            line-height: 1.4;
+            width: 120px;
           }
         }
       }

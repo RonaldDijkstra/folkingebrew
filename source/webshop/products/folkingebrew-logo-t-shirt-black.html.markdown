@@ -2,7 +2,7 @@
 title: "Folkingebrew T-Shirt"
 id: 103
 max_quantity: 4
-use_max_quantity: false
+use_max_quantity: true
 price: 6.00
 date: 2020-12-05 09:00 CEST
 image: "webshop/folkingebrew-black-t-shirt.jpg"

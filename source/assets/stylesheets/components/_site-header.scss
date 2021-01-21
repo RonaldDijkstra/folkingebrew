@@ -47,18 +47,6 @@ header.site-header {
     transform: translatey(0);
   }
 
-  a {
-    color: $white;
-    font-family: $heading-font-family;
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-
-    &[aria-current]:not([aria-current="false"]),
-    &:hover {
-      color: rgba($white, 0.6);
-    }
-  }
-
   .nav-menu-toggle {
     background-color: transparent;
     border: 0;
@@ -115,7 +103,6 @@ header.site-header {
       background-position: 0;
       height: auto;
       position: relative;
-      width: 10rem;
     }
 
     @include grid-media($for-mobile) {
@@ -181,7 +168,7 @@ header.site-header {
         position: relative;
 
         @include grid-media($for-desktop-up) {
-          margin-right: 4rem;
+          margin-right: 3.2rem;
         }
 
         @include grid-media($for-mobile) {
@@ -190,35 +177,51 @@ header.site-header {
 
         &:first-of-type {
           @include grid-media($for-desktop-up) {
-            margin-left: 4rem;
+            margin-left: 3.2rem;
           }
         }
 
         a {
           align-items: center;
+          color: $white;
           display: flex;
+          font-family: $heading-font-family;
           font-size: $base-font-size * 1.2;
           height: 100%;
           position: relative;
+          text-decoration: none;
           transition: all 0.2s ease-in-out;
           width: 100%;
+
+          &[aria-current]:not([aria-current="false"]),
+          &:hover {
+            color: rgba($white, 0.6);
+          }
         }
       }
     }
   }
 
   .nav-extras {
-    // background: blue;
     display: flex;
+    justify-content: flex-end;
+    width: 3.6rem;
     z-index: 1020;
 
     .header-cart {
       align-items: center;
       display: flex;
-      margin-left: 3.2rem;
-      padding: 0 0.4rem;
       position: relative;
       transition: all 0.2s ease-in-out;
+
+      .snipcart-checkout {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+          color: rgba($white, 0.8);
+        }
+      }
 
       .snipcart-total-items {
         align-items: center;
@@ -231,7 +234,7 @@ header.site-header {
         justify-content: center;
         min-width: 1.3em;
         position: absolute;
-        right: 0;
+        right: -5px;
         top: 1em;
       }
     }
