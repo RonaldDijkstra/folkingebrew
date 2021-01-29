@@ -8,7 +8,7 @@ blog_link:
 description: "A New England Style Triple IPA intensively double dry-hopped with Citra, Mosaic and Nelson Sauvin."
 style: New England TIPA
 abv: "9.5%"
-release_date: February 2020
+release_date: February 2021
 hops: Citra, Mosaic, Nelson Sauvin
 yeast: LAIII
 malts: Golden Promise, Oats
