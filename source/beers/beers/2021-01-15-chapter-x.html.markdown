@@ -3,7 +3,7 @@ title: "Chapter X"
 date: 2021-01-15 09:00 CEST
 image: "beers/chapter-x.png"
 tags: TIPA
-ut_link:
+ut_link: "https://untappd.com/b/folkingebrew-chapter-x/4158862"
 blog_link:
 description: "A New England Style Triple IPA intensively double dry-hopped with Citra, Mosaic and Nelson Sauvin."
 style: New England TIPA
