@@ -115,6 +115,13 @@ body.webshop_index {
 
         .product-description {
           margin-bottom: 1em;
+          min-width: 0;
+
+          .very-long-string {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
 
           @include grid-media($for-desktop-up) {
             align-items: center;
@@ -146,8 +153,39 @@ body.webshop_index {
             margin-left: 1em;
           }
 
+          .product-quantity {
+            display: flex;
+          }
+
+          button.quantity-adjust {
+            background-color: $white;
+            border: $base-border;
+            color: $dark-gray;
+            height: 46px;
+            width: 46px;
+            text-align: center;
+
+            &:hover {
+              background-color: $lightest-gray;
+            }
+
+            &.min {
+              border-right: 0;
+            }
+
+            &.plus {
+              border-left: 0;
+            }
+          }
+
           input[type=number] {
-            width: 80px;
+            appearance: none;
+            height: 46px;
+            -moz-appearance: textfield;
+            padding: 0;
+            overflow: visible;
+            width: 46px;
+            text-align: center;
           }
 
           select {

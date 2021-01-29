@@ -24,6 +24,10 @@
   <div class="product-controls">
     <div class="product-description">
       <%= h truncate(product.data.description, :length => 100) %> <%= link_to "Read more", product.url %>
+
+          <div class="very-long-string">
+            abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+        </div>
     </div>
     <div class="add-to-cart">
       <div>
@@ -36,11 +40,13 @@
       </div>
       <div class="product-selectors">
         <div class="product-quantity">
+          <button class="quantity-adjust min">-</button>
           <% if product.data.max_quantity %>
-            <input type="number" name="quantity" id="quantity" value="1" min="1" max="<%= product.data.max_quantity %>">
+            <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1" max="<%= product.data.max_quantity %>">
           <% else %>
-            <input type="number" name="quantity" id="quantity" value="1" min="1">
+            <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1">
           <% end %>
+          <button class="quantity-adjust plus">+</button>
         </div>
         <% if product.data.sizes %>
           <div class="product-size">
@@ -58,7 +64,7 @@
         <% end %>
       </div>
       <% if product.data.out_of_stock %>
-        <% content_tag :button, class: "button green normal-size full-width solid", :disabled => "disabled" do %>
+        <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
           Sold Out
         <% end %>
       <% else %>

@@ -5,3 +5,4 @@
 //= require _form
 //= require _header
 //= require _scroll-to
+//= require _webshop
