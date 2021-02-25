@@ -31,8 +31,14 @@ module ApplicationHelpers
   end
 
   # If there's a title in frontmatter then join them with the website_name
-  def local_title
+  def local_title(page = current_page)
+    dont_append = page.data.dont_append_page_title
+
+    if dont_append
+      frontmatter_title
+    else
     [frontmatter_title, website_name].join(" | ") if frontmatter_title
+    end
   end
 
   # Page title is localized or title
