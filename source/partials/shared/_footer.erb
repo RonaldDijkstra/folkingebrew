@@ -1,24 +1,72 @@
-<footer role="footer">
-  <div class="content-wrap">
-    <div class="grid-row">
-      <div class="col col-logo">
-        <%= inline_svg "hopje.svg", alt: "Folkingebrew HOP" %>
+<footer role="contentinfo">
+  <div class="grid-row">
+    <div class="footer-content">
+      <div class="footer-column">
+        <div class="footer-link-column">
+          <h3>
+            Folkingebrew
+          </h3>
+          <ul class="footer-link-list">
+            <li><%= link_to "Our Beers", "/beers/index.html" %></li>
+            <li><%= link_to "About", "/about.html" %></li>
+            <li><%= link_to "FAQ", "/frequently-asked-questions.html" %></li>
+          </ul>
+        </div>
+        <div class="footer-link-column secondary">
+          <h3>
+            Stay up-to-date
+          </h3>
+          <ul class="footer-link-list">
+            <li><%= link_to "Blog", "/blog/index.html" %></li>
+            <!-- <li><%= link_to "Events", "#" %></li>
+            <li><%= link_to "Newsletter", "#" %></li>-->
+          </ul>
+        </div>
       </div>
-      <div class="col">
-        <h4><%= t("footer.contact") %></h4>
-        <div><%= link_to t("footer.email_us"), "/contact.html" %></div>
+
+      <div class="footer-column">
+        <div class="footer-link-column">
+          <h3>
+            Buy Beer
+          </h3>
+          <ul class="footer-link-list">
+            <li><%= link_to "Shop", "/shop/index.html" %></li>
+            <li><%= link_to "Distributors", "/distributors.html" %></li>
+          </ul>
+        </div>
+        <div class="footer-link-column secondary">
+          <h3>
+            Legal
+          </h3>
+          <ul class="footer-link-list">
+            <li><%= link_to "Shipping & Returning", "#" %></li>
+            <li><%= link_to "Terms & Conditions", "/blog/index.html" %></li>
+            <li><%= link_to "Privacy Policy", "#" %></li>
+          </ul>
+        </div>
       </div>
-      <div class="col social">
-        <h4><%= t("footer.social") %></h4>
-        <div>
-          <a href="https://www.untappd.com/Folkingebrew" class="social-icon icon-untappd" target="_blank" rel="noopener noreferrer"></a>
-          <a href="https://www.facebook.com/Folkingebrew-167577637289407/" class="social-icon icon-facebook" target="_blank" rel="noopener noreferrer"></a>
-          <a href="https://www.instagram.com/folkingebrew/" class="social-icon icon-instagram" target="_blank" rel="noopener noreferrer"></a>
-          </div>
+
+      <div class="footer-column">
+        <div class="footer-link-column">
+          <h3>
+            Contact us
+          </h3>
+          <ul class="footer-link-list">
+            <li><%= link_to "Send email", "/contact.html" %></li>
+          </ul>
+        </div>
+         <div class="footer-link-column secondary">
+          <address class="footer-link-list-address">
+            Foxham 53<br>
+            9601 LE<br>
+            Hoogezand (Groningen)<br>
+            The Netherlands
+          </address>
+        </div>
       </div>
     </div>
-    <div class="grid-row copyright">
-      &copy; <%= Time.new.year %> Folkingebrew
-    </div>
+  </div>
+  <div class="grid-row copyright">
+    &copy; <%= Time.new.year %> Folkingebrew. All rights reserved.
   </div>
 </footer>
