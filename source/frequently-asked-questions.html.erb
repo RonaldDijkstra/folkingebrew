@@ -19,6 +19,9 @@ questions = data["faq"]
 <section class="faq medium-row">
   <div class="grid-row">
     <div class="row">
+      <p>
+        Below you will find answers to the questions we get asked a lot. If your question isn't answered, just drop us an email through <%= link_to "our contact form", "/contact.html" %> or get in touch on our social feeds (<%= link_to "Facebook", "https://www.facebook.com/Folkingebrew-167577637289407/", target: "_blank", rel: "noopener noreferrer" %> or <%= link_to "Instagram", "https://www.instagram.com/folkingebrew/", target: "_blank", rel: "noopener noreferrer" %>).
+      </p>
       <% questions.each do |question| %>
         <h2>
           <%= question.q %>
