@@ -5,48 +5,89 @@ footer {
     max-width: $wide-row;
     padding: 3em 0;
 
+    @include grid-media($for-big-screen-up) {
+      padding: 6em 0;
+    }
+
     &.copyright {
       color: $medium-gray;
+      font-size: $base-font-size * 0.8;
+      padding: 0 0 3em;
       text-align: center;
     }
   }
 
   .footer-content {
     display: flex;
+    flex-direction: column;
     line-height: 1.6;
+
+    @include grid-media($for-big-screen-up) {
+      flex-direction: row;
+    }
   }
 
   .footer-column {
-    display: flex;
-    padding: 0 4%;
+    border-bottom: 1px solid $medium-gray;
+    margin: 0 auto;
+    padding: 4%;
     position: relative;
-    width: 33.33333333%;
+    width: 96%;
 
-    &:nth-child(-n+2) {
-      border-right: 1px solid $medium-gray;
+    @include grid-media($for-big-screen-up) {
+      border-bottom: 0;
+      display: flex;
+      padding: 0 4%;
+      width: 33.33333333%;
+
+      &:nth-child(-n+2) {
+        border-right: 1px solid $medium-gray;
+      }
     }
 
     h3 {
       color: $medium-gray;
       font-size: $base-font-size;
       font-weight: $font-weight-semibold;
+      margin-bottom: 0.5em;
     }
   }
 
   .footer-link-column {
+    margin-bottom: 2em;
+
     &.secondary {
-      padding-left: 70px;
+      @include grid-media($for-big-screen-up) {
+        padding-left: 50px;
+      }
     }
   }
 
   .footer-link-list {
     font-size: $base-font-size * 0.9;
     list-style-type: none;
-    margin: 0;
+    margin-bottom: 0.5em;
     padding: 0;
+
+    @include grid-media($for-big-screen-up) {
+      margin-bottom: 24px;
+    }
 
     a {
       color: $lighter-gray;
+      text-decoration: none;
+
+      &:hover {
+        color: lighten($lighter-gray, 20%);
+      }
+    }
+  }
+
+  .social-links {
+    a {
+      color: $lighter-gray;
+      font-size: $base-font-size * 1.2;
+      margin-right: 0.5em;
       text-decoration: none;
 
       &:hover {
@@ -59,6 +100,5 @@ footer {
     color: $medium-gray;
     font-size: $base-font-size * 0.9;
     font-style: normal;
-    padding-top: 3rem;
   }
 }

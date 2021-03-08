@@ -18,9 +18,12 @@
           </h3>
           <ul class="footer-link-list">
             <li><%= link_to "Blog", "/blog/index.html" %></li>
-            <!-- <li><%= link_to "Events", "#" %></li>
-            <li><%= link_to "Newsletter", "#" %></li>-->
+            <!--
+            <li><%= link_to "Events", "#" %></li>
+            <li><%= link_to "Newsletter", "#" %></li>
+          -->
           </ul>
+          <%= partial "partials/shared/social-links" %>
         </div>
       </div>
 
@@ -31,7 +34,7 @@
           </h3>
           <ul class="footer-link-list">
             <li><%= link_to "Shop", "/shop/index.html" %></li>
-            <li><%= link_to "Distributors", "/distributors.html" %></li>
+            <!-- <li><%= link_to "Distributors", "/distributors.html" %></li> -->
           </ul>
         </div>
         <div class="footer-link-column secondary">
@@ -40,7 +43,7 @@
           </h3>
           <ul class="footer-link-list">
             <li><%= link_to "Shipping & Returning", "#" %></li>
-            <li><%= link_to "Terms & Conditions", "/blog/index.html" %></li>
+            <li><%= link_to "Terms & Conditions", "#" %></li>
             <li><%= link_to "Privacy Policy", "#" %></li>
           </ul>
         </div>
@@ -52,10 +55,13 @@
             Contact us
           </h3>
           <ul class="footer-link-list">
-            <li><%= link_to "Send email", "/contact.html" %></li>
+            <li><%= link_to "Send an email", "/contact.html" %></li>
           </ul>
         </div>
-         <div class="footer-link-column secondary">
+        <div class="footer-link-column secondary">
+          <h3>
+            Address (no visits)
+          </h3>
           <address class="footer-link-list-address">
             Foxham 53<br>
             9601 LE<br>

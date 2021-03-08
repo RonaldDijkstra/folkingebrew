@@ -1,3 +1,7 @@
+$for-big-screen-up: (
+  media: "screen and (min-width: 1024px)"
+);
+
 $for-desktop-up: (
   media: "screen and (min-width: 820px)"
 );
