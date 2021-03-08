@@ -1,82 +1,19 @@
 body.frequently-asked-questions_index {
-  section.faq {
+  .faq {
     .grid-row {
-      padding-top: 0;
-    }
+      background: $white;
 
-    ul {
-      list-style: none;
-      padding: 0;
-
-      .inner {
-        display: none;
-        overflow: hidden;
+      @include grid-media($for-desktop-up) {
+        margin-bottom: 4em;
+        padding: 4em 2em;
       }
 
-      li {
-        margin-bottom: 2em;
+      .row {
+        margin: 0 auto;
+        max-width: $smallest-row;
 
-        a.toggle {
-          background: $black;
-          color: $white;
-          display: block;
-          font-size: $base-font-size * 1.2;
-          padding: 1em 50px 1em 1em;
-          position: relative;
-          text-decoration: none;
-          width: 100%;
-
-          &.active {
-            &::after {
-              transform: rotate(45deg);
-            }
-
-            &::before {
-              transform: rotate(-45deg);
-            }
-          }
-
-          &::after,
-          &::before {
-            backface-visibility: hidden;
-            background: $white;
-            content: "";
-            height: 2px;
-            position: absolute;
-            right: 24px;
-            top: 50%;
-            transition-duration: 0.2s;
-            transition-property: transform;
-            width: 13px;
-          }
-
-          &::after {
-            transform: rotate(-45deg);
-          }
-
-          &::before {
-            right: 32px;
-            transform: rotate(45deg);
-          }
-
-          &:hover {
-            color: rgba($white, 0.75);
-
-            &::after,
-            &::before {
-              background: rgba($white, 0.75);
-            }
-          }
-
-          h2 {
-            margin-bottom: 0;
-          }
-        }
-
-        p {
-          background: $white;
-          margin: 0;
-          padding: 1em;
+        p:last-of-type {
+          margin-bottom: 0;
         }
       }
     }
