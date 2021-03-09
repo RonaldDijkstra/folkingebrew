@@ -1,33 +1,29 @@
 /////////////////// product +/-
 $(document).ready(function() {
   $('button.quantity-adjust').click(function () {
-      var $input = $(this).parents('.product-quantity').find('input.product-quantity-input');
+    var $input = $(this).parents('.product-quantity').find('input.product-quantity-input');
+
+    $max = $input.attr('max');
+
+    var count = parseFloat($input.val());
+
     if($(this).hasClass('min')) {
-      var count = parseFloat($input.val()) - 1;
-      count = count < 1 ? 1 : count;
-      if (count < 2) {
-        $(this).addClass('dis');
-      }
-      else {
-        $(this).removeClass('dis');
-      }
-      $input.val(count);
+      var min = count - 1;
+      min = min < 1 ? 1 : min;
+      $input.val(min);
     }
     else {
-      var count = parseFloat($input.val()) + 1
-      $input.val(count);
-      if (count > 1) {
-        $(this).parents('.num-block').find(('.minus')).removeClass('dis');
+      var plus = count + 1;
+      if (plus > $max) {
+        plus = count;
+        $input.val(plus);
+      }
+      else {
+        $input.val(plus);
       }
     }
 
     $input.change();
     return false;
   });
-
-  var x = document.getElementById("quantity").max;
-
-  console.log(x)
-
 });
-// product +/-

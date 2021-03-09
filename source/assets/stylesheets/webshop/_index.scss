@@ -117,12 +117,6 @@ body.webshop_index {
           margin-bottom: 1em;
           min-width: 0;
 
-          .very-long-string {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
-
           @include grid-media($for-desktop-up) {
             align-items: center;
             border-right: 1px solid $medium-gray;
