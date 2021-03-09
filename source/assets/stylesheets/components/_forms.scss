@@ -1,5 +1,6 @@
 $_form-background-color: $white;
 $_form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+
 .form-grid-row {
   @include grid-container;
   @include margin(null auto);
@@ -124,4 +125,133 @@ select {
     outline: $focus-outline;
     outline-offset: $focus-outline-offset;
   }
+}
+
+$custom-radio-size:                 16px;
+$custom-radio-border-width:         1px;
+$custom-radio-transition-speed:     100ms;
+$custom-radio-inset-shadow:         inset 0 0.1em 1px -0.1em rgba($black, 0.3);
+
+$custom-radio-pip-color:            $green;
+$custom-radio-pip-size:             round($custom-radio-size * 0.6);
+
+// States
+$custom-radio-unchecked-bg:         $white;
+$custom-radio-unchecked-border:     transparentize($light-gray, 0.6);
+
+$custom-radio-checked-bg:           mix($custom-radio-unchecked-bg, $custom-radio-pip-color, 60%);
+$custom-radio-checked-border:       $custom-radio-pip-color;
+
+$custom-radio-active-inset-shadow:  inset 0 0 2px 3px rgba(0,0,0,.1);
+
+$custom-radio-focus-shadow:         0 0 0 2px transparentize($green, .5);
+
+$custom-radio-disabled-bg:          lighten($black, 91.8%);
+$custom-radio-disabled-pip-color:   lighten($black, 80%);
+
+
+// Check variable values
+@if ($custom-radio-size % 2 == 1) { @error '$custom-radio-size must be even'; }
+// round to nearest even number
+@if ($custom-radio-pip-size % 2 == 1) { $custom-radio-pip-size: $custom-radio-pip-size - 1; }
+
+
+input[type="radio"] {
+  position: relative;
+  display: inline-block;
+
+  width:  $custom-radio-size - 2;
+  height: $custom-radio-size - 2;
+
+  border-radius: 100%;
+  outline: none !important;
+  -webkit-appearance: none;
+
+  // Radio
+  // -----
+
+  &::before {
+    position: relative;
+    top:  -$custom-radio-border-width;
+    left: -$custom-radio-border-width;
+    display: block;
+    content: '';
+
+
+    background: $custom-radio-unchecked-bg;
+    border: $custom-radio-border-width solid $custom-radio-unchecked-border;
+    border-radius: 100%;
+    box-shadow: $custom-radio-inset-shadow;
+
+    width:  $custom-radio-size;
+    height: $custom-radio-size;
+  }
+
+  &:active::before {
+    box-shadow: $custom-radio-inset-shadow,
+                $custom-radio-active-inset-shadow;
+  }
+
+  &:focus::before {
+    box-shadow: $custom-radio-inset-shadow,
+                $custom-radio-focus-shadow;
+  }
+
+  &:checked::before {
+    background: $custom-radio-checked-bg;
+    border-color: $custom-radio-checked-border;
+  }
+
+  &:disabled::before {
+    background-color: $custom-radio-disabled-bg;
+    cursor: not-allowed;
+    border-color: transparentize($custom-radio-unchecked-border, .2);
+  }
+
+
+
+  // Radio Pip
+  // ---
+
+  &::after {
+    background: $custom-radio-pip-color;
+    border-radius: 100%;
+    box-shadow: 0 1px 1px rgba($black, 0.1);
+    content: "";
+    display: block;
+    height: 0;
+    left: ($custom-radio-size / 2) - $custom-radio-border-width;
+    position: relative;
+    top: -($custom-radio-size / 2) - $custom-radio-border-width;
+    width:  0;
+  }
+
+  &:checked::after {
+    height: $custom-radio-pip-size;
+    left: floor(
+        + ($custom-radio-size / 2.1)
+        - ($custom-radio-pip-size / 2)
+        - $custom-radio-border-width
+        + 1
+    );
+
+    top: floor(
+          - ($custom-radio-size / 2.2)
+          - ($custom-radio-pip-size / 2)
+          - $custom-radio-border-width
+          - 0.5
+    );
+
+    transition: all ease-in-out $custom-radio-transition-speed 0;
+    width:  $custom-radio-pip-size;
+
+  }
+
+  &:disabled::after {
+    background: $custom-radio-disabled-pip-color;
+  }
+}
+
+.radio-buttons label {
+  font-weight: $font-weight-regular;
 }

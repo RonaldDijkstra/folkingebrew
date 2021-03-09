@@ -21,18 +21,24 @@
       </div>
     <% end %>
 
-    <% if locals[:fields].include? "type" %>
+    <% if locals[:fields].include? "inquiry-type" %>
       <div class="form-item">
         <label for="inquiry-type">
           <%= t("form.request_type") %>
         </label>
-        <div class="select">
-          <select id="inquiry-type" name="inquiry-type" required>
-            <option selected disabled><%= t("form.choose") %></option>
-            <option value="private"><%= t("form.private") %></option>
-            <option value="business"><%= t("form.business") %></option>
-            <option value="distributor"><%= t("form.distributor") %></option>
-          </select>
+
+        <div class="radio-buttons">
+          <label for="private">
+            <input checked="" type="radio" id="private" name="inquery-type" value="private"> Private
+          </label>
+
+          <label for="distributor">
+            <input type="radio" id="distributor" name="inquery-type" value="distributor"> Distributor
+          </label>
+
+          <label for="other">
+            <input type="radio" id="other" name="inquery-type" value="other"> Other
+          </label>
         </div>
       </div>
     <% end %>
