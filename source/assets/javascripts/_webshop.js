@@ -1,4 +1,4 @@
-/////////////////// product +/-
+// Product +/-
 $(document).ready(function() {
   $('button.quantity-adjust').click(function () {
     var $input = $(this).parents('.product-quantity').find('input.product-quantity-input');

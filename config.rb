@@ -42,8 +42,8 @@ page "blog/index.html", layout: :blog_index
 page "blog/*", layout: :blog_show
 page "beers/index.html", layout: :beer_index
 page "beers/*", layout: :beer_show
-page "webshop/index.html", layout: :webshop_index
-page "webshop/*", layout: :webshop_show
+page "shop/index.html", layout: :shop_index
+page "shop/*", layout: :shop_show
 
 # Activate and setup the blog content type
 activate :blog do |blog|
@@ -71,13 +71,13 @@ end
 
 # Activate and setup the product content type
 activate :blog do |blog|
-  blog.name = "webshop"
-  blog.prefix = "webshop"
+  blog.name = "shop"
+  blog.prefix = "shop"
   blog.permalink = ":title"
   blog.sources = "/products/{title}.html"
   # blog.tag_template = "blog/tag.html"
   blog.paginate = true
-  blog.page_link = "{num}"
+  blog.page_link = "/page/{num}"
   blog.per_page = 12
 end
 

@@ -1,14 +1,14 @@
 ---
-title: "Webshop"
-description: "Buy our beers and merchandise in our webshop."
-blog: webshop
+title: "Shop"
+description: "Buy our beers and merchandise in our shop."
+blog: shop
 pageable: true
 sitemap_priority: 0.8
 ---
 <header class="normal-page-header">
   <div class="grid-row">
     <h1>
-      <%= t("pages.webshop.title") %>
+      <%= t("pages.shop.title") %>
     </h1>
   </div>
 </header>
@@ -21,7 +21,7 @@ sitemap_priority: 0.8
       </p>
     <% end %>
     <% page_articles.each do |product| %>
-      <%= partial "webshop/product_preview", locals: { product: product } %>
+      <%= partial "shop/product_preview", locals: { product: product } %>
     <% end %>
   </div>
 </section>
