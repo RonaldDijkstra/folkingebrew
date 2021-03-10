@@ -1,193 +1,95 @@
 body.shop_index {
-  background: $white;
+  background: $lightest-gray;
 
-  .grid-row {
+  .normal-page-header {
     h1 {
       color: $black;
     }
   }
 
-  .products {
-    .product-container {
-      border-top: 2px solid $lightest-gray;
-      max-width: $wide-row;
-      padding: 0;
+  section.products {
+    .grid-row {
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1em 1em;
+      width: 100%;
 
       @include grid-media($for-desktop-up) {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin: 0 auto 4em;
+        padding: 0 2em 4em;
       }
     }
 
-    .product {
-      background: $white;
-      border-bottom: 2px solid $lightest-gray;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 0;
-      padding: 20px 4%;
+    .feed {
+      padding-left: 0;
+      padding-right: 0;
       position: relative;
 
-      @include grid-media($for-desktop-up) {
-        width: 50%;
-      }
-
-      &:nth-child(odd) {
-        border-right: 2px solid $lightest-gray;
-      }
-
-      .product-media {
-        background: $light-gray;
-        padding-top: 56.25%;
-        position: relative;
-      }
-
-      .product-image-wrapper {
-        height: 100%;
-        left: 0;
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        width: 100%;
-      }
-
-      .product-image {
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        position: absolute;
-        top: 0;
-        transition: all 200ms ease-in-out;
-        width: 100%;
-
-        &:hover {
-          height: 110%;
-          top: -5%;
+      .row {
+        @include grid-media($for-small-screens-up) {
+          display: grid;
+          grid-gap: 2rem;
+          grid-template-columns: repeat(2, 1fr);
         }
-      }
-
-      .product-title {
-        font-weight: 600;
-        margin-bottom: 1em;
-        margin-top: 1em;
-        text-align: center;
-
-        a {
-          color: $dark-gray;
-          text-decoration: none;
-        }
-      }
-
-      .product-meta {
-        border: 1px solid $medium-gray;
-        border-left: 0;
-        border-right: 0;
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 1em;
 
         @include grid-media($for-desktop-up) {
-          margin-bottom: 0;
+          grid-gap: 4rem;
+          grid-template-columns: repeat(3, 1fr);
         }
+      }
+    }
 
-        div {
-          padding-bottom: 0.5em;
-          padding-top: 0.5em;
-          width: 50%;
+    a.product {
+      background: $white;
+      display: flex;
+      margin-bottom: 2rem;
+      min-height: 1px;
+      padding: 2rem;
+      position: relative;
+      text-decoration: none;
+      transition: box-shadow 400ms ease-in-out;
+      width: 100%;
 
-          &.product-price {
-            border-right: 1px solid $medium-gray;
-          }
+      @include grid-media($for-small-screens-up) {
+        margin-bottom: 0;
+      }
+    }
 
-          &.product-stock {
-            padding-left: 1em;
-          }
+    .product-box {
+      display: block;
+      outline: none;
+      position: relative;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+
+    .product-content {
+      display: flex;
+
+      .title {
+        flex-grow: 1;
+
+        h2 {
+          color: $base-font-color;
+          font-size: $base-font-size * 1.1;
+          font-weight: $font-weight-bold;
+          line-height: 1.5;
+          margin: 0;
         }
       }
 
-      .product-controls {
-        @include grid-media($for-desktop-up) {
-          display: flex;
-          flex-direction: row;
-        }
-
-        .product-description {
-          margin-bottom: 1em;
-          min-width: 0;
-
-          @include grid-media($for-desktop-up) {
-            align-items: center;
-            border-right: 1px solid $medium-gray;
-            margin-bottom: 0;
-            padding-right: 1em;
-            padding-top: 1em;
-            width: 50%;
-          }
-        }
-
-        .add-to-cart {
-          @include grid-media($for-desktop-up) {
-            padding-bottom: 1em;
-            padding-left: 1em;
-            padding-top: 1em;
-            width: 50%;
-          }
-
-          .product-selectors {
-            display: flex;
-
-            @include grid-media($for-desktop-up) {
-              padding-bottom: 1em;
-            }
-          }
-
-          .product-size {
-            margin-left: 1em;
-          }
-
-          .product-quantity {
-            display: flex;
-          }
-
-          button.quantity-adjust {
-            background-color: $white;
-            border: $base-border;
-            color: $dark-gray;
-            height: 46px;
-            width: 46px;
-            text-align: center;
-
-            &:hover {
-              background-color: $lightest-gray;
-            }
-
-            &.min {
-              border-right: 0;
-            }
-
-            &.plus {
-              border-left: 0;
-            }
-          }
-
-          input[type=number] {
-            appearance: none;
-            height: 46px;
-            -moz-appearance: textfield;
-            padding: 0;
-            overflow: visible;
-            width: 46px;
-            text-align: center;
-          }
-
-          select {
-            line-height: 1.4;
-            width: 120px;
-          }
+      .price {
+        p {
+          color: $green;
+          font-size: $base-font-size * 1.1;
+          font-weight: $font-weight-bold;
+          margin: 0;
+          text-align: right;
         }
       }
     }
   }
 }
+
+
+

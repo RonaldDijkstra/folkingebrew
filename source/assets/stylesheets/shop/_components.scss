@@ -1,0 +1,35 @@
+.product-quantity {
+  display: flex;
+
+  button.quantity-adjust {
+    background-color: $white;
+    border: $base-border;
+    color: $dark-gray;
+    height: 46px;
+    text-align: center;
+    width: 46px;
+
+    &:hover {
+      background-color: $lightest-gray;
+    }
+
+    &.min {
+      border-right: 0;
+    }
+
+    &.plus {
+      border-left: 0;
+    }
+  }
+
+  input[type=number] {
+    appearance: none;
+    height: 46px;
+    -moz-appearance: textfield;
+    padding: 0;
+    overflow: visible;
+    width: 46px;
+    text-align: center;
+  }
+}
+

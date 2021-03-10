@@ -1,3 +1,23 @@
+<% link_to product.url, class: "product" do %>
+  <div class="product-box">
+    <div class="product-media">
+      <%= image_tag product.data.image, alt: product.title, class: "product-image" %>
+    </div>
+    <div class="product-content">
+      <div class="title">
+        <h2>
+          <%= product.title %>
+        </h2>
+      </div>
+      <div class="price">
+        <p>
+          <%= number_to_currency(product.data.price, :unit => "€") %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
+<!--
 <% content_tag :div, class: "product" do %>
   <div class="product-media">
     <% link_to product.url, class: "product-image-wrapper" do %>
@@ -66,8 +86,9 @@
           Sold Out
         <% end %>
       <% else %>
-        <%= partial "shop/snipcart_button", locals: { product: product, variant: "green medium-size full-width solid"} %>
+        <%= partial "partials/shop/snipcart_button", locals: { product: product, variant: "green medium-size full-width solid"} %>
       <% end %>
     </div>
   </div>
 <% end %>
+-->

@@ -2,23 +2,69 @@
   <header class="normal-page-header">
     <div class="grid-row">
       <h1>
-        <%= current_article.title %>
+        <%= t("pages.shop.title") %>
       </h1>
     </div>
   </header>
+  <section class="product wide-row">
+    <div class="grid-row product-item">
+      <div class="product-image">
+        <div class="image-wrap">
+          <%= image_tag current_article.data.image, alt: current_article.title, class: "image" %>
+        </div>
+      </div>
+      <div class="product-content">
+        <div>
+          <h2>
+            <%= current_article.title %>
+          </h2>
+          <p class="price">
+            <%= number_to_currency(current_page.data.price, :unit => "€").gsub!(/\./,",") %>
+          </p>
+          <p class="vat">
+            Incl. VAT
+          </p>
 
-  <section>
-    <div class="grid-row">
-      <%= yield %>
+          <%= yield %>
+
+          <% unless current_page.data.out_of_stock %>
+            <% if current_page.data.max_quantity %>
+              <p>
+                Quantity max <%= current_page.data.max_quantity %> pp.
+              </p>
+            <% end %>
+          <% end %>
+
+          <div class="product-controls">
+            <% unless current_article.data.max_quantity == 1 || current_page.data.out_of_stock %>
+              <div class="product-quantity">
+                <button class="quantity-adjust min">-</button>
+                <% if current_article.data.max_quantity %>
+                  <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1" max="<%= current_article.data.max_quantity %>">
+                <% else %>
+                  <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1">
+                <% end %>
+                <button class="quantity-adjust plus">+</button>
+              </div>
+            <% end %>
+
+            <% if current_page.data.out_of_stock %>
+              <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
+                Sold Out
+              <% end %>
+            <% else %>
+              <%= partial "partials/shop/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green" } %>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
     </div>
-
-      <%= partial "webshop/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green" } %>
-
+    <div class="grid-row back-link">
+      <%= partial "partials/button", locals: { to: "/shop/index.html",
+                                               variant: "medium-size solid green",
+                                               icon_left: "icons/arrow-left.svg",
+                                               text: t("webshop.back_to_all_products")} %>
+    </div>
   </section>
-  <div class="grid-row back-link">
-    <%= partial "partials/button", locals: { to: "/webshop/index.html",
-                                             variant: "medium-size solid green",
-                                             icon_left: "icons/arrow-left.svg",
-                                             text: t("webshop.back_to_all_products")} %>
-  </div>
 <% end %>

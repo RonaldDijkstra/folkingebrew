@@ -24,8 +24,8 @@ module ApplicationHelpers
         [current_page.data.title, "Blog"].join(" | ")
       elsif current_page.url.start_with?("/beers/")
         [current_page.data.title, "Our Beers"].join(" | ")
-      elsif current_page.url.start_with?("/webshop/")
-        [current_page.data.title, "Webshop"].join(" | ")
+      elsif current_page.url.start_with?("/shop/")
+        [current_page.data.title, "Shop"].join(" | ")
       end
     else
       current_page.data.title
@@ -39,7 +39,7 @@ module ApplicationHelpers
     if dont_append
       frontmatter_title
     else
-    [frontmatter_title, website_name].join(" | ") if frontmatter_title
+      [frontmatter_title, website_name].join(" | ") if frontmatter_title
     end
   end
 
@@ -104,8 +104,8 @@ module ApplicationHelpers
       "/blog/"
     elsif current_page.url.start_with?("/beers/")
       "/beers/"
-    elsif current_page.url.start_with?("/webshop/")
-      "/webshop/"
+    elsif current_page.url.start_with?("/shop/")
+      "/shop/"
     else
       current_page.url
     end
@@ -117,6 +117,8 @@ module ApplicationHelpers
         "blog-article"
       elsif current_page.url.start_with?("/beers/")
         "beer-show"
+      elsif current_page.url.start_with?("/shop/")
+        "product-detail"
       end
     end
   end
