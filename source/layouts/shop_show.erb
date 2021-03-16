@@ -40,9 +40,9 @@
               <div class="product-quantity">
                 <button class="quantity-adjust min">-</button>
                 <% if current_article.data.max_quantity %>
-                  <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1" max="<%= current_article.data.max_quantity %>">
+                  <input class="product-quantity-input" type="number" name="quantity" id="<%= current_article.data.id %>-qty" value="1" min="1" max="<%= current_article.data.max_quantity %>">
                 <% else %>
-                  <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1">
+                  <input class="product-quantity-input" type="number" name="quantity" id="<%= current_article.data.id %>-qty" value="1" min="1">
                 <% end %>
                 <button class="quantity-adjust plus">+</button>
               </div>
@@ -53,7 +53,7 @@
                 Sold Out
               <% end %>
             <% else %>
-              <%= partial "partials/shop/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green" } %>
+              <%= partial "partials/shop/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
             <% end %>
 
           </div>
@@ -62,7 +62,7 @@
     </div>
     <div class="grid-row back-link">
       <%= partial "partials/button", locals: { to: "/shop/index.html",
-                                               variant: "medium-size solid green",
+                                               variant: "medium-size ghost no-border green",
                                                icon_left: "icons/arrow-left.svg",
                                                text: t("webshop.back_to_all_products")} %>
     </div>

@@ -1,6 +1,7 @@
 <% content_tag :button,
   class: "snipcart-add-item button " + locals[:variant],
   "data-item-id": product.data.id,
+  "data-item-quantity": "1",
   "data-item-price": product.data.price,
   "data-item-name": product.title,
   "data-item-max-quantity": product.data.max_quantity,

@@ -31,7 +31,7 @@ header.site-header {
   top: 0;
   transition: all 0.2s ease-in-out;
   width: 100%;
-  z-index: 1010;
+  z-index: 10;
 
   @include grid-media($for-desktop-up) {
     padding: 1.2rem 3rem;
@@ -56,7 +56,7 @@ header.site-header {
     position: relative;
     text-shadow: none;
     width: 4rem;
-    z-index: 1020;
+    z-index: 20;
 
     @include grid-media($for-desktop-up) {
       display: none;
@@ -97,7 +97,7 @@ header.site-header {
     text-shadow: none;
     transition: all 0.2s ease-in-out;
     width: 3.6rem;
-    z-index: 1020;
+    z-index: 20;
 
     @include grid-media($for-desktop-up) {
       background-position: 0;
@@ -125,7 +125,7 @@ header.site-header {
     flex-direction: row;
     flex-grow: 1;
     justify-content: space-between;
-    z-index: 1015;
+    z-index: 15;
 
     @include grid-media($for-mobile) {
       background: $black;
@@ -154,7 +154,7 @@ header.site-header {
       list-style: none;
       margin-bottom: 0;
       padding-left: 0;
-      z-index: 1015;
+      z-index: 15;
 
       @include grid-media($for-mobile) {
         flex-direction: column;
@@ -206,7 +206,7 @@ header.site-header {
     display: flex;
     justify-content: flex-end;
     width: 3.6rem;
-    z-index: 1020;
+    z-index: 15;
 
     .header-cart {
       align-items: center;
@@ -223,7 +223,7 @@ header.site-header {
         }
       }
 
-      .snipcart-total-items {
+      .snipcart-items-count {
         align-items: center;
         background: $green;
         border-radius: 50%;
@@ -246,11 +246,11 @@ body.nav-open {
     .nav-wrap {
       opacity: 1;
       transform: translateX(0);
-      z-index: 1030;
+      z-index: 30;
     }
 
     .nav-menu-toggle {
-      z-index: 1031;
+      z-index: 31;
 
       .bar {
         &.bottom,
