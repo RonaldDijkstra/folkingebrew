@@ -10,13 +10,9 @@ body.header-transparent.at-the-top {
       }
     }
 
-    .header-cart .snipcart-total-items {
-      background: $black;
+    .cart-icon path {
+      fill: $white;
     }
-  }
-
-  &.not-at-the-top {
-    background: $black;
   }
 }
 
@@ -35,6 +31,10 @@ header.site-header {
 
   @include grid-media($for-desktop-up) {
     padding: 1.2rem 3rem;
+  }
+
+  .cart-icon path {
+    fill: $green;
   }
 
   &.hide-nav {
@@ -215,7 +215,12 @@ header.site-header {
       transition: all 0.2s ease-in-out;
 
       .snipcart-checkout {
+        align-items: center;
         color: $white;
+        cursor: pointer;
+        display: flex;
+        font-size: 14px;
+        justify-content: flex-end;
         text-decoration: none;
 
         &:hover {
@@ -223,19 +228,14 @@ header.site-header {
         }
       }
 
+      .cart-icon {
+        height: 20px;
+        margin-right: 5px;
+        width: 20px;
+      }
+
       .snipcart-items-count {
-        align-items: center;
-        background: $green;
-        border-radius: 50%;
-        display: flex;
-        font-size: $base-font-size * 0.6;
-        font-weight: bold;
-        height: 1.3em;
-        justify-content: center;
-        min-width: 1.3em;
-        position: absolute;
-        right: -5px;
-        top: 1em;
+        font-size: $base-font-size * 0.9;
       }
     }
   }

@@ -86,11 +86,11 @@ $white: #FFF;
 //   color: white;
 //   background: transparent;
 // }
-// .snipcart__font--secondary,
-// .snipcart__font--subtitle,
-// .snipcart__font--std {
-//   font-family: $base-font-family, sans-serif;
-// }
+.snipcart__font--secondary,
+.snipcart__font--subtitle,
+.snipcart__font--std {
+  font-family: $base-font-family, sans-serif;
+}
 // .snipcart-cart__content,
 // .snipcart__box {
 //   background: transparent;
@@ -279,10 +279,10 @@ $white: #FFF;
 //   background-color: transparent;
 //   color: #e495de;
 // }
-// #snipcart-payment-form legend {
-//   font-family: $base-font-family, sans-serif !important;
-//   color: white;
-// }
+#snipcart-payment-form legend {
+  font-family: $base-font-family, sans-serif !important;
+  color: white;
+}
 // .snipcart-payment-card-form {
 //   background-color: white;
 //   padding: 1em;
