@@ -1,7 +1,7 @@
 ---
 title: "6-Pack Exploration"
 id: 101
-max_quantity: 1
+max_quantity: 2
 price: 36.00
 date: 2020-12-07 09:00 CEST
 image: "shop/6-pack-exploration.jpg"

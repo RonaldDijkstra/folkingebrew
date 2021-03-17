@@ -5,35 +5,47 @@ $light-green: #65bf5a;
 $black: #000;
 $white: #FFF;
 
-// $for-desktop-up: (
-//   media: "screen and (min-width: 820px)"
-// );
-
-// $desktop-up: "min-width: 820px";
-
 .snipcart-modal__container {
   left: initial;
   right: 0;
-  width: 85%;
+  width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 820px) {
   .snipcart-modal__container {
-    width: 100%;
+    width: 85%;
   }
 }
 
-// /* Change the style of every button */
 .snipcart {
   position: absolute;
   z-index: 2000;
 
-  button:hover, [type="button"]:hover, [type="reset"]:hover, [type="submit"]:hover, .button:hover {
+  button:hover,
+  [type="button"]:hover,
+  [type="reset"]:hover,
+  [type="submit"]:hover,
+  .button:hover {
     background-color: transparent;
     border-color: transparent;
 
     &.snipcart-cart-button--highlight {
       background-color: $light-green;
+    }
+  }
+
+  .snipcart-empty-cart {
+    button {
+      background-color: $green;
+      color: $white;
+
+      svg path {
+        fill: $white;
+      }
+
+      &:hover {
+        background-color: $light-green;
+      }
     }
   }
 }
