@@ -19,9 +19,6 @@ Time.zone = "CET"
 # Set Google Analytics id
 set :ga_code, "UA-24956010-7"
 
-ENV["snipcart-api-key"] = "NWM0MWQ4M2YtYzY1Ny00MjIzLThjM2EtYzIyN2ZmZjUxYzRlNjM3NDU5OTc1NTc0NzE2Nzg2"
-ENV["base-url"] = "http://localhost:4567"
-
 # Ignore the selection file for Icomoon
 ignore "assets/fonts/selection.json"
 
