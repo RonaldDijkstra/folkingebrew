@@ -1,7 +1,7 @@
 <form name="<%= locals[:name] %>" method="POST" data-netlify="true" netlify-honeypot="honeypot" action="/thanks/">
   <fieldset>
     <div class="hidden">
-       <label>Don’t fill this out if you're human: <input name="honeypot" /></label>
+      <label>Don’t fill this out if you're human: <input name="honeypot" /></label>
     </div>
     <% if locals[:fields].include? "name" %>
       <div class="form-item">
@@ -21,19 +21,24 @@
       </div>
     <% end %>
 
-    <% if locals[:fields].include? "type" %>
+    <% if locals[:fields].include? "inquiry-type" %>
       <div class="form-item">
-        <label for="inquiry-type">
-          <%= t("form.request_type") %>
-        </label>
-        <div class="select">
-          <select id="inquiry-type" name="inquiry-type" required>
-            <option selected disabled><%= t("form.choose") %></option>
-            <option value="private"><%= t("form.private") %></option>
-            <option value="business"><%= t("form.business") %></option>
-            <option value="distributor"><%= t("form.distributor") %></option>
-          </select>
-        </div>
+        <fieldset>
+          <legend><label><%= t("form.request_type") %></label></legend>
+          <div class="radio-buttons">
+            <label>
+              <input checked="" type="radio" id="private" name="inquery-type" value="private"> Private
+            </label>
+
+            <label>
+              <input type="radio" id="distributor" name="inquery-type" value="distributor"> Distributor
+            </label>
+
+            <label>
+              <input type="radio" id="other" name="inquery-type" value="other"> Other
+            </label>
+          </div>
+        </fieldset>
       </div>
     <% end %>
 
