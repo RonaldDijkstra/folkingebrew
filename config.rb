@@ -10,6 +10,7 @@ set :root_locale, root_locale
 activate :i18n, mount_at_root: root_locale, langs: %i[en]
 activate :autoprefixer
 activate :directory_indexes
+activate :dotenv
 activate :inline_svg
 activate :sprockets
 
