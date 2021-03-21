@@ -21,27 +21,6 @@
       </div>
     <% end %>
 
-    <% if locals[:fields].include? "inquiry-type" %>
-      <div class="form-item">
-        <fieldset>
-          <legend><label><%= t("form.request_type") %></label></legend>
-          <div class="radio-buttons">
-            <label>
-              <input checked="" type="radio" id="private" name="inquery-type" value="private"> Private
-            </label>
-
-            <label>
-              <input type="radio" id="distributor" name="inquery-type" value="distributor"> Distributor
-            </label>
-
-            <label>
-              <input type="radio" id="other" name="inquery-type" value="other"> Other
-            </label>
-          </div>
-        </fieldset>
-      </div>
-    <% end %>
-
     <% if locals[:fields].include? "message" %>
       <div class="form-item">
         <label for="message">
