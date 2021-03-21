@@ -23,11 +23,7 @@
     <%= javascript_include_tag "main" %>
     <%= partial "partials/analytics" if config[:ga_code] %>
     <%= partial "partials/schema" if current_page.url == "/" %>
-    <% if production? %>
-      <div hidden id="snipcart" data-api-key=""></div>
-    <% else %>
-      <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>"></div>
-    <% end %>
+    <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>"></div>
     <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js" defer></script>
     <%= stylesheet_link_tag "snipcart" %>
   </body>
