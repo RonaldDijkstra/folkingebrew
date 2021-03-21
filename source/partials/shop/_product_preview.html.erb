@@ -1,4 +1,12 @@
-<% link_to product.url, class: "product" do %>
+<% link_to product.url,
+  class: "product",
+  "data-item-id": product.data.id,
+  "data-item-quantity": "1",
+  "data-item-price": product.data.price,
+  "data-item-name": product.title,
+  "data-item-max-quantity": product.data.max_quantity,
+  "data-item-url": base_url + product.url,
+  "data-item-image": base_url + image_path(product.data.image) do %>
   <div class="product-box">
     <div class="product-media">
       <%= image_tag product.data.image, alt: product.title, class: "product-image" %>
@@ -17,78 +25,3 @@
     </div>
   </div>
 <% end %>
-<!--
-<% content_tag :div, class: "product" do %>
-  <div class="product-media">
-    <% link_to product.url, class: "product-image-wrapper" do %>
-      <%= image_tag product.data.image, alt: product.title, class: "product-image" %>
-    <% end %>
-  </div>
-  <h2 class="product-title">
-    <% link_to product.url do %>
-      <%= product.title %>
-    <% end %>
-  </h2>
-  <div class="product-meta">
-    <div class="product-price">
-      <%= number_to_currency(product.data.price, :unit => "€").gsub!(/\./,",") %>
-    </div>
-    <div class="product-stock">
-      <% if product.data.out_of_stock %>
-        Out of Stock
-      <% else %>
-        In stock
-      <% end %>
-    </div>
-  </div>
-  <div class="product-controls">
-    <div class="product-description">
-      <%= h truncate(product.data.description, :length => 100) %> <%= link_to "Read more", product.url %>
-    </div>
-    <div class="add-to-cart">
-      <div>
-        <label for="quantity">
-          Quantity
-          <% if product.data.use_max_quantity %>
-            (max: <%= product.data.max_quantity %>)
-          <% end %>
-        </label>
-      </div>
-      <div class="product-selectors">
-        <% unless product.data.max_quantity == 1 %>
-          <div class="product-quantity">
-            <button class="quantity-adjust min">-</button>
-            <% if product.data.max_quantity %>
-              <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1" max="<%= product.data.max_quantity %>">
-            <% else %>
-              <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1">
-            <% end %>
-            <button class="quantity-adjust plus">+</button>
-          </div>
-        <% end %>
-        <% if product.data.sizes %>
-          <div class="product-size">
-            <div class="select">
-              <select name="id" id="size-1">
-                <option disabled>Size</option>
-                <option disabled>S - Sold Out</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option disabled>XL - Sold Out</option>
-                <option disabled>XXL - Sold Out</option>
-               </select>
-              </div>
-          </div>
-        <% end %>
-      </div>
-      <% if product.data.out_of_stock %>
-        <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
-          Sold Out
-        <% end %>
-      <% else %>
-        <%= partial "partials/shop/snipcart_button", locals: { product: product, variant: "green medium-size full-width solid"} %>
-      <% end %>
-    </div>
-  </div>
-<% end %>
--->
