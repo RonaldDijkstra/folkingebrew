@@ -38,13 +38,11 @@
           <div class="product-controls">
             <% unless current_article.data.max_quantity == 1 || current_page.data.out_of_stock %>
               <div class="product-quantity">
-                <button class="quantity-adjust min">-</button>
                 <% if current_article.data.max_quantity %>
                   <input class="product-quantity-input" type="number" name="quantity" id="<%= current_article.data.id %>-qty" value="1" min="1" max="<%= current_article.data.max_quantity %>">
                 <% else %>
                   <input class="product-quantity-input" type="number" name="quantity" id="<%= current_article.data.id %>-qty" value="1" min="1">
                 <% end %>
-                <button class="quantity-adjust plus">+</button>
               </div>
             <% end %>
 
