@@ -10,7 +10,7 @@ style: New England DIPA
 abv: "8.1%"
 release_date: March 2021
 hops: Riwaka, Nelson Sauvin, Motueka
-yeast: LAIII
+yeast: Lallemand Verdant IPA
 malts: Golden Promise, Oats
 background: dark
 ---
