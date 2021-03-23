@@ -14,47 +14,45 @@
         </div>
       </div>
       <div class="product-content">
-        <div>
-          <h2>
-            <%= current_article.title %>
-          </h2>
-          <p class="price">
-            <%= number_to_currency(current_page.data.price, :unit => "€").gsub!(/\./,",") %>
-          </p>
-          <p class="vat">
-            Incl. VAT
-          </p>
+        <h2>
+          <%= current_article.title %>
+        </h2>
+        <p class="price">
+          <%= number_to_currency(current_page.data.price, :unit => "€").gsub!(/\./,",") %>
+        </p>
+        <p class="vat">
+          Incl. VAT
+        </p>
 
-          <%= yield %>
+        <%= yield %>
 
-          <% unless current_page.data.out_of_stock %>
-            <% if current_page.data.max_quantity %>
-              <p>
-                Quantity max <%= current_page.data.max_quantity %> pp.
-              </p>
-            <% end %>
+        <% unless current_page.data.out_of_stock %>
+          <% if current_page.data.max_quantity %>
+            <p>
+              Quantity max <%= current_page.data.max_quantity %> pp.
+            </p>
+          <% end %>
+        <% end %>
+
+        <div class="product-controls">
+          <% unless current_article.data.max_quantity == 1 || current_page.data.out_of_stock %>
+            <div class="product-quantity">
+              <% if current_article.data.max_quantity %>
+                <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1" max="<%= current_article.data.max_quantity %>">
+              <% else %>
+                <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1">
+              <% end %>
+            </div>
           <% end %>
 
-          <div class="product-controls">
-            <% unless current_article.data.max_quantity == 1 || current_page.data.out_of_stock %>
-              <div class="product-quantity">
-                <% if current_article.data.max_quantity %>
-                  <input class="product-quantity-input" type="number" name="quantity" id="<%= current_article.data.id %>-qty" value="1" min="1" max="<%= current_article.data.max_quantity %>">
-                <% else %>
-                  <input class="product-quantity-input" type="number" name="quantity" id="<%= current_article.data.id %>-qty" value="1" min="1">
-                <% end %>
-              </div>
+          <% if current_page.data.out_of_stock %>
+            <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
+              Sold Out
             <% end %>
+          <% else %>
+            <%= partial "partials/shop/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
+          <% end %>
 
-            <% if current_page.data.out_of_stock %>
-              <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
-                Sold Out
-              <% end %>
-            <% else %>
-              <%= partial "partials/shop/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
-            <% end %>
-
-          </div>
         </div>
       </div>
     </div>

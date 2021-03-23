@@ -1,10 +1,10 @@
 $base-font-family: "Open Sans";
 $heading-font-family: "Open Sans";
 $green: #54b848;
-$dark-green: #43933A;
+$dark-green: #43933a;
 $light-green: #65bf5a;
 $black: #000;
-$white: #FFF;
+$white: #fff;
 $dark-gray: #303030;
 
 .snipcart-modal__container {
@@ -59,7 +59,7 @@ $dark-gray: #303030;
 
 .snipcart-overwrite .snipcart {
   color: #00faff;
-  font-family: $base-font-family, sans-serif !important;
+  font-family: $base-font-family, sans-serif;
 }
 
 .snipcart__font--secondary,
@@ -69,14 +69,14 @@ $dark-gray: #303030;
 }
 
 .snipcart-cart-button--highlight {
-  font-weight: 600;
-  background-image: inherit;
+  align-items: center;
   background-color: $green;
+  background-image: inherit;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  font-weight: 600;
   height: 3em;
+  justify-content: center;
   margin-top: 2em;
   padding: 0;
 
@@ -86,26 +86,21 @@ $dark-gray: #303030;
 }
 
 .snipcart-discount-box__button {
-  border: 1px solid #e495de;
   background-color: #070b20;
+  border: 1px solid #e495de;
 }
 
 .snipcart-discount-box__cancel {
-  color: white;
+  color: $white;
 }
 
 .snipcart-discount-box__form {
-  border: 1px solid #e495de;
   background-color: #070b20;
+  border: 1px solid #e495de;
 }
 
 .snipcart-discount-box {
   background-color: #050817;
-}
-
-.snipcart__icon--blue-light path,
-.snipcart__icon--blue-dark path {
-  fill: $green;
 }
 
 .snipcart__actions--link {
@@ -114,8 +109,8 @@ $dark-gray: #303030;
 }
 
 #snipcart-payment-form legend {
-  font-family: $base-font-family, sans-serif !important;
   color: $white;
+  font-family: $base-font-family, sans-serif !important;
 }
 
 .snipcart__box--badge-highlight {
