@@ -63,8 +63,8 @@ activate :blog do |blog|
   blog.sources = "/beers/{year}-{month}-{day}-{title}.html"
   # blog.tag_template = "blog/tag.html"
   blog.paginate = true
-  blog.page_link = "{num}"
-  blog.per_page = 15
+  blog.page_link = "page/{num}"
+  blog.per_page = 12
 end
 
 # Settings for production
