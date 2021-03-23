@@ -1,7 +1,6 @@
 ---
 title: "6-Pack Mix"
 id: 102
-out_of_stock: true
 max_quantity: 4
 use_max_quantity: true
 price: 36

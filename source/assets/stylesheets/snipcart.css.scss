@@ -1,9 +1,11 @@
 $base-font-family: "Open Sans";
 $heading-font-family: "Open Sans";
 $green: #54b848;
+$dark-green: #43933A;
 $light-green: #65bf5a;
 $black: #000;
 $white: #FFF;
+$dark-gray: #303030;
 
 .snipcart-modal__container {
   left: initial;
@@ -55,81 +57,16 @@ $white: #FFF;
   fill: $green;
 }
 
-// .snipcart {
-//   background: transparent;
-// }
-// .snipcart h2 {
-//   flex-basis: auto;
-// }
-// .snipcart-modal__container {
-//   right: 0;
-//   width: 85%;
-//   left: initial;
-// }
-// @media only screen and (max-width: 768px) {
-//   .snipcart-modal__container {
-//     width: 100%;
-//   }
-// }
-// .snipcart__box--title {
-//   display: flex;
-//   align-items: center;
-// }
-// .snipcart-overwrite .snipcart {
-//   font-family: $base-font-family, sans-serif !important;
-//   color: #00faff;
-// }
-// .snipcart-modal {
-//   color: #e495de;
-//   background: transparent;
-// }
-// .snipcart-item-line__container {
-//   width: 100%;
-//   display: flex;
-// }
-// .snipcart-item-line {
-//   display: flex;
-//   flex-direction: column;
-// }
-// .snipcart-flash-message {
-//   margin-bottom: 1em;
-// }
-// .snipcart-cart-header {
-//   color: white;
-//   background: transparent;
-// }
+.snipcart-overwrite .snipcart {
+  color: #00faff;
+  font-family: $base-font-family, sans-serif !important;
+}
+
 .snipcart__font--secondary,
 .snipcart__font--subtitle,
 .snipcart__font--std {
   font-family: $base-font-family, sans-serif;
 }
-// .snipcart-cart__content,
-// .snipcart__box {
-//   background: transparent;
-// }
-// .snipcart-item-line,
-// .snipcart-form {
-//   background: transparent;
-//   box-shadow: none;
-//   border-bottom: 1px solid #e495de;
-//   padding: 3em 1em;
-// }
-
-// .snipcart-modal__container {
-//   background-color: #050817;
-// }
-// .snipcart-item-description,
-// .snipcart__font--bold,
-// .snipcart__font--tiny,
-// .snipcart__font--regular,
-// .snipcart-modal__close-title {
-//   color: white;
-//   line-height: 1.5;
-// }
-
-// .snipcart-featured-payment-methods__title {
-//   background-color: rgb(7, 11, 32);
-// }
 
 .snipcart-cart-button--highlight {
   font-weight: 600;
@@ -148,242 +85,43 @@ $white: #FFF;
   }
 }
 
-// .snipcart-cart-button__content {
-//   text-transform: uppercase;
-//   font-weight: 600;
-// }
-// .snipcart-discount-box__button {
-//   border: 1px solid #e495de;
-//   background-color: #070b20;
-// }
-// .snipcart-discount-box__cancel {
-//   color: white;
-// }
-// .snipcart-discount-box__form {
-//   border: 1px solid #e495de;
-//   background-color: #070b20;
-// }
-// .snipcart-discount-box {
-//   background-color: #050817;
-// }
+.snipcart-discount-box__button {
+  border: 1px solid #e495de;
+  background-color: #070b20;
+}
 
-// .snipcart-discount-box__form .snipcart-input,
-// .snipcart-discount-box__form .snipcart-input:focus,
-// .snipcart-discount-box__form .snipcart-input:focus-within {
-//   border: none;
-// }
-// .snipcart-discount-box__submit {
-//   color: #00faff;
-// }
-// .snipcart-discount-box__cancel {
-// }
-// .snipcart-cart__footer-col {
-// }
+.snipcart-discount-box__cancel {
+  color: white;
+}
+
+.snipcart-discount-box__form {
+  border: 1px solid #e495de;
+  background-color: #070b20;
+}
+
+.snipcart-discount-box {
+  background-color: #050817;
+}
+
 .snipcart__icon--blue-light path,
 .snipcart__icon--blue-dark path {
   fill: $green;
 }
-// .snipcart-item-quantity__quantity {
-//   background-color: transparent;
-//   border: 0px;
-// }
-// .snipcart-item-quantity__button path {
-//   fill: white;
-// }
-// .snipcart__button--icon {
-//   border: 0px;
-// }
-// .snipcart__font--bold {
-//   font-weight: 600;
-// }
-// .snipcart-featured-payment-methods__title-icon path {
-//   fill: white;
-// }
-// .snipcart-cart-summary,
-// .snipcart-cart-summary__content {
-//   background: transparent;
-// }
-// .snipcart__font--slim {
-//   color: white;
-//   line-height: 1.4;
-// }
-// .snipcart-cart-summary-item__price,
-// .snipcart-cart-summary-fees__amount {
-//   font-weight: 600;
-//   color: $white;
-// }
-// .snipcart-cart-summary-fees__notice {
-//   margin-bottom: 1em;
-// }
-// .snipcart-cart-summary__separator {
-//   background: #e495de;
-// }
+
 .snipcart__actions--link {
-  font-family: $base-font-family, sans-serif !important;
   color: $green;
+  font-family: $base-font-family, sans-serif !important;
 }
 
-// .snipcart__box--badge {
-//   border: 0;
-//   margin-top: 0;
-//   margin-bottom: 2px;
-// }
-// .snipcart__box--badge-highlight {
-//   background: none;
-//   color: #e495de;
-// }
-// .snipcart-input,
-// .snipcart-input:focus {
-//   background: transparent;
-//   border: 0;
-//   border-bottom: 1px solid #e495de;
-// }
-// .snipcart-cart-summary__overlay {
-//   background: transparent;
-// }
-// .snipcart-cart--edit {
-//   background-color: rgb(7, 11, 32);
-// }
-// .snipcart-cart__secondary-header,
-// .snipcart-cart--edit,
-// .snipcart-item-list,
-// .snipcart-cart__content,
-// .snipcart-cart__footer,
-// .snipcart-cart--edit .snipcart-cart__content,
-// .snipcart-cart--edit .snipcart-item-list {
-//   background: transparent;
-// }
-// .snipcart__icon--medium path {
-//   fill: #00faff;
-// }
-// .snipcart-cart-summary--edit.snipcart-modal__container {
-//   box-shadow: none;
-// }
-// .snipcart-cart--edit {
-//   background-color: #070b20;
-// }
-// .snipcart-form__select,
-// .snipcart-typeahead {
-//   background-color: transparent;
-//   border: none;
-// }
-// .snipcart-form__select {
-//   border-bottom: 1px solid #e495de;
-// }
-// .snipcart-input:focus-within {
-//   border: 0;
-//   border-bottom: 1px solid #e495de;
-//   box-shadow: none;
-// }
-// .snipcart-error-message {
-//   color: red;
-// }
-// .snipcart-typeahead__suggestions,
-// .snipcart-typeahead__suggestion--active {
-//   background-color: #070b20;
-//   border-color: #e495de;
-// }
-// .snipcart-textbox--focus {
-//   box-shadow: none;
-//   background-color: #070b20;
-// }
-// .snipcart__box--badge {
-//   background-color: transparent;
-//   color: #e495de;
-// }
 #snipcart-payment-form legend {
   font-family: $base-font-family, sans-serif !important;
-  color: white;
+  color: $white;
 }
-// .snipcart-payment-card-form {
-//   background-color: white;
-//   padding: 1em;
-//   border-radius: 10px;
-// }
-// .snipcart__notice__icon path {
-//   fill: #00faff;
-// }
-// .snipcart-shipping-rates-list-item {
-//   background-color: transparent;
-//   color: white;
-//   border: 0;
-// }
-// .snipcart-form__label {
-//   color: white;
-// }
-// .snipcart-shipping-rates-list-item--highlight,
-// .snipcart-shipping-rates-list-item:focus-within {
-//   border: 0;
-// }
-// .snipcart-form-radio:checked + label:before {
-//   background: none;
-//   background-color: #e495de;
-// }
-// .snipcart-flash-message__icon path {
-//   fill: #00faff;
-// }
-// .snipcart-cart-button--secondary {
-//   font-weight: 600;
-//   background-color: #e495de;
-//   display: flex;
-//   max-width: 300px;
-//   align-items: center;
-//   justify-content: space-around;
-// }
-// .snipcart-cart-button--secondary .snipcart__icon path {
-//   fill: white;
-// }
-// .snipcart-cart-header__customer-account {
-//   text-transform: capitalize;
-// }
-// .snipcart-cart-summary--small {
-//   background-color: #050817;
-// }
-// .snipcart-order__invoice-number--highlight {
-//   color: #00faff;
-// }
-// .snipcart-cart-summary-expanded-item--secondary {
-//   color: white;
-// }
-// .snipcart-card-icon {
-//   background-color: white;
-// }
-// .snipcart-payment-methods-list-item__button {
-//   border-color: #e495de;
-// }
-// .snipcart-payment-methods-list-item__icon path {
-//   fill: #00faff;
-// }
-// .snipcart-form__separator {
-//   background: transparent;
-// }
-// .snipcart-item-line__media--small {
-//   display: none;
-// }
-// .snipcart-flash-message--success {
-//   background-color: rgba(255, 255, 255, 0.3);
-// }
-// .snipcart-flash-message__action {
-//   margin-top: 0;
-// }
-// .free-shipping {
-//   font-weight: 600;
-//   border: 1px solid #e495de;
-//   margin-top: 1em;
-//   padding: 1em;
-//   text-align: center;
-//   color: #e495de;
-//   text-shadow: 0px 0px 4px #e495de;
-//   font-size: 1em;
-//   line-height: 1.3;
-// }
-// .snipcart-cart--edit .snipcart-cart__footer {
-//   background-color: #070b20;
-// }
-// .snipcart-discount-box__form-container {
-//   background-color: #070b20;
-// }
-// .snipcart-cart-summary-fees__discounts-icon {
-//   display: none;
-// }
 
+.snipcart__box--badge-highlight {
+  background: linear-gradient(90deg, $dark-green, $green);
+}
+
+.snipcart-order__invoice-number--highlight {
+  color: $dark-gray;
+}
