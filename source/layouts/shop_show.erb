@@ -26,17 +26,12 @@
 
         <%= yield %>
 
-        <% unless current_page.data.out_of_stock %>
-          <% if current_page.data.max_quantity %>
-            <p>
-              Quantity max <%= current_page.data.max_quantity %> pp.
-            </p>
-          <% end %>
-        <% end %>
-
         <div class="product-controls">
           <% unless current_article.data.max_quantity == 1 || current_page.data.out_of_stock %>
             <div class="product-quantity">
+              <label>
+                Quantity <%= "(max #{current_article.data.max_quantity} pp)" if current_article.data.max_quantity %>:
+              </label>
               <% if current_article.data.max_quantity %>
                 <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1" max="<%= current_article.data.max_quantity %>">
               <% else %>
@@ -45,6 +40,26 @@
             </div>
           <% end %>
 
+          <% if current_article.data.sizes %>
+            <div class="sizes">
+              <label>
+                Sizes:
+              </label>
+              <div class="select">
+                <select id="size" name="size">
+                  <%
+                    available_sizes = current_article.data.sizes.split("|")
+                  %>
+                  <% available_sizes.each do |size| %>
+                    <option value="<%= size %>"><%= size %></option>
+                  <% end %>
+                </select>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="add-to-cart">
           <% if current_page.data.out_of_stock %>
             <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
               Sold Out
@@ -52,7 +67,6 @@
           <% else %>
             <%= partial "partials/shop/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
           <% end %>
-
         </div>
       </div>
     </div>

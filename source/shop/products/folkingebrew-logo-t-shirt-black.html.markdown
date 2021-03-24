@@ -7,15 +7,5 @@ price: 16.00
 date: 2020-12-05 09:00 CEST
 image: "shop/folkingebrew-black-t-shirt.jpg"
 description: "Folkingebrew Logo T-Shirt."
-sizes: "S, M, L, XL, XXL"
+sizes: "S|M|L|XL|XXL"
 ---
-
-Folkingebrew Logo T-Shirt in Black.
-
-Available Sizes:
-
-- S
-- M
-- L
-- XL
-- XXL

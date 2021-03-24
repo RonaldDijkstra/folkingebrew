@@ -1,25 +1,112 @@
-.product-quantity {
+.product-controls {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
+  max-width: 100%;
 
-  button.quantity-adjust {
-    background-color: $white;
+  @include grid-media($for-desktop-up) {
+    flex-direction: row;
+  }
+
+  > div {
+    width: 50%;
+
+    @include grid-media($for-small-screens-up) {
+      width: 40%;
+    }
+
+    @include grid-media($for-desktop-up) {
+      width: 30%;
+    }
+  }
+
+  .product-quantity {
+    margin-bottom: $small-spacing;
+    margin-right: $small-spacing;
+  }
+
+  label {
+    display: block;
+    font-size: $base-font-size * 0.8;
+    margin-bottom: $small-spacing;
+  }
+
+  input,
+  select,
+  textarea {
+    display: block;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: 1.5;
+    padding: $base-spacing * 0.8;
+  }
+
+  #{$all-text-inputs} {
+    appearance: none;
     border: $base-border;
-    color: $dark-gray;
-    height: 46px;
-    text-align: center;
-    width: 46px;
+    box-sizing: border-box;
+    padding: $base-spacing * 0.8;
+    transition: border-color $base-duration $base-timing;
+    width: 100%;
 
     &:hover {
-      background-color: $lightest-gray;
+      border-color: shade($base-border-color, 20%);
     }
 
-    &.min {
-      border-right: 0;
+    &:focus {
+      border-color: $action-color;
+      outline: none;
     }
 
-    &.plus {
-      border-left: 0;
+    &:disabled {
+      background-color: shade($_form-background-color, 5%);
+      cursor: not-allowed;
+
+      &:hover {
+        border: $base-border;
+      }
+    }
+  }
+
+  select {
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: $base-border;
+    color: $base-font-color;
+    cursor: pointer;
+    flex: 1;
+    outline: 0;
+    width: 100%;
+
+    &:focus {
+      border-color: $action-color;
+      outline: none;
+    }
+  }
+
+  .select {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      align-items: center;
+      background: transparent;
+      bottom: 0;
+      color: $dark-gray;
+      content: "<>";
+      cursor: pointer;
+      display: flex;
+      font-size: 14px;
+      line-height: 1;
+      pointer-events: none;
+      position: absolute;
+      right: 8px;
+      top: 0;
+      transform: rotate(90deg);
+      transition: 0.25s all ease;
     }
   }
 }
-

@@ -1,10 +1,13 @@
-// Update data item quantity with current number
 $(document).ready(function() {
   $('#quantity').change(function(){
-    var $button = $(this).parents('.product-controls').find('.buy-button');
+    var $button = $(this).parents('.product-content').find('.buy-button');
 
     $button.attr('data-item-quantity', $(this).val());
+  });
 
-    return false;
+   $('#size').change(function(){
+    var $button = $(this).parents('.product-content').find('.buy-button');
+
+    $button.attr('data-item-custom1-value', $(this).val());
   });
 });
