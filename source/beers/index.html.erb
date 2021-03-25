@@ -22,5 +22,7 @@ pageable: true
         </div>
       </div>
     </div>
+
+    <%= partial "partials/pagination", locals: current_page.metadata[:locals] %>
   </div>
 </section>

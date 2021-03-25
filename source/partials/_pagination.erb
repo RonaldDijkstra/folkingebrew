@@ -1,0 +1,21 @@
+<% if paginate && num_pages > 1 %>
+  <div class="pagination">
+    <ul>
+      <% for page in 1..num_pages %>
+        <% if page == page_number %>
+          <li class="current item">
+            <span><%= page %></span>
+          </li>
+        <% else %>
+          <%
+          page_url = "/beers/"
+          page_url << "page/#{page}" unless page == 1
+          %>
+          <li>
+            <%= link_to page, page_url %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
