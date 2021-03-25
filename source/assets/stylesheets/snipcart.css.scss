@@ -6,6 +6,7 @@ $light-green: #65bf5a;
 $black: #000;
 $white: #fff;
 $dark-gray: #303030;
+$base-font-color: $dark-gray;
 
 .snipcart-modal__container {
   left: initial;
@@ -34,6 +35,10 @@ $dark-gray: #303030;
     &.snipcart-cart-button--highlight {
       background-color: $light-green;
     }
+
+    &.snipcart-discount-box__button {
+      border-color: $dark-gray;
+    }
   }
 
   .snipcart-empty-cart {
@@ -55,11 +60,6 @@ $dark-gray: #303030;
 .snipcart__icon--blue-light path,
 .snipcart__icon--blue-dark path {
   fill: $green;
-}
-
-.snipcart-overwrite .snipcart {
-  color: #00faff;
-  font-family: $base-font-family, sans-serif;
 }
 
 .snipcart__font--secondary,
@@ -85,31 +85,8 @@ $dark-gray: #303030;
   }
 }
 
-.snipcart-discount-box__button {
-  background-color: #070b20;
-  border: 1px solid #e495de;
-}
-
-.snipcart-discount-box__cancel {
-  color: $white;
-}
-
-.snipcart-discount-box__form {
-  background-color: #070b20;
-  border: 1px solid #e495de;
-}
-
-.snipcart-discount-box {
-  background-color: #050817;
-}
-
 .snipcart__actions--link {
   color: $green;
-  font-family: $base-font-family, sans-serif !important;
-}
-
-#snipcart-payment-form legend {
-  color: $white;
   font-family: $base-font-family, sans-serif !important;
 }
 
@@ -119,4 +96,91 @@ $dark-gray: #303030;
 
 .snipcart-order__invoice-number--highlight {
   color: $dark-gray;
+}
+
+.snipcart-item-description,
+.snipcart__font--bold,
+.snipcart__font--tiny,
+.snipcart__font--regular,
+.snipcart-modal__close-title {
+  line-height: 1.4;
+}
+
+.snipcart__font--slim {
+  line-height: 1.4;
+}
+
+.snipcart-input:focus-within {
+  border: 1px solid $green;
+  box-shadow: none;
+}
+
+.snipcart-input--no-style:focus-within {
+  border: 0;
+  box-shadow: none;
+}
+
+.snipcart-discount-box__form {
+  border: 1px solid $green;
+}
+
+.snipcart-discount-box__submit {
+  color: $green;
+}
+
+.snipcart-flash-message__action-container {
+  margin-top: 0;
+}
+
+.snipcart-error-message {
+  color: red;
+}
+
+.snipcart-flash-message--error {
+  background-color: rgba(217, 49, 32, 0.10);
+}
+
+.snipcart-typeahead__suggestions,
+.snipcart-typeahead__suggestion--active {
+  border-color: $green;
+}
+
+.snipcart-textbox--focus {
+  border: 1px solid $green;
+  box-shadow: none;
+}
+
+.snipcart-form-radio:checked + label:before {
+  background: none;
+  background-color: $green;
+}
+
+.snipcart-checkbox:checked + label::before {
+  background: $green;
+  box-shadow: none;
+}
+
+.snipcart-checkbox:hover + label::before {
+  border: 1px solid $green;
+}
+
+.snipcart-shipping-rates-list-item--highlight {
+  border: 1px solid $green;
+}
+
+.snipcart-cart-summary-fees__discounts-icon {
+  .snipcart__icon path {
+    fill: $green;
+  }
+}
+
+.snipcart-signin__box,
+.snipcart-register__box {
+  a {
+    color: $green;
+  }
+}
+
+.snipcart-item-line {
+  box-shadow: none;
 }
