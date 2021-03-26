@@ -124,6 +124,7 @@ GEM
     rails-assets-jquery (3.4.1)
     rails-assets-jquery.scrollTo (2.1.2)
       rails-assets-jquery (>= 1.8)
+    rails-assets-js-cookie (2.2.1)
     rails-assets-what-input (5.2.1)
     rainbow (3.0.0)
     rake (13.0.1)
@@ -185,6 +186,7 @@ DEPENDENCIES
   nokogiri
   rails-assets-jquery!
   rails-assets-jquery.scrollTo!
+  rails-assets-js-cookie!
   rails-assets-what-input!
   rake
   rss

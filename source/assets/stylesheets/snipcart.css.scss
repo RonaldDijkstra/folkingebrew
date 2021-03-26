@@ -150,7 +150,7 @@ $base-font-color: $dark-gray;
   box-shadow: none;
 }
 
-.snipcart-form-radio:checked + label:before {
+.snipcart-form-radio:checked + label::before {
   background: none;
   background-color: $green;
 }

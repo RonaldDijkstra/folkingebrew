@@ -31,6 +31,7 @@ gem "rake"
 source "https://rails-assets.org" do
   gem "rails-assets-jquery"
   gem "rails-assets-jquery.scrollTo"
+  gem "rails-assets-js-cookie"
   gem "rails-assets-what-input"
 end
 

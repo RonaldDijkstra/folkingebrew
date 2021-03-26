@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery.scrollTo
+//= require js-cookie
 //= require what-input
 
 //= require _form
