@@ -33,7 +33,7 @@ body.beers {
         position: relative;
         width: 100%;
 
-        @include grid-media($small-screens-up) {
+        @include grid-media($for-small-screens-up) {
           flex: 0 0 50%;
           max-width: 50%;
         }
