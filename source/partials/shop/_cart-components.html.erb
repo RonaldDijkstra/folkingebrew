@@ -1,0 +1,20 @@
+<billing section="top">
+  <fieldset class="snipcart-form__set">
+    <div class="snipcart-form__field">
+      <snipcart-label class="snipcart__font--tiny" for="date-of-birth">Date of Birth</snipcart-label>
+      <snipcart-input name="date-of-birth" type="date" required></snipcart-input>
+      <snipcart-error-message name="date-of-birth"></snipcart-error-message>
+    </div>
+  </fieldset>
+</billing>
+
+<billing section="bottom">
+  <fieldset class="snipcart-form__set">
+    <div class="snipcart-form__field-checkbox">
+      <snipcart-checkbox name="agreeToTerms" required></snipcart-checkbox>
+      <snipcart-label class="snipcart__font--tiny snipcart-form__label-checkbox" for="agreeToTerms">
+        I agree to the&nbsp;<%= link_to "terms & conditions", "#" %>
+      </snipcart-label>
+    </div>
+  </fieldset>
+</billing>
