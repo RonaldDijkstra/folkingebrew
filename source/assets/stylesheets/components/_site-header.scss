@@ -90,6 +90,7 @@ header.site-header {
     border: 0;
     color: transparent;
     display: block;
+    flex: 1 1 0;
     font: 0/0 a;
     height: 100%;
     opacity: 1;
@@ -101,6 +102,7 @@ header.site-header {
 
     @include grid-media($for-desktop-up) {
       background-position: 0;
+      flex: 1;
       height: auto;
       position: relative;
     }
@@ -122,9 +124,8 @@ header.site-header {
   .nav-wrap {
     background: transparent;
     display: flex;
+    flex: 5 1 0;
     flex-direction: row;
-    flex-grow: 1;
-    justify-content: space-between;
     z-index: 15;
 
     @include grid-media($for-mobile) {
@@ -168,7 +169,7 @@ header.site-header {
         position: relative;
 
         @include grid-media($for-desktop-up) {
-          margin-right: 3.2rem;
+          margin-right: 3rem;
         }
 
         @include grid-media($for-mobile) {
@@ -177,7 +178,7 @@ header.site-header {
 
         &:first-of-type {
           @include grid-media($for-desktop-up) {
-            margin-left: 3.2rem;
+            margin-left: 3rem;
           }
         }
 
@@ -186,7 +187,7 @@ header.site-header {
           color: $white;
           display: flex;
           font-family: $heading-font-family;
-          font-size: $base-font-size * 1.2;
+          font-size: $base-font-size * 1.1;
           height: 100%;
           position: relative;
           text-decoration: none;
@@ -203,10 +204,24 @@ header.site-header {
   }
 
   .nav-extras {
+    background: transparent;
     display: flex;
+    flex: 1 1 0;
     justify-content: flex-end;
-    width: 3.6rem;
     z-index: 15;
+
+    .header-signin {
+      align-items: center;
+      display: flex;
+      margin-right: 0.5em;
+      transition: all 0.2s ease-in-out;
+
+      a {
+        color: $white;
+        font-size: $base-font-size * 0.7;
+        text-decoration: none;
+      }
+    }
 
     .header-cart {
       align-items: center;
@@ -230,7 +245,6 @@ header.site-header {
 
       .cart-icon {
         height: 20px;
-        margin-right: 5px;
         width: 20px;
       }
 
