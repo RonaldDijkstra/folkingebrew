@@ -17,6 +17,6 @@ $(document).ready(function() {
   function closeOverlay() {
     ageGate.classList.remove("show");
 
-    Cookies.set(cookieName, true, { expires: 1 });
+    Cookies.set(cookieName, true);
   }
 });
