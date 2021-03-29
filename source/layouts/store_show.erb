@@ -2,7 +2,7 @@
   <header class="normal-page-header">
     <div class="grid-row">
       <h1>
-        <%= t("pages.shop.title") %>
+        <%= t("pages.store.title") %>
       </h1>
     </div>
   </header>
@@ -65,13 +65,13 @@
               Sold Out
             <% end %>
           <% else %>
-            <%= partial "partials/shop/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
+            <%= partial "partials/store/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
           <% end %>
         </div>
       </div>
     </div>
     <div class="grid-row back-link">
-      <%= partial "partials/button", locals: { to: "/shop/index.html",
+      <%= partial "partials/button", locals: { to: "/store/index.html",
                                                variant: "medium-size ghost no-border green",
                                                icon_left: "icons/arrow-left.svg",
                                                text: t("webshop.back_to_all_products")} %>

@@ -5,7 +5,7 @@ en:
     formats:
       blog_date: "%e %B %Y"
   navigation:
-    shop: "Shop"
+    shop: "Store"
     beers: "Our Beers"
     about: "About"
     faq: "FAQ"
@@ -39,8 +39,8 @@ en:
       title: "Contact"
     faq:
       title: "Frequently Asked Questions"
-    shop:
-      title: "Shop"
+    store:
+      title: "Store"
     thanks:
       text: "Thank you for filling in our contact form. We will contact you as soon as possible."
       title: "Thank you!"

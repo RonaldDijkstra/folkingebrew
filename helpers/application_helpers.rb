@@ -104,8 +104,8 @@ module ApplicationHelpers
       "/blog/"
     elsif current_page.url.start_with?("/beers/")
       "/beers/"
-    elsif current_page.url.start_with?("/shop/")
-      "/shop/"
+    elsif current_page.url.start_with?("/store/")
+      "/store/"
     else
       current_page.url
     end
@@ -117,7 +117,7 @@ module ApplicationHelpers
         "blog-article"
       elsif current_page.url.start_with?("/beers/")
         "beer-show"
-      elsif current_page.url.start_with?("/shop/")
+      elsif current_page.url.start_with?("/store/")
         "product-detail"
       end
     end
