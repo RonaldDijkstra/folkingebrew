@@ -63,7 +63,7 @@
         <div class="add-to-cart">
           <% if current_page.data.out_of_stock %>
             <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
-              Sold Out
+              Out of Stock
             <% end %>
           <% else %>
             <%= partial "partials/store/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>

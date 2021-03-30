@@ -9,11 +9,19 @@
           <%= product.title %>
         </h2>
       </div>
-      <div class="price">
-        <p>
-          <%= number_to_currency(product.data.price, :unit => "€") %>
-        </p>
-      </div>
+      <% if product.data.out_of_stock %>
+        <div class="out-of-stock">
+          <p>
+            Out of Stock
+          </p>
+        </div>
+      <% else %>
+        <div class="price">
+          <p>
+            <%= number_to_currency(product.data.price, :unit => "€") %>
+          </p>
+        </div>
+      <% end %>
     </div>
 
     <%= partial "partials/store/_snipcart_button", locals: { product: product, variant: "hidden" } %>
