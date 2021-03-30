@@ -1,12 +1,4 @@
-<% link_to product.url,
-  class: "product",
-  "data-item-id": product.data.id,
-  "data-item-quantity": "1",
-  "data-item-price": product.data.price,
-  "data-item-name": product.title,
-  "data-item-max-quantity": product.data.max_quantity,
-  "data-item-url": base_url + product.url,
-  "data-item-image": base_url + image_path(product.data.image) do %>
+<% link_to product.url, class: "product" do %>
   <div class="product-box">
     <div class="product-media">
       <%= image_tag product.data.image, alt: product.title, class: "product-image" %>
@@ -23,16 +15,7 @@
         </p>
       </div>
     </div>
-    <% content_tag :button,
-      class: "hidden snipcart-add-item button",
-      "data-item-id": product.data.id,
-      "data-item-quantity": "1",
-      "data-item-price": product.data.price,
-      "data-item-name": product.title,
-      "data-item-max-quantity": product.data.max_quantity,
-      "data-item-url": base_url + product.url,
-      "data-item-image": base_url + image_path(product.data.image) do %>
-      <%= t("webshop.add_to_cart") %>
-    <% end %>
+
+    <%= partial "partials/store/_snipcart_button", locals: { product: product, variant: "hidden buy-button" } %>
   </div>
 <% end %>

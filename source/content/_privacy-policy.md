@@ -26,21 +26,21 @@ We use third party services that help us better understand the visits and use of
 
 (a) We measure visits to our websites using Google Analytics. This records which pages you view on our website, how you got to our website and collects a limited amount of basic information about your computer and browser. All this information is anonymous. The information we collect using Google Analytics helps us understand which parts of our websites are doing well and how people end up on our websites. As with most websites, we use this information purely to improve our websites.
 
-(b) [Google Analytics Privacy Policy](https://policies.google.com/privacy){:target="_blank"}{:rel="noopener noreferrer"}{:title="Google Analytics Privacy Policy"}.
+(b) More about Google Analytics and privacy can be viewed in the [Google Analytics Privacy Policy](https://policies.google.com/privacy){:target="_blank"}{:rel="noopener noreferrer"}{:title="Google Analytics Privacy Policy"}.
 
 {::options auto_ids="false" /}
 
-## Snipcart
+### Snipcart
 
 (a) Our webshop uses Snipcart for order handling.
 
-(b) [Snipcart Data Processing Agreement](https://cdn.snipcart.com/legal/dpa.pdf).
+(b) More on data processing by Snipcart can be found in the [Snipcart Data Processing Agreement](https://cdn.snipcart.com/legal/dpa.pdf).
 
-## Netlify
+### Netlify
 
 (a) Our website uses the service of Netlify Forms to collect form data. This includes anything that's submitted in our contact form.
 
-(b) [Netlify Data Processing Agreement](https://www.netlify.com/v3/static/pdf/netlify-dpa.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:title="Netlify DPA"}
+(b) More on data processing by Netlify can be found in the [Netlify Data Processing Agreement](https://www.netlify.com/v3/static/pdf/netlify-dpa.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:title="Netlify DPA"}.
 
 ## Updates to this privacy policy
 
