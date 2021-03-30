@@ -50,6 +50,7 @@
                   <%
                     available_sizes = current_article.data.sizes.split("|")
                   %>
+
                   <% available_sizes.each do |size| %>
                     <option value="<%= size %>"><%= size %></option>
                   <% end %>

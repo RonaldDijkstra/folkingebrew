@@ -1,6 +1,8 @@
 *Date: 20 march 2021*
 *Version: 1*
 
+{::options auto_ids="false" /}
+
 This web page explains our approach to privacy on our website and what we do with your data as a website visitor.
 
 ## What we collect, in short
@@ -26,15 +28,19 @@ We use third party services that help us better understand the visits and use of
 
 (a) We measure visits to our websites using Google Analytics. This records which pages you view on our website, how you got to our website and collects a limited amount of basic information about your computer and browser. All this information is anonymous. The information we collect using Google Analytics helps us understand which parts of our websites are doing well and how people end up on our websites. As with most websites, we use this information purely to improve our websites.
 
-(b) More about Google Analytics and privacy can be viewed in the [Google Analytics Privacy Policy](https://policies.google.com/privacy){:target="_blank"}{:rel="noopener noreferrer"}{:title="Google Analytics Privacy Policy"}.
-
-{::options auto_ids="false" /}
+(b) More about Google Analytics and privacy can be viewed in the [Google Analytics Privacy Policy](https://policies.google.com/privacy).
 
 ### Snipcart
 
-(a) Our webshop uses Snipcart for order handling.
+(a) Our webshop uses Snipcart for integrating the cart and order handling. Data includes anything you provide us to be able to handle your order.
 
 (b) More on data processing by Snipcart can be found in the [Snipcart Data Processing Agreement](https://cdn.snipcart.com/legal/dpa.pdf).
+
+### Mollie
+
+(a) Our webshop uses Mollie as Payment Gateway.
+
+(b) More about privacy and Mollie can be viewed in the [Mollie Privacy Statement](https://www.mollie.com/en/privacy)
 
 ### Netlify
 
