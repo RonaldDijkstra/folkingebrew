@@ -8,7 +8,7 @@ blog_link:
 description: "A New England Style Double IPA featuring New Zealand hops only for the double dryhopping: Riwaka, Nelson Sauvin and Motueka."
 style: New England DIPA
 abv: "8.1%"
-release_date: March 2021
+release_date: April 2021
 hops: Riwaka, Nelson Sauvin, Motueka
 yeast: Lallemand Verdant IPA
 malts: Golden Promise, Oats
