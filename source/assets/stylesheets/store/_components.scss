@@ -1,28 +1,60 @@
 .product-controls {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.5em;
+  margin-bottom: $base-spacing;
   max-width: 100%;
 
-  @include grid-media($for-desktop-up) {
-    flex-direction: row;
-  }
-
-  > div {
-    width: 50%;
+  .quantity-and-cart {
+    margin-bottom: $base-spacing;
 
     @include grid-media($for-small-screens-up) {
-      width: 40%;
+      display: flex;
+      flex-direction: row;
     }
+  }
 
-    @include grid-media($for-desktop-up) {
-      width: 30%;
+  .add-to-cart {
+    align-items: flex-end;
+    display: flex;
+    height: auto;
+  }
+
+  .buy-button {
+    line-height: 1.4;
+    padding: 0.8em;
+    width: 100%;
+
+    @include grid-media($for-small-screens-up) {
+      width: auto;
     }
+  }
+
+  .sizes,
+  .product-quantity {
+    margin-bottom: $base-spacing;
   }
 
   .product-quantity {
-    margin-bottom: $small-spacing;
-    margin-right: $small-spacing;
+    @include grid-media($for-small-screens-up) {
+      margin-bottom: 0;
+    }
+
+    input {
+      margin-right: $small-spacing;
+      width: 100%;
+
+      @include grid-media($for-small-screens-up) {
+        width: 120px;
+      }
+    }
+  }
+
+  .sizes {
+    .select {
+      width: 100%;
+
+      @include grid-media($for-small-screens-up) {
+        width: 120px;
+      }
+    }
   }
 
   label {
@@ -109,4 +141,9 @@
       transition: 0.25s all ease;
     }
   }
+}
+
+.shipping-conditions {
+  font-size: $base-font-size * 0.7;
+  margin: 0;
 }

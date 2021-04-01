@@ -27,47 +27,51 @@
         <%= yield %>
 
         <div class="product-controls">
-          <% unless current_article.data.max_quantity == 1 || current_page.data.out_of_stock %>
-            <div class="product-quantity">
-              <label>
-                Quantity <%= "(max #{current_article.data.max_quantity} pp)" if current_article.data.max_quantity %>:
-              </label>
-              <% if current_article.data.max_quantity %>
-                <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1" max="<%= current_article.data.max_quantity %>">
-              <% else %>
-                <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1">
-              <% end %>
-            </div>
-          <% end %>
-
           <% if current_article.data.sizes %>
             <div class="sizes">
               <label>
-                Sizes:
+                Size:
               </label>
               <div class="select">
                 <select id="size" name="size">
-                  <%
-                    available_sizes = current_article.data.sizes.split("|")
-                  %>
-
-                  <% available_sizes.each do |size| %>
-                    <option value="<%= size %>"><%= size %></option>
+                  <% current_article.data.sizes.each do |size| %>
+                    <% if size.stock %>
+                      <option value="<%= size.title %>"><%= size.title %></option>
+                    <% else %>
+                      <option value="<%= size.title %>" disabled><%= size.title %> (Out of Stock)</option>
+                    <% end %>
                   <% end %>
                 </select>
               </div>
             </div>
           <% end %>
-        </div>
-
-        <div class="add-to-cart">
-          <% if current_page.data.out_of_stock %>
-            <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
-              Out of Stock
+          <div class="quantity-and-cart">
+            <% unless current_article.data.max_quantity == 1 || current_page.data.out_of_stock %>
+              <div class="product-quantity">
+                <label>
+                  Quantity <%= "(max #{current_article.data.max_quantity} pp)" if current_article.data.max_quantity %>:
+                </label>
+                <% if current_article.data.max_quantity %>
+                  <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1" max="<%= current_article.data.max_quantity %>">
+                <% else %>
+                  <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1">
+                <% end %>
+              </div>
             <% end %>
-          <% else %>
-            <%= partial "partials/store/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
-          <% end %>
+            <div class="add-to-cart">
+              <% if current_page.data.out_of_stock %>
+                <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
+                  Out of Stock
+                <% end %>
+              <% else %>
+                <%= partial "partials/store/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="shipping-conditions">
+            <%= partial "content/shipping-conditions" %>
+          </div>
         </div>
       </div>
     </div>

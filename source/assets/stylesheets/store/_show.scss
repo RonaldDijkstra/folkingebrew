@@ -9,11 +9,10 @@ body.store {
     .grid-row {
       &.product-item {
         height: 100%;
-        padding: 0;
+        padding: 0 1em;
 
         @include grid-media($for-desktop-up) {
           display: flex;
-          padding: 0 1em;
         }
       }
 
