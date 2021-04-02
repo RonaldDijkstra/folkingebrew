@@ -1,9 +1,8 @@
 <%
 if product.data.sizes
   sizes = product.data.sizes.map{|x| x[:title]}.join('|')
+  first_available_size = product.data.sizes.select{ |s| s.stock }.first.title
 end
-
-first_available_size = product.data.sizes.select{ |s| s.stock }.first.title
 %>
 
 <% if sizes %>

@@ -30,7 +30,7 @@
           <% if current_article.data.sizes %>
             <div class="sizes">
               <label>
-                Size:
+                Size
               </label>
               <div class="select">
                 <select id="size" name="size">
@@ -49,7 +49,7 @@
             <% unless current_article.data.max_quantity == 1 || current_page.data.out_of_stock %>
               <div class="product-quantity">
                 <label>
-                  Quantity <%= "(max #{current_article.data.max_quantity} pp)" if current_article.data.max_quantity %>:
+                  Quantity <%= "(max #{current_article.data.max_quantity} pp)" if current_article.data.max_quantity %>
                 </label>
                 <% if current_article.data.max_quantity %>
                   <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1" max="<%= current_article.data.max_quantity %>">

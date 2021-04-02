@@ -210,19 +210,6 @@ header.site-header {
     justify-content: flex-end;
     z-index: 15;
 
-    .header-signin {
-      align-items: center;
-      display: flex;
-      margin-right: 0.5em;
-      transition: all 0.2s ease-in-out;
-
-      a {
-        color: $white;
-        font-size: $base-font-size * 0.7;
-        text-decoration: none;
-      }
-    }
-
     .header-cart {
       align-items: center;
       display: flex;
@@ -245,6 +232,7 @@ header.site-header {
 
       .cart-icon {
         height: 20px;
+        margin-right: 5px;
         width: 20px;
       }
 
