@@ -6,7 +6,11 @@ $light-green: #65bf5a;
 $black: #000;
 $white: #fff;
 $dark-gray: #303030;
+$light-gray: #aaa;
 $base-font-color: $dark-gray;
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
 
 .snipcart-modal__container {
   left: initial;
@@ -38,6 +42,10 @@ $base-font-color: $dark-gray;
 
     &.snipcart-discount-box__button {
       border-color: $dark-gray;
+    }
+
+    &.snipcart-payment-methods-list-item__button {
+      background-color: $light-green;
     }
   }
 
@@ -193,3 +201,32 @@ $base-font-color: $dark-gray;
 .snipcart-featured-payment-methods__list {
   display: none;
 }
+
+.snipcart-form__select,
+.snipcart-item-quantity__quantity,
+.snipcart-input,
+.snipcart-shipping-rates-list-item {
+  border: $base-border;
+}
+
+.snipcart-shipping-rates-list-item--highlight {
+  border: 1px solid $green;
+}
+
+button.snipcart-payment-methods-list-item__button {
+  align-items: center;
+  background-color: $green;
+  border: 0;
+  color: $white;
+  display: flex;
+  flex-direction: row;
+  font-weight: 600;
+  height: 3em;
+  justify-content: center;
+  padding: 0;
+
+  .snipcart-payment-methods-list-item__arrow svg path {
+    fill: $white;
+  }
+}
+
