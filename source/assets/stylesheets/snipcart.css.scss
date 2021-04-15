@@ -45,7 +45,7 @@ $base-border: 1px solid $base-border-color;
     }
 
     &.snipcart-payment-methods-list-item__button {
-      background-color: $light-green;
+      border-color: $dark-gray;
     }
   }
 
@@ -95,7 +95,7 @@ $base-border: 1px solid $base-border-color;
 
 .snipcart__actions--link {
   color: $green;
-  font-family: $base-font-family, sans-serif !important;
+  font-family: $base-font-family, sans-serif;
 }
 
 .snipcart__box--badge-highlight {
@@ -177,9 +177,6 @@ $base-border: 1px solid $base-border-color;
   border: 1px solid $green;
 }
 
-.snipcart-shipping-rates-list-item--highlight {
-  border: 1px solid $green;
-}
 
 .snipcart-cart-summary-fees__discounts-icon {
   .snipcart__icon path {
@@ -215,18 +212,14 @@ $base-border: 1px solid $base-border-color;
 
 button.snipcart-payment-methods-list-item__button {
   align-items: center;
-  background-color: $green;
-  border: 0;
-  color: $white;
+  background-color: $white;
+  border: $base-border;
+  color: $base-font-color;
   display: flex;
   flex-direction: row;
   font-weight: 600;
   height: 3em;
   justify-content: center;
   padding: 0;
-
-  .snipcart-payment-methods-list-item__arrow svg path {
-    fill: $white;
-  }
 }
 
