@@ -7,7 +7,7 @@ Article 2 – Identity of the entrepreneur
 Article 3 – Applicability
 Article 4 – The offer
 Article 5 – The contract
-Article 6 –Right of withdrawal
+Article 6 – Right of withdrawal
 Article 7 – Costs in case of withdrawal
 Article 8 – Exceptions to the right of withdrawal
 Article 9 – The price
