@@ -25,7 +25,7 @@
     <%= partial "partials/meta/analytics" if config[:ga_code] %>
     <%= partial "partials/meta/schema" if current_page.url == "/" %>
     <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>">
-      <%= partial "partials/store/cart-components" %>
+      <%= partial "partials/store/cart_components" %>
     </div>
     <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js" defer></script>
     <%= stylesheet_link_tag "snipcart" %>
