@@ -90,7 +90,7 @@ configure :production do
   ]
   activate :gzip
   activate :minify_css
-  # activate :minify_html
+  activate :minify_html
   activate :minify_javascript
 
   # Raise exception for missing translations during build
