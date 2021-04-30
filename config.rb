@@ -85,5 +85,6 @@ configure :production do
 end
 
 ready do
+  proxy "_headers", "headers", ignore: true
   proxy "_redirects", "redirects", ignore: true
 end
