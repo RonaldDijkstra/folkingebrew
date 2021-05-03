@@ -8,7 +8,7 @@ blog_link:
 description: "New England Style Triple IPA hopped up with Citra, Nelson Sauvin, Idaho 7 and Ekuanot. Collab with Moersleutel Craft Brewery."
 style: New England TIPA
 abv: "9.5%"
-release_date: April 2021
+release_date: May 2021
 hops: Citra, Nelson Sauvin, Idaho 7, Ekuanot
 yeast: Vermont
 malts: Golden Promise, Oats
