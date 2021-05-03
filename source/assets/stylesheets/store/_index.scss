@@ -75,7 +75,7 @@ body.store_index {
 
         h2 {
           color: $base-font-color;
-          font-size: $base-font-size * 1.1;
+          font-size: $base-font-size;
           font-weight: $font-weight-bold;
           line-height: 1.5;
           margin: 0;
@@ -83,7 +83,7 @@ body.store_index {
       }
 
       p {
-        font-size: $base-font-size * 1.1;
+        font-size: $base-font-size;
         font-weight: $font-weight-bold;
         margin: 0;
         text-align: right;
