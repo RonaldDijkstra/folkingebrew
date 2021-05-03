@@ -3,7 +3,7 @@ title: "Unlocked (x Moersleutel)"
 date: 2021-04-19 09:00 CEST
 image: "beers/unlocked.png"
 tags: TIPA
-ut_link:
+ut_link: "https://untappd.com/b/folkingebrew-unlocked/4295880"
 blog_link:
 description: "New England Style Triple IPA hopped up with Citra, Nelson Sauvin, Idaho 7 and Ekuanot. Collab with Moersleutel Craft Brewery."
 style: New England TIPA
