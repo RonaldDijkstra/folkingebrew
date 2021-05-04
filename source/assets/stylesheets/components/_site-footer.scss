@@ -55,11 +55,20 @@ footer {
 
   .footer-link-column {
     margin-bottom: 2em;
+    margin-top: 2em;
+
+    @include grid-media($for-big-screen-up) {
+      margin: 0;
+    }
 
     &.secondary {
       @include grid-media($for-big-screen-up) {
         padding-left: 50px;
       }
+    }
+
+    &.footer-link-column-first {
+      margin-top: 0;
     }
   }
 
