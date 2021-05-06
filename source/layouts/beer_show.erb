@@ -45,6 +45,12 @@
                 <span class="beer-fact-label"><%= t("beers.facts.malts") %></span>
               </div>
             <% end %>
+            <% if current_article.data.fruits %>
+              <div class="beer-fact">
+                <span class="beer-fact-value"><%= current_article.data.fruits %></span>
+                <span class="beer-fact-label"><%= t("beers.facts.fruits") %></span>
+              </div>
+            <% end %>
             <% if current_article.data.adjuncts %>
               <div class="beer-fact">
                 <span class="beer-fact-value"><%= current_article.data.adjuncts %></span>
