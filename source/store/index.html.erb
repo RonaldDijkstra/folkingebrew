@@ -4,6 +4,7 @@ description: "Buy our beers and merchandise in our store."
 blog: store
 pageable: true
 sitemap_priority: 0.8
+under_construction: true
 ---
 <header class="normal-page-header">
   <div class="grid-row">
@@ -14,14 +15,23 @@ sitemap_priority: 0.8
 </header>
 <section class="products wide-row">
   <div class="grid-row">
-    <div class="products-grid-wrap">
-      <div class="products-grid feed">
-        <div class="row">
-          <% page_articles.each do |product| %>
-            <%= partial "partials/store/product_preview", locals: { product: product } %>
-          <% end %>
+    <% if current_page.data.under_construction %>
+      <div class="under-construction">
+        <p>
+          We are currently filling our webshop. Come back later for fresh beer and merchandise. Subscribe to our newsletter and be the first to know when our webshop is live.
+        </p>
+        <%= partial "partials/shared/newsletter-subscribe" %>
+      </div>
+    <% else %>
+      <div class="products-grid-wrap">
+        <div class="products-grid feed">
+          <div class="row">
+            <% page_articles.each do |product| %>
+              <%= partial "partials/store/product_preview", locals: { product: product } %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </section>

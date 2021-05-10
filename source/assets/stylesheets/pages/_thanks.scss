@@ -3,6 +3,7 @@ body.thanks {
     .grid-row {
       color: $white;
       flex-direction: column;
+      max-width: $small-row;
       text-align: center;
     }
 
@@ -10,7 +11,7 @@ body.thanks {
       font-size: $base-font-size * 2;
 
       @include grid-media($for-desktop-up) {
-        font-size: $base-font-size * 3;
+        font-size: $base-font-size * 2.4;
       }
     }
   }
