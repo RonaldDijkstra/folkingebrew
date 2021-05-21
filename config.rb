@@ -17,6 +17,9 @@ activate :sprockets
 # Set timezone
 Time.zone = "CET"
 
+# Use Webshop?
+set :use_webshop?, false
+
 # Set Google Analytics id
 set :ga_code, "UA-24956010-7"
 

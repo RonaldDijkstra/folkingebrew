@@ -15,7 +15,11 @@
       </div>
       <div>
         <button type="submit" value="Subscribe" name="subscribe" class="button solid medium-size green">
-          Subscribe
+          <% if locals[:button_text] %>
+            <%= button_text %>
+          <% else %>
+            Subscribe
+          <% end %>
         </button>
       </div>
     </div>

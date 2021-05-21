@@ -36,12 +36,13 @@ footer {
 
     @include grid-media($for-big-screen-up) {
       border-bottom: 0;
+      border-right: 1px solid $medium-gray;
       display: flex;
       padding: 0 4%;
-      width: 33.33333333%;
+      // width: 33.33333333%;
 
-      &:nth-child(-n+2) {
-        border-right: 1px solid $medium-gray;
+      &:last-of-type {
+        border-right: 0;
       }
     }
 

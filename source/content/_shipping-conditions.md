@@ -1,3 +1,3 @@
-- We currently ship within The Netherlands only
-- We despatch orders on tuesday and friday using PostNL
-- Standard delivery charge of €5,99. Free shipping on orders over €70
+- We currently only ship within The Netherlands (with PostNL)
+- Standard shipping costs €5,99, for orders above €70 shipping is free
+- We generally ship monday to tuesday, except the official Dutch holidays. Orders after thursday afternoon 2 pm won't be shipped till monday!

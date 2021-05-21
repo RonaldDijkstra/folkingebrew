@@ -9,28 +9,40 @@ under_construction: true
 <header class="normal-page-header">
   <div class="grid-row">
     <h1>
-      <%= t("pages.store.title") %>
+      <% if config[:use_webshop?] %>
+        <%= t("pages.store.title") %>
+      <% else %>
+        <%= t("pages.store.coming_soon") %>
+      <% end %>
     </h1>
   </div>
 </header>
 <section class="products wide-row">
   <div class="grid-row">
-    <% if current_page.data.under_construction %>
-      <div class="under-construction">
-        <p>
-          We are currently filling our webshop. Come back later for fresh beer and merchandise. Subscribe to our newsletter and be the first to know when our webshop is live.
-        </p>
-        <%= partial "partials/shared/newsletter-subscribe" %>
-      </div>
-    <% else %>
-      <div class="products-grid-wrap">
-        <div class="products-grid feed">
-          <div class="row">
-            <% page_articles.each do |product| %>
-              <%= partial "partials/store/product_preview", locals: { product: product } %>
-            <% end %>
+    <% if config[:use_webshop?] %>
+      <% if page_articles.count < 1 %>
+        <div class="message">
+          <p>
+            Sorry, we do not have any products in stock at the moment. Please come back later!
+          </p>
+        </div>
+      <% else %>
+        <div class="products-grid-wrap">
+          <div class="products-grid feed">
+            <div class="row">
+              <% page_articles.each do |product| %>
+                <%= partial "partials/store/product_preview", locals: { product: product } %>
+              <% end %>
+          </div>
           </div>
         </div>
+      <% end %>
+    <% else %>
+      <div class="message">
+        <p>
+          We are almost there! If you want to get notified when the online store goes live, subscribe to our mailing list.
+        </p>
+        <%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Notify Me!"} %>
       </div>
     <% end %>
   </div>
