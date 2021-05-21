@@ -1,0 +1,153 @@
+.product-controls {
+  margin-bottom: $base-spacing;
+  max-width: 100%;
+
+  .quantity-and-cart {
+    margin-bottom: $base-spacing;
+
+    @include grid-media($for-small-screens-up) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .add-to-cart {
+    align-items: flex-end;
+    display: flex;
+    height: auto;
+  }
+
+  .buy-button {
+    line-height: 1.4;
+    padding: 0.8em;
+    width: 100%;
+
+    @include grid-media($for-small-screens-up) {
+      width: auto;
+    }
+  }
+
+  .sizes,
+  .product-quantity {
+    margin-bottom: $base-spacing;
+  }
+
+  .product-quantity {
+    @include grid-media($for-small-screens-up) {
+      margin-bottom: 0;
+    }
+
+    input {
+      margin-right: $small-spacing;
+      width: 100%;
+
+      @include grid-media($for-small-screens-up) {
+        width: 140px;
+      }
+    }
+  }
+
+  .sizes {
+    .select {
+      width: 100%;
+
+      @include grid-media($for-small-screens-up) {
+        width: 140px;
+      }
+    }
+  }
+
+  label {
+    display: block;
+    font-size: $base-font-size * 0.8;
+    margin-bottom: $small-spacing;
+  }
+
+  input,
+  select,
+  textarea {
+    display: block;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: 1.5;
+    padding: $base-spacing * 0.8;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  #{$all-text-inputs} {
+    appearance: none;
+    border: $base-border;
+    box-sizing: border-box;
+    padding: $base-spacing * 0.8;
+    transition: border-color $base-duration $base-timing;
+    width: 100%;
+
+    &:hover {
+      border-color: shade($base-border-color, 20%);
+    }
+
+    &:focus {
+      border-color: $action-color;
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: shade($_form-background-color, 5%);
+      cursor: not-allowed;
+
+      &:hover {
+        border: $base-border;
+      }
+    }
+  }
+
+  select {
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: $base-border;
+    color: $base-font-color;
+    cursor: pointer;
+    flex: 1;
+    outline: 0;
+    width: 100%;
+
+    &:focus {
+      border-color: $action-color;
+      outline: none;
+    }
+  }
+
+  .select {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      align-items: center;
+      background: transparent;
+      bottom: 0;
+      color: $dark-gray;
+      content: "<>";
+      cursor: pointer;
+      display: flex;
+      font-size: 14px;
+      line-height: 1;
+      pointer-events: none;
+      position: absolute;
+      right: 8px;
+      top: 0;
+      transform: rotate(90deg);
+      transition: 0.25s all ease;
+    }
+  }
+}
+
+.shipping-conditions {
+  font-size: $base-font-size * 0.7;
+  margin: 0;
+}

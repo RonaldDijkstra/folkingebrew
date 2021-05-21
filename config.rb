@@ -10,11 +10,15 @@ set :root_locale, root_locale
 activate :i18n, mount_at_root: root_locale, langs: %i[en]
 activate :autoprefixer
 activate :directory_indexes
+activate :dotenv
 activate :inline_svg
 activate :sprockets
 
 # Set timezone
 Time.zone = "CET"
+
+# Use Webshop?
+set :use_webshop?, false
 
 # Set Google Analytics id
 set :ga_code, "UA-24956010-7"
@@ -42,6 +46,8 @@ page "blog/index.html", layout: :blog_index
 page "blog/*", layout: :blog_show
 page "beers/index.html", layout: :beer_index
 page "beers/*", layout: :beer_show
+page "store/index.html", layout: :store_index
+page "store/*", layout: :store_show
 
 # Activate and setup the blog content type
 activate :blog do |blog|
@@ -64,6 +70,18 @@ activate :blog do |blog|
   # blog.tag_template = "blog/tag.html"
   blog.paginate = true
   blog.page_link = "page/{num}"
+  blog.per_page = 12
+end
+
+# Activate and setup the product content type
+activate :blog do |blog|
+  blog.name = "store"
+  blog.prefix = "store"
+  blog.permalink = ":title"
+  blog.sources = "/products/{title}.html"
+  # blog.tag_template = "blog/tag.html"
+  blog.paginate = true
+  blog.page_link = "/page/{num}"
   blog.per_page = 12
 end
 

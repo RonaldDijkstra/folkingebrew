@@ -1,0 +1,81 @@
+<footer role="contentinfo">
+  <div class="grid-row">
+    <div class="footer-content">
+      <div class="footer-column">
+        <div class="footer-link-column footer-link-column-first">
+          <h3>
+            Folkingebrew
+          </h3>
+          <ul class="footer-link-list">
+            <li><%= link_to "Our Beers", "/beers/index.html" %></li>
+            <li><%= link_to "About", "/about.html" %></li>
+            <li><%= link_to "FAQ", "/frequently-asked-questions.html" %></li>
+          </ul>
+        </div>
+        <div class="footer-link-column secondary">
+          <h3>
+            Stay up-to-date
+          </h3>
+          <ul class="footer-link-list">
+            <li><%= link_to "Blog", "/blog/index.html" %></li>
+            <!--
+              <li><%= link_to "Events", "#" %></li>
+              <li><%= link_to "Newsletter", "#" %></li>
+            -->
+          </ul>
+          <%= partial "partials/shared/social-links" %>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <div class="footer-link-column">
+          <h3>
+            Buy Beer & Merch
+          </h3>
+          <ul class="footer-link-list">
+            <li><%= link_to "Store", "/store/index.html" %></li>
+            <li><%= link_to "Shipping & Returning", "/shipping-and-returning.html" %></li>
+            <!--
+              <li><%= link_to "Official Dealers", "/dealers.html" %></li>
+              <li><%= link_to "Distributors", "/distributors.html" %></li>
+            -->
+          </ul>
+        </div>
+        <div class="footer-link-column secondary">
+          <h3>
+            Legal
+          </h3>
+          <ul class="footer-link-list">
+            <li><%= link_to "Terms & Conditions", "/terms-and-conditions.html" %></li>
+            <li><%= link_to "Privacy Policy", "/privacy-policy.html" %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <div class="footer-link-column">
+          <h3>
+            Contact us
+          </h3>
+          <ul class="footer-link-list">
+            <li><%= link_to "Send an email", "/contact.html" %></li>
+          </ul>
+        </div>
+        <div class="footer-link-column secondary">
+          <h3>
+            Address (no visits)
+          </h3>
+          <address class="footer-link-list-address">
+            Foxham 53<br>
+            9601 LE<br>
+            Hoogezand (Groningen)<br>
+            The Netherlands
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-row copyright">
+    &copy; <%= Time.new.year %> Folkingebrew. All rights reserved.
+  </div>
+</footer>

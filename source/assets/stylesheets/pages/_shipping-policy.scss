@@ -1,0 +1,25 @@
+body.shipping-and-returning {
+  .shipping-policy {
+    @include grid-media($for-desktop-up) {
+      padding: 0 1em;
+    }
+
+    .grid-row {
+      background: $white;
+
+      @include grid-media($for-desktop-up) {
+        margin-bottom: 4em;
+        padding: 4em 2em;
+      }
+
+      .row {
+        margin: 0 auto;
+        max-width: $smallest-row;
+
+        p:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

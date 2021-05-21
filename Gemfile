@@ -6,6 +6,7 @@ source "https://rubygems.org"
 gem "middleman"
 gem "middleman-autoprefixer"
 gem "middleman-blog"
+gem "middleman-dotenv", "~> 2.0"
 gem "middleman-inline_svg"
 gem "middleman-minify-html"
 gem "middleman-sprockets"
@@ -30,6 +31,7 @@ gem "rake"
 source "https://rails-assets.org" do
   gem "rails-assets-jquery"
   gem "rails-assets-jquery.scrollTo"
+  gem "rails-assets-js-cookie"
   gem "rails-assets-what-input"
 end
 

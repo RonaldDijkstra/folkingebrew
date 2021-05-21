@@ -1,0 +1,110 @@
+body.store_index {
+  background: $lightest-gray;
+
+  .normal-page-header {
+    h1 {
+      color: $black;
+    }
+  }
+
+  section.products {
+    .grid-row {
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1em 1em;
+      width: 100%;
+
+      @include grid-media($for-desktop-up) {
+        padding: 0 2em 4em;
+      }
+    }
+
+    .message {
+      margin: 0 auto;
+      max-width: 740px;
+      text-align: center;
+    }
+
+    .feed {
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+
+      .row {
+        @include grid-media($for-small-screens-up) {
+          display: grid;
+          grid-gap: 2rem;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include grid-media($for-desktop-up) {
+          grid-gap: 4rem;
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+
+    a.product {
+      background: $white;
+      display: flex;
+      margin-bottom: 2rem;
+      min-height: 1px;
+      padding: 2rem;
+      position: relative;
+      text-decoration: none;
+      transition: box-shadow 400ms ease-in-out;
+      width: 100%;
+
+      @include grid-media($for-small-screens-up) {
+        margin-bottom: 0;
+      }
+    }
+
+    .product-box {
+      display: block;
+      outline: none;
+      position: relative;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+
+    .snipcart-add-item {
+      display: none;
+    }
+
+    .product-content {
+      display: flex;
+
+      .title {
+        flex-grow: 1;
+
+        h2 {
+          color: $base-font-color;
+          font-size: $base-font-size;
+          font-weight: $font-weight-bold;
+          line-height: 1.5;
+          margin: 0;
+        }
+      }
+
+      p {
+        font-size: $base-font-size;
+        font-weight: $font-weight-bold;
+        margin: 0;
+        text-align: right;
+      }
+
+      .out-of-stock p {
+        color: $light-gray;
+      }
+
+      .price p {
+        color: $green;
+      }
+    }
+  }
+}
+
+
+

@@ -11,11 +11,13 @@
 @import "base/tables";
 @import "base/typography";
 
+@import "components/age-gate";
 @import "components/buttons";
 @import "components/forms";
 @import "components/hero";
 @import "components/icons";
 @import "components/lists";
+@import "components/newsletter-subscribe-form";
 @import "components/page-header";
 @import "components/pagination";
 @import "components/site-footer";
@@ -25,11 +27,18 @@
 @import "pages/contact";
 @import "pages/faq";
 @import "pages/index";
+@import "pages/privacy-policy";
+@import "pages/shipping-policy";
+@import "pages/terms-and-conditions";
 @import "pages/thanks";
 @import "pages/404";
 
 @import "beers/index";
 @import "beers/show";
+
+@import "store/components";
+@import "store/index";
+@import "store/show";
 
 @import "blog/article-preview";
 @import "blog/index";

@@ -1,0 +1,46 @@
+.age-gate {
+  background: $black;
+  display: none;
+  height: 100%;
+  left: 0;
+  min-height: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 3000;
+
+  @media print {
+    visibility: hidden;
+  }
+
+  &.show {
+    display: block;
+  }
+
+  .age-gate-modal {
+    background: transparent;
+    left: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+    @include grid-media($for-desktop-up) {
+      max-width: 640px;
+    }
+  }
+
+  .age-gate-logo {
+    margin-bottom: 1.2em;
+
+    svg {
+      max-width: 300px;
+
+      @include grid-media($for-desktop-up) {
+        max-width: 360px;
+      }
+    }
+  }
+}

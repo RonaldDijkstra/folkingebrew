@@ -1,9 +1,11 @@
 ---
 en:
+  CNAME: www.folkingebrew.nl
   time:
     formats:
       blog_date: "%e %B %Y"
   navigation:
+    shop: "Store"
     beers: "Our Beers"
     about: "About"
     faq: "FAQ"
@@ -24,7 +26,7 @@ en:
     private: "Private"
     business: "Retail"
     distributor: "Distribution"
-    message: "How can we help you?"
+    message: "Message"
     choose: "Choose an option"
   pages:
     x404:
@@ -37,9 +39,17 @@ en:
       title: "Contact"
     faq:
       title: "Frequently Asked Questions"
+    store:
+      coming_soon: "Coming Soon"
+      title: "Store"
     thanks:
       text: "Thank you for filling in our contact form. We will contact you as soon as possible."
-      title: "Thank you!"
+      title: "Thank you"
+      newsletter:
+        confirmed: Your subscription for our newsletter has been confirmed. Thank you for subscribing!
+        subscribed: "You are now subscribed to our newsletter. To complete the sign up process, click on the link in the email we just sent you."
+        unsubscribed: You have been unsubscribed from our newsletter. Sorry to see you go.
+        unsubscribed-title: Unsubscribed
   beers:
     facts:
       style: "Style"
@@ -51,5 +61,9 @@ en:
       adjuncts: "Adjuncts"
       release_date: "Release Date"
     back_to_all_beers: "Back to All Beers"
+  webshop:
+    back_to_all_products: "View All Products"
+    add_to_cart: "Add to Cart"
+    no_stock_message: "Currently we are out of stock. Come back soon!"
 ---
 

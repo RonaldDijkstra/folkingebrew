@@ -1,0 +1,29 @@
+<% link_to product.url, class: "product" do %>
+  <div class="product-box">
+    <div class="product-media">
+      <%= image_tag product.data.image, alt: product.title, class: "product-image" %>
+    </div>
+    <div class="product-content">
+      <div class="title">
+        <h2>
+          <%= product.title %>
+        </h2>
+      </div>
+      <% if product.data.out_of_stock %>
+        <div class="out-of-stock">
+          <p>
+            Out of Stock
+          </p>
+        </div>
+      <% else %>
+        <div class="price">
+          <p>
+            <%= number_to_currency(product.data.price, :unit => "€") %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+
+    <%= partial "partials/store/_snipcart_button", locals: { product: product, variant: "hidden" } %>
+  </div>
+<% end %>

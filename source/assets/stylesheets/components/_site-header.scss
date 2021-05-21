@@ -9,10 +9,10 @@ body.header-transparent.at-the-top {
         opacity: 1;
       }
     }
-  }
 
-  &.not-at-the-top {
-    background: $black;
+    .cart-icon path {
+      fill: $white;
+    }
   }
 }
 
@@ -27,10 +27,14 @@ header.site-header {
   top: 0;
   transition: all 0.2s ease-in-out;
   width: 100%;
-  z-index: 1010;
+  z-index: 10;
 
   @include grid-media($for-desktop-up) {
     padding: 1.2rem 3rem;
+  }
+
+  .cart-icon path {
+    fill: $green;
   }
 
   &.hide-nav {
@@ -43,18 +47,6 @@ header.site-header {
     transform: translatey(0);
   }
 
-  a {
-    color: $white;
-    font-family: $heading-font-family;
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-
-    &[aria-current]:not([aria-current="false"]),
-    &:hover {
-      color: rgba($white, 0.6);
-    }
-  }
-
   .nav-menu-toggle {
     background-color: transparent;
     border: 0;
@@ -64,7 +56,7 @@ header.site-header {
     position: relative;
     text-shadow: none;
     width: 4rem;
-    z-index: 1020;
+    z-index: 20;
 
     @include grid-media($for-desktop-up) {
       display: none;
@@ -98,6 +90,7 @@ header.site-header {
     border: 0;
     color: transparent;
     display: block;
+    flex: 1 1 0;
     font: 0/0 a;
     height: 100%;
     opacity: 1;
@@ -105,13 +98,13 @@ header.site-header {
     text-shadow: none;
     transition: all 0.2s ease-in-out;
     width: 3.6rem;
-    z-index: 1020;
+    z-index: 20;
 
     @include grid-media($for-desktop-up) {
       background-position: 0;
+      flex: 1;
       height: auto;
       position: relative;
-      width: 10rem;
     }
 
     @include grid-media($for-mobile) {
@@ -131,10 +124,9 @@ header.site-header {
   .nav-wrap {
     background: transparent;
     display: flex;
+    flex: 5 1 0;
     flex-direction: row;
-    flex-grow: 1;
-    justify-content: space-between;
-    z-index: 1015;
+    z-index: 15;
 
     @include grid-media($for-mobile) {
       background: $black;
@@ -163,7 +155,7 @@ header.site-header {
       list-style: none;
       margin-bottom: 0;
       padding-left: 0;
-      z-index: 1015;
+      z-index: 15;
 
       @include grid-media($for-mobile) {
         flex-direction: column;
@@ -177,7 +169,7 @@ header.site-header {
         position: relative;
 
         @include grid-media($for-desktop-up) {
-          margin-right: 4rem;
+          margin-right: 3rem;
         }
 
         @include grid-media($for-mobile) {
@@ -186,41 +178,66 @@ header.site-header {
 
         &:first-of-type {
           @include grid-media($for-desktop-up) {
-            margin-left: 4rem;
+            margin-left: 3rem;
           }
         }
 
         a {
           align-items: center;
+          color: $white;
           display: flex;
-          font-size: $base-font-size * 1.2;
+          font-family: $heading-font-family;
+          font-size: $base-font-size * 1.1;
           height: 100%;
           position: relative;
+          text-decoration: none;
           transition: all 0.2s ease-in-out;
           width: 100%;
+
+          &[aria-current]:not([aria-current="false"]),
+          &:hover {
+            color: rgba($white, 0.6);
+          }
         }
       }
     }
   }
 
   .nav-extras {
+    background: transparent;
     display: flex;
-    z-index: 1020;
+    flex: 1 1 0;
+    justify-content: flex-end;
+    z-index: 15;
 
-    .site-header-social-links {
+    .header-cart {
+      align-items: center;
       display: flex;
-      margin-left: 3.6rem;
+      position: relative;
       transition: all 0.2s ease-in-out;
 
-      .social-icon {
+      .snipcart-checkout {
         align-items: center;
+        color: $white;
+        cursor: pointer;
         display: flex;
-        justify-content: center;
-        margin-right: 1.2rem;
+        font-size: 14px;
+        justify-content: flex-end;
+        text-decoration: none;
 
-        &:last-of-type {
-          margin-right: 0;
+        &:hover {
+          color: rgba($white, 0.8);
         }
+      }
+
+      .cart-icon {
+        height: 20px;
+        margin-right: 5px;
+        width: 20px;
+      }
+
+      .snipcart-items-count {
+        font-size: $base-font-size * 0.9;
       }
     }
   }
@@ -231,11 +248,11 @@ body.nav-open {
     .nav-wrap {
       opacity: 1;
       transform: translateX(0);
-      z-index: 1030;
+      z-index: 30;
     }
 
     .nav-menu-toggle {
-      z-index: 1031;
+      z-index: 31;
 
       .bar {
         &.bottom,

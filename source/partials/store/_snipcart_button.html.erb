@@ -1,0 +1,35 @@
+<%
+if product.data.sizes
+  sizes = product.data.sizes.map{|x| x[:title]}.join('|')
+  first_available_size = product.data.sizes.select{ |s| s.stock }.first.title
+end
+%>
+
+<% if sizes %>
+  <% content_tag :button,
+    class: "snipcart-add-item button " + locals[:variant],
+    "data-item-id": product.data.id,
+    "data-item-quantity": "1",
+    "data-item-price": product.data.price,
+    "data-item-name": product.title,
+    "data-item-max-quantity": product.data.max_quantity,
+    "data-item-custom1-name": "Sizes",
+    "data-item-custom1-options": "#{sizes}",
+    "data-item-custom1-value": first_available_size,
+    "data-item-url": base_url + product.url,
+    "data-item-image": base_url + image_path(product.data.image) do %>
+    <%= t("webshop.add_to_cart") %>
+  <% end %>
+<% else %>
+  <% content_tag :button,
+    class: "snipcart-add-item button " + locals[:variant],
+    "data-item-id": product.data.id,
+    "data-item-quantity": "1",
+    "data-item-price": product.data.price,
+    "data-item-name": product.title,
+    "data-item-max-quantity": product.data.max_quantity,
+    "data-item-url": base_url + product.url,
+    "data-item-image": base_url + image_path(product.data.image) do %>
+    <%= t("webshop.add_to_cart") %>
+  <% end %>
+<% end %>

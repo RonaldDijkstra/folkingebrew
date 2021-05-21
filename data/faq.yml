@@ -1,14 +1,16 @@
 - q: Do you have a tasting room or your own brewery?
   a: Not yet! <strong>Please note we are not open for the public at the moment</strong>.
 - q: Can I buy cans directly from you?
-  a: Unfortunately not right now. We are working on that though.
+  a: When available, it's possible to buy our beer and merchandise in <a href="/store/">our webshop</a>.
+- q: Do you ship to [COUNTRY]?
+  a: Currently, we only ship within The Netherlands. We are planning to ship to more countries.
 - q: Where can I buy Folkingebrew beers?
-  a: Our beer is, if in stock, available at liquor stores, beer stores and webshops in The Netherlands and some other European countries.
+  a: Our beer is, if in stock, available in our webshop and at liquor stores, beer stores and webshops in The Netherlands and some other European countries.
 - q: Where can I buy Folkingebrew for retail?
   a: In Groningen (City) and on collection it is possible to order directly from us. Please contact us <a href="/contact/" title="Go to contact form">through our contact form</a>. For distribution in the rest of The Netherlands, we work together with <a href="https://www.hoppingborders.com/" rel="noopener noreferrer nofollow" target="_blank">Hopping Borders</a> and <a href="https://biergro.nl/" rel="noopener noreferrer nofollow" target="_blank">Biergro</a>, amongst others. When available it is possible to order our releases from these distributors.
 - q: I am a distributor, how can I start carrying Folkingebrew?
   a: If you are a distributor and would like to carry our beer, please <a href="/contact/">get in touch</a> and tell us a little about yourself.
-- q: Can I import Folkingebrew to my country?
+- q: Can I import Folkingebrew to [COUNTRY]?
   a: You can always <a href="/contact/" title="Get in touch">get in touch</a> and see what we can do.
 - q: How much beer do you brew?
   a: At the moment our larger batches are between 30 and 40 hectoliters, depending on, among other things, dry hopping. We try to aim for a new release at least once every four weeks.
