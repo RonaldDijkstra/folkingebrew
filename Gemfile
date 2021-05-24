@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 # Middleman Core & Extensions
 gem "middleman"
-gem "middleman-autoprefixer"
+gem "middleman-autoprefixer", "~> 3.0.0"
 gem "middleman-blog"
 gem "middleman-dotenv", "~> 2.0"
 gem "middleman-inline_svg"

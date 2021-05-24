@@ -10,8 +10,8 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.0)
-    autoprefixer-rails (9.4.10.2)
-      execjs
+    autoprefixer-rails (10.2.5.1)
+      execjs (> 0)
     backports (3.15.0)
     bourbon (6.0.0)
       thor (~> 0.19)
@@ -60,9 +60,9 @@ GEM
       kramdown (~> 1.2)
       middleman-cli (= 4.3.5)
       middleman-core (= 4.3.5)
-    middleman-autoprefixer (2.10.1)
-      autoprefixer-rails (~> 9.1)
-      middleman-core (>= 3.3.3)
+    middleman-autoprefixer (3.0.0)
+      autoprefixer-rails (~> 10.0)
+      middleman-core (>= 4.0.0)
     middleman-blog (4.0.3)
       addressable (~> 2.3)
       middleman-core (>= 4.0.0)
@@ -180,7 +180,7 @@ DEPENDENCIES
   builder
   html-proofer
   middleman
-  middleman-autoprefixer
+  middleman-autoprefixer (~> 3.0.0)
   middleman-blog
   middleman-dotenv (~> 2.0)
   middleman-inline_svg
