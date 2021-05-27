@@ -1,5 +1,5 @@
 ---
-title: "Folkingebrew Harmony Glass 40 CL"
+title: "Harmony Glass 40 CL"
 id: 1
 price: 5.95
 date: 2021-05-03 09:00 CEST
