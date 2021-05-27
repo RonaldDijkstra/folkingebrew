@@ -9,7 +9,12 @@
     <meta name="robots" content="<%= robots %>">
     <%= partial "partials/meta/favicon" %>
     <%= stylesheet_link_tag "main" %>
-    <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.0/default/snipcart.css" %>
+
+    <% if production? %>
+      <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.0.12/default/snipcart.css" %>
+    <% else %>
+      <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.0/default/snipcart.css" %>
+    <% end %>
     <meta name="google-site-verification" content="KSIwicnXARzh9Pv1igm5rWDKP-Zh1cA3tYVjs4uk_zE">
     <%= partial "partials/meta/open_graph" %>
     <%= feed_tag :atom, "#{blog("blog").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
@@ -24,10 +29,16 @@
     <%= javascript_include_tag "main" %>
     <%= partial "partials/meta/analytics" if config[:ga_code] %>
     <%= partial "partials/meta/schema" if current_page.url == "/" %>
-    <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>">
+    <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>" data-config-modal-style="side">
       <%= partial "partials/store/cart_components" %>
     </div>
-    <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js" defer></script>
-    <%= stylesheet_link_tag "snipcart" %>
+
+    <% if production? %>
+      <script src="https://cdn.snipcart.com/themes/v3.0.12/default/snipcart.js"></script>
+      <%= stylesheet_link_tag "snipcart" %>
+    <% else %>
+      <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js" defer></script>
+      <%= stylesheet_link_tag "snipcart-dev" %>
+    <% end %>
   </body>
 </html>

@@ -3,7 +3,6 @@
   border: 2px solid $color;
   color: $white;
   height: auto;
-  letter-spacing: 0.1rem;
 
   [class*="button-icon"] {
     transition: all 0.2s ease-in-out;
@@ -74,7 +73,6 @@
   }
 }
 
-#{$all-buttons},
 .button {
   @include button($action-color);
   appearance: none;

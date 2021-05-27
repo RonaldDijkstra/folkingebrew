@@ -6,6 +6,9 @@ root_locale = :en
 # Accessible as `root_locale` in helpers and `config[:root_locale]` in templates
 set :root_locale, root_locale
 
+production = ENV["PRODUCTION"] == "true"
+set :production, production
+
 # Activate i18n for root locale
 activate :i18n, mount_at_root: root_locale, langs: %i[en]
 activate :autoprefixer
