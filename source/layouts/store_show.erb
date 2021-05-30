@@ -1,3 +1,9 @@
+<%
+if current_article.data.images
+  product_image = current_article.data.images.first
+end
+%>
+
 <% wrap_layout :layout do %>
   <header class="normal-page-header">
     <div class="grid-row">
@@ -8,11 +14,27 @@
   </header>
   <section class="product wide-row">
     <div class="grid-row product-item">
-      <div class="product-image">
-        <div class="image-wrap">
-          <%= image_tag current_article.data.image, alt: current_article.title, class: "image" %>
-        </div>
-      </div>
+      <figure class="product-figure">
+        <picture>
+          <%= image_tag product_image, alt: current_article.title, class: "product-image" %>
+        </picture>
+
+        <% if current_article.data.images.count > 1 %>
+          <nav class="thumbnails">
+            <% current_article.data.images.each_with_index do |image, index| %>
+              <% if index == 0 %>
+                <button class="">
+              <% else %>
+                <button class="">
+              <% end %>
+                  <picture>
+                    <%= image_tag image, alt: current_article.title, class: "product-thumbnail" %>
+                  </picture>
+                </button>
+            <% end %>
+          </nav>
+        <% end %>
+      </figure>
       <div class="product-content">
         <h2>
           <%= current_article.title %>

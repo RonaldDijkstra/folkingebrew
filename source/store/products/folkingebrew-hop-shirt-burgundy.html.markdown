@@ -4,6 +4,8 @@ id: 3
 price: 17.95
 date: 2021-05-21 09:00 CEST
 image: "shop/placeholder.png"
+images:
+  - "shop/placeholder.png"
 description: "Folkingebrew T-Shirt 'Hop' - Burgundy"
 sizes:
   - title: S

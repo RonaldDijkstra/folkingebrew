@@ -6,5 +6,9 @@ max_quantity: 24
 use_max_quantity: true
 date: 2021-05-26 09:00 CEST
 image: "shop/placeholder.png"
+images:
+  - "shop/placeholder.png"
 description: "Folkingebrew Sequence #1"
 ---
+
+Sequence #1 is our first Fruited Imperial Berliner Weisse. We conditioned the beer on hefty amounts of Mango, Guava and Passion Fruit.

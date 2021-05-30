@@ -20,29 +20,94 @@ body.store {
         text-align: center;
       }
 
-      .product-image {
+      .product-figure {
+        align-items: center;
         display: flex;
+        position: relative;
 
-        @include grid-media($for-desktop-up) {
-          flex: 0 0 50%;
+        picture {
+          display: block;
+          height: 100%;
+          width: 100%;
         }
 
-        .image-wrap {
-          align-items: center;
+        .thumbnails {
+          bottom: -24px;
           display: flex;
-          overflow: hidden;
-          position: relative;
+          justify-content: center;
+          max-width: 450px;
+          position: absolute;
+          right: auto;
+          width: 100%;
+          z-index: 1;
 
-          .image {
-            max-width: 819px;
-          }
-
-          img {
-            display: block;
-            height: auto;
-            width: 100%;
+          @include grid-media($for-small-screens-up) {
+            bottom: 0;
+            justify-content: flex-end;
+            margin: 1em;
+            right: 0;
           }
         }
+
+        button {
+          appearance: none;
+          background: none;
+          border: 0;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba($black, 0.1);
+          cursor: pointer;
+          height: 48px;
+          margin-left: 8px;
+          overflow: hidden;
+          padding: 0;
+          transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          transition-property: box-shadow,background-color;
+          width: 48px;
+
+          @include grid-media($for-small-screens-up) {
+            height: 72px;
+            width: 72px;
+          }
+
+          @include grid-media($for-desktop-up) {
+            height: 96px;
+            width: 96px;
+          }
+
+
+
+          &:hover {
+            box-shadow: 0 0 4px 2px $green;
+          }
+
+          &.active {
+            background: $black;
+            transition-duration: 0.1s;
+
+            img {
+              opacity: 0.5;
+              transition-duration: 0.1s;
+            }
+          }
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
+          transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          width: 100%;
+        }
+      }
+
+      .product-image {
+        display: block;
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        position: relative;
+        width: auto;
+        z-index: 1;
       }
 
       .product-content {
