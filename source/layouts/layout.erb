@@ -20,7 +20,6 @@
     <%= feed_tag :atom, "#{blog("blog").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
   <body class="<%= page_classes %> <%= current_resource.data.header_class %> <%= article_class %> at-the-top">
-    <%= partial "partials/shared/age-gate" %>
     <%= partial "partials/shared/header" %>
     <main class="main" role="main">
       <%= yield %>
@@ -40,5 +39,6 @@
       <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js" defer></script>
       <%= stylesheet_link_tag "snipcart-dev" %>
     <% end %>
+    <%= partial "partials/shared/age-gate" %>
   </body>
 </html>
