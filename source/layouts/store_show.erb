@@ -8,7 +8,7 @@ end
   <header class="normal-page-header">
     <div class="grid-row">
       <h1>
-        <%= t("pages.store.title") %>
+        <%= current_article.title %>
       </h1>
     </div>
   </header>
@@ -41,12 +41,11 @@ end
       </figure>
       <div class="product-content">
         <h2>
-          <%= current_article.title %>
+          <p class="price">
+            <span class="price-currency">€</span>
+            <span class="price-value"><%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></span>
+          </p>
         </h2>
-        <p class="price">
-          <span class="price-currency">€</span>
-          <span class="price-value"><%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></span>
-        </p>
         <p class="vat">
           Incl. VAT
         </p>
