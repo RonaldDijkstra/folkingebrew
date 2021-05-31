@@ -1,6 +1,8 @@
 <%
   if current_page.data.image
     og_image = full_url(image_path(current_page.data.image))
+  elsif current_page.data.images
+    og_image = full_url(image_path(current_page.data.images.first))
   else
     og_image = full_url(image_path("/assets/images/folkingebrew-1200x1200.png"))
   end

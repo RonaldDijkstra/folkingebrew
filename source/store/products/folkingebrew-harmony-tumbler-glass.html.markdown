@@ -3,7 +3,6 @@ title: "Tumbler Glass"
 id: 1
 price: 5.95
 date: 2021-05-25 10:00 CEST
-image: "shop/folkingebrew-harmony-glass.jpg"
 images:
   - "shop/folkingebrew-harmony-glass.jpg"
   - "shop/folkingebrew-harmony-glass-2.jpg"
