@@ -1,7 +1,17 @@
+<%
+  if product.data.images
+    product_image = product.data.images.first
+  end
+%>
+
 <% link_to product.url, class: "product" do %>
   <div class="product-box">
     <div class="product-media">
-      <%= image_tag product.data.image, alt: product.title, class: "product-image" %>
+      <% if product_image %>
+        <%= image_tag product_image, alt: product.title, class: "product-image" %>
+      <% else %>
+        <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image" %>
+      <% end %>
     </div>
     <div class="product-content">
       <div class="title">
