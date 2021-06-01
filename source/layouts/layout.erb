@@ -9,12 +9,7 @@
     <meta name="robots" content="<%= robots %>">
     <%= partial "partials/meta/favicon" %>
     <%= stylesheet_link_tag "main" %>
-
-    <% if production? %>
-      <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.0.12/default/snipcart.css" %>
-    <% else %>
-      <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.0/default/snipcart.css" %>
-    <% end %>
+    <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css" %>
     <meta name="google-site-verification" content="KSIwicnXARzh9Pv1igm5rWDKP-Zh1cA3tYVjs4uk_zE">
     <%= partial "partials/meta/open_graph" %>
     <%= feed_tag :atom, "#{blog("blog").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
@@ -32,13 +27,8 @@
       <%= partial "partials/store/cart_components" %>
     </div>
 
-    <% if production? %>
-      <script src="https://cdn.snipcart.com/themes/v3.0.12/default/snipcart.js"></script>
-      <%= stylesheet_link_tag "snipcart" %>
-    <% else %>
-      <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js" defer></script>
-      <%= stylesheet_link_tag "snipcart-dev" %>
-    <% end %>
+    <script src="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.js"></script>
+    <%= stylesheet_link_tag "snipcart" %>
     <%= partial "partials/shared/age-gate" %>
   </body>
 </html>

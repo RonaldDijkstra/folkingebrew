@@ -1,229 +1,80 @@
-$base-font-family: "Open Sans";
-$heading-font-family: "Open Sans";
-$green: #54b848;
-$dark-green: #43933a;
-$light-green: #65bf5a;
-$black: #000;
-$white: #fff;
-$dark-gray: #303030;
-$light-gray: #aaa;
-$base-font-color: $dark-gray;
-$base-border-color: $light-gray;
-$base-border: 1px solid $base-border-color;
+#snipcart {
+  // Global
+  --base-font-family: 'Open Sans', sans-serif;
+  --green: #54b848;
+  --light-green: #65bf5a;
 
-.snipcart-modal__container {
-  left: initial;
-  right: 0;
-  width: 100%;
-}
+  // Colors
+  --color-icon: var(--green);
+  --color-link: var(--green);
+  --color-link-hover: var(--light-green);
+  --color-input-checked: white;
+  --color-badge: var(--color-link);
+  --color-badge-active: white;
+  --color-badge-disabled: var(--color-link);
 
-@media only screen and (min-width: 820px) {
-  .snipcart-modal__container {
-    width: 85%;
+  // Borders
+  --borderColor-input-hover: var(--green);
+  --borderColor-input-focus: var(--borderColor-input-hover);
+  --borderColor-input-checked: var(--borderColor-input-hover);
+
+  // Backgrounds
+  --bgColor-info: #efefef;
+  --bgColor-link: none;
+  --bgColor-link-hover: none;
+  --bgColor-link-active: none;
+  --bgColor-input-checked: var(--green);
+  --bgColor-buttonPrimary: var(--green);
+
+  --bgColor-buttonPrimary-hover: var(--light-green);
+  --bgColor-buttonPrimary-active: var(--light-green);
+  --bgColor-buttonPrimary-focus: var(--light-green);
+  --bgColor-buttonPrimary-disabled: var(--light-green);
+
+  --bgColor-buttonSecondary: var(--bgColor-info);
+  --bgColor-buttonSecondary-hover: var(--bgColor-info);
+  --bgColor-buttonSecondary-active: var(--bgColor-info);
+  --bgColor-buttonSecondary-focus: var(--bgColor-buttonSecondary);
+  --bgColor-buttonSecondary-success: var(--bgColor-success);
+  --bgColor-buttonSecondary-error: var(--bgColor-error);
+
+  --bgColor-buttonDanger: var(--bgColor-error);
+  --bgColor-buttonDanger-hover: var(--bgColor-buttonDanger);
+  --bgColor-buttonDanger-active: var(--bgColor-buttonDanger);
+  --bgColor-buttonDanger-focus: var(--bgColor-buttonDanger);
+  --bgColor-buttonDanger-disabled: var(--bgColor-buttonDanger);
+  --bgColor-buttonDanger-success: var(--bgColor-buttonDanger);
+  --bgColor-buttonDanger-error: var(--bgColor-buttonDanger);
+
+  --bgColor-badge: #FFF;
+  --bgColor-badge-active: var(--green);
+
+  // Shadows
+  --shadow-default: none;
+  --shadow-tooltip: var(--shadow-default);
+  --shadow-link-focus: var(--shadow-default);
+  --shadow-input-hover: var(--shadow-default);
+  --shadow-input-focus: var(--shadow-default);
+  --shadow-input-checked: var(--shadow-default);
+  --shadow-buttonPrimary-hover: var(--shadow-default);
+  --shadow-buttonPrimary-active: var(--shadow-default);
+  --shadow-buttonPrimary-focus: var(--shadow-default);
+  --shadow-buttonSecondary-hover: var(--shadow-default);
+  --shadow-buttonSecondary-active: var(--shadow-default);
+  --shadow-buttonSecondary-focus: var(--shadow-default);
+  --shadow-buttonDanger-hover: var(--shadow-default);
+  --shadow-buttonDanger-active: var(--shadow-default);
+  --shadow-buttonDanger-focus: var(--shadow-default);
+
+  .snipcart__font--secondary,
+  .snipcart__font--subtitle,
+  .snipcart__font--std,
+  .snipcart-base-button__label {
+    font-family: var(--base-font-family), sans-serif;
   }
-}
 
-.snipcart {
-  position: absolute;
-  z-index: 2000;
-
-  button:hover,
-  [type="button"]:hover,
-  [type="reset"]:hover,
-  [type="submit"]:hover,
-  .button:hover {
-    background-color: transparent;
-    border-color: transparent;
-
-    &.snipcart-cart-button--highlight {
-      background-color: $light-green;
-    }
-
-    &.snipcart-discount-box__button {
-      border-color: $dark-gray;
-    }
-
-    &.snipcart-payment-methods-list-item__button {
-      border-color: $dark-gray;
-    }
+  .snipcart-featured-payment-methods__list {
+    display: none;
   }
-
-  .snipcart-empty-cart {
-    button {
-      background-color: $green;
-      color: $white;
-
-      svg path {
-        fill: $white;
-      }
-
-      &:hover {
-        background-color: $light-green;
-      }
-    }
-  }
-}
-
-.snipcart__icon path,
-.snipcart__icon path {
-  fill: $green;
-}
-
-.snipcart__font--secondary,
-.snipcart__font--subtitle,
-.snipcart__font--std {
-  font-family: $base-font-family, sans-serif;
-}
-
-.snipcart-cart-button--highlight {
-  align-items: center;
-  background-color: $green;
-  background-image: inherit;
-  display: flex;
-  flex-direction: row;
-  font-weight: 600;
-  height: 3em;
-  justify-content: center;
-  margin-top: 2em;
-  padding: 0;
-
-  &:hover {
-    background-color: $light-green;
-  }
-}
-
-.snipcart__actions--link {
-  color: $green;
-  font-family: $base-font-family, sans-serif;
-}
-
-.snipcart__box--badge-highlight {
-  background: linear-gradient(90deg, $dark-green, $green);
-}
-
-.snipcart-order__invoice-number--highlight {
-  color: $dark-gray;
-}
-
-.snipcart-item-description,
-.snipcart__font--bold,
-.snipcart__font--tiny,
-.snipcart__font--regular,
-.snipcart-modal__close-title {
-  line-height: 1.4;
-}
-
-.snipcart__font--slim {
-  line-height: 1.4;
-}
-
-.snipcart-input:focus-within {
-  border: 1px solid $green;
-  box-shadow: none;
-}
-
-.snipcart-input--no-style:focus-within {
-  border: 0;
-  box-shadow: none;
-}
-
-.snipcart-form__select:focus {
-  border: 1px solid $green;
-  box-shadow: none;
-}
-
-.snipcart-discount-box__form {
-  border: 1px solid $green;
-}
-
-.snipcart-discount-box__submit {
-  color: $green;
-}
-
-.snipcart-flash-message__action-container {
-  margin-top: 0;
-}
-
-.snipcart-error-message {
-  color: red;
-}
-
-.snipcart-flash-message--error {
-  background-color: rgba(217, 49, 32, 0.10);
-}
-
-.snipcart-typeahead__suggestions,
-.snipcart-typeahead__suggestion--active {
-  border-color: $green;
-}
-
-.snipcart-textbox--focus {
-  border: 1px solid $green;
-  box-shadow: none;
-}
-
-.snipcart-form-radio:checked + label::before {
-  background: none;
-  background-color: $green;
-}
-
-.snipcart-checkbox:checked + label::before {
-  background: $green;
-  box-shadow: none;
-}
-
-.snipcart-checkbox:hover + label::before {
-  border: 1px solid $green;
-}
-
-
-.snipcart-cart-summary-fees__discounts-icon {
-  .snipcart__icon path {
-    fill: $green;
-  }
-}
-
-.snipcart-signin__box,
-.snipcart-register__box {
-  a {
-    color: $green;
-  }
-}
-
-.snipcart-item-line {
-  box-shadow: none;
-}
-
-.snipcart-featured-payment-methods__list {
-  display: none;
-}
-
-.snipcart-form__select,
-.snipcart-item-quantity__quantity,
-.snipcart-input,
-.snipcart-shipping-rates-list-item {
-  border: $base-border;
-}
-
-.snipcart-shipping-rates-list-item--highlight {
-  border: 1px solid $green;
-}
-
-button.snipcart-payment-methods-list-item__button {
-  align-items: center;
-  background-color: $white;
-  border: $base-border;
-  color: $base-font-color;
-  display: flex;
-  flex-direction: row;
-  font-weight: 600;
-  height: 3em;
-  justify-content: center;
-  padding: 0;
-}
-
-.snipcart-form__cell--tidy {
-  margin-right: 16px;
-  width: 50%;
 }
 
