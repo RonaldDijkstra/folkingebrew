@@ -10,4 +10,4 @@ images:
 description: "The outlined Folkingebrew hop logo on the front provides a nice contrast to the hazy beer in the glass. On the back you’ll find our word mark."
 ---
 
-Stemless Rastal Harmony 40 Tumbler. Its shape and size (40 CL) are a perfect fit for the beers we created recently. The outlined Folkingebrew hop logo on the front provides a nice contrast to the beer in the glass. On the back you’ll find our word mark.
+Stemless Rastal Harmony 40 Tumbler. The outlined Folkingebrew hop logo on the front provides a nice contrast to the hazy beer in the glass. On the back you’ll find our word mark.

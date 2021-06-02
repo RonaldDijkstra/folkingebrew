@@ -40,12 +40,16 @@ end
         <% end %>
       </figure>
       <div class="product-content">
-        <h2>
-          <p class="price">
-            <span class="price-currency">€</span>
-            <span class="price-value"><%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></span>
-          </p>
-        </h2>
+        <div class="product-price">
+          <% if current_page.data.old_price %>
+            <div class="old-price">
+              <span>
+                € <%= number_to_currency(current_page.data.old_price, :unit => "").gsub!(/\./,",") %>
+              </span>
+            </div>
+          <% end %>
+          <div class="price">€ <%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></div>
+        </div>
         <p class="vat">
           Incl. VAT
         </p>
@@ -55,23 +59,25 @@ end
         </div>
 
         <div class="product-controls">
-          <% if current_article.data.sizes %>
-            <div class="sizes">
-              <label>
-                Size
-              </label>
-              <div class="select">
-                <select id="size" name="size">
-                  <% current_article.data.sizes.each do |size| %>
-                    <% if size.stock %>
-                      <option value="<%= size.title %>"><%= size.title %></option>
-                    <% else %>
-                      <option value="<%= size.title %>" disabled><%= size.title %> (Out of Stock)</option>
+          <% unless current_page.data.out_of_stock %>
+            <% if current_article.data.sizes %>
+              <div class="sizes">
+                <label>
+                  Size
+                </label>
+                <div class="select">
+                  <select id="size" name="size">
+                    <% current_article.data.sizes.each do |size| %>
+                      <% if size.stock %>
+                        <option value="<%= size.title %>"><%= size.title %></option>
+                      <% else %>
+                        <option value="<%= size.title %>" disabled><%= size.title %> (Out of Stock)</option>
+                      <% end %>
                     <% end %>
-                  <% end %>
-                </select>
+                  </select>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
           <div class="quantity-and-cart">
             <% unless current_article.data.max_quantity == 1 || current_page.data.out_of_stock %>

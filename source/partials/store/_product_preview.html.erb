@@ -26,11 +26,15 @@
           </p>
         </div>
       <% else %>
-        <div class="price">
-          <p>
-            <span class="price-currency">€</span>
-            <span class="price-value"><%= number_to_currency(product.data.price, :unit => "").gsub!(/\./,",") %></span>
-          </p>
+        <div class="product-price">
+          <% if product.data.old_price %>
+            <div class="old-price">
+              <span>
+                € <%= number_to_currency(product.data.old_price, :unit => "").gsub!(/\./,",") %>
+              </span>
+            </div>
+          <% end %>
+          <div class="price">€ <%= number_to_currency(product.data.price, :unit => "").gsub!(/\./,",") %></div>
         </div>
       <% end %>
     </div>

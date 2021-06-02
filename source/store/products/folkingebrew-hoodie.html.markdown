@@ -16,3 +16,5 @@ sizes:
   - title: XXL
     stock: true
 ---
+
+Black hoodie with our hop logo on the front.

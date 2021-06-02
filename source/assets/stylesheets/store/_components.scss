@@ -1,6 +1,9 @@
 .product-controls {
-  margin-bottom: $base-spacing;
   max-width: 100%;
+
+  @include grid-media($for-desktop-up) {
+    margin-bottom: $base-spacing;
+  }
 
   .quantity-and-cart {
     margin-bottom: $base-spacing;
@@ -150,4 +153,27 @@
 .shipping-conditions {
   font-size: $base-font-size * 0.7;
   margin: 0;
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+.old-price {
+  span {
+    position: relative;
+
+    &::before {
+      background: $dark-gray;
+      content: "";
+      display: block;
+      height: 1px;
+      left: 0;
+      margin: -0.5px 0 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: rotate(-12deg);
+    }
+  }
 }

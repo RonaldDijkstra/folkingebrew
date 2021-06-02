@@ -89,18 +89,29 @@ body.store_index {
       }
 
       p {
-        font-size: $base-font-size;
-        font-weight: $font-weight-bold;
         margin: 0;
-        text-align: right;
       }
 
-      .out-of-stock p {
+      .product-price {
+        display: flex;
+
+        div {
+          white-space: nowrap;
+        }
+
+        .old-price {
+          color: $dark-gray;
+          margin-right: 0.5em;
+        }
+
+        .price {
+          color: $green;
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      .out-of-stock {
         color: $light-gray;
-      }
-
-      .price p {
-        color: $green;
       }
     }
   }

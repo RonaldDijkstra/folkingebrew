@@ -17,7 +17,12 @@ body.store {
       }
 
       &.back-link {
+        padding: 1em;
         text-align: center;
+
+        @include grid-media($for-desktop-up) {
+          padding: 2em 1em;
+        }
       }
 
       .product-figure {
@@ -114,7 +119,7 @@ body.store {
         flex: 0 0 50%;
         flex-direction: column;
         justify-content: center;
-        padding: 2em 1em;
+        padding: 2em 1em 0;
 
         @include grid-media($for-desktop-up) {
           padding: 2em;
@@ -130,9 +135,20 @@ body.store {
           }
         }
 
+        .product-price {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .old-price {
+          font-size: $base-font-size;
+          margin-bottom: 0;
+        }
+
         .price {
           color: $green;
-          font-size: $base-font-size * 1.2;
+          display: block;
+          font-size: $base-font-size * 1.5;
           font-weight: $font-weight-bold;
           margin-bottom: 0;
         }
