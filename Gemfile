@@ -34,8 +34,3 @@ source "https://rails-assets.org" do
   gem "rails-assets-js-cookie"
   gem "rails-assets-what-input"
 end
-
-# Linters (not required)
-gem "rubocop", require: false
-# gem "rubocop-performance", require: false
-gem "scss_lint", require: false
