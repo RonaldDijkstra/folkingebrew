@@ -1,3 +1,7 @@
 [build]
   command = "rake build"
   publish = "build/"
+[[plugins]]
+package = 'netlify-plugin-contextual-env'
+  [plugins.inputs]
+  mode = 'prefix'
