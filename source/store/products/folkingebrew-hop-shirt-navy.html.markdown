@@ -2,7 +2,11 @@
 title: "T-Shirt 'Hop' - Navy"
 id: 4
 price: 17.95
+# old_price:
+# max_quantity: 24
+# use_max_quantity: true
 date: 2021-05-22 09:00 CEST
+# out_of_stock:
 description: "Folkingebrew T-Shirt 'Hop' - Navy"
 sizes:
   - title: S
