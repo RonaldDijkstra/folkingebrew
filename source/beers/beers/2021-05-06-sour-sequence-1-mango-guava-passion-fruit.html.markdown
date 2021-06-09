@@ -1,5 +1,5 @@
 ---
-title: "Sequence #1"
+title: "Sour Sequence #1: Mango, Guava, Passion Fruit"
 date: 2021-05-06 09:00 CEST
 image: "beers/sequence-1.png"
 tags: Fruited Imperial Berliner Weisse
