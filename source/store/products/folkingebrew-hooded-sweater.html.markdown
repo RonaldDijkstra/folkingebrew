@@ -1,5 +1,5 @@
 ---
-title: "Hoodie"
+title: "Hooded Sweater"
 id: 5
 price: 44.95
 # old_price:
@@ -11,7 +11,7 @@ images:
   - "shop/folkingebrew-hoodie.jpg"
   - "shop/folkingebrew-hoodie-2.jpg"
   - "shop/folkingebrew-hoodie-3.jpg"
-description: "Black hoodie with our hop logo on the front and word mark on the back."
+description: "Black hooded sweater with our hop logo on the front and word mark on the back."
 sizes:
   - title: S
     stock: true
