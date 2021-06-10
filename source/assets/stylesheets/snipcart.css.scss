@@ -12,6 +12,9 @@
   --color-badge: var(--color-link);
   --color-badge-active: white;
   --color-badge-disabled: var(--color-link);
+  --color-buttonSecondary: var(--color-link);
+  --color-buttonSecondary-hover: var(--color-link);
+  --color-buttonSecondary-active: var(--color-link);
 
   // Borders
   --borderColor-input-hover: var(--green);
@@ -75,6 +78,13 @@
 
   .snipcart-featured-payment-methods__list {
     display: none;
+  }
+
+  .snipcart-input__input {
+    @media only screen and (max-width: 819px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 
