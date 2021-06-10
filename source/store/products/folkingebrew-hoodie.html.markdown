@@ -7,7 +7,11 @@ price: 44.95
 # use_max_quantity: true
 date: 2021-05-23 09:00 CEST
 # out_of_stock:
-description: "Folkingebrew Hoodie"
+images:
+  - "shop/folkingebrew-hoodie.jpg"
+  - "shop/folkingebrew-hoodie-2.jpg"
+  - "shop/folkingebrew-hoodie-3.jpg"
+description: "Black hoodie with our hop logo on the front and word mark on the back."
 sizes:
   - title: S
     stock: true
@@ -21,4 +25,4 @@ sizes:
     stock: true
 ---
 
-Black hoodie with our hop logo on the front.
+Black hoodie with our hop logo on the front and word mark on the back.

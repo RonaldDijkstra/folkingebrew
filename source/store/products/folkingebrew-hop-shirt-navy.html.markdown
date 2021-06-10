@@ -7,7 +7,11 @@ price: 17.95
 # use_max_quantity: true
 date: 2021-05-22 09:00 CEST
 # out_of_stock:
-description: "Folkingebrew T-Shirt 'Hop' - Navy"
+description: "Navy T-shirt with our hop logo on the front and word mark on the back."
+images:
+  - "shop/folkingebrew-t-shirt-hop-navy.jpg"
+  - "shop/folkingebrew-t-shirt-hop-navy-2.jpg"
+  - "shop/folkingebrew-t-shirt-hop-navy-3.jpg"
 sizes:
   - title: S
     stock: true
@@ -22,3 +26,5 @@ sizes:
   - title: XXXL
     stock: true
 ---
+
+Navy T-shirt with our hop logo on the front and word mark on the back.
