@@ -1,7 +1,7 @@
 ---
 title: "Snapback"
 id: 6
-price: 11.95
+price: 17.95
 # old_price:
 # max_quantity: 24
 # use_max_quantity: true

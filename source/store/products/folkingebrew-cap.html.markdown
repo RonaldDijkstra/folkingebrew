@@ -1,11 +1,13 @@
 ---
 title: "Cap"
 id: 7
-price: 11.95
+price: 17.95
 # old_price:
 # max_quantity: 24
 # use_max_quantity: true
 date: 2021-05-25 09:00 CEST
+images:
+  - "shop/folkingebrew-cap.jpg"
 description: "Black cap with white hop logo."
 # out_of_stock:
 # sizes:
