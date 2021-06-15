@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><%= page_title %></title>
+    <title><%= content_for?(:page_title) ? yield_content(:page_title) : page_title %></title>
     <meta name="description" content="<%= meta_description %>">
     <meta name="robots" content="<%= robots %>">
     <%= partial "partials/meta/favicon" %>

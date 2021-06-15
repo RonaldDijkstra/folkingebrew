@@ -4,10 +4,17 @@ description: "All our beers"
 blog: beers
 pageable: true
 ---
+
+<% content_for :page_title, t("pages.beers.title", page_number: page_number, num_pages: num_pages) %>
+<% content_for :meta_description, t("pages.beers.meta_description", page_number: page_number, num_pages: num_pages) %>
+
 <header class="normal-page-header">
   <div class="grid-row">
     <h1>
-      <%= t("pages.beers.title") %>
+      Our Beers
+        <% if page_number > 1 %>
+          <%= page_number %>
+        <% end %>
     </h1>
   </div>
 </header>
