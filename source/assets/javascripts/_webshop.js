@@ -10,4 +10,12 @@ $(document).ready(function() {
 
     $button.attr('data-item-custom1-value', $(this).val());
   });
+
+  $(".product-thumbnail").click(function(){
+    $(".product-image").attr("src",$(this).attr("src"));
+
+    $(document).find(".active").attr('class', '');
+    $(this).parents('button').attr('class', 'active');
+  });
 });
+

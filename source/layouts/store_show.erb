@@ -1,49 +1,83 @@
+<%
+if current_article.data.images
+  product_image = current_article.data.images.first
+end
+%>
+
 <% wrap_layout :layout do %>
   <header class="normal-page-header">
     <div class="grid-row">
       <h1>
-        <%= t("pages.store.title") %>
+        <%= current_article.title %>
       </h1>
     </div>
   </header>
   <section class="product wide-row">
     <div class="grid-row product-item">
-      <div class="product-image">
-        <div class="image-wrap">
-          <%= image_tag current_article.data.image, alt: current_article.title, class: "image" %>
-        </div>
-      </div>
+      <figure class="product-figure">
+        <picture>
+          <% if product_image %>
+            <%= image_tag product_image, alt: current_article.title, class: "product-image" %>
+          <% else %>
+            <%= image_tag "/assets/images/shop/placeholder.png", alt: current_article.title, class: "product-image" %>
+          <% end %>
+        </picture>
+
+        <% if product_image && current_article.data.images.count > 1 %>
+          <nav class="thumbnails">
+            <% current_article.data.images.each_with_index do |image, index| %>
+              <% if index == 0 %>
+                <button class="active">
+              <% else %>
+                <button class="">
+              <% end %>
+                  <picture>
+                    <%= image_tag image, alt: current_article.title, class: "product-thumbnail" %>
+                  </picture>
+                </button>
+            <% end %>
+          </nav>
+        <% end %>
+      </figure>
       <div class="product-content">
-        <h2>
-          <%= current_article.title %>
-        </h2>
-        <p class="price">
-          <%= number_to_currency(current_page.data.price, :unit => "€").gsub!(/\./,",") %>
-        </p>
+        <div class="product-price">
+          <% if current_page.data.old_price %>
+            <div class="old-price">
+              <span>
+                € <%= number_to_currency(current_page.data.old_price, :unit => "").gsub!(/\./,",") %>
+              </span>
+            </div>
+          <% end %>
+          <div class="price">€ <%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></div>
+        </div>
         <p class="vat">
           Incl. VAT
         </p>
 
-        <%= yield %>
+        <div class="product-description">
+          <%= yield %>
+        </div>
 
         <div class="product-controls">
-          <% if current_article.data.sizes %>
-            <div class="sizes">
-              <label>
-                Size
-              </label>
-              <div class="select">
-                <select id="size" name="size">
-                  <% current_article.data.sizes.each do |size| %>
-                    <% if size.stock %>
-                      <option value="<%= size.title %>"><%= size.title %></option>
-                    <% else %>
-                      <option value="<%= size.title %>" disabled><%= size.title %> (Out of Stock)</option>
+          <% unless current_page.data.out_of_stock %>
+            <% if current_article.data.sizes %>
+              <div class="sizes">
+                <label>
+                  Size
+                </label>
+                <div class="select">
+                  <select id="size" name="size">
+                    <% current_article.data.sizes.each do |size| %>
+                      <% if size.stock %>
+                        <option value="<%= size.title %>"><%= size.title %></option>
+                      <% else %>
+                        <option value="<%= size.title %>" disabled><%= size.title %> (Out of Stock)</option>
+                      <% end %>
                     <% end %>
-                  <% end %>
-                </select>
+                  </select>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
           <div class="quantity-and-cart">
             <% unless current_article.data.max_quantity == 1 || current_page.data.out_of_stock %>
@@ -59,7 +93,7 @@
               </div>
             <% end %>
             <div class="add-to-cart">
-              <% if current_page.data.out_of_stock %>
+              <% if current_article.data.out_of_stock %>
                 <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
                   Out of Stock
                 <% end %>
@@ -83,3 +117,56 @@
     </div>
   </section>
 <% end %>
+
+<%
+if product_image
+  full_image_url = full_url(image_path(product_image))
+else
+  full_image_url = full_url(image_path("/assets/images/store/placeholder.png"))
+end
+%>
+
+<%
+if current_article.data.out_of_stock
+  stock_prop = "https://schema.org/OutOfStock"
+else
+  stock_prop = "http://schema.org/InStock"
+end
+%>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org/",
+    "@type": "Product",
+    "image": [
+      "<%= full_image_url %>"
+    ],
+    "name": "<%= current_article.title %>",
+    "description": "<%= current_article.data.description %>",
+    "brand": {
+      "@type": "Brand",
+      "name": "Folkingebrew"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "<%= full_url(current_page.url) %>,
+      "itemCondition": "http://schema.org/NewCondition",
+      "availability": "<%= stock_prop %>",
+      "price": "<%= current_article.data.price %>",
+      "priceCurrency": "EUR"
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "5.99",
+          "currency": "EUR"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "NL"
+        }
+      }
+    }
+  }
+</script>
+

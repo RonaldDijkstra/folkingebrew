@@ -1,7 +1,21 @@
+<%
+  if product.data.images
+    product_image = product.data.images.first
+  end
+%>
+
 <% link_to product.url, class: "product" do %>
   <div class="product-box">
     <div class="product-media">
-      <%= image_tag product.data.image, alt: product.title, class: "product-image" %>
+      <% if product_image %>
+        <%= image_tag product_image, alt: product.title, class: "product-image" %>
+      <% else %>
+        <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image" %>
+      <% end %>
+
+      <% if product.data.out_of_stock %>
+        <%= image_tag "/assets/images/shop/out-of-stock-overlay.svg", alt: "Sorry, out of stock", class: "product-image product-image-overlay" %>
+      <% end %>
     </div>
     <div class="product-content">
       <div class="title">
@@ -16,14 +30,21 @@
           </p>
         </div>
       <% else %>
-        <div class="price">
-          <p>
-            <%= number_to_currency(product.data.price, :unit => "€") %>
-          </p>
+        <div class="product-price">
+          <% if product.data.old_price %>
+            <div class="old-price">
+              <span>
+                € <%= number_to_currency(product.data.old_price, :unit => "").gsub!(/\./,",") %>
+              </span>
+            </div>
+          <% end %>
+          <div class="price">€ <%= number_to_currency(product.data.price, :unit => "").gsub!(/\./,",") %></div>
         </div>
       <% end %>
     </div>
 
-    <%= partial "partials/store/_snipcart_button", locals: { product: product, variant: "hidden" } %>
+    <% unless product.data.out_of_stock %>
+      <%= partial "partials/store/_snipcart_button", locals: { product: product, variant: "hidden" } %>
+    <% end %>
   </div>
 <% end %>

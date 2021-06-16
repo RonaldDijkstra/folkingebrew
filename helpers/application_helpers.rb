@@ -71,15 +71,6 @@ module ApplicationHelpers
     URI.join(base_url, url).to_s
   end
 
-  # Define image for Open Graph
-  def og_image
-    full_url(
-      asset_url(
-        "assets/images/folkingebrew-1200x1200.png"
-      )
-    )
-  end
-
   # Get full locale (eg. nl_NL)
   def full_locale(lang = I18n.locale.to_s)
     case lang

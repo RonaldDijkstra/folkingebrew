@@ -5,6 +5,15 @@ if product.data.sizes
 end
 %>
 
+<%
+if product.data.images
+  product_image = base_url + image_path(product.data.images.first)
+else
+  product_image = base_url + image_path("/assets/images/store/placeholder.png")
+end
+%>
+
+
 <% if sizes %>
   <% content_tag :button,
     class: "snipcart-add-item button " + locals[:variant],
@@ -17,7 +26,7 @@ end
     "data-item-custom1-options": "#{sizes}",
     "data-item-custom1-value": first_available_size,
     "data-item-url": base_url + product.url,
-    "data-item-image": base_url + image_path(product.data.image) do %>
+    "data-item-image": product_image do %>
     <%= t("webshop.add_to_cart") %>
   <% end %>
 <% else %>
@@ -29,7 +38,7 @@ end
     "data-item-name": product.title,
     "data-item-max-quantity": product.data.max_quantity,
     "data-item-url": base_url + product.url,
-    "data-item-image": base_url + image_path(product.data.image) do %>
+    "data-item-image": product_image do %>
     <%= t("webshop.add_to_cart") %>
   <% end %>
 <% end %>

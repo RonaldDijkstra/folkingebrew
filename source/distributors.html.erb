@@ -1,0 +1,46 @@
+---
+title: Distributors
+description: These companies are our trusted distributors
+---
+<%
+distribution_regions = data["distributors"]
+%>
+
+<header class="normal-page-header">
+  <div class="grid-row">
+    <h1>
+      Distributors
+    </h1>
+  </div>
+</header>
+<section class="distributors medium-row">
+  <div class="grid-row">
+    <div class="row">
+      <p>
+        If you are a distributor and would like to start carrying our beer, please contact us through <%= link_to "our contact form", "/contact.html" %>.
+      </p>
+    </div>
+    <% distribution_regions.each do |region| %>
+      <div class="row distributors-title">
+        <h2>
+          <%= region.region %>
+        </h2>
+      </div>
+      <div class="row distributors-wrapper">
+        <% region.distributors.each do |distributor| %>
+          <div class="distributor">
+            <h3>
+              <%= link_to distributor.name, distributor.website, target: "_blank" %>
+            </h3>
+            <p>
+              <%= distributor.street %><br>
+              <%= distributor.postcode %><br>
+              <%= distributor.city %><br>
+              <%= distributor.country %><br>
+              <%= link_to distributor.email, distributor.email, target: "_blank" %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+</section>

@@ -34,7 +34,8 @@ en:
     about:
       title: "About us"
     beers:
-      title: "Our Beers"
+      title: "Our Beers | Page %{page_number}/%{num_pages} | Folkingebrew"
+      meta_description: "View all our beer releases | Page %{page_number}/%{num_pages}."
     contact:
       title: "Contact"
     faq:

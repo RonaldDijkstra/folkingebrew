@@ -6,6 +6,9 @@ root_locale = :en
 # Accessible as `root_locale` in helpers and `config[:root_locale]` in templates
 set :root_locale, root_locale
 
+production = ENV["PRODUCTION"] == "true"
+set :production, production
+
 # Activate i18n for root locale
 activate :i18n, mount_at_root: root_locale, langs: %i[en]
 activate :autoprefixer
@@ -18,7 +21,7 @@ activate :sprockets
 Time.zone = "CET"
 
 # Use Webshop?
-set :use_webshop?, false
+set :use_webshop?, true
 
 # Set Google Analytics id
 set :ga_code, "UA-24956010-7"
@@ -93,7 +96,7 @@ configure :production do
   ]
   activate :gzip
   activate :minify_css
-  activate :minify_html
+  # activate :minify_html
   activate :minify_javascript
 
   # Raise exception for missing translations during build

@@ -4,18 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><%= page_title %></title>
+    <title><%= content_for?(:page_title) ? yield_content(:page_title) : page_title %></title>
     <meta name="description" content="<%= meta_description %>">
     <meta name="robots" content="<%= robots %>">
     <%= partial "partials/meta/favicon" %>
     <%= stylesheet_link_tag "main" %>
-    <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.0/default/snipcart.css" %>
+    <% if production? %>
+      <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css" %>
+    <% else %>
+      <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.0/default/snipcart.css" %>
+    <% end %>
     <meta name="google-site-verification" content="KSIwicnXARzh9Pv1igm5rWDKP-Zh1cA3tYVjs4uk_zE">
     <%= partial "partials/meta/open_graph" %>
     <%= feed_tag :atom, "#{blog("blog").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
   <body class="<%= page_classes %> <%= current_resource.data.header_class %> <%= article_class %> at-the-top">
-    <%= partial "partials/shared/age-gate" %>
     <%= partial "partials/shared/header" %>
     <main class="main" role="main">
       <%= yield %>
@@ -27,7 +30,13 @@
     <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>">
       <%= partial "partials/store/cart_components" %>
     </div>
-    <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js" defer></script>
+
+    <% if production? %>
+      <script src="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.js"></script>
+    <% else %>
+      <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js"></script>
+    <% end %>
     <%= stylesheet_link_tag "snipcart" %>
+    <%= partial "partials/shared/age-gate" %>
   </body>
 </html>
