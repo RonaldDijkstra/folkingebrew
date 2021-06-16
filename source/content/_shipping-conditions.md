@@ -1,3 +1,4 @@
-- We currently only ship within The Netherlands (with PostNL)
-- Standard shipping costs €5,99, for orders above €70 shipping is free
-- We generally ship monday to thursday, except the official Dutch holidays. Orders after thursday afternoon 2 pm won't be shipped till monday!
+- We currently ship within The Netherlands only, with PostNL
+- Shipping costs €5,99, free shipping in NL from €70,-
+- We ship monday to thursday, except official Dutch holidays. Orders after thursday afternoon 2 pm won't be shipped till monday!
+- Payment options: iDeal
