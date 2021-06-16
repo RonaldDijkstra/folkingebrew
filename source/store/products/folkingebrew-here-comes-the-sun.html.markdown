@@ -8,6 +8,8 @@ use_max_quantity: true
 date: 2021-06-06 09:00 CEST
 description: "New England Style Double IPA (8.2%) with Galaxy, Eclipse, Mosaic, Mosaic Incognito."
 # out_of_stock:
+images:
+  - "shop/folkingebrew-here-comes-the-sun.jpg"
 # sizes:
 #   - title: S
 #     stock: true
