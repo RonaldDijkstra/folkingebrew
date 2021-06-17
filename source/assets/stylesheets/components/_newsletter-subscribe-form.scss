@@ -1,38 +1,47 @@
-// .newsletter-subscribe-form {
-//   align-items: center;
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
+section.newsletter-subscribe {
+  background-color: #2d2e2b;
 
-//   background: blue;
-//   max-width: 360px;
+  .grid-row {
+    padding: 5em 1em;
+  }
+}
 
-//   // .email-input {
-//   //   flex: 0 0 40%;
-//   // }
+.newsletter-subscribe-form {
+  @include grid-media($for-desktop-up) {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
 
-//   .newsletter-input {
-//     margin-bottom: 0;
-//   }
+  .newsletter-text {
+    @include grid-media($for-desktop-up) {
+      flex: 1 0 auto;
+    }
 
-//   button {
-//     height: auto;
-//     padding: 1em;
-//   }
-// }
+    h3 {
+      color: $white;
 
-// .newsletter-subscribe-form {
-//   background: blue;
-//   margin: 0 auto;
-//   max-width: 600px;
+      @include grid-media($for-desktop-up) {
+        margin-bottom: 0;
+        margin-right: 1em;
+      }
+    }
+  }
 
-//   .email-input {
-//     float: left;
-//   }
+  button.medium-size {
+    line-height: 1.4;
+    padding: 0.8em;
+    width: 100%;
 
-//   button.medium-size {
-//     border: 1px solid $green;
-//     line-height: 1.5;
-//     padding: 0.8em;
-//   }
-// }
+    @include grid-media($for-small-screens-up) {
+      width: auto;
+    }
+  }
+
+  input[type="email"] {
+    @include grid-media($for-desktop-up) {
+      margin-bottom: 0;
+      width: 300px;
+    }
+  }
+}
