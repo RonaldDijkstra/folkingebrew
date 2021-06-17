@@ -33,3 +33,5 @@ pageable: true
     <%= partial "partials/pagination", locals: current_page.metadata[:locals] %>
   </div>
 </section>
+
+<%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Subscribe" } %>
