@@ -26,3 +26,5 @@ images:
 ---
 
 New England Style Double IPA (8.2%) with Galaxy, Eclipse, Mosaic, Mosaic Incognito.
+
+Size: 44 CL.

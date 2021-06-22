@@ -25,4 +25,6 @@ description: "Sour Sequence #1 is our first Fruited Imperial Berliner Weisse. We
 #     stock: true
 ---
 
-Sour Sequence #1 is our first Fruited Imperial Berliner Weisse. We conditioned the beer on hefty amounts of Mango, Guava and Passion Fruit.
+Sour Sequence #1 is our first Fruited Imperial Berliner Weisse (8.5% ABV). We conditioned the beer on hefty amounts of Mango, Guava and Passion Fruit.
+
+Size: 44 CL.

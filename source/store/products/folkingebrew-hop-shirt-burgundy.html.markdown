@@ -26,4 +26,4 @@ sizes:
     stock: true
 ---
 
-Burgundy T-shirt with our hop logo on the front and word mark on the back.
+Burgundy t-shirt with our hop logo on the front and word mark on the back. Made with 100% cotton.

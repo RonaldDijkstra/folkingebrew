@@ -27,4 +27,63 @@ sizes:
     stock: true
 ---
 
-Navy T-shirt with our hop logo on the front and word mark on the back.
+Navy t-shirt with our hop logo on the front and word mark on the back. Made with 100% cotton.
+
+<table class="sizes-table">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>L x W (CM)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <b>S</b>
+      </td>
+      <td>
+        69,5 x 48,5
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>M</b>
+      </td>
+      <td>
+        72 x 53,5
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>L</b>
+      </td>
+      <td>
+        74,5 x 56
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>XL</b>
+      </td>
+      <td>
+        77 x 61
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>XXL</b>
+      </td>
+      <td>
+        78,5 x 66
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <b>XXXL</b>
+      </td>
+      <td>
+        80 x 71
+      </td>
+    </tr>
+  </tbody>
+</table>
