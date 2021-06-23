@@ -17,5 +17,20 @@ $(document).ready(function() {
     $(document).find(".active").attr('class', '');
     $(this).parents('button').attr('class', 'active');
   });
-});
 
+  $('.Show').click(function() {
+    $('#sizes-table').show(0);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+  });
+
+  $('.Hide').click(function() {
+      $('#sizes-table').hide(0);
+      $('.Show').show(0);
+      $('.Hide').hide(0);
+  });
+
+  // $('.toggle').click(function() {
+  //     $('#sizes-table').toggle('slow');
+  // });
+});

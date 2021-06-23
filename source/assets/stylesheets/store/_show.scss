@@ -28,6 +28,9 @@ body.store {
       .product-figure {
         align-items: center;
         display: flex;
+
+        max-height: 800px;
+        max-width: 800px;
         position: relative;
 
         picture {
@@ -118,11 +121,11 @@ body.store {
         display: flex;
         flex: 0 0 50%;
         flex-direction: column;
-        justify-content: center;
+        // justify-content: center;
         padding: 2em 1em 0;
 
         @include grid-media($for-desktop-up) {
-          padding: 2em;
+          padding: 1em 2em;
         }
 
         h2 {
@@ -161,9 +164,88 @@ body.store {
     }
   }
 
-  .sizes-table {
-    font-size: $base-font-size * 0.7;
-    // margin: 0;
+  .Hide {
+    display: none;
+  }
+
+  table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+
+    caption {
+      font-size: 1.5em;
+      margin: 0.5em 0 0.75em;
+    }
+
+    th,
+    td {
+      padding: 0.5em;
+    }
+
+    td {
+      font-size: $base-font-size * 0.7;
+    }
+
+    tr {
+      border: 1px solid #ddd;
+    }
+
+    th {
+      font-size: $base-font-size * 0.7;
+    }
+  }
+
+  @include grid-media($for-mobile) {
+    table {
+      border: 0;
+
+      caption {
+        font-size: 1.3em;
+      }
+
+      thead {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+
+      tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+      }
+
+      td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: $base-font-size * 0.7;
+        text-align: right;
+
+        &::before {
+          //
+          // aria-label has no advantage, it won't be read inside a table
+          // content: attr(aria-label);
+          //
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
   }
 }
 

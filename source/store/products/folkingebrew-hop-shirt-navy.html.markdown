@@ -28,42 +28,34 @@ sizes:
 ---
 
 Navy t-shirt with our hop logo on the front and word mark on the back. Made with 100% cotton.
+<div class="toggle-sizes-table">
+  <button class="Show">Show Sizes Table</button>
+  <button class="Hide">Hide Sizes Table</button>
+<!--   <button class="toggle">Show & Hide</button> -->
+</div>
+<table class="Hide" id="sizes-table">
 
-<table class="sizes-table">
   <thead>
     <tr>
-      <th>&nbsp;</th>
-      <th>S</th>
-      <th>M</th>
-      <th>L</th>
-      <th>XL</th>
-      <th>XXL</th>
-      <th>XXXL</th>
+      <th scope="col"></th>
+      <th scope="col">S</th>
+      <th scope="col">M</th>
+      <th scope="col">L</th>
+      <th scope="col">XL</th>
+      <th scope="col">XXL</th>
+      <th scope="col">XXXL</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>
-        L x W (CM)
-      </td>
-      <td>
-        69,5 x 48,5
-      </td>
-      <td>
-        72 x 53,5
-      </td>
-      <td>
-        74,5 x 56
-      </td>
-      <td>
-        77 x 61
-      </td>
-      <td>
-        78,5 x 66
-      </td>
-      <td>
-        80 x 71
-      </td>
+      <td data-label="">L x W (CM)</td>
+      <td data-label="S">69,5 x 48,5</td>
+      <td data-label="M">72 x 53,5</td>
+      <td data-label="L">74,5 x 56</td>
+      <td data-label="XL">77 x 61</td>
+      <td data-label="XXL">78,5 x 66</td>
+      <td data-label="XXXL">80 x 71</td>
     </tr>
   </tbody>
 </table>
+
