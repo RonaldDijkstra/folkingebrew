@@ -13,4 +13,6 @@ fruits: Mango, Guava, Passion Fruit
 malts: Pilsner, Wheat
 yeast: US-05
 background: dark
+currently_available: true
+webshop_link: /store/folkingebrew-sour-sequence-1/
 ---
