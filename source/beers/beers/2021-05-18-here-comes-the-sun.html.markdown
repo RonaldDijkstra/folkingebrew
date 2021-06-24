@@ -13,4 +13,6 @@ hops: Galaxy, Eclipse, Mosaic, Mosaic Incognito
 yeast: Lallemand Verdant IPA
 malts: Golden Promise, Oats
 background: dark
+currently_available: true
+webshop_link: /store/folkingebrew-here-comes-the-sun/
 ---
