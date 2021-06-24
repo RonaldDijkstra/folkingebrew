@@ -86,5 +86,13 @@
       padding-right: 10px;
     }
   }
+
+  .snipcart-summary-fees__tax-notice path {
+    fill: var(--green);
+  }
+
+  .snipcart-flash-message__action-container {
+    margin-top: 0;
+  }
 }
 
