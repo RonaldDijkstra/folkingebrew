@@ -1,0 +1,80 @@
+- name: Just in Beer
+  url: https://www.justinbeer.nl/
+  street: Folkingestraat 18
+  postal_code: 9711 JW
+  city: Groningen
+- name: Beerdome
+  url: https://www.beerdome.nl
+  street: Legolaan 12
+  postal_code: 9861 AT
+  city: Grootegast
+- name: Bierlokaal Café de Koffer
+  url: https://dekoffer.nl/
+  street: Nieuwe Blekerstraat 1
+  postal_code: 9718 ED
+  city: Groningen
+- name: Mitra Haren André Wijnalda
+  url: https://www.mitra.nl/winkels/mitra-haren-andre-wijnalda-rijksstraatweg
+  street: Rijksstraatweg 204
+  postal_code: 9752 BR
+  city: Haren
+- name: Block & Barrels
+  url: https://blockandbarrels.nl/
+  street: Hoogstraatje 3-5
+  postal_code: 9711 LN
+  city: Groningen
+- name: Slijterij Groningen
+  url: https://www.slijterijgroningen.nl
+  street: Vismarkt 36
+  postal_code: 9711 KT
+  city: Groningen
+- name: Chaplin's Pub
+  url: https://www.chaplinspub.nl/
+  street: Gedempte Zuiderdiep 73
+  postal_code: 9711 HC
+  city: Groningen
+- name: Proeflokaal MOUT
+  url: https://www.proeflokaalmout.nl/
+  street: Gedempte Zuiderdiep 43
+  postal_code: 9711 HB
+  city: Groningen
+- name: Harbour Café
+  url: https://harbourcafe.nl/
+  street: Voor ’t Voormalig Klein Poortje 10-11
+  postal_code: 9711 RR
+  city: Groningen
+- name: De Roemer
+  url: https://www.webshopderoemer.nl
+  street: Astraat 13
+  postal_code: 9718 CP
+  city: Groningen
+- name: Baxbier
+  url: https://www.baxbier.com/
+  street: Friesestraatweg 201/2a
+  postal_code: 9743 AC
+  city: Groningen
+- name: Van Erp Groningen
+  url: https://vanerpdranken.nl
+  street: Grote Kromme Elleboog 16
+  postal_code: 9712 BK
+  city: Groningen
+- name: Van Erp Roden
+  url: https://vanerpdranken.nl
+  street: Raadhuisstraat 11
+  postal_code: 9301 AA
+  city: Roden
+- name: Mitra Assen Nienhuis
+  url: https://www.mitra.nl/winkels/mitra-assen-nienhuis-kleuvenstee
+  street: Kleuvenstee 41
+  postal_code: 9403 LT
+  city: Assen
+- name: Mitra Hoogezand Vogel
+  url: https://www.mitra.nl/winkels/mitra-hoogezand-vogel-hoofdstraat
+  street: Hoofdstraat 256
+  postal_code: 9601 EN
+  city: Hoogezand
+- name: Mitra Zuidlaren Remko Rutgers
+  url: https://www.mitra.nl/winkels/mitra-zuidlaren-remko-rutgers-stationsweg
+  street: Stationsweg 24
+  postal_code: 9471 GR
+  city: Zuidlaren
