@@ -9,19 +9,66 @@ body.store {
     .grid-row {
       &.product-item {
         height: 100%;
-        padding: 0 1em;
+        padding: 0 1em 2em;
 
         @include grid-media($for-desktop-up) {
           display: flex;
         }
-      }
 
-      &.back-link {
-        padding: 1em;
-        text-align: center;
+        .product-image {
+          display: block;
+          max-height: 100%;
+          max-width: 100%;
+          object-fit: cover;
+          position: relative;
+          width: auto;
+          z-index: 1;
+        }
 
-        @include grid-media($for-desktop-up) {
-          padding: 2em 1em;
+        .product-content {
+          background: $white;
+          display: flex;
+          flex: 0 0 50%;
+          flex-direction: column;
+          justify-content: center;
+          padding: 2em 1em 0;
+
+          @include grid-media($for-desktop-up) {
+            padding: 2em;
+          }
+
+          h2 {
+            font-size: $base-font-size * 1.6;
+            font-weight: 600;
+            margin-bottom: 0.25em;
+
+            @include grid-media($for-desktop-up) {
+              font-size: $base-font-size * 2;
+            }
+          }
+
+          .product-price {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .old-price {
+            font-size: $base-font-size;
+            margin-bottom: 0;
+          }
+
+          .price {
+            color: $green;
+            display: block;
+            font-size: $base-font-size * 1.5;
+            font-weight: $font-weight-bold;
+            margin-bottom: 0;
+          }
+
+          .vat {
+            font-size: $base-font-size * 0.8;
+            font-style: italic;
+          }
         }
       }
 
@@ -103,65 +150,14 @@ body.store {
         }
       }
 
-      .product-image {
-        display: block;
-        max-height: 100%;
-        max-width: 100%;
-        object-fit: cover;
-        position: relative;
-        width: auto;
-        z-index: 1;
-      }
-
-      .product-content {
-        background: $white;
-        display: flex;
-        flex: 0 0 50%;
-        flex-direction: column;
-        justify-content: center;
-        padding: 2em 1em 0;
-
-        @include grid-media($for-desktop-up) {
-          padding: 2em;
-        }
-
-        h2 {
-          font-size: $base-font-size * 1.6;
-          font-weight: 600;
-          margin-bottom: 0.25em;
-
-          @include grid-media($for-desktop-up) {
-            font-size: $base-font-size * 2;
-          }
-        }
-
-        .product-price {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .old-price {
-          font-size: $base-font-size;
-          margin-bottom: 0;
-        }
-
-        .price {
-          color: $green;
-          display: block;
-          font-size: $base-font-size * 1.5;
-          font-weight: $font-weight-bold;
-          margin-bottom: 0;
-        }
-
-        .vat {
-          font-size: $base-font-size * 0.8;
-          font-style: italic;
-        }
+      &.back-link {
+        padding: 1em;
+        text-align: center;
       }
     }
   }
+
+  .products {
+    background: $lightest-gray;
+  }
 }
-
-
-
-

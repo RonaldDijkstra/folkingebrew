@@ -109,6 +109,25 @@ end
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="products wide-row">
+    <div class="grid-row">
+      <h2 class="products-header">
+        More Products
+      </h2>
+      <div class="products-grid-wrap">
+        <div class="products-grid feed">
+          <div class="row">
+            <% (blog().articles - [current_article])[0...3].each do |product| %>
+              <%= partial "partials/store/product_preview", locals: { product: product } %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
     <div class="grid-row back-link">
       <%= partial "partials/button", locals: { to: "/store/index.html",
                                                variant: "medium-size ghost no-border green",
