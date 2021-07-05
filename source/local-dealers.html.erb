@@ -1,0 +1,39 @@
+---
+title: "Local Dealers"
+---
+
+<header class="normal-page-header">
+  <div class="grid-row">
+    <h1>
+      Local Dealers
+    </h1>
+  </div>
+</header>
+
+<%
+dealers = data["dealers"]
+%>
+
+<section class="dealers medium-row">
+  <div class="grid-row">
+    <div class="row">
+      <p>
+        In this list you'll find the awesome places in and around Groningen where you can buy Folkingebrew beers, if available.
+      </p>
+      <div class="dealers-wrapper">
+        <% dealers.each do |dealer| %>
+          <div class="dealer-item">
+            <h3>
+              <%= link_to "#{dealer.name}", "#{dealer.url}", target: "_blank", rel: "noopener noreferrer" %>
+            </h3>
+            <p>
+              <%= dealer.street %><br>
+              <%= dealer.postal_code %><br>
+              <%= dealer.city %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
