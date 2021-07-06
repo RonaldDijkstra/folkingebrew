@@ -61,9 +61,9 @@ en:
       fruits: "Fruits"
       adjuncts: "Adjuncts"
       release_date: "Release Date"
-    back_to_all_beers: "Back to All Beers"
+    back_to_all_beers: "See all releases"
   webshop:
-    back_to_all_products: "View All Products"
+    back_to_all_products: "See all products"
     add_to_cart: "Add to Cart"
     no_stock_message: "Currently we are out of stock. Come back soon!"
 ---
