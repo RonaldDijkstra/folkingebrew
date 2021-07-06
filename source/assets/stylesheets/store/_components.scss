@@ -182,11 +182,21 @@ section.products {
   .grid-row {
     margin-left: auto;
     margin-right: auto;
-    padding: 0 1em 1em;
+    padding: 1em;
     width: 100%;
 
     @include grid-media($for-desktop-up) {
-      padding: 0 2em 4em;
+      padding: 2em 1em;
+    }
+
+    h2.products-header {
+      font-size: $base-font-size * 2;
+      margin-bottom: 1em;
+      text-align: center;
+
+      // @include grid-media($for-desktop-up) {
+      //   margin-bottom: 2em;
+      // }
     }
   }
 

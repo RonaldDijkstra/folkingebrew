@@ -6,6 +6,16 @@ body.store_index {
       color: $black;
     }
   }
+
+  section.products {
+    .grid-row {
+      padding: 0 1em 1em;
+
+      @include grid-media($for-desktop-up) {
+        padding: 0 2em 4em;
+      }
+    }
+  }
 }
 
 
