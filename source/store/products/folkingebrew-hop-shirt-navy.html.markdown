@@ -7,7 +7,7 @@ price: 17.95
 # use_max_quantity: true
 date: 2021-05-22 09:00 CEST
 # out_of_stock:
-description: "Navy T-shirt with our hop logo on the front and word mark on the back."
+description: "Here you can buy our navy t-shirt with our hop logo on the front and word mark on the back."
 images:
   - "shop/folkingebrew-t-shirt-hop-navy.jpg"
   - "shop/folkingebrew-t-shirt-hop-navy-2.jpg"

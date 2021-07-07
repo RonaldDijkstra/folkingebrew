@@ -7,7 +7,7 @@ price: 17.95
 # use_max_quantity: true
 date: 2021-05-25 09:00 CEST
 out_of_stock: true
-description: "Black Snapback Cap with our hop logo on the front."
+description: "Here you can buy our black Snapback Cap with our hop logo on the front."
 images:
   - "shop/folkingebrew-snapback.jpg"
 # sizes:

@@ -10,7 +10,7 @@ images:
   - "shop/folkingebrew-harmony-glass.jpg"
   - "shop/folkingebrew-harmony-glass-2.jpg"
   - "shop/folkingebrew-harmony-glass-3.jpg"
-description: "The outlined Folkingebrew hop logo on the front provides a nice contrast to the hazy beer in the glass. On the back you’ll find our word mark."
+description: "Here you can buy our Tumbler glass. The outlined Folkingebrew hop logo on the front provides a nice contrast to the hazy beer in the glass. On the back you’ll find our word mark."
 # out_of_stock:
 # sizes:
 #   - title: S
