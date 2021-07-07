@@ -13,4 +13,5 @@ hops: Azacca, Mosaic, Galaxy
 yeast: LAIII
 malts: Pilsen, Golden Promise, Oats
 background: dark
+sitemap_priority: 0.4
 ---

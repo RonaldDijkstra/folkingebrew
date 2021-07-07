@@ -6,6 +6,7 @@ author: Ronald
 featured: true
 featured_image: blog/201912-yes-we-can-featured.jpg
 header_image: moods/banner-cans.jpg
+sitemap_priority: 0.2
 ---
 __For our new beer we have opted for canning in 44 CL cans. This is completely in line with our philosophy: doing what we think is best. For an IPA we think cans are better than bottles for many reasons. In this blog post we'll explain why we feel that way.__
 

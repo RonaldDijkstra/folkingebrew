@@ -13,4 +13,5 @@ hops: Citra Incognito, Citra, Nelson Sauvin
 yeast: Lallemand Verdant IPA
 malts: Golden Promise, Oats
 background: dark
+sitemap_priority: 0.4
 ---

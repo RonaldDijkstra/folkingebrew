@@ -13,4 +13,5 @@ hops: Citra, Enigma, Galaxy, El Dorado
 yeast: LAIII
 malts: Golden Promise, Oats
 background: dark
+sitemap_priority: 0.4
 ---

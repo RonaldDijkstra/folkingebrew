@@ -13,4 +13,5 @@ hops: Riwaka, Nelson Sauvin, Motueka
 yeast: Lallemand Verdant IPA
 malts: Golden Promise, Oats
 background: dark
+sitemap_priority: 0.4
 ---

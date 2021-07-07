@@ -12,4 +12,5 @@ release_date: December 2019
 hops: Citra, Mosaic, Galaxy
 yeast: Vermont
 background: dark
+sitemap_priority: 0.4
 ---

@@ -13,4 +13,5 @@ hops: Citra, Nelson Sauvin, Idaho 7, Ekuanot
 yeast: Vermont
 malts: Golden Promise, Oats
 background: dark
+sitemap_priority: 0.4
 ---

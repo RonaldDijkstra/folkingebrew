@@ -13,4 +13,5 @@ hops: Citra, Mosaic, Galaxy
 malts:
 yeast: Vermont
 background: dark
+sitemap_priority: 0.4
 ---

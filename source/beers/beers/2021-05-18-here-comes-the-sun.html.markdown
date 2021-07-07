@@ -15,4 +15,5 @@ malts: Golden Promise, Oats
 background: dark
 currently_available: true
 webshop_link: /store/folkingebrew-here-comes-the-sun/
+sitemap_priority: 0.4
 ---

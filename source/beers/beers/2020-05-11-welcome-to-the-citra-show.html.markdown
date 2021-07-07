@@ -14,4 +14,5 @@ yeast: Vermont
 malts: Pilsen, Wheat, Oats
 adjuncts: Lactose
 background: dark
+sitemap_priority: 0.4
 ---

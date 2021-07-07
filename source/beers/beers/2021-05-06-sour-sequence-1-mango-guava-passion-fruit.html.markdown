@@ -15,4 +15,5 @@ yeast: US-05
 background: dark
 currently_available: true
 webshop_link: /store/folkingebrew-sour-sequence-1/
+sitemap_priority: 0.4
 ---

@@ -5,6 +5,7 @@ tags: IPA
 author: Ronald
 featured_image: blog/20190701-primeur-hop-in-the-yard.jpg
 header_image: moods/banner-de-koffer-hop-in-the-yard.jpg
+sitemap_priority: 0.2
 ---
 __Last Sunday, June 30, our newest beer Hop in the Yard had its premiere. The first Hop in the Yard cask was hit during the BBQ x IPA of Bierlokaal Café De Koffer in Groningen.__
 

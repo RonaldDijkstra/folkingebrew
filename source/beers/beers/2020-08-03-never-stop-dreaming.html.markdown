@@ -12,4 +12,5 @@ release_date: August 2020
 hops: Citra, Galaxy, Ekuanot, Sabro
 yeast: Vermont
 background: dark
+sitemap_priority: 0.4
 ---

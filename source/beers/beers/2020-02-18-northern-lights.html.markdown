@@ -12,4 +12,5 @@ release_date: March 2020
 hops: Citra, Nelson Sauvin, Galaxy
 yeast: Vermont
 background: dark
+sitemap_priority: 0.4
 ---

@@ -6,6 +6,7 @@ author: Ronald
 featured: true
 image: assets/images/social/201912-backyard.png
 featured_image: blog/201912-introducing-backyard.png
+sitemap_priority: 0.2
 ---
 __Meet one of the boldest beers we've brewed to date. The late hop yield and a double dry hop contribute to a slight bitterness and a taste explosion of pineapple, stone and citrus fruit. The generous addition of flaked oats ensures a delicious juicy body.__
 

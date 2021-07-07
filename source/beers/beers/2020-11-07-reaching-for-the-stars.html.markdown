@@ -13,4 +13,5 @@ hops: El Dorado, Mosaic, Citra
 yeast: Lallemand Verdant IPA
 malts: Pilsen, Oats
 background: dark
+sitemap_priority: 0.4
 ---

@@ -13,4 +13,5 @@ hops: Citra, Mosaic
 malts:
 yeast: London Fog
 background: dark
+sitemap_priority: 0.4
 ---
