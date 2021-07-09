@@ -25,4 +25,4 @@ description: "This limited Full Taste Pack consists of the whole range of Folkin
 #     stock: true
 ---
 
-This __Full Taste Pack__ consists of the whole range of Folkingebrew flavour. This pack includes 2x Sour Sequence #1, 2x Summer in the City, 2x Here Comes The Sun, 2x Loaded (collab with Moersleutel) and 2 Folkingebrew Tumbler Glasses.
+This limited __Full Taste Pack__ consists of the whole range of Folkingebrew flavour. The pack includes 2x Sour Sequence #1, 2x Summer in the City, 2x Here Comes The Sun, 2x Loaded (collab with Moersleutel) and 2 Folkingebrew Tumbler Glasses.
