@@ -190,9 +190,14 @@ section.products {
     }
 
     h2.products-header {
-      font-size: $base-font-size * 2;
-      margin-bottom: 1em;
+      font-size: $base-font-size * 1.6;
+      margin-bottom: 0.5em;
       text-align: center;
+
+      @include grid-media($for-desktop-up) {
+        font-size: $base-font-size * 2;
+        margin-bottom: 1em;
+      }
     }
   }
 
