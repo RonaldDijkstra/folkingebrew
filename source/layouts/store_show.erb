@@ -102,10 +102,47 @@ end
               <% end %>
             </div>
           </div>
-
-          <div class="shipping-conditions">
-            <%= partial "content/shipping-conditions" %>
-          </div>
+          <ul class="accordion">
+            <li>
+              <a class="toggle" href="javascript:void(0);">
+                Shipping & Paying
+              </a>
+              <div class="inner">
+                <%= partial "content/shipping-conditions" %>
+              </div>
+            </li>
+            <% if current_article.data.sizes && current_article.data.sizes.any? { |size| size['lxb'] } %>
+              <li>
+                <a class="toggle" href="javascript:void(0);">
+                  Sizes
+                </a>
+                <div class="inner">
+                  <table class="size-table">
+                    <thead>
+                      <tr>
+                        <th>&nbsp;</th>
+                        <th>L x W (CM)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% current_article.data.sizes.each do |size| %>
+                        <tr>
+                          <td>
+                            <%= size.title %>
+                          </td>
+                          <td>
+                            <%= size.lxb %>
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                  <p>
+                    The sizes are indicative and no rights can be derived from them.
+                  </p>
+                </div>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
