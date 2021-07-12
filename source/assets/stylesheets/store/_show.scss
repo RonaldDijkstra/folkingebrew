@@ -20,6 +20,10 @@ body.store {
           display: flex;
           position: relative;
 
+          @include grid-media($for-desktop-up) {
+            align-self: flex-start;
+          }
+
           picture {
             display: block;
             height: 100%;
@@ -108,7 +112,6 @@ body.store {
           display: flex;
           flex: 0 0 50%;
           flex-direction: column;
-          justify-content: center;
           padding: 2em 1em 0;
 
           @include grid-media($for-desktop-up) {
@@ -146,6 +149,66 @@ body.store {
           .vat {
             font-size: $base-font-size * 0.8;
             font-style: italic;
+          }
+        }
+
+        .size-table {
+          font-size: $base-font-size * 0.8;
+          margin: 0 0 0.5em;
+        }
+
+        ul.accordion {
+          font-size: $base-font-size * 0.8;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          .inner {
+            display: none;
+          }
+
+          li {
+            a.toggle {
+              color: $dark-gray;
+              display: block;
+              padding: 1em 0;
+              position: relative;
+              text-decoration: none;
+              width: 100%;
+
+              &.active {
+                &::after {
+                  transform: rotate(45deg);
+                }
+
+                &::before {
+                  transform: rotate(-45deg);
+                }
+              }
+
+              &::after,
+              &::before {
+                backface-visibility: hidden;
+                background: $dark-gray;
+                content: "";
+                height: 2px;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transition-duration: 0.2s;
+                transition-property: transform;
+                width: 13px;
+              }
+
+              &::after {
+                transform: rotate(-45deg);
+              }
+
+              &::before {
+                right: 8px;
+                transform: rotate(45deg);
+              }
+            }
           }
         }
       }
