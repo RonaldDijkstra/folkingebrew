@@ -1,39 +1,54 @@
-section.introduction {
-  background: $white;
-
-  @include grid-media($for-desktop-up) {
-    $background-image: "../images/hop-background.svg";
-
-    background-color: $white;
-    background-image: url($background-image);
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-size: 360px auto;
-  }
-
-  h2 {
-    font-size: $base-font-size * 1.4;
+body.index {
+  section.introduction {
+    background: $white;
 
     @include grid-media($for-desktop-up) {
-      font-size: $base-font-size * 2;
+      $background-image: "../images/hop-background.svg";
+
+      background-color: $white;
+      background-image: url($background-image);
+      background-position: center right;
+      background-repeat: no-repeat;
+      background-size: 360px auto;
+    }
+
+    h2 {
+      font-size: $base-font-size * 1.4;
+
+      @include grid-media($for-desktop-up) {
+        font-size: $base-font-size * 2;
+      }
+    }
+
+    .grid-row {
+      padding: 2em 1em;
+      text-align: left;
+
+      @include grid-media($for-desktop-up) {
+        padding: 8em 3em;
+      }
+    }
+
+    .row {
+      margin: 0 auto;
+      max-width: $small-row;
+    }
+
+    p {
+      margin-bottom: 2em;
     }
   }
 
-  .grid-row {
-    padding: 2em 1em;
-    text-align: left;
+  section.products {
+    background: $lightest-gray;
 
-    @include grid-media($for-desktop-up) {
-      padding: 8em 3em;
+    .products-row {
+      padding: 2em 1em;
     }
-  }
 
-  .row {
-    margin: 0 auto;
-    max-width: $small-row;
-  }
-
-  p {
-    margin-bottom: 2em;
+    .all-products {
+      padding: 0 1em 2em;
+      text-align: center;
+    }
   }
 }
