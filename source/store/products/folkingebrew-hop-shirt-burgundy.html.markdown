@@ -30,6 +30,7 @@ sizes:
   - title: XXXL
     stock: true
     lxb: "80 x 71"
+size_image: "shop/size-image-tshirt.png"
 ---
 
 Burgundy T-shirt with our hop logo on the front and word mark on the back.

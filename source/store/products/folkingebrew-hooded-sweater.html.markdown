@@ -28,6 +28,7 @@ sizes:
   - title: XXL
     stock: true
     lxb: "80 x 68"
+size_image: "shop/size-image-sweater.png"
 ---
 
 Black hoodie with our hop logo on the front and word mark on the back.
