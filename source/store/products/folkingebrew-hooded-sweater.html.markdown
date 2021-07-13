@@ -15,14 +15,19 @@ description: "Here you can buy our black hooded sweater with our hop logo on the
 sizes:
   - title: S
     stock: true
+    lxb: "68 x 48"
   - title: M
     stock: true
+    lxb: "71 x 53"
   - title: L
     stock: true
+    lxb: "74 x 58"
   - title: XL
     stock: true
+    lxb: "77 x 63"
   - title: XXL
     stock: true
+    lxb: "80 x 68"
 ---
 
 Black hoodie with our hop logo on the front and word mark on the back.
