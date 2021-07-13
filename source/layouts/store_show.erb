@@ -40,19 +40,32 @@ end
         <% end %>
       </figure>
       <div class="product-content">
-        <div class="product-price">
-          <% if current_page.data.old_price %>
-            <div class="old-price">
-              <span>
-                € <%= number_to_currency(current_page.data.old_price, :unit => "").gsub!(/\./,",") %>
-              </span>
-            </div>
-          <% end %>
-          <div class="price">€ <%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></div>
+        <div class="product-price-stock">
+          <div class="product-price">
+            <% if current_page.data.old_price %>
+              <div class="old-price">
+                <span>
+                  € <%= number_to_currency(current_page.data.old_price, :unit => "").gsub!(/\./,",") %>
+                </span>
+              </div>
+            <% end %>
+            <div class="price">€ <%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></div>
+            <p class="vat">
+              Incl. VAT, excl. <%= link_to "shipping", "/shipping-and-returning.html" %>
+            </p>
+          </div>
+          <div class="stock">
+            <% if current_article.data.out_of_stock %>
+              <p>
+                Out of Stock 😔
+              </p>
+            <% else %>
+              <p>
+                In Stock 😊
+              </p>
+            <% end %>
+          </div>
         </div>
-        <p class="vat">
-          Incl. VAT
-        </p>
         <div class="product-description">
           <%= yield %>
         </div>
@@ -90,15 +103,18 @@ end
                 <% end %>
               </div>
             <% end %>
-            <div class="add-to-cart">
-              <% if current_article.data.out_of_stock %>
-                <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
-                  Out of Stock
-                <% end %>
-              <% else %>
+            <% if current_article.data.out_of_stock %>
+              <div class="webshop-newsletter">
+                <p class="out-of-stock">
+                  Subscribe to our newsletter to get updates about our webshop.
+                </p>
+                <%= partial "partials/shared/newsletter-form", locals: { button_text: "Subscribe" } %>
+              </div>
+            <% else %>
+              <div class="add-to-cart">
                 <%= partial "partials/store/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
           <ul class="accordion">
             <li>
@@ -140,7 +156,7 @@ end
                   </p>
                   <% if current_article.data.size_image %>
                     <div class="size-image">
-                      <%= image_tag current_article.data.size_image, alt: "Size image" %>
+                      <%= image_tag current_article.data.size_image, alt: "Size Image" %>
                     </div>
                   <% end %>
                 </div>
