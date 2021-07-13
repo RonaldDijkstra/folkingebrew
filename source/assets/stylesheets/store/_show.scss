@@ -16,12 +16,12 @@ body.store {
         }
 
         .product-figure {
-          align-items: center;
-          display: flex;
           position: relative;
 
           @include grid-media($for-desktop-up) {
+            align-items: center;
             align-self: flex-start;
+            display: flex;
           }
 
           picture {
@@ -155,6 +155,10 @@ body.store {
         .size-table {
           font-size: $base-font-size * 0.8;
           margin: 0 0 0.5em;
+
+          + p {
+            font-style: italic;
+          }
         }
 
         ul.accordion {
@@ -165,12 +169,23 @@ body.store {
 
           .inner {
             display: none;
+
+            ul {
+              margin: 0.5em 0;
+            }
+
+            .size-image {
+              margin: 0 auto;
+              max-width: 300px;
+            }
           }
 
           li {
             a.toggle {
+              border-bottom: 1px solid $light-gray;
               color: $dark-gray;
               display: block;
+              font-weight: $font-weight-bold;
               padding: 1em 0;
               position: relative;
               text-decoration: none;

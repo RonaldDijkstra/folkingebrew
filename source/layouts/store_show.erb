@@ -53,11 +53,9 @@ end
         <p class="vat">
           Incl. VAT
         </p>
-
         <div class="product-description">
           <%= yield %>
         </div>
-
         <div class="product-controls">
           <% unless current_page.data.out_of_stock %>
             <% if current_article.data.sizes %>
@@ -140,6 +138,11 @@ end
                   <p>
                     The sizes are indicative and no rights can be derived from them.
                   </p>
+                  <% if current_article.data.size_image %>
+                    <div class="size-image">
+                      <%= image_tag current_article.data.size_image, alt: "Size image" %>
+                    </div>
+                  <% end %>
                 </div>
             <% end %>
           </ul>
@@ -165,7 +168,6 @@ end
                 articles
               end
             %>
-
             <% (stocked_articles - [current_article]).sample(3).each do |article| %>
               <%= partial "partials/store/product_preview", locals: { product: article } %>
             <% end %>
@@ -235,4 +237,3 @@ end
     }
   }
 </script>
-
