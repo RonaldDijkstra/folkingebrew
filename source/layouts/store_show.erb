@@ -22,7 +22,6 @@ end
             <%= image_tag "/assets/images/shop/placeholder.png", alt: current_article.title, class: "product-image", id: "product-image" %>
           <% end %>
         </picture>
-
         <% if product_image && current_article.data.images.count > 1 %>
           <nav class="thumbnails">
             <% current_article.data.images.each_with_index do |image, index| %>
@@ -125,6 +124,18 @@ end
                 <%= partial "content/shipping-conditions" %>
               </div>
             </li>
+            <% if current_article.data.product_details %>
+              <li>
+                <a class="toggle" href="javascript:void(0);">
+                  Product details
+                </a>
+                <div class="inner">
+                  <p>
+                    <%= current_article.data.product_details %>
+                  </p>
+                </div>
+              </li>
+            <% end %>
             <% if current_article.data.sizes && current_article.data.sizes.any? { |size| size['lxb'] } %>
               <li>
                 <a class="toggle" href="javascript:void(0);">

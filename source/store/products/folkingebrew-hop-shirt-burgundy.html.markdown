@@ -1,6 +1,6 @@
 ---
 id: 3
-title: "T-Shirt 'Hop' - Burgundy"
+title: "T-Shirt Hop - Burgundy"
 price: 17.95
 # old_price:
 # max_quantity: 24
@@ -8,6 +8,7 @@ price: 17.95
 date: 2021-05-21 09:00 CEST
 # out_of_stock:
 description: "Here you can buy our our burgundy t-shirt with our hop logo on the front and word mark on the back."
+product_details: "100% Cotton, 195gm/m²"
 images:
   - "shop/folkingebrew-t-shirt-hop-burgundy.jpg"
   - "shop/folkingebrew-t-shirt-hop-burgundy-2.jpg"
