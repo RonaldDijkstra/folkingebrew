@@ -12,7 +12,7 @@ images:
   - "shop/folkingebrew-t-shirt-hop-navy.jpg"
   - "shop/folkingebrew-t-shirt-hop-navy-2.jpg"
   - "shop/folkingebrew-t-shirt-hop-navy-3.jpg"
-product_details: "100% Cotton, 195gm/m²"
+product_details: "100% Cotton, 195 gm/m²"
 sizes:
   - title: S
     stock: true
