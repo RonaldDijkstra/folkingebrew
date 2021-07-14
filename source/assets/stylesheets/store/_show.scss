@@ -131,12 +131,13 @@ body.store {
           .product-price-stock {
             display: flex;
 
-            div {
+            .stock {
               flex: 1 0 50%;
+              text-align: right;
             }
 
-            .stock {
-              text-align: right;
+            .product-price {
+              flex: 1 0 50%;
             }
           }
 
