@@ -3,7 +3,7 @@ title: "Folkingebrew | Modern Craft Beer from Groningen"
 dont_append_page_title: true
 description: "Modern Craft Beer from Groningen since 2017"
 sitemap_priority: 1
-blog: blog
+blog: store
 header_class: header-transparent
 ---
 <section class="hero-wrap position-top">
@@ -14,7 +14,7 @@ header_class: header-transparent
         <h1>
           Modern Craft Beer from Groningen since 2017
         </h1>
-        <%= partial "partials/button", locals: { to: "/store/index.html",
+        <%#= partial "partials/button", locals: { to: "/store/index.html",
                                        variant: "medium-size ghost white",
                                        text: "Online Store",
                                        icon_right: "icons/arrow-right.svg"} %>
@@ -35,6 +35,28 @@ header_class: header-transparent
                                                  icon_right: "icons/arrow-right.svg"} %>
       </div>
     </div>
+  </div>
+</section>
+<section class="products wide-row">
+  <div class="grid-row products-row">
+    <h2 class="products-header">
+      Latest from our webshop
+    </h2>
+    <div class="products-grid-wrap">
+      <div class="products-grid feed">
+        <div class="row">
+          <% page_articles[0..2].each do |product| %>
+            <%= partial "partials/store/product_preview", locals: { product: product } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-row all-products">
+    <%= partial "partials/button", locals: { to: "/store/index.html",
+                                             variant: "medium-size ghost green",
+                                             text: "View all products",
+                                             icon_right: "icons/arrow-right.svg"} %>
   </div>
 </section>
 

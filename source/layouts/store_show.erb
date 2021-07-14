@@ -22,7 +22,6 @@ end
             <%= image_tag "/assets/images/shop/placeholder.png", alt: current_article.title, class: "product-image", id: "product-image" %>
           <% end %>
         </picture>
-
         <% if product_image && current_article.data.images.count > 1 %>
           <nav class="thumbnails">
             <% current_article.data.images.each_with_index do |image, index| %>
@@ -40,24 +39,35 @@ end
         <% end %>
       </figure>
       <div class="product-content">
-        <div class="product-price">
-          <% if current_page.data.old_price %>
-            <div class="old-price">
-              <span>
-                € <%= number_to_currency(current_page.data.old_price, :unit => "").gsub!(/\./,",") %>
-              </span>
-            </div>
-          <% end %>
-          <div class="price">€ <%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></div>
+        <div class="product-price-stock">
+          <div class="product-price">
+            <% if current_page.data.old_price %>
+              <div class="old-price">
+                <span>
+                  € <%= number_to_currency(current_page.data.old_price, :unit => "").gsub!(/\./,",") %>
+                </span>
+              </div>
+            <% end %>
+            <div class="price">€ <%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></div>
+            <p class="vat">
+              Incl. VAT, excl. <%= link_to "shipping", "/shipping-and-returning.html" %>
+            </p>
+          </div>
+          <div class="stock">
+            <% if current_article.data.out_of_stock %>
+              <p>
+                Out of Stock 😔
+              </p>
+            <% else %>
+              <p>
+                In Stock 😊
+              </p>
+            <% end %>
+          </div>
         </div>
-        <p class="vat">
-          Incl. VAT
-        </p>
-
         <div class="product-description">
           <%= yield %>
         </div>
-
         <div class="product-controls">
           <% unless current_page.data.out_of_stock %>
             <% if current_article.data.sizes %>
@@ -92,15 +102,18 @@ end
                 <% end %>
               </div>
             <% end %>
-            <div class="add-to-cart">
-              <% if current_article.data.out_of_stock %>
-                <% content_tag :button, class: "button green medium-size full-width solid", :disabled => "disabled" do %>
-                  Out of Stock
-                <% end %>
-              <% else %>
+            <% if current_article.data.out_of_stock %>
+              <div class="webshop-newsletter">
+                <p class="out-of-stock">
+                  Subscribe to our newsletter to get updates about our webshop.
+                </p>
+                <%= partial "partials/shared/newsletter-form", locals: { button_text: "Subscribe" } %>
+              </div>
+            <% else %>
+              <div class="add-to-cart">
                 <%= partial "partials/store/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
           <ul class="accordion">
             <li>
@@ -111,6 +124,18 @@ end
                 <%= partial "content/shipping-conditions" %>
               </div>
             </li>
+            <% if current_article.data.product_details %>
+              <li>
+                <a class="toggle" href="javascript:void(0);">
+                  Product details
+                </a>
+                <div class="inner">
+                  <p>
+                    <%= current_article.data.product_details %>
+                  </p>
+                </div>
+              </li>
+            <% end %>
             <% if current_article.data.sizes && current_article.data.sizes.any? { |size| size['lxb'] } %>
               <li>
                 <a class="toggle" href="javascript:void(0);">
@@ -140,6 +165,11 @@ end
                   <p>
                     The sizes are indicative and no rights can be derived from them.
                   </p>
+                  <% if current_article.data.size_image %>
+                    <div class="size-image">
+                      <%= image_tag current_article.data.size_image, alt: "Size Image" %>
+                    </div>
+                  <% end %>
                 </div>
             <% end %>
           </ul>
@@ -165,7 +195,6 @@ end
                 articles
               end
             %>
-
             <% (stocked_articles - [current_article]).sample(3).each do |article| %>
               <%= partial "partials/store/product_preview", locals: { product: article } %>
             <% end %>
@@ -235,4 +264,3 @@ end
     }
   }
 </script>
-

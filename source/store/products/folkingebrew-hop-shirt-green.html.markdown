@@ -1,5 +1,5 @@
 ---
-title: "T-Shirt 'Hop' - Green"
+title: "T-Shirt Hop - Green"
 id: 2
 price: 17.95
 # old_price:
@@ -8,6 +8,7 @@ price: 17.95
 date: 2021-05-20 09:00 CEST
 # out_of_stock:
 description: "Here you can buy our our green t-shirt with our hop logo on the front and word mark on the back."
+product_details: "100% Cotton, 195gm/m²"
 images:
   - "shop/folkingebrew-t-shirt-hop-green.jpg"
   - "shop/folkingebrew-t-shirt-hop-green-2.jpg"
@@ -30,6 +31,7 @@ sizes:
   - title: XXXL
     stock: true
     lxb: "80 x 71"
+size_image: "shop/size-image-tshirt.png"
 ---
 
 Green T-shirt with our hop logo on the front and word mark on the back.

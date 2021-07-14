@@ -10,6 +10,7 @@ date: 2021-05-25 09:00 CEST
 description: "Here you can buy our black Snapback Cap with our hop logo on the front."
 images:
   - "shop/folkingebrew-snapback.jpg"
+product_details: "Flat peak-style, 100% cotton"
 # sizes:
 #   - title: S
 #     stock: true

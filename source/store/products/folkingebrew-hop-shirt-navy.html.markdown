@@ -1,5 +1,5 @@
 ---
-title: "T-Shirt 'Hop' - Navy"
+title: "T-Shirt Hop - Navy"
 id: 4
 price: 17.95
 # old_price:
@@ -12,6 +12,7 @@ images:
   - "shop/folkingebrew-t-shirt-hop-navy.jpg"
   - "shop/folkingebrew-t-shirt-hop-navy-2.jpg"
   - "shop/folkingebrew-t-shirt-hop-navy-3.jpg"
+product_details: "100% Cotton, 195gm/m²"
 sizes:
   - title: S
     stock: true
@@ -31,6 +32,7 @@ sizes:
   - title: XXXL
     stock: true
     lxb: "80 x 71"
+size_image: "shop/size-image-tshirt.png"
 ---
 
 Navy T-shirt with our hop logo on the front and word mark on the back.
