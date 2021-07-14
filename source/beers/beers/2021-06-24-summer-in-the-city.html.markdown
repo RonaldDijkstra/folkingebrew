@@ -13,4 +13,6 @@ hops: Citra Incognito, Citra, Nelson Sauvin
 yeast: Lallemand Verdant IPA
 malts: Golden Promise, Oats
 background: dark
+currently_available: true
+webshop_link: /store/folkingebrew-summer-in-the-city/
 ---

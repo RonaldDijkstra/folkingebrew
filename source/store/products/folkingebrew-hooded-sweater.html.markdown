@@ -12,6 +12,7 @@ images:
   - "shop/folkingebrew-hoodie-2.jpg"
   - "shop/folkingebrew-hoodie-3.jpg"
 description: "Here you can buy our black hooded sweater with our hop logo on the front and word mark on the back."
+product_details: "80% Cotton/20% Polyester, 400 gm/m²"
 sizes:
   - title: S
     stock: true
