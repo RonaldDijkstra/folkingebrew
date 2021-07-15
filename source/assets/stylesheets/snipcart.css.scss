@@ -88,10 +88,7 @@
       padding-right: 10px;
     }
   }
-  // .snipcart-form__select-wrapper .snipcart__icon {
-  //   color: blue!important;
 
-  // }
   .snipcart-form__select-wrapper:focus-within .snipcart__icon {
     color: var(--green)!important;
   }
@@ -110,6 +107,10 @@
 
   label.snipcart__font--tiny {
     font-size: 14px;
+  }
+
+  .comment-box {
+    height: auto;
   }
 }
 
