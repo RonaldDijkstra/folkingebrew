@@ -208,6 +208,10 @@ section.products {
     }
   }
 
+  .products-row {
+    padding: 2em 1em;
+  }
+
   .message {
     margin: 0 auto;
     max-width: 740px;
@@ -328,5 +332,10 @@ section.products {
     .out-of-stock {
       color: $light-gray;
     }
+  }
+
+  .all-products {
+    padding: 0 1em 2em;
+    text-align: center;
   }
 }

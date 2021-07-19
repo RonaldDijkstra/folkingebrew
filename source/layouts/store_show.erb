@@ -178,7 +178,7 @@ end
     </div>
   </section>
   <section class="products wide-row">
-    <div class="grid-row">
+    <div class="grid-row products-row">
       <h2 class="products-header">
         More Products
       </h2>
@@ -202,13 +202,11 @@ end
         </div>
       </div>
     </div>
-  </section>
-  <section>
-    <div class="grid-row back-link">
+    <div class="grid-row all-products">
       <%= partial "partials/button", locals: { to: "/store/index.html",
                                                variant: "medium-size ghost no-border green",
-                                               icon_left: "icons/arrow-left.svg",
-                                               text: t("webshop.back_to_all_products")} %>
+                                               text: "See all products",
+                                               icon_left: "icons/arrow-left.svg"} %>
     </div>
   </section>
 <% end %>
