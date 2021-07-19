@@ -50,7 +50,7 @@ end
             <% end %>
             <div class="price">€ <%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></div>
             <p class="vat">
-              Incl. VAT, excl. <%= link_to "shipping", "/shipping-and-returning.html" %>
+              Incl. tax, excl. <%= link_to "shipping", "/shipping-and-returning.html" %>
             </p>
           </div>
           <div class="stock">

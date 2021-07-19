@@ -11,7 +11,6 @@
         <input type="text" name="naam" id="name" required>
       </div>
     <% end %>
-
     <% if locals[:fields].include? "email" %>
       <div class="form-item">
         <label for="email">
@@ -20,7 +19,6 @@
         <input type="email" name="e-mail" id="email" required>
       </div>
     <% end %>
-
     <% if locals[:fields].include? "message" %>
       <div class="form-item">
         <label for="message">
@@ -29,7 +27,6 @@
         <textarea name="<%= t("form.message") %>" id="message" rows="10"></textarea>
       </div>
     <% end %>
-
     <div>
       <button type="submit" class="button <%= + locals[:button_variant] ||= "default" %>">
         <% if locals[:button_text] %>
