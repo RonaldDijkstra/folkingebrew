@@ -26,4 +26,4 @@ description: "Here you can buy our black cap with white hop logo."
 #     stock: true
 ---
 
-Black cap with white hop logo.
+Black cap with Folkingebrew hop logo on the front area.

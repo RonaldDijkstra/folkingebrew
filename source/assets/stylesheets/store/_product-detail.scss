@@ -159,7 +159,7 @@ body.store {
             margin-bottom: 0;
           }
 
-          .vat {
+          .tax {
             font-size: $base-font-size * 0.8;
             font-style: italic;
           }
@@ -257,6 +257,184 @@ body.store {
 
     section.products {
       background: $lightest-gray;
+    }
+  }
+}
+
+.product-form {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+
+  @include grid-media($for-desktop-up) {
+    margin-bottom: $base-spacing;
+  }
+
+  .product-form-item {
+    flex: 1 0 140px;
+    margin-bottom: $base-spacing;
+    padding: 5px;
+  }
+
+  .product-add-to-cart {
+    align-items: flex-end;
+    display: flex;
+    flex-basis: 200px;
+    width: 100%;
+  }
+
+  .buy-button {
+    line-height: 1.4;
+    padding: 0.8em;
+    width: 100%;
+  }
+
+  .product-quantity {
+    flex: 0 0 144px;
+
+    .quantity-controls {
+      position: relative;
+    }
+
+    input {
+      padding-left: 44px;
+      padding-right: 44px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .quantity-adjust {
+      background: 0 0;
+      border-color: $light-gray;
+      border-right-width: 0;
+      border-style: solid;
+      border-width: 0;
+      bottom: 0;
+      cursor: pointer;
+      padding: 0;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      transition: background-color 30ms ease-in;
+      width: 44px;
+
+      .icon {
+        fill: currentColor;
+        height: 8px;
+        width: 8px;
+      }
+    }
+
+    .quantity-adjust--plus {
+      border-left-width: 1px;
+      right: 0;
+    }
+
+    .quantity-adjust--minus {
+
+      border-right-width: 1px;
+      left: 0;
+    }
+
+    .icon-fallback-text {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  }
+
+  label {
+    display: block;
+    font-size: $base-font-size * 0.8;
+    margin-bottom: $small-spacing;
+  }
+
+  input,
+  select,
+  textarea {
+    display: block;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: 1.5;
+    padding: $base-spacing * 0.8;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  #{$all-text-inputs} {
+    appearance: none;
+    border: $base-border;
+    box-sizing: border-box;
+    padding: $base-spacing * 0.8;
+    transition: border-color $base-duration $base-timing;
+    width: 100%;
+
+    &:hover {
+      border-color: shade($base-border-color, 20%);
+    }
+
+    &:focus {
+      border-color: $action-color;
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: shade($_form-background-color, 5%);
+      cursor: not-allowed;
+
+      &:hover {
+        border: $base-border;
+      }
+    }
+  }
+
+  select {
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: $base-border;
+    color: $base-font-color;
+    cursor: pointer;
+    flex: 1;
+    outline: 0;
+    width: 100%;
+
+    &:focus {
+      border-color: $action-color;
+      outline: none;
+    }
+  }
+
+  .select {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      align-items: center;
+      background: transparent;
+      bottom: 0;
+      color: $dark-gray;
+      content: "<>";
+      cursor: pointer;
+      display: flex;
+      font-size: 14px;
+      line-height: 1;
+      pointer-events: none;
+      position: absolute;
+      right: 8px;
+      top: 0;
+      transform: rotate(90deg);
+      transition: 0.25s all ease;
     }
   }
 }

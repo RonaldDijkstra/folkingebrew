@@ -7,12 +7,13 @@ price: 17.95
 # use_max_quantity: true
 date: 2021-05-22 09:00 CEST
 # out_of_stock:
-description: "Here you can buy our navy t-shirt with our hop logo on the front and word mark on the back."
+description: "Here you can buy the navy t-shirt with Folkingebrew hop logo printed on the front left area and Folkingebrew wordmark on the back."
+product_details: "Color: Navy, 100% Cotton, 195 gm/m²"
 images:
   - "shop/folkingebrew-t-shirt-hop-navy.jpg"
   - "shop/folkingebrew-t-shirt-hop-navy-2.jpg"
   - "shop/folkingebrew-t-shirt-hop-navy-3.jpg"
-product_details: "100% Cotton, 195 gm/m²"
+
 sizes:
   - title: S
     stock: true
@@ -35,4 +36,4 @@ sizes:
 size_image: "shop/size-image-tshirt.png"
 ---
 
-Navy T-shirt with our hop logo on the front and word mark on the back.
+Navy t-shirt with Folkingebrew hop logo printed on the front left area and Folkingebrew wordmark on the back.

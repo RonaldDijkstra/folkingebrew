@@ -7,8 +7,8 @@ price: 17.95
 # use_max_quantity: true
 date: 2021-05-21 09:00 CEST
 # out_of_stock:
-description: "Here you can buy our our burgundy t-shirt with our hop logo on the front and word mark on the back."
-product_details: "100% Cotton, 195 gm/m²"
+description: "Here you can buy the burgundy t-shirt with Folkingebrew hop logo printed on the front left area and Folkingebrew wordmark on the back."
+product_details: "Color: Burgundy, 100% Cotton, 195 gm/m²"
 images:
   - "shop/folkingebrew-t-shirt-hop-burgundy.jpg"
   - "shop/folkingebrew-t-shirt-hop-burgundy-2.jpg"
@@ -34,4 +34,4 @@ sizes:
 size_image: "shop/size-image-tshirt.png"
 ---
 
-Burgundy T-shirt with our hop logo on the front and word mark on the back.
+Burgundy t-shirt with Folkingebrew hop logo printed on the front left area and Folkingebrew wordmark on the back.

@@ -50,7 +50,7 @@ page "blog/*", layout: :blog_show
 page "beers/index.html", layout: :beer_index
 page "beers/*", layout: :beer_show
 page "store/index.html", layout: :store_index
-page "store/*", layout: :store_show
+page "store/*", layout: :store_product_detail
 
 # Activate and setup the blog content type
 activate :blog do |blog|

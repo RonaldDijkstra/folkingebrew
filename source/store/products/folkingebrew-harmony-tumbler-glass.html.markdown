@@ -10,7 +10,7 @@ images:
   - "shop/folkingebrew-harmony-glass.jpg"
   - "shop/folkingebrew-harmony-glass-2.jpg"
   - "shop/folkingebrew-harmony-glass-3.jpg"
-description: "Here you can buy our Tumbler glass. The outlined Folkingebrew hop logo on the front provides a nice contrast to the hazy beer in the glass. On the back you’ll find our word mark."
+description: "Here you can buy our Tumbler glass. The outlined Folkingebrew hop logo printed on the front provides a nice contrast to the beer in the glass. On the back you’ll find our word mark."
 product_details: "Stemless Rastal Harmony 40 Tumbler. Size: 40 CL. Dishwasher proof."
 # out_of_stock:
 # sizes:
@@ -28,4 +28,4 @@ product_details: "Stemless Rastal Harmony 40 Tumbler. Size: 40 CL. Dishwasher pr
 #     stock: true
 ---
 
-The outlined Folkingebrew hop logo on the front provides a nice contrast to the hazy beer in the glass. On the back you’ll find our word mark.
+The outlined Folkingebrew hop logo printed on the front provides a nice contrast to the beer in the glass. On the back the Folkingebrew wordmark.

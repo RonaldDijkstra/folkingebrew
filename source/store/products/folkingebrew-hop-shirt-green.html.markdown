@@ -7,8 +7,8 @@ price: 17.95
 # use_max_quantity: true
 date: 2021-05-20 09:00 CEST
 # out_of_stock:
-description: "Here you can buy our our green t-shirt with our hop logo on the front and word mark on the back."
-product_details: "100% Cotton, 195 gm/m²"
+description: "Here you can buy the green t-shirt with Folkingebrew hop logo printed on the front left area and Folkingebrew wordmark on the back."
+product_details: "Color: Green, 100% Cotton, 195 gm/m²"
 images:
   - "shop/folkingebrew-t-shirt-hop-green.jpg"
   - "shop/folkingebrew-t-shirt-hop-green-2.jpg"
@@ -34,4 +34,4 @@ sizes:
 size_image: "shop/size-image-tshirt.png"
 ---
 
-Green T-shirt with our hop logo on the front and word mark on the back.
+Green t-shirt with Folkingebrew hop logo printed on the front left area and Folkingebrew wordmark on the back.
