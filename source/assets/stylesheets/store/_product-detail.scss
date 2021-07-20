@@ -267,21 +267,23 @@ body.store {
   flex-wrap: wrap;
   margin: 0 -5px;
 
-  @include grid-media($for-desktop-up) {
-    margin-bottom: $base-spacing;
-  }
-
   .product-form-item {
-    flex: 1 0 140px;
+    flex: 1 0 auto;
     margin-bottom: $base-spacing;
     padding: 5px;
+  }
+
+  .product-sizes {
+    flex-basis: 100%;
+
+    @include grid-media($for-desktop-up) {
+      flex-basis: 100%;
+    }
   }
 
   .product-add-to-cart {
     align-items: flex-end;
     display: flex;
-    flex-basis: 200px;
-    width: 100%;
   }
 
   .buy-button {
@@ -298,10 +300,10 @@ body.store {
     }
 
     input {
+      caret-color: transparent;
       padding-left: 44px;
       padding-right: 44px;
       text-align: center;
-      width: 100%;
     }
 
     .quantity-adjust {
@@ -332,7 +334,6 @@ body.store {
     }
 
     .quantity-adjust--minus {
-
       border-right-width: 1px;
       left: 0;
     }
@@ -351,8 +352,10 @@ body.store {
 
   label {
     display: block;
-    font-size: $base-font-size * 0.8;
+    font-size: $base-font-size * 0.7;
+    font-weight: $font-weight-bold;
     margin-bottom: $small-spacing;
+    text-transform: uppercase;
   }
 
   input,
@@ -418,6 +421,10 @@ body.store {
     display: flex;
     overflow: hidden;
     position: relative;
+
+    @include grid-media($for-desktop-up) {
+      width: 134px;
+    }
 
     &::after {
       align-items: center;

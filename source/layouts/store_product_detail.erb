@@ -71,7 +71,7 @@ end
         <div class="product-form">
           <% unless current_page.data.out_of_stock %>
             <% if current_article.data.sizes %>
-              <div class="product-sizes product-form-item">
+              <div class="product-form-item product-sizes">
                 <label>
                   Size
                 </label>
@@ -89,7 +89,7 @@ end
               </div>
             <% end %>
             <% unless current_page.data.max_quantity == 1 %>
-              <div class="product-quantity product-form-item">
+              <div class="product-form-item product-quantity">
                 <label>
                   Quantity <%= "(max #{current_article.data.max_quantity})" if current_article.data.max_quantity %>
                 </label>
@@ -113,78 +113,80 @@ end
           <% end %>
           <% if current_article.data.out_of_stock %>
             <div class="webshop-newsletter">
+              <h3>
+                 Newsletter
+              </h3>
               <p class="out-of-stock">
-                Subscribe to our newsletter to get updates about our beer, store, news and events.
-              </p>
+                Subscribe to our newsletter to stay up-to-date!
               <%= partial "partials/shared/newsletter-form", locals: { button_text: "Subscribe" } %>
             </div>
           <% else %>
-            <div class="product-add-to-cart product-form-item">
+            <div class="product-form-item product-add-to-cart">
               <%= partial "partials/store/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
             </div>
           <% end %>
         </div>
         <div class="product-details">
-            <ul class="accordion">
+          <ul class="accordion">
+            <% if current_article.data.product_details %>
               <li>
                 <a class="toggle" href="javascript:void(0);">
-                  Shipping & Paying
+                  Product details
                 </a>
                 <div class="inner">
-                  <%= partial "content/shipping-conditions" %>
+                  <p>
+                    <%= current_article.data.product_details %>
+                  </p>
                 </div>
               </li>
-              <% if current_article.data.product_details %>
-                <li>
-                  <a class="toggle" href="javascript:void(0);">
-                    Product details
-                  </a>
-                  <div class="inner">
-                    <p>
-                      <%= current_article.data.product_details %>
-                    </p>
-                  </div>
-                </li>
-              <% end %>
-              <% if current_article.data.sizes && current_article.data.sizes.any? { |size| size['lxb'] } %>
-                <li>
-                  <a class="toggle" href="javascript:void(0);">
-                    Sizes
-                  </a>
-                  <div class="inner">
-                    <table class="size-table">
-                      <thead>
+            <% end %>
+            <% if current_article.data.sizes && current_article.data.sizes.any? { |size| size['lxb'] } %>
+              <li>
+                <a class="toggle" href="javascript:void(0);">
+                  Sizes
+                </a>
+                <div class="inner">
+                  <table class="size-table">
+                    <thead>
+                      <tr>
+                        <th>&nbsp;</th>
+                        <th>L x W (CM)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% current_article.data.sizes.each do |size| %>
                         <tr>
-                          <th>&nbsp;</th>
-                          <th>L x W (CM)</th>
+                          <td>
+                            <%= size.title %>
+                          </td>
+                          <td>
+                            <%= size.lxb %>
+                          </td>
                         </tr>
-                      </thead>
-                      <tbody>
-                        <% current_article.data.sizes.each do |size| %>
-                          <tr>
-                            <td>
-                              <%= size.title %>
-                            </td>
-                            <td>
-                              <%= size.lxb %>
-                            </td>
-                          </tr>
-                        <% end %>
-                      </tbody>
-                    </table>
-                    <p>
-                      The sizes are indicative and no rights can be derived from them.
-                    </p>
-                    <% if current_article.data.size_image %>
-                      <div class="size-image">
-                        <%= image_tag current_article.data.size_image, alt: "Size Image" %>
-                      </div>
-                    <% end %>
-                  </div>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+                      <% end %>
+                    </tbody>
+                  </table>
+                  <p>
+                    The sizes are indicative and no rights can be derived from them.
+                  </p>
+                  <% if current_article.data.size_image %>
+                    <div class="size-image">
+                      <%= image_tag current_article.data.size_image, alt: "Size Image" %>
+                    </div>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+            <li>
+              <a class="toggle" href="javascript:void(0);">
+                Shipping & Paying
+              </a>
+              <div class="inner">
+                <%= partial "content/shipping-conditions" %>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
