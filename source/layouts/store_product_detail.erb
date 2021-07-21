@@ -49,8 +49,8 @@ end
               </div>
             <% end %>
             <div class="price">€ <%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></div>
-            <p class="vat">
-              Incl. VAT, excl. <%= link_to "shipping", "/shipping-and-returning.html" %>
+            <p class="tax">
+              Incl. tax, excl. <%= link_to "shipping", "/shipping-and-returning.html" %>
             </p>
           </div>
           <div class="stock">
@@ -68,10 +68,10 @@ end
         <div class="product-description">
           <%= yield %>
         </div>
-        <div class="product-controls">
+        <div class="product-form">
           <% unless current_page.data.out_of_stock %>
             <% if current_article.data.sizes %>
-              <div class="sizes">
+              <div class="product-form-item product-sizes">
                 <label>
                   Size
                 </label>
@@ -88,42 +88,46 @@ end
                 </div>
               </div>
             <% end %>
-          <% end %>
-          <div class="quantity-and-cart">
-            <% unless current_article.data.max_quantity == 1 || current_page.data.out_of_stock %>
-              <div class="product-quantity">
+            <% unless current_page.data.max_quantity == 1 %>
+              <div class="product-form-item product-quantity">
                 <label>
-                  Quantity <%= "(max #{current_article.data.max_quantity} pp)" if current_article.data.max_quantity %>
+                  Quantity <%= "(max #{current_article.data.max_quantity})" if current_article.data.max_quantity %>
                 </label>
-                <% if current_article.data.max_quantity %>
-                  <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1" max="<%= current_article.data.max_quantity %>">
-                <% else %>
-                  <input class="product-quantity-input" type="number" name="quantity" id="quantity" value="1" min="1">
-                <% end %>
+                <div class="quantity-controls">
+                  <% if current_article.data.max_quantity %>
+                    <input type="number" value="1" id="quantity" name="quantity" min="1" max="<%= current_article.data.max_quantity %>">
+                  <% else %>
+                    <input type="number" value="1" id="quantity" name="quantity" min="1">
+                  <% end %>
+                  <button type="button" class="quantity-adjust quantity-adjust--minus" aria-label="Reduce item quantity by one">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-minus" viewBox="0 0 22 3"><path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path></svg>
+                    <span class="icon-fallback-text">−</span>
+                  </button>
+                  <button type="button" class="quantity-adjust quantity-adjust--plus" aria-label="Increase item quantity by one">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-plus" viewBox="0 0 22 21"><path d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill="#000" fill-rule="evenodd"></path></svg>
+                    <span class="icon-fallback-text">+</span>
+                  </button>
+                </div>
               </div>
             <% end %>
-            <% if current_article.data.out_of_stock %>
-              <div class="webshop-newsletter">
-                <p class="out-of-stock">
-                  Subscribe to our newsletter to get updates about our webshop.
-                </p>
-                <%= partial "partials/shared/newsletter-form", locals: { button_text: "Subscribe" } %>
-              </div>
-            <% else %>
-              <div class="add-to-cart">
-                <%= partial "partials/store/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
-              </div>
-            <% end %>
-          </div>
+          <% end %>
+          <% if current_article.data.out_of_stock %>
+            <div class="webshop-newsletter">
+              <h3>
+                 Newsletter
+              </h3>
+              <p class="out-of-stock">
+                Subscribe to our newsletter to stay up-to-date!
+              <%= partial "partials/shared/newsletter-form", locals: { button_text: "Subscribe" } %>
+            </div>
+          <% else %>
+            <div class="product-form-item product-add-to-cart">
+              <%= partial "partials/store/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
+            </div>
+          <% end %>
+        </div>
+        <div class="product-details">
           <ul class="accordion">
-            <li>
-              <a class="toggle" href="javascript:void(0);">
-                Shipping & Paying
-              </a>
-              <div class="inner">
-                <%= partial "content/shipping-conditions" %>
-              </div>
-            </li>
             <% if current_article.data.product_details %>
               <li>
                 <a class="toggle" href="javascript:void(0);">
@@ -171,14 +175,23 @@ end
                     </div>
                   <% end %>
                 </div>
+              </li>
             <% end %>
+            <li>
+              <a class="toggle" href="javascript:void(0);">
+                Shipping & Paying
+              </a>
+              <div class="inner">
+                <%= partial "content/shipping-conditions" %>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </section>
   <section class="products wide-row">
-    <div class="grid-row">
+    <div class="grid-row products-row">
       <h2 class="products-header">
         More Products
       </h2>
@@ -202,13 +215,11 @@ end
         </div>
       </div>
     </div>
-  </section>
-  <section>
-    <div class="grid-row back-link">
+    <div class="grid-row all-products">
       <%= partial "partials/button", locals: { to: "/store/index.html",
                                                variant: "medium-size ghost no-border green",
-                                               icon_left: "icons/arrow-left.svg",
-                                               text: t("webshop.back_to_all_products")} %>
+                                               text: "See all products",
+                                               icon_left: "icons/arrow-left.svg"} %>
     </div>
   </section>
 <% end %>

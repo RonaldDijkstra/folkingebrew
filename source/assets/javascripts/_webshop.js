@@ -1,4 +1,30 @@
 $(document).ready(function() {
+  $('.quantity-adjust--minus').click(function () {
+    var $input = $(this).parent().find('input');
+    $input.focus();
+    var count = parseInt($input.val()) - 1;
+    count = count < 1 ? 1 : count;
+    $input.val(count);
+    $input.change();
+    return false;
+  });
+
+  $('.quantity-adjust--plus').click(function () {
+    var $input = $(this).parent().find('input');
+    $input.focus();
+    var max = $input.attr('max');
+    var oldValue = parseFloat($input.val());
+
+    if (oldValue >= max) {
+      var change = oldValue;
+    } else {
+      var change = $input.val(parseInt($input.val()) + 1);
+    }
+
+    $input.change();
+    return false;
+  });
+
   $('#quantity').change(function(){
     var $button = $(this).parents('.product-content').find('.buy-button');
 
@@ -24,13 +50,13 @@ $(document).ready(function() {
     var $this = $(this);
 
     if ($this.next().hasClass('show')) {
-        $this.parent().find('.toggle').removeClass('active');
-        $this.next().removeClass('show');
-        $this.next().slideUp(350);
+      $this.parent().find('.toggle').removeClass('active');
+      $this.next().removeClass('show');
+      $this.next().slideUp(350);
     } else {
-        $this.parent().find('.toggle').toggleClass('active');
-        $this.next().toggleClass('show');
-        $this.next().slideToggle(350);
+      $this.parent().find('.toggle').toggleClass('active');
+      $this.next().toggleClass('show');
+      $this.next().slideToggle(350);
     }
   });
 });

@@ -21,7 +21,7 @@ en:
     social: "Social"
   form:
     name: "Name"
-    email: "Email"
+    email: "E-mail address"
     request_type: "Type of Request"
     private: "Private"
     business: "Retail"

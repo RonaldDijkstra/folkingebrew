@@ -6,13 +6,13 @@ price: 44.95
 # max_quantity: 24
 # use_max_quantity: true
 date: 2021-05-23 09:00 CEST
-# out_of_stock:
+# out_of_stock: true
 images:
   - "shop/folkingebrew-hoodie.jpg"
   - "shop/folkingebrew-hoodie-2.jpg"
   - "shop/folkingebrew-hoodie-3.jpg"
-description: "Here you can buy our black hooded sweater with our hop logo on the front and word mark on the back."
-product_details: "80% Cotton/20% Polyester, 400 gm/m²"
+description: "Here you can buy the hooded sweater with Folkingebrew hop logo printed on front left area, Folkingebrew wordmark on the back."
+product_details: "Color: Black. 80% Cotton/20% Polyester, 400 gm/m²"
 sizes:
   - title: S
     stock: true
@@ -32,4 +32,4 @@ sizes:
 size_image: "shop/size-image-sweater.png"
 ---
 
-Black hoodie with our hop logo on the front and word mark on the back.
+Hooded sweater with Folkingebrew hop logo printed on front left area and Folkingebrew wordmark on the back.
