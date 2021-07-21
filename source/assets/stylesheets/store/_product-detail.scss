@@ -368,8 +368,16 @@ body.store {
     padding: $base-spacing * 0.8;
   }
 
+  // Hide number input spinner Firefox
   input[type=number] {
     -moz-appearance: textfield;
+  }
+
+  // Hide number input spinner Chrome, Safari, Edge, Opera
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 
   #{$all-text-inputs} {
