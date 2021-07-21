@@ -8,7 +8,8 @@ use_max_quantity: true
 date: 2021-06-07 09:00 CEST
 description: "This limited Full Taste Pack consists of the whole range of Folkingebrew flavour. It includes 2 x Sour Sequence #1, 2 x Summer in the City, 2 x Here Comes The Sun, 2 x Loaded (collab with Moersleutel) and 2 Folkingebrew Tumbler Glasses."
 product_details: "Can dates: Sour Sequence #1 14-5-21, Summer in the City 7-7-21, Here Comes The Sun 9-6-21, Loaded 12-4-21, Size: 8 x 44 CL and 2 x 40 CL."
-# out_of_stock:
+# out_of_stock: true
+almost_out_of_stock: true
 images:
   - "shop/folkingebrew-full-taste-pack.jpg"
 # sizes:
