@@ -8,11 +8,13 @@
 }
 
 .old-price {
+  color: $red;
+
   span {
     position: relative;
 
     &::before {
-      background: $dark-gray;
+      background: $red;
       content: "";
       display: block;
       height: 1px;
@@ -167,7 +169,6 @@ section.products {
       }
 
       .old-price {
-        color: $dark-gray;
         margin-right: 0.5em;
       }
 
@@ -175,10 +176,6 @@ section.products {
         color: $green;
         font-weight: $font-weight-bold;
       }
-    }
-
-    .out-of-stock {
-      color: $light-gray;
     }
   }
 

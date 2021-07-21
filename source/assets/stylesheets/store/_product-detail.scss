@@ -112,10 +112,10 @@ body.store {
           display: flex;
           flex: 0 0 50%;
           flex-direction: column;
-          padding: 2em 1em 0;
+          padding: 0 1em;
 
           @include grid-media($for-desktop-up) {
-            padding: 2em;
+            padding: 1em 2em;
           }
 
           h2 {
@@ -125,19 +125,6 @@ body.store {
 
             @include grid-media($for-desktop-up) {
               font-size: $base-font-size * 2;
-            }
-          }
-
-          .product-price-stock {
-            display: flex;
-
-            .stock {
-              flex: 1 0 50%;
-              text-align: right;
-            }
-
-            .product-price {
-              flex: 1 0 50%;
             }
           }
 
@@ -163,6 +150,10 @@ body.store {
             font-size: $base-font-size * 0.8;
             font-style: italic;
           }
+        }
+
+        .product-stock {
+          font-weight: $font-weight-bold;
         }
 
         .size-table {
@@ -368,8 +359,16 @@ body.store {
     padding: $base-spacing * 0.8;
   }
 
+  // Hide number input spinner Firefox
   input[type=number] {
     -moz-appearance: textfield;
+  }
+
+  // Hide number input spinner Chrome, Safari, Edge, Opera
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 
   #{$all-text-inputs} {

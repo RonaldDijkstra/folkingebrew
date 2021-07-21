@@ -53,20 +53,20 @@ end
               Incl. tax, excl. <%= link_to "shipping", "/shipping-and-returning.html" %>
             </p>
           </div>
-          <div class="stock">
-            <% if current_article.data.out_of_stock %>
-              <p>
-                Out of Stock 😔
-              </p>
-            <% else %>
-              <p>
-                In Stock 😊
-              </p>
-            <% end %>
-          </div>
         </div>
         <div class="product-description">
           <%= yield %>
+        </div>
+        <div class="product-stock">
+          <p>
+            <% if current_article.data.out_of_stock %>
+              Out of Stock 😔
+            <% elsif current_article.data.almost_out_of_stock %>
+              Only a few left 😨
+            <% else %>
+              In Stock 😊
+            <% end %>
+          </p>
         </div>
         <div class="product-form">
           <% unless current_page.data.out_of_stock %>
@@ -117,7 +117,7 @@ end
                  Newsletter
               </h3>
               <p class="out-of-stock">
-                Subscribe to our newsletter to stay up-to-date!
+                Subscribe to our newsletter and don't miss anything again!
               <%= partial "partials/shared/newsletter-form", locals: { button_text: "Subscribe" } %>
             </div>
           <% else %>
