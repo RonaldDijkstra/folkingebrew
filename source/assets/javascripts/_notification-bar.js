@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var notificationBar = document.querySelector("#NotificationBar");
   var closeButton = document.querySelector("#NotificationClose");
-  var cookieName = "notification_close_" + notificationBar.getAttribute('data-rel');
+  var cookieName = "notification_close" + notificationBar.getAttribute('data-rel');
   var cookieValue = Cookies.get(cookieName);
 
   if (!notificationBar) {

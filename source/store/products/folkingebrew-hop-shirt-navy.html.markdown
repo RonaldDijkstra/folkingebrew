@@ -36,4 +36,4 @@ sizes:
 size_image: "shop/size-image-tshirt.png"
 ---
 
-Navy t-shirt with Folkingebrew hop logo printed on the front left and Folkingebrew wordmark on the back.
+Navy t-shirt with Folkingebrew hop logo printed on the front and Folkingebrew wordmark on the back.

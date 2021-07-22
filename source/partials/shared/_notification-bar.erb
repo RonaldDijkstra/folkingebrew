@@ -1,7 +1,9 @@
 <div class="notification-bar" id="NotificationBar" data-rel="<%= locals[:data_rel] %>">
   <div class="notification-inner">
     <span>
-      <%= locals[:message] %>
+      <% if locals[:data_rel] == "free-shipping" %>
+        Free Shipping with orders over €70!
+      <% end %>
     </span>
     <span>
       <button type="button" class="text-link notification-close" id="NotificationClose">
