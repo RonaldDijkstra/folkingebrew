@@ -2,13 +2,13 @@
   background: $green;
   color: $white;
   display: none;
-  height: 0;
-  overflow: hidden;
+  // height: 0;
+  // overflow: hidden;
   width: 100%;
 
-  &.notification-active {
+  &.show {
     display: block;
-    height: auto;
+    // height: auto;
   }
 
   .notification-inner {
