@@ -5,6 +5,7 @@ end
 %>
 
 <% wrap_layout :layout do %>
+  <%#= partial "partials/shared/notification-bar", locals: { data_rel: "free-shipping"} %>
   <header class="normal-page-header">
     <div class="grid-row">
       <h1>
@@ -39,20 +40,18 @@ end
         <% end %>
       </figure>
       <div class="product-content">
-        <div class="product-price-stock">
-          <div class="product-price">
-            <% if current_page.data.old_price %>
-              <div class="old-price">
-                <span>
-                  € <%= number_to_currency(current_page.data.old_price, :unit => "").gsub!(/\./,",") %>
-                </span>
-              </div>
-            <% end %>
-            <div class="price">€ <%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></div>
-            <p class="tax">
-              Incl. tax, excl. <%= link_to "shipping", "/shipping-and-returning.html" %>
-            </p>
-          </div>
+        <div class="product-price">
+          <% if current_page.data.old_price %>
+            <div class="old-price">
+              <span>
+                € <%= number_to_currency(current_page.data.old_price, :unit => "").gsub!(/\./,",") %>
+              </span>
+            </div>
+          <% end %>
+          <div class="price">€ <%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></div>
+          <p class="tax">
+            Incl. tax, excl. <%= link_to "shipping", "/shipping-and-returning.html" %>
+          </p>
         </div>
         <div class="product-description">
           <%= yield %>
@@ -146,7 +145,7 @@ end
                   Sizes
                 </a>
                 <div class="inner">
-                  <table class="size-table">
+                  <table class="product-size-table">
                     <thead>
                       <tr>
                         <th>&nbsp;</th>
