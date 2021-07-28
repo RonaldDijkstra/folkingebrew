@@ -31,6 +31,7 @@
 .webshop-newsletter {
   background: $lightest-gray;
   border: 1px solid $light-gray;
+  margin-bottom: $base-spacing;
   padding: 1.2em;
   width: 100%;
 }
@@ -119,25 +120,10 @@ section.products {
   .product-media {
     overflow: hidden;
     position: relative;
-
-    &:hover {
-      .product-image-overlay {
-        opacity: 0.95;
-        transform: scale(1.05);
-      }
-    }
   }
 
   .product-image {
     display: block;
-  }
-
-  .product-image-overlay {
-    left: 0;
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    transition: all 0.2s ease-in-out;
   }
 
   .product-content {
