@@ -12,9 +12,6 @@
       <% else %>
         <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image" %>
       <% end %>
-      <% if product.data.out_of_stock %>
-        <%= image_tag "/assets/images/shop/out-of-stock-overlay.svg", alt: "Sorry, out of stock", class: "product-image product-image-overlay" %>
-      <% end %>
     </div>
     <div class="product-content">
       <div class="title">
