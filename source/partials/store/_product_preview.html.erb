@@ -4,7 +4,7 @@
   end
 %>
 
-<% link_to product.url, class: "product" do %>
+<% link_to product.url, class: "product #{product.data.product_box_class}" do %>
   <div class="product-box">
     <div class="product-media">
       <% if product_image %>
