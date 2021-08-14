@@ -40,12 +40,12 @@ header_class: header-transparent
 <section class="products wide-row">
   <div class="grid-row products-row">
     <h2 class="products-header">
-      Latest from our webshop
+      Store Highlights
     </h2>
     <div class="products-grid-wrap">
       <div class="products-grid feed">
         <div class="row">
-          <% page_articles[0..2].each do |product| %>
+          <% stocked_articles[0..2].each do |product| %>
             <%= partial "partials/store/product_preview", locals: { product: product } %>
           <% end %>
         </div>

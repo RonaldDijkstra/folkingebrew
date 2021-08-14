@@ -197,16 +197,6 @@ end
       <div class="products-grid-wrap">
         <div class="products-grid feed">
           <div class="row">
-            <%
-              def stocked_articles
-                articles = []
-                  (blog().articles).select do |article|
-                    next if article.data.out_of_stock
-                    articles << article
-                  end
-                articles
-              end
-            %>
             <% (stocked_articles - [current_article]).sample(3).each do |article| %>
               <%= partial "partials/store/product_preview", locals: { product: article } %>
             <% end %>
