@@ -99,12 +99,12 @@ section.products {
     transition: box-shadow 400ms ease-in-out;
     width: 100%;
 
-    &.hidden {
-      display: none;
-    }
-
     @include grid-media($for-small-screens-up) {
       margin-bottom: 0;
+    }
+
+    &.hidden {
+      display: none;
     }
   }
 

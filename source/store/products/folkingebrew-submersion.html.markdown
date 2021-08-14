@@ -12,6 +12,7 @@ product_details: "Size: 44 CL"
 images:
   # - "shop/folkingebrew-summer-in-the-city.jpg"
 product_box_class: "hidden"
+robots: "noindex"
 ---
 
 New England Style DIPA (8.5%) with Citra Incognito, Citra, BRU-1, Vic Secret, El Dorado
