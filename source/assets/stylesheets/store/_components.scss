@@ -102,6 +102,10 @@ section.products {
     @include grid-media($for-small-screens-up) {
       margin-bottom: 0;
     }
+
+    &.hidden {
+      display: none;
+    }
   }
 
   .product-box {
