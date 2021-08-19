@@ -10,7 +10,7 @@ description: "Here you can buy Folkingebrew Submersion, a New England Style DIPA
 product_details: "Can date: 16/18-8-21, Size: 44 CL"
 # out_of_stock: true
 images:
-  # - "shop/folkingebrew-summer-in-the-city.jpg"
+  - "shop/folkingebrew-submersion.jpg"
 ---
 
 New England Style DIPA (8.5%) with Citra Incognito, Citra, BRU-1, Vic Secret and El Dorado.

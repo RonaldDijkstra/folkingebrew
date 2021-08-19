@@ -10,7 +10,7 @@ description: "Here you can buy Folkingebrew Deep Dive Pack. It consists of 2 x o
 product_details: "Can dates: Submersion 16/18-8-21, Summer in the City 7-7-21, Here Comes The Sun 9-6-21, Sour Sequence #1 14-5-21, Size: 8 x 44 CL and 1 x 40 CL."
 # out_of_stock: true
 images:
-  # - "shop/folkingebrew-summer-in-the-city.jpg"
+  - "shop/folkingebrew-deep-dive-pack.jpg"
 ---
 
 This pack is a 'deep dive' in all the beers we currently have on offer. It consists of 2 x our latest Double IPA Submersion, 2 x Summer in the City, 2 x Here Comes The Sun, 2 x Sour Sequence #1 and 1 free Folkingebrew Tumbler Glass. Includes free shipping.
