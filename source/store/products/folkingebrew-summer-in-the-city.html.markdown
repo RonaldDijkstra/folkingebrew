@@ -8,7 +8,7 @@ use_max_quantity: true
 date: 2021-06-07 09:00 CEST
 description: "Here you can buy Folkingebrew Summer in the City, a New England Style IPA (7.5%) with Citra Incognito, Citra and Nelson Sauvin."
 product_details: "Can date: 7-7-2021, Size: 44 CL"
-# out_of_stock:
+out_of_stock: true
 images:
   - "shop/folkingebrew-summer-in-the-city.jpg"
 # sizes:
