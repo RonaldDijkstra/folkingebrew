@@ -6,7 +6,7 @@ description: "This list consists of our distributors, in the Netherlands and abr
 <header class="normal-page-header">
   <div class="grid-row">
     <h1>
-      Distributors
+      <%= t("pages.distributors.title") %>
     </h1>
   </div>
 </header>
@@ -18,9 +18,7 @@ distributor_lists = data["distributors"]
 <section class="distributors medium-row">
   <div class="grid-row">
     <div class="row">
-      <p>
-        In the lists below you'll find our distributors in the Netherlands and abroad. If you are a distributor and would like to carry our beer, you can contact us through <%= link_to "our contact form", "/contact.html" %>.
-      </p>
+      <%= partial "content/distributors" %>
       <% if distributor_lists %>
         <% distributor_lists.each do |region| %>
           <h2>

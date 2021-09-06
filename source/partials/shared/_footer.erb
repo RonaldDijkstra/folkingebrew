@@ -4,77 +4,69 @@
       <div class="footer-column">
         <div class="footer-link-column footer-link-column-first">
           <h3>
-            Folkingebrew
+            <%= t("company_name") %>
           </h3>
           <ul class="footer-link-list">
-            <li><%= link_to "Our Beers", "/beers/index.html" %></li>
-            <li><%= link_to "About", "/about.html" %></li>
-            <li><%= link_to "FAQ", "/frequently-asked-questions.html" %></li>
+            <li><%= link_to t("navigation.beers"), "/beers/index.html" %></li>
+            <li><%= link_to t("navigation.about"), "/about.html" %></li>
+            <li><%= link_to t("navigation.faq"), "/frequently-asked-questions.html" %></li>
           </ul>
           <%= image_tag "nix18.svg" %>
         </div>
         <div class="footer-link-column secondary">
           <h3>
-            Stay up-to-date
+            <%= t("footer.up_to_date") %>
           </h3>
           <ul class="footer-link-list">
-            <li><%= link_to "Blog", "/blog/index.html" %></li>
-            <li><%= link_to "Events", "/events.html" %></li>
-            <!--
-              <li><%= link_to "Newsletter", "#" %></li>
-            -->
+            <li><%= link_to t("navigation.blog"), "/blog/index.html" %></li>
+            <li><%= link_to t("navigation.events"), "/events.html" %></li>
           </ul>
           <%= partial "partials/shared/social-links" %>
         </div>
       </div>
-
       <div class="footer-column">
         <div class="footer-link-column">
           <h3>
-            Buy Beer & Merch
+            <%= t("footer.buy") %>
           </h3>
           <ul class="footer-link-list">
-            <li><%= link_to "Online Store", "/store/index.html" %></li>
-            <li><%= link_to "Shipping & Returning", "/shipping-and-returning.html" %></li>
-            <li><%= link_to "Local Dealers", "/local-dealers.html" %></li>
-            <li><%= link_to "Distributors", "/distributors.html" %></li>
+            <li><%= link_to t("navigation.shop"), "/store/index.html" %></li>
+            <li><%= link_to t("navigation.shipping"), "/shipping-and-returning.html" %></li>
+            <li><%= link_to t("navigation.dealers"), "/local-dealers.html" %></li>
+            <li><%= link_to t("navigation.distributors"), "/distributors.html" %></li>
           </ul>
         </div>
         <div class="footer-link-column secondary">
           <h3>
-            Legal
+            <%= t("footer.legal") %>
           </h3>
           <ul class="footer-link-list">
-            <li><%= link_to "Terms & Conditions", "/terms-and-conditions.html" %></li>
-            <li><%= link_to "Privacy Policy", "/privacy-policy.html" %></li>
+            <li><%= link_to t("navigation.terms"), "/terms-and-conditions.html" %></li>
+            <li><%= link_to t("navigation.privacy"), "/privacy-policy.html" %></li>
           </ul>
         </div>
       </div>
-
       <div class="footer-column">
         <div class="footer-link-column">
           <h3>
-            Contact us
+            <%= t("footer.contact") %>
           </h3>
           <ul class="footer-link-list">
-            <li><%= link_to "Send an email", "/contact.html" %></li>
+            <li><%= link_to t("footer.email"), "/contact.html" %></li>
           </ul>
         </div>
         <div class="footer-link-column secondary">
           <h3>
-            Address (no visits)
+            <%= t("footer.address") %>
           </h3>
           <address class="footer-link-list-address">
-            Foxham 53<br>
-            9601 LE<br>
-            Hoogezand (Groningen)<br>
-            The Netherlands
+            <%= t("address") %>
           </address>
         </div>
       </div>
     </div>
   </div>
   <div class="grid-row copyright">
-    &copy; <%= Time.new.year %> Folkingebrew. All rights reserved.
+    &copy; <%= Time.new.year %> <%= t("company_name") %>. <%= t("footer.rights") %>.
   </div>
 </footer>
