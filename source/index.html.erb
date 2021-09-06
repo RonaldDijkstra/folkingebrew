@@ -12,12 +12,8 @@ header_class: header-transparent
       <div class="hero-inner">
          <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "hero-logo" %>
         <h1>
-          Modern Craft Beer from Groningen since 2017
+          <%= t("pages.index.tagline") %>
         </h1>
-        <%#= partial "partials/button", locals: { to: "/store/index.html",
-                                       variant: "medium-size ghost white",
-                                       text: "Online Store",
-                                       icon_right: "icons/arrow-right.svg"} %>
       </div>
 
       <a class="hero-continue-icon icon-chevron-down" href="#main-content" data-scroll-to></a>
@@ -40,7 +36,7 @@ header_class: header-transparent
 <section class="products wide-row">
   <div class="grid-row products-row">
     <h2 class="products-header">
-      Store Highlights
+      <%= t("webshop.store_highlights") %>
     </h2>
     <div class="products-grid-wrap">
       <div class="products-grid feed">
@@ -55,9 +51,9 @@ header_class: header-transparent
   <div class="grid-row all-products">
     <%= partial "partials/button", locals: { to: "/store/index.html",
                                              variant: "medium-size ghost no-border green",
-                                             text: "See all products",
+                                             text: t("webshop.back_to_all_products"),
                                              icon_right: "icons/arrow-right.svg"} %>
   </div>
 </section>
 
-<%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Subscribe" } %>
+<%= partial "partials/shared/newsletter-subscribe", locals: { button_text: t("newsletter.subscribe")} %>

@@ -4,14 +4,13 @@ description: "All our beers"
 blog: beers
 pageable: true
 ---
-
 <% content_for :page_title, t("pages.beers.title", page_number: page_number, num_pages: num_pages) %>
 <% content_for :meta_description, t("pages.beers.meta_description", page_number: page_number, num_pages: num_pages) %>
 
 <header class="normal-page-header">
   <div class="grid-row">
     <h1>
-      Our Beers
+      <%= t("beers.title") %>
         <% if page_number > 1 %>
           <%= page_number %>
         <% end %>
@@ -29,9 +28,7 @@ pageable: true
         </div>
       </div>
     </div>
-
     <%= partial "partials/pagination", locals: current_page.metadata[:locals] %>
   </div>
 </section>
-
-<%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Subscribe" } %>
+<%= partial "partials/shared/newsletter-subscribe", locals: { button_text: t("newsletter.subscribe")} %>

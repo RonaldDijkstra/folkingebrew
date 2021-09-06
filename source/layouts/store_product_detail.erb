@@ -49,7 +49,7 @@ end
           <% end %>
           <div class="price">€ <%= number_to_currency(current_page.data.price, :unit => "").gsub!(/\./,",") %></div>
           <p class="tax">
-            Incl. tax, excl. <%= link_to "shipping", "/shipping-and-returning.html" %>
+            <%= t("webshop.incl_tax") %> <%= link_to t("webshop.shipping"), "/shipping-and-returning.html" %>
           </p>
         </div>
         <div class="product-description">
@@ -58,11 +58,11 @@ end
         <div class="product-stock">
           <p>
             <% if current_article.data.out_of_stock %>
-              Out of Stock 😔
+              <%= t("webshop.out_of_stock") %>
             <% elsif current_article.data.almost_out_of_stock %>
-              Only a few left 😨
+              <%= t("webshop.almost_out_of_stock") %>
             <% else %>
-              In Stock 😊
+              <%= t("webshop.in_stock") %>
             <% end %>
           </p>
         </div>
@@ -89,7 +89,7 @@ end
             <% unless current_page.data.max_quantity == 1 %>
               <div class="product-form-item product-quantity">
                 <label>
-                  Quantity <%= "(max #{current_article.data.max_quantity})" if current_article.data.max_quantity %>
+                   <%= t("webshop.quantity") %> <%= "(#{t("webshop.max")} #{current_article.data.max_quantity})" if current_article.data.max_quantity %>
                 </label>
                 <div class="quantity-controls">
                   <% if current_article.data.max_quantity %>
@@ -97,7 +97,7 @@ end
                   <% else %>
                     <input type="number" value="1" id="quantity" name="quantity" min="1">
                   <% end %>
-                  <button type="button" class="quantity-adjust quantity-adjust--minus" aria-label="Reduce item quantity by one">
+                  <button type="button" class="quantity-adjust quantity-adjust--minus" aria-label="<%= t("webshop.reduce_with_one")%>">
                     <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-minus" viewBox="0 0 22 3"><path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path></svg>
                     <span class="icon-fallback-text">−</span>
                   </button>
@@ -112,10 +112,10 @@ end
           <% if current_article.data.out_of_stock %>
             <div class="webshop-newsletter">
               <h3>
-                 Newsletter
+                 <%= t("newsletter.title") %>
               </h3>
               <p class="out-of-stock">
-                Subscribe to our newsletter and don't miss anything again!
+                <%= t("newsletter.sub_title") %>
               <%= partial "partials/shared/newsletter-form", locals: { button_text: "Subscribe" } %>
             </div>
           <% else %>
@@ -129,7 +129,7 @@ end
             <% if current_article.data.product_details %>
               <li>
                 <a class="toggle" href="javascript:void(0);">
-                  Product details
+                  <%= t("webshop.product_details") %>
                 </a>
                 <div class="inner">
                   <p>
@@ -141,14 +141,14 @@ end
             <% if current_article.data.sizes && current_article.data.sizes.any? { |size| size['lxb'] } %>
               <li>
                 <a class="toggle" href="javascript:void(0);">
-                  Sizes
+                  <%= t("webshop.sizes") %> 
                 </a>
                 <div class="inner">
                   <table class="product-size-table">
                     <thead>
                       <tr>
                         <th>&nbsp;</th>
-                        <th>L x W (CM)</th>
+                        <th><%= t("webshop.length_x_waist") %></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -165,7 +165,7 @@ end
                     </tbody>
                   </table>
                   <p>
-                    The sizes are indicative and no rights can be derived from them.
+                    <%= t("webshop.size_disclaimer") %>
                   </p>
                   <% if current_article.data.size_image %>
                     <div class="size-image">
@@ -177,7 +177,7 @@ end
             <% end %>
             <li>
               <a class="toggle" href="javascript:void(0);">
-                Shipping & Paying
+                <%= t("webshop.shipping_and_paying") %>
               </a>
               <div class="inner">
                 <%= partial "content/shipping-conditions" %>
@@ -191,7 +191,7 @@ end
   <section class="products wide-row">
     <div class="grid-row products-row">
       <h2 class="products-header">
-        More Products
+        <%= t("webshop.more_products") %>
       </h2>
       <div class="products-grid-wrap">
         <div class="products-grid feed">
@@ -206,7 +206,7 @@ end
     <div class="grid-row all-products">
       <%= partial "partials/button", locals: { to: "/store/index.html",
                                                variant: "medium-size ghost no-border green",
-                                               text: "See all products",
+                                               text: t("webshop.back_to_all_products"),
                                                icon_left: "icons/arrow-left.svg"} %>
     </div>
   </section>

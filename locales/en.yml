@@ -31,6 +31,7 @@ en:
   pages:
     x404:
       title: "404 - Page not found"
+      message: "Sorry, we couldn't find that page."
     about:
       title: "About us"
     beers:
@@ -38,10 +39,19 @@ en:
       meta_description: "View all our beer releases | Page %{page_number}/%{num_pages}."
     contact:
       title: "Contact"
+    distributors:
+      title: "Distributors"
+    events: 
+      title: "Upcoming Events"
+    index:
+      tagline: "Modern Craft Beer from Groningen since 2017"
     faq:
       title: "Frequently Asked Questions"
+    local: 
+      title: "Local Dealers"
+    shipping: 
+      title: "Shipping & Returning Policy"
     store:
-      coming_soon: "Coming Soon"
       title: "Store"
     thanks:
       text: "Thank you for filling in our contact form. We will contact you as soon as possible."
@@ -51,6 +61,12 @@ en:
         subscribed: "You are now subscribed to our newsletter. To complete the sign up process, click on the link in the email we just sent you."
         unsubscribed: You have been unsubscribed from our newsletter. Sorry to see you go.
         unsubscribed-title: Unsubscribed
+    terms: 
+      title: "Terms & Conditions"
+  newsletter: 
+    title: "Newsletter"
+    sub_title: "Subscribe to our newsletter and don't miss anything again!"
+    subscribe: "Subscribe"
   beers:
     facts:
       style: "Style"
@@ -62,9 +78,30 @@ en:
       adjuncts: "Adjuncts"
       release_date: "Release Date"
     back_to_all_beers: "See all releases"
+    title: "Our Beers"
+  events: 
+    date: "Date"
+    event: "Event"
+    location: "Location"
+    link: "Link"
   webshop:
-    back_to_all_products: "See all products"
     add_to_cart: "Add to Cart"
+    almost_out_of_stock: "Only a few left 😨"
+    back_to_all_products: "See all products"
+    in_stock: "In Stock 😊"
+    incl_tax: "Incl. tax, excl."
+    length_x_waist: "L x W (CM)"
+    max: "max"
+    more_products: "More Products"
     no_stock_message: "Currently we are out of stock. Come back soon!"
----
+    out_of_stock: "Out of Stock 😔"
+    product_details: "Product details"
+    quantity: "Quantity"
+    reduce_with_one: "Reduce item quantity by one"
+    shipping: "shipping"
+    shipping_and_paying: "Shipping & paying"
+    size_disclaimer: "The sizes are indicative and no rights can be derived from them."
+    sizes: "Sizes"
+    store_highlights: "Store Highlights"
+--- 
 

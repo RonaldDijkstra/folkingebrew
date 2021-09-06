@@ -2,24 +2,20 @@
 title: "Local Dealers"
 description: "Here you'll find the awesome places in and around Groningen where you can buy Folkingebrew beer, if available."
 ---
+<% dealers = data["dealers"] %>
 
 <header class="normal-page-header">
   <div class="grid-row">
     <h1>
-      Local Dealers
+      <%= t("pages.local.title") %>
     </h1>
   </div>
 </header>
-
-<%
-dealers = data["dealers"]
-%>
-
 <section class="dealers medium-row">
   <div class="grid-row">
     <div class="row">
       <p>
-        In this list you'll find the awesome places in and around Groningen where you can buy Folkingebrew beer, if available.
+        <%= partial "content/local-dealers" %>
       </p>
       <div class="dealers-wrapper">
         <% dealers.each do |dealer| %>

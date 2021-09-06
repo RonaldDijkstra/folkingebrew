@@ -1,25 +1,24 @@
 ---
 title: Events
 ---
-
 <header class="normal-page-header">
   <div class="grid-row">
     <h1>
-      Upcoming Events
+      <%= t("pages.events.title") %>
     </h1>
   </div>
 </header>
 <section class="events medium-row">
   <div class="grid-row">
     <div class="row">
-      In this list you'll find the upcoming events we attend or organize. If you are a festival organizer and would like us to join your festival, you can contact us through <%= link_to "our contact form", "/contact.html" %>.
+      <%= partial "content/events" %>
     <div class="row">
       <table role="table" class="responsive-table">
         <thead role="rowgroup">
           <tr role="row">
-            <th role="columnheader" class="event-date">Date</th>
-            <th role="columnheader" class="event-title">Event</th>
-            <th role="columnheader" class="event-location">Location</th>
+            <th role="columnheader" class="event-date"><%= t("events.date") %></th>
+            <th role="columnheader" class="event-title"><%= t("events.event") %></th>
+            <th role="columnheader" class="event-location"><%= t("event.location" %></th>
             <th role="columnheader" class="event-link">&nbsp;</th>
           </tr>
         </thead>
@@ -28,14 +27,16 @@ title: Events
             <td role="cell" class="event-date">12/13-8-21</td>
             <td role="cell">Wild Festival Groningen - Summer Edition</td>
             <td role="cell">Groningen</td>
-            <td role="cell" class="event-link"><%= link_to "Link", "https://www.wildfestivalgroningen.nl", target: "_blank", rel: "noopener noreferrer nofollow" %></td>
+            <td role="cell" class="event-link"><%= link_to t("events.link"), "https://www.wildfestivalgroningen.nl", target: "_blank", rel: "noopener noreferrer nofollow" %></td>
           </tr>
+          <!-- 
           <tr role="row">
             <td role="cell" class="event-date">11/12/13-9-21</td>
             <td role="cell">International Craftbeer Festival Groningen</td>
             <td role="cell">Groningen</td>
             <td role="cell" class="event-link"><%= link_to "Link", "http://www.icbfg.com/", target: "_blank", rel: "noopener noreferrer nofollow" %></td>
           </tr>
+        -->
         </tbody>
       </table>
     </div>
