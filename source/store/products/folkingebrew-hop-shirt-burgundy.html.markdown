@@ -14,7 +14,7 @@ images:
   - "shop/folkingebrew-t-shirt-hop-burgundy-2.jpg"
 sizes:
   - title: S
-    stock: true
+    stock: false
     lxb: "69,5 x 48,5"
   - title: M
     stock: true
