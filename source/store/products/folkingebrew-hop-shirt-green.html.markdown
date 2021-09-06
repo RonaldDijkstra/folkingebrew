@@ -20,10 +20,10 @@ sizes:
     stock: true
     lxb: "72 x 53,5"
   - title: L
-    stock: true
+    stock: false
     lxb: "74,5 x 56"
   - title: XL
-    stock: true
+    stock: false
     lxb: "77 x 61"
   - title: XXL
     stock: true
