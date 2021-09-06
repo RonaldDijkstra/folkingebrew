@@ -18,9 +18,7 @@ distributor_lists = data["distributors"]
 <section class="distributors medium-row">
   <div class="grid-row">
     <div class="row">
-      <p>
-        <%= partial "content/distributors" %>
-      </p>
+      <%= partial "content/distributors" %>
       <% if distributor_lists %>
         <% distributor_lists.each do |region| %>
           <h2>
