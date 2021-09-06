@@ -4,7 +4,6 @@ description: "Buy our beers and merchandise in our store."
 blog: store
 pageable: true
 ---
-<%#= partial "partials/shared/notification-bar", locals: { data_rel: "free-shipping" } %>
 <header class="normal-page-header">
   <div class="grid-row">
     <h1>
@@ -22,7 +21,7 @@ pageable: true
       <% if page_articles.count < 1 %>
         <div class="message">
           <p>
-            Sorry, we do not have any products in stock at the moment. Please come back later!
+            <%= t("webshop.no_products") %>
           </p>
         </div>
       <% else %>
@@ -39,9 +38,9 @@ pageable: true
     <% else %>
       <div class="message">
         <p>
-          We are almost there! If you want to get notified when the online store goes live, subscribe to our mailing list.
+          <%= t("webshop.soon") %>
         </p>
-        <%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Notify Me!"} %>
+        <%= partial "partials/shared/newsletter-subscribe", locals: { button_text: t("newsletter.subscribe")} %>
       </div>
     <% end %>
   </div>

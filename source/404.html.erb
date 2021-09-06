@@ -14,9 +14,8 @@ directory_index: false
   <div class="grid-row">
     <div class="row">
       <p>
-        Sorry, we couldn't find that page.
+        <%= t("pages.x404.message") %>
       </p>
-
       <p>
         <%= partial "partials/button", locals: { to: "/beers/index.html",
                                            variant: "medium-size solid green",

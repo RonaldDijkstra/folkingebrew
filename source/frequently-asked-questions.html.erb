@@ -2,9 +2,7 @@
 title: "Frequently asked questions"
 description: "Do you have questions about Folkingebrew or our beers? Here you'll find a selection of the most frequently asked questions."
 ---
-<%
-questions = data["faq"]
-%>
+<% questions = data["faq"] %>
 
 <header class="normal-page-header">
   <div class="grid-row">
@@ -16,9 +14,7 @@ questions = data["faq"]
 <section class="faq medium-row">
   <div class="grid-row">
     <div class="row">
-      <p>
-        Below you will find answers to the questions we get asked a lot. If your question isn't answered, just drop us an email through <%= link_to "our contact form", "/contact.html" %> or get in touch on our social feeds (<%= link_to "Facebook", "https://www.facebook.com/Folkingebrew-167577637289407/", target: "_blank", rel: "noopener noreferrer" %> or <%= link_to "Instagram", "https://www.instagram.com/folkingebrew/", target: "_blank", rel: "noopener noreferrer" %>).
-      </p>
+      <%= partial "content/faq" %>
       <% questions.each do |question| %>
         <h2>
           <%= question.q %>
@@ -30,5 +26,4 @@ questions = data["faq"]
     </div>
   </div>
 </section>
-
 <%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Subscribe" } %>
