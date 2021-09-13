@@ -3,7 +3,7 @@ title: "Out of Space"
 date: 2021-08-18 09:00 CEST
 image: "beers/out-of-space.png"
 tags: TIPA
-ut_link:
+ut_link: "https://untappd.com/b/folkingebrew-out-of-space/4503658"
 blog_link:
 description: "New England Style TIPA (10%) with Citra Incognito, Mosaic Incognito, Citra, Mosaic, Galaxy and Sabro."
 style: New England TIPA
