@@ -4,9 +4,9 @@ en:
   company_name: "Folkingebrew"
   address: |
     Foxham 53<br>
-            9601 LE<br>
-            Hoogezand (Groningen)<br>
-            The Netherlands
+    9601 LE<br>
+    Hoogezand (Groningen)<br>
+    The Netherlands
   time:
     formats:
       blog_date: "%e %B %Y"
@@ -23,6 +23,7 @@ en:
     distributors: "Distributors"
     terms: "Terms & Conditions"
     privacy: "Privacy Policy"
+    newsletter: "Newsletter"
   buttons:
     read_more: "Read More"
     read_more_about_us: "More About Us"
@@ -63,6 +64,8 @@ en:
       title: "Frequently Asked Questions"
     local: 
       title: "Local Dealers"
+    newsletter: 
+      title: "Join our Newsletter"
     privacy:
       title: "Privacy Policy"
     shipping: 
