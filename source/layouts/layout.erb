@@ -36,6 +36,6 @@
       <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js"></script>
     <% end %>
     <%= stylesheet_link_tag "snipcart" %>
-    <%= partial "partials/shared/age-gate" %>
+    <%= partial "partials/shared/age-gate" if production? %>
   </body>
 </html>
