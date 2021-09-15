@@ -182,7 +182,7 @@ header.site-header {
           }
         }
 
-        a {
+        .root-link {
           align-items: center;
           color: $white;
           display: flex;
@@ -192,6 +192,7 @@ header.site-header {
           position: relative;
           text-decoration: none;
           transition: all 0.2s ease-in-out;
+          white-space: nowrap;
           width: 100%;
 
           &[aria-current]:not([aria-current="false"]),
