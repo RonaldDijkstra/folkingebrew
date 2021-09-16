@@ -34,38 +34,3 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-- name: Proof HTML
-  # You may pin to the exact commit or the version.
-  # uses: anishathalye/proof-html@035522d22da314ec56d8f145661ea43a8a803a77
-  uses: anishathalye/proof-html@v1.2.0
-  with:
-    # The directory to scan
-    directory: 
-    # Check whether external anchors exist
-    check_external_hash: # optional
-    # Validate HTML
-    check_html: # optional
-    # Enforce that images use HTTPS
-    check_img_http: # optional
-    # Check images and URLs in Open Graph metadata
-    check_opengraph: # optional
-    # Check whether favicons are valid
-    check_favicon: # optional
-    # Allow images with empty alt tags
-    empty_alt_ignore: # optional
-    # Require that links use HTTPS
-    enforce_https: # optional
-    # JSON-encoded map of domains to authorization tokens
-    tokens: # optional
-    # Maximum number of concurrent requests
-    max_concurrency: # optional
-    # HTTP connection timeout
-    connect_timeout: # optional
-    # HTTP request timeout
-    timeout: # optional
-    # Newline-separated list of URLs to ignore
-    url_ignore: # optional
-    # Newline-separated list of URL regexes to ignore
-    url_ignore_re: # optional
-    # Number of times to retry checking links
-    retries: # optional
