@@ -1,7 +1,6 @@
 # Folkingebrew
 [![CircleCI branch](https://img.shields.io/circleci/project/github/RonaldDijkstra/folkingebrew/master.svg)](https://circleci.com/gh/RonaldDijkstra/folkingebrew)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5eb7a73a-3aef-4f12-ac97-b957b5a24222/deploy-status)](https://app.netlify.com/sites/folkingebrew/deploys)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=RonaldDijkstra/folkingebrew)](https://dependabot.com)
 
 Modern Craft Beer from Groningen since 2017 🍻
 
