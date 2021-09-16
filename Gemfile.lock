@@ -50,6 +50,8 @@ GEM
     jaro_winkler (1.5.4)
     kramdown (2.3.1)
       rexml
+    kramdown-parser-gfm (1.1.0)
+      kramdown (~> 2.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -180,6 +182,7 @@ DEPENDENCIES
   bourbon
   builder
   html-proofer
+  kramdown-parser-gfm
   middleman
   middleman-autoprefixer (~> 3.0.0)
   middleman-blog

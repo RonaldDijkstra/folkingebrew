@@ -26,6 +26,7 @@ gem "neat"
 # Extensions
 gem "html-proofer"
 gem "rake"
+gem "kramdown-parser-gfm"
 
 # Frontend
 source "https://rails-assets.org" do
