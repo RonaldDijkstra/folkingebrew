@@ -128,4 +128,13 @@ module ApplicationHelpers
 
     link_to(text, path, options)
   end
+
+  def stocked_articles
+    articles = []
+      (blog().articles).select do |article|
+        next if article.data.out_of_stock
+        articles << article
+      end
+    articles
+  end
 end

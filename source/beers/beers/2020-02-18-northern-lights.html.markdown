@@ -1,7 +1,7 @@
 ---
 title: "Northern Lights"
 date: 2020-02-18 08:00 CEST
-image: "beers/northern-lights-dipa.png"
+image: "beers/northern-lights.png"
 tags: DIPA
 ut_link: "https://untappd.com/b/folkingebrew-northern-lights/3726922"
 blog_link:

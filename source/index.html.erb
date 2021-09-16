@@ -3,7 +3,7 @@ title: "Folkingebrew | Modern Craft Beer from Groningen"
 dont_append_page_title: true
 description: "Modern Craft Beer from Groningen since 2017"
 sitemap_priority: 1
-blog: blog
+blog: store
 header_class: header-transparent
 ---
 <section class="hero-wrap position-top">
@@ -12,12 +12,8 @@ header_class: header-transparent
       <div class="hero-inner">
          <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "hero-logo" %>
         <h1>
-          Modern Craft Beer from Groningen since 2017
+          <%= t("pages.index.tagline") %>
         </h1>
-        <%= partial "partials/button", locals: { to: "/store/index.html",
-                                       variant: "medium-size ghost white",
-                                       text: "Online Store",
-                                       icon_right: "icons/arrow-right.svg"} %>
       </div>
 
       <a class="hero-continue-icon icon-chevron-down" href="#main-content" data-scroll-to></a>
@@ -37,5 +33,26 @@ header_class: header-transparent
     </div>
   </div>
 </section>
-
-<%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Subscribe" } %>
+<section class="products wide-row">
+  <div class="grid-row products-row">
+    <h2 class="products-header">
+      <%= t("webshop.store_highlights") %>
+    </h2>
+    <div class="products-grid-wrap">
+      <div class="products-grid feed">
+        <div class="row">
+          <% stocked_articles[0..2].each do |product| %>
+            <%= partial "partials/store/product_preview", locals: { product: product } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-row all-products">
+    <%= partial "partials/button", locals: { to: "/store/index.html",
+                                             variant: "medium-size ghost no-border green",
+                                             text: t("webshop.back_to_all_products"),
+                                             icon_right: "icons/arrow-right.svg"} %>
+  </div>
+</section>
+<%= partial "partials/shared/newsletter-subscribe", locals: { button_text: t("newsletter.subscribe")} %>

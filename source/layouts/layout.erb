@@ -30,13 +30,12 @@
     <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>">
       <%= partial "partials/store/cart_components" %>
     </div>
-
     <% if production? %>
       <script src="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.js"></script>
     <% else %>
       <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js"></script>
     <% end %>
     <%= stylesheet_link_tag "snipcart" %>
-    <%= partial "partials/shared/age-gate" %>
+    <%= partial "partials/shared/age-gate" if production? %>
   </body>
 </html>

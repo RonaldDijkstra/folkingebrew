@@ -4,18 +4,16 @@
   end
 %>
 
-<% link_to product.url, class: "product" do %>
+<% link_to product.url, class: "product #{product.data.product_box_class}" do %>
   <div class="product-box">
     <div class="product-media">
-      <% if product_image %>
-        <%= image_tag product_image, alt: product.title, class: "product-image" %>
-      <% else %>
-        <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image" %>
-      <% end %>
-
-      <% if product.data.out_of_stock %>
-        <%= image_tag "/assets/images/shop/out-of-stock-overlay.svg", alt: "Sorry, out of stock", class: "product-image product-image-overlay" %>
-      <% end %>
+      <figure>
+        <% if product_image %>
+          <%= image_tag product_image, alt: product.title, class: "product-image", loading: "lazy" %>
+        <% else %>
+          <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image", loading: "lazy" %>
+        <% end %>
+      </figure>
     </div>
     <div class="product-content">
       <div class="title">
@@ -23,26 +21,17 @@
           <%= product.title %>
         </h2>
       </div>
-      <% if product.data.out_of_stock %>
-        <div class="out-of-stock">
-          <p>
-            Out of Stock
-          </p>
-        </div>
-      <% else %>
-        <div class="product-price">
-          <% if product.data.old_price %>
-            <div class="old-price">
-              <span>
-                € <%= number_to_currency(product.data.old_price, :unit => "").gsub!(/\./,",") %>
-              </span>
-            </div>
-          <% end %>
-          <div class="price">€ <%= number_to_currency(product.data.price, :unit => "").gsub!(/\./,",") %></div>
-        </div>
-      <% end %>
+      <div class="product-price">
+        <% if product.data.old_price %>
+          <div class="old-price">
+            <span>
+              € <%= number_to_currency(product.data.old_price, :unit => "").gsub!(/\./,",") %>
+            </span>
+          </div>
+        <% end %>
+        <div class="price">€ <%= number_to_currency(product.data.price, :unit => "").gsub!(/\./,",") %></div>
+      </div>
     </div>
-
     <% unless product.data.out_of_stock %>
       <%= partial "partials/store/_snipcart_button", locals: { product: product, variant: "hidden" } %>
     <% end %>

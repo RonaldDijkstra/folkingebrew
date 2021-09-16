@@ -1,7 +1,7 @@
 ---
 title: "Sour Sequence #1: Mango, Guava, Passion Fruit"
 date: 2021-05-06 09:00 CEST
-image: "beers/sequence-1.png"
+image: "beers/sour-sequence-1.png"
 tags: Fruited Imperial Berliner Weisse
 ut_link: "https://untappd.com/b/folkingebrew-sequence-1/4311716"
 blog_link:

@@ -20,13 +20,18 @@
 @import "components/newsletter-subscribe-form";
 @import "components/page-header";
 @import "components/pagination";
+@import "components/responsive-table";
 @import "components/site-footer";
 @import "components/site-header";
 
 @import "pages/about-us";
 @import "pages/contact";
+@import "pages/dealers";
+@import "pages/distributors";
+@import "pages/events";
 @import "pages/faq";
 @import "pages/index";
+@import "pages/newsletter";
 @import "pages/privacy-policy";
 @import "pages/shipping-policy";
 @import "pages/terms-and-conditions";
@@ -38,7 +43,7 @@
 
 @import "store/components";
 @import "store/index";
-@import "store/show";
+@import "store/product-detail";
 
 @import "blog/article-preview";
 @import "blog/index";

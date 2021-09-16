@@ -1,0 +1,49 @@
+---
+title: "Distributors"
+description: "This list consists of our distributors, in the Netherlands and abroad."
+---
+
+<header class="normal-page-header">
+  <div class="grid-row">
+    <h1>
+      <%= t("pages.distributors.title") %>
+    </h1>
+  </div>
+</header>
+
+<% distributor_lists = data["distributors"] %>
+
+<section class="distributors medium-row">
+  <div class="grid-row">
+    <div class="row">
+      <%= partial "content/distributors" %>
+      <% if distributor_lists %>
+        <% distributor_lists.each do |region| %>
+          <h2>
+            <%= region.region %>
+          </h2>
+          <div class="distributors-wrapper">
+            <% if region.distributors %>
+              <% region.distributors.each do |distributor| %>
+                <div class="distributor-item">
+                  <h3>
+                    <%= link_to "#{distributor.name}", "#{distributor.url}", target: "_blank", rel: "noopener noreferrer" %>
+                  </h3>
+                  <p>
+                    <%= distributor.street %><br>
+                    <%= distributor.postal_code %><br>
+                    <%= distributor.city %><% if distributor.country %><br>
+                    <%= distributor.country %><% end %>
+                  </p>
+                  <p>
+                    <%= link_to "#{distributor.email}", "mailto:#{distributor.email}", target: "_blank" %>
+                  </p>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>

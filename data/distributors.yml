@@ -1,0 +1,73 @@
+- region: The Netherlands
+  distributors:
+    - name: Hopping Borders BV
+      url: https://www.hoppingborders.com/
+      street: Kaartenmakerstraat 5
+      postal_code: 2984 CB
+      city: Ridderkerk
+      email: info@hoppingborders.com
+    - name: Bierboetiek
+      url: https://biergro.nl
+      street: Brugstraat 37a
+      postal_code: 1775 BD
+      city: Middenmeer
+      email: info@bierboetiek.nl
+    - name: Drankenhandel Nico Elings BV
+      url: https://www.nicoelings.nl/
+      street: De Buskes 8
+      postal_code: 5087 MA
+      city: Diessen
+      email: info@nicoelings.nl
+- region: Europe
+  distributors:
+    - name: Drikkeriget ApS
+      url: https://www.drikkeriget.dk/
+      street: Kirstinehøj 38B
+      postal_code: 2770
+      city: Kastrup
+      country: Denmark
+      email: info@drikkeriget.dk
+    - name: Brausturm Bierverlag GmbH
+      url: https://brausturm.de/en/
+      street: Eduardstraße 48
+      postal_code: 20257
+      city: Hamburg
+      country: Germany
+      email: kontakt@brausturm.de
+    - name: Distant Lands
+      url: https://www.distantlands.beer/
+      street: Unit 3, Convent Drive
+      postal_code: CB25 9QT
+      city: Waterbeach
+      country: England
+      email: ed@distantlands.beer
+    - name: Formidable Distrib Est
+      url: https://formidabledistribest.com/
+      street: 27 avenue de Metz
+      postal_code: 54320
+      city: Maxéville
+      country: France
+      email: contact@formidabledistribest.com
+    - name: GuruBeer
+      url: https://distrib.gurubeer.fr/
+      street: 280 rue de la marbrerie
+      postal_code: 34740
+      city: Vendargues
+      country: France
+      email: cecile@gurubeer.fr
+    - name: Yria Distribución
+      url: https://www.cervezasyria.com/en/
+      street: Calle Lisboa 6 nave 3
+      postal_code: 28342 Valdemoro
+      city: Madrid
+      country: Spain
+      email: yriadistribucion@cervezasyria.com
+    - name: Thurtalbräu
+      url: https://www.cervezasyria.com/en/
+      street: Ziegeleistrasse 6
+      postal_code: 8500
+      city: Frauenfeld
+      country: Switzerland
+      email: info@thurtalbraeu.ch
+
+

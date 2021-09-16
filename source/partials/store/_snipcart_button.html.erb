@@ -26,7 +26,8 @@ end
     "data-item-custom1-options": "#{sizes}",
     "data-item-custom1-value": first_available_size,
     "data-item-url": base_url + product.url,
-    "data-item-image": product_image do %>
+    "data-item-image": product_image,
+    "data-item-has-taxes-included": "true" do %>
     <%= t("webshop.add_to_cart") %>
   <% end %>
 <% else %>
@@ -38,7 +39,8 @@ end
     "data-item-name": product.title,
     "data-item-max-quantity": product.data.max_quantity,
     "data-item-url": base_url + product.url,
-    "data-item-image": product_image do %>
+    "data-item-image": product_image,
+    "data-item-has-taxes-included": "true" do %>
     <%= t("webshop.add_to_cart") %>
   <% end %>
 <% end %>

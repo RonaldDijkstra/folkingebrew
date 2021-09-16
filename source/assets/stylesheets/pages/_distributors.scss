@@ -1,0 +1,44 @@
+body.distributors {
+  .distributors {
+    .grid-row {
+      background: $white;
+
+      @include grid-media($for-desktop-up) {
+        margin-bottom: 4em;
+        padding: 4em 2em;
+      }
+
+      .distributors-wrapper {
+        @include grid-media($for-desktop-up) {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+
+      .row {
+        margin: 0 auto;
+        max-width: $smallest-row;
+      }
+    }
+
+    .distributor-item {
+      margin-bottom: 2em;
+
+      @include grid-media($for-desktop-up) {
+        flex: 1 0 50%;
+      }
+
+      h3 {
+        font-size: $base-font-size;
+
+        a {
+          font-weight: $font-weight-semibold;
+        }
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

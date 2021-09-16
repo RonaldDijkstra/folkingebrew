@@ -4,13 +4,18 @@ section.newsletter-subscribe {
   .grid-row {
     padding: 5em 1em;
   }
+
+  .newsletter-subscribe-form {
+    @include grid-media($for-desktop-up) {
+      justify-content: center;
+    }
+  }
 }
 
 .newsletter-subscribe-form {
   @include grid-media($for-desktop-up) {
     align-items: center;
     display: flex;
-    justify-content: center;
   }
 
   .newsletter-text {

@@ -11,9 +11,16 @@
           <h1>
             <%= current_article.title %>
           </h1>
-          <p class="description">
-            <%= current_article.data.description %>
-          </p>
+          <div class="description">
+            <p>
+              <%= current_article.data.description %>
+            </p>
+            <% if current_article.data.currently_available %>
+              <p>
+                <%= link_to "Buy this beer &raquo;", "#{current_article.data.webshop_link}" %>
+              </p>
+            <% end %>
+          </div>
           <div class="beer-facts">
               <% if current_article.data.abv %>
               <div class="beer-fact">
@@ -79,6 +86,5 @@
                                                text: t("beers.back_to_all_beers")} %>
     </div>
   </section>
-
-  <%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Subscribe" } %>
+  <%= partial "partials/shared/newsletter-subscribe", locals: { button_text: t("newsletter.subscribe") } %>
 <% end %>

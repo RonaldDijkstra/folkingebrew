@@ -1,7 +1,7 @@
 ---
 title: "Welcome to the Citra Show"
 date: 2020-05-11 08:00 CEST
-image: "beers/welcome-to-the-citra-show-dipa.png"
+image: "beers/welcome-to-the-citra-show.png"
 tags: DIPA
 ut_link: "https://untappd.com/b/folkingebrew-welcome-to-the-citra-show/3802655"
 blog_link:

@@ -5,11 +5,11 @@
         <div class="newsletter-subscribe-form">
           <div class="newsletter-text">
             <h3>
-              Get our newsletter for fresh beer, news and events
+              <%= t("newsletter.subscribe_title") %>
             </h3>
           </div>
           <div class="mc-field-group email-input">
-            <input type="email" value="" name="EMAIL" class="required email newsletter-input" id="mce-EMAIL" placeholder="email@example.com" required>
+            <input type="email" value="" name="EMAIL" class="required email newsletter-input" id="mce-EMAIL" placeholder="<%= t("form.email") %>" required>
           </div>
           <div class="mc-field-group input-group" style="display: none">
             <strong>type</strong>
