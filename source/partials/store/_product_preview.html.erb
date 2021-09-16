@@ -7,11 +7,13 @@
 <% link_to product.url, class: "product #{product.data.product_box_class}" do %>
   <div class="product-box">
     <div class="product-media">
-      <% if product_image %>
-        <%= image_tag product_image, alt: product.title, class: "product-image" %>
-      <% else %>
-        <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image" %>
-      <% end %>
+      <figure>
+        <% if product_image %>
+          <%= image_tag product_image, alt: product.title, class: "product-image", loading: "lazy" %>
+        <% else %>
+          <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image", loading: "lazy" %>
+        <% end %>
+      </figure>
     </div>
     <div class="product-content">
       <div class="title">
