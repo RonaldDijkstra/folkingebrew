@@ -84,31 +84,24 @@ header.site-header {
 
   .logo {
     background-color: transparent;
-    background-position: 50%;
     background-repeat: no-repeat;
-    background-size: contain;
     border: 0;
     color: transparent;
     display: block;
-    flex: 1 1 0;
     font: 0/0 a;
     height: 100%;
     opacity: 1;
     position: absolute;
     text-shadow: none;
-    transition: all 0.2s ease-in-out;
     width: 3.6rem;
     z-index: 20;
 
     @include grid-media($for-desktop-up) {
-      background-position: 0;
       flex: 1;
-      height: auto;
       position: relative;
     }
 
     @include grid-media($for-mobile) {
-      height: 100%;
       top: 50%;
     }
 
@@ -182,7 +175,7 @@ header.site-header {
           }
         }
 
-        a {
+        .root-link {
           align-items: center;
           color: $white;
           display: flex;
@@ -192,6 +185,7 @@ header.site-header {
           position: relative;
           text-decoration: none;
           transition: all 0.2s ease-in-out;
+          white-space: nowrap;
           width: 100%;
 
           &[aria-current]:not([aria-current="false"]),
