@@ -15,7 +15,7 @@ description: "Here you can buy the hooded sweater with Folkingebrew hop logo pri
 product_details: "Color: Black. 80% Cotton/20% Polyester, 400 gm/m²"
 sizes:
   - title: S
-    stock: true
+    stock: false
     lxb: "68 x 48"
   - title: M
     stock: true
