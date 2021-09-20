@@ -1,5 +1,6 @@
 ---
 title: "Deep Dive Pack"
+published: false
 id: 13
 price: 50
 old_price: 55.95
