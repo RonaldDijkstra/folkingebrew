@@ -12,19 +12,6 @@ almost_out_of_stock: true
 # out_of_stock:
 images:
   - "shop/folkingebrew-summer-in-the-city.jpg"
-# sizes:
-#   - title: S
-#     stock: true
-#   - title: M
-#     stock: true
-#   - title: L
-#     stock: true
-#   - title: XL
-#     stock: true
-#   - title: XXL
-#     stock: true
-#   - title: XXXL
-#     stock: true
 ---
 
 New England Style IPA (7.5%) with Citra Incognito, Citra and Nelson Sauvin.

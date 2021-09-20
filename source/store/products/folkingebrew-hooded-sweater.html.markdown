@@ -30,6 +30,8 @@ sizes:
     stock: true
     lxb: "80 x 68"
 size_image: "shop/size-image-sweater.png"
+# almost_out_of_stock: true
+# out_of_stock: true
 ---
 
 Hooded sweater with Folkingebrew hop logo printed on front left area and Folkingebrew wordmark on the back.
