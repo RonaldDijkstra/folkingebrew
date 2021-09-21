@@ -32,6 +32,8 @@ sizes:
     stock: true
     lxb: "80 x 71"
 size_image: "shop/size-image-tshirt.png"
+# almost_out_of_stock: true
+# out_of_stock: true
 ---
 
 Green t-shirt with Folkingebrew hop logo printed on the front and Folkingebrew wordmark on the back.

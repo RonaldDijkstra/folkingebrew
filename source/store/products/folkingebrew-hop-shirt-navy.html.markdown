@@ -13,7 +13,6 @@ images:
   - "shop/folkingebrew-t-shirt-hop-navy.jpg"
   - "shop/folkingebrew-t-shirt-hop-navy-2.jpg"
   - "shop/folkingebrew-t-shirt-hop-navy-3.jpg"
-
 sizes:
   - title: S
     stock: false
@@ -34,6 +33,8 @@ sizes:
     stock: true
     lxb: "80 x 71"
 size_image: "shop/size-image-tshirt.png"
+# almost_out_of_stock: true
+# out_of_stock: true
 ---
 
 Navy t-shirt with Folkingebrew hop logo printed on the front and Folkingebrew wordmark on the back.

@@ -10,20 +10,8 @@ images:
   - "shop/folkingebrew-cap-2.jpg"
   - "shop/folkingebrew-cap.jpg"
 description: "Here you can buy our black cap with white hop logo."
-# out_of_stock:
-# sizes:
-#   - title: S
-#     stock: true
-#   - title: M
-#     stock: true
-#   - title: L
-#     stock: true
-#   - title: XL
-#     stock: true
-#   - title: XXL
-#     stock: true
-#   - title: XXXL
-#     stock: true
+# almost_out_of_stock: true
+# out_of_stock: true
 ---
 
 Black cap with Folkingebrew hop logo on the front area.

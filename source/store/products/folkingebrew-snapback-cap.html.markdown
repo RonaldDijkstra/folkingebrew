@@ -11,19 +11,8 @@ description: "Here you can buy our black Snapback Cap with our hop logo on the f
 images:
   - "shop/folkingebrew-snapback.jpg"
 product_details: "Flat peak-style, Color: Black, 100% cotton"
-# sizes:
-#   - title: S
-#     stock: true
-#   - title: M
-#     stock: true
-#   - title: L
-#     stock: true
-#   - title: XL
-#     stock: true
-#   - title: XXL
-#     stock: true
-#   - title: XXXL
-#     stock: true
+# almost_out_of_stock: true
+# out_of_stock: true
 ---
 
 Snapback with our Folkingebrew hop logo on the front area.

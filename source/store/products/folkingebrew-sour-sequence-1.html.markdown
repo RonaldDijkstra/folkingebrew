@@ -11,6 +11,8 @@ images:
   - "shop/folkingebrew-sour-sequence-1.jpg"
 description: "Here you can buy Sour Sequence #1, our first Fruited Imperial Berliner Weisse. We conditioned the beer on hefty amounts of Mango, Guava and Passion Fruit."
 product_details: "Can date: 14-5-2021, Size: 44 CL"
+# almost_out_of_stock: true
+# out_of_stock: true
 ---
 
 Sour Sequence #1 is our first Fruited Imperial Berliner Weisse. We conditioned the beer on hefty amounts of Mango, Guava and Passion Fruit.
