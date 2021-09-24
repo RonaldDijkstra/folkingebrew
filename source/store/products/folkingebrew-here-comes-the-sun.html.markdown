@@ -11,7 +11,7 @@ product_details: "Can date: 9-6-2021, Size: 44 CL"
 images:
   - "shop/folkingebrew-here-comes-the-sun.jpg"
 # almost_out_of_stock: true
-out_of_stock: true
+# out_of_stock: true
 ---
 
 New England Style Double IPA (8.2%) with Galaxy, Eclipse, Mosaic, Mosaic Incognito.
