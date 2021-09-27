@@ -17,7 +17,7 @@ sizes:
     stock: false
     lxb: "69,5 x 48,5"
   - title: M
-    stock: true
+    stock: false
     lxb: "72 x 53,5"
   - title: L
     stock: true
