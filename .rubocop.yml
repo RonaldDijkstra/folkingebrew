@@ -1,9 +1,8 @@
-AllCops:
-  Exclude:
-    - "**/*.erb"
-
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
-
-MethodCallWithoutArgsParentheses:
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+Style/MixinUsage:
   Enabled: false

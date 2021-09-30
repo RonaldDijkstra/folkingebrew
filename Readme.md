@@ -6,7 +6,9 @@ Modern Craft Beer from Groningen since 2017 🍻
 
 ## About this website
 
-This website is built with [Middleman](https://middlemanapp.com/) with [Middleman Template by ThoughtBot](https://github.com/thoughtbot/middleman-template). This website is deployed to [Netlify](https://www.netlify.com/).
+This website is built with [Middleman](https://middlemanapp.com/) with [Middleman Template by ThoughtBot](https://github.com/thoughtbot/middleman-template) and uses Webpack as external pipeline. 
+
+This website is deployed to [Netlify](https://www.netlify.com/).
 
 ## Before Setup
 
@@ -18,9 +20,18 @@ This website is built with [Middleman](https://middlemanapp.com/) with [Middlema
 
     `brew install rbenv ruby-build`
 
--   Install Ruby 2.6.2
+-   Install Ruby 2.7.1
 
-    `rbenv install 2.6.2`
+    `rbenv install 2.6.1`
+
+-   Install NVM 
+
+    `brew install nvm`
+
+-   Install NPM 
+
+    `brew install --latest-npm`
+    
 
 ## Setup & Serve
 
