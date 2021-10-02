@@ -55,75 +55,83 @@ end
         <div class="product-description">
           <%= yield %>
         </div>
-        <div class="product-stock">
-          <p>
-            <% if current_article.data.out_of_stock %>
-              <%= t("webshop.out_of_stock") %>
-            <% elsif current_article.data.almost_out_of_stock %>
-              <%= t("webshop.almost_out_of_stock") %>
-            <% else %>
-              <%= t("webshop.in_stock") %>
-            <% end %>
-          </p>
-        </div>
-        <div class="product-form">
-          <% unless current_page.data.out_of_stock %>
-            <% if current_article.data.sizes %>
-              <div class="product-form-item product-sizes">
-                <label>
-                  Size
-                </label>
-                <div class="select">
-                  <select id="size" name="size">
-                    <% current_article.data.sizes.each do |size| %>
-                      <% if size.stock %>
-                        <option value="<%= size.title %>"><%= size.title %></option>
-                      <% else %>
-                        <option value="<%= size.title %>" disabled><%= size.title %> (Out of Stock)</option>
+        <% if config[:use_webshop?] %>
+          <div class="product-stock">
+            <p>
+              <% if current_article.data.out_of_stock %>
+                <%= t("webshop.out_of_stock") %>
+              <% elsif current_article.data.almost_out_of_stock %>
+                <%= t("webshop.almost_out_of_stock") %>
+              <% else %>
+                <%= t("webshop.in_stock") %>
+              <% end %>
+            </p>
+          </div>
+          <div class="product-form">
+            <% unless current_page.data.out_of_stock %>
+              <% if current_article.data.sizes %>
+                <div class="product-form-item product-sizes">
+                  <label>
+                    Size
+                  </label>
+                  <div class="select">
+                    <select id="size" name="size">
+                      <% current_article.data.sizes.each do |size| %>
+                        <% if size.stock %>
+                          <option value="<%= size.title %>"><%= size.title %></option>
+                        <% else %>
+                          <option value="<%= size.title %>" disabled><%= size.title %> (Out of Stock)</option>
+                        <% end %>
                       <% end %>
+                    </select>
+                  </div>
+                </div>
+              <% end %>
+              <% unless current_page.data.max_quantity == 1 %>
+                <div class="product-form-item product-quantity">
+                  <label>
+                     <%= t("webshop.quantity") %> <%= "(#{t("webshop.max")} #{current_article.data.max_quantity})" if current_article.data.max_quantity %>
+                  </label>
+                  <div class="quantity-controls">
+                    <% if current_article.data.max_quantity %>
+                      <input type="number" value="1" id="quantity" name="quantity" min="1" max="<%= current_article.data.max_quantity %>">
+                    <% else %>
+                      <input type="number" value="1" id="quantity" name="quantity" min="1">
                     <% end %>
-                  </select>
+                    <button type="button" class="quantity-adjust quantity-adjust--minus" aria-label="<%= t("webshop.reduce_with_one")%>">
+                      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-minus" viewBox="0 0 22 3"><path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path></svg>
+                      <span class="icon-fallback-text">−</span>
+                    </button>
+                    <button type="button" class="quantity-adjust quantity-adjust--plus" aria-label="Increase item quantity by one">
+                      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-plus" viewBox="0 0 22 21"><path d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill="#000" fill-rule="evenodd"></path></svg>
+                      <span class="icon-fallback-text">+</span>
+                    </button>
+                  </div>
                 </div>
+              <% end %>
+            <% end %>
+            <% if current_article.data.out_of_stock %>
+              <div class="webshop-newsletter">
+                <h3>
+                   <%= t("newsletter.title") %>
+                </h3>
+                <p class="out-of-stock">
+                  <%= t("newsletter.sub_title") %>
+                <%= partial "partials/shared/newsletter-form", locals: { button_text: "Subscribe" } %>
+              </div>
+            <% else %>
+              <div class="product-form-item product-add-to-cart">
+                <%= partial "partials/store/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
               </div>
             <% end %>
-            <% unless current_page.data.max_quantity == 1 %>
-              <div class="product-form-item product-quantity">
-                <label>
-                   <%= t("webshop.quantity") %> <%= "(#{t("webshop.max")} #{current_article.data.max_quantity})" if current_article.data.max_quantity %>
-                </label>
-                <div class="quantity-controls">
-                  <% if current_article.data.max_quantity %>
-                    <input type="number" value="1" id="quantity" name="quantity" min="1" max="<%= current_article.data.max_quantity %>">
-                  <% else %>
-                    <input type="number" value="1" id="quantity" name="quantity" min="1">
-                  <% end %>
-                  <button type="button" class="quantity-adjust quantity-adjust--minus" aria-label="<%= t("webshop.reduce_with_one")%>">
-                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-minus" viewBox="0 0 22 3"><path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path></svg>
-                    <span class="icon-fallback-text">−</span>
-                  </button>
-                  <button type="button" class="quantity-adjust quantity-adjust--plus" aria-label="Increase item quantity by one">
-                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-plus" viewBox="0 0 22 21"><path d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill="#000" fill-rule="evenodd"></path></svg>
-                    <span class="icon-fallback-text">+</span>
-                  </button>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-          <% if current_article.data.out_of_stock %>
-            <div class="webshop-newsletter">
-              <h3>
-                 <%= t("newsletter.title") %>
-              </h3>
-              <p class="out-of-stock">
-                <%= t("newsletter.sub_title") %>
-              <%= partial "partials/shared/newsletter-form", locals: { button_text: "Subscribe" } %>
-            </div>
-          <% else %>
-            <div class="product-form-item product-add-to-cart">
-              <%= partial "partials/store/_snipcart_button", locals: { product: current_article, variant: "medium-size solid green buy-button" } %>
-            </div>
-          <% end %>
-        </div>
+          </div>
+        <% else %>
+          <div class="webshop-vacation">
+            <p>
+              <%= t("webshop.vacation") %>
+            </p>
+          </div>
+        <% end %>
         <div class="product-details">
           <ul class="accordion">
             <% if current_article.data.product_details %>

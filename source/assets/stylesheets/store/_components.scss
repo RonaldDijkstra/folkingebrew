@@ -36,6 +36,18 @@
   width: 100%;
 }
 
+.webshop-vacation {
+  background: $orange;
+  margin-bottom: $base-spacing;
+  padding: 1.2em;
+
+  p {
+    color: $white;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
+
 section.products {
   .grid-row {
     margin-left: auto;

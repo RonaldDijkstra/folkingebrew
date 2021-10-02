@@ -7,11 +7,7 @@ pageable: true
 <header class="normal-page-header">
   <div class="grid-row">
     <h1>
-      <% if config[:use_webshop?] %>
-        <%= t("pages.store.title") %>
-      <% else %>
-        <%= t("pages.store.coming_soon") %>
-      <% end %>
+      <%= t("pages.store.title") %>
     </h1>
   </div>
 </header>
@@ -36,11 +32,10 @@ pageable: true
         </div>
       <% end %>
     <% else %>
-      <div class="message">
+      <div class="webshop-vacation">
         <p>
-          <%= t("webshop.soon") %>
+          <%= t("webshop.vacation") %>
         </p>
-        <%= partial "partials/shared/newsletter-subscribe", locals: { button_text: t("newsletter.subscribe")} %>
       </div>
     <% end %>
   </div>
