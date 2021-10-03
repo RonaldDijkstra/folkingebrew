@@ -1,9 +1,9 @@
 {
-  "name": "middleman-webpack",
-  "version": "1.0.0-alpha",
-  "description": "🏗 Scalable ready-to-use Middleman 4 template",
-  "repository": "https://github.com/gabrielecanepa/middleman-webpack",
-  "author": "Gabriele Canepa <gabriele@canepa.io>",
+  "name": "folkingebrew",
+  "version": "1.0.0",
+  "description": "Static website for Folkingebrew, Modern Craft Beer from Groningen since 2017",
+  "repository": "https://github.com/RonaldDijkstra/folkingebrew/",
+  "author": "Ronald Dijkstra",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.1.5",

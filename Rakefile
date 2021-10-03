@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rainbow'
 
 def project_name

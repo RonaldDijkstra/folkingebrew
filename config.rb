@@ -161,7 +161,7 @@ configure :build do
   # Raise exception for missing translations during build
   require "lib/test_exception_localization_handler"
 
-   I18n.exception_handler = TestExceptionLocalizationHandler.new
+  I18n.exception_handler = TestExceptionLocalizationHandler.new
 end
 
 ready do
