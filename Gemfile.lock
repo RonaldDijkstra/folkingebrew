@@ -128,7 +128,7 @@ GEM
     public_suffix (4.0.6)
     racc (1.5.2)
     rack (2.2.3)
-    rails-assets-jquery (3.4.1)
+    rails-assets-jquery (3.6.0)
     rails-assets-jquery.scrollTo (2.1.2)
       rails-assets-jquery (>= 1.8)
     rails-assets-js-cookie (2.2.1)
