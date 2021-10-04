@@ -11,6 +11,9 @@ module.exports = {
     site: [
       path.resolve(__dirname, './source/assets/javascripts/index.js'),
       path.resolve(__dirname, './source/assets/stylesheets/all.css.scss')
+    ],
+    snipcart: [
+      path.resolve(__dirname, './source/assets/stylesheets/snipcart.css.scss')
     ]
   },
 

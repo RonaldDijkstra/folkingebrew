@@ -9,11 +9,7 @@ set -e
 gem install bundler --conservative
 bundle check || bundle install
 
-# Set up NPM Dependencies
-npm install
-
-# Set up Yarn Dependencies
-npm install yarn 
+# Set up Node packages
 yarn install
 
 # Set up development environment config
