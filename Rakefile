@@ -62,21 +62,9 @@ task :build do
   system "bundle exec middleman build --verbose" || exit(1)
 end
 
-# Test Suite
-namespace :test do
-  def test(test)
-    puts Rainbow("== Project: " + project_name)
-    puts Rainbow("== Test: #{test}")
-  end
-
-  task :html do
-    test :html
-    system "bundle exec middleman build --verbose"
-    system "ruby test.rb"
-  end
-
-  task :ruby do
-    test :ruby
-    system "rubocop"
-  end
+# HTML Proofer to test static output
+task :proof do
+  puts Rainbow("== Project: " + project_name)
+  system "bundle exec middleman build --verbose" || exit(1)
+  system "ruby test.rb"
 end
