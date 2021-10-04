@@ -1,0 +1,46 @@
+{
+  "name": "folkingebrew",
+  "version": "1.0.0",
+  "description": "Static website for Folkingebrew, Modern Craft Beer from Groningen since 2017",
+  "repository": "https://github.com/RonaldDijkstra/folkingebrew/",
+  "author": "Ronald Dijkstra",
+  "license": "MIT",
+  "browserslist": ">0.25%, not ie 11, not op_mini all, not dead",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.14.7",
+    "assets-webpack-plugin": "^5.1.2",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.2",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^1.6.2",
+    "node-sass": "^4.14.1",
+    "postcss": "^8.3.8",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^4.0.3",
+    "postcss-preset-env": "^6.3.0",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.12.0",
+    "stylelint-config-recommended-scss": "^4.1.0",
+    "stylelint-scss": "^3.19.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.7.3"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development ./node_modules/webpack/bin/webpack.js --watch -d --color",
+    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --bail -p"
+  },
+  "dependencies": {
+    "bourbon": "^7.0.0",
+    "bourbon-neat": "^4.0.0",
+    "jquery": "^3.6.0",
+    "jquery.scrollto": "^2.1.3",
+    "js-cookie": "^3.0.1",
+    "what-input": "^5.2.10"
+  }
+}

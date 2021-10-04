@@ -1,6 +1,8 @@
 .env
-.bundle
 .DS_Store
-.sass-cache
-build/
-netlifyctl-debug.log
+*.bundle
+*.cache
+*.log
+build
+dist
+node_modules

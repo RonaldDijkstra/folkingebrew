@@ -4,39 +4,20 @@ source "https://rubygems.org"
 
 # Middleman Core & Extensions
 gem "middleman"
-gem "middleman-autoprefixer", "~> 3.0.0"
+gem "middleman-autoprefixer"
 gem "middleman-blog"
-gem "middleman-dotenv", "~> 2.0"
+gem "middleman-dotenv"
+gem "middleman-livereload"
 gem "middleman-inline_svg"
 gem "middleman-minify-html"
-gem "middleman-sprockets"
+gem "middleman-pry"
+gem "middleman-robots"
 
-# Templating Engines
+# Development
 gem "builder"
-gem "sassc"
-
-# Feed
-gem "nokogiri"
-gem "rss"
-
-# Asset Pipeline Gems
-gem "bourbon"
-gem "neat"
-
-# Extensions
 gem "html-proofer"
-gem "rake"
 gem "kramdown-parser-gfm"
-
-# Frontend
-source "https://rails-assets.org" do
-  gem "rails-assets-jquery"
-  gem "rails-assets-jquery.scrollTo"
-  gem "rails-assets-js-cookie"
-  gem "rails-assets-what-input"
-end
-
-# Linters (not required)
-gem "rubocop", require: false
-# gem "rubocop-performance", require: false
-gem "scss_lint", require: false
+gem "nokogiri"
+gem "pry-byebug"
+gem "rake"
+gem "rubocop"
