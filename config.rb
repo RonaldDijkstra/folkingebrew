@@ -20,12 +20,16 @@ set :production, production
 activate :i18n, mount_at_root: root_locale, langs: %i[en]
 
 # Load Sass from node_modules
-config[:sass_assets_paths] << File.join(root, "node_modules")
+# config[:sass_assets_paths] << File.join(root, "node_modules")
 
 set :css_dir,    "assets/stylesheets"
 set :fonts_dir,  "assets/fonts"
 set :images_dir, "assets/images"
 set :js_dir,     "assets/javascripts"
+
+# Handled by Webpack
+ignore File.join(config[:js_dir], '*')
+ignore File.join(config[:css_dir], '*')
 
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
@@ -65,7 +69,6 @@ set :markdown, input: "GFM",
 page "/*.xml",  layout: false
 page "/*.json", layout: false
 page "/*.txt",  layout: false
-
 
 # With layout
 page "blog/index.html", layout: :blog_index
@@ -145,7 +148,8 @@ configure :development do
 end
 
 configure :build do
-  ignore   File.join(config[:js_dir], "*") # handled by webpack
+  # ignore   File.join(config[:js_dir], "*") # handled by webpack
+  # ignore   File.join(config[:css_dir], "*") # handled by webpack
   set      :asset_host, @app.data.site.base_url
   set      :relative_links, true
   activate :asset_hash, ignore: [
