@@ -28,8 +28,8 @@ set :images_dir, "assets/images"
 set :js_dir,     "assets/javascripts"
 
 # Handled by Webpack
-# ignore File.join(config[:js_dir], '*')
-# ignore File.join(config[:css_dir], '*')
+ignore File.join(config[:js_dir], '*')
+ignore File.join(config[:css_dir], '*')
 
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
