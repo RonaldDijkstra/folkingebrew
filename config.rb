@@ -48,6 +48,9 @@ activate :dotenv
 activate :directory_indexes
 activate :inline_svg
 
+# Activate DatoCMS
+activate :dato, preview: true, live_reload: true
+
 # Use Webshop?
 set :use_webshop?, false
 
@@ -57,11 +60,11 @@ set :ga_code, "UA-24956010-7"
 # Ignore the selection file for Icomoon
 ignore "assets/fonts/selection.json"
 
-# Use kramdown for markdown
+# Use redcarpet for redcarpet
 # https://kramdown.gettalong.org/
-set :markdown_engine, :kramdown
-set :markdown, input: "GFM",
-               auto_ids: true
+set :markdown_engine, :redcarpet
+# set :markdown, input: "GFM",
+#                auto_ids: true
 
 # Layouts
 # https://middlemanapp.com/basics/layouts

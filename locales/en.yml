@@ -47,8 +47,6 @@ en:
     x404:
       title: "404 - Page not found"
       message: "Sorry, we couldn't find that page."
-    about:
-      title: "About us"
     beers:
       title: "Our Beers | Page %{page_number}/%{num_pages} | Folkingebrew"
       meta_description: "View all our beer releases | Page %{page_number}/%{num_pages}."
