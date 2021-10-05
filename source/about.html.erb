@@ -1,19 +1,18 @@
 ---
 title: "About Us"
 description: "We are beer geeks who turned brewer, because of our love for the great, versatile product that is beer."
-sitemap_priority: 0.8
 ---
 <header class="normal-page-header">
   <div class="grid-row">
     <h1>
-      <%= t("pages.about.title") %>
+      <%= dato.about_page.title %>
     </h1>
   </div>
 </header>
 <section class="about-us medium-row">
   <div class="grid-row">
     <div class="row">
-      <%= partial "content/about-us" %>
+      <%= markdownify(dato.about_page.content) %>
     </div>
   </div>
 </section>

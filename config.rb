@@ -48,6 +48,9 @@ activate :dotenv
 activate :directory_indexes
 activate :inline_svg
 
+# Activate DatoCMS
+activate :dato, preview: true, live_reload: true
+
 # Use Webshop?
 set :use_webshop?, false
 
