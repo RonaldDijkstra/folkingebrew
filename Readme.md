@@ -34,3 +34,4 @@ Production: https://www.folkingebrew.nl
 2. [Middleman Template by ThoughtBot](https://github.com/thoughtbot/middleman-template) (includes [Bourbon](https://github.com/thoughtbot/bourbon) + [Neat](https://github.com/thoughtbot/neat) + [Bitters](https://github.com/thoughtbot/bitters))
 3. [Webpack Middleman Starter by Gabriele Canepa ](https://github.com/gabrielecanepa/middleman-webpack)
 4. [HTML Proofer](https://github.com/gjtorikian/html-proofer)
+5. [Snipcart](https://snipcart.com)
