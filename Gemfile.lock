@@ -157,6 +157,8 @@ GEM
     middleman-minify-html (3.4.1)
       htmlcompressor (~> 0.2.0)
       middleman-core (>= 3.2)
+    middleman-paginate (0.1.6)
+      middleman-core (>= 4.0.0)
     middleman-pry (1.0.2)
       middleman (>= 3.3, < 5)
       pry (~> 0.9)
@@ -250,6 +252,7 @@ DEPENDENCIES
   middleman-inline_svg
   middleman-livereload
   middleman-minify-html
+  middleman-paginate
   middleman-pry
   middleman-robots
   nokogiri
