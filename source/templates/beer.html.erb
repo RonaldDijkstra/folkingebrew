@@ -1,0 +1,87 @@
+<% content_for(:page_class) do %>
+  beer-show
+<% end %>
+
+<section class="beer wide-row">
+  <div class="grid-row beer-item">
+    <div class="beer-image background-<%= beer.background_color %>">
+      <div class="image-wrap">
+        <%= image_tag beer.image.url(fm: 'png', auto: 'compress', class: "image") %>
+      </div>
+    </div>
+    <div class="beer-text">
+      <div>
+        <h1>
+          <%= beer.title %>
+        </h1>
+        <div class="description">
+          <p>
+            <%= beer.short_description %>
+          </p>
+        </div>
+        <div class="beer-facts">
+            <% if beer.abv %>
+            <div class="beer-fact">
+              <span class="beer-fact-value beer-fact-abv"><%= beer.abv %></span>
+              <span class="beer-fact-label"><%= t("beers.facts.abv") %></span>
+            </div>
+          <% end %>
+          <% if beer.style %>
+            <div class="beer-fact">
+              <span class="beer-fact-value"><%= beer.style %></span>
+              <span class="beer-fact-label"><%= t("beers.facts.style") %></span>
+            </div>
+          <% end %>
+          <% unless beer.hops.strip.empty? %>
+            <div class="beer-fact">
+              <span class="beer-fact-value"><%= beer.hops %></span>
+              <span class="beer-fact-label"><%= t("beers.facts.hops") %></span>
+            </div>
+          <% end %>
+          <% unless beer.fruits.strip.empty? %>
+            <div class="beer-fact">
+              <span class="beer-fact-value"><%= beer.fruits %></span>
+              <span class="beer-fact-label"><%= t("beers.facts.fruits") %></span>
+            </div>
+          <% end %>
+          <% unless beer.malts.strip.empty? %>
+            <div class="beer-fact">
+              <span class="beer-fact-value"><%= beer.malts %></span>
+              <span class="beer-fact-label"><%= t("beers.facts.malts") %></span>
+            </div>
+          <% end %>
+          <% unless beer.adjuncts.strip.empty? %>
+            <div class="beer-fact">
+              <span class="beer-fact-value"><%= beer.adjuncts %></span>
+              <span class="beer-fact-label"><%= t("beers.facts.adjuncts") %></span>
+            </div>
+          <% end %>
+          <% unless beer.yeast.strip.empty? %>
+            <div class="beer-fact">
+              <span class="beer-fact-value"><%= beer.yeast %></span>
+              <span class="beer-fact-label"><%= t("beers.facts.yeast") %></span>
+            </div>
+          <% end %>
+          <% if beer.release_month %>
+            <div class="beer-fact">
+               <span class="beer-fact-value"><%= beer.release_month %></span>
+              <span class="beer-fact-label"><%= t("beers.facts.release_date") %></span>
+            </div>
+          <% end %>
+        </div>
+        <% if beer.untappd_link %>
+          <div class="ut-link">
+            <a href="<%= beer.untappd_link %>" class="icon-untappd" target="_blank"></a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="grid-row back-link">
+    <%= partial "partials/button", locals: { to: "/beers/index.html",
+                                             variant: "medium-size solid green",
+                                             icon_left: "icons/arrow-left.svg",
+                                             text: t("beers.back_to_all_beers")} %>
+  </div>
+</section>
+<%= partial "partials/shared/newsletter-subscribe", locals: { button_text: t("newsletter.subscribe") } %>

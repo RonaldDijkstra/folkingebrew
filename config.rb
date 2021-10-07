@@ -78,8 +78,6 @@ page "/*.txt",  layout: false
 # With layout
 page "blog/index.html", layout: :blog_index
 page "blog/*", layout: :blog_show
-# page "beers/index.html", layout: :beer_index
-# page "beers/*", layout: :beer_show
 page "store/index.html", layout: :store_index
 page "store/*", layout: :store_product_detail
 
@@ -171,6 +169,13 @@ end
 
 dato.tap do |dato|
   paginate dato.beers, "/beers", "/templates/beers.html", per_page: 2
+
+  dato.beers.each do |beer| 
+    proxy "/beers/#{beer.slug}/index.html", 
+          "/templates/beer.html", 
+          locals: { beer: beer },
+          ignore: true
+  end 
 end 
 
 ignore "/templates/beers.html.erb"
