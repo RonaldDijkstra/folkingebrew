@@ -1,9 +1,13 @@
-# Folkingebrew
-
 [![CircleCI branch](https://img.shields.io/circleci/project/github/RonaldDijkstra/folkingebrew/master.svg)](https://circleci.com/gh/RonaldDijkstra/folkingebrew)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5eb7a73a-3aef-4f12-ac97-b957b5a24222/deploy-status)](https://app.netlify.com/sites/folkingebrew/deploys)
 
-Modern Craft Beer from Groningen since 2017 🍻. 
+# Folkingebrew
+
+Modern Craft Beer from Groningen since 2017. 
+
+## About 
+
+This website is built with Middleman and Thoughtbot’s Middleman Template. It uses Webpack as external pipeline and deploys to Netlify. It uses DatoCMS for content delivery and Snipcart for the cart. 
 
 Production: https://www.folkingebrew.nl
 
@@ -13,25 +17,23 @@ Production: https://www.folkingebrew.nl
 - Bundler
 - Node
 - Yarn
+- Get API keys at DatoCMS and Snipcart. 
 
 ## Quick Start 
 
-1. Make sure you have all the prerequisites above installed
+1. Make sure you have all the prerequisites above installed or registered
 2. Clone this repo using `git clone https://github.com/RonaldDijkstra/folkingebrew.git`
 3. Move to the appropriate directory: `cd folkingebrew`
 4. Run `bin/setup` (make sure it's executable)
-
-## Rake Tasks 
-
-1. Run `rake serve`. You should now be able to view the website at <http://localhost:4567>
-2. Build `rake build`. Build the website to the Build folder. 
-3. Proof `rake proof`. Use HTML Proofer to check the Output in the Build folder.
-4. Linters `rake default`.
+5. Add your `DATO_API_TOKEN` and `SNIPCART_API_KEY` to .env
+6. Start your local server with `rake serve`
+7. View your website at `localhost:4567`
 
 ## Thanks to 
 
 1. [Middleman](https://middlemanapp.com/) 
 2. [Middleman Template by ThoughtBot](https://github.com/thoughtbot/middleman-template) (includes [Bourbon](https://github.com/thoughtbot/bourbon) + [Neat](https://github.com/thoughtbot/neat) + [Bitters](https://github.com/thoughtbot/bitters))
-3. [Webpack Middleman Starter by Gabriele Canepa ](https://github.com/gabrielecanepa/middleman-webpack)
+3. [Webpack Middleman Starter](https://github.com/gabrielecanepa/middleman-webpack) by Gabriele Canepa
 4. [HTML Proofer](https://github.com/gjtorikian/html-proofer)
 5. [Snipcart](https://snipcart.com)
+6. [DatoCMS](https://www.datocms.com/)
