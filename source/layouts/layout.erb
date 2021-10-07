@@ -8,7 +8,7 @@
     <meta name="description" content="<%= meta_description %>">
     <meta name="robots" content="<%= robots %>">
     <%= partial "partials/meta/favicon" %>
-    <%= stylesheet_link_tag "site" %>
+    <%= stylesheet_link_tag "all" %>
     <% if production? %>
       <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css" %>
     <% else %>
@@ -24,7 +24,7 @@
       <%= yield %>
     </main>
     <%= partial "partials/shared/footer" %>
-    <%= javascript_include_tag "site" %>
+    <%= javascript_include_tag "bundle" %>
     <%= partial "partials/meta/analytics" if config[:ga_code] %>
     <%= partial "partials/meta/schema" if current_page.url == "/" %>
     <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>">
