@@ -168,7 +168,7 @@ ready do
 end
 
 dato.tap do |dato|
-  paginate dato.beers, "/beers", "/templates/beers.html", per_page: 2
+  paginate dato.beers, "/beers", "/templates/beers.html", per_page: 12
 
   dato.beers.each do |beer| 
     proxy "/beers/#{beer.slug}/index.html", 
