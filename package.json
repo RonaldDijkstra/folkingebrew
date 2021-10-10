@@ -5,7 +5,7 @@
   "repository": "https://github.com/RonaldDijkstra/folkingebrew/",
   "author": "Ronald Dijkstra",
   "license": "MIT",
-  "browserslist": ">0.25%, not ie 11, not op_mini all, not dead",
+  "browserslist": "last 4 versions",
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.14.7",
@@ -36,6 +36,7 @@
     "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --bail -p"
   },
   "dependencies": {
+    "autoprefixer": "^10.3.7",
     "bourbon": "^7.0.0",
     "bourbon-neat": "^4.0.0",
     "jquery": "^3.6.0",
