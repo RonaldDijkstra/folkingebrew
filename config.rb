@@ -52,7 +52,7 @@ activate :inline_svg
 activate :dato, preview: true, live_reload: true
 
 # Use Webshop?
-set :use_webshop?, false
+set :use_webshop?, true
 
 # Set Google Analytics id
 set :ga_code, "UA-24956010-7"
