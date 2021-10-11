@@ -22,8 +22,6 @@ module ApplicationHelpers
     if is_blog_article?
       if current_page.url.start_with?("/blog/")
         [current_page.data.title, "Blog"].join(" | ")
-      elsif current_page.url.start_with?("/beers/")
-        [current_page.data.title, "Our Beers"].join(" | ")
       elsif current_page.url.start_with?("/store/")
         [current_page.data.title, "Store"].join(" | ")
       end
@@ -106,8 +104,6 @@ module ApplicationHelpers
     if is_blog_article?
       if current_page.url.start_with?("/blog/")
         "blog-article"
-      elsif current_page.url.start_with?("/beers/")
-        "beer-show"
       elsif current_page.url.start_with?("/store/")
         "product-detail"
       end

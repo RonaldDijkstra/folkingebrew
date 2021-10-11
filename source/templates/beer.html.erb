@@ -15,10 +15,10 @@
     </div>
     <div class="beer-text">
       <div>
-        <h1>
+        <h1 class="beer-title">
           <%= beer.title %>
         </h1>
-        <div class="description">
+        <div class="beer-description">
           <p>
             <%= beer.short_description %>
           </p>
@@ -26,57 +26,55 @@
         <div class="beer-facts">
             <% if beer.abv %>
             <div class="beer-fact">
-              <span class="beer-fact-value beer-fact-abv"><%= beer.abv %> %</span>
-              <span class="beer-fact-label"><%= t("beers.facts.abv") %></span>
+              <div class="beer-fact-value beer-fact-abv"><%= beer.abv %>%</div>
+              <div class="beer-fact-label"><%= t("beers.facts.abv") %></div>
             </div>
           <% end %>
           <% if beer.style %>
             <div class="beer-fact">
-              <span class="beer-fact-value"><%= beer.style %></span>
-              <span class="beer-fact-label"><%= t("beers.facts.style") %></span>
+              <div class="beer-fact-value"><%= beer.style %></div>
+              <div class="beer-fact-label"><%= t("beers.facts.style") %></div>
             </div>
           <% end %>
           <% unless beer.hops.strip.empty? %>
             <div class="beer-fact">
-              <span class="beer-fact-value"><%= beer.hops %></span>
-              <span class="beer-fact-label"><%= t("beers.facts.hops") %></span>
+              <div class="beer-fact-value"><%= beer.hops %></div>
+              <div class="beer-fact-label"><%= t("beers.facts.hops") %></div>
             </div>
           <% end %>
           <% unless beer.fruits.strip.empty? %>
             <div class="beer-fact">
-              <span class="beer-fact-value"><%= beer.fruits %></span>
-              <span class="beer-fact-label"><%= t("beers.facts.fruits") %></span>
+              <div class="beer-fact-value"><%= beer.fruits %></div>
+              <div class="beer-fact-label"><%= t("beers.facts.fruits") %></div>
             </div>
           <% end %>
           <% unless beer.malts.strip.empty? %>
             <div class="beer-fact">
-              <span class="beer-fact-value"><%= beer.malts %></span>
-              <span class="beer-fact-label"><%= t("beers.facts.malts") %></span>
+              <div class="beer-fact-value"><%= beer.malts %></div>
+              <div class="beer-fact-label"><%= t("beers.facts.malts") %></div>
             </div>
           <% end %>
           <% unless beer.adjuncts.strip.empty? %>
             <div class="beer-fact">
-              <span class="beer-fact-value"><%= beer.adjuncts %></span>
-              <span class="beer-fact-label"><%= t("beers.facts.adjuncts") %></span>
+              <div class="beer-fact-value"><%= beer.adjuncts %></div>
+              <div class="beer-fact-label"><%= t("beers.facts.adjuncts") %></div>
             </div>
           <% end %>
           <% unless beer.yeast.strip.empty? %>
             <div class="beer-fact">
-              <span class="beer-fact-value"><%= beer.yeast %></span>
-              <span class="beer-fact-label"><%= t("beers.facts.yeast") %></span>
+              <div class="beer-fact-value"><%= beer.yeast %></div>
+              <div class="beer-fact-label"><%= t("beers.facts.yeast") %></div>
             </div>
           <% end %>
           <% if beer.release_month %>
             <div class="beer-fact">
-               <span class="beer-fact-value"><%= beer.release_month %></span>
-              <span class="beer-fact-label"><%= t("beers.facts.release_date") %></span>
+              <div class="beer-fact-value"><%= beer.release_month %></div>
+              <div class="beer-fact-label"><%= t("beers.facts.release_date") %></div>
             </div>
           <% end %>
         </div>
         <% if beer.untappd_link %>
-          <div class="ut-link">
-            <a href="<%= beer.untappd_link %>" class="icon-untappd" target="_blank"></a>
-          </div>
+          <a href="<%= beer.untappd_link %>" class="icon-action-color icon-untappd" target="_blank"></a>
         <% end %>
       </div>
     </div>
