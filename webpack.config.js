@@ -1,43 +1,36 @@
 const path = require('path');
-var webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const glob = require('glob');
+const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const env = process.env.NODE_ENV;
+const filename = env === 'production' ? '[name].[contenthash]' : '[name]';
 
 module.exports = {
 
   entry: {
-    javascript: [
-      path.resolve(__dirname, './source/assets/javascripts/index.js')
-    ],
-    all: [
-      path.resolve(__dirname, './source/assets/stylesheets/all.css.scss')
-    ],
-    snipcart: [
-      path.resolve(__dirname, './source/assets/stylesheets/snipcart.css.scss')
-    ]
+    main: path.resolve(__dirname, './source/assets/javascripts/index.js'),
+    snipcart: path.resolve(__dirname, './source/assets/javascripts/snipcart.js')
   },
 
   output: {
     path: `${__dirname}/dist`,
-    filename: '[name].bundle.js'
+    filename: `${filename}.js`
   },
 
   module: {
-
     rules: [
-
       {
         test: /\.m?js$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader'
       },
-
       {
         test: /\.(sa|sc|c)ss$/,
         exclude: /node_modules/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       },
-
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
@@ -63,23 +56,18 @@ module.exports = {
           }
         ]
       }
-    
     ]
-  
   },
 
   plugins: [
 
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: `${filename}.css`
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-    }),
-
-    new MiniCssExtractPlugin({
-      filename: '[name].bundle.css'
-    }),
-
-    new CleanWebpackPlugin()
-  
-  ],
+    })
+  ]
 };

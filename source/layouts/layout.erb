@@ -8,7 +8,10 @@
     <meta name="description" content="<%= meta_description %>">
     <meta name="robots" content="<%= robots %>">
     <%= partial "partials/meta/favicon" %>
-    <%= stylesheet_link_tag "all.bundle" %>
+    <%# Getting the assets generated from webpack. Using a regex because of asset hashes%>
+    <% sitemap.resources.select {|resource| resource.path =~ /^(main).css/}.each do |resource| %>
+      <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
+    <% end %>
     <% if production? %>
       <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css" %>
     <% else %>
@@ -18,14 +21,15 @@
     <%= partial "partials/meta/open_graph" %>
     <%= feed_tag :atom, "#{blog("blog").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
-  <body class="
-    <%= page_classes %> <%= current_resource.data.header_class %> <%= article_class %> <%= content_for?(:page_class) ? yield_content(:page_class) : "" %> at-the-top">
+  <body class="<%= page_classes %> <%= current_resource.data.header_class %> <%= article_class %> <%= content_for?(:page_class) ? yield_content(:page_class) : "" %> at-the-top">
     <%= partial "partials/shared/header" %>
     <main class="main" role="main">
       <%= yield %>
     </main>
     <%= partial "partials/shared/footer" %>
-    <%= javascript_include_tag "javascript.bundle" %>
+    <% sitemap.resources.select {|resource| resource.path =~ /^(?!.*txt)(main).js/}.each do |resource| %>
+      <%= javascript_include_tag resource.path, async: true %>
+    <% end %>
     <%= partial "partials/meta/analytics" if config[:ga_code] %>
     <%= partial "partials/meta/schema" if current_page.url == "/" %>
     <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>">
@@ -36,7 +40,9 @@
     <% else %>
       <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js"></script>
     <% end %>
-    <%= stylesheet_link_tag "snipcart.bundle" %>
+    <% sitemap.resources.select {|resource| resource.path =~ /^(?!.*txt)(snipcart).css/}.each do |resource| %>
+      <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
+    <% end %>
     <%= partial "partials/shared/age-gate" if production? %>
   </body>
 </html>
