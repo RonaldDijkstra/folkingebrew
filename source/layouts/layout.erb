@@ -8,9 +8,12 @@
     <meta name="description" content="<%= meta_description %>">
     <meta name="robots" content="<%= robots %>">
     <%= partial "partials/meta/favicon" %>
-    <%# Getting the assets generated from webpack. Using a regex because of asset hashes%>
-    <% sitemap.resources.select {|resource| resource.path =~ /^(main).css/}.each do |resource| %>
-      <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
+
+    <%# Getting the main stylesheet generated from webpack. Using a regex because of asset hashes %>
+    <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
+      <% if resource.path =~ /\.(css)/ %>
+        <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
+      <% end %>
     <% end %>
     <% if production? %>
       <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css" %>
@@ -27,8 +30,10 @@
       <%= yield %>
     </main>
     <%= partial "partials/shared/footer" %>
-    <% sitemap.resources.select {|resource| resource.path =~ /^(?!.*txt)(main).js/}.each do |resource| %>
-      <%= javascript_include_tag resource.path, async: true %>
+    <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
+      <% if resource.path =~ /\.(js)/ %>
+        <%= javascript_include_tag resource.path, async: true %>
+      <% end %>
     <% end %>
     <%= partial "partials/meta/analytics" if config[:ga_code] %>
     <%= partial "partials/meta/schema" if current_page.url == "/" %>
@@ -40,8 +45,10 @@
     <% else %>
       <script src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js"></script>
     <% end %>
-    <% sitemap.resources.select {|resource| resource.path =~ /^(?!.*txt)(snipcart).css/}.each do |resource| %>
-      <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
+    <% sitemap.resources.select {|resource| resource.path =~ /^(snipcart).*$/}.each do |resource| %>
+      <% if resource.path =~ /\.(css)/ %>
+        <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
+      <% end %>
     <% end %>
     <%= partial "partials/shared/age-gate" if production? %>
   </body>
