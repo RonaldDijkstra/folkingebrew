@@ -1,0 +1,47 @@
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.beer_index) %>
+<% end %>
+
+<header class="normal-page-header">
+  <div class="grid-row">
+    <h1>
+      <%= t("beers.title") %>
+    </h1>
+  </div>
+</header>
+<section class="beers wide-row">
+  <div class="grid-row">
+    <div class="beer-grid-wrap">
+      <div class="beer-grid feed">
+        <div class="row">
+          <% items.each do |beer| %>
+            <div class="beer-wrap excerpt-box-wrap">
+              <a href="/beers/<%= beer.slug %>/" class="beer excerpt-box background-<%= beer.background_color %>">
+                <div class="image-wrap">
+                  <div class="image-wrap-content content">
+                    <div class="image-wrap-content-inner">
+                      <h4 class="excerpt-box-title">
+                        <%= beer.title %>
+                      </h4>
+                      <div class="meta">
+                        <%= beer.style %>
+                      </div>
+                    </div>
+                  </div>
+                  <figure>
+                    <%= image_tag beer.image.url(fm: 'png', auto: 'compress', class: "image") %>
+                  </figure>
+                </div>
+                <div class="content content-alignment--center">
+                  <div class="meta"></div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= partial "partials/pagination" %>
+  </div>
+</section>
+

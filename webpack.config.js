@@ -1,20 +1,17 @@
 const path = require('path');
-var webpack = require('webpack');
+const glob = require('glob');
+const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const env = process.env.NODE_ENV;
-const filename = env === 'production' ? '[name]' : '[name]';
+const filename = env === 'production' ? '[name].[contenthash]' : '[name]';
 
 module.exports = {
 
   entry: {
-    site: [
-      path.resolve(__dirname, './source/assets/javascripts/index.js'),
-      path.resolve(__dirname, './source/assets/stylesheets/all.css.scss')
-    ],
-    snipcart: [
-      path.resolve(__dirname, './source/assets/stylesheets/snipcart.css.scss')
-    ]
+    main: path.resolve(__dirname, './source/assets/javascripts/index.js'),
+    snipcart: path.resolve(__dirname, './source/assets/javascripts/snipcart.js')
   },
 
   output: {
@@ -46,6 +43,7 @@ module.exports = {
           }
         ]
       },
+
       {
         test: /\.(gif|png|jpe?g|svg)$/,
         use: [
@@ -62,12 +60,14 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
+
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: `${filename}.css`
     }),
-  ],
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    })
+  ]
 };

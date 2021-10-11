@@ -4,12 +4,12 @@ source "https://rubygems.org"
 
 # Middleman Core & Extensions
 gem "middleman"
-gem "middleman-autoprefixer"
 gem "middleman-blog"
 gem "middleman-dotenv"
 gem "middleman-livereload"
 gem "middleman-inline_svg"
 gem "middleman-minify-html"
+gem "middleman-paginate"
 gem "middleman-pry"
 gem "middleman-robots"
 

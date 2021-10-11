@@ -1,10 +1,15 @@
-<% if paginate && num_pages > 1 %>
+<% 
+  total_pages = pager.total_pages
+  current_page = pager.current_page
+%>
+
+<% if pager && total_pages > 1 %>
   <div class="pagination">
     <ul>
-      <% for page in 1..num_pages %>
-        <% if page == page_number %>
+      <% for page in 1..total_pages %>
+        <% if page == current_page %>
           <li class="current item">
-            <span><%= page %></span>
+            <span><%= current_page %></span>
           </li>
         <% else %>
           <%

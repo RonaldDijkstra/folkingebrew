@@ -38,7 +38,7 @@ export default function header() {
   }, 100);
 
   function hasScrolled() {
-    var $st = $(this).scrollTop();
+    var $st = $window.scrollTop();
 
     // Make sure they scroll more than delta
     if(Math.abs($lastScrollTop - $st) <= $delta)

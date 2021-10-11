@@ -1,16 +1,6 @@
 body.index {
-  section.introduction {
+  .introduction {
     background: $white;
-
-    @include grid-media($for-desktop-up) {
-      $background-image: "../images/hop-background.svg";
-
-      background-color: $white;
-      background-image: url($background-image);
-      background-position: center right;
-      background-repeat: no-repeat;
-      background-size: 360px auto;
-    }
 
     h2 {
       font-size: $base-font-size * 1.4;
@@ -39,7 +29,7 @@ body.index {
     }
   }
 
-  section.products {
+  .products {
     background: $lightest-gray;
 
     .products-row {

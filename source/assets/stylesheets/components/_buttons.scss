@@ -5,7 +5,7 @@
   height: auto;
 
   [class*="button-icon"] {
-    transition: all 0.2s ease-in-out;
+    transition: all .2s ease-in-out;
   }
 
   &:hover {
@@ -13,11 +13,11 @@
     border-color: lighten($color, 5%);
 
     .button-icon-left {
-      transform: translateX(-0.3rem);
+      transform: translateX(-.3rem);
     }
 
     .button-icon-right {
-      transform: translateX(0.3rem);
+      transform: translateX(.3rem);
     }
   }
 
@@ -86,14 +86,14 @@
   line-height: 1;
   text-align: center;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
   user-select: none;
   vertical-align: baseline;
   white-space: nowrap;
 
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: .5;
   }
 
   &.size-big {
