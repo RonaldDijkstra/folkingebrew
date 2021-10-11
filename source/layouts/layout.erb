@@ -4,8 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><%= content_for?(:page_title) ? yield_content(:page_title) : page_title %></title>
-    <meta name="description" content="<%= meta_description %>">
+
+    <% if content_for?(:head) %>
+      <%= yield_content :head %>
+    <% else %>
+      <title><%= content_for?(:page_title) ? yield_content(:page_title) : page_title %></title>
+      <meta name="description" content="<%= meta_description %>">
+    <% end %>
+
     <meta name="robots" content="<%= robots %>">
     <%= partial "partials/meta/favicon" %>
 
@@ -15,6 +21,7 @@
         <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
       <% end %>
     <% end %>
+    
     <% if production? %>
       <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css" %>
     <% else %>

@@ -2,6 +2,10 @@
   beer-show
 <% end %>
 
+<% content_for(:head) do %>
+  <%= dato_meta_tags(beer) %>
+<% end %>
+
 <section class="beer wide-row">
   <div class="grid-row beer-item">
     <div class="beer-image background-<%= beer.background_color %>">
@@ -22,7 +26,7 @@
         <div class="beer-facts">
             <% if beer.abv %>
             <div class="beer-fact">
-              <span class="beer-fact-value beer-fact-abv"><%= beer.abv %></span>
+              <span class="beer-fact-value beer-fact-abv"><%= beer.abv %> %</span>
               <span class="beer-fact-label"><%= t("beers.facts.abv") %></span>
             </div>
           <% end %>
