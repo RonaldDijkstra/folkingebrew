@@ -1,8 +1,10 @@
 const path = require('path');
 const glob = require('glob');
 const webpack = require('webpack');
+const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 const env = process.env.NODE_ENV;
 const filename = env === 'production' ? '[name].[contenthash]' : '[name]';
@@ -64,6 +66,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: `${filename}.css`
+    }),
+    new PurgecssPlugin({
+      paths: () => glob.sync(`${path.join(__dirname, 'source')}/**/*`, { nodir: true })
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',

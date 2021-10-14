@@ -1,4 +1,5 @@
-<header class="site-header">
+<header class="bg-gray-600 h-20 w-full flex justify fixed px-6 py-3 site-header">
+  <!-- 
   <a href="#menu-toggle" title="Open Nav Menu" class="nav-menu-toggle" id="menu-toggle">
     <span class="sr-only">toggle menu</span>
     <span class="bar top"></span>
@@ -6,42 +7,35 @@
     <span class="bar center x2"></span>
     <span class="bar bottom"></span>
   </a>
-  <%= link_to "", "/", relative: false, class: "logo position-mobile-center", style: "background-image: url(#{image_path("logo-folkingebrew-hopje.svg")})" %>
-  <div class="nav-wrap" role="navigation">
-    <ul id="menu-primary" class="header-navigation primary-navigation">
-      <li class="menu-item">
-        <%= current_link_to t("navigation.shop"), "/store/", class: "root-link" %>
-      </li>
-      <li class="menu-item">
-        <%= current_link_to t("navigation.beers"), "/beers/", class: "root-link" %>
-      </li>
-      <li class="menu-item">
-        <%= current_link_to t("navigation.about"), "/about/", class: "root-link" %>
-      </li>
-      <li class="menu-item">
-        <%= current_link_to t("navigation.faq"), "/frequently-asked-questions/", class: "root-link" %>
-      </li>
-      <li class="menu-item">
-        <%= current_link_to t("navigation.blog"), "/blog/", class: "root-link" %>
-      </li>
-      <li class="menu-item">
-        <%= current_link_to t("navigation.newsletter"), "/newsletter/", class: "root-link" %>
-      </li>
-      <li class="menu-item">
-        <%= current_link_to t("navigation.contact"), "/contact/", class: "root-link" %>
-      </li>
-    </ul>
-  </div>
-  <div class="nav-extras">
-    <div class="header-cart">
-      <div class="snipcart-summary">
-          <% if config[:use_webshop?] %>
-            <a class="snipcart-checkout">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" alt="" title="" class="cart-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M51.714 20.47L55 60H9l3.286-39.53h9.857v-6.588C22.143 8.424 26.556 4 32 4c5.444 0 9.857 4.424 9.857 9.882v6.589h9.857zM25.43 13.883v16.47h-3.286v-6.587h-6.834l-2.737 32.94h38.856l-2.737-32.94h-6.834v6.588h-3.286v-16.47c0-3.634-2.947-6.589-6.571-6.589-3.624 0-6.571 2.955-6.571 6.588zm3.285 9.883V20.47h6.572v3.294h-6.572z" fill="#313749"></path></svg>
-              <span class="snipcart-items-count"></span>
-            </a>
-          <% end %>
-        </span>
-      </div>
-  </div>
+-->
+
+  <%= link_to "", "/", relative: false, class: "bg-gray-500 bg-no-repeat opacity-1 h-full w-12 block relative flex-none", style: "background-image: url(#{image_path("logo-folkingebrew-hopje.svg")})" %>
+
+  <nav class="bg-blue-500 text-lg flex flex-1 flex-row justify-center z-15" id="menu-primary" role="navigation">
+    
+    <%= current_link_to t("navigation.shop"), "/store/", class: "text-white flex flex-nowrap items-center pl-4 pr-4" %>
+
+    <%= current_link_to t("navigation.beers"), "/beers/", class: "text-white flex flex-nowrap items-center pl-4 pr-4" %>
+
+    <%= current_link_to t("navigation.about"), "/about/", class: "text-white flex flex-nowrap items-center pl-4 pr-4" %>
+
+    <%= current_link_to t("navigation.faq"), "/frequently-asked-questions/", class: "text-white flex flex-nowrap items-center pl-4 pr-4" %>
+
+    <%= current_link_to t("navigation.blog"), "/blog/", class: "text-white flex flex-nowrap items-center pl-4 pr-4" %>
+
+    <%= current_link_to t("navigation.newsletter"), "/newsletter/", class: "text-white flex flex-nowrap items-center pl-4 pr-4" %>
+
+    <%= current_link_to t("navigation.contact"), "/contact/", class: "text-white flex flex-nowrap items-center pl-4 pr-4 hover:text-black" %>
+
+  </nav>
+
+  <% if config[:use_webshop?] %>
+    <div class="flex-none w-12 bg-gray-500 snipcart-summary">
+      <a class="snipcart-checkout">
+        <svg class="h-4 w-4 flex-no-shrink fill-current" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" alt="" title="" class="cart-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M51.714 20.47L55 60H9l3.286-39.53h9.857v-6.588C22.143 8.424 26.556 4 32 4c5.444 0 9.857 4.424 9.857 9.882v6.589h9.857zM25.43 13.883v16.47h-3.286v-6.587h-6.834l-2.737 32.94h38.856l-2.737-32.94h-6.834v6.588h-3.286v-16.47c0-3.634-2.947-6.589-6.571-6.589-3.624 0-6.571 2.955-6.571 6.588zm3.285 9.883V20.47h6.572v3.294h-6.572z" fill="#313749"></path></svg>
+        <span class="snipcart-items-count"></span>
+      </a>
+    </div>
+  <% end %>
+
 </header>
