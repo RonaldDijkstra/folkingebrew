@@ -19,7 +19,6 @@ gem "middleman-dato", "~> 0.10.0"
 # Development
 gem "builder"
 gem "html-proofer"
-# gem "kramdown-parser-gfm"
 gem "nokogiri"
 gem "pry-byebug"
 gem "rake"
