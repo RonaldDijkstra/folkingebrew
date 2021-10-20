@@ -15,6 +15,12 @@
     <meta name="robots" content="<%= robots %>">
     <%= partial "partials/meta/favicon" %>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap&display=swap"
+      rel="stylesheet"
+    />
+
     <%# Getting the main stylesheet generated from webpack. Using a regex because of asset hashes %>
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
       <% if resource.path =~ /\.(css)/ %>
@@ -27,19 +33,20 @@
     <% else %>
       <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.0/default/snipcart.css" %>
     <% end %>
+
     <meta name="google-site-verification" content="KSIwicnXARzh9Pv1igm5rWDKP-Zh1cA3tYVjs4uk_zE">
     <%= partial "partials/meta/open_graph" %>
     <%= feed_tag :atom, "#{blog("blog").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
-  <body class="<%= page_classes %> <%= current_resource.data.header_class %> <%= article_class %> <%= content_for?(:page_class) ? yield_content(:page_class) : "" %> at-the-top">
+  <body class="open-sans <%= page_classes %> <%= current_resource.data.header_class %> <%= article_class %> <%= content_for?(:page_class) ? yield_content(:page_class) : "" %> at-the-top bg-gradient-to-tr from-green-default to-green-dark">
     <%= partial "partials/shared/header" %>
-    <main class="main" role="main">
+    <main class="sm:mt-24" role="main">
       <%= yield %>
     </main>
     <%= partial "partials/shared/footer" %>
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
       <% if resource.path =~ /\.(js)/ %>
-        <%= javascript_include_tag resource.path, async: true %>
+        <%= javascript_include_tag resource.path %>
       <% end %>
     <% end %>
     <% if production? %>

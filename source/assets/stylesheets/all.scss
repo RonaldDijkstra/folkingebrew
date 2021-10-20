@@ -1,7 +1,49 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-body {
-  @apply bg-green-500;
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+// Navigation Current Link
+[aria-current]:not([aria-current="false"]) {
+  @apply text-gray-300;
+}
+
+// Special transparent header at the top of certain pages
+.transparent-header.at-the-top {
+  .site-header {
+    @apply bg-transparent;
+  }
+}
+
+.site-header {
+  &.show-nav {
+    @apply opacity-100;
+  }
+
+  &.hide-nav {
+    @apply opacity-0 transform -translate-y-full;
+  }
+}
+
+.nav-open {
+  .open-nav {
+    @apply hidden;
+  }
+
+  .close-nav {
+    @apply block;
+  }
+
+  .mobile-navigation {
+    @apply block sm:hidden;
+  }
+}
+
+.no-scroll {
+  @apply overflow-hidden;
 }
