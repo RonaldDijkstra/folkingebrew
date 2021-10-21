@@ -38,9 +38,9 @@
     <%= partial "partials/meta/open_graph" %>
     <%= feed_tag :atom, "#{blog("blog").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
-  <body class="open-sans <%= page_classes %> <%= current_resource.data.header_class %> <%= article_class %> <%= content_for?(:page_class) ? yield_content(:page_class) : "" %> at-the-top bg-gradient-to-tr from-green-default to-green-dark">
+  <body class="font-sans <%= page_classes %> <%= current_resource.data.header_class %> <%= article_class %> <%= content_for?(:page_class) ? yield_content(:page_class) : "" %> at-the-top bg-gradient-to-tr from-green-default to-green-dark">
     <%= partial "partials/shared/header" %>
-    <main class="sm:mt-24" role="main">
+    <main class="mt-16 sm:mt-20" role="main">
       <%= yield %>
     </main>
     <%= partial "partials/shared/footer" %>

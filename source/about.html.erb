@@ -2,18 +2,14 @@
   <%= dato_meta_tags(dato.about_page) %>
 <% end %>
 
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      <%= dato.about_page.title %>
-    </h1>
-  </div>
+<header class="max-w-8xl text-center px-4 py-12 normal-page-header">
+  <h1 class="text-white text-4xl">
+    <%= dato.about_page.title %>
+  </h1>
 </header>
-<section class="about-us medium-row">
-  <div class="grid-row">
-    <div class="row">
-      <%= markdownify(dato.about_page.content) %>
-    </div>
-  </div>
+<section class="max-w-4xl py-12 px-4 sm:px-32 bg-white m-auto text-lg">
+  <article class="prose lg:prose">
+    <%= markdownify(dato.about_page.content) %>
+  </article>
 </section>
 <%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Subscribe" } %>

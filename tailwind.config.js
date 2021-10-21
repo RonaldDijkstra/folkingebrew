@@ -16,12 +16,14 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'open-sans': ['"Open Sans"', 'sans-serif']
+        'sans': ['Open Sans', 'sans-serif']
       }
     }
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
