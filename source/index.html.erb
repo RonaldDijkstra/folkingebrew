@@ -6,6 +6,13 @@ sitemap_priority: 1
 blog: store
 header_class: transparent-header
 ---
+<section class="bg-beers -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex">
+  <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "hero-logo" %>
+  <h1>
+    <%= t("pages.index.tagline") %>
+  </h1>
+</section>
+<!-- 
 <section class="hero-wrap position-top">
   <div class="hero">
     <div class="hero-main">
@@ -19,6 +26,8 @@ header_class: transparent-header
     </div>
   </div>
 </section>
+-->
+<!-- 
 <section class="introduction wide-row" id="main-content">
   <div class="grid-row">
     <div class="row">
@@ -54,4 +63,5 @@ header_class: transparent-header
                                              icon_right: "icons/arrow-right.svg"} %>
   </div>
 </section>
-<%= partial "partials/shared/newsletter-subscribe", locals: { button_text: t("newsletter.subscribe")} %>
+-->
+<%#= partial "partials/shared/newsletter-subscribe", locals: { button_text: t("newsletter.subscribe")} %>

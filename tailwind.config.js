@@ -1,7 +1,11 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: [],
+  purge: [
+     './source/**/*.html',
+     './source/**/*.erb',
+     './source/**/*.js'
+   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -17,6 +21,9 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ['Open Sans', 'sans-serif']
+      },
+      backgroundImage: {
+        'beers': "url('beers.jpg')"
       }
     }
   },
