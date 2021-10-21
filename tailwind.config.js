@@ -24,7 +24,7 @@ module.exports = {
       },
       backgroundImage: {
         'beers': "url('beers.jpg')"
-      }
+      },
     }
   },
   variants: {
