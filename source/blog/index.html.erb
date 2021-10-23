@@ -4,13 +4,8 @@ description: "Folkingebrew blogblog"
 blog: blog
 pageable: true
 ---
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      Blog
-    </h1>
-  </div>
-</header>
+<%= regular_header title: "Blog" %>
+
 <section class="posts small-row">
   <div class="grid-row">
     <% page_articles.each do |article| %>

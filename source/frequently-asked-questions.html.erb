@@ -4,26 +4,22 @@ description: "Do you have questions about Folkingebrew or our beers? Here you'll
 ---
 <% questions = data["faq"] %>
 
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      <%= t("pages.faq.title") %>
-    </h1>
+<%= regular_header title: t("pages.faq.title") %>
+
+<% regular_content html: { class: "" } do %>
+  <% markdown_content html: { class: "mb-10" } do %>
+    <%= partial "content/faq" %>
+  <% end %>
+  <div class="prose">
+    <% questions.each do |question| %>
+      <h2 class="mb-0">
+        <%= question.q %>
+      </h2>
+      <p>
+        <%= question.a.to_s %>
+      </p>
+    <% end %>
   </div>
-</header>
-<section class="faq medium-row">
-  <div class="grid-row">
-    <div class="row">
-      <%= partial "content/faq" %>
-      <% questions.each do |question| %>
-        <h2>
-          <%= question.q %>
-        </h2>
-        <p>
-          <%= question.a.to_s %>
-        </p>
-      <% end %>
-    </div>
-  </div>
-</section>
+<% end %>
+
 <%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Subscribe" } %>

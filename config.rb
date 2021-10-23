@@ -105,6 +105,13 @@ end
 ignore   File.join(config[:js_dir], '*')
 ignore   File.join(config[:css_dir], '*')
 
+# load and activate all components
+Dir["./components/**/*.rb"].each { |file| load file }
+Pathname.new("./components").children.each do |entry|
+  return unless entry.directory?
+  activate "#{entry.basename.to_s}_component".to_sym
+end
+
 # Development-specific configuration
 configure :development do
   set      :debug_assets, true

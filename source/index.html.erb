@@ -15,24 +15,14 @@ header_class: transparent-header
 
 <section class="bg-white py-20 px-6">
   <div class="max-w-2xl m-auto">
-    <article class="prose max-w-none">
+    <% markdown_content html: { class: "mb-10" } do %>
       <%= partial "content/introduction" %>
-    </article>
-  </div>
-</section>
-
-<!-- 
-<section class="introduction wide-row" id="main-content">
-  <div class="grid-row">
-    <div class="row">
-      <%= partial "content/introduction" %>
-      <div class="read-more">
-        <%= partial "partials/button", locals: { to: "/about.html",
-                                                 variant: "medium-size ghost green",
-                                                 text: t("buttons.read_more_about_us"),
-                                                 icon_right: "icons/arrow-right.svg"} %>
-      </div>
-    </div>
+    <% end %>
+    <%= button text: "More about us",
+               link: true,
+               href: "/about.html",
+               type: :default,
+               html: { class: "" } %>
   </div>
 </section>
 <section class="products wide-row">

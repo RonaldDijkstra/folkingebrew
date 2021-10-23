@@ -28,6 +28,12 @@
       </div>
     <% end %>
     <div>
+      <%= button text: "Submit",
+                 type: :primary,
+                 ghost: true,
+                 block: true,
+                 html: { class: "" } %>
+    <!-- 
       <button type="submit" class="button <%= + locals[:button_variant] ||= "default" %>">
         <% if locals[:button_text] %>
           <%= locals[:button_text] %>
@@ -38,6 +44,7 @@
           <%= inline_svg icon_right, class: "inline-svg button-icon-right" %>
         <% end %>
       </button>
+    -->
     </div>
   </fieldset>
 </form>

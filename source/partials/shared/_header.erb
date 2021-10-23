@@ -23,12 +23,18 @@
         <!-- Main Nav -->
         <div class="hidden sm:block sm:w-full sm:flex sm:justify-center">
           <div class="flex justify-center">
-            <%= current_link_to t("navigation.shop"), "/store/", class: "flex items-center text-white hover:text-gray-300 px-3 text-lg font-medium whitespace-nowrap" %>
-            <%= current_link_to t("navigation.beers"), "/beers/", class: "flex items-center text-white hover:text-gray-300 px-3 text-lg font-medium whitespace-nowrap" %>
-            <%= current_link_to t("navigation.about"), "/about/", class: "flex items-center text-white hover:text-gray-300 px-3 text-lg font-medium" %>
-            <%= current_link_to t("navigation.faq"), "/frequently-asked-questions/", class: "h-full flex items-center text-white hover:text-gray-300 px-3 text-lg font-medium whitespace-nowrap" %>
-            <%= current_link_to t("navigation.blog"), "/blog/", class: "flex items-center text-white hover:text-gray-300 px-3 text-lg font-medium whitespace-nowrap" %>
-            <%= current_link_to t("navigation.contact"), "/contact/", class: "h-full flex items-center text-white hover:text-gray-300 hover:text-white px-3 text-lg font-medium whitespace-nowrap" %>
+            <%= navigation_link text: t("navigation.shop"),
+                                link: "/store/" %>
+            <%= navigation_link text: t("navigation.beers"),
+                                link: "/beers/" %>
+            <%= navigation_link text: t("navigation.about"),
+                                link: "/about/" %>
+            <%= navigation_link text: t("navigation.faq"),
+                                link: "/frequently-asked-questions/" %>
+            <%= navigation_link text: t("navigation.blog"),
+                                link: "/blog/" %>
+            <%= navigation_link text: t("navigation.contact"),
+                                link: "/contact/" %>
           </div>
         </div>
       </div>
