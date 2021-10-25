@@ -1,3 +1,5 @@
+<% navigation_items = data["navigation"] %>
+
 <nav class="site-header bg-black transition-all duration-150 ease-in-out fixed w-full left-0 top-0">
   <div class="max-w-8xl mx-auto px-2 relative z-10 sm:px-6">
     <div class="relative flex justify-between h-16 sm:h-20">
@@ -23,18 +25,10 @@
         <!-- Main Nav -->
         <div class="hidden sm:block sm:w-full sm:flex sm:justify-center">
           <div class="flex justify-center">
-            <%= navigation_link text: t("navigation.shop"),
-                                link: "/store/" %>
-            <%= navigation_link text: t("navigation.beers"),
-                                link: "/beers/" %>
-            <%= navigation_link text: t("navigation.about"),
-                                link: "/about/" %>
-            <%= navigation_link text: t("navigation.faq"),
-                                link: "/frequently-asked-questions/" %>
-            <%= navigation_link text: t("navigation.blog"),
-                                link: "/blog/" %>
-            <%= navigation_link text: t("navigation.contact"),
-                                link: "/contact/" %>
+            <% navigation_items.each do |item| %>
+              <%= navigation_link text: item.title,
+                                  link: item.link %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -53,12 +47,10 @@
   <!-- Mobile menu, show/hide based on menu state. -->
   <div class="mobile-navigation hidden fixed overflow-scroll top-0 pt-16 bg-black w-full h-full left-0 -translate-y-full">
     <div class="px-2 pt-2 pb-3 space-y-1 h-full flex flex-col justify-center">
-      <%= current_link_to t("navigation.shop"), "/store/", class: "text-white hover:text-gray-300 block px-3 py-2 rounded-md text-lg font-medium" %>
-      <%= current_link_to t("navigation.beers"), "/beers/", class: "text-white hover:text-gray-300 block px-3 py-2 rounded-md text-lg font-medium" %>
-      <%= current_link_to t("navigation.about"), "/about/", class: "text-white hover:text-gray-300 block px-3 py-2 rounded-md text-lg font-medium" %>
-      <%= current_link_to t("navigation.faq"), "/frequently-asked-questions/", class: "text-white hover:text-gray-300 block px-3 py-2 rounded-md text-lg font-medium" %>
-      <%= current_link_to t("navigation.blog"), "/blog/", class: "text-white hover:text-gray-300 block px-3 py-2 rounded-md text-lg font-medium" %>
-      <%= current_link_to t("navigation.contact"), "/contact/", class: "text-white hover:text-gray-300 block px-3 py-2 rounded-md text-lg font-medium" %>
+      <% navigation_items.each do |item| %>
+        <%= mobile_navigation_link text: item.title,
+                                   link: item.link %>
+      <% end %>
     </div>
   </div>
 </nav>

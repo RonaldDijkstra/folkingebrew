@@ -4,13 +4,9 @@ description: "Buy our beers and merchandise in our store."
 blog: store
 pageable: false
 ---
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      <%= t("pages.store.title") %>
-    </h1>
-  </div>
-</header>
+
+<%= regular_header title: t("pages.store.title") %>
+
 <section class="products wide-row">
   <div class="grid-row">
     <% if config[:use_webshop?] %>
