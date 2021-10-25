@@ -47,20 +47,12 @@ activate :directory_indexes
 activate :inline_svg
 
 # Activate DatoCMS
-if production
-  activate :dato
-else
-  activate :dato, preview: true, live_reload: true
-end
-
+activate :dato, live_reload: true
 # Activate Pagination
 activate :pagination
 
 # Use Webshop?
 set :use_webshop?, true
-
-# Set Google Analytics id
-set :ga_code, "UA-24956010-7"
 
 # Ignore the selection file for Icomoon
 ignore "assets/fonts/selection.json"
@@ -119,9 +111,6 @@ end
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
 configure :build do
-  # ignore   File.join(config[:js_dir], "*") # handled by webpack
-  # ignore   File.join(config[:css_dir], "*") # handled by webpack
-  # set      :asset_host, @app.data.site.base_url
   set      :relative_links, true
   activate :asset_hash, ignore: [
     %r{^assets/fonts/.*},
