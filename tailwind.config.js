@@ -14,6 +14,7 @@ module.exports = {
       black: colors.black,
       textgray: "#3f3f46",
       gray: colors.gray,
+      red: colors.red,
       green: {
         default: "#54b848",
         darker: "#3B9F2F",

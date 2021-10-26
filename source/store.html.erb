@@ -1,0 +1,16 @@
+---
+title: "Store"
+description: "Buy our beers and merchandise in our store."
+blog: store
+pageable: true
+---
+
+<%= regular_header title: t("pages.store.title") %>
+
+<section class="grid md:grid-cols-2 lg:grid-cols-3 gap-9 max-w-8xl px-6 md:px-10">
+  <% if config[:use_webshop?] %>
+    <% page_articles.each do |product| %>
+      <%= product_card product: product %>
+    <% end %>
+  <% end %>
+</section>

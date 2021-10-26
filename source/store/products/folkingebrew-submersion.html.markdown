@@ -2,7 +2,7 @@
 title: "Submersion"
 id: 12
 price: 6.25
-# old_price:
+old_price: 7.00
 max_quantity: 24
 use_max_quantity: true
 date: 2021-08-07 09:00 CEST
