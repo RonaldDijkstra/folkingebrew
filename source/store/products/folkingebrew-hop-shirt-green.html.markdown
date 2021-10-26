@@ -14,16 +14,16 @@ images:
   - "shop/folkingebrew-t-shirt-hop-green-2.jpg"
 sizes:
   - title: S
-    stock: false
+    stock: true
     lxb: "69,5 x 48,5"
   - title: M
     stock: true
     lxb: "72 x 53,5"
   - title: L
-    stock: false
+    stock: true
     lxb: "74,5 x 56"
   - title: XL
-    stock: false
+    stock: true
     lxb: "77 x 61"
   - title: XXL
     stock: true
