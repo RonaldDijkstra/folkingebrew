@@ -4,7 +4,8 @@ module.exports = {
   purge: [
      './source/**/*.html',
      './source/**/*.erb',
-     './source/**/*.js'
+     './source/**/*.js',
+     './components/**/*.rb'
    ],
   darkMode: false, // or 'media' or 'class'
   theme: {
