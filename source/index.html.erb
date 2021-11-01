@@ -27,12 +27,19 @@ header_class: transparent-header
 </section>
 
 <% if config[:use_webshop?] %>
-  <section>
-    <%= content_tag(:h2, t("webshop.store_highlights")) %>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 max-w-8xl px-10">
+  <section class="py-12">
+    <%= content_tag(:h2, t("webshop.store_highlights"), class: "pb-6 text-center text-4xl text-white") %>
+    <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 pb-6 max-w-7xl m-auto px-10">
       <% stocked_articles[0..2].each do |product| %>
         <%= product_card product: product %>
       <% end %>
+    </div>
+    <div class="relative px-10 text-center">
+      <%= button text: "View all Products",
+                 link: true,
+                 href: "/store.html",
+                 type: :default_white,
+                 html: { class: "inline-block w-auto" } %>
     </div>
   </section>
 <% end %>

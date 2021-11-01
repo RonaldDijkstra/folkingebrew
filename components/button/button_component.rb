@@ -11,7 +11,7 @@ module Components
         
         def build_button_html(opts)
           additional_classes = opts.dig(:html, :class) ? " #{opts[:html][:class]}" : ""
-          combined_classes = "p-4 h-auto font-semibold transition-all border-green-default border-2 border-solid #{button_type(opts[:type])}#{block?(opts[:block])}#{additional_classes}"
+          combined_classes = "p-4 h-auto font-semibold transition-all border-2 border-solid #{button_type(opts[:type])}#{block?(opts[:block])}#{additional_classes}"
           opts[:html] ||= {}
           opts[:html][:class] = combined_classes
           opts[:html]
@@ -20,9 +20,11 @@ module Components
         def button_type(type)
           case type
           when :default
-            "bg-transparent text-green-default hover:text-green-darker hover:border-green-darker"
+            "bg-transparent text-green-default border-green-default hover:text-green-darker hover:border-green-darker"
+          when :default_white
+            "bg-transparent text-white border-white hover:text-gray-100 hover:border-gray-100"
           when :primary
-            "bg-green-default text-white hover:bg-green-darker hover:border-green-darker"
+            "bg-green-default border-green-default text-white hover:bg-green-darker hover:border-green-darker"
           end
         end
       
