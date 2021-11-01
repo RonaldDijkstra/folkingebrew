@@ -2,13 +2,8 @@
   <%= dato_meta_tags(dato.beer_index) %>
 <% end %>
 
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      <%= t("beers.title") %>
-    </h1>
-  </div>
-</header>
+<%= regular_header title: t("beers.title") %>
+
 <section class="beers wide-row">
   <div class="grid-row">
     <div class="beer-grid-wrap">
