@@ -6,7 +6,6 @@ en:
     Olgerweg 2-7<br>
     9723 ED<br>
     Groningen<br>
-    The Netherlands
   time:
     formats:
       blog_date: "%e %B %Y"
@@ -37,7 +36,7 @@ en:
     legal: "Legal"
     contact: "Contact us"
     email: "Send an email"
-    address: "Address (no visits)"
+    adress: "Address (no visits)"
     rights: "All rights reserved"
   form:
     name: "Name"
