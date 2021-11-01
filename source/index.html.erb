@@ -13,34 +13,35 @@ header_class: transparent-header
   </h1>
 </section>
 
-<section class="bg-white py-20 px-6">
+<div class="bg-white py-20 px-6">
   <div class="max-w-2xl m-auto">
-    <% markdown_content html: { class: "mb-10" } do %>
+    <% markdown_content html: { class: "mb-6" } do %>
       <%= partial "content/introduction" %>
     <% end %>
     <%= button text: "More about us",
                link: true,
                href: "/about.html",
                type: :default,
-               html: { class: "" } %>
+               html: { class: "inline-block" } %>
   </div>
-</section>
+</div>
 
 <% if config[:use_webshop?] %>
-  <section class="py-6">
-    <%= content_tag(:h2, t("webshop.store_highlights"), class: "pb-6 text-center text-4xl text-white") %>
-    <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 pb-6 max-w-7xl m-auto px-6">
+  <section class="pt-10 pb-20">
+    <%= content_tag(:h2, t("webshop.store_highlights"), class: "mb-10 text-center text-4xl text-white") %>
+    <div class="relative grid md:grid-cols-2 lg:grid-cols-3 gap-9 mb-10 max-w-7xl m-auto px-6">
       <% stocked_articles[0..2].each do |product| %>
         <%= product_card product: product %>
       <% end %>
     </div>
-    <div class="relative px-10 text-center">
+    <div class="px-6 text-center">
       <%= button text: "View all Products",
                  link: true,
                  href: "/store.html",
                  type: :default_white,
-                 html: { class: "inline-block w-auto" } %>
+                 html: { class: "inline-block" } %>
     </div>
   </section>
 <% end %>
+
 <%#= partial "partials/shared/newsletter-subscribe", locals: { button_text: t("newsletter.subscribe")} %>

@@ -45,7 +45,7 @@
   </div>
 
   <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="mobile-navigation hidden fixed overflow-scroll top-0 pt-16 bg-black w-full h-full left-0 -translate-y-full">
+  <div id="mobile-menu" class="mobile-navigation hidden fixed overflow-scroll top-0 pt-16 bg-black w-full h-full left-0 -translate-y-full">
     <div class="px-2 pt-2 pb-3 space-y-1 h-full flex flex-col justify-center">
       <% navigation_items.each do |item| %>
         <%= mobile_navigation_link text: item.title,

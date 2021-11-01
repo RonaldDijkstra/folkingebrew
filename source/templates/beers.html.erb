@@ -4,39 +4,10 @@
 
 <%= regular_header title: t("beers.title") %>
 
-<section class="beers wide-row">
-  <div class="grid-row">
-    <div class="beer-grid-wrap">
-      <div class="beer-grid feed">
-        <div class="row">
-          <% items.each do |beer| %>
-            <div class="beer-wrap excerpt-box-wrap">
-              <a href="/beers/<%= beer.slug %>/" class="beer excerpt-box background-<%= beer.background_color %>">
-                <div class="image-wrap">
-                  <div class="image-wrap-content content">
-                    <div class="image-wrap-content-inner">
-                      <h4 class="excerpt-box-title">
-                        <%= beer.title %>
-                      </h4>
-                      <div class="meta">
-                        <%= beer.style %>
-                      </div>
-                    </div>
-                  </div>
-                  <figure>
-                    <%= image_tag beer.image.url(fm: 'png', class: "image") %>
-                  </figure>
-                </div>
-                <div class="content content-alignment--center">
-                  <div class="meta"></div>
-                </div>
-              </a>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <%= partial "partials/pagination" %>
-  </div>
+<section class="grid md:grid-cols-2 lg:grid-cols-3 gap-9 max-w-7xl m-auto px-6 md:px-10 pb-12 md:pb-24">
+  <% items.each do |beer| %>
+    <%= beer_card beer: beer %>
+  <% end %>
+  <%= partial "partials/pagination" %>
 </section>
 
