@@ -4,10 +4,8 @@ description: Privacy Policy for using our website and purchasing items in our on
 ---
 <%= regular_header title: t("pages.privacy.title") %>
 
-<section class="privacy-policy medium-row">
-  <div class="grid-row">
-    <div class="row">
-      <%= partial "content/privacy-policy" %>
-    </div>
-  </div>
-</section>
+<% regular_content html: { class: "mb-12 sm:mb-24" } do %>
+  <% markdown_content html: { class: "mb-10" } do %>
+    <%= partial "content/privacy-policy" %>
+  <% end %>
+<% end %>
