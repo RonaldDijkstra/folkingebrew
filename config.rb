@@ -59,9 +59,6 @@ activate :pagination
 # Use Webshop?
 set :use_webshop?, true
 
-# Ignore the selection file for Icomoon
-ignore "assets/fonts/selection.json"
-
 # Use redcarpet for markdown
 set :markdown_engine, :redcarpet
 
