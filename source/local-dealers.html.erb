@@ -4,31 +4,25 @@ description: "Here you'll find the awesome places in and around Groningen where 
 ---
 <% dealers = data["dealers"] %>
 
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      <%= t("pages.local.title") %>
-    </h1>
-  </div>
-</header>
-<section class="dealers medium-row">
-  <div class="grid-row">
-    <div class="row">
-      <%= partial "content/local-dealers" %>
-      <div class="dealers-wrapper">
-        <% dealers.each do |dealer| %>
-          <div class="dealer-item">
-            <h3>
-              <%= link_to "#{dealer.name}", "#{dealer.url}", target: "_blank", rel: "noopener noreferrer" %>
-            </h3>
-            <p>
-              <%= dealer.street %><br>
-              <%= dealer.postal_code %><br>
-              <%= dealer.city %>
-            </p>
-          </div>
+<%= regular_header title: t("pages.local.title") %>
+
+<% regular_content html: { class: "mb-12 sm:mb-24" } do %>
+  <% markdown_content html: { class: "mb-10" } do %>
+    <%= partial "content/faq" %>
+  <% end %>
+
+  <div class="sm:flex sm:flex-wrap"> 
+    <% dealers.each do |dealer| %>
+      <div class="mb-10 text-base sm:w-1/2">
+        <% content_tag(:h3) do %>
+          <%= link_to "#{dealer.name}", "#{dealer.url}", class: "text-green-default underline hover:no-underline", target: "_blank", rel: "noopener noreferrer" %>
         <% end %>
-      </div>
-    </div>
+        <% content_tag(:adress) do %>
+          <%= dealer.street %><br>
+          <%= dealer.postal_code %><br>
+          <%= dealer.city %>
+        <% end %>
+      </div> 
+    <% end %>
   </div>
-</section>
+<% end %>

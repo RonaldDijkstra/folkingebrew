@@ -1,39 +1,37 @@
-
-
 ## Table of contents:
 
-__Article 1 – Definitions
-Article 2 – Identity of the entrepreneur
-Article 3 – Applicability
-Article 4 – The offer
-Article 5 – The contract
-Article 6 – Right of withdrawal
-Article 7 – Costs in case of withdrawal
-Article 8 – Exceptions to the right of withdrawal
-Article 9 – The price
-Article 10 – Compliance and warranty
-Article 11 – Delivery and completion
-Article 12 – Extended transactions: length, cancellation and extension
-Article 13 – Payment
-Article 14 – Complaints procedure
-Article 15 – Disputes
-Article 16 – Additional or different terms__
+- Article 1 – Definitions
+- Article 2 – Identity of the entrepreneur
+- Article 3 – Applicability
+- Article 4 – The offer
+- Article 5 – The contract
+- Article 6 – Right of withdrawal
+- Article 7 – Costs in case of withdrawal
+- Article 8 – Exceptions to the right of withdrawal
+- Article 9 – The price
+- Article 10 – Compliance and warranty
+- Article 11 – Delivery and completion
+- Article 12 – Extended transactions: length, cancellation and extension
+- Article 13 – Payment
+- Article 14 – Complaints procedure
+- Article 15 – Disputes
+- Article 16 – Additional or different terms
 
 ## Article 1 – Definitions
 
 The following terms in these terms and conditions are defined as below:
 
-__Cooling-off period__: the period of time in which the customer is able to make use of his/her right to withdrawal.
-__Customer__: the natural person, not acting in a professional capacity or on behalf of a company, who enters into a contract with the entrepreneur.
-__Date__: the calendar date
-__Distance Contract__: A contract whereby, within the framework of a system organised by the entrepreneur, the distance selling of products and / or services, up to and including the conclusion of the contract, only one or more techniques for distance communication are used.
-__Durable Data Carrier__: any device or means that enables the customer or entrepreneur to store information personally addressed to him/her in a way that allows the future viewing and unaltered reproduction of the information stored on it.
-__Entrepreneur__: the natural or legal person offering products and/or services to customers via distance selling.
-__Example form__: an example withdrawal form that the entrepreneur makes available to a customer who wishes to make use of the right to withdrawal.
-__Extended transactions__: a distance contract with regard to a set of products and/or services of which the delivery and/or purchase obligation is spread over time.
-__Right of withdrawal__: the possibility for the customer to withdraw from the contract during the cooling-off period.
-__Technology for distance communication__: Technology for distance communication: a means for concluding a contract without the customer and entrepreneur being in the same room at the same time.
-__Terms and conditions__: the present terms and conditions of the entrepreneur.
+- __Cooling-off period__: the period of time in which the customer is able to make use of his/her right to withdrawal.
+- __Customer__: the natural person, not acting in a professional capacity or on behalf of a company, who enters into a contract with the entrepreneur.
+- __Date__: the calendar date
+- __Distance Contract__: A contract whereby, within the framework of a system organised by the entrepreneur, the distance selling of products and / or services, up to and including the conclusion of the contract, only one or more techniques for distance communication are used.
+- __Durable Data Carrier__: any device or means that enables the customer or entrepreneur to store information personally addressed to him/her in a way that allows the future viewing and unaltered reproduction of the information stored on it.
+- __Entrepreneur__: the natural or legal person offering products and/or services to customers via distance selling.
+- __Example form__: an example withdrawal form that the entrepreneur makes available to a customer who wishes to make use of the right to withdrawal.
+- __Extended transactions__: a distance contract with regard to a set of products and/or services of which the delivery and/or purchase obligation is spread over time.
+- __Right of withdrawal__: the possibility for the customer to withdraw from the contract during the cooling-off period.
+- __Technology for distance communication__: Technology for distance communication: a means for concluding a contract without the customer and entrepreneur being in the same room at the same time.
+-  __Terms and conditions__: the present terms and conditions of the entrepreneur.
 
 ## Article 2 – Identity of the Entrepreneur
 

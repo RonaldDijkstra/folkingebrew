@@ -4,10 +4,8 @@ description: Shipping & Returning Policy for our online store.
 ---
 <%= regular_header title: t("pages.shipping.title") %>
 
-<section class="shipping-policy medium-row">
-  <div class="grid-row">
-    <div class="row">
-      <%= partial "content/shipping-and-returning" %>
-    </div>
-  </div>
-</section>
+<% regular_content html: { class: "mb-12 sm:mb-24" } do %>
+  <% markdown_content html: { class: "" } do %>
+    <%= partial "content/shipping-and-returning" %>
+  <% end %>
+<% end %>

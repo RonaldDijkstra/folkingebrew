@@ -4,10 +4,10 @@
 
 <%= regular_header title: dato.about_page.title %>
 
-<% regular_content html: { class: "" } do %>
+<% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content html: { class: "" } do %>
     <%= markdownify(dato.about_page.content) %>
   <% end %>
 <% end %>
 
-<%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Subscribe" } %>
+<%#= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Subscribe" } %>
