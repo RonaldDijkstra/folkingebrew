@@ -118,7 +118,7 @@ configure :build do
   ]
   activate :gzip
   activate :minify_html
-  activate :relative_assets
+  # activate :relative_assets
 
   # Raise exception for missing translations during build
   require "lib/test_exception_localization_handler"
