@@ -42,7 +42,9 @@
         <%= javascript_include_tag resource.path, async: true %>
       <% end %>
     <% end %>
-    <%= partial "partials/meta/analytics" if config[:ga_code] %>
+    <% if production? %>
+      <%= partial "partials/meta/analytics" %>
+    <% end %>
     <%= partial "partials/meta/schema" if current_page.url == "/" %>
     <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>">
       <%= partial "partials/store/cart_components" %>
