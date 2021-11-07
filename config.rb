@@ -47,7 +47,11 @@ activate :directory_indexes
 activate :inline_svg
 
 # Activate DatoCMS
-activate :dato, preview: ENV['DATO_PREVIEW'], live_reload: true
+if ENV['DATO_PREVIEW']
+  activate :dato, preview: true, live_reload: true
+else 
+  activate :dato, preview: false, live_reload: false
+end
 
 # Activate Pagination
 activate :pagination
