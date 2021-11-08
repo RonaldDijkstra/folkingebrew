@@ -56,9 +56,6 @@ end
 # Activate Pagination
 activate :pagination
 
-# Use Webshop?
-set :use_webshop?, true
-
 # Use redcarpet for markdown
 set :markdown_engine, :redcarpet
 
@@ -122,7 +119,6 @@ end
 configure :build do
   set      :relative_links, true
   activate :asset_hash, ignore: [
-    %r{^assets/fonts/.*},
     "assets/images/logo-folkingebrew-black.svg"
   ]
   activate :gzip

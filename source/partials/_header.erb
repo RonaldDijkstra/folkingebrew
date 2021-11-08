@@ -33,18 +33,20 @@
         </div>
       </div>
       <div class="absolute inset-y-0 right-0 flex justify-end items-center pr-2 sm:static sm:pr-0 sm:inset-auto w-10 sm:w-20">
-        <div class="snipcart-summary relative">
-          <button type="button" class="snipcart-checkout bg-transparent flex text-sm focus:outline-none">
-            <span class="sr-only">Open Cart</span>
-            <%= image_tag "icons/cart.svg", class: "block w-6 h-6", alt: "cart icon" %>
-            <span class="snipcart-items-count text-white"></span>
-          </button>
-        </div>
+        <% if ENV['USE_WEBSHOP'] == true %>
+          <div class="snipcart-summary relative">
+            <button type="button" class="snipcart-checkout bg-transparent flex text-sm focus:outline-none">
+              <span class="sr-only">Open Cart</span>
+              <%= image_tag "icons/cart.svg", class: "block w-6 h-6", alt: "cart icon" %>
+              <span class="snipcart-items-count text-white"></span>
+            </button>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 
-  <!-- Mobile menu, show/hide based on menu state. -->
+  <!-- Mobile menu, show/hide based on menu state -->
   <div id="mobile-menu" class="mobile-navigation hidden fixed overflow-scroll top-0 pt-16 bg-black w-full h-full left-0 -translate-y-full">
     <div class="px-2 pt-2 pb-3 space-y-1 h-full flex flex-col justify-center">
       <% navigation_items.each do |item| %>
