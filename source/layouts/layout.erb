@@ -59,9 +59,6 @@
     <% end %>
     
     <%= partial "partials/meta/schema" if current_page.url == "/" %>
-
-    <% if ENV['USE_WEBSHOP'] == true %>
-      <%= partial "partials/store/store_elements" %>
-    <% end %>
+    <%= partial "partials/store/store_elements" %>
   </body>
 </html>

@@ -26,22 +26,20 @@ header_class: transparent-header
   </div>
 </div>
 
-<% if ENV['USE_WEBSHOP'] == true %>
-  <section class="pt-10 pb-20">
-    <%= content_tag(:h2, t("webshop.store_highlights"), class: "mb-10 text-center text-4xl text-white") %>
-    <div class="relative grid md:grid-cols-2 lg:grid-cols-3 gap-9 mb-10 max-w-7xl m-auto px-6">
-      <% stocked_articles[0..2].each do |product| %>
-        <%= product_card product: product %>
-      <% end %>
-    </div>
-    <div class="px-6 text-center">
-      <%= button text: "View all Products",
-                 link: true,
-                 href: "/store.html",
-                 type: :default_white,
-                 html: { class: "inline-block" } %>
-    </div>
-  </section>
-<% end %>
+<section class="pt-10 pb-20">
+  <%= content_tag(:h2, t("webshop.store_highlights"), class: "mb-10 text-center text-4xl text-white") %>
+  <div class="relative grid md:grid-cols-2 lg:grid-cols-3 gap-9 mb-10 max-w-7xl m-auto px-6">
+    <% stocked_articles[0..2].each do |product| %>
+      <%= product_card product: product %>
+    <% end %>
+  </div>
+  <div class="px-6 text-center">
+    <%= button text: "View all Products",
+               link: true,
+               href: "/store.html",
+               type: :default_white,
+               html: { class: "inline-block" } %>
+  </div>
+</section>
 
 <%#= partial "partials/shared/newsletter-subscribe", locals: { button_text: t("newsletter.subscribe")} %>

@@ -6,12 +6,8 @@ blog: store
 
 <%= regular_header title: t("pages.store.title") %>
 
-<% if ENV['USE_WEBSHOP'] == true %>
-  <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-9 max-w-7xl m-auto px-6 md:px-10 pb-12 md:pb-24">
-    <% page_articles.each do |product| %>
-      <%= product_card product: product %>
-    <% end %>
-  </section>
-<% else %>
-  <%= content_tag(:h3, "The webshop is currently closed, please come back later.", class: "text-white text-center m-auto px-6 md:px-10") %>
-<% end %>
+<section class="grid md:grid-cols-2 lg:grid-cols-3 gap-9 max-w-7xl m-auto px-6 md:px-10 pb-12 md:pb-24">
+  <% page_articles.each do |product| %>
+    <%= product_card product: product %>
+  <% end %>
+</section>

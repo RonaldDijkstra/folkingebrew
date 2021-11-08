@@ -33,15 +33,13 @@
         </div>
       </div>
       <div class="absolute inset-y-0 right-0 flex justify-end items-center pr-2 sm:static sm:pr-0 sm:inset-auto w-10 sm:w-20">
-        <% if ENV['USE_WEBSHOP'] == true %>
-          <div class="snipcart-summary relative">
-            <button type="button" class="snipcart-checkout bg-transparent flex text-sm focus:outline-none">
-              <span class="sr-only">Open Cart</span>
-              <%= image_tag "icons/cart.svg", class: "block w-6 h-6", alt: "cart icon" %>
-              <span class="snipcart-items-count text-white"></span>
-            </button>
-          </div>
-        <% end %>
+        <div class="snipcart-summary relative">
+          <button type="button" class="snipcart-checkout bg-transparent flex text-sm focus:outline-none">
+            <span class="sr-only">Open Cart</span>
+            <%= image_tag "icons/cart.svg", class: "block w-6 h-6", alt: "cart icon" %>
+            <span class="snipcart-items-count text-white"></span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
