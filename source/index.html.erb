@@ -6,17 +6,17 @@ sitemap_priority: 1
 blog: store
 header_class: transparent-header
 ---
-<section class="bg-blend-soft-light bg-green-default max-w-8xl px-6 bg-beers text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center">
+<section class="bg-blend-soft-light bg-green-default max-w-8xl px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= dato.homepage.background_image.url %>)">
   <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "max-w-s mb-6" %>
   <h1 class="text-white text-3xl font-light">
-    <%= t("pages.index.tagline") %>
+    <%= dato.homepage.tagline %>
   </h1>
 </section>
 
 <div class="bg-white py-20 px-6">
   <div class="max-w-2xl m-auto">
     <% markdown_content html: { class: "mb-6" } do %>
-      <%= partial "content/introduction" %>
+      <%= markdownify(dato.homepage.introduction) %>
     <% end %>
     <%= button text: "More about us",
                link: true,

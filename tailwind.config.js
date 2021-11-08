@@ -26,9 +26,6 @@ module.exports = {
       fontFamily: {
         'sans': ['Open Sans', 'sans-serif']
       },
-      backgroundImage: {
-        'beers': "url('beers.jpg')"
-      },
     }
   },
   variants: {
