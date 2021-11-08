@@ -1,0 +1,11 @@
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.product_index) %>
+<% end %>
+
+<%= regular_header title: dato.product_index.title %>
+
+<section class="grid md:grid-cols-2 lg:grid-cols-3 gap-9 max-w-7xl m-auto px-6 md:px-10 pb-12 md:pb-24">
+  <% dato.products.each do |product| %>
+    <%= product_card product: product %>
+  <% end %>
+</section>

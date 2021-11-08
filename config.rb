@@ -69,8 +69,6 @@ page "/*.txt",  layout: false
 # With layout
 page "blog/index.html", layout: :blog_index
 page "blog/*", layout: :blog_show
-page "store/index.html", layout: :store_index
-page "store/*", layout: :store_product_detail
 
 # Activate and setup the blog content type
 activate :blog do |blog|
@@ -84,22 +82,10 @@ activate :blog do |blog|
   blog.per_page = 10
 end
 
-# Activate and setup the product content type
-activate :blog do |blog|
-  blog.name = "store"
-  blog.prefix = "store"
-  blog.permalink = ":title"
-  blog.sources = "/products/{title}.html"
-  # blog.tag_template = "blog/tag.html"
-  blog.paginate = true
-  blog.page_link = "/page/{num}"
-  blog.per_page = 12
-end
-
 ignore   File.join(config[:js_dir], '*')
 ignore   File.join(config[:css_dir], '*')
 
-# load and activate all components
+# Load and activate all components
 Dir["./components/**/*.rb"].each { |file| load file }
 Pathname.new("./components").children.each do |entry|
   return unless entry.directory?
@@ -138,6 +124,7 @@ end
 
 dato.tap do |dato|
   paginate dato.beers, "/beers", "/templates/beers.html", per_page: 12
+  paginate dato.products, "/store", "/templates/store.html"
 
   dato.beers.each do |beer| 
     proxy "/beers/#{beer.slug}/index.html", 
@@ -145,6 +132,14 @@ dato.tap do |dato|
           locals: { beer: beer },
           ignore: true
   end 
+
+  dato.products.each do |product| 
+    proxy "/store/#{product.slug}/index.html",
+          "/templates/product.html",
+          locals: { product: product },
+          ignore: true
+  end
 end 
 
 ignore "/templates/beers.html.erb"
+ignore "/templates/store.html.erb"
