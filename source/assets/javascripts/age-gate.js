@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 export default function header() {
 	$(document).ready(function() {
 	  var ageGate = document.querySelector("[data-rel='age-gate']");
-	  var consentButton = document.querySelector("[data-rel='age-gate-consent']");
+	  var consentButton = document.querySelector(".age-gate-consent");
 	  var cookieName = "age_consent";
 	  var cookieValue = Cookies.get(cookieName);
 

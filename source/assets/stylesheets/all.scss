@@ -51,3 +51,9 @@ html {
 .no-scroll {
   @apply overflow-hidden;
 }
+
+.age-gate {
+  &.show {
+    @apply block;
+  }
+}

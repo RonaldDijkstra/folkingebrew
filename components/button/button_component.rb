@@ -23,6 +23,8 @@ module Components
             "bg-transparent text-green-default border-green-default hover:text-green-darker hover:border-green-darker"
           when :default_white
             "bg-transparent text-white border-white hover:text-gray-100 hover:border-gray-100"
+           when :default_gray
+            "bg-gray-400 border-gray-400 text-white hover:bg-gray-500 hover:border-gray-500"
           when :primary
             "bg-green-default border-green-default text-white hover:bg-green-darker hover:border-green-darker"
           end
