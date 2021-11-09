@@ -7,7 +7,7 @@ module Components
           image = product.images[0].url
     
           concat(
-            link_to(product.slug, class: "bg-white p-6") do
+            link_to("/store/#{product.slug}", class: "bg-white p-6") do
               image_tag(image, alt: product.title, class: "mb-3", loading: "lazy") +
               content_tag(:div, class: "flex") do 
                 content_tag(:h2, product.title, class: "flex-grow font-bold mr-3") +

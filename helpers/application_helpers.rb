@@ -125,13 +125,13 @@ module ApplicationHelpers
     link_to(text, path, options)
   end
 
-  def stocked_articles
-    articles = []
-      (blog().articles).select do |article|
-        next if article.data.out_of_stock
-        articles << article
+  def stocked_products
+    products = []
+      dato.products.select do |product|
+        next unless product.in_stock
+        products << product
       end
-    articles
+    products
   end
 
   def markdownify(text)
