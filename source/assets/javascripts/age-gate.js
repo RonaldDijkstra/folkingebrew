@@ -12,7 +12,7 @@ export default function header() {
 	  }
 
 	  if (cookieValue !== "true") {
-	    ageGate.classList.add("show");
+	    ageGate.classList.add("show", "no-scroll");
 	  }
 
 	  consentButton.addEventListener("click", closeOverlay);

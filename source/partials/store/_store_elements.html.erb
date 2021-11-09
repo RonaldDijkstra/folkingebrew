@@ -1,5 +1,5 @@
 <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>">
-  <%= partial "partials/store/cart_components" %>
+  <%= partial "partials/store/checkout_overrides" %>
 </div>
 <% if production? %>
   <script src="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.js"></script>
@@ -11,4 +11,4 @@
     <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
   <% end %>
 <% end %>
-<%= partial "partials/shared/age-gate" %>
+<%= partial "partials/store/age-gate" %>
