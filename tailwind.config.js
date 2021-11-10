@@ -21,6 +21,7 @@ module.exports = {
         darker: "#3B9F2F",
         dark: "#326f2b",
       },
+      "border-gray": "#71717a",
     },
     extend: {
       fontFamily: {
@@ -32,6 +33,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
   ],
 }

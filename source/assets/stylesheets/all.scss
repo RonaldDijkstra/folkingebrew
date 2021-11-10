@@ -57,3 +57,15 @@ html {
     @apply block;
   }
 }
+
+[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.thumbnail-active {
+  @apply bg-black;
+
+  img {
+    @apply opacity-70;
+  }
+}

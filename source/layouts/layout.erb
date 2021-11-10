@@ -57,8 +57,11 @@
     <% if production? %>
       <%= partial "partials/meta/analytics" %>
     <% end %>
-    
-    <%= partial "partials/meta/schema" if current_page.url == "/" %>
+
     <%= partial "partials/store/store_elements" %>
+    <% if current_page.data.type == "product" %>
+      <%= partial "partials/meta/schema_product", locals: { product: product } %>
+    <% end %>
+    <%= partial "partials/meta/schema_home" if current_page.url == "/" %>
   </body>
 </html>

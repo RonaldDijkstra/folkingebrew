@@ -1,6 +1,6 @@
 export default function webshop() {  
   $(document).ready(function() {
-    $('.quantity-adjust--minus').click(function () {
+    $('.quantity-minus').click(function () {
       var $input = $(this).parent().find('input');
       $input.focus();
       var count = parseInt($input.val()) - 1;
@@ -10,7 +10,7 @@ export default function webshop() {
       return false;
     });
 
-    $('.quantity-adjust--plus').click(function () {
+    $('.quantity-plus').click(function () {
       var $input = $(this).parent().find('input');
       $input.focus();
       var max = $input.attr('max');
@@ -41,8 +41,8 @@ export default function webshop() {
     $(".product-thumbnail").click(function(){
       $("#product-image").attr("src",$(this).attr("src"));
 
-      $(document).find(".active").attr('class', '');
-      $(this).parents('button').attr('class', 'active');
+      $(document).find(".thumbnail-active").removeClass('thumbnail-active');
+      $(this).parents('button').addClass('thumbnail-active');
     });
 
     $('.toggle').click(function(e) {

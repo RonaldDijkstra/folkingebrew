@@ -37,6 +37,7 @@
     "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --bail -p"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "^0.4.1",
     "jquery": "^3.6.0",
     "js-cookie": "^3.0.1",
