@@ -18,14 +18,13 @@ end
 	<figure class="lg:flex-1 h-full relative">
     <picture class="block h-full w-full">
       <% if product_image %>
-        <%= image_tag product_image, alt: product.title, class: "product-image", id: "product-image" %>
+        <%= image_tag product_image, alt: product.title, id: "product-image" %>
       <% else %>
         <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image", id: "product-image" %>
       <% end %>
     </picture>
-    
     <% if product_image && product.images.count > 1 %>
-      <nav class="-bottom-8 flex justify-center m-width-sm absolute w-full z-10 lg:bottom-0 lg:justify-end lg:right-0 lg:m-4">
+      <nav class="-bottom-8 flex justify-center m-width-sm absolute w-full lg:bottom-0 lg:justify-end lg:right-0 lg:m-4">
         <% product.images.each_with_index do |image, index| %>
           <% if index == 0 %>
             <button class="thumbnail-active w-16 h-16 mr-1 ml-1 rounded-lg overflow-hidden shadow md:w-20 md:h-20 lg:h-24 lg:w-24">
@@ -40,135 +39,129 @@ end
       </nav>
     <% end %>
  	</figure>
-	<div class="product-content flex-1 flex-col bg-white p-6">
+	<div class="product-content flex-1 flex-col bg-white px-6 py-12">
 		<% if product.old_price %>
 			<div>
 				€ <%= number_to_currency(product.old_price, :unit => "").gsub!(/\./,",") %>
 			</div>
 		<% end %>
-		<div class="text-default-green"> 
+		<div class="text-green-default font-bold text-2xl"> 
 			€ <%= number_to_currency(product.price, :unit => "").gsub!(/\./,",") %>
 		</div>
-		<div>
+		<div class="italic text-sm mb-6">
 			<%= t("webshop.incl_tax") %> <%= link_to t("webshop.shipping"), "/shipping-and-returning.html" %>
 		</div>
-		<div class="prose">
+		<div class="prose mb-3">
 			<%= markdownify(product.short_description) %>
 		</div>
-		<div>
+		<div class="font-bold mb-3">
       <% if product.in_stock %>
         <%= t("webshop.in_stock") %>
       <% else %>
         <%= t("webshop.out_of_stock") %>
       <% end %>
     </div>
-    <% if !product.sizes.empty? %>
-    	<div>
-        <label class="w-full block font-bold">
-          Size
-        </label>
-        <select id="size" name="size" class="w-28">
-          <% product.sizes.each do |size| %>
-            <% if size.size_in_stock %>
-              <option value="<%= size.size %>"><%= size.size %></option>
-            <% else %>
-              <option value="<%= size.size %>" disabled><%= size.size %> (Out of Stock)</option>
+    <% if product.in_stock %>
+      <% if !product.sizes.empty? %>
+      	<div class="mb-3">
+          <label class="w-full block font-bold">
+            Size
+          </label>
+          <select id="size" name="size" class="w-28">
+            <% product.sizes.each do |size| %>
+              <% if size.size_in_stock %>
+                <option value="<%= size.size %>"><%= size.size %></option>
+              <% else %>
+                <option value="<%= size.size %>" disabled><%= size.size %> (Out of Stock)</option>
+              <% end %>
             <% end %>
-          <% end %>
-        </select>
-       </div>
+          </select>
+         </div>
+      <% end %>
+      <div class="mb-3">
+  	    <% unless product.max_quantity == 1 %>
+  	    	<div class="inline-block">
+  	    		<label class="font-bold block">
+  	          <%= t("webshop.quantity") %> <%= "(#{t("webshop.max")} #{product.max_quantity})" if product.max_quantity %>
+  	        </label>
+  	        <div class="relative inline-flex">
+  	            <% if product.max_quantity %>
+  	              <input class="text-center px-8 border border-border-gray flex-grow-0 flex-shrink-0 w-28" type="number" value="1" id="quantity" name="quantity" min="1" max="<%= product.max_quantity %>">
+  	            <% else %>
+  	              <input class="text-center px-8 border border-border-gray flex-grow-0 flex-shrink-0 w-28" type="number" value="1" id="quantity" name="quantity" min="1">
+  	            <% end %>
+  	            <button type="button" class="quantity-minus absolute top-0 left-0 bottom-0 border-border-gray border-r text-center w-8" aria-label="<%= t("webshop.reduce_with_one")%>">
+  	              <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 3"><path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path></svg>
+  	              <span class="sr-only">−</span>
+  	            </button>
+  	            <button type="button" class="quantity-plus absolute top-0 right-0 bottom-0 border-border-gray border-l text-center w-8" aria-label="<%= t("webshop.increase_with_one")%>">
+  	              <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 21"><path d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill="#000" fill-rule="evenodd"></path></svg>
+  	              <span class="sr-only">+</span>
+  	            </button>
+  	        </div>
+  	    	</div>
+  	    <% end %>
+  	    <%= buy_button product: product,
+                       html: { class: "mb-3" } %>
+  	  </div>
     <% end %>
-    <div class="mb-2">
-	    <% unless product.max_quantity == 1 %>
-	    	<div>
-	    		<label class="font-bold block">
-	          <%= t("webshop.quantity") %> <%= "(#{t("webshop.max")} #{product.max_quantity})" if product.max_quantity %>
-	         </label>
-	         <div class="relative inline-flex">
-	            <% if product.max_quantity %>
-	              <input class="text-center px-8 border border-border-gray flex-grow-0 flex-shrink-0 w-28" type="number" value="1" id="quantity" name="quantity" min="1" max="<%= product.max_quantity %>">
-	            <% else %>
-	              <input class="text-center px-8 border border-border-gray flex-grow-0 flex-shrink-0 w-28" type="number" value="1" id="quantity" name="quantity" min="1">
-	            <% end %>
-	            
-	            <button type="button" class="quantity-minus absolute top-0 left-0 bottom-0 border-border-gray border-r text-center w-8" aria-label="<%= t("webshop.reduce_with_one")%>">
-	              <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 3"><path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path></svg>
-	              <span class="sr-only">−</span>
-	            </button>
-
-	            <button type="button" class="quantity-plus absolute top-0 right-0 bottom-0 border-border-gray border-l text-center w-8" aria-label="<%= t("webshop.increase_with_one")%>">
-	              <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 21"><path d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill="#000" fill-rule="evenodd"></path></svg>
-	              <span class="sr-only">+</span>
-	            </button>
-	          	
-	          </div>
-	    	</div>
-	    <% end %>
-	    <%= buy_button product: product %>
-	  </div>
-    <div>
+    <div class="border-t border-black">
       <% if !product.product_details.empty? %>
-        <div>
-          <a class="toggle flex justify-between w-full border-b border-black bg-white block py-3" href="javascript:void(0);">
-            <%= t("webshop.product_details") %>
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </svg>
-          </a>
-          <div class="hidden prose pt-2">
-            <p>
-              <%= product.product_details %>
-            </p>
-          </div>
-        </div>
-      <% end %>
-      <% if product.sizes && product.sizes.any? { |size| size['lxb'] } %>
-        <div>
-          <a class="toggle flex justify-between w-full border-b border-black bg-white block py-3" href="javascript:void(0);">
-            <%= t("webshop.sizes") %>
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </svg>
-          </a>
-          <div class="hidden prose pt-2">
-            <table class="product-size-table">
-              <thead>
-                <tr>
-                  <th>&nbsp;</th>
-                  <th><%= t("webshop.length_x_waist") %></th>
-                </tr>
-              </thead>
-              <tbody>
-                <% product.sizes.each do |size| %>
-                  <tr>
-                    <td>
-                      <%= size.size %>
-                    </td>
-                    <td>
-                      <%= size.lxb %>
-                    </td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-            <p>
-              <%= t("webshop.size_disclaimer") %>
-            </p>
-            <% if product.size_image.url %>
-              <div class="size-image">
-                <%= image_tag product.size_image.url, alt: "Size Image", class: " lg:max-w-sm mx-auto" %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-      <div>
-        <a class="toggle flex justify-between w-full border-b border-black bg-white block py-3" href="javascript:void(0);">
-          <%= t("webshop.shipping_and_paying") %>
+        <a class="toggle font-bold flex justify-between w-full border-b border-black bg-white block py-3" href="javascript:void(0);">
+          <%= t("webshop.product_details") %>
           <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </svg>
         </a>
-        <div class="prose hidden pt-2">
-          <%= markdownify(dato.product_index.shipping_conditions) %>
+        <div class="hidden prose pt-2">
+          <p>
+            <%= product.product_details %>
+          </p>
         </div>
+      <% end %>
+      <% if product.sizes && product.sizes.any? { |size| size['lxb'] } %>
+        <a class="toggle font-bold flex justify-between w-full border-b border-black bg-white block py-3" href="javascript:void(0);">
+          <%= t("webshop.sizes") %>
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </svg>
+        </a>
+        <div class="hidden prose pt-2">
+          <table class="product-size-table">
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th><%= t("webshop.length_x_waist") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% product.sizes.each do |size| %>
+                <tr>
+                  <td>
+                    <%= size.size %>
+                  </td>
+                  <td>
+                    <%= size.lxb %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <p>
+            <%= t("webshop.size_disclaimer") %>
+          </p>
+          <% if product.size_image.url %>
+            <div class="size-image">
+              <%= image_tag product.size_image.url, alt: "Size Image", class: " lg:max-w-sm mx-auto" %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <a class="toggle font-bold flex justify-between w-full border-b border-black bg-white block py-3" href="javascript:void(0);">
+        <%= t("webshop.shipping_and_paying") %>
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </svg>
+      </a>
+      <div class="prose hidden pt-2">
+        <%= markdownify(dato.product_index.shipping_conditions) %>
       </div>
     </div>
 	</div>

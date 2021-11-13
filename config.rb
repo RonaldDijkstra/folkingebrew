@@ -70,18 +70,6 @@ page "/*.txt",  layout: false
 page "blog/index.html", layout: :blog_index
 page "blog/*", layout: :blog_show
 
-# Activate and setup the blog content type
-activate :blog do |blog|
-  blog.name = "blog"
-  blog.prefix = "blog"
-  blog.permalink = ":title"
-  blog.sources = "/posts/{year}-{month}-{day}-{title}.html"
-  # blog.tag_template = "blog/tag.html"
-  blog.paginate = true
-  blog.page_link = "{num}"
-  blog.per_page = 10
-end
-
 ignore   File.join(config[:js_dir], '*')
 ignore   File.join(config[:css_dir], '*')
 

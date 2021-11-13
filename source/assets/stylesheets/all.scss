@@ -2,7 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -24,6 +23,7 @@ html {
   }
 }
 
+// Show and hide nav
 .site-header {
   &.show-nav {
     @apply opacity-100;
@@ -34,6 +34,7 @@ html {
   }
 }
 
+// Show and hide nav
 .nav-open {
   .open-nav {
     @apply hidden;

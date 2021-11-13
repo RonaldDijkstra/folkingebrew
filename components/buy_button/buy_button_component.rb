@@ -5,18 +5,16 @@ module Components
         def buy_button(opts) 
           product = opts[:product]
 
-          if product.images
-            product_image = product.images.first.url
-          else 
-            product_image = base_url + image_path("/assets/images/store/placeholder.png")
-          end 
+          additional_classes = opts.dig(:html, :class) ? " #{opts[:html][:class]}" : ""
+
+          product_image = product.images ? product.images.first.url : base_url + image_path("/assets/images/store/placeholder.png")
 
           if !product.sizes.empty?
             sizes = product.sizes.map{|x| x[:size]}.join('|')
             first_available_size = product.sizes.select{ |s| s.size_in_stock }.first.size
           end
 
-          classes = "snipcart-add-item buy-button px-4 py-2 h-auto font-semibold transition-all border-2 border-solid bg-green-default border-green-default text-white hover:bg-green-darker hover:border-green-darker"
+          classes = "snipcart-add-item inline-block text-white w-28 py-2 px-2 text-base bg-green-default border-green-default text-white hover:bg-green-darker hover:border-green-darker font-semibold transition-all border border-solid #{additional_classes}"
 
           if sizes 
             content_tag(:button, "Add to Cart", 
