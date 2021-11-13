@@ -66,10 +66,6 @@ page "/*.xml",  layout: false
 page "/*.json", layout: false
 page "/*.txt",  layout: false
 
-# With layout
-page "blog/index.html", layout: :blog_index
-page "blog/*", layout: :blog_show
-
 ignore   File.join(config[:js_dir], '*')
 ignore   File.join(config[:css_dir], '*')
 
@@ -113,6 +109,7 @@ end
 dato.tap do |dato|
   paginate dato.beers, "/beers", "/templates/beers.html", per_page: 12
   paginate dato.products, "/store", "/templates/store.html"
+  paginate dato.posts, "/blog", "/templates/blog.html"
 
   dato.beers.each do |beer| 
     proxy "/beers/#{beer.slug}/index.html", 
@@ -127,7 +124,15 @@ dato.tap do |dato|
           locals: { product: product },
           ignore: true
   end
+
+  dato.posts.each do |post| 
+    proxy "/blog/#{post.slug}/index.html",
+          "/templates/article.html",
+          locals: { post: post },
+          ignore: true
+  end
 end 
 
 ignore "/templates/beers.html.erb"
 ignore "/templates/store.html.erb"
+ignore "/templates/blog.html.erb"

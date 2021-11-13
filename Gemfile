@@ -4,7 +4,6 @@ source "https://rubygems.org"
 
 # Middleman Core & Extensions
 gem "middleman"
-gem "middleman-blog"
 gem "middleman-dotenv"
 gem "middleman-livereload"
 gem "middleman-inline_svg"

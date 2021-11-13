@@ -49,6 +49,10 @@ en:
     beers:
       title: "Our Beers | Page %{page_number}/%{num_pages} | Folkingebrew"
       meta_description: "View all our beer releases | Page %{page_number}/%{num_pages}."
+    blog: 
+      title: "Blog"
+      more_posts: "More Posts"
+      view_all_posts: "View all Posts"
     contact:
       title: "Contact"
     distributors:
