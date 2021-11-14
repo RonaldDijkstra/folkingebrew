@@ -21,6 +21,8 @@
       rel="stylesheet"
     />
 
+    <link rel="preconnect" href="https://cdn.snipcart.com" />
+
     <%# Getting the main stylesheet generated from webpack. Using a regex because of asset hashes %>
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
       <% if resource.path =~ /\.(css)/ %>
