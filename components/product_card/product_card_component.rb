@@ -29,7 +29,7 @@ module Components
 
         def old_price(product)
           price = number_to_currency(product.old_price, :unit => "").gsub!(/\./,",")
-          content_tag(:div, "€ #{price}" , class: "font-regular whitespace-nowrap text-red line-through mr-3")
+          content_tag(:div, "€ #{price}" , class: "font-bold relative line-through font-regular whitespace-nowrap text-red-500 mr-3")
         end 
       end
     end

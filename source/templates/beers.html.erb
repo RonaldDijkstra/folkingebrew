@@ -5,7 +5,7 @@
 <%= regular_header title: t("beers.title") %>
 
 <% grid html: { class: "mb-12" } do %>
-  <% items.each do |beer| %>
+  <% items.sort_by(&:product_id).reverse.each do |beer| %>
     <%= beer_card beer: beer %>
   <% end %>
 <% end %>
