@@ -4,14 +4,11 @@ description: "Do you have questions about Folkingebrew or our beers? Send us an 
 ---
 <%= regular_header title: t("pages.contact.title") %>
 
-<% regular_content do %>
-  <% markdown_content html: { class: "mb-10"} do %>
+<% regular_content html: { class: "mb-24" } do %>
+  <% markdown_content html: { class: "mb-6 max-w-lg m-auto" } do %>
     <%= partial "content/contact" %>
   <% end %>
   <%= partial "partials/form", locals: { name: "contact",
                                          title: "Contactformulier",
-                                         fields: ["name", "email", "message"],
-                                         button_text: t("buttons.submit"),
-                                         button_variant: "medium-size solid green",
-                                         icon_right: "icons/arrow-right.svg"} %>
+                                         fields: ["name", "email", "message"] } %>
 <% end %>
