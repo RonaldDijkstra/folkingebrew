@@ -41,7 +41,7 @@ end
  	</figure>
 	<div class="product-content flex-1 flex-col bg-white px-6 py-12">
 		<% if product.old_price %>
-			<div>
+			<div class="line-through text-red-500 font-bold">
 				€ <%= number_to_currency(product.old_price, :unit => "").gsub!(/\./,",") %>
 			</div>
 		<% end %>
