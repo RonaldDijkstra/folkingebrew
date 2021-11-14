@@ -1,11 +1,11 @@
----
-title: Privacy Policy
-description: Privacy Policy for using our website and purchasing items in our online store.
----
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.privacy_policy) %>
+<% end %>
+
 <%= regular_header title: t("pages.privacy.title") %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
-  <% markdown_content html: { class: "mb-10" } do %>
-    <%= partial "content/privacy-policy" %>
+  <% markdown_content do %>
+    <%= markdownify(dato.privacy_policy.content) %>
   <% end %>
 <% end %>

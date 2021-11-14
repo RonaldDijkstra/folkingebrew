@@ -54,14 +54,13 @@
         <%= javascript_include_tag resource.path %>
       <% end %>
     <% end %>
-    <% if production? %>
-      <%= partial "partials/meta/analytics" %>
-    <% end %>
-
     <%= partial "partials/store/store_elements" %>
     <% if current_page.data.type == "product" %>
       <%= partial "partials/meta/schema_product", locals: { product: product } %>
     <% end %>
     <%= partial "partials/meta/schema_home" if current_page.url == "/" %>
+    <% if production? %>
+      <%= partial "partials/meta/analytics" %>
+    <% end %>
   </body>
 </html>
