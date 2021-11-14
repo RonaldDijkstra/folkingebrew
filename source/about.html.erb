@@ -5,7 +5,7 @@
 <%= regular_header title: dato.about_page.title %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
-  <% markdown_content html: { class: "" } do %>
+  <% markdown_content do %>
     <%= markdownify(dato.about_page.content) %>
   <% end %>
 <% end %>
