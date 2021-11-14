@@ -22,4 +22,7 @@ description: "Do you have questions about Folkingebrew or our beers? Here you'll
   </div>
 <% end %>
 
-<%= partial "partials/shared/newsletter-subscribe", locals: { button_text: "Subscribe" } %>
+<% newsletter do %>
+  <%= partial "partials/form_mailchimp" %>
+<% end %>
+
