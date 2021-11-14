@@ -19,15 +19,7 @@ module ApplicationHelpers
 
   # Get the title from frontmatter if any
   def frontmatter_title
-    if is_blog_article?
-      if current_page.url.start_with?("/blog/")
-        [current_page.data.title, "Blog"].join(" | ")
-      elsif current_page.url.start_with?("/store/")
-        [current_page.data.title, "Store"].join(" | ")
-      end
-    else
-      current_page.data.title
-    end
+    current_page.data.title
   end
 
   # If there's a title in frontmatter then join them with the website_name
@@ -52,8 +44,6 @@ module ApplicationHelpers
       yield_content(:meta_description)
     elsif page.data.description
       page.data.description
-    elsif is_blog_article?
-      Nokogiri::HTML(page.summary(160)).text
     else
       data.site.meta_description
     end
@@ -100,16 +90,6 @@ module ApplicationHelpers
     end
   end
 
-  def article_class
-    if is_blog_article?
-      if current_page.url.start_with?("/blog/")
-        "blog-article"
-      elsif current_page.url.start_with?("/store/")
-        "product-detail"
-      end
-    end
-  end
-
   # Add aria current to current page navigation item
   def current_link_to(*arguments, aria_current: "page", **options, &block)
     if block_given?
@@ -125,13 +105,13 @@ module ApplicationHelpers
     link_to(text, path, options)
   end
 
-  def stocked_articles
-    articles = []
-      (blog().articles).select do |article|
-        next if article.data.out_of_stock
-        articles << article
+  def stocked_products
+    products = []
+      dato.products.select do |product|
+        next unless product.in_stock
+        products << product
       end
-    articles
+    products
   end
 
   def markdownify(text)

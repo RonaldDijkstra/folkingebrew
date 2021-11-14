@@ -4,7 +4,6 @@ source "https://rubygems.org"
 
 # Middleman Core & Extensions
 gem "middleman"
-gem "middleman-blog"
 gem "middleman-dotenv"
 gem "middleman-livereload"
 gem "middleman-inline_svg"
@@ -19,7 +18,6 @@ gem "middleman-dato", "~> 0.10.0"
 # Development
 gem "builder"
 gem "html-proofer"
-# gem "kramdown-parser-gfm"
 gem "nokogiri"
 gem "pry-byebug"
 gem "rake"

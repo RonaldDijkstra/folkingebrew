@@ -56,12 +56,6 @@ end
 # Activate Pagination
 activate :pagination
 
-# Use Webshop?
-set :use_webshop?, true
-
-# Ignore the selection file for Icomoon
-ignore "assets/fonts/selection.json"
-
 # Use redcarpet for markdown
 set :markdown_engine, :redcarpet
 
@@ -72,38 +66,15 @@ page "/*.xml",  layout: false
 page "/*.json", layout: false
 page "/*.txt",  layout: false
 
-# With layout
-page "blog/index.html", layout: :blog_index
-page "blog/*", layout: :blog_show
-page "store/index.html", layout: :store_index
-page "store/*", layout: :store_product_detail
-
-# Activate and setup the blog content type
-activate :blog do |blog|
-  blog.name = "blog"
-  blog.prefix = "blog"
-  blog.permalink = ":title"
-  blog.sources = "/posts/{year}-{month}-{day}-{title}.html"
-  # blog.tag_template = "blog/tag.html"
-  blog.paginate = true
-  blog.page_link = "{num}"
-  blog.per_page = 10
-end
-
-# Activate and setup the product content type
-activate :blog do |blog|
-  blog.name = "store"
-  blog.prefix = "store"
-  blog.permalink = ":title"
-  blog.sources = "/products/{title}.html"
-  # blog.tag_template = "blog/tag.html"
-  blog.paginate = true
-  blog.page_link = "/page/{num}"
-  blog.per_page = 12
-end
-
 ignore   File.join(config[:js_dir], '*')
 ignore   File.join(config[:css_dir], '*')
+
+# Load and activate all components
+Dir["./components/**/*.rb"].each { |file| load file }
+Pathname.new("./components").children.each do |entry|
+  return unless entry.directory?
+  activate "#{entry.basename.to_s}_component".to_sym
+end
 
 # Development-specific configuration
 configure :development do
@@ -118,7 +89,6 @@ end
 configure :build do
   set      :relative_links, true
   activate :asset_hash, ignore: [
-    %r{^assets/fonts/.*},
     "assets/images/logo-folkingebrew-black.svg"
   ]
   activate :gzip
@@ -138,6 +108,8 @@ end
 
 dato.tap do |dato|
   paginate dato.beers, "/beers", "/templates/beers.html", per_page: 12
+  paginate dato.products, "/store", "/templates/store.html"
+  paginate dato.posts, "/blog", "/templates/blog.html"
 
   dato.beers.each do |beer| 
     proxy "/beers/#{beer.slug}/index.html", 
@@ -145,6 +117,22 @@ dato.tap do |dato|
           locals: { beer: beer },
           ignore: true
   end 
+
+  dato.products.each do |product| 
+    proxy "/store/#{product.slug}/index.html",
+          "/templates/product.html",
+          locals: { product: product },
+          ignore: true
+  end
+
+  dato.posts.each do |post| 
+    proxy "/blog/#{post.slug}/index.html",
+          "/templates/article.html",
+          locals: { post: post },
+          ignore: true
+  end
 end 
 
 ignore "/templates/beers.html.erb"
+ignore "/templates/store.html.erb"
+ignore "/templates/blog.html.erb"

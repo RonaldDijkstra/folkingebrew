@@ -2,23 +2,12 @@
 title: "Contact us"
 description: "Do you have questions about Folkingebrew or our beers? Send us an email using the contact form."
 ---
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      <%= t("pages.contact.title") %>
-    </h1>
-  </div>
-</header>
-<section class="contact-form medium-row">
-  <div class="grid-row">
-    <div class="row">
-      <%= partial "content/contact" %>
-      <%= partial "partials/form", locals: { name: "contact",
-                                             title: "Contactformulier",
-                                             fields: ["name", "email", "message"],
-                                             button_text: t("buttons.submit"),
-                                             button_variant: "medium-size solid green",
-                                             icon_right: "icons/arrow-right.svg"} %>
-    </div>
-  </div>
-</section>
+<%= regular_header title: t("pages.contact.title") %>
+
+<% regular_content html: { class: "mb-24" } do %>
+  <% markdown_content html: { class: "mb-6 max-w-lg m-auto" } do %>
+    <%= partial "content/contact" %>
+  <% end %>
+  <%= partial "partials/form", locals: { name: "contact",
+                                         fields: ["name", "email", "message"] } %>
+<% end %>

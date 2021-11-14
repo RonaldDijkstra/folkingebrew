@@ -1,9 +1,0 @@
-<% link_to locals[:to], class: "button " + locals[:variant] ||= "default" do %>
-  <% if locals[:icon_left] %>
-    <%= inline_svg icon_left, class: "inline-svg button-icon-left" %>
-  <% end %>
-  <%= locals[:text] %>
-  <% if locals[:icon_right] %>
-    <%= inline_svg icon_right, class: "inline-svg button-icon-right" %>
-  <% end %>
-<% end %>

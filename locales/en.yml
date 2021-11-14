@@ -6,7 +6,6 @@ en:
     Olgerweg 2-7<br>
     9723 ED<br>
     Groningen<br>
-    The Netherlands
   time:
     formats:
       blog_date: "%e %B %Y"
@@ -33,11 +32,11 @@ en:
     email_us: "Send us a message"
     social: "Social"
     up_to_date: "Stay up-to-date"
-    buy: "Buy Beer & Merchandise"
+    buy: "Buy Beer & Merch"
     legal: "Legal"
     contact: "Contact us"
     email: "Send an email"
-    address: "Address (no visits)"
+    adress: "Address (no visits)"
     rights: "All rights reserved"
   form:
     name: "Name"
@@ -50,6 +49,10 @@ en:
     beers:
       title: "Our Beers | Page %{page_number}/%{num_pages} | Folkingebrew"
       meta_description: "View all our beer releases | Page %{page_number}/%{num_pages}."
+    blog: 
+      title: "Blog"
+      more_posts: "More Posts"
+      view_all_posts: "View all Posts"
     contact:
       title: "Contact"
     distributors:
@@ -71,7 +74,7 @@ en:
     store:
       title: "Store"
     thanks:
-      text: "Thank you for filling in our contact form. We will contact you as soon as possible."
+      text: "Thank you for reaching out. We'll contact you as soon as possible."
       title: "Thank you"
       newsletter:
         confirmed: Your subscription for our newsletter has been confirmed. Thank you for subscribing!
@@ -108,6 +111,7 @@ en:
     back_to_all_products: "See all products"
     in_stock: "In Stock 😊"
     incl_tax: "Incl. tax, excl."
+    increase_with_one: "Increase item quantity by one"
     length_x_waist: "L x W (CM)"
     max: "max"
     more_products: "More Products"

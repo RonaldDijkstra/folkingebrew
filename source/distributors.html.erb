@@ -3,47 +3,39 @@ title: "Distributors"
 description: "This list consists of our distributors, in the Netherlands and abroad."
 ---
 
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      <%= t("pages.distributors.title") %>
-    </h1>
-  </div>
-</header>
-
 <% distributor_lists = data["distributors"] %>
 
-<section class="distributors medium-row">
-  <div class="grid-row">
-    <div class="row">
-      <%= partial "content/distributors" %>
-      <% if distributor_lists %>
-        <% distributor_lists.each do |region| %>
-          <h2>
-            <%= region.region %>
-          </h2>
-          <div class="distributors-wrapper">
-            <% if region.distributors %>
-              <% region.distributors.each do |distributor| %>
-                <div class="distributor-item">
-                  <h3>
-                    <%= link_to "#{distributor.name}", "#{distributor.url}", target: "_blank", rel: "noopener noreferrer" %>
-                  </h3>
-                  <p>
-                    <%= distributor.street %><br>
-                    <%= distributor.postal_code %><br>
-                    <%= distributor.city %><% if distributor.country %><br>
-                    <%= distributor.country %><% end %>
-                  </p>
-                  <p>
-                    <%= link_to "#{distributor.email}", "mailto:#{distributor.email}", target: "_blank" %>
-                  </p>
-                </div>
+<%= regular_header title: t("pages.distributors.title") %>
+
+<% regular_content html: { class: "mb-12 sm:mb-24" } do %>
+  <% markdown_content html: { class: "mb-10" } do %>
+    <%= partial "content/distributors" %>
+  <% end %>
+
+  <% if distributor_lists %>
+    <% distributor_lists.each do |region| %>
+      <%= content_tag(:h2, region.region, class: "text-xl mb-6") %>
+
+      <% if region.distributors %>
+        <div class="sm:flex sm:flex-wrap">
+          <% region.distributors.each do |distributor| %>
+            <div class="mb-10 text-base sm:w-1/2">
+              <% content_tag(:h3, class: "text-lg") do %>
+                <%= link_to "#{distributor.name}", "#{distributor.url}", class: "text-green-default underline hover:no-underline", target: "_blank", rel: "noopener noreferrer" %>
               <% end %>
-            <% end %>
-          </div>
-        <% end %>
+              <% content_tag(:adress) do %>
+                <%= distributor.street %><br>
+                <%= distributor.postal_code %><br>
+                <%= distributor.city %><% if distributor.country %><br>
+                <%= distributor.country %><% end %>
+              <% end %>
+              <% content_tag(:p) do %>
+                <%= link_to "#{distributor.email}", "mailto:#{distributor.email}", class: "text-green-default underline hover:no-underline", target: "_blank" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       <% end %>
-    </div>
-  </div>
-</section>
+    <% end %>
+  <% end %>
+<% end %>

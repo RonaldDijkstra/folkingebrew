@@ -2,17 +2,10 @@
 title: Privacy Policy
 description: Privacy Policy for using our website and purchasing items in our online store.
 ---
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      <%= t("pages.privacy.title") %>
-    </h1>
-  </div>
-</header>
-<section class="privacy-policy medium-row">
-  <div class="grid-row">
-    <div class="row">
-      <%= partial "content/privacy-policy" %>
-    </div>
-  </div>
-</section>
+<%= regular_header title: t("pages.privacy.title") %>
+
+<% regular_content html: { class: "mb-12 sm:mb-24" } do %>
+  <% markdown_content html: { class: "mb-10" } do %>
+    <%= partial "content/privacy-policy" %>
+  <% end %>
+<% end %>

@@ -2,17 +2,10 @@
 title: Terms & Conditions
 description: Terms & Conditions for purchasing items in our online store.
 ---
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      <%= t("pages.terms.title") %>
-    </h1>
-  </div>
-</header>
-<section class="terms-and-conditions medium-row">
-  <div class="grid-row">
-    <div class="row">
-      <%= partial "content/terms-and-conditions" %>
-    </div>
-  </div>
-</section>
+<%= regular_header title: t("pages.terms.title") %> 
+
+<% regular_content html: { class: "mb-12 sm:mb-24" } do %>
+  <% markdown_content do %>
+    <%= partial "content/terms-and-conditions" %>
+  <% end %>
+<% end %>

@@ -1,26 +1,19 @@
-<% 
-  total_pages = pager.total_pages
-  current_page = pager.current_page
-%>
-
-<% if pager && total_pages > 1 %>
-  <div class="pagination">
-    <ul>
-      <% for page in 1..total_pages %>
-        <% if page == current_page %>
-          <li class="current item">
-            <span><%= current_page %></span>
-          </li>
-        <% else %>
-          <%
-          page_url = "/beers/"
-          page_url << "page/#{page}" unless page == 1
-          %>
-          <li>
-            <%= link_to page, page_url %>
-          </li>
-        <% end %>
+<div class="text-center">
+  <ul class="flex flex-wrap justify-center list-none m-0 p-0 w-full">
+    <% for page in 1..total_pages %>
+      <% if page == current_page %>
+        <li class="inline-block">
+          <span class="bg-green-default text-white block ml-2 mr-2 px-4 py-3 text-xl leading-7"><%= current_page %></span>
+        </li>
+      <% else %>
+        <%
+        page_url = "/beers/"
+        page_url << "page/#{page}" unless page == 1
+        %>
+        <li>
+          <%= link_to page, page_url, class: "bg-white ml-2 mr-2 px-4 py-3 block text-xl leading-7" %>
+        </li>
       <% end %>
-    </ul>
-  </div>
-<% end %>
+    <% end %>
+  </ul>
+</div>

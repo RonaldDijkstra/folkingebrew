@@ -1,8 +1,6 @@
 *Date: 20 march 2021*
 *Version: 1*
 
-{::options auto_ids="false" /}
-
 This web page explains our approach to privacy on our website and what we do with your data as a website visitor.
 
 ## What we collect, in short

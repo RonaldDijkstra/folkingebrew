@@ -1,0 +1,17 @@
+<div class="age-gate hidden top-0 fixed bg-black w-full h-full left-0 z-50" data-rel="age-gate">
+  <div class="text-center absolute text-white left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 md:max-w-10">
+    <%= inline_svg "logo-folkingebrew-age-gate.svg", alt: "Folkingebrew", class: "mb-6" %>
+    <div class="age-gate-options">
+      <%= button text: "Over 18",
+                 link: false,
+                 type: :primary,
+                 html: { class: "age-gate-consent inline-block mr-3" } %>
+
+      <%= button text: "Under 18",
+                 link: true, 
+                 href: "https://www.kindertube.nl/gonnie-en-gijsje/gonnie-en-gijsje-filmpjes.html",
+                 type: :default_gray,
+                 html: { class: "inline-block"} %>
+    </div>
+  </div>
+</div>

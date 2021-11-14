@@ -3,45 +3,36 @@ title: Events
 ---
 <% events = data["events"] %>
 
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      <%= t("pages.events.title") %>
-    </h1>
-  </div>
-</header>
-<section class="events medium-row">
-  <div class="grid-row">
-    <div class="row">
-      <%= partial "content/events" %>
-    </div>
-    <div class="row">
-      <% if events %>
-        <table role="table" class="responsive-table">
-          <thead role="rowgroup">
+<%= regular_header title: t("pages.events.title") %>
+
+<% regular_content html: { class: "mb-12 sm:mb-24" } do %>
+  <% markdown_content do %>
+    <%= partial "content/events" %>
+    <% if events %>
+      <table role="table" class="responsive-table">
+        <thead role="rowgroup">
+          <tr role="row">
+            <th role="columnheader"><%= t("events.date") %></th>
+            <th role="columnheader"><%= t("events.event") %></th>
+            <th role="columnheader"><%= t("events.location") %></th>
+            <th role="columnheader">&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody role="rowgroup">
+          <% events.each do |event| %>
             <tr role="row">
-              <th role="columnheader" class="event-date"><%= t("events.date") %></th>
-              <th role="columnheader" class="event-title"><%= t("events.event") %></th>
-              <th role="columnheader" class="event-location"><%= t("events.location") %></th>
-              <th role="columnheader" class="event-link">&nbsp;</th>
+              <td role="cell"><%= event.date %></td>
+              <td role="cell"><%= event.title %></td>
+              <td role="cell"><%= event.location %></td>
+              <td role="cell"><%= link_to t("events.link"), "#{event.link}", target: "_blank", rel: "noopener noreferrer nofollow", class: "text-green-default hover:no-underline" %></td>
             </tr>
-          </thead>
-          <tbody role="rowgroup">
-            <% events.each do |event| %>
-              <tr role="row">
-                <td role="cell" class="event-date"><%= event.date %></td>
-                <td role="cell"><%= event.title %></td>
-                <td role="cell"><%= event.location %></td>
-                <td role="cell" class="event-link"><%= link_to t("events.link"), "#{event.link}", target: "_blank", rel: "noopener noreferrer nofollow" %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      <% else %>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
         <p>
           There are no upcoming events
         </p>
-      <% end %>
-    </div>
-  </div>
-</section>
+    <% end %>
+  <% end %>
+<% end %>

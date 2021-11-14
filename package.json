@@ -37,11 +37,11 @@
     "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --bail -p"
   },
   "dependencies": {
-    "bourbon": "^7.0.0",
-    "bourbon-neat": "^4.0.0",
+    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/typography": "^0.4.1",
     "jquery": "^3.6.0",
-    "jquery.scrollto": "^2.1.3",
     "js-cookie": "^3.0.1",
+    "tailwindcss": "^2.2.17",
     "what-input": "^5.2.10"
   }
 }

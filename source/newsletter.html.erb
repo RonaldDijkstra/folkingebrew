@@ -1,18 +1,11 @@
 ---
 title: "Join our Newsletter"
 ---
-<header class="normal-page-header">
-  <div class="grid-row">
-    <h1>
-      <%= t("pages.newsletter.title") %>
-    </h1>
-  </div>
-</header>
-<section class="contact-form medium-row">
-  <div class="grid-row">
-    <div class="row">
-    	<%= partial "content/newsletter" %>
-    	<%= partial "partials/shared/newsletter-form", locals: { title_text: "Sign up"} %>
-    </div>
-  </div>
-</section>
+<%= regular_header title: t("pages.newsletter.title") %>
+
+<% regular_content html: { class: "mb-24" } do %>
+  <% markdown_content html: { class: "mb-6 max-w-lg m-auto" } do %>
+    <%= partial "content/newsletter" %>
+    <%= partial "partials/form_mailchimp" %>
+  <% end %>
+<% end %>
