@@ -74,7 +74,7 @@ en:
     store:
       title: "Store"
     thanks:
-      text: "Thank you for filling in our contact form. We will contact you as soon as possible."
+      text: "Thank you for reaching out. We'll contact you as soon as possible."
       title: "Thank you"
       newsletter:
         confirmed: Your subscription for our newsletter has been confirmed. Thank you for subscribing!
