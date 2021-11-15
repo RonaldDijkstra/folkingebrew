@@ -4,7 +4,7 @@ module Components
       helpers do 
         def beer_card(opts)
           beer = opts[:beer]
-          image = beer.image.url(fm: "png", h: "540", w: "540")
+          image = beer.image.url(fm: :webp, h: 540, w: 540)
 
           concat(
             link_to("/beers/#{beer.slug}", class: "bg-gray-800 relative") do
