@@ -92,7 +92,7 @@ configure :build do
     "assets/images/logo-folkingebrew-black.svg"
   ]
   activate :gzip
-  activate :minify_html
+  activate :minify_html, :remove_input_attributes => false
 
   # Raise exception for missing translations during build
   require "lib/test_exception_localization_handler"
