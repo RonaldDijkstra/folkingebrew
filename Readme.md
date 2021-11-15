@@ -7,9 +7,9 @@ Modern Craft Beer from Groningen since 2017.
 
 ## About 
 
-This website is built with Middleman and Thoughtbot’s Middleman Template. It uses Webpack as external pipeline and deploys to Netlify. It uses DatoCMS for content delivery and Snipcart for the cart. 
+This website is built with Middleman and TailwindCSS with Webpack as external pipeline. This website is deployed to Netlify, uses DatoCMS for content delivery and Snipcart for the cart. 
 
-Production: https://www.folkingebrew.nl
+View in Production: https://www.folkingebrew.nl
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Production: https://www.folkingebrew.nl
 2. Clone this repo using `git clone https://github.com/RonaldDijkstra/folkingebrew.git`
 3. Move to the appropriate directory: `cd folkingebrew`
 4. Run `bin/setup` (make sure it's executable)
-5. Add your `DATO_API_TOKEN` and `SNIPCART_API_KEY` to .env
+5. Add your `DATO_API_TOKEN`, `SNIPCART_API_KEY` and `GA_ID` to .env
 6. Start your local server with `rake serve`
 7. View your website at `localhost:4567`
 
@@ -37,3 +37,4 @@ Production: https://www.folkingebrew.nl
 4. [HTML Proofer](https://github.com/gjtorikian/html-proofer)
 5. [Snipcart](https://snipcart.com)
 6. [DatoCMS](https://www.datocms.com/)
+7. [TailwindCSS](https://tailwindcss.com/)
