@@ -10,7 +10,7 @@
   bg_color = beer.background_color == "dark" ? "bg-gray-800" : "bg-white"
 %> 
 
-<section class="lg:flex lg:px-6 lg:mt-12 mb-12">
+<section class="lg:flex px-6 mt-12 mb-12 max-w-7xl m-auto">
   <figure class="lg:flex-1 h-full lg:w-1/2 relative <%= bg_color %>">
     <picture class="block h-full w-full">
       <% if beer.image.url %>
