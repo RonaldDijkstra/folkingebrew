@@ -5,6 +5,10 @@ module Components
         def product_card(opts)
           product = opts[:product]
           image = product.card_image.url
+
+          puts "****"
+          puts image
+          puts "****"
     
           concat(
             link_to("/store/#{product.slug}", class: "bg-white p-6") do
