@@ -4,7 +4,7 @@ module Components
       helpers do 
         def product_card(opts)
           product = opts[:product]
-          image = product.images.first.url(fm: "jpg", h: "540", w: "540")
+          image = product.images.first.url(fm: :webp, h: 540, w: 540)
     
           concat(
             link_to("/store/#{product.slug}", class: "bg-white p-6") do
