@@ -14,7 +14,7 @@
   <figure class="lg:flex-1 h-full lg:w-1/2 relative <%= bg_color %>">
     <picture class="block h-full w-full">
       <% if beer.image.url %>
-        <%= image_tag beer.image.url, alt: beer.title, class: "product-image", id: "product-image" %>
+        <%= image_tag beer.image.url(fm: :webp, h: 970, w:970), alt: beer.title, class: "product-image", id: "product-image" %>
       <% else %>
         <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image", id: "product-image" %>
       <% end %>

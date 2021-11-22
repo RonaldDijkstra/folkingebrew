@@ -39,7 +39,7 @@ export default function webshop() {
     });
 
     $(".product-thumbnail").click(function(){
-      $("#product-image").attr("src",$(this).attr("src"));
+      $("#product-image").attr("src", $(this).attr("src"));
 
       $(document).find(".thumbnail-active").removeClass('thumbnail-active');
       $(this).parents('button').addClass('thumbnail-active');

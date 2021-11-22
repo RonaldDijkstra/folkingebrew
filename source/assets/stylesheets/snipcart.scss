@@ -90,7 +90,7 @@
   }
 
   .snipcart-form__select-wrapper:focus-within .snipcart__icon {
-    color: var(--green)!important;
+    color: var(--green) !important;
   }
 
   .snipcart-summary-fees__tax-notice path {
@@ -105,12 +105,47 @@
     margin-top: 0;
   }
 
-  label.snipcart__font--tiny {
-    font-size: 14px;
+  .snipcart__font--tiny {
+    font-size: 15px;
+    font-weight: normal;
   }
 
   .comment-box {
     height: auto;
+  }
+
+  .snipcart-summary-fees__notice {
+    margin-bottom: 24px;
+  }
+
+  .terms-text {
+    line-height: 1.25;
+  }
+
+  .terms-link {
+    color: var(--green);
+    display: inline-block;
+  }
+
+  [multiple]:focus, [type="date"]:focus, [type="datetime-local"]:focus, [type="email"]:focus, [type="month"]:focus, [type="number"]:focus, [type="password"]:focus, [type="search"]:focus, [type="tel"]:focus, [type="text"]:focus, [type="time"]:focus, [type="url"]:focus, [type="week"]:focus, select:focus, textarea:focus {
+    --tw-ring-color: var(--green);
+  }
+
+  .snipcart-base-button__label {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .snipcart-discount-box .snipcart-input {
+    padding-right: 0;
+  }
+
+  .snipcart-item-line__media--small {
+    margin-right: 10px;
+  }
+
+  .snipcart__font--bold {
+    font-weight: 700;
   }
 }
 
