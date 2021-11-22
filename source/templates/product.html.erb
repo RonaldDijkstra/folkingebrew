@@ -10,7 +10,7 @@ type: product
 
 <%
 if product.images
-  product_image = product.images.first.url
+  product_image = product.images.first.url(fm: :webp, h: 970, w: 970)
 end
 %>
 
