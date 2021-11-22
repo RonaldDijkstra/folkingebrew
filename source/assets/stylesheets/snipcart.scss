@@ -90,7 +90,7 @@
   }
 
   .snipcart-form__select-wrapper:focus-within .snipcart__icon {
-    color: var(--green)!important;
+    color: var(--green) !important;
   }
 
   .snipcart-summary-fees__tax-notice path {
@@ -111,6 +111,10 @@
 
   .comment-box {
     height: auto;
+  }
+
+  .snipcart-summary-fees__notice {
+    margin-bottom: 24px;
   }
 }
 
