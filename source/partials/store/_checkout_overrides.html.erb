@@ -69,10 +69,9 @@
     </div>
     <hr class="snipcart-form__separator">
     <div class="snipcart-form__field snipcart-form__cell--large">
-      <snipcart-checkbox name="terms-and-conditions" required></snipcart-checkbox>
-      <snipcart-label for="terms-and-conditions" >
-        I have read and agree to the&nbsp;<%= link_to "Terms & Conditions", "/terms-and-conditions.html" %>
-      </snipcart-label>
+      <p>
+        By continuing you agree to our <%= link_to "Terms & Conditions", "/terms-and-conditions.html", class: "terms-link" %>.
+      </p>
     </div>
   </div>
 </billing>
