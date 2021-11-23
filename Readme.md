@@ -32,9 +32,9 @@ View in Production: https://www.folkingebrew.nl
 ## Thanks to 
 
 1. [Middleman](https://middlemanapp.com/) 
-2. [Middleman Template by ThoughtBot](https://github.com/thoughtbot/middleman-template) (includes [Bourbon](https://github.com/thoughtbot/bourbon) + [Neat](https://github.com/thoughtbot/neat) + [Bitters](https://github.com/thoughtbot/bitters))
-3. [Webpack Middleman Starter](https://github.com/gabrielecanepa/middleman-webpack) by Gabriele Canepa
-4. [HTML Proofer](https://github.com/gjtorikian/html-proofer)
-5. [Snipcart](https://snipcart.com)
-6. [DatoCMS](https://www.datocms.com/)
-7. [TailwindCSS](https://tailwindcss.com/)
+2. [Webpack Middleman Starter](https://github.com/gabrielecanepa/middleman-webpack) by Gabriele Canepa
+3. [HTML Proofer](https://github.com/gjtorikian/html-proofer)
+4. [Snipcart](https://snipcart.com)
+5. [DatoCMS](https://www.datocms.com/)
+6. [TailwindCSS](https://tailwindcss.com/)
+7. [Building view components in Middleman](https://www.jeffreyknox.dev/blog/building-view-components-in-middleman/) by [Jeff Knox](https://github.com/knoxjeffrey)
