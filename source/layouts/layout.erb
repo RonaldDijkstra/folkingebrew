@@ -26,8 +26,7 @@
     <%# Getting the main stylesheet generated from webpack. Using a regex because of asset hashes %>
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
       <% if resource.path =~ /\.(css)/ %>
-        <link rel="preload" href="/<%= resource.path %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" type="text/css" href="/<%= resource.path %>"></noscript>
+        <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
       <% end %>
     <% end %>
     
@@ -53,7 +52,7 @@
 
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
       <% if resource.path =~ /\.(js)/ %>
-        <%= javascript_include_tag resource.path, defer: true %>
+        <%= javascript_include_tag resource.path %>
       <% end %>
     <% end %>
     <%= partial "partials/store/store_elements" %>
