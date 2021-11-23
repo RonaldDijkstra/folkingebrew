@@ -3,6 +3,7 @@ const glob = require('glob');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin')
 
 const env = process.env.NODE_ENV;
 const filename = env === 'production' ? '[name].[contenthash]' : '[name]';
@@ -69,5 +70,20 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
     })
-  ]
+  ],
+
+  optimization: { 
+    minimize: true, 
+    minimizer: [ 
+      new TerserPlugin({ 
+        cache: true, 
+        parallel: true, 
+        terserOptions: { 
+          output: {
+            comments: false
+          }
+        }
+      }), 
+    ]
+  }
 };
