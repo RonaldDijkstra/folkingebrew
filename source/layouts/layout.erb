@@ -26,7 +26,8 @@
     <%# Getting the main stylesheet generated from webpack. Using a regex because of asset hashes %>
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
       <% if resource.path =~ /\.(css)/ %>
-        <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
+        <link rel="preload" href="/<%= resource.path %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" type="text/css" href="/<%= resource.path %>"></noscript>
       <% end %>
     <% end %>
     
@@ -38,7 +39,6 @@
 
     <meta name="google-site-verification" content="KSIwicnXARzh9Pv1igm5rWDKP-Zh1cA3tYVjs4uk_zE">
     <%= partial "partials/meta/open_graph" %>
-    <%#= feed_tag :atom, "#{blog("blog").options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
 
   <body class="flex flex-col min-h-screen font-sans text-textgray <%= page_classes %> <%= current_resource.data.header_class %> <%= content_for?(:page_class) ? yield_content(:page_class) : "" %> at-the-top bg-gradient-to-tr from-green-default to-green-dark">
@@ -53,7 +53,7 @@
 
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
       <% if resource.path =~ /\.(js)/ %>
-        <%= javascript_include_tag resource.path %>
+        <%= javascript_include_tag resource.path, defer: true %>
       <% end %>
     <% end %>
     <%= partial "partials/store/store_elements" %>
