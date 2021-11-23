@@ -53,7 +53,7 @@
 
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
       <% if resource.path =~ /\.(js)/ %>
-        <%= javascript_include_tag resource.path, defer: true %>
+        <%= javascript_include_tag resource.path %>
       <% end %>
     <% end %>
     <%= partial "partials/store/store_elements" %>
