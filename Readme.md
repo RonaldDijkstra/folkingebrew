@@ -32,7 +32,7 @@ View in Production: https://www.folkingebrew.nl
 ## Thanks to 
 
 1. [Middleman](https://middlemanapp.com/) 
-2. [Webpack Middleman Starter](https://github.com/gabrielecanepa/middleman-webpack) by Gabriele Canepa
+2. [Webpack Middleman Starter](https://github.com/gabrielecanepa/middleman-webpack) by [Gabriele Canepa](https://github.com/gabrielecanepa)
 3. [HTML Proofer](https://github.com/gjtorikian/html-proofer)
 4. [Snipcart](https://snipcart.com)
 5. [DatoCMS](https://www.datocms.com/)
