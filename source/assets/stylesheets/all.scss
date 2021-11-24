@@ -70,3 +70,9 @@ html {
     @apply opacity-70;
   }
 }
+
+a.toggle.active {
+  svg {
+    transform: rotate(180deg);
+  }
+}
