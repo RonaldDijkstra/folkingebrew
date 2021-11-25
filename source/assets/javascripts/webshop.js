@@ -27,13 +27,13 @@ export default function webshop() {
     });
 
     $('#quantity').change(function(){
-      var $button = $(this).parents('.product-content').find('.buy-button');
+      var $button = $(this).parents('.product-content').find('.snipcart-add-item');
 
       $button.attr('data-item-quantity', $(this).val());
     });
 
      $('#size').change(function(){
-      var $button = $(this).parents('.product-content').find('.buy-button');
+      var $button = $(this).parents('.product-content').find('.snipcart-add-item');
 
       $button.attr('data-item-custom1-value', $(this).val());
     });
