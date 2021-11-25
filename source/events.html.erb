@@ -8,31 +8,27 @@ title: Events
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content do %>
     <%= partial "content/events" %>
-    <% if events %>
-      <table role="table" class="responsive-table">
-        <thead role="rowgroup">
-          <tr role="row">
-            <th role="columnheader"><%= t("events.date") %></th>
-            <th role="columnheader"><%= t("events.event") %></th>
-            <th role="columnheader"><%= t("events.location") %></th>
-            <th role="columnheader">&nbsp;</th>
-          </tr>
-        </thead>
-        <tbody role="rowgroup">
-          <% events.each do |event| %>
-            <tr role="row">
-              <td role="cell"><%= event.date %></td>
-              <td role="cell"><%= event.title %></td>
-              <td role="cell"><%= event.location %></td>
-              <td role="cell"><%= link_to t("events.link"), "#{event.link}", target: "_blank", rel: "noopener noreferrer nofollow", class: "text-green-default hover:no-underline" %></td>
-            </tr>
+    <table role="table" class="responsive-table">
+      <thead role="rowgroup">
+        <tr role="row">
+          <th role="columnheader"><%= t("events.date") %></th>
+          <th role="columnheader"><%= t("events.event") %></th>
+          <th role="columnheader"><%= t("events.location") %></th>
+          <th role="columnheader">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        <tr role="row">
+          <% if !events.empty? %>
+            <td role="cell"><%= event.date %></td>
+            <td role="cell"><%= event.title %></td>
+            <td role="cell"><%= event.location %></td>
+            <td role="cell"><%= link_to t("events.link"), "#{event.link}", target: "_blank", rel: "noopener noreferrer nofollow", class: "text-green-default hover:no-underline" %></td>
+          <% else %>
+            <td colspan="4">There are no upcoming events.</td>
           <% end %>
-        </tbody>
-      </table>
-    <% else %>
-        <p>
-          There are no upcoming events
-        </p>
-    <% end %>
+        </tr>
+      </tbody>
+    </table>
   <% end %>
 <% end %>

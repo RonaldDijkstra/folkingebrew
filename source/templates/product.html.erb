@@ -14,7 +14,7 @@ if product.images
 end
 %>
 
-<section class="lg:flex px-6 mb-12 max-w-7xl m-auto">
+<section class="lg:flex lg:px-6 mb-12 max-w-7xl m-auto">
 	<figure class="lg:flex-1 h-full relative">
     <picture class="block h-full w-full">
       <% if product_image %>
@@ -64,10 +64,10 @@ end
     <% if product.in_stock %>
       <% if !product.sizes.empty? %>
       	<div class="mb-3">
-          <label class="w-full block font-bold">
+          <label class="w-full block font-bold mb-2">
             Size
           </label>
-          <select id="size" name="size" class="w-28">
+          <select id="size" name="size" class="w-28 focus:border-green-default focus:ring-green-default">
             <% product.sizes.each do |size| %>
               <% if size.size_in_stock %>
                 <option value="<%= size.size %>"><%= size.size %></option>
@@ -81,23 +81,23 @@ end
       <div class="mb-3">
   	    <% unless product.max_quantity == 1 %>
   	    	<div class="inline-block">
-  	    		<label class="font-bold block">
+  	    		<label class="font-bold block mb-2">
   	          <%= t("webshop.quantity") %> <%= "(#{t("webshop.max")} #{product.max_quantity})" if product.max_quantity %>
   	        </label>
   	        <div class="relative inline-flex">
-  	            <% if product.max_quantity %>
-  	              <input class="text-center px-8 border border-border-gray flex-grow-0 flex-shrink-0 w-28" type="number" value="1" id="quantity" name="quantity" min="1" max="<%= product.max_quantity %>">
-  	            <% else %>
-  	              <input class="text-center px-8 border border-border-gray flex-grow-0 flex-shrink-0 w-28" type="number" value="1" id="quantity" name="quantity" min="1">
-  	            <% end %>
-  	            <button type="button" class="quantity-minus absolute top-0 left-0 bottom-0 border-border-gray border-r text-center w-8" aria-label="<%= t("webshop.reduce_with_one")%>">
-  	              <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 3"><path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path></svg>
-  	              <span class="sr-only">−</span>
-  	            </button>
-  	            <button type="button" class="quantity-plus absolute top-0 right-0 bottom-0 border-border-gray border-l text-center w-8" aria-label="<%= t("webshop.increase_with_one")%>">
-  	              <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 21"><path d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill="#000" fill-rule="evenodd"></path></svg>
-  	              <span class="sr-only">+</span>
-  	            </button>
+  	          <% if product.max_quantity %>
+  	           <input class="text-center px-8 border border-border-gray flex-grow-0 flex-shrink-0 w-28 focus:border-green-default focus:ring-green-default" type="number" value="1" id="quantity" name="quantity" min="1" max="<%= product.max_quantity %>">
+  	          <% else %>
+  	           <input class="text-center px-8 border border-border-gray flex-grow-0 flex-shrink-0 w-28 focus:border-green-default focus:ring-green-default" type="number" value="1" id="quantity" name="quantity" min="1">
+  	          <% end %>
+  	          <button type="button" class="quantity-minus absolute top-0 left-0 bottom-0 border-border-gray border-r text-center w-8 focus:border-green-default" aria-label="<%= t("webshop.reduce_with_one")%>">
+  	            <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 3"><path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path></svg>
+  	            <span class="sr-only">−</span>
+  	          </button>
+	            <button type="button" class="quantity-plus absolute top-0 right-0 bottom-0 border-border-gray border-l text-center w-8 focus:border-green-default" aria-label="<%= t("webshop.increase_with_one")%>">
+	              <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 21"><path d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill="#000" fill-rule="evenodd"></path></svg>
+	              <span class="sr-only">+</span>
+	            </button>
   	        </div>
   	    	</div>
   	    <% end %>

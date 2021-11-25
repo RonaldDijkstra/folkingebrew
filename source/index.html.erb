@@ -4,7 +4,7 @@ dont_append_page_title: true
 description: "Modern Craft Beer from Groningen since 2017"
 header_class: transparent-header
 ---
-<section class="bg-blend-soft-light bg-green-default max-w-8xl px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= dato.homepage.background_image.url %>)">
+<section class="bg-blend-soft-light bg-green-default px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= dato.homepage.background_image.url(fm: :webp, w: 1920, h: 1280) %>)">
   <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "max-w-s mb-6" %>
   <h1 class="text-white text-3xl font-light">
     <%= dato.homepage.tagline %>
