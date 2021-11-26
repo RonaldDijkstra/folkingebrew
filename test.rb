@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 # Require https://github.com/gjtorikian/html-proofer
-require "html-proofer"
+require 'html-proofer'
 
 # Raise error if build directory does not exist
-raise IOError, "Directory ./build does not exist." unless Dir.exist?("./build")
+raise IOError, 'Directory ./build does not exist.' unless Dir.exist?('./build')
 
 # Configuration
 # All options: https://github.com/gjtorikian/html-proofer#configuration
@@ -18,4 +18,4 @@ options = {
 }
 
 # Run html-proofer on build directory
-HTMLProofer.check_directory("./build", options).run
+HTMLProofer.check_directory('./build', options).run

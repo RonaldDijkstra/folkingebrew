@@ -28,8 +28,8 @@ module ApplicationHelpers
 
     if dont_append
       frontmatter_title
-    else
-      [frontmatter_title, website_name].join(" | ") if frontmatter_title
+    elsif frontmatter_title
+      [frontmatter_title, website_name].join(' | ')
     end
   end
 
@@ -51,7 +51,7 @@ module ApplicationHelpers
 
   # Robots is current page data or default
   def robots
-    current_page.data.robots || "noydir,noodp,index,follow"
+    current_page.data.robots || 'noydir,noodp,index,follow'
   end
 
   # Get full url
@@ -62,8 +62,8 @@ module ApplicationHelpers
   # Get full locale (eg. nl_NL)
   def full_locale(lang = I18n.locale.to_s)
     case lang
-    when "en"
-      "en_US"
+    when 'en'
+      'en_US'
     else
       "#{lang.downcase}_#{lang.upcase}"
     end
@@ -71,27 +71,27 @@ module ApplicationHelpers
 
   # 404?
   def x404?
-    current_page.url == "/404.html"
+    current_page.url == '/404.html'
   end
 
   def blog?(page = current_page)
-    page.url.start_with?("/blog/")
+    page.url.start_with?('/blog/')
   end
 
   def current_page_url
-    if current_page.url.start_with?("/blog/")
-      "/blog/"
-    elsif current_page.url.start_with?("/beers/")
-      "/beers/"
-    elsif current_page.url.start_with?("/store/")
-      "/store/"
+    if current_page.url.start_with?('/blog/')
+      '/blog/'
+    elsif current_page.url.start_with?('/beers/')
+      '/beers/'
+    elsif current_page.url.start_with?('/store/')
+      '/store/'
     else
       current_page.url
     end
   end
 
   # Add aria current to current page navigation item
-  def current_link_to(*arguments, aria_current: "page", **options, &block)
+  def current_link_to(*arguments, aria_current: 'page', **options, &block)
     if block_given?
       text = capture(&block)
       path = arguments[0]
@@ -100,17 +100,18 @@ module ApplicationHelpers
       path = arguments[1]
     end
 
-    options.merge!("aria-current" => aria_current) if path == current_page_url
+    options.merge!('aria-current' => aria_current) if path == current_page_url
 
     link_to(text, path, options)
   end
 
   def stocked_products
     products = []
-      dato.products.select do |product|
-        next unless product.in_stock
-        products << product
-      end
+    dato.products.select do |product|
+      next unless product.in_stock
+
+      products << product
+    end
     products
   end
 
