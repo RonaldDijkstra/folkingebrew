@@ -3,7 +3,7 @@
 require 'rainbow'
 
 def project_name
-  "Folkingebrew 🍺"
+  'Folkingebrew 🍺'
 end
 
 linters = [
@@ -50,21 +50,21 @@ end
 
 ## Serve
 task :serve do
-  puts Rainbow("== Project: " + project_name).bright.green
-  puts Rainbow("== Start kettle...").bright.green
-  system "bundle exec middleman serve" || exit(1)
+  puts Rainbow("== Project: #{project_name}").bright.green
+  puts Rainbow('== Warming up the kettle').bright.green
+  system 'bundle exec middleman serve' || exit(1)
 end
 
 ## Build the website
 task :build do
-  puts Rainbow("== Project: " + project_name)
-  puts Rainbow("== Brewing the website...")
-  system "bundle exec middleman build --verbose" || exit(1)
+  puts Rainbow("== Project: #{project_name}")
+  puts Rainbow('== Brewing the website...')
+  system 'bundle exec middleman build --verbose' || exit(1)
 end
 
 # HTML Proofer to test static output
 task :proof do
-  puts Rainbow("== Project: " + project_name)
-  system "bundle exec middleman build --verbose" || exit(1)
-  system "ruby test.rb"
+  puts Rainbow("== Project: #{project_name}")
+  system 'bundle exec middleman build --verbose' || exit(1)
+  system 'ruby test.rb'
 end

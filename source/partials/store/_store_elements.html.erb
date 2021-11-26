@@ -12,3 +12,6 @@
   <% end %>
 <% end %>
 <%= partial "partials/store/age_gate" %>
+<% if current_page.data.type == "product" %>
+  <%= partial "partials/store/schema_product", locals: { product: product } %>
+<% end %>

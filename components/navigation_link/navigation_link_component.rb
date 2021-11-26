@@ -1,11 +1,11 @@
 module Components
   module NavigationLink
     class NavigationLinkComponent < Middleman::Extension
-      helpers do 
+      helpers do
         def navigation_link(opts)
-          current_link_to opts[:text], 
-                          "#{opts[:link]}", 
-                          class: "flex items-center text-white hover:text-gray-300 px-3 text-lg font-medium whitespace-nowrap"
+          current_link_to opts[:text],
+                          (opts[:link]).to_s,
+                          class: 'flex items-center text-white hover:text-gray-300 px-3 text-lg font-medium whitespace-nowrap'
         end
       end
     end

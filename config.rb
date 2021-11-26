@@ -16,17 +16,17 @@ set :root_locale, root_locale
 activate :i18n, mount_at_root: root_locale, langs: %i[en]
 
 # Env var for production
-production = ENV["PRODUCTION"] == "true"
+production = ENV['PRODUCTION'] == 'true'
 set :production, production
 
 # Load Sass from node_modules
-config[:sass_assets_paths] << File.join(root, "node_modules")
+config[:sass_assets_paths] << File.join(root, 'node_modules')
 
 # Set assets directories
-set :css_dir,    "assets/stylesheets"
-set :fonts_dir,  "assets/fonts"
-set :images_dir, "assets/images"
-set :js_dir,     "assets/javascripts"
+set :css_dir,    'assets/stylesheets'
+set :fonts_dir,  'assets/fonts'
+set :images_dir, 'assets/images'
+set :js_dir,     'assets/javascripts'
 
 # Handled by Webpack
 ignore File.join(config[:js_dir], '*')
@@ -39,7 +39,7 @@ ignore File.join(config[:css_dir], '*')
 activate :external_pipeline,
          name: :webpack,
          command: build? ? 'yarn run build' : 'yarn run start',
-         source: "dist",
+         source: 'dist',
          latency: 1
 
 activate :dotenv
@@ -49,7 +49,7 @@ activate :inline_svg
 # Activate DatoCMS
 if ENV['DATO_PREVIEW']
   activate :dato, preview: true, live_reload: true
-else 
+else
   activate :dato, preview: false, live_reload: false
 end
 
@@ -62,18 +62,19 @@ set :markdown_engine, :redcarpet
 # Layouts
 # https://middlemanapp.com/basics/layouts
 
-page "/*.xml",  layout: false
-page "/*.json", layout: false
-page "/*.txt",  layout: false
+page '/*.xml',  layout: false
+page '/*.json', layout: false
+page '/*.txt',  layout: false
 
 ignore   File.join(config[:js_dir], '*')
 ignore   File.join(config[:css_dir], '*')
 
 # Load and activate all components
-Dir["./components/**/*.rb"].each { |file| load file }
-Pathname.new("./components").children.each do |entry|
-  return unless entry.directory?
-  activate "#{entry.basename.to_s}_component".to_sym
+Dir['./components/**/*.rb'].each { |file| load file }
+Pathname.new('./components').children.each do |entry|
+  next unless entry.directory?
+
+  activate "#{entry.basename}_component".to_sym
 end
 
 # Development-specific configuration
@@ -89,49 +90,49 @@ end
 configure :build do
   set      :relative_links, true
   activate :asset_hash, ignore: [
-    "assets/images/logo-folkingebrew-black.svg"
+    'assets/images/logo-folkingebrew-black.svg'
   ]
   activate :gzip
-  activate :minify_html, :remove_input_attributes => false
+  activate :minify_html, remove_input_attributes: false
 
   # Raise exception for missing translations during build
-  require "lib/test_exception_localization_handler"
+  require 'lib/test_exception_localization_handler'
 
   I18n.exception_handler = TestExceptionLocalizationHandler.new
 end
 
 ready do
-  proxy "_headers", "headers", ignore: true
-  proxy "_redirects", "redirects", ignore: true
+  proxy '_headers', 'headers', ignore: true
+  proxy '_redirects', 'redirects', ignore: true
 end
 
 dato.tap do |dato|
-  paginate dato.beers, "/beers", "/templates/beers.html", per_page: 12
-  paginate dato.products, "/store", "/templates/store.html"
-  paginate dato.posts, "/blog", "/templates/blog.html"
+  paginate dato.beers, '/beers', '/templates/beers.html', per_page: 12
+  paginate dato.products, '/store', '/templates/store.html'
+  paginate dato.posts, '/blog', '/templates/blog.html'
 
-  dato.beers.each do |beer| 
-    proxy "/beers/#{beer.slug}/index.html", 
-          "/templates/beer.html", 
+  dato.beers.each do |beer|
+    proxy "/beers/#{beer.slug}/index.html",
+          '/templates/beer.html',
           locals: { beer: beer },
           ignore: true
-  end 
+  end
 
-  dato.products.each do |product| 
+  dato.products.each do |product|
     proxy "/store/#{product.slug}/index.html",
-          "/templates/product.html",
+          '/templates/product.html',
           locals: { product: product },
           ignore: true
   end
 
-  dato.posts.each do |post| 
+  dato.posts.each do |post|
     proxy "/blog/#{post.slug}/index.html",
-          "/templates/article.html",
+          '/templates/article.html',
           locals: { post: post },
           ignore: true
   end
-end 
+end
 
-ignore "/templates/beers.html.erb"
-ignore "/templates/store.html.erb"
-ignore "/templates/blog.html.erb"
+ignore '/templates/beers.html.erb'
+ignore '/templates/store.html.erb'
+ignore '/templates/blog.html.erb'
