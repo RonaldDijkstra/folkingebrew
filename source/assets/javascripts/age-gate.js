@@ -22,5 +22,7 @@ export default function header() {
     }
 
     consentButton.addEventListener('click', closeOverlay);
+
+    return false;
   });
 }
