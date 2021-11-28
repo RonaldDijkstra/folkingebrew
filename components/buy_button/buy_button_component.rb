@@ -14,7 +14,9 @@ module Components
             first_available_size = product.sizes.select(&:size_in_stock).first.size
           end
 
-          classes = "snipcart-add-item inline-block text-white w-28 py-2 px-2 text-base bg-green-default border-green-default text-white hover:bg-green-darker hover:border-green-darker font-semibold transition-all border border-solid #{additional_classes}"
+          classes = "snipcart-add-item inline-block text-white w-28 py-2 px-2 text-base bg-green-default
+                     border-green-default text-white hover:bg-green-darker hover:border-green-darker
+                     font-semibold transition-all border border-solid #{additional_classes}"
 
           if sizes
             content_tag(:button, 'Add to Cart',

@@ -1,61 +1,57 @@
 export default function header() {
   // Variables
 
-  var $navbarHeight = $('.site-header').outerHeight();
-  var $didScroll;
-  var $lastScrollTop = 0;
-  var $delta = 1;
-  var $window = $(window);
+  const $navbarHeight = $('.site-header').outerHeight();
+  let $didScroll;
+  let $lastScrollTop = 0;
+  const $delta = 1;
+  const $window = $(window);
 
   // Mobile navigation toggle adds nav-open and no-scroll
 
-  $(document).ready(function(){
-    $('#menu-toggle').on('click', function(){
+  $(document).ready(() => {
+    $('#menu-toggle').on('click', () => {
       $('body').toggleClass('nav-open no-scroll');
       return false;
     });
   });
 
-  $window.scroll(function() {
-    var $scroll = $window.scrollTop();
+  $window.scroll(() => {
+    const $scroll = $window.scrollTop();
 
     if ($scroll >= $navbarHeight / 10) {
-      $("body").addClass("not-at-the-top").removeClass("at-the-top");
+      $('body').addClass('not-at-the-top').removeClass('at-the-top');
     } else {
-      $("body").addClass("at-the-top").removeClass("not-at-the-top");
+      $('body').addClass('at-the-top').removeClass('not-at-the-top');
     }
   });
 
-  $window.scroll(function(event){
+  $window.scroll(() => {
     $didScroll = true;
   });
 
-  setInterval(function() {
+  function hasScrolled() {
+    const $st = $window.scrollTop();
+
+    // Make sure they scroll more than delta
+    if (Math.abs($lastScrollTop - $st) <= $delta) return;
+
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if ($st > $lastScrollTop && $st > $navbarHeight) {
+      // Scroll Down
+      $('.site-header').removeClass('show-nav').addClass('hide-nav');
+    } else if ($st + $window.height() < $(document).height()) {
+      $('.site-header').removeClass('hide-nav').addClass('show-nav');
+    }
+
+    $lastScrollTop = $st;
+  }
+
+  setInterval(() => {
     if ($didScroll) {
       hasScrolled();
       $didScroll = false;
     }
   }, 100);
-
-  function hasScrolled() {
-    var $st = $window.scrollTop();
-
-    // Make sure they scroll more than delta
-    if(Math.abs($lastScrollTop - $st) <= $delta)
-      return;
-
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
-    if ($st > $lastScrollTop && $st > $navbarHeight){
-      // Scroll Down
-      $('.site-header').removeClass('show-nav').addClass('hide-nav');
-    } else {
-      // Scroll Up
-      if($st + $window.height() < $(document).height()) {
-          $('.site-header').removeClass('hide-nav').addClass('show-nav');
-      }
-    }
-
-    $lastScrollTop = $st;
-  }
 }
