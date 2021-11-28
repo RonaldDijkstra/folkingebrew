@@ -15,7 +15,7 @@ module Components
                 content_tag(:div, post.excerpt.to_s, class: 'prose mb-2') +
                 button(text: 'Read More',
                        link: true,
-                       href: "/blog/#{post.slug}",
+                       href: "/blog/#{post.slug}/",
                        type: :primary,
                        html: { class: 'inline-block' })
               end
