@@ -36,7 +36,7 @@ en:
     legal: "Legal"
     contact: "Contact us"
     email: "Send an email"
-    adress: "Address (no visits)"
+    adress: "Address"
     rights: "All rights reserved"
   form:
     name: "Name"
