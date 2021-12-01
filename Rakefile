@@ -37,6 +37,8 @@ linters.each do |linter|
   default_tasks << linter[:name].downcase.to_sym
 end
 
+default_tasks << 'proof'
+
 task default: default_tasks
 
 def run_linter(command)
@@ -51,14 +53,14 @@ end
 ## Serve
 task :serve do
   puts Rainbow("== Project: #{project_name}").bright.green
-  puts Rainbow('== Warming up the kettle').bright.green
+  puts Rainbow('== Serve').bright.green
   system 'bundle exec middleman serve' || exit(1)
 end
 
 ## Build the website
 task :build do
   puts Rainbow("== Project: #{project_name}")
-  puts Rainbow('== Brewing the website...')
+  puts Rainbow('== Build')
   system 'bundle exec middleman build --verbose' || exit(1)
 end
 
@@ -66,5 +68,5 @@ end
 task :proof do
   puts Rainbow("== Project: #{project_name}")
   system 'bundle exec middleman build --verbose' || exit(1)
-  system 'ruby test.rb'
+  system 'ruby proof.rb'
 end
