@@ -9,7 +9,7 @@ updates:
   ignore:
   - dependency-name: html-proofer
   - dependency-name: rubocop
-- package-ecosystem: yarn
+- package-ecosystem: "yarn"
   directory: "/"
   schedule:
     interval: daily
