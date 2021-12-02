@@ -38,5 +38,5 @@ jobs:
           command: cp .env.sample .env
 
       - run:
-          name: Build the website
-          command: bundle exec rake build
+          name: Run the default tasks
+          command: bundle exec rake default
