@@ -8,7 +8,7 @@
   "browserslist": "last 4 versions",
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-env": "^7.16.4",
     "assets-webpack-plugin": "^5.1.2",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0",
