@@ -5,6 +5,7 @@ updates:
   schedule:
     interval: daily
     time: "04:00"
+  rebase-strategy: "disabled"
   open-pull-requests-limit: 10
   ignore:
   - dependency-name: html-proofer
@@ -14,4 +15,5 @@ updates:
   schedule:
     interval: daily
     time: "04:00"
+  rebase-strategy: "disabled"
   open-pull-requests-limit: 10
