@@ -1,23 +1,19 @@
----
-title: "Frequently asked questions"
-description: "Do you have questions about Folkingebrew or our beers? Here you'll find a selection of the most frequently asked questions."
----
-<% questions = data["faq"] %>
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.faq_page) %>
+<% end %>
 
-<%= regular_header title: t("pages.faq.title") %>
+<%= regular_header title: dato.faq_page.title %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content html: { class: "mb-10" } do %>
-    <%= partial "content/faq" %>
+    <%= markdownify(dato.faq_page.content) %>
   <% end %>
   <div class="prose">
-    <% questions.each do |question| %>
+    <% dato.faq_page.questions.each do |question| %>
       <h2>
-        <%= question.q %>
+        <%= question.question %>
       </h2>
-      <p>
-        <%= question.a.to_s %>
-      </p>
+      <%= markdownify(question.answer) %>
     <% end %>
   </div>
 <% end %>
