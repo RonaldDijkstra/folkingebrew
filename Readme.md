@@ -13,11 +13,11 @@ View in Production: https://www.folkingebrew.nl
 
 ## Prerequisites
 
-- Ruby 2.7.1
+- Ruby 2.7.2
 - Bundler
 - Node
 - Yarn
-- Get API keys at DatoCMS and Snipcart. 
+- API keys from DatoCMS and Snipcart 
 
 ## Quick Start 
 
@@ -25,7 +25,7 @@ View in Production: https://www.folkingebrew.nl
 2. Clone this repo using `git clone https://github.com/RonaldDijkstra/folkingebrew.git`
 3. Move to the appropriate directory: `cd folkingebrew`
 4. Run `bin/setup` (make sure it's executable)
-5. Add your `DATO_API_TOKEN`, `SNIPCART_API_KEY` and `GA_ID` to .env
+5. Add your `DATO_API_TOKEN` and `SNIPCART_API_KEY` to .env
 6. Start your local server with `rake serve`
 7. View your website at `localhost:4567`
 
@@ -33,8 +33,8 @@ View in Production: https://www.folkingebrew.nl
 
 1. [Middleman](https://middlemanapp.com/) 
 2. [Webpack Middleman Starter](https://github.com/gabrielecanepa/middleman-webpack) by [Gabriele Canepa](https://github.com/gabrielecanepa)
-3. [HTML Proofer](https://github.com/gjtorikian/html-proofer)
-4. [Snipcart](https://snipcart.com)
-5. [DatoCMS](https://www.datocms.com/)
-6. [TailwindCSS](https://tailwindcss.com/)
-7. [Building view components in Middleman](https://www.jeffreyknox.dev/blog/building-view-components-in-middleman/) by [Jeff Knox](https://github.com/knoxjeffrey)
+3. [Snipcart](https://snipcart.com)
+4. [DatoCMS](https://www.datocms.com/)
+5. [TailwindCSS](https://tailwindcss.com/)
+6. [Building view components in Middleman](https://www.jeffreyknox.dev/blog/building-view-components-in-middleman/) by [Jeff Knox](https://github.com/knoxjeffrey)
+7. [HTML Proofer](https://github.com/gjtorikian/html-proofer)
