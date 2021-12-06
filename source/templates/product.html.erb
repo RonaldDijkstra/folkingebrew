@@ -18,9 +18,9 @@ end
 	<figure class="lg:flex-1 h-full relative">
     <picture class="block h-full w-full">
       <% if product_image %>
-        <%= image_tag product_image, alt: product.title, id: "product-image" %>
+        <%= image_tag product_image, alt: product.title, width: "970", height: "970", id: "product-image" %>
       <% else %>
-        <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image", id: "product-image" %>
+        <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, width: "970", height: "970", class: "product-image", id: "product-image" %>
       <% end %>
     </picture>
     <% if product_image && product.images.count > 1 %>

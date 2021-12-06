@@ -20,6 +20,8 @@ module Components
           image_tag(product.images.first.url(fm: :webp, h: 540, w: 540),
                     alt: product.title,
                     class: 'mb-3',
+                    height: '540',
+                    width: '540',
                     loading: 'lazy')
         end
       end
