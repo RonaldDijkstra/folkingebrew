@@ -4,6 +4,7 @@
   --green: #54b848;
   --light-green: #65bf5a;
   --very-light-green: #e5f4e0;
+  --text-color: #3f3f46;
 
   // Colors
   --color-icon: var(--green);
@@ -127,7 +128,21 @@
     display: inline-block;
   }
 
-  [multiple]:focus, [type="date"]:focus, [type="datetime-local"]:focus, [type="email"]:focus, [type="month"]:focus, [type="number"]:focus, [type="password"]:focus, [type="search"]:focus, [type="tel"]:focus, [type="text"]:focus, [type="time"]:focus, [type="url"]:focus, [type="week"]:focus, select:focus, textarea:focus {
+  [multiple]:focus,
+  [type="date"]:focus,
+  [type="datetime-local"]:focus,
+  [type="email"]:focus,
+  [type="month"]:focus,
+  [type="number"]:focus,
+  [type="password"]:focus,
+  [type="search"]:focus,
+  [type="tel"]:focus,
+  [type="text"]:focus,
+  [type="time"]:focus,
+  [type="url"]:focus,
+  [type="week"]:focus,
+  select:focus,
+  textarea:focus {
     --tw-ring-color: var(--green);
   }
 
@@ -146,6 +161,17 @@
 
   .snipcart__font--bold {
     font-weight: 700;
+  }
+
+  .snipcart-empty-cart {
+    .snipcart-empty-cart__title {
+      color: var(--text-color);
+    }
+
+    .snipcart-button-secondary {
+      background-color: var(--green);
+      color: white;
+    }
   }
 }
 
