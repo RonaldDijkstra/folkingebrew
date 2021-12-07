@@ -15,7 +15,7 @@ end
 %>
 
 <section class="lg:flex lg:px-6 mb-12 max-w-7xl m-auto">
-	<figure class="lg:flex-1 h-full relative">
+	<figure class="lg:w-3/5 h-full relative">
     <picture class="block h-full w-full">
       <% if product_image %>
         <%= image_tag product_image, alt: product.title, width: "970", height: "970", id: "product-image" %>
@@ -39,7 +39,7 @@ end
       </nav>
     <% end %>
  	</figure>
-	<div class="product-content flex-1 flex-col bg-white px-6 py-12">
+	<div class="product-content lg:w-2/5 flex-col bg-white px-6 py-12">
 		<% if product.old_price %>
 			<div class="line-through text-red-500 font-bold">
 				€ <%= number_to_currency(product.old_price, :unit => "").gsub!(/\./,",") %>
