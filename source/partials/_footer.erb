@@ -1,6 +1,6 @@
 <footer class="bg-black text-gray-400">
   <div class="max-w-7xl m-auto sm:flex px-6 pt-12 flex-wrap">
-    <div class="mb-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
+    <% footer_column do %>
       <%= content_tag(:h3, t("company_name"), class: "font-bold mb-3") %>
       <%= footer_link text: t("navigation.beers"),
                       link: "/beers/index.html" %>
@@ -9,8 +9,8 @@
       <%= footer_link text: t("navigation.faq"),
                       link: "/frequently-asked-questions.html",
                       html: { class: "mb-6" } %>
-    </div>
-    <div class="mb-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
+    <% end %>
+    <% footer_column do %>
       <%= content_tag(:h3, t("footer.up_to_date"), class: "font-bold mb-3") %>
       <%= footer_link text: t("navigation.newsletter"),
                       link: "/newsletter.html" %>
@@ -19,8 +19,8 @@
       <%= footer_link text: t("navigation.events"),
                       link: "/events.html",
                       html: { class: "mb-6" } %>
-    </div>
-    <div class="mb-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
+    <% end %>
+    <% footer_column do %>
       <%= content_tag(:h3, t("footer.buy"), class: "font-bold mb-3") %>
       <%= footer_link text: t("navigation.shop"),
                       link: "/store/" %>
@@ -30,23 +30,23 @@
                       link: "/local-dealers.html" %>
       <%= footer_link text: t("navigation.distributors"),
                       link: "/distributors.html" %>
-    </div>
-    <div class="mb-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
+    <% end %>
+    <% footer_column do %>
       <%= content_tag(:h3, t("footer.legal"), class: "font-bold mb-3") %>
       <%= footer_link text: t("navigation.terms"),
                       link: "/terms-and-conditions.html" %>
       <%= footer_link text: t("navigation.privacy"),
                       link: "/privacy-policy.html" %>
-    </div>
-    <div class="mb-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
+    <% end %>
+    <% footer_column do %>
       <%= content_tag(:h3, t("footer.contact"), class: "font-bold mb-3") %>
       <%= footer_link text: t("footer.email"), 
                       link: "/contact.html" %>
-    </div>
-    <div class="mb-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
+    <% end %>
+    <% footer_column do %>
       <%= content_tag(:h3, t("footer.adress"), class: "font-bold mb-3") %>
       <%= content_tag(:address, t("address"), class: "not-italic") %>
-    </div>
+    <% end %>
   </div>
   <div class="max-w-7xl m-auto pb-6 px-3 flex justify-center">
     <div class="flex">
