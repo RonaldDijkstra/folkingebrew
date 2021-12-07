@@ -20,7 +20,7 @@ module Components
 
         def beer_image(beer)
           image_tag(beer.image.url(fm: :webp, h: 540, w: 540), alt: beer.title, class: 'block w-full',
-                    width: '540', height: '540', loading: 'lazy')
+                                                               width: '540', height: '540', loading: 'lazy')
         end
 
         def classes

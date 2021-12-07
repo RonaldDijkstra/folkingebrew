@@ -11,11 +11,7 @@ module Components
                      border-green-default text-white hover:bg-green-darker hover:border-green-darker
                      font-semibold transition-all border border-solid #{additional_classes(opts)}"
 
-          if product_sizes
-            buy_button_with_sizes(product, product_image(product), product_sizes, classes)
-          else
-            buy_button_without_sizes(product, product_image(product), classes)
-          end
+          buy_button_html(product, product_image(product), product_sizes, classes)
         end
 
         def additional_classes(opts)
