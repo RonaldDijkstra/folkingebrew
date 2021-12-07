@@ -1,19 +1,13 @@
-<div class="text-center">
-  <ul class="flex flex-wrap justify-center list-none m-0 p-0 w-full">
-    <% for page in 1..total_pages %>
-      <% if page == current_page %>
-        <li class="inline-block">
-          <span class="bg-green-default text-white block ml-2 mr-2 px-4 py-3 text-xl leading-7"><%= current_page %></span>
-        </li>
-      <% else %>
-        <%
-        page_url = "/beers/"
-        page_url << "page/#{page}" unless page == 1
-        %>
-        <li>
-          <%= link_to page, page_url, class: "bg-white ml-2 mr-2 px-4 py-3 block text-xl leading-7" %>
-        </li>
-      <% end %>
+<div class="flex flex-wrap justify-center m-0 p-0 w-full">
+  <% for page in 1..total_pages %>
+    <% if page == current_page %>
+      <div class="bg-black text-white inline-block ml-2 mr-2 px-4 py-3 text-xl leading-7"><%= current_page %></div>
+    <% else %>
+      <%
+      page_url = "/beers/"
+      page_url << "page/#{page}" unless page == 1
+      %>
+      <%= link_to page, page_url, class: "transition-all bg-white ml-2 mr-2 px-4 py-3 inline-block text-xl leading-7 hover:bg-black hover:text-white" %>
     <% end %>
-  </ul>
+  <% end %>
 </div>
