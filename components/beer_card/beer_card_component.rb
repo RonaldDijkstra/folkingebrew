@@ -16,15 +16,13 @@ module Components
           )
         end
 
-        private
-
         def beer_image(beer)
           image_tag(beer.image.url(fm: :webp, h: 540, w: 540), alt: beer.title, class: 'block w-full',
                                                                width: '540', height: '540', loading: 'lazy')
         end
 
         def classes
-          'opacity-0 w-full h-full bg-black absolute top-0 left-0
+          'transition-all opacity-0 w-full h-full bg-black absolute top-0 left-0
            flex flex-col justify-center text-center p-10 hover:opacity-100'
         end
       end
