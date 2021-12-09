@@ -1,13 +1,12 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: [
+  content: [
      './source/**/*.html',
      './source/**/*.erb',
      './source/**/*.js',
      './components/**/*.rb'
    ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
       transparent: 'transparent',
@@ -28,9 +27,6 @@ module.exports = {
         'sans': ['Open Sans', 'sans-serif']
       },
     }
-  },
-  variants: {
-    extend: {},
   },
   plugins: [
     require('@tailwindcss/forms'),

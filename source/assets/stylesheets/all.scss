@@ -19,7 +19,7 @@ html {
   }
 
   &.hide-nav {
-    @apply opacity-0 transform -translate-y-full;
+    @apply opacity-0;
   }
 }
 
