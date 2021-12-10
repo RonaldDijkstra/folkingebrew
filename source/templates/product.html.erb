@@ -40,27 +40,24 @@ end
     <% end %>
  	</figure>
 	<div class="product-content lg:w-2/5 flex-col bg-white px-6 py-12">
-		<% if product.old_price %>
-			<div class="line-through text-red-500 font-bold">
-				€ <%= number_to_currency(product.old_price, :unit => "").gsub!(/\./,",") %>
-			</div>
-		<% end %>
-		<div class="text-green-default font-bold text-2xl"> 
-			€ <%= number_to_currency(product.price, :unit => "").gsub!(/\./,",") %>
-		</div>
+    <div class="flex">
+      <div class="flex-1">
+		    <%= product_price(product) %>
+      </div>
+      <div class="font-bold">
+        <% if product.in_stock %>
+          <%= t("webshop.in_stock") %>
+        <% else %>
+          <%= t("webshop.out_of_stock") %>
+        <% end %>
+      </div>
+    </div>
 		<div class="italic text-sm mb-6">
 			<%= t("webshop.incl_tax") %> <%= link_to t("webshop.shipping"), "/shipping-and-returning.html" %>
 		</div>
 		<div class="prose mb-3">
 			<%= markdownify(product.short_description) %>
 		</div>
-		<div class="font-bold mb-3">
-      <% if product.in_stock %>
-        <%= t("webshop.in_stock") %>
-      <% else %>
-        <%= t("webshop.out_of_stock") %>
-      <% end %>
-    </div>
     <% if product.in_stock %>
       <% if !product.sizes.empty? %>
       	<div class="mb-3">
@@ -163,7 +160,6 @@ end
     </div>
 	</div>
 </section>
-
 <section class="pt-10 pb-20">
   <%= content_tag(:h2, t("webshop.more_products"), class: "mb-10 text-center text-4xl text-white") %>
   <% grid content_tag: :div do %>
@@ -179,4 +175,3 @@ end
                html: { class: "inline-block" } %>
   </div>
 </section>
-
