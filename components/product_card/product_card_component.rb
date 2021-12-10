@@ -9,8 +9,8 @@ module Components
             link_to("/store/#{product.slug}/", class: 'bg-white p-6') do
               image(product) +
               content_tag(:div, class: 'flex') do
-                content_tag(:h2, product.title, class: 'flex-grow font-bold mr-3') +
-                product_price(product)
+                content_tag(:h2, product.title, class: 'flex-grow font-bold mr-2') +
+                content_tag(:div, product_price(product), class: 'flex flex-col items-end')
               end
             end
           )

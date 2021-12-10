@@ -9,15 +9,17 @@ module Components
         end
 
         def current_price(product)
-          price = number_to_currency(product.price, unit: '').gsub!(/\./, ',')
-          content_tag(:div, "€ #{price}", class: 'font-bold whitespace-nowrap text-green-default')
+          content_tag(:div, "€ #{price(product.price)}", class: 'text-xl font-bold whitespace-nowrap text-green-default')
         end
 
         def old_price(product)
-          price = number_to_currency(product.old_price, unit: '').gsub!(/\./, ',')
-          content_tag(:div, "€ #{price}",
-                      class: 'font-bold relative line-through font-regular whitespace-nowrap text-red-500 mr-3')
+          content_tag(:div, "€ #{price(product.old_price)}",
+                      class: 'line-through font-regular whitespace-nowrap text-gray-400')
         end
+
+        def price(price)
+          number_to_currency(price, unit: '').gsub!(/\./, ',')
+        end 
       end
     end
   end
