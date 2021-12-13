@@ -7,7 +7,7 @@ title: Events
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content do %>
-    <%= partial "content/events" %>
+    <%= markdownify(dato.block.events) %>
     <table role="table" class="responsive-table">
       <thead role="rowgroup">
         <tr role="row">

@@ -1,7 +1,6 @@
 <section class="bg-neutral py-12 px-6">
   <div class="mb-6 max-w-lg m-auto">
-    <%= content_tag(:h2, "Sign up for our newsletter to receive updates about our new releases, events, news and more. 
-", class: "text-white text-xl lg:text-xl mb-3") %>
+    <%= content_tag(:h2, dato.block.newsletter_subscribe, class: "text-white text-xl lg:text-xl mb-3") %>
     <%= partial "partials/form_mailchimp", locals: { text: "text-white" } %>
   </div>
 </section>

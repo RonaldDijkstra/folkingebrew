@@ -8,7 +8,7 @@ description: "Here you'll find the awesome places in and around Groningen where 
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content html: { class: "mb-10" } do %>
-    <%= partial "content/faq" %>
+    <%= markdownify(dato.block.local_dealers) %>
   <% end %>
 
   <div class="sm:flex sm:flex-wrap"> 

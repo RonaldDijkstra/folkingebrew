@@ -1,11 +1,11 @@
----
-title: Terms & Conditions
-description: Terms & Conditions for purchasing items in our online store.
----
-<%= regular_header title: t("pages.terms.title") %> 
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.terms_page) %>
+<% end %>
+
+<%= regular_header title: dato.terms_page.title %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content do %>
-    <%= partial "content/terms-and-conditions" %>
+    <%= markdownify(dato.terms_page.content) %>
   <% end %>
 <% end %>
