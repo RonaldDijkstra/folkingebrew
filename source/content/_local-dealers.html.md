@@ -1,1 +1,0 @@
-In this list you'll find the awesome places in and around Groningen where you can buy Folkingebrew beer, if available.

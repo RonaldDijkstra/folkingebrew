@@ -9,7 +9,7 @@ description: "This list consists of our distributors, in the Netherlands and abr
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content html: { class: "mb-10" } do %>
-    <%= partial "content/distributors" %>
+    <%= markdownify(dato.block.distributors) %>
   <% end %>
 
   <% if distributor_lists %>

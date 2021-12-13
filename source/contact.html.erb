@@ -5,8 +5,8 @@ description: "Do you have questions about Folkingebrew or our beers? Send us an 
 <%= regular_header title: t("pages.contact.title") %>
 
 <% regular_content html: { class: "mb-24" } do %>
-  <% markdown_content html: { class: "mb-6 max-w-lg m-auto" } do %>
-    <%= partial "content/contact" %>
+  <% content_tag(:article, class: "prose mb-6 max-w-lg m-auto") do %>
+    <%= markdownify(dato.block.contact) %>
   <% end %>
   <%= partial "partials/form", locals: { name: "contact",
                                          fields: ["name", "email", "message"] } %>

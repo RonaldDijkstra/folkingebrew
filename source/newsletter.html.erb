@@ -5,7 +5,7 @@ title: "Join our Newsletter"
 
 <% regular_content html: { class: "mb-24" } do %>
   <% markdown_content html: { class: "mb-6 max-w-lg m-auto" } do %>
-    <%= partial "content/newsletter" %>
+    <%= markdownify(dato.block.newsletter_subscribe) %>
     <%= partial "partials/form_mailchimp" %>
   <% end %>
 <% end %>
