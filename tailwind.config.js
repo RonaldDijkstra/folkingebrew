@@ -21,6 +21,7 @@ module.exports = {
         dark: "#326f2b",
       },
       "border-gray": "#71717a",
+      "neutral": "#171717"
     },
     extend: {
       fontFamily: {
