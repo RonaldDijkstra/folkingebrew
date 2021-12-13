@@ -107,7 +107,6 @@ en:
     link: "Link"
   webshop:
     add_to_cart: "Add to Cart"
-    almost_out_of_stock: "Only a few left 😨"
     back_to_all_products: "See all products"
     in_stock: "In Stock 😊"
     incl_tax: "Incl. tax, excl."
@@ -117,6 +116,7 @@ en:
     more_products: "More Products"
     no_products: "Sorry, we do not have any products in stock at the moment. Please come back later!"
     no_stock_message: "Currently we are out of stock. Come back soon!"
+    only_a_few: "Only a few left 😨"
     out_of_stock: "Out of Stock 😔"
     product_details: "Product details"
     quantity: "Quantity"
