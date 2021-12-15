@@ -16,6 +16,8 @@ module Components
           )
         end
 
+        private
+
         def image(product)
           image_tag(product.images.first.url(fm: :webp, h: 540, w: 540),
                     alt: product.title,

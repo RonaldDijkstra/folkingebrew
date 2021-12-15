@@ -25,16 +25,10 @@ end
     </picture>
     <% if product_image && product.images.count > 1 %>
       <nav class="-bottom-8 flex justify-center m-width-sm absolute w-full lg:bottom-0 lg:justify-end lg:right-0 lg:m-4">
-        <% product.images.each_with_index do |image, index| %>
-          <% if index == 0 %>
-            <button class="thumbnail-active w-16 h-16 mr-1 ml-1 rounded-lg overflow-hidden shadow md:w-20 md:h-20 lg:h-24 lg:w-24">
-          <% else %>
-            <button class="w-16 h-16 mr-1 ml-1 rounded-lg overflow-hidden shadow md:w-20 md:h-20 lg:h-24 lg:w-24">
-          <% end %>
-              <picture>
-                <%= image_tag image.url, alt: product.title, class: "product-thumbnail" %>
-              </picture>
-            </button>
+        <% product.images.each_with_index do |product_image, index| %>
+          <%= product_thumbnail product_image: product_image,
+                                product: product,
+                                index: index %>
         <% end %>
       </nav>
     <% end %>
