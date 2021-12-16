@@ -14,7 +14,7 @@
           </svg>
         </button>
       </div>
-      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+      <div class="flex-1 flex items-center justify-center sm:justify-start">
         <div class="logo flex-shrink-0 flex items-center sm:w-20">
           <% link_to "/" do %>
             <%= image_tag "logo-folkingebrew-hopje.svg", class: "block h-12 w-auto", alt: "Folkingebrew Groningen" %>
@@ -25,10 +25,14 @@
             <%= navigation_link text: item.title,
                                 link: item.link %>
           <% end %>
+          <%= link_to "Store",
+                      "/store/",
+                      class: "py-2 px-3 bg-green-default border-green-default text-white
+                              hover:bg-green-darker hover:border-green-darker" %>
         </div>
       </div>
       <div class="absolute inset-y-0 right-0 flex justify-end items-center pr-2 sm:static sm:pr-0 sm:inset-auto w-10 sm:w-20">
-        <div class="snipcart-summary relative">
+        <div class="snipcart-summary">
           <button type="button" class="snipcart-checkout bg-transparent flex text-sm focus:outline-none">
             <span class="sr-only">Open Cart</span>
             <%= image_tag "icons/cart.svg", class: "block w-6 h-6", alt: "cart icon" %>
@@ -38,13 +42,16 @@
       </div>
     </div>
   </div>
-
   <div id="mobile-menu" class="mobile-navigation hidden fixed overflow-scroll top-0 pt-16 bg-black w-full h-full left-0">
-    <div class="px-2 pt-2 pb-3 space-y-1 h-full flex flex-col justify-center">
+    <div class="px-4 pt-2 pb-3 space-y-1 h-full flex flex-col justify-center items-start">
       <% navigation_items.each do |item| %>
         <%= mobile_navigation_link text: item.title,
                                    link: item.link %>
       <% end %>
+      <%= link_to "Buy Beer",
+                  "/store/",
+                  class: "py-2 px-3 flex-0 bg-green-default border-green-default text-white
+                          hover:bg-green-darker hover:border-green-darker" %>
     </div>
   </div>
 </nav>
