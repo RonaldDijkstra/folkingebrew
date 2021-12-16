@@ -36,11 +36,11 @@ html {
 
 // Show and hide nav
 .nav-open {
-  .open-nav {
+  .button-show-nav {
     @apply hidden;
   }
 
-  .close-nav {
+  .button-hide-nav {
     @apply block;
   }
 
