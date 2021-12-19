@@ -100,10 +100,7 @@ end
     <% end %>
     <div class="border-t border-black">
       <% if !product.product_details.empty? %>
-        <a class="toggle font-bold flex justify-between w-full border-b border-black bg-white block py-3" href="javascript:void(0);">
-          <%= t("webshop.product_details") %>
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-        </a>
+        <%= product_detail_toggle text: t("webshop.product_details") %>
         <div class="hidden prose pt-2">
           <p>
             <%= product.product_details %>
@@ -111,10 +108,7 @@ end
         </div>
       <% end %>
       <% if product.sizes && product.sizes.any? { |size| size['lxb'] } %>
-        <a class="toggle font-bold flex justify-between w-full border-b border-black bg-white block py-3" href="javascript:void(0);">
-          <%= t("webshop.sizes") %>
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-        </a>
+        <%= product_detail_toggle text: t("webshop.sizes") %>
         <div class="hidden prose pt-2">
           <table class="product-size-table">
             <thead>
@@ -146,10 +140,7 @@ end
           <% end %>
         </div>
       <% end %>
-      <a class="toggle font-bold flex justify-between w-full border-b border-black bg-white block py-3" href="javascript:void(0);">
-        <%= t("webshop.shipping_and_paying") %>
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-      </a>
+      <%= product_detail_toggle text: t("webshop.shipping_and_paying") %>
       <div class="prose hidden pt-2">
         <%= markdownify(dato.product_index.shipping_conditions) %>
       </div>
