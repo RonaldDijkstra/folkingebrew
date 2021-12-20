@@ -1,42 +1,47 @@
----
-title: "Distributors"
-description: "This list consists of our distributors, in the Netherlands and abroad."
----
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.distributors_page) %>
+<% end %>
 
-<% distributor_lists = data["distributors"] %>
-
-<%= regular_header title: t("pages.distributors.title") %>
+<%= regular_header title: dato.distributors_page.title %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content html: { class: "mb-10" } do %>
-    <%= markdownify(dato.block.distributors) %>
+    <%= markdownify(dato.distributors_page.content) %>
   <% end %>
-
-  <% if distributor_lists %>
-    <% distributor_lists.each do |region| %>
-      <%= content_tag(:h2, region.region, class: "text-xl mb-6") %>
-
-      <% if region.distributors %>
-        <div class="sm:flex sm:flex-wrap">
-          <% region.distributors.each do |distributor| %>
-            <div class="mb-10 text-base sm:w-1/2">
-              <% content_tag(:h3, class: "text-lg") do %>
-                <%= link_to "#{distributor.name}", "#{distributor.url}", class: "text-green-default underline hover:no-underline", target: "_blank", rel: "noopener noreferrer" %>
-              <% end %>
-              <% content_tag(:adress) do %>
-                <%= distributor.street %><br>
-                <%= distributor.postal_code %><br>
-                <%= distributor.city %><% if distributor.country %><br>
-                <%= distributor.country %><% end %>
-              <% end %>
-              <% content_tag(:p) do %>
-                <%= link_to "#{distributor.email}", "mailto:#{distributor.email}", class: "text-green-default underline hover:no-underline", target: "_blank" %>
-              <% end %>
-            </div>
+  <% if !dato.distributors_page.distributors_nl.empty? %>
+    <%= content_tag(:h2, dato.distributors_page.title_nl_block, class: "text-xl mb-6") %>
+    <div class="sm:flex sm:flex-wrap">
+      <% dato.distributors_page.distributors_nl.each do |distributor| %>
+        <div class="mb-10 text-base sm:w-1/2">
+          <% content_tag(:h3, class: "text-lg") do %>
+            <%= link_to "#{distributor.name}", "#{distributor.url}", class: "text-green-default underline hover:no-underline", target: "_blank", rel: "noopener noreferrer" %>
+          <% end %>
+          <% content_tag(:adress) do %>
+            <%= distributor.address %><br>
+            <%= distributor.postcode %><br>
+            <%= distributor.city %>
           <% end %>
         </div>
       <% end %>
-    <% end %>
+    </div>
+  <% end %>
+  <% if !dato.distributors_page.distributors_foreign.empty? %>
+    <%= content_tag(:h2, dato.distributors_page.title_foreign_block, class: "text-xl mb-6") %>
+    <div class="sm:flex sm:flex-wrap">
+      <% dato.distributors_page.distributors_foreign.each do |distributor| %>
+        <div class="mb-10 text-base sm:w-1/2">
+          <% content_tag(:h3, class: "text-lg") do %>
+            <%= link_to "#{distributor.name}", "#{distributor.url}", class: "text-green-default underline hover:no-underline", target: "_blank", rel: "noopener noreferrer" %>
+          <% end %>
+          <% content_tag(:adress) do %>
+            <%= distributor.address %><br>
+            <%= distributor.postcode %><br>
+            <%= distributor.city %><% if distributor.country %><br>
+            <%= distributor.country %><% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 <% end %>
 
