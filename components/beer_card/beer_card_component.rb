@@ -23,7 +23,7 @@ module Components
 
         def classes
           'transition-all opacity-0 w-full h-full bg-black absolute top-0 left-0
-           flex flex-col justify-center text-center p-10 hover:opacity-100'
+           flex flex-col justify-center text-center p-10 hover:opacity-100 motion-reduce:transition-none motion-reduce:transform-none'
         end
       end
     end
