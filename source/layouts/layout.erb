@@ -11,22 +11,25 @@
     <% end %>
     <meta name="robots" content="<%= robots %>">
     <%= partial "partials/meta/favicon" %>
-    <link rel="preconnect" href="https://fonts.gstatic.com" data-proofer-ignore />
+    <link rel="preconnect" href="https://fonts.gstatic.com" data-proofer-ignore>
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://cdn.snipcart.com" data-proofer-ignore />
+    <link rel="preconnect" href="https://cdn.snipcart.com" data-proofer-ignore>
     <%# Getting the main stylesheet generated from webpack. Using a regex because of asset hashes %>
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
       <% if resource.path =~ /\.(css)/ %>
-        <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
+        <link rel="preload" href="/<%= resource.path %>" as="style" onload="this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" type="text/css" href="/<%= resource.path %>"></noscript>
       <% end %>
     <% end %>
     <% if production? %>
-      <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css" %>
+      <link rel="preload" href="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css" as="style" onload="this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" type="text/css" href="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css"></noscript>
     <% else %>
-      <%= stylesheet_link_tag "https://cdn.snipcart.com/themes/v3.0/default/snipcart.css" %>
+      <link rel="preload" href="https://cdn.snipcart.com/themes/v3.0/default/snipcart.css" as="style" onload="this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" type="text/css" href="https://cdn.snipcart.com/themes/v3.0/default/snipcart.css"></noscript>
     <% end %>
     <meta name="google-site-verification" content="KSIwicnXARzh9Pv1igm5rWDKP-Zh1cA3tYVjs4uk_zE">
     <%= partial "partials/meta/open_graph" %>
