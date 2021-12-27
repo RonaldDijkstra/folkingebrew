@@ -11,12 +11,12 @@
     <% end %>
     <meta name="robots" content="<%= robots %>">
     <%= partial "partials/meta/favicon" %>
-    <link rel="preconnect" href="https://fonts.gstatic.com" data-proofer-ignore>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-proofer-ignore>
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://cdn.snipcart.com" data-proofer-ignore>
+    <link rel="preconnect" href="https://cdn.snipcart.com" crossorigin data-proofer-ignore>
     <%# Getting the main stylesheet generated from webpack. Using a regex because of asset hashes %>
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>
       <% if resource.path =~ /\.(css)/ %>
