@@ -11,7 +11,8 @@ module Components
         def build_button_html(opts)
           additional_classes = opts.dig(:html, :class) ? " #{opts[:html][:class]}" : ''
           combined_classes = "p-4 h-auto font-semibold transition-all border-2 border-solid
-                              #{button_type(opts[:type].to_s)}#{additional_classes} motion-reduce:transition-none motion-reduce:transform-none"
+                              #{button_type(opts[:type].to_s)}#{additional_classes}
+                              motion-reduce:transition-none motion-reduce:transform-none"
           opts[:html] ||= {}
           opts[:html][:class] = combined_classes
           opts[:html]

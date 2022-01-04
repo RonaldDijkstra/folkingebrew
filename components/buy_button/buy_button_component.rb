@@ -9,7 +9,8 @@ module Components
 
           classes = "snipcart-add-item inline-block text-white w-28 py-2 px-2 text-base bg-green-default
                      border-green-default text-white hover:bg-green-darker hover:border-green-darker
-                     font-semibold transition-all border border-solid #{additional_classes(opts)} motion-reduce:transition-none motion-reduce:transform-none"
+                     font-semibold transition-all border border-solid #{additional_classes(opts)}
+                     motion-reduce:transition-none motion-reduce:transform-none"
 
           buy_button_html(product, product_image(product), product_sizes, classes)
         end

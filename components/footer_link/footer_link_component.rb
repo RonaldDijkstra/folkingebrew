@@ -7,7 +7,8 @@ module Components
           link_to opts[:text],
                   (opts[:link]).to_s,
                   class: "transition-all block text-white hover:text-gray-300 mr-3 py-2
-                          text-base font-medium #{additional_classes} motion-reduce:transition-none motion-reduce:transform-none"
+                          text-base font-medium #{additional_classes}
+                          motion-reduce:transition-none motion-reduce:transform-none"
         end
       end
     end
