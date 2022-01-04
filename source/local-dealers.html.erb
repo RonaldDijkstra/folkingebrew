@@ -1,28 +1,29 @@
----
-title: "Local Dealers"
-description: "Here you'll find the awesome places in and around Groningen where you can buy Folkingebrew beer, if available."
----
-<% dealers = data["dealers"] %>
+<% dealers = dato.local_dealers_page.dealers %>
 
-<%= regular_header title: t("pages.local.title") %>
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.local_dealers_page) %>
+<% end %>
+
+<%= regular_header title: dato.local_dealers_page.title %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content html: { class: "mb-10" } do %>
-    <%= markdownify(dato.block.local_dealers) %>
+    <%= markdownify(dato.local_dealers_page.content) %>
   <% end %>
-
-  <div class="sm:flex sm:flex-wrap"> 
-    <% dealers.each do |dealer| %>
-      <div class="mb-10 text-base sm:w-1/2">
-        <% content_tag(:h3) do %>
-          <%= link_to "#{dealer.name}", "#{dealer.url}", class: "text-green-default underline hover:no-underline", target: "_blank", rel: "noopener noreferrer" %>
-        <% end %>
-        <% content_tag(:adress) do %>
-          <%= dealer.street %><br>
-          <%= dealer.postal_code %><br>
-          <%= dealer.city %>
-        <% end %>
-      </div> 
-    <% end %>
-  </div>
+  <% if !dealers.empty? %>
+    <div class="sm:flex sm:flex-wrap">
+      <% dealers.each do |dealer| %>
+        <div class="mb-10 text-base sm:w-1/2">
+          <% content_tag(:h3, class: "text-lg") do %>
+            <%= link_to "#{dealer.name}", "#{dealer.url}", class: "text-green-default underline hover:no-underline", target: "_blank", rel: "noopener noreferrer" %>
+          <% end %>
+          <% content_tag(:adress) do %>
+            <%= dealer.address %><br>
+            <%= dealer.postcode %><br>
+            <%= dealer.city %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
