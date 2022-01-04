@@ -1,13 +1,14 @@
----
-title: Events
----
-<% events = data["events"] %>
+<% events = dato.events_page.events %>
 
-<%= regular_header title: t("pages.events.title") %>
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.events_page) %>
+<% end %>
+
+<%= regular_header title: dato.events_page.title %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content do %>
-    <%= markdownify(dato.block.events) %>
+    <%= markdownify(dato.events_page.content) %>
     <table role="table" class="responsive-table">
       <thead role="rowgroup">
         <tr role="row">
@@ -20,12 +21,16 @@ title: Events
       <tbody role="rowgroup">
         <tr role="row">
           <% if !events.empty? %>
-            <td role="cell"><%= event.date %></td>
-            <td role="cell"><%= event.title %></td>
-            <td role="cell"><%= event.location %></td>
-            <td role="cell"><%= link_to t("events.link"), "#{event.link}", target: "_blank", rel: "noopener noreferrer nofollow", class: "text-green-default hover:no-underline" %></td>
+            <% events.each do |event| %>
+              <td role="cell">
+                <%= event.date.strftime("%d-%m-%Y") %>
+              </td>
+              <td role="cell"><%= event.title %></td>
+              <td role="cell"><%= event.location %></td>
+              <td role="cell"><%= link_to t("events.link"), "#{event.url}", target: "_blank", rel: "noopener noreferrer nofollow", class: "text-green-default hover:no-underline" %></td>
+            <% end %>
           <% else %>
-            <td colspan="4">There are no upcoming events.</td>
+            <td colspan="4"><%= dato.events_page.no_upcoming_events_text %></td>
           <% end %>
         </tr>
       </tbody>
