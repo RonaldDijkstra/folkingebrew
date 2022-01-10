@@ -33,7 +33,7 @@
     "webpack-merge": "^5.7.3"
   },
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/webpack/bin/webpack.js --config webpack.config.dev.js --watch -d --color",
+    "start": "NODE_ENV=development ./node_modules/webpack/bin/webpack.js --config webpack.config.dev.js --watch",
     "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js  --config webpack.config.prod.js --mode production"
   },
   "dependencies": {
