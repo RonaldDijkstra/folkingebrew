@@ -29,12 +29,12 @@
     "stylelint-config-recommended-scss": "^4.1.0",
     "stylelint-scss": "^3.19.0",
     "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12",
+    "webpack-cli": "^4.9.1",
     "webpack-merge": "^5.7.3"
   },
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/webpack/bin/webpack.js --watch -d --color",
-    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --bail -p"
+    "start": "NODE_ENV=development ./node_modules/webpack/bin/webpack.js --config webpack.config.dev.js --watch -d --color",
+    "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js  --config webpack.config.prod.js --mode production"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.4.0",
