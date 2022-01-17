@@ -12,7 +12,7 @@
     "assets-webpack-plugin": "^6.1.2",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^5.1.2",
+    "css-loader": "^6.5.1",
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
