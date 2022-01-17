@@ -1441,14 +1441,14 @@ arrify@^1.0.1:
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
   integrity sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=
 
-assets-webpack-plugin@^6.1.2:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/assets-webpack-plugin/-/assets-webpack-plugin-6.1.2.tgz#9e5587bb866bc53826f34c527c240235007f9ea8"
-  integrity sha512-R2oKyexV4Da0eGGTIXHc1HElhZo3oxyZVrEX2O7anAgKfsbfAMBZKg8gehIFsZW4p3DB58LzPwRoT1bHYvKPAw==
+assets-webpack-plugin@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/assets-webpack-plugin/-/assets-webpack-plugin-7.1.1.tgz#0b988bf904a1895cae5820957ad82aa402673894"
+  integrity sha512-HwsDcu9UR9kv7AtiyMpUO9fARn94SbrLzw5+aQ59RnOZJeet+EVHmOrMwXl8fZ8cZmdZ9Sbl1/l+fn7ymiyfMg==
   dependencies:
     camelcase "^6.0.0"
     escape-string-regexp "^4.0.0"
-    lodash "^4.17.20"
+    lodash "^4.17.21"
 
 astral-regex@^2.0.0:
   version "2.0.0"
@@ -3273,7 +3273,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21:
+lodash@^4.17.15, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
