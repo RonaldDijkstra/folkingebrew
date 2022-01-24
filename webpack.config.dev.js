@@ -75,8 +75,7 @@ module.exports = {
   optimization: { 
     minimize: true, 
     minimizer: [ 
-      new TerserPlugin({ 
-        cache: true, 
+      new TerserPlugin({
         parallel: true, 
         terserOptions: { 
           output: {
