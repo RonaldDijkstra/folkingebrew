@@ -83,13 +83,6 @@
     display: none;
   }
 
-  .snipcart-input__input {
-    @media only screen and (max-width: 819px) {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
-
   .snipcart-form__select-wrapper:focus-within .snipcart__icon {
     color: var(--green) !important;
   }
