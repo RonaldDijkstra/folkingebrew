@@ -7,9 +7,10 @@ module Components
 
           product_sizes = product.sizes.map { |x| x[:size] }.join('|') unless product.sizes.empty?
 
-          classes = "snipcart-add-item inline-block text-white w-28 py-2 px-2 text-base bg-green-default
-                     border-green-default text-white hover:bg-green-darker hover:border-green-darker
-                     font-semibold transition-all border border-solid #{additional_classes(opts)}
+          classes = "snipcart-add-item inline-block w-28 py-2 px-2
+                     bg-green-default border border-solid border-green-default
+                     text-white text-base font-semibold transition-all #{additional_classes(opts)}
+                     hover:bg-green-darker hover:border-green-darker
                      motion-reduce:transition-none motion-reduce:transform-none"
 
           buy_button_html(product, product_image(product), product_sizes, classes)
