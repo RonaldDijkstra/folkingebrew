@@ -18,3 +18,5 @@ gem 'pry-byebug'
 gem 'rake'
 gem 'redcarpet'
 gem 'rubocop'
+
+gem 'kramdown'

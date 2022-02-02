@@ -235,6 +235,7 @@ PLATFORMS
 DEPENDENCIES
   builder
   html-proofer
+  kramdown
   middleman
   middleman-dato (~> 0.10.0)
   middleman-dotenv
@@ -250,4 +251,4 @@ DEPENDENCIES
   rubocop
 
 BUNDLED WITH
-   2.2.28
+   2.3.4
