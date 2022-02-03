@@ -56,8 +56,8 @@ end
 # Activate Pagination
 activate :pagination
 
-# Use redcarpet for markdown
-set :markdown_engine, :redcarpet
+# Use kramdown for markdown
+set :markdown_engine, :kramdown
 
 # Layouts
 # https://middlemanapp.com/basics/layouts
