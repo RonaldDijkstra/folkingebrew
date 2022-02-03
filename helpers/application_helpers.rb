@@ -116,7 +116,6 @@ module ApplicationHelpers
   end
 
   def markdownify(text)
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-    markdown.render(text)
+    Kramdown::Document.new(text, input: "GFM").to_html
   end
 end
