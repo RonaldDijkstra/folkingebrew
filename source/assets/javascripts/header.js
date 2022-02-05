@@ -1,6 +1,5 @@
 export default function header() {
   // Variables
-
   const $navbarHeight = $('.site-header').outerHeight();
   let $didScroll;
   let $lastScrollTop = 0;
@@ -8,14 +7,14 @@ export default function header() {
   const $window = $(window);
 
   // Mobile navigation toggle adds nav-open and no-scroll
-
   $(document).ready(() => {
     $('#menu-toggle').on('click', () => {
-      $('body').toggleClass('nav-open no-scroll');
+      $('body').toggleClass('mobile-navigation-open overflow-hidden');
       return false;
     });
   });
 
+  // Add or remove at the top class at body
   $window.scroll(() => {
     const $scroll = $window.scrollTop();
 
@@ -26,10 +25,12 @@ export default function header() {
     }
   });
 
+  // Did scroll?
   $window.scroll(() => {
     $didScroll = true;
   });
 
+  // If the user scrolled, hide the nav
   function hasScrolled() {
     const $st = $window.scrollTop();
 
@@ -37,14 +38,15 @@ export default function header() {
 
     if ($st > $lastScrollTop && $st > $navbarHeight) {
       // Scroll Down
-      $('.site-header').removeClass('show-nav').addClass('hide-nav');
+      $('.site-header').removeClass('opacity-100').addClass('opacity-0');
     } else if ($st + $window.height() < $(document).height()) {
-      $('.site-header').removeClass('hide-nav').addClass('show-nav');
+      $('.site-header').removeClass('opacity-0').addClass('opacity-100');
     }
 
     $lastScrollTop = $st;
   }
 
+  // Scroll depth for did scroll
   setInterval(() => {
     if ($didScroll) {
       hasScrolled();

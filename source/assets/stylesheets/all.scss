@@ -12,17 +12,6 @@ html {
   @apply text-gray-300;
 }
 
-// Show and hide nav
-.site-header {
-  &.show-nav {
-    @apply opacity-100;
-  }
-
-  &.hide-nav {
-    @apply opacity-0;
-  }
-}
-
 // Special transparent header at the top of certain pages
 .transparent-header.at-the-top {
   .site-header {
@@ -34,8 +23,8 @@ html {
   }
 }
 
-// Show and hide nav
-.nav-open {
+// Show and hide mobile navigation
+.mobile-navigation-open {
   .button-show-nav {
     @apply hidden;
   }
@@ -46,16 +35,6 @@ html {
 
   .mobile-navigation {
     @apply block opacity-100 transition-opacity sm:hidden;
-  }
-}
-
-.no-scroll {
-  @apply overflow-hidden;
-}
-
-.age-gate {
-  &.show {
-    @apply block;
   }
 }
 
@@ -71,7 +50,7 @@ html {
   }
 }
 
-a.toggle.active {
+.toggle.active {
   svg {
     transform: rotate(180deg);
   }
