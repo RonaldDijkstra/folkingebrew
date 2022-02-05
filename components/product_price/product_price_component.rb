@@ -15,7 +15,7 @@ module Components
 
         def old_price(product)
           content_tag(:div, "€ #{price(product.old_price)}",
-                      class: 'line-through font-regular whitespace-nowrap text-gray-400')
+                      class: 'line-through whitespace-nowrap text-gray-400')
         end
 
         def price(price)
