@@ -11,11 +11,6 @@
     <% end %>
     <meta name="robots" content="<%= robots %>">
     <%= dato_favicon_meta_tags %>
-    <link rel="preconnect" href="https://fonts.gstatic.com" data-proofer-ignore />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap&display=swap"
-      rel="stylesheet"
-    />
     <link rel="preconnect" href="https://cdn.snipcart.com" data-proofer-ignore />
     <%# Getting the main stylesheet generated from webpack. Using a regex because of asset hashes %>
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>

@@ -24,7 +24,7 @@ module Components
         end
 
         def post_publish_date(post)
-          content_tag(:div, post.publish_date, class: 'text-gray-500 text-sm mb-2')
+          content_tag(:div, local_date_time(post.publish_date), class: 'text-gray-500 text-sm mb-2')
         end
 
         def read_more(post)

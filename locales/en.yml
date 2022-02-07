@@ -3,9 +3,9 @@ en:
   CNAME: www.folkingebrew.nl
   company_name: "Folkingebrew"
   address: |
-    Olgerweg 2-7<br>
-    9723 ED<br>
-    Groningen<br>
+    Olgerweg 2-7
+    9723 ED
+    Groningen
   time:
     formats:
       blog_date: "%e %B %Y"
@@ -28,8 +28,6 @@ en:
     read_more_about_us: "More About Us"
     submit: "Submit"
   footer:
-    contact: "Contact"
-    email_us: "Send us a message"
     social: "Social"
     up_to_date: "Stay up-to-date"
     buy: "Buy Beer & Merch"

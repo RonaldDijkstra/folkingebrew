@@ -41,13 +41,10 @@
                       link: "/privacy-policy.html" %>
     <% end %>
     <% footer_column do %>
-      <%= content_tag(:h3, t("footer.contact"), class: "font-bold mb-3") %>
-      <%= footer_link text: t("footer.email"), 
-                      link: "/contact.html" %>
-    <% end %>
-    <% footer_column do %>
       <%= content_tag(:h3, t("footer.adress"), class: "font-bold mb-3") %>
-      <%= content_tag(:address, t("address"), class: "not-italic") %>
+      <%= content_tag(:address, markdownify(t("address")), class: "not-italic") %>
+      <%= footer_link text: "info@folkingebrew.nl",
+                      link: "mailto:info@folkingebrew.nl" %>
     <% end %>
   </div>
   <div class="max-w-7xl m-auto pb-6 px-3 flex justify-center">

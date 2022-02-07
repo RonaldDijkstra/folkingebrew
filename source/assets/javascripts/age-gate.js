@@ -12,7 +12,7 @@ export default function header() {
     }
 
     if (cookieValue !== 'true') {
-      ageGate.classList.add('show', 'no-scroll');
+      ageGate.classList.add('block', 'no-scroll');
     }
 
     function closeOverlay() {

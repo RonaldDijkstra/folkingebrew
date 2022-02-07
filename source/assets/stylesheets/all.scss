@@ -2,25 +2,51 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-html {
-  box-sizing: border-box;
-  font-size: 16px;
+@layer base {
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local('Open Sans Light'),
+         url('../fonts/open-sans-v27-latin-300.woff2') format('woff2'),
+         url('../fonts/open-sans-v27-latin-300.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Open Sans Regular'),
+         url('../fonts/open-sans-v27-latin-regular.woff2') format('woff2'),
+         url('../fonts/open-sans-v27-latin-regular.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local('Open Sans Medium'),
+         url('../fonts/open-sans-v27-latin-500.woff2') format('woff2'),
+         url('../fonts/open-sans-v27-latin-500.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Open Sans Bold'),
+         url('../fonts/open-sans-v27-latin-700.woff2') format('woff2'),
+         url('../fonts/open-sans-v27-latin-700.woff') format('woff');
+  }
 }
 
 // Navigation Current Link
 [aria-current]:not([aria-current="false"]) {
   @apply text-gray-300;
-}
-
-// Show and hide nav
-.site-header {
-  &.show-nav {
-    @apply opacity-100;
-  }
-
-  &.hide-nav {
-    @apply opacity-0;
-  }
 }
 
 // Special transparent header at the top of certain pages
@@ -34,8 +60,8 @@ html {
   }
 }
 
-// Show and hide nav
-.nav-open {
+// Mobile navigation open
+.mobile-navigation-open {
   .button-show-nav {
     @apply hidden;
   }
@@ -49,20 +75,7 @@ html {
   }
 }
 
-.no-scroll {
-  @apply overflow-hidden;
-}
-
-.age-gate {
-  &.show {
-    @apply block;
-  }
-}
-
-[type="number"] {
-  -moz-appearance: textfield;
-}
-
+// Product thumbnail active
 .thumbnail-active {
   @apply bg-black;
 
@@ -71,8 +84,14 @@ html {
   }
 }
 
-a.toggle.active {
+// Product info toggle active
+.toggle.active {
   svg {
     transform: rotate(180deg);
   }
+}
+
+// Hide native number controls on Firefox
+[type="number"] {
+  -moz-appearance: textfield;
 }

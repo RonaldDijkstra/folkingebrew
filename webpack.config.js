@@ -7,9 +7,10 @@ const TerserPlugin = require('terser-webpack-plugin')
 
 const env = process.env.NODE_ENV;
 const filename = env === 'production' ? '[name].[contenthash]' : '[name]';
+const bail = env === 'production' ? true : false;
 
 module.exports = {
-  bail: true,
+  bail: bail,
   entry: {
     main: path.resolve(__dirname, './source/assets/javascripts/index.js'),
     snipcart: path.resolve(__dirname, './source/assets/javascripts/snipcart.js')
@@ -33,20 +34,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       },
       {
-        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'assets/fonts/'
-            }
-          }
-        ]
-      },
-
-      {
-        test: /\.(gif|png|jpe?g|svg)$/,
+        test: /\.(gif|png|jpe?g)$/,
         use: [
           {
             loader: 'file-loader',
@@ -75,7 +63,7 @@ module.exports = {
   optimization: { 
     minimize: true, 
     minimizer: [ 
-      new TerserPlugin({ 
+      new TerserPlugin({
         parallel: true, 
         terserOptions: { 
           output: {
