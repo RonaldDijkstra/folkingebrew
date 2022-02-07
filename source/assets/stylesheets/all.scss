@@ -91,6 +91,13 @@
   }
 }
 
+// Hide native number controls on Chrome and Safari
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 // Hide native number controls on Firefox
 [type="number"] {
   -moz-appearance: textfield;
