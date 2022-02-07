@@ -2,11 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-html {
-  box-sizing: border-box;
-  font-size: 16px;
-}
-
 // Navigation Current Link
 [aria-current]:not([aria-current="false"]) {
   @apply text-gray-300;
@@ -23,7 +18,7 @@ html {
   }
 }
 
-// Show and hide mobile navigation
+// Mobile navigation open
 .mobile-navigation-open {
   .button-show-nav {
     @apply hidden;
@@ -38,10 +33,7 @@ html {
   }
 }
 
-[type="number"] {
-  -moz-appearance: textfield;
-}
-
+// Product thumbnail active
 .thumbnail-active {
   @apply bg-black;
 
@@ -50,8 +42,14 @@ html {
   }
 }
 
+// Product info toggle active
 .toggle.active {
   svg {
     transform: rotate(180deg);
   }
+}
+
+// Hide native number controls on Firefox
+[type="number"] {
+  -moz-appearance: textfield;
 }
