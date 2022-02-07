@@ -23,7 +23,7 @@
           <% if !events.empty? %>
             <% events.each do |event| %>
               <td role="cell">
-                <%= event.date.strftime("%d-%m-%Y") %>
+                <%= local_date_time(event.date) %>
               </td>
               <td role="cell"><%= event.title %></td>
               <td role="cell"><%= event.location %></td>
