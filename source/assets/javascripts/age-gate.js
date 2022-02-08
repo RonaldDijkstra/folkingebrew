@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 
-export default function header() {
-  $(document).ready(() => {
+export default function ageGate() {
+  document.addEventListener("DOMContentLoaded", function(event) {
     const ageGate = document.querySelector("[data-rel='age-gate']");
     const consentButton = document.querySelector('.age-gate-consent');
     const cookieName = 'age_consent';
