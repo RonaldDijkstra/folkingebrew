@@ -5,11 +5,14 @@ export default function header() {
   let $lastScrollTop = 0;
   const $delta = 1;
   const $window = $(window);
+  const menuToggle = document.getElementById('menu-toggle');
 
-  // Mobile navigation toggle adds nav-open and no-scroll
-  $(document).ready(() => {
-    $('#menu-toggle').on('click', () => {
-      $('body').toggleClass('mobile-navigation-open overflow-hidden');
+  // Mobile navigation toggle
+  // Vanilla JS
+  document.addEventListener("DOMContentLoaded", function(event) {
+    menuToggle.addEventListener('click', () => {
+      document.body.classList.toggle('mobile-navigation-open');
+      document.body.classList.toggle('overflow-hidden');
       return false;
     });
   });
