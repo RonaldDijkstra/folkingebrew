@@ -12,11 +12,13 @@ export default function header() {
     }
 
     if (cookieValue !== 'true') {
+      ageGate.classList.remove('hidden');
       ageGate.classList.add('block', 'no-scroll');
     }
 
     function closeOverlay() {
-      ageGate.classList.remove('show');
+      ageGate.classList.remove('block', 'no-scroll');
+      ageGate.classList.add('hidden');
 
       Cookies.set(cookieName, true);
     }
