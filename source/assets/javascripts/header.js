@@ -1,59 +1,59 @@
 export default function header() {
   // Variables
-  const $navbarHeight = $('.site-header').outerHeight();
-  let $didScroll;
-  let $lastScrollTop = 0;
-  const $delta = 1;
+  const navbar = document.querySelector('.site-header');
+  const navbarHeight = navbar.offsetHeight;
+  let didScroll;
+  let lastScrollTop = 0;
+  const delta = 1;
   const $window = $(window);
+  const documentBody = document.body;
   const menuToggle = document.getElementById('menu-toggle');
 
   // Mobile navigation toggle
   // Vanilla JS
-  document.addEventListener("DOMContentLoaded", function(event) {
+  document.addEventListener('DOMContentLoaded', function(event) {
     menuToggle.addEventListener('click', () => {
-      document.body.classList.toggle('mobile-navigation-open');
-      document.body.classList.toggle('overflow-hidden');
+      documentBody.classList.toggle('mobile-navigation-open');
+      documentBody.classList.toggle('overflow-hidden');
       return false;
     });
   });
 
   // Add or remove at the top class at body
-  $window.scroll(() => {
-    const $scroll = $window.scrollTop();
+  document.addEventListener('scroll', function(event) {
+    const scroll = window.scrollY;
+    didScroll = true;
 
-    if ($scroll >= $navbarHeight / 10) {
-      $('body').addClass('not-at-the-top').removeClass('at-the-top');
+    if (scroll >= navbarHeight / 10) {
+      documentBody.classList.add('not-at-the-top');
+      documentBody.classList.remove('at-the-top');
     } else {
-      $('body').addClass('at-the-top').removeClass('not-at-the-top');
+      documentBody.classList.add('at-the-top');
+      documentBody.classList.remove('not-at-the-top');
     }
-  });
-
-  // Did scroll?
-  $window.scroll(() => {
-    $didScroll = true;
   });
 
   // If the user scrolled, hide the nav
   function hasScrolled() {
-    const $st = $window.scrollTop();
+    const scroll = window.scrollY;
 
-    if (Math.abs($lastScrollTop - $st) <= $delta) return;
+    if (Math.abs(lastScrollTop - scroll) <= delta) return;
 
-    if ($st > $lastScrollTop && $st > $navbarHeight) {
+    if (scroll > lastScrollTop && scroll > navbarHeight) {
       // Scroll Down
       $('.site-header').removeClass('opacity-100').addClass('opacity-0');
-    } else if ($st + $window.height() < $(document).height()) {
+    } else if (scroll + $window.height() < $(document).height()) {
       $('.site-header').removeClass('opacity-0').addClass('opacity-100');
     }
 
-    $lastScrollTop = $st;
+    lastScrollTop = scroll;
   }
 
   // Scroll depth for did scroll
   setInterval(() => {
-    if ($didScroll) {
+    if (didScroll) {
       hasScrolled();
-      $didScroll = false;
+      didScroll = false;
     }
   }, 100);
 }
