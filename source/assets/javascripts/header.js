@@ -2,16 +2,15 @@ export default function header() {
   // Variables
   const navbar = document.querySelector('.site-header');
   const navbarHeight = navbar.offsetHeight;
-  let didScroll;
   let lastScrollTop = 0;
   const delta = 1;
-  const $window = $(window);
+  const windowHeight = window.innerHeight;
   const documentBody = document.body;
+  const documentHeight = documentBody.scrollHeight;
   const menuToggle = document.getElementById('menu-toggle');
 
-  // Mobile navigation toggle
-  // Vanilla JS
-  document.addEventListener('DOMContentLoaded', function(event) {
+  window.addEventListener('DOMContentLoaded', () => {
+    // Mobile navigation toggle
     menuToggle.addEventListener('click', () => {
       documentBody.classList.toggle('mobile-navigation-open');
       documentBody.classList.toggle('overflow-hidden');
@@ -19,11 +18,10 @@ export default function header() {
     });
   });
 
-  // Add or remove at the top class at body
-  document.addEventListener('scroll', function(event) {
+  document.addEventListener('scroll', () => {
     const scroll = window.scrollY;
-    didScroll = true;
 
+    // Add and remove top classes
     if (scroll >= navbarHeight / 10) {
       documentBody.classList.add('not-at-the-top');
       documentBody.classList.remove('at-the-top');
@@ -31,29 +29,18 @@ export default function header() {
       documentBody.classList.add('at-the-top');
       documentBody.classList.remove('not-at-the-top');
     }
-  });
 
-  // If the user scrolled, hide the nav
-  function hasScrolled() {
-    const scroll = window.scrollY;
-
+    // Show and hide navigation bar
     if (Math.abs(lastScrollTop - scroll) <= delta) return;
 
     if (scroll > lastScrollTop && scroll > navbarHeight) {
-      // Scroll Down
-      $('.site-header').removeClass('opacity-100').addClass('opacity-0');
-    } else if (scroll + $window.height() < $(document).height()) {
-      $('.site-header').removeClass('opacity-0').addClass('opacity-100');
+      navbar.classList.remove('opacity-100');
+      navbar.classList.add('opacity-0');
+    } else if (scroll + windowHeight < documentHeight) {
+      navbar.classList.remove('opacity-0');
+      navbar.classList.add('opacity-100');
     }
 
     lastScrollTop = scroll;
-  }
-
-  // Scroll depth for did scroll
-  setInterval(() => {
-    if (didScroll) {
-      hasScrolled();
-      didScroll = false;
-    }
-  }, 100);
+  });
 }
