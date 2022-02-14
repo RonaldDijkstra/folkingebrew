@@ -4,7 +4,7 @@ export default function header() {
   const windowHeight = window.innerHeight;
   const documentBody = document.body;
   const documentHeight = documentBody.scrollHeight;
-  const menuToggle = document.getElementById('menu-toggle');
+  const menuToggle = document.querySelector('#menu-toggle');
   let lastScrollTop = 0;
 
   window.addEventListener('DOMContentLoaded', () => {
