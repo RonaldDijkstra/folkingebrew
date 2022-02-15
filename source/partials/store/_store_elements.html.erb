@@ -14,4 +14,9 @@
 <%= partial "partials/store/age_gate" %>
 <% if current_page.data.type == "product" %>
   <%= partial "partials/store/schema_product", locals: { product: product } %>
+  <% sitemap.resources.select {|resource| resource.path =~ /^(webshop).*$/}.each do |resource| %>
+    <% if resource.path =~ /\.(js)/ %>
+      <%= javascript_include_tag resource.path %>
+    <% end %>
+  <% end %>
 <% end %>
