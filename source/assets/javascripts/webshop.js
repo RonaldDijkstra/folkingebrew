@@ -47,12 +47,16 @@ window.addEventListener('DOMContentLoaded', () => {
 	  })
 	};
 
-  $('.toggle').click(function toggleProductDetails(e) {
-    e.preventDefault();
+	if (document.querySelector('.toggle')) {
+		document.querySelectorAll('.toggle').forEach(item => {
+			item.addEventListener('click', event => {
+				event.preventDefault;
 
-    const $this = $(this);
-
-    $this.toggleClass('active');
-    $this.next().slideToggle(350);
-  });
+				item.classList.toggle('active');
+				const next = item.nextSibling.nextSibling;
+				next.classList.toggle('hidden');
+				// animate
+			})
+		})
+	};
 });
