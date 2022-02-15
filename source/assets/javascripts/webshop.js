@@ -18,55 +18,26 @@ export default function webshop() {
       document.querySelector('.snipcart-add-item').dataset.itemQuantity = count;
     });
 
-    // $('.quantity-minus').click(function quantityMinus() {
-    //   const $input = $(this).parent().find('input');
-    //   // $input.focus();
-    //   let count = parseInt($input.val(), 10) - 1;
-    //   count = count < 1 ? 1 : count;
-    //   $input.val(count);
-    //   $input.change();
-    //   return false;
-    // });
-
-    // $('.quantity-plus').click(function quantityPlus() {
-    //   const $input = $(this).parent().find('input');
-    //   $input.focus();
-    //   const max = $input.attr('max');
-    //   const currentValue = parseInt($input.val(), 10);
-
-    //   if (max !== 'undefined' && currentValue < max) {
-    //     $input.val();
-    //   } else {
-    //     $input.val(parseInt($input.val(), 10) + 1);
-    //   }
-
-    //   $input.change();
-    //   return false;
-    // });
-
     document.querySelector('#quantity').addEventListener('change', () => {
       const count = document.querySelector('#quantity').value;
       document.querySelector('.snipcart-add-item').dataset.itemQuantity = count;
     });
 
-    // $('#quantity').change(function changeDataQuantity() {
-    //   const $button = $(this).parents('.product-content').find('.snipcart-add-item');
-
-    //   $button.attr('data-item-quantity', $(this).val());
-    // });
-
-    $('#size').change(function changeDataSize() {
-      const $button = $(this).parents('.product-content').find('.snipcart-add-item');
-
-      $button.attr('data-item-custom1-value', $(this).val());
+    document.querySelector('#size').addEventListener('change', () => {
+      const size = document.querySelector('#size').value;
+      document.querySelector('.snipcart-add-item').dataset.itemCustom1Value = size;
     });
 
-    $('.product-thumbnail').click(function activeProductImage() {
-      $('#product-image').attr('src', $(this).attr('src'));
+    document.querySelectorAll('.product-thumbnail').forEach(item => {
+      item.addEventListener('click', event => {
+        const productImage = document.querySelector('#product-image');
+        productImage.src = item.querySelector('img').src;
 
-      $(document).find('.thumbnail-active').removeClass('thumbnail-active');
-      $(this).parents('button').addClass('thumbnail-active');
-    });
+        const activeItem = document.querySelector('.thumbnail-active');
+        activeItem.classList.remove('thumbnail-active');
+        item.classList.add('thumbnail-active');
+      })
+    })
 
     $('.toggle').click(function toggleProductDetails(e) {
       e.preventDefault();

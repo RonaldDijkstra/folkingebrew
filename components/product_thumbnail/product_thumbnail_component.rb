@@ -5,7 +5,7 @@ module Components
         def product_thumbnail(opts = nil)
           product = opts[:product]
           product_image = opts[:product_image]
-          classes = 'w-16 h-16 mr-1 ml-1 rounded-lg overflow-hidden shadow md:w-20 md:h-20 lg:h-24 lg:w-24'
+          classes = 'product-thumbnail w-16 h-16 mr-1 ml-1 rounded-lg overflow-hidden shadow md:w-20 md:h-20 lg:h-24 lg:w-24'
           if opts[:index].zero?
             return content_tag(:button, thumbnail(product_image, product),
                                class: "#{classes} thumbnail-active")
@@ -18,7 +18,7 @@ module Components
         end
 
         def thumbnail_img(product_image, product)
-          image_tag(product_image.url, alt: product.title, class: 'product-thumbnail')
+          image_tag(product_image.url, alt: product.title)
         end
       end
     end
