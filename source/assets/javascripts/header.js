@@ -1,56 +1,35 @@
 export default function header() {
-  // Variables
-  const $navbarHeight = $('.site-header').outerHeight();
-  let $didScroll;
-  let $lastScrollTop = 0;
-  const $delta = 1;
-  const $window = $(window);
+  const navbar = document.querySelector('.site-header');
+  const navbarHeight = navbar.offsetHeight;
+  const windowHeight = window.innerHeight;
+  const documentBody = document.body;
+  const documentHeight = documentBody.scrollHeight;
+  const menuToggle = document.querySelector('#menu-toggle');
+  let lastScrollTop = 0;
 
-  // Mobile navigation toggle adds nav-open and no-scroll
-  $(document).ready(() => {
-    $('#menu-toggle').on('click', () => {
-      $('body').toggleClass('mobile-navigation-open overflow-hidden');
+  window.addEventListener('DOMContentLoaded', () => {
+    menuToggle.addEventListener('click', () => {
+      documentBody.classList.toggle('mobile-navigation-open');
+      documentBody.classList.toggle('overflow-hidden');
       return false;
     });
   });
 
-  // Add or remove at the top class at body
-  $window.scroll(() => {
-    const $scroll = $window.scrollTop();
+  document.addEventListener('scroll', () => {
+    const scroll = window.scrollY;
 
-    if ($scroll >= $navbarHeight / 10) {
-      $('body').addClass('not-at-the-top').removeClass('at-the-top');
+    if (scroll >= navbarHeight / 10) {
+      documentBody.classList.remove('at-the-top');
     } else {
-      $('body').addClass('at-the-top').removeClass('not-at-the-top');
+      documentBody.classList.add('at-the-top');
     }
+
+    if (scroll > lastScrollTop && scroll > navbarHeight) {
+      navbar.classList.replace('opacity-100', 'opacity-0');
+    } else if (scroll + windowHeight < documentHeight) {
+      navbar.classList.replace('opacity-0', 'opacity-100');
+    }
+    
+    lastScrollTop = scroll;
   });
-
-  // Did scroll?
-  $window.scroll(() => {
-    $didScroll = true;
-  });
-
-  // If the user scrolled, hide the nav
-  function hasScrolled() {
-    const $st = $window.scrollTop();
-
-    if (Math.abs($lastScrollTop - $st) <= $delta) return;
-
-    if ($st > $lastScrollTop && $st > $navbarHeight) {
-      // Scroll Down
-      $('.site-header').removeClass('opacity-100').addClass('opacity-0');
-    } else if ($st + $window.height() < $(document).height()) {
-      $('.site-header').removeClass('opacity-0').addClass('opacity-100');
-    }
-
-    $lastScrollTop = $st;
-  }
-
-  // Scroll depth for did scroll
-  setInterval(() => {
-    if ($didScroll) {
-      hasScrolled();
-      $didScroll = false;
-    }
-  }, 100);
 }

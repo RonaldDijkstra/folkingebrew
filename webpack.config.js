@@ -13,7 +13,8 @@ module.exports = {
   bail: bail,
   entry: {
     main: path.resolve(__dirname, './source/assets/javascripts/index.js'),
-    snipcart: path.resolve(__dirname, './source/assets/javascripts/snipcart.js')
+    snipcart: path.resolve(__dirname, './source/assets/javascripts/snipcart.js'),
+    webshop: path.resolve(__dirname, './source/assets/javascripts/webshop.js')
   },
 
   output: {
@@ -62,10 +63,6 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: `${filename}.css`
-    }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
     })
   ],
 
