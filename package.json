@@ -43,7 +43,7 @@
     "cssnano": "^5.0.16",
     "js-cookie": "^3.0.1",
     "tailwindcss": "^3.0.23",
-    "terser-webpack-plugin": "^5.3.0",
+    "terser-webpack-plugin": "^5.3.1",
     "what-input": "^5.2.10"
   }
 }
