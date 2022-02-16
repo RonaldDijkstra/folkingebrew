@@ -1,7 +1,8 @@
 window.addEventListener('DOMContentLoaded', () => {
 	if (document.querySelector('#quantity')) {
+		const input = document.querySelector('#quantity');
+
 	  document.querySelector('.quantity-minus').addEventListener('click', () => {
-	    const input = document.querySelector('#quantity');
 	    input.focus();
 	    let count = parseInt(input.value, 10) - 1;
 	    count = count < 1 ? 1 : count;
@@ -10,15 +11,14 @@ window.addEventListener('DOMContentLoaded', () => {
 	  })
 
 	  document.querySelector('.quantity-plus').addEventListener('click', () => {
-	    const input = document.querySelector('#quantity');
 	    input.focus();
 	    let count = parseInt(input.value, 10) + 1;
 	    input.value = count;
 	    setItemQuantity(count);
 	  })
 
-	  document.querySelector('#quantity').addEventListener('change', () => {
-	    const count = document.querySelector('#quantity').value;
+	  input.addEventListener('change', () => {
+	    const count = input.value;
 	    setItemQuantity(count);
 	  })
 	};
