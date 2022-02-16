@@ -21,7 +21,6 @@ export default function ageGate() {
       ageGateBox.classList.add('hidden');
 
       Cookies.set(cookieName, true);
-      console.log("We've set a cookie to remember your age, but only for a day!")
     }
 
     consentButton.addEventListener('click', closeOverlay);
