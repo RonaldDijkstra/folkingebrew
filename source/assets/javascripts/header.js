@@ -29,5 +29,7 @@ export default function header() {
     } else if (scroll + windowHeight < documentHeight) {
       navbar.classList.replace('opacity-0', 'opacity-100');
     }
+    
+    lastScrollTop = scroll;
   });
 }
