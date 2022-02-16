@@ -1,31 +1,31 @@
 window.addEventListener('DOMContentLoaded', () => {
-	if (document.querySelector('.quantity-minus')) {
+	if (document.querySelector('#quantity')) {
 	  document.querySelector('.quantity-minus').addEventListener('click', () => {
 	    const input = document.querySelector('#quantity');
 	    input.focus();
 	    let count = parseInt(input.value, 10) - 1;
 	    count = count < 1 ? 1 : count;
 	    input.value = count;
-	    document.querySelector('.snipcart-add-item').dataset.itemQuantity = count;
+	    setItemQuantity(count);
 	  })
-	};
 
-  if (document.querySelector('.quantity-plus')) {
 	  document.querySelector('.quantity-plus').addEventListener('click', () => {
 	    const input = document.querySelector('#quantity');
 	    input.focus();
 	    let count = parseInt(input.value, 10) + 1;
 	    input.value = count;
-	    document.querySelector('.snipcart-add-item').dataset.itemQuantity = count;
+	    setItemQuantity(count);
+	  })
+
+	  document.querySelector('#quantity').addEventListener('change', () => {
+	    const count = document.querySelector('#quantity').value;
+	    setItemQuantity(count);
 	  })
 	};
 
-	if (document.querySelector('#quantity')) {
-	  document.querySelector('#quantity').addEventListener('change', () => {
-	    const count = document.querySelector('#quantity').value;
-	    document.querySelector('.snipcart-add-item').dataset.itemQuantity = count;
-	  })
-	};
+	function setItemQuantity(count) {
+  	document.querySelector('.snipcart-add-item').dataset.itemQuantity = count;
+	}
 
   if (document.querySelector('#size')) {
     document.querySelector('#size').addEventListener('change', () => {
