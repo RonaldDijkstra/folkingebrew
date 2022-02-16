@@ -12,15 +12,16 @@ export default function ageGate() {
     }
 
     if (cookieValue !== 'true') {
-      ageGate.classList.remove('hidden');
-      ageGate.classList.add('block', 'no-scroll');
+      ageGateBox.classList.remove('hidden');
+      ageGateBox.classList.add('block', 'no-scroll');
     }
 
     function closeOverlay() {
-      ageGate.classList.remove('block', 'no-scroll');
-      ageGate.classList.add('hidden');
+      ageGateBox.classList.remove('block', 'no-scroll');
+      ageGateBox.classList.add('hidden');
 
       Cookies.set(cookieName, true);
+      console.log("We've set a cookie to remember your age, but only for a day!")
     }
 
     consentButton.addEventListener('click', closeOverlay);
