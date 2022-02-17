@@ -98,9 +98,9 @@ end
                        html: { class: "mb-3" } %>
   	  </div>
     <% end %>
-    <div class="border-t border-black">
+    <div class="accordion border-t border-black">
       <% if !product.product_details.empty? %>
-        <%= product_detail_toggle text: t("webshop.product_details") %>
+        <%= accordion_button text: t("webshop.product_details") %>
         <div class="hidden prose pt-2">
           <p>
             <%= product.product_details %>
@@ -108,7 +108,7 @@ end
         </div>
       <% end %>
       <% if product.sizes && product.sizes.any? { |size| size['lxb'] } %>
-        <%= product_detail_toggle text: t("webshop.sizes") %>
+        <%= accordion_button text: t("webshop.sizes") %>
         <div class="hidden prose pt-2">
           <table class="product-size-table">
             <thead>
@@ -140,7 +140,7 @@ end
           <% end %>
         </div>
       <% end %>
-      <%= product_detail_toggle text: t("webshop.shipping_and_paying") %>
+      <%= accordion_button text: t("webshop.shipping_and_paying") %>
       <div class="prose hidden pt-2">
         <%= markdownify(dato.product_index.shipping_conditions) %>
       </div>

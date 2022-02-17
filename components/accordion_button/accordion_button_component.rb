@@ -1,12 +1,12 @@
 module Components
-  module ProductDetailToggle
-    class ProductDetailToggleComponent < Middleman::Extension
+  module AccordionButton
+    class AccordionButtonComponent < Middleman::Extension
       helpers do
-        def product_detail_toggle(opts = nil)
+        def accordion_button(opts = nil)
           additional_classes = opts.dig(:html, :class) ? (opts[:html][:class]).to_s : ''
           link_to link_text(opts[:text]),
                   'javascript:void(0);',
-                  class: "toggle font-bold flex justify-between w-full border-b border-black bg-white block py-3
+                  class: "accordion-button font-bold flex justify-between w-full border-b border-black bg-white block py-3
                           #{additional_classes}"
         end
 
@@ -24,5 +24,5 @@ module Components
   end
 end
 
-::Middleman::Extensions.register(:product_detail_toggle_component,
-                                 Components::ProductDetailToggle::ProductDetailToggleComponent)
+::Middleman::Extensions.register(:accordion_button_component,
+                                 Components::AccordionButton::AccordionButtonComponent)
