@@ -116,10 +116,10 @@ module ApplicationHelpers
   end
 
   def local_date_time(date_time)
-    date_time.strftime("%d-%m-%Y")
+    date_time.strftime('%d-%m-%Y')
   end
 
   def markdownify(text)
-    Kramdown::Document.new(text, input: "GFM").to_html
+    Kramdown::Document.new(text, input: 'GFM').to_html
   end
 end
