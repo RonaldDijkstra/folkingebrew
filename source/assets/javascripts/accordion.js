@@ -1,24 +1,5 @@
-export default function accordion() {
+export default function ageGate() {
   window.addEventListener('DOMContentLoaded', () => {
-  	if (document.querySelector('.accordion')) {
-  		const items = document.querySelectorAll(".accordion-button");
-
-			function toggleAccordion() {
-				console.log('tick');
-			  const itemToggle = this.getAttribute('aria-expanded');
-			  
-			  for (var i = 0; i < items.length; i++) {
-			    items[i].setAttribute('aria-expanded', 'false');
-			  }
-			  
-			  if (itemToggle == 'false') {
-			    this.setAttribute('aria-expanded', 'true');
-			  }
-			}
-
-			items.forEach(item => item.addEventListener('click', toggleAccordion));
-  	}
-
    	if (document.querySelector('.accordion')) {
 	    document.querySelectorAll('.accordion-button').forEach((item) => {
 	      item.addEventListener('click', (event) => {
@@ -27,6 +8,7 @@ export default function accordion() {
 	        item.classList.toggle('active');
 	        const next = item.nextSibling.nextSibling;
 	        next.classList.toggle('hidden');
+	        item.querySelector('.accordion-icon').classList.toggle('rotate-180');
 	        // animate
 	      });
 	    });
