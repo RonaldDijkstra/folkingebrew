@@ -46,17 +46,4 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
-  if (document.querySelector('.toggle')) {
-    document.querySelectorAll('.toggle').forEach((item) => {
-      item.addEventListener('click', (event) => {
-        event.preventDefault();
-
-        item.classList.toggle('active');
-        const next = item.nextSibling.nextSibling;
-        next.classList.toggle('hidden');
-        // animate
-      });
-    });
-  }
 });

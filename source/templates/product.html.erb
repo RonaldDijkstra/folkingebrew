@@ -98,18 +98,18 @@ end
                        html: { class: "mb-3" } %>
   	  </div>
     <% end %>
-    <div class="border-t border-black">
+    <div class="accordion border-t border-black">
       <% if !product.product_details.empty? %>
-        <%= product_detail_toggle text: t("webshop.product_details") %>
-        <div class="hidden prose pt-2">
+        <%= accordion_button text: t("webshop.product_details") %>
+        <% accordion_content do %>
           <p>
             <%= product.product_details %>
           </p>
-        </div>
+        <% end %>
       <% end %>
       <% if product.sizes && product.sizes.any? { |size| size['lxb'] } %>
-        <%= product_detail_toggle text: t("webshop.sizes") %>
-        <div class="hidden prose pt-2">
+        <%= accordion_button text: t("webshop.sizes") %>
+        <% accordion_content do %>
           <table class="product-size-table">
             <thead>
               <tr>
@@ -138,12 +138,12 @@ end
               <%= image_tag product.size_image.url, alt: "Size Image", class: " lg:max-w-sm mx-auto" %>
             </div>
           <% end %>
-        </div>
+        <% end %>
       <% end %>
-      <%= product_detail_toggle text: t("webshop.shipping_and_paying") %>
-      <div class="prose hidden pt-2">
+      <%= accordion_button text: t("webshop.shipping_and_paying") %>
+      <% accordion_content do %>
         <%= markdownify(dato.product_index.shipping_conditions) %>
-      </div>
+      <% end %>
     </div>
 	</div>
 </section>

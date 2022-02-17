@@ -44,12 +44,10 @@
   }
 }
 
-// Navigation Current Link
 [aria-current]:not([aria-current="false"]) {
   @apply text-gray-300;
 }
 
-// Special transparent header at the top of certain pages
 .transparent-header.at-the-top {
   .site-header {
     @apply bg-transparent;
@@ -60,7 +58,6 @@
   }
 }
 
-// Mobile navigation open
 .mobile-navigation-open {
   .button-show-nav {
     @apply hidden;
@@ -75,19 +72,11 @@
   }
 }
 
-// Product thumbnail active
 .thumbnail-active {
   @apply bg-black;
 
   img {
     @apply opacity-70;
-  }
-}
-
-// Product info toggle active
-.toggle.active {
-  svg {
-    transform: rotate(180deg);
   }
 }
 
