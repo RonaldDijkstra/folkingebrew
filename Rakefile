@@ -15,7 +15,7 @@ linters = [
   {
     name: 'stylelint',
     language: 'CSS/SCSS',
-    command: 'stylelint **/*.scss'
+    command: 'npx stylelint **/*.scss'
   },
   {
     name: 'RuboCop',

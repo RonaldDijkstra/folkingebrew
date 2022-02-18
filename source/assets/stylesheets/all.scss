@@ -2,46 +2,44 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@layer base {
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: local('Open Sans Light'),
-         url('../fonts/open-sans-v27-latin-300.woff2') format('woff2'),
-         url('../fonts/open-sans-v27-latin-300.woff') format('woff');
-  }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Open Sans Light'),
+    url('../fonts/open-sans-v27-latin-300.woff2') format('woff2'),
+    url('../fonts/open-sans-v27-latin-300.woff') format('woff');
+}
 
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local('Open Sans Regular'),
-         url('../fonts/open-sans-v27-latin-regular.woff2') format('woff2'),
-         url('../fonts/open-sans-v27-latin-regular.woff') format('woff');
-  }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Open Sans Regular'),
+    url('../fonts/open-sans-v27-latin-regular.woff2') format('woff2'),
+    url('../fonts/open-sans-v27-latin-regular.woff') format('woff');
+}
 
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: local('Open Sans Medium'),
-         url('../fonts/open-sans-v27-latin-500.woff2') format('woff2'),
-         url('../fonts/open-sans-v27-latin-500.woff') format('woff');
-  }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Open Sans Medium'),
+    url('../fonts/open-sans-v27-latin-500.woff2') format('woff2'),
+    url('../fonts/open-sans-v27-latin-500.woff') format('woff');
+}
 
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: local('Open Sans Bold'),
-         url('../fonts/open-sans-v27-latin-700.woff2') format('woff2'),
-         url('../fonts/open-sans-v27-latin-700.woff') format('woff');
-  }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Open Sans Bold'),
+    url('../fonts/open-sans-v27-latin-700.woff2') format('woff2'),
+    url('../fonts/open-sans-v27-latin-700.woff') format('woff');
 }
 
 [aria-current]:not([aria-current="false"]) {
@@ -73,21 +71,21 @@
 }
 
 .thumbnail-active {
-  @apply bg-black;
+  @apply bg-black
 
-  img {
+    img {
     @apply opacity-70;
   }
 }
 
-// Hide native number controls on Chrome and Safari
+/* Hide native number controls on Chrome and Safari */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-// Hide native number controls on Firefox
+/* Hide native number controls on Firefox */
 [type="number"] {
   -moz-appearance: textfield;
 }

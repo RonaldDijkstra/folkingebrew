@@ -1,6 +1,6 @@
 #snipcart {
   // Global
-  --base-font-family: 'Open Sans', sans-serif;
+  --base-font-family: "Open Sans", sans-serif;
   --green: #54b848;
   --light-green: #65bf5a;
   --very-light-green: #e5f4e0;
@@ -51,7 +51,7 @@
   --bgColor-buttonDanger-success: var(--bgColor-buttonDanger);
   --bgColor-buttonDanger-error: var(--bgColor-buttonDanger);
 
-  --bgColor-badge: #FFF;
+  --bgColor-badge: #fff;
   --bgColor-badge-active: var(--green);
   --bgColor-input-autofill: var(--very-light-green);
 
@@ -167,4 +167,3 @@
     }
   }
 }
-
