@@ -3,7 +3,7 @@ module Components
     class AccordionContentComponent < Middleman::Extension
       helpers do
         def accordion_content(&block)
-          content_tag(:div, class: "hidden prose pt-2", &block)
+          content_tag(:div, class: 'hidden prose pt-2', &block)
         end
       end
     end

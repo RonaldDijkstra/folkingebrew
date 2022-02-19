@@ -6,7 +6,8 @@ module Components
           additional_classes = opts.dig(:html, :class) ? (opts[:html][:class]).to_s : ''
           link_to link_text(opts[:text]),
                   'javascript:void(0);',
-                  class: "accordion-button font-bold flex justify-between w-full border-b border-black bg-white block py-3
+                  class: "accordion-button flex justify-between w-full
+                          border-b border-black bg-white font-bold py-3
                           #{additional_classes}"
         end
 
