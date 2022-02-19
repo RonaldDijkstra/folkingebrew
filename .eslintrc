@@ -4,7 +4,6 @@
     "comma-dangle": "off"
   },
   "env": {
-    "browser": true,
-    "jquery": true
+    "browser": true
   }
 }
