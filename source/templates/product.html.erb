@@ -78,19 +78,21 @@ end
   	          <%= t("webshop.quantity") %> <%= "(#{t("webshop.max")} #{product.max_quantity})" if product.max_quantity %>
   	        </label>
   	        <div class="relative inline-flex">
-  	          <% if product.max_quantity %>
-  	           <input class="text-center px-8 border border-border-gray flex-grow-0 flex-shrink-0 w-28 focus:border-green-default focus:ring-green-default" type="number" value="1" id="quantity" name="quantity" min="1" max="<%= product.max_quantity %>" step="1" pattern="[0-9]*">
-  	          <% else %>
-  	           <input class="text-center px-8 border border-border-gray flex-grow-0 flex-shrink-0 w-28 focus:border-green-default focus:ring-green-default" type="number" value="1" id="quantity" name="quantity" min="1" step="1" pattern="[0-9]*">
-  	          <% end %>
-  	          <button type="button" class="quantity-minus absolute top-0 left-0 bottom-0 border-border-gray border-r text-center w-8 focus:border-green-default" aria-label="<%= t("webshop.reduce_with_one")%>">
-  	            <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 3"><path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path></svg>
-  	            <span class="sr-only">−</span>
-  	          </button>
-	            <button type="button" class="quantity-plus absolute top-0 right-0 bottom-0 border-border-gray border-l text-center w-8 focus:border-green-default" aria-label="<%= t("webshop.increase_with_one")%>">
-	              <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 21"><path d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill="#000" fill-rule="evenodd"></path></svg>
-	              <span class="sr-only">+</span>
-	            </button>
+              <%= product_quantity_input max: product.max_quantity %>
+
+              <% product_quantity_button html: { class: "quantity-minus left-0 border-r", "aria-label": t("webshop.reduce_with_one")} do %>
+                <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 3">
+                  <path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">−</span>
+              <% end %>
+
+              <% product_quantity_button html: { class: "quantity-plus right-0 border-l", "aria-label": t("webshop.increase_with_one")} do %>
+                <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 21">
+                  <path fill="#000" d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">+</span>
+              <% end %>
   	        </div>
   	    	</div>
   	    <% end %>
