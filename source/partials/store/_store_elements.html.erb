@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">
   <% end %>
 <% end %>
-<%= partial "partials/store/age_gate" %>
+<%= age_gate %>
 <% if current_page.data.type == "product" %>
   <%= partial "partials/store/schema_product", locals: { product: product } %>
   <% sitemap.resources.select {|resource| resource.path =~ /^(webshop).*$/}.each do |resource| %>
