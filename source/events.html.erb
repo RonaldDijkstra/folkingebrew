@@ -19,20 +19,22 @@
         </tr>
       </thead>
       <tbody role="rowgroup">
-        <tr role="row">
           <% if !events.empty? %>
             <% events.each do |event| %>
-              <td role="cell">
-                <%= local_date_time(event.date) %>
-              </td>
-              <td role="cell"><%= event.title %></td>
-              <td role="cell"><%= event.location %></td>
-              <td role="cell"><%= link_to t("events.link"), "#{event.url}", target: "_blank", rel: "noopener noreferrer nofollow", class: "text-green-default hover:no-underline" %></td>
+              <tr role="row">
+                <td role="cell">
+                  <%= local_date_time(event.date) %>
+                </td>
+                <td role="cell"><%= event.title %></td>
+                <td role="cell"><%= event.location %></td>
+                <td role="cell"><%= link_to t("events.link"), "#{event.url}", target: "_blank", rel: "noopener noreferrer nofollow", class: "text-green-default hover:no-underline" %></td>
+              </tr>
             <% end %>
           <% else %>
-            <td colspan="4"><%= dato.events_page.no_upcoming_events_text %></td>
+            <tr role="row">
+              <td colspan="4"><%= dato.events_page.no_upcoming_events_text %></td>
+            </tr>
           <% end %>
-        </tr>
       </tbody>
     </table>
   <% end %>
