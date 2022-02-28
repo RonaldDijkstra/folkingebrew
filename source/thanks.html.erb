@@ -10,32 +10,8 @@ noindex: true
   <%= t("pages.thanks.text") %>
 </section>
 
-<script>
-// Get URL parameters
-var urlParams = {};
-window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-  urlParams[key] = decodeURIComponent(value);
-});
-document.addEventListener('DOMContentLoaded', function() {
-  var messageEl = document.querySelector('.thanks-message');
-
-  if (urlParams.newsletter) {
-    var message;
-
-    switch (urlParams.newsletter) {
-      case 'subscribed':
-        message = '<%= t("pages.thanks.newsletter.subscribed") %>';
-        break;
-      case 'confirmed':
-        message = '<%= t("pages.thanks.newsletter.confirmed") %>';
-        break;
-      case 'unsubscribed':
-        message = '<%= t("pages.thanks.newsletter.unsubscribed") %>';
-        break;
-    }
-
-    // Replace message with newsletter message if it was a newsletter action
-    messageEl.innerHTML = message || '';
-  }
-});
-</script>
+<% sitemap.resources.select {|resource| resource.path =~ /^(thanks).*$/}.each do |resource| %>
+  <% if resource.path =~ /\.(js)/ %>
+    <%= javascript_include_tag resource.path %>
+  <% end %>
+<% end %>

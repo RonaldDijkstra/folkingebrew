@@ -14,6 +14,7 @@ module.exports = {
   entry: {
     main: path.resolve(__dirname, './source/assets/javascripts/index.js'),
     snipcart: path.resolve(__dirname, './source/assets/javascripts/snipcart.js'),
+    thanks: path.resolve(__dirname, './source/assets/javascripts/thanks.js'),
     webshop: path.resolve(__dirname, './source/assets/javascripts/webshop.js')
   },
 
