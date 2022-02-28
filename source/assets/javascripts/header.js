@@ -25,9 +25,9 @@ export default function header() {
     }
 
     if (scroll > lastScrollTop && scroll > navbarHeight) {
-      navbar.classList.replace('opacity-100', 'opacity-0');
+      navbar.classList.add('hidden');
     } else if (scroll + windowHeight < documentHeight) {
-      navbar.classList.replace('opacity-0', 'opacity-100');
+      navbar.classList.remove('hidden');
     }
 
     lastScrollTop = scroll;

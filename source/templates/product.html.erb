@@ -14,8 +14,8 @@ if product.images
 end
 %>
 
-<section class="lg:flex lg:px-6 mb-12 max-w-7xl m-auto">
-	<figure class="lg:w-3/5 h-full relative">
+<section class="mb-12 max-w-7xl m-auto lg:flex lg:px-6">
+	<figure class="h-full relative lg:w-3/5">
     <picture class="block h-full w-full">
       <% if product_image %>
         <%= image_tag product_image, alt: product.title, width: "970", height: "970", id: "product-image" %>
