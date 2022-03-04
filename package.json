@@ -37,7 +37,7 @@
     "build": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js  --config webpack.config.js --mode production"
   },
   "dependencies": {
-    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.2",
     "cssnano": "^5.0.17",
