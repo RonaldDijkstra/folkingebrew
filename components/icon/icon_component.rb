@@ -7,7 +7,7 @@ module Components
           link_to(opts[:href],
                   class: "transition-all block text-white hover:text-gray-300 #{additional_classes}
                           motion-reduce:transition-none motion-reduce:transform-none",
-                  target: '_blank', rel: 'noopener noreferrer', &block)
+                  target: '_blank', rel: 'nofollow noopener noreferrer', &block)
         end
       end
     end
