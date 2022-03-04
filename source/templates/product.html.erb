@@ -80,14 +80,14 @@ end
   	        <div class="relative inline-flex">
               <%= product_quantity_input max: product.max_quantity %>
 
-              <% product_quantity_button html: { class: "quantity-minus left-0 border-r", "aria-label": t("webshop.reduce_with_one")} do %>
+              <% product_quantity_button id: "quantity-minus", html: { class: "left-0 border-r", "aria-label": t("webshop.reduce_with_one")} do %>
                 <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 3">
                   <path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path>
                 </svg>
                 <span class="sr-only">−</span>
               <% end %>
 
-              <% product_quantity_button html: { class: "quantity-plus right-0 border-l", "aria-label": t("webshop.increase_with_one")} do %>
+              <% product_quantity_button id: "quantity-plus", html: { class: "right-0 border-l", "aria-label": t("webshop.increase_with_one")} do %>
                 <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 21">
                   <path fill="#000" d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill-rule="evenodd"></path>
                 </svg>

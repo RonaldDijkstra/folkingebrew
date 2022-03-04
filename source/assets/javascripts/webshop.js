@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('#quantity')) {
     const input = document.querySelector('#quantity');
 
-    document.querySelector('.quantity-minus').addEventListener('click', () => {
+    document.querySelector('#quantity-minus').addEventListener('click', () => {
       input.focus();
       let count = parseInt(input.value, 10) - 1;
       count = count < 1 ? 1 : count;
@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
       setItemQuantity(count);
     });
 
-    document.querySelector('.quantity-plus').addEventListener('click', () => {
+    document.querySelector('#quantity-plus').addEventListener('click', () => {
       input.focus();
       const count = parseInt(input.value, 10) + 1;
       input.value = count;
