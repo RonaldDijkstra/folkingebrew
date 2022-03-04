@@ -1,12 +1,11 @@
 window.addEventListener('DOMContentLoaded', () => {
-  // Get URL parameters
   const urlParams = {};
 
   window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, (m, key, value) => {
     urlParams[key] = decodeURIComponent(value);
   });
 
-  const messageEl = document.querySelector('.thanks-message');
+  const messageEl = document.querySelector('#thanks-message');
   let message;
 
   if (urlParams.newsletter) {
@@ -24,7 +23,6 @@ window.addEventListener('DOMContentLoaded', () => {
         break;
     }
 
-    // Replace message with newsletter message if it was a newsletter action
     messageEl.innerHTML = message || '';
   }
 });
