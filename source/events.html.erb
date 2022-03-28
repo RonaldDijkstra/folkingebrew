@@ -23,7 +23,10 @@
             <% events.each do |event| %>
               <tr role="row">
                 <td role="cell">
-                  <%= local_date_time(event.date) %>
+                  <%= local_date_time(event.start_date) %>
+                  <% if event.end_date %> /
+                    <%= local_date_time(event.end_date) %>
+                  <% end %>
                 </td>
                 <td role="cell"><%= event.title %></td>
                 <td role="cell"><%= event.location %></td>
