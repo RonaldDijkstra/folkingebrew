@@ -4,15 +4,24 @@
 
 <%
 bg_color = beer.background_color == "dark" ? "bg-neutral" : "bg-white"
-%> 
+%>
 
-<section class="lg:flex lg:px-6 lg:mt-12 mb-12 max-w-7xl m-auto">
-  <figure class="lg:flex-1 h-full lg:w-1/2 relative <%= bg_color %>">
-    <picture class="block h-full w-full">
+<%# content_for(:main_class) do %>
+  <%#= "flex-grow" %>
+<%# end %>
+
+<section class="mb-12 m-auto">
+  <figure class="lg:flex-1 h-full relative <%= bg_color %>">
+    <picture class="block w-full max-w-4xl m-auto">
       <% if beer.image.url %>
-        <%= image_tag beer.image.url(fm: :webp, h: 970, w:970), alt: beer.title, class: "product-image", id: "product-image", width: "970", height: "970" %>
+        <%#= image_tag beer.image.url(fm: :webp, h: 960, w: 960, auto: "enhance", dpr: "3"), alt: beer.title, class: "m-auto", id: "product-image", width: "960", height: "960" %>
+        <img srcset="<%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance&dpr=1 1x,
+             <%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance&dpr=2 2x,
+             <%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance&dpr=3 3x"
+             src="<%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance"
+        />
       <% else %>
-        <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image", id: "product-image", width: "970", height: "970" %>
+        <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image", id: "product-image", width: "800", height: "800" %>
       <% end %>
     </picture>
   </figure>

@@ -19,7 +19,10 @@ module Components
         end
 
         def thumbnail_img(product_image, product)
-          image_tag(product_image.url, alt: product.title)
+          image_tag(product_image.url, alt: product.title, srcset: { 
+            product_image.url + "?fm=webp&h=960&w=960&auto=enhance&fit=max&dpr=1" => "1x", 
+            product_image.url => "?fm=webp&h=960&w=960&auto=enhance&fit=max&dpr=2" => "2x",
+            product_image.url => "?fm=webp&h=960&w=960&auto=enhance&fit=max&dpr=3" => "3x"})
         end
       end
     end

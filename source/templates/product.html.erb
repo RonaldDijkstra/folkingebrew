@@ -10,7 +10,7 @@ type: product
 
 <%
 if product.images
-  product_image = product.images.first.url(fm: :webp, h: 970, w: 970)
+  product_image = product.images.first
 end
 %>
 
@@ -18,7 +18,13 @@ end
 	<figure class="h-full relative lg:w-3/5">
     <picture class="block h-full w-full">
       <% if product_image %>
-        <%= image_tag product_image, alt: product.title, width: "970", height: "970", id: "product-image" %>
+        <%#= image_tag product_image, alt: product.title, width: "970", height: "970", id: "product-image" %>
+
+        <img srcset="<%= product_image.url %>?fm=webp&h=960&w=960&auto=enhance&fit=max&dpr=1 1x,
+             <%= product_image.url %>?fm=webp&h=960&w=960&auto=enhance&fit=max&dpr=2 2x,
+             <%= product_image.url %>?fm=webp&h=960&w=960&auto=enhance&fit=max&dpr=3 3x"
+             src="<%= product_image.url %>?fm=webp&h=960&w=960&auto=enhance&fit=max" id="product-image"
+        />
       <% else %>
         <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, width: "970", height: "970", class: "product-image", id: "product-image" %>
       <% end %>
