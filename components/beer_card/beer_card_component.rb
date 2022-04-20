@@ -16,9 +16,24 @@ module Components
           )
         end
 
+        # def beer_image(beer)
+        #   image_tag(beer.image.url(fm: :webp, h: 540, w: 540), alt: beer.title, class: 'block w-full',
+        #                                                        width: '540', height: '540', loading: 'lazy')
+        # end
+
         def beer_image(beer)
-          image_tag(beer.image.url(fm: :webp, h: 540, w: 540), alt: beer.title, class: 'block w-full',
-                                                               width: '540', height: '540', loading: 'lazy')
+          image_url = beer.image.url
+
+          image_tag("#{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max", 
+                    alt: beer.title, 
+                    class: 'block w-full', 
+                    height: '540',
+                    width: '540',
+                    loading: 'lazy',
+                    srcset: "#{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=1 1x,
+                             #{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=2 2x,
+                             #{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=3 3x"
+          )
         end
 
         def classes
