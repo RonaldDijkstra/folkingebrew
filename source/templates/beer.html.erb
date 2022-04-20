@@ -11,7 +11,7 @@ bg_color = beer.background_color == "dark" ? "bg-neutral" : "bg-white"
 <%# end %>
 
 <section class="mb-12 m-auto">
-  <figure class="lg:flex-1 h-full relative <%= bg_color %>">
+  <figure class="h-full <%= bg_color %>">
     <picture class="block w-full max-w-4xl m-auto">
       <% if beer.image.url %>
         <%#= image_tag beer.image.url(fm: :webp, h: 960, w: 960, auto: "enhance", dpr: "3"), alt: beer.title, class: "m-auto", id: "product-image", width: "960", height: "960" %>
