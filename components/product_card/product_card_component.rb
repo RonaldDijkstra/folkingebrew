@@ -19,12 +19,18 @@ module Components
         private
 
         def image(product)
-          image_tag(product.images.first.url(fm: :webp, h: 540, w: 540),
-                    alt: product.title,
-                    class: 'mb-3',
+          image_url = product.images.first.url
+
+          image_tag("#{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max", 
+                    alt: product.title, 
+                    class: 'mb-3', 
                     height: '540',
                     width: '540',
-                    loading: 'lazy')
+                    loading: 'lazy',
+                    srcset: "#{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=1 1x,
+                             #{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=2 2x,
+                             #{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=3 3x"
+          )
         end
       end
     end
