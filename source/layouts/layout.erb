@@ -31,7 +31,7 @@
 
     <%= partial "partials/header" %>
     
-    <main class="flex-grow mt-16 sm:mt-20">
+    <main class="<%= content_for?(:main_class) ? yield_content(:main_class) : "flex-grow mt-16 sm:mt-20" %>">
       <%= yield %>
     </main>
 
