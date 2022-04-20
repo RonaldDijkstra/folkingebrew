@@ -90,7 +90,7 @@ en:
       malts: "Malts"
       fruits: "Fruits"
       adjuncts: "Adjuncts"
-      release_date: "Release Date"
+      release_date: "Release Month"
     back_to_all_beers: "See all releases"
     title: "Our Beers"
   events: 

@@ -26,7 +26,7 @@ bg_color = beer.background_color == "dark" ? "bg-neutral" : "bg-white"
   </figure>
   <div class="bg-white px-6 py-12 lg:flex lg:flex-col lg:justify-center">
     <div class="m-auto max-w-3xl">
-      <div class="sm:flex">
+      <div class="sm:flex pb-10">
         <div class="sm:w-2/3 sm:border-r sm:pr-10">
           <h1 class="text-3xl font-bold mb-4">
             <%= beer.title %>
@@ -38,39 +38,46 @@ bg_color = beer.background_color == "dark" ? "bg-neutral" : "bg-white"
             <%= beer.short_description %>
           </p>
         </div>
-        <div class="pb-10 sm:w-1/3 sm:pl-10">
-          <% unless beer.hops.strip.empty? %>
-              <div class="w-full font-bold"><%= beer.hops %></div>
-              <div class="w-full text-gray-400 text-sm mb-2"><%= t("beers.facts.hops") %></div>
-          <% end %>
-          <% unless beer.fruits.strip.empty? %>
-              <div class="w-full font-bold"><%= beer.fruits %></div>
-              <div class="w-full text-gray-400 text-sm mb-2"><%= t("beers.facts.fruits") %></div>
-          <% end %>
-          <% unless beer.malts.strip.empty? %>
-              <div class="w-full font-bold"><%= beer.malts %></div>
-              <div class="w-full text-gray-400 text-sm mb-2"><%= t("beers.facts.malts") %></div>
-          <% end %>
-          <% unless beer.adjuncts.strip.empty? %>
-              <div class="w-full font-bold"><%= beer.adjuncts %></div>
-              <div class="w-full text-gray-400 text-sm mb-2"><%= t("beers.facts.adjuncts") %></div>
-          <% end %>
-          <% unless beer.yeast.strip.empty? %>
-              <div class="w-full font-bold"><%= beer.yeast %></div>
-              <div class="w-full text-gray-400 text-sm mb-2"><%= t("beers.facts.yeast") %></div>
+        <div class="sm:w-1/3 sm:pl-10">
+          <% if beer.properties %>
+            <% beer.properties.each do |ingredient| %>
+              <div class="text-sm font-bold"><%= ingredient.key %></div>
+              <div class="mb-2"><%= ingredient.value %></div>
+            <% end %>
+          <% else %>
+            <% unless beer.hops.strip.empty? %>
+                <div class="text-sm font-bold"><%= t("beers.facts.hops") %></div>
+                <div class="mb-2"><%= beer.hops %></div>
+            <% end %>
+            <% unless beer.fruits.strip.empty? %>
+                <div class="text-sm font-bold"><%= t("beers.facts.fruits") %></div>
+                <div class="mb-2"><%= beer.fruits %></div>
+            <% end %>
+            <% unless beer.malts.strip.empty? %>
+                <div class="text-sm font-bold"><%= t("beers.facts.malts") %></div>
+                <div class="mb-2"><%= beer.malts %></div>
+            <% end %>
+            <% unless beer.adjuncts.strip.empty? %>
+                <div class="text-sm font-bold"><%= t("beers.facts.adjuncts") %></div>
+                <div class="mb-2"><%= beer.adjuncts %></div>
+            <% end %>
+            <% unless beer.yeast.strip.empty? %>
+                <div class="text-sm font-bold"><%= t("beers.facts.yeast") %></div>
+                <div class="mb-2"><%= beer.yeast %></div>
+            <% end %>
           <% end %>
           <% if beer.release_month %>
-              <div class="w-full font-bold"><%= beer.release_month %></div>
-              <div class="w-full text-gray-400 text-sm"><%= t("beers.facts.release_date") %></div>
+            <div class="text-sm font-bold"><%= t("beers.facts.release_date") %></div>
+            <div><%= beer.release_month %></div>
           <% end %>
         </div>
       </div>
       <div>
         <%= button text: "All beers",
-               link: true,
-               href: "/beers/",
-               type: :default,
-               html: { class: "inline-block" } %>
+                   link: true,
+                   href: "/beers/",
+                   type: :default,
+                   html: { class: "inline-block" } %>
       </div>
     </div>
   </div>
