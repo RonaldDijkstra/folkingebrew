@@ -6,90 +6,72 @@
 bg_color = beer.background_color == "dark" ? "bg-neutral" : "bg-white"
 %>
 
-<%# content_for(:main_class) do %>
-  <%#= "flex-grow" %>
-<%# end %>
+<% content_for(:main_class) do %>
+  <%= "flex-grow mt-16 sm:mt-8" %>
+<% end %>
 
-<section class="mb-12 m-auto">
+<section class="m-auto">
   <figure class="h-full <%= bg_color %>">
     <picture class="block w-full max-w-4xl m-auto">
       <% if beer.image.url %>
-        <%#= image_tag beer.image.url(fm: :webp, h: 960, w: 960, auto: "enhance", dpr: "3"), alt: beer.title, class: "m-auto", id: "product-image", width: "960", height: "960" %>
         <img srcset="<%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance&dpr=1 1x,
              <%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance&dpr=2 2x,
              <%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance&dpr=3 3x"
              src="<%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance"
         />
       <% else %>
-        <%= image_tag "/assets/images/shop/placeholder.png", alt: product.title, class: "product-image", id: "product-image", width: "800", height: "800" %>
+        <%= image_tag "/assets/images/shop/placeholder.png", alt: beer.title, id: "product-image", width: "800", height: "800" %>
       <% end %>
     </picture>
   </figure>
-  <div class="bg-white px-6 py-12 lg:w-1/2 lg:flex lg:flex-col lg:justify-center">
-    <h1 class="text-3xl font-bold">
-      <%= beer.title %>
-    </h1>
-    <p class="mb-6">
-      <%= beer.short_description %>
-    </p>
-    <div class="border-dotted border-t-4 border-l-4 border-r-0 border-b-0 flex flex-wrap mb-2 w-full">  
-      <% unless beer.abv.strip.empty? %>
-        <% beer_property do %>
-          <div class="w-full font-bold text-2xl"><%= beer.abv %>%</div>
-          <div class="w-full text-gray-400 text-sm"><%= t("beers.facts.abv") %></div>
-        <% end %>
-      <% end %>
-      <% unless beer.style.strip.empty? %>
-        <% beer_property do %>
-          <div class="w-full font-bold"><%= beer.style %></div>
-          <div class="w-full text-gray-400 text-sm"><%= t("beers.facts.style") %></div>
-        <% end %>
-      <% end %>
-      <% unless beer.hops.strip.empty? %>
-        <% beer_property do %>
-          <div class="w-full font-bold"><%= beer.hops %></div>
-          <div class="w-full text-gray-400 text-sm"><%= t("beers.facts.hops") %></div>
-        <% end %>
-      <% end %>
-      <% unless beer.fruits.strip.empty? %>
-        <% beer_property do %>
-          <div class="w-full font-bold"><%= beer.fruits %></div>
-          <div class="w-full text-gray-400 text-sm"><%= t("beers.facts.fruits") %></div>
-        <% end %>
-      <% end %>
-      <% unless beer.malts.strip.empty? %>
-        <% beer_property do %>
-          <div class="w-full font-bold"><%= beer.malts %></div>
-          <div class="w-full text-gray-400 text-sm"><%= t("beers.facts.malts") %></div>
-        <% end %>
-      <% end %>
-      <% unless beer.adjuncts.strip.empty? %>
-        <% beer_property do %>
-          <div class="w-full font-bold"><%= beer.adjuncts %></div>
-          <div class="w-full text-gray-400 text-sm"><%= t("beers.facts.adjuncts") %></div>
-        <% end %>
-      <% end %>
-      <% unless beer.yeast.strip.empty? %>
-        <% beer_property do %>
-          <div class="w-full font-bold"><%= beer.yeast %></div>
-          <div class="w-full text-gray-400 text-sm"><%= t("beers.facts.yeast") %></div>
-        <% end %>
-      <% end %>
-      <% if beer.release_month %>
-        <% beer_property do %>
-          <div class="w-full font-bold"><%= beer.release_month %></div>
-          <div class="w-full text-gray-400 text-sm"><%= t("beers.facts.release_date") %></div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="px-6 pb-12 text-center">
-    <%= button text: "All beers",
+  <div class="bg-white px-6 py-12 lg:flex lg:flex-col lg:justify-center">
+    <div class="m-auto max-w-3xl">
+      <div class="sm:flex">
+        <div class="sm:w-2/3 sm:border-r sm:pr-10">
+          <h1 class="text-3xl font-bold mb-4">
+            <%= beer.title %>
+          </h1>
+          <div class="mb-4 text-lg font-bold text-gray-400">
+            <%= beer.style %> | <%= beer.abv %>%
+          </div>
+          <p class="mb-6">
+            <%= beer.short_description %>
+          </p>
+        </div>
+        <div class="pb-10 sm:w-1/3 sm:pl-10">
+          <% unless beer.hops.strip.empty? %>
+              <div class="w-full font-bold"><%= beer.hops %></div>
+              <div class="w-full text-gray-400 text-sm mb-2"><%= t("beers.facts.hops") %></div>
+          <% end %>
+          <% unless beer.fruits.strip.empty? %>
+              <div class="w-full font-bold"><%= beer.fruits %></div>
+              <div class="w-full text-gray-400 text-sm mb-2"><%= t("beers.facts.fruits") %></div>
+          <% end %>
+          <% unless beer.malts.strip.empty? %>
+              <div class="w-full font-bold"><%= beer.malts %></div>
+              <div class="w-full text-gray-400 text-sm mb-2"><%= t("beers.facts.malts") %></div>
+          <% end %>
+          <% unless beer.adjuncts.strip.empty? %>
+              <div class="w-full font-bold"><%= beer.adjuncts %></div>
+              <div class="w-full text-gray-400 text-sm mb-2"><%= t("beers.facts.adjuncts") %></div>
+          <% end %>
+          <% unless beer.yeast.strip.empty? %>
+              <div class="w-full font-bold"><%= beer.yeast %></div>
+              <div class="w-full text-gray-400 text-sm mb-2"><%= t("beers.facts.yeast") %></div>
+          <% end %>
+          <% if beer.release_month %>
+              <div class="w-full font-bold"><%= beer.release_month %></div>
+              <div class="w-full text-gray-400 text-sm"><%= t("beers.facts.release_date") %></div>
+          <% end %>
+        </div>
+      </div>
+      <div>
+        <%= button text: "All beers",
                link: true,
                href: "/beers/",
-               type: :default_white,
+               type: :default,
                html: { class: "inline-block" } %>
+      </div>
+    </div>
   </div>
 </section>
