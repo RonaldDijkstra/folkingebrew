@@ -7,7 +7,8 @@ module Components
           combined_classes = "absolute top-0 bottom-0 border-border-gray text-center w-8
                               focus:border-green-default #{additional_classes}"
 
-          content_tag(:button, id: opts[:id], class: combined_classes.to_s, "aria-label": opts[:html][:"aria-label"], &block)
+          content_tag(:button, id: opts[:id], class: combined_classes.to_s, "aria-label": opts[:html][:"aria-label"],
+                      &block)
         end
       end
     end

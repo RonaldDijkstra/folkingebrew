@@ -19,18 +19,19 @@ module Components
         def beer_image(beer)
           image_url = beer.image.url
 
-          image_tag("#{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max", 
-                    alt: beer.title, 
-                    class: 'block w-full', 
+          image_tag("#{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max",
+                    alt: beer.title,
+                    class: 'block w-full',
                     height: '540',
                     width: '540',
                     loading: 'lazy',
                     srcset: "#{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=1 1x,
                              #{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=2 2x,
-                             #{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=3 3x"
-          )
+                             #{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=3 3x")
         end
+      end
 
+      helpers do
         def classes
           'transition-all opacity-0 w-full h-full bg-black absolute top-0 left-0
            flex flex-col justify-center text-center p-10 hover:opacity-100
