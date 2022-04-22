@@ -3,15 +3,13 @@
 <% end %>
 
 <%
-bg_color = beer.background_color == "dark" ? "bg-neutral" : "bg-white"
+bg_color = beer.background_color == "dark" ? "bg-lime-600" : "bg-white"
+
+bg_image = beer.background_image ? beer.background_image.url(fm: :webp, w: 1920, h: 1280) : ''
 %>
 
-<% content_for(:main_class) do %>
-  <%= "flex-grow mt-16 sm:mt-8" %>
-<% end %>
-
-<section class="m-auto">
-  <figure class="h-full <%= bg_color %>">
+<section class="bg-blend-soft-light <%= bg_color %> px-6 -mt-16 pt-16 sm:-mt-20 sm:pt-20 bg-center bg-fixed bg-no-repeat bg-cover sm:h-screen flex flex-col justify-center items-center" style="background-image: url(<%= bg_image %>)">
+  <figure>
     <picture class="block w-full max-w-4xl m-auto">
       <% if beer.image.url %>
         <img srcset="<%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance&dpr=1 1x,
@@ -24,6 +22,9 @@ bg_color = beer.background_color == "dark" ? "bg-neutral" : "bg-white"
       <% end %>
     </picture>
   </figure>
+</section>
+
+<section>
   <div class="bg-white px-6 py-12 lg:flex lg:flex-col lg:justify-center">
     <div class="m-auto max-w-3xl">
       <div class="sm:flex pb-10">
@@ -35,7 +36,7 @@ bg_color = beer.background_color == "dark" ? "bg-neutral" : "bg-white"
             <%= beer.style %> | <%= beer.abv %>%
           </div>
           <% unless beer.long_description.length == 0 %>
-            <% markdown_content do %>
+            <% markdown_content html: { class: "mb-4 sm:mb-0" } do %>
               <%= markdownify(beer.long_description) %>
             <% end %>
           <% else %>
