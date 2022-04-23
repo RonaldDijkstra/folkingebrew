@@ -8,7 +8,7 @@ bg_color = beer.background_color == "dark" ? "bg-lime-600" : "bg-white"
 bg_image = beer.background_image ? beer.background_image.url(fm: :webp, w: 1920, h: 1280) : ''
 %>
 
-<section class="bg-blend-soft-light <%= bg_color %> px-6 -mt-16 pt-16 md:-mt-20 md:pt-20 flex flex-col justify-center items-center bg-center bg-fixed bg-no-repeat max-h-screen bg-cover md:h-screen" style="background-image: url(<%= bg_image %>)">
+<section class="bg-blend-soft-light <%= bg_color %> px-6 -mt-16 pt-16 md:-mt-20 md:pt-20 flex flex-col justify-center items-center bg-center bg-no-repeat bg-scroll bg-cover md:bg-fixed md:h-screen" style="background-image: url(<%= bg_image %>)">
   <figure>
     <picture class="block w-full max-w-4xl m-auto">
       <% if beer.image.url %>
