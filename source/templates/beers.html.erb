@@ -1,19 +1,25 @@
+<% 
+total_pages = pager.total_pages
+current_page = pager.current_page
+%>
+
 <% content_for(:head) do %>
   <%= dato_meta_tags(dato.beer_index) %>
 <% end %>
 
 <%= regular_header title: t("beers.title") %>
 
+<% if pager && total_pages > 1 && current_page > 1 %>
+  <section class="w-full m-auto max-w-7xl pb-6 md:pb-12">
+    <%= partial "partials/pagination", locals: { total_pages: total_pages, current_page: current_page } %>
+  </section>
+<% end %>
+
 <% grid html: { class: "mb-12" } do %>
   <% items.sort_by(&:product_id).reverse.each do |beer| %>
     <%= beer_card beer: beer %>
   <% end %>
 <% end %>
-
-<% 
-total_pages = pager.total_pages
-current_page = pager.current_page
-%>
 
 <% if pager && total_pages > 1 %>
   <section class="w-full m-auto max-w-7xl pb-6 md:pb-12">
