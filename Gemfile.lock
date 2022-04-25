@@ -152,9 +152,6 @@ GEM
       middleman-core (>= 3.2)
     middleman-paginate (0.1.6)
       middleman-core (>= 4.0.0)
-    middleman-pry (1.0.2)
-      middleman (>= 3.3, < 5)
-      pry (~> 0.9)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0901)
@@ -245,7 +242,6 @@ DEPENDENCIES
   middleman-livereload
   middleman-minify-html
   middleman-paginate
-  middleman-pry
   nokogiri
   pry-byebug
   rake

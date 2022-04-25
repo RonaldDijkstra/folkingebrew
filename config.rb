@@ -82,7 +82,6 @@ end
 configure :development do
   set      :debug_assets, true
   activate :livereload
-  activate :pry
 end
 
 # Build-specific configuration
