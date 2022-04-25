@@ -56,6 +56,11 @@ bg_image = beer.background_image ? beer.background_image.url(fm: :webp, w: 1920,
             <div class="text-sm font-bold"><%= t("beers.facts.release_date") %></div>
             <div class="mb-2"><%= beer.release_month %></div>
           <% end %>
+          <% unless beer.untappd_url.length == 0 %>
+            <% icon href: "#{beer.untappd_url}", html: { class: "bg-green-default mb-2 p-1 w-7 h-7 flex items-center hover:bg-green-darker" } do %>
+              <%= inline_svg "icons/untappd.svg" %>
+            <% end %>
+          <% end %>
           <% if beer.webshop_product %>
             <%= link_to("Availabe in our store", "/store/#{beer.webshop_product.slug}/", class: "text-green-default underline hover:no-underline") %>
           <% end %>
