@@ -51,31 +51,13 @@ bg_image = beer.background_image ? beer.background_image.url(fm: :webp, w: 1920,
               <div class="text-sm font-bold"><%= ingredient.key %></div>
               <div class="mb-2"><%= ingredient.value %></div>
             <% end %>
-          <% else %>
-            <% unless beer.hops.strip.empty? %>
-                <div class="text-sm font-bold"><%= t("beers.facts.hops") %></div>
-                <div class="mb-2"><%= beer.hops %></div>
-            <% end %>
-            <% unless beer.fruits.strip.empty? %>
-                <div class="text-sm font-bold"><%= t("beers.facts.fruits") %></div>
-                <div class="mb-2"><%= beer.fruits %></div>
-            <% end %>
-            <% unless beer.malts.strip.empty? %>
-                <div class="text-sm font-bold"><%= t("beers.facts.malts") %></div>
-                <div class="mb-2"><%= beer.malts %></div>
-            <% end %>
-            <% unless beer.adjuncts.strip.empty? %>
-                <div class="text-sm font-bold"><%= t("beers.facts.adjuncts") %></div>
-                <div class="mb-2"><%= beer.adjuncts %></div>
-            <% end %>
-            <% unless beer.yeast.strip.empty? %>
-                <div class="text-sm font-bold"><%= t("beers.facts.yeast") %></div>
-                <div class="mb-2"><%= beer.yeast %></div>
-            <% end %>
           <% end %>
           <% if beer.release_month %>
             <div class="text-sm font-bold"><%= t("beers.facts.release_date") %></div>
-            <div><%= beer.release_month %></div>
+            <div class="mb-2"><%= beer.release_month %></div>
+          <% end %>
+          <% if beer.webshop_product %>
+            <%= link_to("Availabe in our store", "/store/#{beer.webshop_product.slug}/", class: "text-green-default underline hover:no-underline") %>
           <% end %>
         </div>
       </div>
