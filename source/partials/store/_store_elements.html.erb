@@ -1,11 +1,6 @@
 <div hidden id="snipcart" data-api-key="<%= ENV["SNIPCART_API_KEY"] %>">
   <%= partial "partials/store/checkout_overrides" %>
 </div>
-<% if production? %>
-  <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
-<% else %>
-  <script async src="https://cdn.snipcart.com/themes/v3.0/default/snipcart.js"></script>
-<% end %>
 <% sitemap.resources.select {|resource| resource.path =~ /^(snipcart).*$/}.each do |resource| %>
   <% if resource.path =~ /\.(css)/ %>
     <link rel="stylesheet" type="text/css" href="/<%= resource.path %>">

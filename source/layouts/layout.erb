@@ -29,6 +29,8 @@
 
   <body class="flex flex-col min-h-screen font-sans text-textgray <%= page_classes %> <%= current_resource.data.header_class %> <%= content_for?(:page_class) ? yield_content(:page_class) : "" %> at-the-top bg-gradient-to-tr from-green-default to-green-dark">
 
+    <%= partial "partials/store/snipcart" %>
+
     <%= partial "partials/header" %>
     
     <main class="<%= content_for?(:main_class) ? yield_content(:main_class) : "flex-grow mt-16 sm:mt-20" %>">
