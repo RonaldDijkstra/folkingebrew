@@ -1,0 +1,85 @@
+---
+title: "Snipcart templates"
+robots: noindex,nofollow
+noindex: true
+---
+
+<div id="snipcart-templates">
+  <address-fields>
+    <div>
+      <fieldset class="snipcart-form__set">
+        <div class="snipcart-form__row">
+          <div class="snipcart-form__field snipcart-form__cell--large">
+            <snipcart-label
+              class="snipcart__font--tiny"
+              for="phone"
+            >Phone Number (not required)</snipcart-label>
+            <snipcart-input name="phone"></snipcart-input>
+          </div>
+        </div>
+        <div class="snipcart-form__row">
+          <div class="snipcart-form__field snipcart-form__cell--large">
+            <snipcart-label
+              class="snipcart__font--tiny"
+              for="address1"
+            >Address</snipcart-label>
+            <snipcart-input name="address1"></snipcart-input>
+            <snipcart-error-message name="address1"></snipcart-error-message>
+          </div>
+        </div>
+        <div class="snipcart-form__row">
+          <div class="snipcart-form__field snipcart-form__cell--large">
+            <snipcart-label
+              class="snipcart__font--tiny"
+              for="postalCode"
+            >Postal code</snipcart-label>
+            <snipcart-input name="postalCode"></snipcart-input>
+            <snipcart-error-message name="postalCode"></snipcart-error-message>
+          </div>
+        </div>
+        <div class="snipcart-form__row">
+          <div class="snipcart-form__field snipcart-form__cell--large">
+            <snipcart-label
+              class="snipcart__font--tiny"
+              for="city"
+            >{{ $localize('address_form.city') }}</snipcart-label>
+            <snipcart-input name="city"></snipcart-input>
+            <snipcart-error-message name="city"></snipcart-error-message>
+          </div>
+        </div>
+        <div class="snipcart-form__field">
+          <snipcart-label
+            class="snipcart__font--tiny"
+            for="country"
+          >{{ $localize('address_form.country') }}</snipcart-label>
+          <snipcart-typeahead type="dropdown" name="country" autocomplete="country"></snipcart-typeahead>
+        </div>
+      </fieldset>
+    </div>
+  </address-fields>
+
+  <billing section="bottom">
+    <div>
+      <div class="snipcart-form__field snipcart-form__cell--large">
+        <snipcart-checkbox name="newsletter"></snipcart-checkbox>
+        <snipcart-label for="newsletter" class="snipcart__font--tiny">
+          Subscribe to our newsletter
+        </snipcart-label>
+      </div>
+      <hr class="snipcart-form__separator">
+      <div class="snipcart-form__field snipcart-form__cell--large">
+        <snipcart-label
+            class="snipcart__font--tiny"
+            for="comment"
+          >Comment (not required)</snipcart-label>
+        <snipcart-textarea name="comment" rows="4" cols="50" class="comment-box"></snipcart-textarea>
+      </div>
+      <hr class="snipcart-form__separator">
+      <div class="snipcart-form__field snipcart-form__cell--large">
+        <p class="snipcart__font--tiny terms-text">
+          By continuing you agree to our <a href="/terms-and-conditions" class="terms-link">Terms & Conditions</a>.
+        </p>
+      </div>
+    </div>
+  </billing>
+</div>
