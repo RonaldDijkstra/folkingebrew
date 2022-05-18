@@ -42,7 +42,7 @@
     "autoprefixer": "^10.4.4",
     "cssnano": "^5.1.7",
     "js-cookie": "^3.0.1",
-    "tailwindcss": "^3.0.23",
+    "tailwindcss": "^3.0.24",
     "terser-webpack-plugin": "^5.3.1",
     "what-input": "^5.2.10"
   }
