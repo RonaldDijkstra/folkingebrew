@@ -16,7 +16,7 @@ end
 
 <section class="mb-12 max-w-7xl m-auto lg:flex lg:px-6">
 	<figure class="h-full relative lg:w-3/5">
-    <picture class="block h-full w-full">
+    <picture class="block h-full w-full relative">
       <% if product_image %>
         <img srcset="<%= product_image.url %>?fm=webp&h=960&w=960&auto=enhance&fit=max&dpr=1 1x,
              <%= product_image.url %>?fm=webp&h=960&w=960&auto=enhance&fit=max&dpr=2 2x,
@@ -39,8 +39,11 @@ end
  	</figure>
 	<div class="product-content lg:w-2/5 flex-col bg-white px-6 py-12">
     <div class="flex">
-      <div class="flex-1">
-		    <%= product_price(product) %>
+      <div class="flex-1 flex items-start">
+		    <div class="mr-3">
+          <%= product_price(product) %>
+        </div>
+        <%= product_discount(product, 'relative') %>
       </div>
       <div class="font-bold">
         <% if product.in_stock == false %>
