@@ -13,7 +13,7 @@ module Components
               end +
               content_tag(:div, class: 'flex') do
                 content_tag(:h2, product.title, class: 'flex-grow font-bold mr-2') +
-                content_tag(:div, product_price(product), class: 'flex flex-col items-end')
+                content_tag(:div, product.price ? product_price(product) : "", class: 'flex flex-col items-end')
               end
             end
           )

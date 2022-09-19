@@ -5,7 +5,7 @@
 <%= regular_header title: dato.product_index.title %>
 
 <% grid html: { class: "mb-12" } do %>
-  <% dato.products.sort_by(&:product_id).reverse.each do |product| %>
+  <% dato.products.each do |product| %>
     <%= product_card product: product %>
   <% end %>
 <% end %>

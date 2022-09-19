@@ -39,12 +39,14 @@ end
  	</figure>
 	<div class="product-content lg:w-2/5 flex-col bg-white px-6 py-12">
     <div class="flex">
+      <% if product.price %>
       <div class="flex-1 flex items-start">
 		    <div class="mr-3">
           <%= product_price(product) %>
         </div>
         <%= product_discount(product, 'relative') %>
       </div>
+      <% end %>
       <div class="font-bold">
         <% if product.in_stock == false %>
           <%= t("webshop.out_of_stock") %>

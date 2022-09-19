@@ -9,18 +9,18 @@ module Components
         end
 
         def current_price(product)
-          content_tag(:div, "€ #{price(product.price)}",
+          content_tag(:div, "#{price(product.price)}",
                       class: 'text-xl font-bold whitespace-nowrap text-green-default')
         end
 
         def old_price(product)
-          content_tag(:div, "€ #{price(product.old_price)}",
+          content_tag(:div, "#{price(product.old_price)}",
                       class: 'line-through whitespace-nowrap text-gray-400')
         end
 
         def price(price)
-          number_to_currency(price, unit: '').gsub!(/\./, ',')
-        end
+          return number_to_currency(price, precision: (price.round == price) ? 0 : 2, unit: '€', separator: ',', delimiter: '')
+        end 
       end
     end
   end
