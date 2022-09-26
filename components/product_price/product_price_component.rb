@@ -10,7 +10,7 @@ module Components
 
         def current_price(product)
           content_tag(:div, "#{price(product.price)}",
-                      class: 'text-xl font-bold whitespace-nowrap text-green-default')
+                      class: 'text-2xl font-bold whitespace-nowrap text-green-default')
         end
 
         def old_price(product)

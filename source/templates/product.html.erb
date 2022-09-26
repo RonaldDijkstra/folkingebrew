@@ -118,36 +118,38 @@ end
           </p>
         <% end %>
       <% end %>
-      <% if product.sizes && product.sizes.any? { |size| size['lxb'] } %>
-        <%= accordion_button text: t("webshop.sizes") %>
-        <% accordion_content do %>
-          <table class="product-size-table">
-            <thead>
-              <tr>
-                <th>&nbsp;</th>
-                <th><%= t("webshop.length_x_waist") %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% product.sizes.each do |size| %>
+      <% if product.show_size_information %>
+        <% if product.sizes.any? { |size| size['lxb'] } %>
+          <%= accordion_button text: t("webshop.sizes") %>
+          <% accordion_content do %>
+            <table class="product-size-table">
+              <thead>
                 <tr>
-                  <td>
-                    <%= size.size %>
-                  </td>
-                  <td>
-                    <%= size.lxb %>
-                  </td>
+                  <th>&nbsp;</th>
+                  <th><%= t("webshop.length_x_waist") %></th>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
-          <p>
-            <%= t("webshop.size_disclaimer") %>
-          </p>
-          <% if product.size_image.url %>
-            <div class="size-image">
-              <%= image_tag product.size_image.url, alt: "Size Image", class: " lg:max-w-sm mx-auto" %>
-            </div>
+              </thead>
+              <tbody>
+                <% product.sizes.each do |size| %>
+                  <tr>
+                    <td>
+                      <%= size.size %>
+                    </td>
+                    <td>
+                      <%= size.lxb %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <p>
+              <%= t("webshop.size_disclaimer") %>
+            </p>
+            <% if product.size_image %>
+              <div class="size-image">
+                <%= image_tag product.size_image.url, alt: "Size Image", class: " lg:max-w-sm mx-auto" %>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>

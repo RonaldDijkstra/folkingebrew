@@ -6,7 +6,7 @@ module Components
           beer = opts[:beer]
 
           concat(
-            link_to("/beers/#{beer.slug}/", class: 'bg-neutral relative') do
+            link_to("/beers/#{beer.slug}/", class: 'bg-black relative') do
               beer_image(beer) +
               content_tag(:div, class: classes) do
                 content_tag(:h2, beer.title, class: 'text-white text-xl') +
