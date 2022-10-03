@@ -25,10 +25,14 @@ export default function header() {
     }
 
     if (scroll > lastScrollTop && scroll > navbarHeight) {
-      navbar.classList.remove('opacity-100');
+      navbar.classList.add('absolute');
       navbar.classList.add('opacity-0');
+      navbar.classList.remove('static');
+      navbar.classList.remove('opacity-100');
     } else if (scroll + windowHeight < documentHeight) {
+      navbar.classList.add('static');
       navbar.classList.add('opacity-100');
+      navbar.classList.remove('absolute');
       navbar.classList.remove('opacity-0');
     }
 
