@@ -3,7 +3,7 @@
 
 # Folkingebrew
 
-Modern Craft Beer from Groningen since 2017. 
+Modern Craft Beer from Groningen. 
 
 ## About 
 
