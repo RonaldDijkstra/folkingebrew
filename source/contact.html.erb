@@ -2,11 +2,12 @@
 title: "Contact us"
 description: "Do you have questions about Folkingebrew or our beers? Send us an email using the contact form."
 ---
-<%= regular_header title: t("pages.contact.title") %>
+
+<%= regular_header title: dato.contact_page.title %>
 
 <% regular_content html: { class: "mb-24" } do %>
   <% content_tag(:article, class: "prose mb-6 max-w-lg m-auto") do %>
-    <%= markdownify(dato.block.contact) %>
+    <%= markdownify(dato.contact_page.content) %>
   <% end %>
   <%= partial "partials/form", locals: { name: "contact",
                                          fields: ["name", "email", "message"] } %>
