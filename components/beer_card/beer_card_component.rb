@@ -25,9 +25,9 @@ module Components
                     height: '540',
                     width: '540',
                     loading: 'lazy',
-                    srcset: "#{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=1 1x,
-                             #{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=2 2x,
-                             #{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=3 3x")
+                    srcset: "#{image_url}?fm=webp&h=540&w=540&fit=max&dpr=1 1x,
+                             #{image_url}?fm=webp&h=540&w=540&fit=max&dpr=2 2x,
+                             #{image_url}?fm=webp&h=540&w=540&fit=max&dpr=3 3x")
         end
       end
 
