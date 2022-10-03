@@ -12,10 +12,10 @@ bg_image = beer.background_image ? beer.background_image.url(fm: :webp, w: 1920,
   <figure>
     <picture class="block w-full max-w-4xl m-auto">
       <% if beer.image.url %>
-        <img srcset="<%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance&dpr=1 1x,
-             <%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance&dpr=2 2x,
-             <%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance&dpr=3 3x"
-             src="<%= beer.image.url %>?fm=webp&h=960&w=960&auto=enhance"
+        <img srcset="<%= beer.image.url %>?fm=webp&h=960&w=960&dpr=1 1x,
+             <%= beer.image.url %>?fm=webp&h=960&w=960&dpr=2 2x,
+             <%= beer.image.url %>?fm=webp&h=960&w=960&dpr=3 3x"
+             src="<%= beer.image.url %>?fm=webp&h=960&w=960"
         />
       <% else %>
         <%= image_tag "/assets/images/shop/placeholder.png", alt: beer.title, id: "product-image", width: "800", height: "800" %>
