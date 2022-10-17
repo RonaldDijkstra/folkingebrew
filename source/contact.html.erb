@@ -1,7 +1,6 @@
----
-title: "Contact us"
-description: "Do you have questions about Folkingebrew or our beers? Send us an email using the contact form."
----
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.contact_page) %>
+<% end %>
 
 <%= regular_header title: dato.contact_page.title %>
 
