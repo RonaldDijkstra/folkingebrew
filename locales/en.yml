@@ -10,7 +10,7 @@ en:
     formats:
       blog_date: "%e %B %Y"
   navigation:
-    shop: "Store"
+    shop: "Webshop"
     beers: "Our Beers"
     about: "About"
     faq: "FAQ"
@@ -70,7 +70,7 @@ en:
     shipping: 
       title: "Shipping & Returning Policy"
     store:
-      title: "Store"
+      title: "Webshop"
     thanks:
       text: "Thank you for reaching out. We'll contact you as soon as possible."
       title: "Thank you"
@@ -118,8 +118,8 @@ en:
     shipping_and_paying: "Shipping & paying"
     size_disclaimer: "The sizes are indicative and no rights can be derived from them."
     sizes: "Sizes"
-    soon: "We are almost there! If you want to get notified when the online store goes live, subscribe to our mailing list."
-    store_highlights: "Store Highlights"
+    soon: "We are almost there! If you want to get notified when the webshop goes live, subscribe to our mailing list."
+    store_highlights: "Webshop Highlights"
     vacation: "Due to holidays, the online store is closed until Sunday 10 October!"
 --- 
 

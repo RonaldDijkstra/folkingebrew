@@ -28,7 +28,7 @@
   </head>
 
   <body class="flex flex-col min-h-screen font-sans text-textgray <%= page_classes %> <%= content_for?(:page_class) ? yield_content(:page_class) : "" %> at-the-top bg-gradient-to-tr from-green-default to-green-dark">
-    <%= partial "partials/store/snipcart" %>
+    <%= partial "partials/webshop/snipcart" %>
     <%= partial "partials/header" %>
     <main class="<%= content_for?(:main_class) ? yield_content(:main_class) : "flex-grow mt-16 sm:mt-20" %>">
       <%= yield %>
@@ -39,7 +39,7 @@
         <%= javascript_include_tag resource.path %>
       <% end %>
     <% end %>
-    <%= partial "partials/store/store_elements" %>
+    <%= partial "partials/webshop/elements" %>
     <%= partial "partials/meta/schema_home" if current_page.url == "/" -%>
     <%= partial "partials/meta/analytics" if production? -%>
   </body>

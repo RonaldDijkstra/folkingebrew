@@ -27,7 +27,7 @@ module Components
             "item-id": product.product_id,
             "item-quantity": '1',
             "item-price": product.price,
-            "item-url": "#{base_url}/store/#{product.slug}",
+            "item-url": "#{base_url}/webshop/#{product.slug}",
             "item-image": product_image,
             "item-has-taxes-included": 'true'
           }
