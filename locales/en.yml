@@ -104,7 +104,7 @@ en:
     in_stock: "In Stock 😊"
     incl_tax: "Incl. tax, excl."
     increase_with_one: "Increase item quantity by one"
-    length_x_waist: "L x W (CM)"
+    length_x_waist: "L x W (cm)"
     max: "max"
     more_products: "More Products"
     no_products: "Sorry, we do not have any products in stock at the moment. Please come back later!"
@@ -118,8 +118,6 @@ en:
     shipping_and_paying: "Shipping & paying"
     size_disclaimer: "The sizes are indicative and no rights can be derived from them."
     sizes: "Sizes"
-    soon: "We are almost there! If you want to get notified when the webshop goes live, subscribe to our mailing list."
     store_highlights: "Webshop Highlights"
-    vacation: "Due to holidays, the online store is closed until Sunday 10 October!"
 --- 
 
