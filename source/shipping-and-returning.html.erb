@@ -2,7 +2,7 @@
   <%= dato_meta_tags(dato.shipping_and_returning) %>
 <% end %>
 
-<%= regular_header title: t("pages.shipping.title") %>
+<%= regular_header title: dato.shipping_and_returning.title %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content do %>

@@ -1,14 +1,10 @@
 ---
 en:
-  CNAME: www.folkingebrew.nl
   company_name: "Folkingebrew"
   address: |
     Olgerweg 2-7
     9723 ED
     Groningen
-  time:
-    formats:
-      blog_date: "%e %B %Y"
   navigation:
     shop: "Webshop"
     beers: "Our Beers"
@@ -41,9 +37,6 @@ en:
     email: "E-mail address"
     message: "Message"
   pages:
-    x404:
-      title: "404 - Page not found"
-      message: "Sorry, we couldn't find that page."
     beers:
       title: "Our Beers | Page %{page_number}/%{num_pages} | Folkingebrew"
       meta_description: "View all our beer releases | Page %{page_number}/%{num_pages}."
@@ -51,31 +44,14 @@ en:
       title: "Blog"
       more_posts: "More Posts"
       view_all_posts: "View all Posts"
-    contact:
-      title: "Contact"
-    distributors:
-      title: "Distributors"
-    events: 
-      title: "Upcoming Events"
-    index:
-      tagline: "Modern Craft Beer from Groningen since 2017"
-    faq:
-      title: "Frequently Asked Questions"
-    local: 
-      title: "Local Dealers"
     newsletter: 
       title: "Join our Newsletter"
-    privacy:
-      title: "Privacy Policy"
-    shipping: 
-      title: "Shipping & Returning Policy"
-    store:
-      title: "Webshop"
     thanks:
       text: "Thank you for reaching out. We'll contact you as soon as possible."
       title: "Thank you"
-    terms: 
-      title: "Terms & Conditions"
+    x404:
+      title: "404 - Page not found"
+      message: "Sorry, we couldn't find that page."
   newsletter: 
     title: "Newsletter"
     sub_title: "Subscribe to our newsletter and don't miss anything again!"
@@ -104,6 +80,7 @@ en:
     in_stock: "In Stock 😊"
     incl_tax: "Incl. tax, excl."
     increase_with_one: "Increase item quantity by one"
+    highlights: "Webshop Highlights"
     length_x_waist: "L x W (cm)"
     max: "max"
     more_products: "More Products"
@@ -118,6 +95,5 @@ en:
     shipping_and_paying: "Shipping & paying"
     size_disclaimer: "The sizes are indicative and no rights can be derived from them."
     sizes: "Sizes"
-    store_highlights: "Webshop Highlights"
 --- 
 
