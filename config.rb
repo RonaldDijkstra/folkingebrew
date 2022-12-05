@@ -108,7 +108,7 @@ end
 
 dato.tap do |dato|
   paginate dato.beers, '/beers', '/templates/beers.html', per_page: 12
-  paginate dato.products, '/store', '/templates/store.html'
+  paginate dato.products, '/webshop', '/templates/webshop.html'
   paginate dato.posts, '/blog', '/templates/blog.html'
 
   dato.beers.each do |beer|
@@ -119,7 +119,7 @@ dato.tap do |dato|
   end
 
   dato.products.each do |product|
-    proxy "/store/#{product.slug}/index.html",
+    proxy "/webshop/#{product.slug}/index.html",
           '/templates/product.html',
           locals: { product: product },
           ignore: true
@@ -134,5 +134,5 @@ dato.tap do |dato|
 end
 
 ignore '/templates/beers.html.erb'
-ignore '/templates/store.html.erb'
+ignore '/templates/webshop.html.erb'
 ignore '/templates/blog.html.erb'

@@ -29,7 +29,7 @@
 </div>
 
 <section class="pt-10 pb-20">
-  <%= content_tag(:h2, t("webshop.store_highlights"), class: "mb-10 text-center text-4xl text-white") %>
+  <%= content_tag(:h2, t("webshop.highlights"), class: "mb-10 text-center text-4xl text-white") %>
   <% grid content_tag: :div do %>
     <% stocked_products[0..2].each do |product| %>
       <%= product_card product: product %>
@@ -38,7 +38,7 @@
   <div class="px-6 text-center">
     <%= button text: "View all Products",
                link: true,
-               href: "/store/",
+               href: "/webshop/",
                type: :default_white,
                html: { class: "inline-block" } %>
   </div>

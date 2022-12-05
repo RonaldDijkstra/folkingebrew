@@ -47,7 +47,7 @@ bg_image = beer.background_image ? beer.background_image.url(fm: :webp, w: 1920,
             </p>
           <% end %>
           <% if beer.webshop_product %>
-            <%= link_to("Availabe in our online store", "/store/#{beer.webshop_product.slug}/", class: "block text-green-default mb-4 lg:mb-0 underline hover:no-underline") %>
+            <%= link_to("Availabe in our webshop", "/webshop/#{beer.webshop_product.slug}/", class: "block text-green-default mb-4 lg:mb-0 underline hover:no-underline") %>
           <% end %>
         </div>
         <div class="sm:w-1/3 sm:pl-10">

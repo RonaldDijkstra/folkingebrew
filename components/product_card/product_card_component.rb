@@ -6,7 +6,7 @@ module Components
           product = opts[:product]
 
           concat(
-            link_to("/store/#{product.slug}/", class: 'bg-white p-6') do
+            link_to("/webshop/#{product.slug}/", class: 'bg-white p-6') do
               content_tag(:figure, class: 'relative') do
                 product_discount(product, 'absolute right-3 top-3') +
                 image(product)

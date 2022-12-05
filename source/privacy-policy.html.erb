@@ -2,7 +2,7 @@
   <%= dato_meta_tags(dato.privacy_policy) %>
 <% end %>
 
-<%= regular_header title: t("pages.privacy.title") %>
+<%= regular_header title: dato.privacy_policy.title %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content do %>
