@@ -10,3 +10,9 @@
     <%= dato.crowdfunding_page.subtitle %> 
   </h2>
 </section>
+
+<% regular_content html: { class: "mb-12 mt-12 sm:mb-24 sm:mt-24" } do %>
+  <% markdown_content html: { class: "prose-img:mt-0 prose-img:mb-0" } do %>
+    <%= markdownify(dato.crowdfunding_page.text) %>
+  <% end %>
+<% end %>

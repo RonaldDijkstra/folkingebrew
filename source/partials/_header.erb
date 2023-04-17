@@ -1,9 +1,9 @@
 <% navigation_items = data["navigation_main"] %>
 
 <nav class="site-header bg-black transition-all duration-150 ease-in-out fixed w-full left-0 top-0 z-10 motion-reduce:transition-none">
-  <div class="max-w-full mx-auto px-2 relative z-10 sm:px-6">
-    <div class="relative flex justify-between h-16 sm:h-20">
-      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+  <div class="max-w-full mx-auto px-2 relative z-10 md:px-6">
+    <div class="relative flex justify-between h-16 md:h-20">
+      <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
         <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white" aria-controls="mobile-menu" aria-expanded="false" id="menu-toggle">
           <span class="sr-only">Open main menu</span>
           <svg class="button-show-nav block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFFFFF" aria-hidden="true">
@@ -20,18 +20,18 @@
             <%= image_tag "logo-folkingebrew-hopje.svg", class: "block h-12 w-auto", alt: "Folkingebrew Groningen" %>
           <% end %>
         </div>
-        <div class="hidden sm:block sm:w-full sm:flex sm:justify-center">
+        <div class="hidden md:block md:w-full md:flex md:justify-center">
           <% navigation_items.each do |item| %>
             <%= navigation_link text: item.title,
                                 link: item.link %>
           <% end %>
           <%= link_to "Crowdfunding",
                       "/crowdfunding/",
-                      class: "py-2 px-3 bg-green-default font-medium text-lg border-green-default text-white
+                      class: "p-2 bg-green-default font-medium text-lg border-green-default text-white
                               hover:bg-green-darker hover:border-green-darker" %>
         </div>
       </div>
-      <div class="absolute inset-y-0 right-0 flex justify-end items-center pr-2 sm:static sm:pr-0 sm:inset-auto md:w-30">
+      <div class="absolute inset-y-0 right-0 flex justify-end items-center pr-2 md:static md:pr-0 md:inset-auto lg:w-30">
         <div class="snipcart-summary">
           <button type="button" class="snipcart-checkout bg-transparent flex text-sm focus:outline-none">
             <span class="sr-only">Open Cart</span>
