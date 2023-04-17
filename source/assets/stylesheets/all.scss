@@ -45,7 +45,7 @@
 }
 
 [aria-current]:not([aria-current="false"]) {
-  @apply text-gray-300;
+  @apply text-green-default;
 }
 
 .transparent-header.at-the-top {

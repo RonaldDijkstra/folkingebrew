@@ -1,0 +1,12 @@
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.crowdfunding_page) %>
+<% end %>
+
+<section class="bg-blend-soft-light bg-green-default px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= dato.crowdfunding_page.background_image.url(fm: :webp, w: 1920, h: 1280) %>)">
+  <h1 class="text-white text-7xl font-bold">
+    <%= dato.crowdfunding_page.title %>
+  </h1>
+  <h2 class="text-white text-3xl font-normal">
+    <%= dato.crowdfunding_page.subtitle %> 
+  </h2>
+</section>
