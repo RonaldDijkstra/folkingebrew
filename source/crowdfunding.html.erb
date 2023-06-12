@@ -3,16 +3,23 @@
 <% end %>
 
 <section class="bg-blend-soft-light bg-green-default px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= dato.crowdfunding_page.background_image.url(fm: :webp, w: 1920, h: 1280) %>)">
-  <h1 class="text-white text-7xl font-bold">
+  <h1 class="text-white text-4xl md:text-7xl font-bold">
     <%= dato.crowdfunding_page.title %>
   </h1>
-  <h2 class="text-white text-3xl font-normal">
+  <h2 class="text-white text-2xl md:text-3xl font-normal">
     <%= dato.crowdfunding_page.subtitle %> 
   </h2>
 </section>
 
-<% regular_content html: { class: "mb-12 mt-12 sm:mb-24 sm:mt-24" } do %>
-  <% markdown_content html: { class: "prose-img:mt-0 prose-img:mb-0" } do %>
-    <%= markdownify(dato.crowdfunding_page.text) %>
-  <% end %>
-<% end %>
+<div class="bg-white py-20 px-6">
+  <div class="max-w-2xl m-auto">
+    <% markdown_content html: { class: "mb-6" } do %>
+      <%= markdownify(dato.crowdfunding_page.text) %>
+    <% end %>
+    <%= button text: "Visit Crowdfunding Page",
+               link: true,
+               href: "/about.html",
+               type: :default,
+               html: { class: "inline-block" } %>
+  </div>
+</div>
