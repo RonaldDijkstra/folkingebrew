@@ -45,12 +45,17 @@
 }
 
 [aria-current]:not([aria-current="false"]) {
-  @apply text-gray-300;
+  @apply text-green-default;
 }
 
 .transparent-header.at-the-top {
   .site-header {
     @apply bg-transparent;
+
+    a:hover,
+    [aria-current]:not([aria-current="false"]) {
+      @apply text-black;
+    }
   }
 
   .logo {

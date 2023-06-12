@@ -1,14 +1,14 @@
-<% events = dato.events_page.events %>
+<% events = dato.agenda_page.events %>
 
 <% content_for(:head) do %>
-  <%= dato_meta_tags(dato.events_page) %>
+  <%= dato_meta_tags(dato.agenda_page) %>
 <% end %>
 
-<%= regular_header title: dato.events_page.title %>
+<%= regular_header title: dato.agenda_page.title %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content do %>
-    <%= markdownify(dato.events_page.content) %>
+    <%= markdownify(dato.agenda_page.content) %>
     <table role="table" class="responsive-table">
       <thead role="rowgroup">
         <tr role="row">
@@ -35,7 +35,7 @@
             <% end %>
           <% else %>
             <tr role="row">
-              <td colspan="4"><%= dato.events_page.no_upcoming_events_text %></td>
+              <td colspan="4"><%= dato.agenda_page.no_upcoming_events_text %></td>
             </tr>
           <% end %>
       </tbody>

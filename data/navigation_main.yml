@@ -1,11 +1,13 @@
 - title: Our Beers
   link: "/beers/"
+- title: Webshop
+  link: "/webshop/"
 - title: About
   link: "/about/"
 - title: FAQ
   link: "/frequently-asked-questions/"
-- title: "Events"
-  link: "/events/"
+- title: "Agenda"
+  link: "/agenda/"
 - title: "Contact"
   link: "/contact/"
   

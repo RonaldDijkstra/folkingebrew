@@ -5,7 +5,7 @@ module Components
         def mobile_navigation_link(opts)
           current_link_to opts[:text],
                           (opts[:link]).to_s,
-                          class: 'text-white hover:text-gray-300 block px-3 py-2 rounded-md text-lg font-medium'
+                          class: 'text-white hover:text-green-default block px-3 py-2 rounded-md text-lg font-medium'
         end
       end
     end
