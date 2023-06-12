@@ -48,6 +48,12 @@
   @apply text-green-default;
 }
 
+.site-header {
+  a:hover {
+    @apply text-green-default;
+  }
+}
+
 .transparent-header.at-the-top {
   .site-header {
     @apply bg-transparent;
