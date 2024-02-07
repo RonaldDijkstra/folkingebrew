@@ -10,7 +10,7 @@
   <% end %>
   <div class="prose">
     <% dato.faq_page.questions.each do |question| %>
-      <h2>
+      <h2 class="mb-0">
         <%= question.question %>
       </h2>
       <%= markdownify(question.answer) %>
