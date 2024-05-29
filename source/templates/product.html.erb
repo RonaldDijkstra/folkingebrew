@@ -41,12 +41,12 @@ end
     <div class="product-content lg:w-2/5 bg-white px-6 py-12">
       <div class="flex">
         <% if product.price %>
-        <div class="flex-1 flex items-start">
-          <div class="mr-3">
-            <%= product_price(product, 'py-1 text-sm') %>
+          <div class="flex-1 flex items-start">
+            <div class="mr-3">
+              <%= product_price(product, 'py-1 text-sm') %>
+            </div>
+            <%= product_discount(product, 'relative') %>
           </div>
-          <%= product_discount(product, 'relative') %>
-        </div>
         <% end %>
         <div class="font-bold">
           <% if product.in_stock == false %>
