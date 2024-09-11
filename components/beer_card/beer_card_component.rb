@@ -17,17 +17,14 @@ module Components
         end
 
         def beer_image(beer)
-          image_url = beer.image.url
+          image_url = beer.asset_title
 
-          image_tag("#{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max",
+          image_tag("beers/#{image_url}.webp",
                     alt: beer.title,
                     class: 'block w-full',
                     height: '540',
                     width: '540',
-                    loading: 'lazy',
-                    srcset: "#{image_url}?fm=webp&h=540&w=540&fit=max&dpr=1 1x,
-                             #{image_url}?fm=webp&h=540&w=540&fit=max&dpr=2 2x,
-                             #{image_url}?fm=webp&h=540&w=540&fit=max&dpr=3 3x")
+                    loading: 'lazy')
         end
       end
 
