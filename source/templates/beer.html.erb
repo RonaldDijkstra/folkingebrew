@@ -3,11 +3,10 @@
 <% end %>
 
 <%
-bg_color = beer.background_color == "dark" ? "bg-neutral" : "bg-white"
 bg_image = (beer.asset_title && !beer.plain_background) ? asset_url("assets/images/beers/#{beer.asset_title}-wallpaper.webp") : ''
 %>
 
-<section class="<%= bg_color %> px-6 -mt-16 pt-16 md:-mt-20 md:pt-20 flex flex-col justify-center items-center bg-center bg-no-repeat bg-scroll bg-cover md:bg-fixed md:h-screen" style="<%= bg_image.present? ? "background-image: url(#{bg_image})" : '' %>">
+<section class="bg-transparent px-6 -mt-16 pt-16 md:-mt-20 md:pt-20 flex flex-col justify-center items-center bg-center bg-no-repeat bg-scroll bg-cover md:bg-fixed md:h-screen" style="<%= bg_image.present? ? "background-image: url(#{bg_image})" : '' %>">
   <figure>
     <picture class="block w-full max-w-4xl m-auto">
       <% if beer.asset_title.present? %>
