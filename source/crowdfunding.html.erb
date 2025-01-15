@@ -1,0 +1,19 @@
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.crowdfunding_page) %>
+<% end %>
+
+<section class="bg-blend-soft-light bg-green-default px-6 -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= dato.crowdfunding_page.background_image.url(fm: :webp, w: 1920, h: 1280) %>)">
+  <div>
+    <h1 class="text-center text-white text-4xl md:text-7xl font-bold mb-6">
+      <%= dato.crowdfunding_page.title %>
+    </h1>
+    <h2 class="text-center text-white text-2xl md:text-3xl font-normal mb-12 max-w-[800px] m-auto">
+      Our crowdfunding campaign to build our taproom and brewery reached its goal in just one day! We're beyond grateful for the incredible support and can't wait to welcome you all soon.
+    </h2>
+  </div>
+  <div class="p-9 mx-auto max-w-2xl bg-black bg-opacity-60 rounded-md">
+    <div class="mx-auto max-w-screen-md">
+      <h2 class="mx-auto mb-4 font-light text-gray-200 md:mb-6 sm:text-xl">Want to stay updated on our progress and be the first to know when we open? Subscribe now and we'll keep you in the loop every step of the way!</h2>
+      <%= partial "partials/form_mailchimp", locals: { classes: "text-white", type: "fundraising-subscriber" } %>
+    </div>
+</section>
