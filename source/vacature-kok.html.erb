@@ -5,7 +5,7 @@ title: Vacature Kok
 <%= regular_header title: "Vacature: Kok" %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
-  <% markdown_content do %>
+  <article class="prose max-w-none">
     <p>
       Ben jij een creatieve kok met minimaal 2 jaar werkervaring en wil je jouw culinaire expertise inzetten in onze brewpub? Bij Folkingebrew krijg je de kans om niet alleen te koken, maar ook de leiding te nemen over onze keuken en actief mee te denken over onze menukaart en bierbeleving. Lees snel verder!
     </p>
@@ -17,34 +17,31 @@ title: Vacature Kok
       <li><strong>Menu bepalen:</strong> Ontwikkel samen met het team de menukaart</li>
       <li><strong>Overige werkzaamheden:</strong> Diverse taken binnen de brewpub, waar nodig</li>
     </ul>
-    <h2 class="mb-0>Jij bent</h2>
+    <h2 class="mb-0">Profiel</h2>
     <ul>
       <li>Minimaal 2 jaar ervaring in een professionele keuken</li>
-      <li>Zelfstandig, communicatief en een doorzetter.</li>
-      <li>Gepassioneerd over koken en (optioneel) bierbrouwen</li>
+      <li>Zelfstandig, communicatief en een doorzetter</li>
+      <li>Gepassioneerd over koken en eventueel craft bier</li>
     </ul>
     
     <h2 class="mb-0">Wij bieden</h2>
     <ul>
       <li><strong>Salaris</strong> €2600 - €3000 op basis van ervaring en expertise</li>
-      <li>Een fulltime baan in een dynamische startupomgeving, met volop ruimte voor eigen inbreng</li>
+      <li>Een fulltime baan in een dynamische startupomgeving met volop ruimte voor eigen inbreng</li>
     </ul>
 
     <h2 class="mb-0">Over Folkingebrew</h2>
     <p>
-      Folkingebrew begon in 2017 met één doel: bieren brouwen die we zelf graag drinken. Inmiddels zijn we uitgegroeid tot een vaste naam in de internationale bierwereld. Nu zetten we de volgende stap met een eigen brewpub, waar goed bier en bijpassend eten samenkomen.
+      Folkingebrew begon in 2017 met één doel: moderne bieren brouwen die we zelf graag drinken. Inmiddels zijn we uitgegroeid tot een vaste naam in de internationale bierwereld. Nu zetten we de volgende stap met een eigen brewpub, waar goed bier en bijpassend eten samenkomen.
     </p>
 
     <h2 class="mb-0">Interesse?</h2>
-    <p class="mb-12">Top, we kijken er naar uit met je kennis te maken! Solliciteer direct via onderstaande button!</p>
+    <p class="mb-12">Top, we kijken er naar uit met je kennis te maken! Solliciteer direct via onderstaand formulier!</p>
 
-    <p class="mb-12">
-      <a class="no-underline bg-green-default border-green-default text-white p-4 h-auto font-medium transition-all border-2 border-solid hover:bg-green-darker hover:border-green-darker" href="https://docs.google.com/forms/d/e/1FAIpQLSf3xIb3-vKgjaMo2J0E9f0qdSuCjTp1GENFIETigt3n4shIig/viewform?usp=header" target="_blank">
-        Solliciteer nu &raquo;
-      </a>
-    </p>
+    <%= partial "partials/form", locals: { name: "vacature",
+                                         fields: ["name", "email", "motivation", "cv"] } %>
 
     <p><em>Acquisitie naar aanleiding van deze vacature wordt niet op prijs gesteld</em></p>
 
-  <% end %>
+  </article>
 <% end %>

@@ -1,6 +1,6 @@
 <form name="<%= locals[:name] %>" method="POST" data-netlify="true" netlify-honeypot="honeypot" action="/thanks/">
   <fieldset class="max-w-lg m-auto">
-    <label class="hidden">Don’t fill this out if you're human: <input name="honeypot" /></label>
+    <label class="hidden">Don't fill this out if you're human: <input name="honeypot" /></label>
     <% if locals[:fields].include? "name" %>
       <label for="name" class="block font-bold">
         <%= t("form.name") %>
@@ -17,7 +17,19 @@
       <label for="message" class="block font-bold">
         <%= t("form.message") %>
       </label>
-      <textarea name="<%= t("form.message") %>" id="message" rows="10" class="block mb-3 w-full focus:border-green-default focus:ring-green-default"></textarea>
+      <textarea name="<%= t("form.message") %>" id="message" rows="10" class="block mb-3 w-full focus:border-green-default focus:ring-green-default" required></textarea>
+    <% end %>
+    <% if locals[:fields].include? "motivation" %>
+      <label for="message" class="block font-bold">
+        Motivatie
+      </label>
+      <textarea name="<%= t("form.message") %>" id="message" rows="10" class="block mb-3 w-full focus:border-green-default focus:ring-green-default" required></textarea>
+    <% end %>
+    <% if locals[:fields].include? "cv" %>
+      <label for="file" class="block font-bold">
+        Curriculum vitae
+      </label>
+      <input name="file" type="file" class="block mb-3" required />
     <% end %>
     <%= button text: t("buttons.submit"),
                type: :primary,
