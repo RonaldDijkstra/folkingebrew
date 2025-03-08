@@ -89,7 +89,7 @@ GEM
       concurrent-ruby (~> 1.0)
     imgix (4.0.3)
     json (2.5.1)
-    kramdown (2.3.2)
+    kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
