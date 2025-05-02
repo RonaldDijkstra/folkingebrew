@@ -10,7 +10,7 @@ function loadZenChefWidget() {
   const config = document.createElement('div');
   config.className = 'zc-widget-config';
   config.setAttribute('data-restaurant', '375897');
-  config.setAttribute('data-open', '2000');
+  config.setAttribute('data-open', '');
   document.body.appendChild(config);
 }
 
