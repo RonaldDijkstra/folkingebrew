@@ -11,6 +11,7 @@ function loadZenChefWidget() {
   config.className = 'zc-widget-config';
   config.setAttribute('data-restaurant', '375897');
   config.setAttribute('data-open', '');
+  config.setAttribute('data-lang', 'en');
   document.body.appendChild(config);
 }
 
