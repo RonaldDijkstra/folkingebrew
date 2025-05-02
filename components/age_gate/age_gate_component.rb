@@ -3,7 +3,7 @@ module Components
     class AgeGateComponent < Middleman::Extension
       helpers do
         def age_gate
-          concat(content_tag(:div, class: container_classes, "data-rel": 'age-gate') do
+          concat(content_tag(:div, class: container_classes, "data-rel": 'age-gate', style: 'position: fixed !important; z-index: 2147483650 !important;') do
                    content_tag(:div, class: inner_classes) do
                      inline_svg('logo-folkingebrew-age-gate.svg', alt: 'Folkingebrew', class: 'mb-6') +
                      content_tag(:div) do
@@ -15,7 +15,7 @@ module Components
         end
 
         def container_classes
-          'age-gate hidden top-0 fixed bg-black w-full h-full left-0 z-50'
+          'age-gate hidden top-0 bg-black w-full h-full left-0'
         end
 
         def inner_classes
