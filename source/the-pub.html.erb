@@ -17,16 +17,16 @@
   </h2>
 </section>
 
-<section class="bg-white py-20 px-6">
+<section class="bg-white py-10 md:py-20 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div class="order-1">
         <h3 class="text-2xl font-bold mb-4"><%= dato.the_pub_page.introduction_title %></h3>
-        <% markdown_content html: { class: "mb-6" } do %>
+        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
           <%= markdownify(dato.the_pub_page.introduction_text) %>
         <% end %>
       </div>
-      <div>
+      <div class="order-2">
         <% markdown_content html: { class: "mb-6" } do %>
           <%= image_tag dato.the_pub_page.introduction_image.url(fm: :webp, w: 1920, h: 1280), alt: dato.the_pub_page.introduction_image.alt, class: "w-full h-auto" %>
         <% end %>
@@ -35,4 +35,21 @@
   </div>
 </section>
 
-
+<section class="bg-white py-10 md:py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div class="md:order-2">
+        <h3 class="text-2xl font-bold mb-4"><%= dato.the_pub_page.beer_title %></h3>
+        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          <%= markdownify(dato.the_pub_page.beer_text) %>
+        <% end %>
+      </div>
+      <div class="md:order-1">
+        <% markdown_content html: { class: "mb-6" } do %>
+          <%= image_tag dato.the_pub_page.beer_image.url(fm: :webp, w: 1920, h: 1280), alt: dato.the_pub_page.beer_image.alt, class: "w-full h-auto" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+ 
