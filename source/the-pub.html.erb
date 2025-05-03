@@ -9,12 +9,30 @@
 <% end %>
 
 <section class="bg-blend-overlay bg-[#5C2D0C] px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= dato.the_pub_page.background_image.url(fm: :webp, w: 1920, h: 1280) %>)">
-  <h1 class="text-white text-5xl font-bold mb-5">
+  <h1 class="text-white text-3xl sm:text-5xl font-bold mb-5">
     <%= dato.the_pub_page.title %>
   </h1>
-  <h2 class="text-white text-2xl font-light">
+  <h2 class="text-white text-xl sm:text-2xl font-light">
     <%= dato.the_pub_page.subtitle %>
   </h2>
+</section>
+
+<section class="bg-white py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 class="text-2xl font-bold mb-4"><%= dato.the_pub_page.introduction_title %></h3>
+        <% markdown_content html: { class: "mb-6" } do %>
+          <%= markdownify(dato.the_pub_page.introduction_text) %>
+        <% end %>
+      </div>
+      <div>
+        <% markdown_content html: { class: "mb-6" } do %>
+          <%= image_tag dato.the_pub_page.introduction_image.url(fm: :webp, w: 1920, h: 1280), alt: dato.the_pub_page.introduction_image.alt, class: "w-full h-auto" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </section>
 
 

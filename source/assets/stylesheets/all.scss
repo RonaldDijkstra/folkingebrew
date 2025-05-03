@@ -60,7 +60,7 @@
 
     a:hover,
     [aria-current]:not([aria-current="false"]) {
-      @apply text-black;
+      @apply text-green-default;
     }
   }
 
