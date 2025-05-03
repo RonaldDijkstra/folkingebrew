@@ -1,5 +1,7 @@
 - title: Our Beers
   link: "/beers/"
+- title: The Pub
+  link: "/the-pub/"
 - title: Webshop
   link: "/webshop/"
 - title: About
@@ -8,4 +10,3 @@
   link: "/frequently-asked-questions/"
 - title: "Contact"
   link: "/contact/"
-  

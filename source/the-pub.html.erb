@@ -1,0 +1,20 @@
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.the_pub_page) %>
+<% end %>
+
+<% if dato.the_pub_page.transparent_header %>
+  <% content_for(:page_class) do %>
+    transparent-header
+  <% end %>
+<% end %>
+
+<section class="bg-blend-overlay bg-[#5C2D0C] px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= dato.the_pub_page.background_image.url(fm: :webp, w: 1920, h: 1280) %>)">
+  <h1 class="text-white text-5xl font-bold mb-5">
+    <%= dato.the_pub_page.title %>
+  </h1>
+  <h2 class="text-white text-2xl font-light">
+    <%= dato.the_pub_page.subtitle %>
+  </h2>
+</section>
+
+
