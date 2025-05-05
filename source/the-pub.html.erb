@@ -1,0 +1,165 @@
+<% content_for(:head) do %>
+  <%= dato_meta_tags(dato.the_pub_page) if dato.the_pub_page %>
+<% end %>
+
+<% if dato.the_pub_page&.transparent_header %>
+  <% content_for(:page_class) do %>
+    transparent-header
+  <% end %>
+<% end %>
+
+<% if dato.the_pub_page&.background_image %>
+  <section class="relative px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= dato.the_pub_page.background_image.url(fm: :webp, w: 1920, h: 1280) %>)">
+    <div class="absolute inset-0 bg-[#5C2D0C]/80"></div>
+    <div class="relative">
+      <% if dato.the_pub_page.title %>
+        <h1 class="text-white text-3xl sm:text-5xl font-bold mb-5">
+          <%= dato.the_pub_page.title %>
+        </h1>
+      <% end %>
+      <% if dato.the_pub_page.subtitle %>
+        <h2 class="text-white text-xl sm:text-2xl font-light">
+          <%= dato.the_pub_page.subtitle %>
+        </h2>
+      <% end %>
+    </div>
+  </section>
+<% end %>
+
+<section class="bg-white py-10 md:py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div>
+        <% if dato.the_pub_page&.introduction_title %>
+          <h3 class="text-2xl font-bold mb-4"><%= dato.the_pub_page.introduction_title %></h3>
+        <% end %>
+        <% if dato.the_pub_page&.introduction_text %>
+          <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+            <%= markdownify(dato.the_pub_page.introduction_text) %>
+          <% end %>
+        <% end %>
+      </div>
+      <div>
+        <% if dato.the_pub_page&.introduction_image %>
+          <% markdown_content html: { class: "mb-6" } do %>
+            <%= image_tag dato.the_pub_page.introduction_image.url(fm: :webp, w: 1920, h: 1280), alt: dato.the_pub_page.introduction_image.alt, class: "w-full h-auto" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-[#fffaf8] py-10 md:py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div class="md:order-2">
+        <% if dato.the_pub_page&.beer_title %>
+          <h3 class="text-2xl font-bold mb-4"><%= dato.the_pub_page.beer_title %></h3>
+        <% end %>
+        <% if dato.the_pub_page&.beer_text %>
+          <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+            <%= markdownify(dato.the_pub_page.beer_text) %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="md:order-1">
+        <% if dato.the_pub_page&.beer_image %>
+          <% markdown_content html: { class: "mb-6" } do %>
+            <%= image_tag dato.the_pub_page.beer_image.url(fm: :webp, w: 1920, h: 1280), alt: dato.the_pub_page.beer_image.alt, class: "w-full h-auto" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white py-10 md:py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div>
+        <% if dato.the_pub_page&.food_title %>
+          <h3 class="text-2xl font-bold mb-4"><%= dato.the_pub_page.food_title %></h3>
+        <% end %>
+        <% if dato.the_pub_page&.food_text %>
+          <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+            <%= markdownify(dato.the_pub_page.food_text) %>
+          <% end %>
+        <% end %>
+      </div>
+      <div>
+        <% if dato.the_pub_page&.food_image %>
+          <% markdown_content html: { class: "mb-6" } do %>
+            <%= image_tag dato.the_pub_page.food_image.url(fm: :webp, w: 1920, h: 1280), alt: dato.the_pub_page.food_image.alt, class: "w-full h-auto" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-[#fffaf8] py-10 md:py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div class="md:order-2">
+        <% if dato.the_pub_page&.opening_hours_title %>
+          <h3 class="text-2xl font-bold mb-4"><%= dato.the_pub_page.opening_hours_title %></h3>
+        <% end %>
+        <% if dato.the_pub_page&.opening_hours %>
+          <% markdown_content html: { class: "prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+            <%= markdownify(dato.the_pub_page.opening_hours) %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="md:order-1">
+        <% if dato.the_pub_page&.opening_hours_image %>
+          <% markdown_content html: { class: "mb-6" } do %>
+            <%= image_tag dato.the_pub_page.opening_hours_image.url(fm: :webp, w: 1920, h: 1280), alt: dato.the_pub_page.opening_hours_image.alt, class: "w-full h-auto" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white py-10 md:py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+      <div>
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold mb-4">Address</h3>
+          <% if dato.the_pub_page&.address %>
+            <% markdown_content html: { class: "prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+              <%= markdownify(dato.the_pub_page.address) %>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Directions</h3>
+          <% if dato.the_pub_page&.public_transport %>
+            <% markdown_content html: { class: "prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+              <%= markdownify(dato.the_pub_page.public_transport) %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="h-[500px]">
+        <% if dato.the_pub_page&.map_embed_url %>
+          <iframe 
+            src="<%= dato.the_pub_page.map_embed_url %>"
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full">
+          </iframe>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
