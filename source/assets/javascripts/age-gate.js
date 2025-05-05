@@ -10,8 +10,8 @@ function loadZenChefWidget() {
   const config = document.createElement('div');
   config.className = 'zc-widget-config';
   config.setAttribute('data-restaurant', '375897');
-  config.setAttribute('data-open', '');
-  config.setAttribute('data-lang', 'en');
+  config.setAttribute('data-open', window.innerWidth > 960 ? 'true' : '');
+  config.setAttribute('data-lang', navigator.language.split('-')[0]);
   document.body.appendChild(config);
 }
 
