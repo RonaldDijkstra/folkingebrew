@@ -87,7 +87,7 @@
           <% end %>
         <% end %>
         <% if dato.the_pub_page&.food_menu %>
-          <a href="<%= dato.the_pub_page.food_menu.url %>" class="text-green-default inline-block mb-3 underline" target="_blank">View our food menu</a>
+          <a href="<%= dato.the_pub_page.food_menu.url %>" class="text-green-default font-medium inline-block mb-3 underline" target="_blank">View our food menu</a>
         <% end %>
         <% if dato.the_pub_page&.food_menu_text %>
           <% markdown_content html: { class: "text-sm italic mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
