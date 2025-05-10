@@ -4,13 +4,20 @@
   <div class="max-w-7xl m-auto sm:flex px-6 pt-12 flex-wrap">
     <% footer_column do %>
       <%= content_tag(:h3, t("company_name"), class: "font-bold mb-3") %>
+      <%= footer_link text: "The Pub",
+                      link: "the-pub.html" %>
       <%= footer_link text: t("navigation.beers"),
                       link: "/beers/index.html" %>
       <%= footer_link text: t("navigation.about"),
                       link: "/about.html" %>
       <%= footer_link text: t("navigation.faq"),
-                      link: "/frequently-asked-questions.html",
+                      link: "/frequently-asked-questions.html" %>
+      <%= footer_link text: "Jobs",
+                      link: "/jobs.html" %>
+      <%= footer_link text: "Contact", 
+                      link: "/contact.html",
                       html: { class: "mb-6" } %>
+
     <% end %>
     <% footer_column do %>
       <%= content_tag(:h3, t("footer.up_to_date"), class: "font-bold mb-3") %>

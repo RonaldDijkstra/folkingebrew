@@ -7,7 +7,7 @@ en:
     Groningen
   navigation:
     shop: "Webshop"
-    beers: "Our Beers"
+    beers: "Beers"
     about: "About"
     faq: "FAQ"
     blog: "Blog"
@@ -25,7 +25,7 @@ en:
   footer:
     social: "Social"
     up_to_date: "Stay up-to-date"
-    buy: "Buy Beer & Merch"
+    buy: "Buy Beer & Merchandise"
     legal: "Legal"
     contact: "Contact us"
     email: "Send an email"
