@@ -1,12 +1,13 @@
-<% content_for(:head) do %>
-  <%= dato_meta_tags(dato.contact_page) %>
-<% end %>
+---
+title: Contact
+description: "Contact Folkingebrew"
+---
 
-<%= regular_header title: dato.contact_page.title %>
+<%= regular_header title: "Contact us" %>
 
 <% regular_content html: { class: "mb-24" } do %>
   <% content_tag(:article, class: "prose mb-6 max-w-lg m-auto") do %>
-    <%= markdownify(dato.contact_page.content) %>
+    <%= markdownify("Questions about Folkingebrew or our beers? <a href='/frequently-asked-questions/'>Visit our FAQ</a> to find answers to the questions we get asked a lot or send us an email by using the contact form.") %>
   <% end %>
   <%= partial "partials/form", locals: { name: "contact",
                                          fields: ["name", "email", "message"] } %>
