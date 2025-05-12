@@ -1,10 +1,14 @@
-<% dealers = dato.local_dealers_page.dealers %>
+---
+title: Local Dealers
+description: "Local Dealers of Folkingebrew"
+---
 
-<% content_for(:head) do %>
-  <%= dato_meta_tags(dato.local_dealers_page) %>
-<% end %>
+<% 
+dealers = data.local_dealers
 
-<%= regular_header title: dato.local_dealers_page.title %>
+%>
+
+<%= regular_header title: "Local FolkingebrewDealers" %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content html: { class: "mb-10" } do %>
@@ -19,7 +23,7 @@
           <% end %>
           <% content_tag(:adress) do %>
             <%= dealer.address %><br>
-            <%= dealer.postcode %><br>
+            <%= dealer.postal_code %><br>
             <%= dealer.city %>
           <% end %>
         </div>
