@@ -1,41 +1,47 @@
-<% content_for(:head) do %>
-  <%= dato_meta_tags(dato.distributors_page) %>
-<% end %>
+---
+title: Distributors
+description: "Distributors of Folkingebrew"
+---
 
-<%= regular_header title: dato.distributors_page.title %>
+<% 
+distributors_nl = data.distributors_nl
+distributors_int = data.distributors_int
+%>
+
+<%= regular_header title: "Distributors" %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content html: { class: "mb-10" } do %>
-    <%= markdownify(dato.distributors_page.content) %>
+    <p>If you are a distributor and would like to carry our beer, you can always contact us through <a href="/contact/">our contact form</a>!</p>
   <% end %>
-  <% if !dato.distributors_page.distributors_nl.empty? %>
-    <%= content_tag(:h2, dato.distributors_page.title_nl_block, class: "text-xl mb-6") %>
+  <% if !distributors_nl.empty? %>
+    <%= content_tag(:h2, 'The Netherlands', class: "text-xl mb-6") %>
     <div class="sm:flex sm:flex-wrap">
-      <% dato.distributors_page.distributors_nl.each do |distributor| %>
+      <% distributors_nl.each do |distributor| %>
         <div class="mb-10 text-base sm:w-1/2">
           <% content_tag(:h3, class: "text-lg") do %>
             <%= link_to "#{distributor.name}", "#{distributor.url}", class: "text-green-default underline hover:no-underline", target: "_blank", rel: "noopener noreferrer" %>
           <% end %>
           <% content_tag(:adress) do %>
             <%= distributor.address %><br>
-            <%= distributor.postcode %><br>
+            <%= distributor.postal_code %><br>
             <%= distributor.city %>
           <% end %>
         </div>
       <% end %>
     </div>
   <% end %>
-  <% if !dato.distributors_page.distributors_foreign.empty? %>
-    <%= content_tag(:h2, dato.distributors_page.title_foreign_block, class: "text-xl mb-6") %>
+  <% if !distributors_int.empty? %>
+    <%= content_tag(:h2, 'International', class: "text-xl mb-6") %>
     <div class="sm:flex sm:flex-wrap">
-      <% dato.distributors_page.distributors_foreign.each do |distributor| %>
+      <% distributors_int.each do |distributor| %>
         <div class="mb-10 text-base sm:w-1/2">
           <% content_tag(:h3, class: "text-lg") do %>
             <%= link_to "#{distributor.name}", "#{distributor.url}", class: "text-green-default underline hover:no-underline", target: "_blank", rel: "noopener noreferrer" %>
           <% end %>
           <% content_tag(:adress) do %>
             <%= distributor.address %><br>
-            <%= distributor.postcode %><br>
+            <%= distributor.postal_code %><br>
             <%= distributor.city %><% if distributor.country %><br>
             <%= distributor.country %><% end %>
           <% end %>
