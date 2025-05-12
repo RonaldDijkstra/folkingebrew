@@ -2,10 +2,19 @@
   <%= dato_meta_tags(dato.about_page) %>
 <% end %>
 
-<%= regular_header title: dato.about_page.title %>
+<%= regular_header title: "About us" %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content html: { class: "prose-img:mt-0 prose-img:mb-0" } do %>
-    <%= markdownify(dato.about_page.content) %>
+    <p>We are beer geeks who turned brewers, out of love for beer. We love to drink big, bold beer with profound aromas and flavors and naturally that’s what we brew.</p>
+
+    <p>Since our start with the brewing adventure in 2017 our motto is to never stop dreaming and learning: we’re always tweaking our beers to create the best beer we possibly can. Our ambition is to start our own brewery. We are working towards that goal every single day.</p>
+
+    <p><em>Folkinge</em> refers to the location where we started brewing: in the ‘backyard’ of a beer shop in the Folkingestraat in Groningen. <em>Brew</em> refers to the American craft beer culture, where we mostly get our inspiration.</p>
+
+    <figure>
+      <img src="<%= image_path 'the-team.jpg' %>" alt="Folkingebrew @ Bax by Hopster Magazine">
+      <figcaption>@ Bax. Source: <a href="https://www.hopstermagazine.com/" target="_blank">Hopster Magazine</a></figcaption>
+    </figure>
   <% end %>
 <% end %>
