@@ -13,7 +13,7 @@ function loadZenChefWidget() {
   
   // Only auto-open on homepage and /the-pub page
   const path = window.location.pathname;
-  const shouldAutoOpen = (path === '/' || path === '/the-pub') && window.innerWidth > 960;
+  const shouldAutoOpen = (path === '/' || path === '/the-pub/') && window.innerWidth > 960;
   config.setAttribute('data-open', shouldAutoOpen ? 'true' : '');
   
   config.setAttribute('data-lang', navigator.language.split('-')[0]);
