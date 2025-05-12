@@ -1,49 +1,36 @@
-<% content_for(:head) do %>
-  <%= dato_meta_tags(dato.the_pub_page) if dato.the_pub_page %>
+---
+title: Folkingebrew The Pub
+description: Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Groningen. A place where everything comes together: the beer, the food, the people and the energy of the city we call home.
+---
+
+<% content_for(:page_class) do %>
+  transparent-header
 <% end %>
 
-<% if dato.the_pub_page&.transparent_header %>
-  <% content_for(:page_class) do %>
-    transparent-header
-  <% end %>
-<% end %>
-
-<% if dato.the_pub_page&.background_image %>
-  <section class="relative px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= dato.the_pub_page.background_image.url(fm: :webp, w: 1920, h: 1280) %>)">
-    <div class="absolute inset-0 bg-[#5C2D0C]/80"></div>
-    <div class="relative">
-      <% if dato.the_pub_page.title %>
-        <h1 class="text-white text-3xl sm:text-5xl font-bold mb-5">
-          <%= dato.the_pub_page.title %>
-        </h1>
-      <% end %>
-      <% if dato.the_pub_page.subtitle %>
-        <h2 class="text-white text-xl sm:text-2xl font-light">
-          <%= dato.the_pub_page.subtitle %>
-        </h2>
-      <% end %>
-    </div>
-  </section>
-<% end %>
+<section class="relative px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= image_path 'background-the-pub.jpg' %>)">
+  <div class="absolute inset-0 bg-[#5C2D0C]/80"></div>
+  <div class="relative">
+    <h1 class="text-white text-3xl sm:text-5xl font-bold mb-5">
+      Welcome to Folkingebrew The Pub
+    </h1>
+    <h2 class="text-white text-xl sm:text-2xl font-light">
+      Home of Modern Craft Beer in Groningen
+    </h2>
+  </div>
+</section>
 
 <section class="bg-white py-10 md:py-20 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div>
-        <% if dato.the_pub_page&.introduction_title %>
-          <h3 class="text-2xl font-bold mb-4"><%= dato.the_pub_page.introduction_title %></h3>
-        <% end %>
-        <% if dato.the_pub_page&.introduction_text %>
-          <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
-            <%= markdownify(dato.the_pub_page.introduction_text) %>
-          <% end %>
+        <h3 class="text-2xl font-bold mb-4">Our story</h3>
+        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          What started as a passion for brewing bold, modern beers has grown into something bigger. After years of brewing, experimenting and sharing our beers across Europe, we’ve opened the doors to our own space in Groningen. A place where everything comes together: the beer, the food, the people and the energy of the city we call home.
         <% end %>
       </div>
       <div>
-        <% if dato.the_pub_page&.introduction_image %>
-          <% markdown_content html: { class: "mb-6" } do %>
-            <%= image_tag dato.the_pub_page.introduction_image.url(fm: :webp, w: 1920, h: 1280), alt: dato.the_pub_page.introduction_image.alt, class: "w-full h-auto" %>
-          <% end %>
+        <% markdown_content html: { class: "mb-6" } do %>
+          <%= image_tag "assets/images/the-bar.webp", alt: "The Bar at Folkingebrew The Pub", class: "w-full h-auto" %>
         <% end %>
       </div>
     </div>
@@ -54,20 +41,17 @@
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div class="md:order-2">
-        <% if dato.the_pub_page&.beer_title %>
-          <h3 class="text-2xl font-bold mb-4"><%= dato.the_pub_page.beer_title %></h3>
+        <h3 class="text-2xl font-bold mb-4">We pour what we brew and more</h3>
+        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          Our pub features <strong>16 taps</strong>, with an ever-rotating selection of Folkingebrew releases, small batch exclusives and guest beers from breweries we admire. Expect hazy IPA’s, bold DIPA’s, smooth lagers and the unexpected. Always fresh. We also offer a fine selection of bottles from other breweries we love.
         <% end %>
-        <% if dato.the_pub_page&.beer_text %>
-          <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
-            <%= markdownify(dato.the_pub_page.beer_text) %>
-          <% end %>
+        <% markdown_content html: { class: "" } do %>
+          <a href="https://untappd.com/v/folkingebrew-the-pub/13306825" target="_blank" class="text-green-default font-medium inline-block mb-3 underline">View our beer list on Untappd</a>
         <% end %>
       </div>
       <div class="md:order-1">
-        <% if dato.the_pub_page&.beer_image %>
-          <% markdown_content html: { class: "mb-6" } do %>
-            <%= image_tag dato.the_pub_page.beer_image.url(fm: :webp, w: 1920, h: 1280), alt: dato.the_pub_page.beer_image.alt, class: "w-full h-auto" %>
-          <% end %>
+        <% markdown_content html: { class: "mb-6" } do %>
+          <%= image_tag "assets/images/the-taps.webp", alt: "The Tap at Folkingebrew The Pub", class: "w-full h-auto" %>
         <% end %>
       </div>
     </div>
@@ -78,28 +62,23 @@
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div>
-        <% if dato.the_pub_page&.food_title %>
-          <h3 class="text-2xl font-bold mb-4"><%= dato.the_pub_page.food_title %></h3>
+        <h3 class="text-2xl font-bold mb-4">Craft meets kitchen</h3>
+        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          Our kitchen follows the same mindset as our brewing: bold, yet balanced.
         <% end %>
-        <% if dato.the_pub_page&.food_text %>
-          <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
-            <%= markdownify(dato.the_pub_page.food_text) %>
-          <% end %>
+        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          The menu is built to pair with what’s on tap. Expect sharable plates and juicy burgers, including vegan options. Just good food made for beer!
         <% end %>
-        <% if dato.the_pub_page&.food_menu %>
-          <a href="<%= dato.the_pub_page.food_menu.url %>" class="text-green-default font-medium inline-block mb-3 underline" target="_blank">View our food menu</a>
+        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          <%= link_to "View our food menu", "/assets/pdf/the-pub-menu-12052025.pdf", class: "text-green-default font-medium inline-block underline", target: "_blank" %>
         <% end %>
-        <% if dato.the_pub_page&.food_menu_text %>
-          <% markdown_content html: { class: "text-sm italic mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
-            <%= markdownify(dato.the_pub_page.food_menu_text) %>
-          <% end %>
+        <% markdown_content html: { class: "text-sm italic mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          Please be aware: our menu might change now and then, for example depending on what’s in season or sparking joy in our kitchen.
         <% end %>
       </div>
       <div>
-        <% if dato.the_pub_page&.food_image %>
-          <% markdown_content html: { class: "mb-6" } do %>
-            <%= image_tag dato.the_pub_page.food_image.url(fm: :webp, w: 1920, h: 1280), alt: dato.the_pub_page.food_image.alt, class: "w-full h-auto" %>
-          <% end %>
+        <% markdown_content html: { class: "mb-6" } do %>
+          <%= image_tag "assets/images/the-kitchen.webp", alt: "The Kitchen at Folkingebrew The Pub", class: "w-full h-auto" %>
         <% end %>
       </div>
     </div>
@@ -110,20 +89,49 @@
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div class="md:order-2">
-        <% if dato.the_pub_page&.opening_hours_title %>
-          <h3 class="text-2xl font-bold mb-4"><%= dato.the_pub_page.opening_hours_title %></h3>
-        <% end %>
-        <% if dato.the_pub_page&.opening_hours %>
-          <% markdown_content html: { class: "prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
-            <%= markdownify(dato.the_pub_page.opening_hours) %>
-          <% end %>
+        <h3 class="text-2xl font-bold mb-4">Hours of Operation</h3>
+        <% markdown_content html: { class: "prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          <table>
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Opening Hours</th>
+                <th>Kitchen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Wednesday</td>
+                <td>16 - 24</td>
+                <td>17 - 22</td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>16 - 24</td>
+                <td>17 - 22</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>15 - 24</td>
+                <td>16 - 22</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>15 - 24</td>
+                <td>16 - 22</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>14 - 22</td>
+                <td>16 - 21</td>
+              </tr>
+            </tbody>
+          </table>
         <% end %>
       </div>
       <div class="md:order-1">
-        <% if dato.the_pub_page&.opening_hours_image %>
-          <% markdown_content html: { class: "mb-6" } do %>
-            <%= image_tag dato.the_pub_page.opening_hours_image.url(fm: :webp, w: 1920, h: 1280), alt: dato.the_pub_page.opening_hours_image.alt, class: "w-full h-auto" %>
-          <% end %>
+        <% markdown_content html: { class: "mb-6" } do %>
+          <%= image_tag "assets/images/the-tables.webp", alt: "The Tables at Folkingebrew The Pub", class: "w-full h-auto" %>
         <% end %>
       </div>
     </div>
@@ -136,36 +144,41 @@
       <div>
         <div class="mb-8">
           <h3 class="text-2xl font-bold mb-4">Address</h3>
-          <% if dato.the_pub_page&.address %>
-            <% markdown_content html: { class: "prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
-              <%= markdownify(dato.the_pub_page.address) %>
-            <% end %>
+          <% markdown_content html: { class: "prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+            Boterdiep 75<br>
+            9712 LL<br>
+            Groningen<br>
+            <a href="mailto:brewpub@folkingebrew.nl" target="_blank">brewpub@folkingebrew.nl</a>
           <% end %>
         </div>
 
         <div>
           <h3 class="text-2xl font-bold mb-4">Directions</h3>
-          <% if dato.the_pub_page&.public_transport %>
-            <% markdown_content html: { class: "prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
-              <%= markdownify(dato.the_pub_page.public_transport) %>
-            <% end %>
+          <% markdown_content html: { class: "prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+            <h3>Public Transport</h3>
+            <p>To reach The Pub from Hoofdstation Groningen, take a bus to the Pijpstraat stop. From there, it’s just a one-minute walk to our pub.</p>
+
+            <p>Several frequently running bus lines serve the Pijpstraat stop, including lines 1, 2, 10, 11 and 171.</p>
+
+            <p>Visit <a href="https://9292.nl/?to=Boterdiep+75+Groningen" target="_blank">9292.nl</a> to plan your travel.</p>
+
+            <h3>Car</h3>
+            <p>The best parking option is Q-Park Boterdiep. The address is Boterdiep 45, 9712 LL Groningen. It’s a spacious underground parking garage that’s open 24/7 and only a 2-minute walk from our front door.</p>
           <% end %>
         </div>
       </div>
 
       <div class="h-[500px]">
-        <% if dato.the_pub_page&.map_embed_url %>
-          <iframe 
-            src="<%= dato.the_pub_page.map_embed_url %>"
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            class="w-full h-full">
-          </iframe>
-        <% end %>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2388.6030602541236!2d6.561085677302513!3d53.224965172254365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c9cd5b4aa9d23f%3A0xd1f45df44e13974b!2sBoterdiep%2075%2C%209712%20LL%20Groningen!5e0!3m2!1snl!2snl!4v1746281250403!5m2!1snl!2snl"
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full">
+        </iframe>
       </div>
     </div>
   </div>
