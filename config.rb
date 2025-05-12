@@ -109,7 +109,6 @@ end
 dato.tap do |dato|
   paginate dato.beers, '/beers', '/templates/beers.html', per_page: 12
   paginate dato.products, '/webshop', '/templates/webshop.html'
-  paginate dato.posts, '/blog', '/templates/blog.html'
 
   dato.beers.each do |beer|
     proxy "/beers/#{beer.slug}/index.html",
@@ -124,15 +123,30 @@ dato.tap do |dato|
           locals: { product: product },
           ignore: true
   end
-
-  dato.posts.each do |post|
-    proxy "/blog/#{post.slug}/index.html",
-          '/templates/article.html',
-          locals: { post: post },
-          ignore: true
-  end
 end
 
 ignore '/templates/beers.html.erb'
 ignore '/templates/webshop.html.erb'
-ignore '/templates/blog.html.erb'
+
+activate :blog do |blog|
+  blog.name = "blog"
+  blog.prefix = "blog"
+  blog.permalink = ":title"
+  blog.sources = "/posts/{year}-{month}-{day}-{title}.html"
+  blog.paginate = true
+  blog.page_link = "{num}"
+  blog.per_page = 10
+  blog.summary_separator = /<\/p>/
+end
+
+# With no layout
+page "/*.xml", layout: false
+page "/*.json", layout: false
+page "/*.txt", layout: false
+
+# Layouts
+page "blog/index.html", layout: :posts_layout
+page "blog/*", layout: :post_layout
+page "blog/feed.xml", layout: false
+
+

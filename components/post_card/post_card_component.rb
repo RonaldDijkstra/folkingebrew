@@ -9,14 +9,14 @@ module Components
           concat(
             content_tag(:article, class: 'max-w-2xl py-6 px-6 sm:py-12 sm:px-12 bg-white m-auto text-lg mb-12') do
               post_title(title) + post_publish_date(post) + post_image(post) +
-              content_tag(:div, post.excerpt.to_s, class: 'prose mb-2') + read_more(post)
+              content_tag(:div, post.data.excerpt.to_s, class: 'prose mb-2') + read_more(post)
             end
           )
         end
 
         def post_image(post)
-          image = post.index_image.url(fm: 'webp', h: 303, w: 576)
-          image_tag(image, alt: post.title, class: 'w-full block mb-2', loading: 'lazy')
+          return '' unless post.data.image
+          image_tag(post.data.image, alt: post.title, class: 'w-full block mb-2', loading: 'lazy')
         end
 
         def post_title(title)
@@ -24,7 +24,7 @@ module Components
         end
 
         def post_publish_date(post)
-          content_tag(:div, local_date_time(post.publish_date), class: 'text-gray-500 text-sm mb-2')
+          content_tag(:div, local_date_time(post.date), class: 'text-gray-500 text-sm mb-2')
         end
 
         def read_more(post)

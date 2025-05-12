@@ -1,0 +1,11 @@
+---
+title: Blog
+description: "Blog posts from Folkingebrew"
+pageable: true
+---
+
+<%= regular_header title: "Blog" %>
+
+<% page_articles.each do |article| %>
+  <%= post_card post: article %>
+<% end %>
