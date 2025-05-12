@@ -2,10 +2,11 @@
 en:
   company_name: "Folkingebrew"
   address: |
-    Olgerweg 2-7
-    9723 ED
+    Boterdiep 75
+    9712 LL
     Groningen
   navigation:
+    home: "Home"
     shop: "Webshop"
     beers: "Beers"
     about: "About"
