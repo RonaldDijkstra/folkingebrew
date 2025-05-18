@@ -1,0 +1,24 @@
+---
+title: "Beers" 
+pageable: true
+blog: beers
+---
+
+<%= regular_header title: "Beers" %>
+
+<% grid html: { class: "mb-12" } do %>
+  <% page_articles.each do |beer| %>
+    <%= beer_card beer: beer %>
+  <% end %>
+<% end %>
+
+<% if paginate && num_pages > 1 %>
+  <section class="w-full m-auto max-w-7xl pb-6 md:pb-12">
+    <%= partial "partials/pagination", locals: { 
+      total_pages: num_pages, 
+      current_page: page_number,
+      prev_page: prev_page,
+      next_page: next_page
+    } %>
+  </section>
+<% end %>

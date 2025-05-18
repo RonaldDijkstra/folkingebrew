@@ -10,16 +10,14 @@ module Components
               beer_image(beer) +
               content_tag(:div, class: classes) do
                 content_tag(:h2, beer.title, class: 'text-white text-xl') +
-                content_tag(:div, beer.style, class: 'text-green-default')
+                content_tag(:div, beer.data.style, class: 'text-green-default')
               end
             end
           )
         end
 
         def beer_image(beer)
-          image_url = beer.asset_title
-
-          image_tag("beers/#{image_url}.webp",
+          image_tag("beers/#{beer.data.image}",
                     alt: beer.title,
                     class: 'block w-full',
                     height: '540',
