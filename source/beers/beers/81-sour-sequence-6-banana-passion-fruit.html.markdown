@@ -1,6 +1,6 @@
 ---
 title: "Sour Sequence #6: Banana & Passion Fruit"
-date: 2025-05-13 9:00 CEST
+date: 2025-04-02 9:00 CEST
 style: "Fruited Sour"
 abv: "8"
 specs:

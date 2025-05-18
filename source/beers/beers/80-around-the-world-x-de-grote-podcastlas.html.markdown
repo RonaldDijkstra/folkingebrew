@@ -1,6 +1,6 @@
 ---
 title: 'Around the World (x De Grote Podcastlas)'
-date: 2025-05-12 9:00 CEST
+date: 2025-04-01 9:00 CEST
 style: "Hazy Double IPA"
 abv: "8.5"
 specs:

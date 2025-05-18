@@ -1,6 +1,6 @@
 ---
 title: 'Tranquility'
-date: 2025-05-20 9:00 CEST
+date: 2025-04-03 9:00 CEST
 style: "White Double IPA"
 abv: "8.5"
 specs:
