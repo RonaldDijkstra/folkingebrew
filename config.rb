@@ -106,28 +106,6 @@ ready do
   proxy '_redirects', 'redirects', ignore: true
 end
 
-dato.tap do |dato|
-  # paginate dato.beers, '/beers', '/templates/beers.html', per_page: 12
-  paginate dato.products, '/webshop', '/templates/webshop.html'
-
-  # dato.beers.each do |beer|
-  #   proxy "/beers/#{beer.slug}/index.html",
-  #         '/templates/beer.html',
-  #         locals: { beer: beer },
-  #         ignore: true
-  # end
-
-  dato.products.each do |product|
-    proxy "/webshop/#{product.slug}/index.html",
-          '/templates/product.html',
-          locals: { product: product },
-          ignore: true
-  end
-end
-
-ignore '/templates/beers.html.erb'
-ignore '/templates/webshop.html.erb'
-
 activate :blog do |blog|
   blog.name = "blog"
   blog.prefix = "blog"
@@ -150,6 +128,15 @@ activate :blog do |blog|
   blog.filter = ->(article) { article.path.match(/\/(\d+)-/)[1].to_i }
 end
 
+activate :blog do |blog|
+  blog.name = "webshop"
+  blog.prefix = false
+  blog.sources = "/webshop/products/{id}-{title}.html"
+  blog.permalink = "/webshop/{title}"
+  blog.paginate = false
+  blog.layout = "product_layout"
+end
+
 # With no layout
 page "/*.xml", layout: false
 page "/*.json", layout: false
@@ -159,8 +146,7 @@ page "/*.txt", layout: false
 page "blog/index.html", layout: :posts_layout
 page "blog/*", layout: :post_layout
 page "blog/feed.xml", layout: false
-
 page "beers/index.html", layout: :beers_layout
 page "beers/*", layout: :beer_layout
-
-
+page "webshop/index.html", layout: :products_layout
+page "webshop/*", layout: :product_layout

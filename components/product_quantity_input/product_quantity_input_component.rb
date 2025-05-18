@@ -2,22 +2,9 @@ module Components
   module ProductQuantityInput
     class ProductQuantityInputComponent < Middleman::Extension
       helpers do
-        def product_quantity_input(opts)
-          max = opts[:max]
-
-          return input_with_max(max) if max
-
-          input_without_max
-        end
-
-        def input_with_max(max)
+        def product_quantity_input(_opts = {})
           content_tag(:input, nil, type: 'number', id: 'quantity', name: 'quantity', pattern: '[0-9]*',
-                                   value: '1', min: '1', max: max, class: input_classes)
-        end
-
-        def input_without_max
-          content_tag(:input, nil, type: 'number', id: 'quantity', name: 'quantity', pattern: '[0-9]*',
-                                   value: '1', min: '1', class: input_classes)
+                                 value: '1', min: '1', class: input_classes)
         end
       end
 
@@ -32,4 +19,4 @@ module Components
 end
 
 ::Middleman::Extensions.register(:product_quantity_input_component,
-                                 Components::ProductQuantityInput::ProductQuantityInputComponent)
+                               Components::ProductQuantityInput::ProductQuantityInputComponent)

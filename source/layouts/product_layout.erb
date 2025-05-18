@@ -1,0 +1,91 @@
+<% wrap_layout :layout do %>
+  <% product_image = current_article.data.images.first %>
+
+  <%= regular_header title: current_article.title %>
+
+  <section class="mb-12 max-w-7xl m-auto lg:px-6">
+    <div class="bg-white lg:flex">
+      <figure class="h-full relative lg:w-3/5">
+        <picture class="block h-full w-full relative bg-white">
+          <% if product_image %>
+            <%= image_tag "assets/images/webshop/#{product_image}", alt: current_article.title, id: "product-image" %>
+          <% else %>
+            <!-- placeholder -->
+          <% end %>
+        </picture>
+      </figure>
+      <div class="product-content lg:w-2/5 bg-white px-6 py-12">
+        <div class="flex">
+          <% if current_article.data.price %>
+            <div class="flex-1 flex items-start">
+              <div class="mr-3">
+                <%= product_price(current_article, 'py-1 text-sm') %>
+              </div>
+              <%= product_discount(current_article, 'relative') %>
+            </div>
+          <% end %>
+          <div class="font-bold">
+            <% if current_article.data.in_stock == false %>
+              <%= t("webshop.out_of_stock") %>
+            <% elsif current_article.data.only_a_few_left %>
+              <%= t("webshop.only_a_few") %>
+            <% elsif current_article.data.in_stock %>
+              <%= t("webshop.in_stock") %>
+            <% end %>
+          </div>
+        </div>
+        <div class="italic text-sm mb-6">
+          <%= t("webshop.incl_tax") %> <%= link_to t("webshop.shipping"), "/shipping-and-returning.html" %>
+        </div>
+        <div class="prose mb-3">
+          <%= yield %>
+        </div>
+        <% if current_article.data.in_stock %>
+          <% if !current_article.data.product_info.sizes.empty? %>
+            <div class="mb-3">
+              <label class="w-full block font-bold mb-2">
+                Size
+              </label>
+              <select id="size" name="size" class="w-28 focus:border-green-default focus:ring-green-default">
+                <% current_article.data.product_info.sizes.each do |size| %>
+                  <% if size.size_in_stock %>
+                    <option value="<%= size['size'] %>"><%= size['size'] %></option>
+                  <% else %>
+                    <option value="<%= size['size'] %>" disabled><%= size['size'] %> (Out of Stock)</option>
+                  <% end %>
+                <% end %> 
+              </select>
+            </div>
+          <% end %>
+          <div class="mb-3">
+            <% unless current_article.data.max_quantity == 1 %>
+              <div class="inline-block">
+                <label class="font-bold block mb-2">
+                  <%= t("webshop.quantity") %>
+                </label>
+                <div class="relative inline-flex">
+                  <%= product_quantity_input %>
+
+                  <% product_quantity_button id: "quantity-minus", html: { class: "left-0 border-r", "aria-label": t("webshop.reduce_with_one")} do %>
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 3">
+                      <path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">−</span>
+                  <% end %>
+
+                  <% product_quantity_button id: "quantity-plus", html: { class: "right-0 border-l", "aria-label": t("webshop.increase_with_one")} do %>
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 21">
+                      <path fill="#000" d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">+</span>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
