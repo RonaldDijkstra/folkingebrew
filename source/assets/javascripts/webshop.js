@@ -39,9 +39,6 @@ window.addEventListener('DOMContentLoaded', () => {
       item.addEventListener('click', () => {
         const productImage = document.querySelector('#product-image');
         const imgSource = item.querySelector('img').src
-        productImage.srcset = `${imgSource}?fm=webp&h=960&w=960&auto=enhance&fit=max&dpr=1 1x,
-                               ${imgSource}?fm=webp&h=960&w=960&auto=enhance&fit=max&dpr=2 2x,
-                               ${imgSource}?fm=webp&h=960&w=960&auto=enhance&fit=max&dpr=3 3x`;
         productImage.src = imgSource
 
         const activeItem = document.querySelector('.thumbnail-active');

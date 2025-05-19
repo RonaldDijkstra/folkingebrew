@@ -5,14 +5,13 @@ description: "Local Dealers of Folkingebrew"
 
 <% 
 dealers = data.local_dealers
-
 %>
 
 <%= regular_header title: "Local FolkingebrewDealers" %>
 
 <% regular_content html: { class: "mb-12 sm:mb-24" } do %>
   <% markdown_content html: { class: "mb-10" } do %>
-    <%= markdownify(dato.local_dealers_page.content) %>
+    <p>In this list you’ll find the awesome places in and around Groningen where you can buy and/or drink Folkingebrew. If you are located in or around Groningen and want our beer in your product range, please <a href="/contact/">contact us</a>.</p>
   <% end %>
   <% if !dealers.empty? %>
     <div class="sm:flex sm:flex-wrap">

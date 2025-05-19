@@ -2,6 +2,10 @@
 <html lang="<%= I18n.locale %>">
   <head>
     <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_url('assets/images/apple-touch-icon.png') %>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_url('assets/images/favicon-32x32.png') %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= asset_url('assets/images/favicon-16x16.png') %>">
+    <link rel="manifest" href="<%= asset_url('images/site.webmanifest') %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <% if content_for?(:head) %>
       <%= yield_content :head %>
@@ -9,8 +13,10 @@
       <title><%= content_for?(:page_title) ? yield_content(:page_title) : page_title %></title>
       <meta name="description" content="<%= meta_description %>">
     <% end %>
+
+    
     <meta name="robots" content="<%= robots %>">
-    <%= dato_favicon_meta_tags %>
+
     <link rel="preconnect" href="https://cdn.snipcart.com" data-proofer-ignore />
     <%# Getting the main stylesheet generated from webpack. Using a regex because of asset hashes %>
     <% sitemap.resources.select {|resource| resource.path =~ /^(main).*$/}.each do |resource| %>

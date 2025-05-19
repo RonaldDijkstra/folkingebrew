@@ -1,0 +1,163 @@
+<% wrap_layout :layout do %>
+  <%= regular_header title: current_article.title %>
+
+  <%
+  if current_article.data.images
+    product_image = current_article.data.images.first
+  end
+  %>
+
+  <section class="mb-12 max-w-7xl m-auto lg:px-6">
+    <div class="bg-white lg:flex">
+      <figure class="h-full relative lg:w-3/5">
+        <picture class="block h-full w-full relative bg-white">
+          <%= image_tag "webshop/#{product_image}", id: "product-image", class: "product-image w-full h-full object-cover" %>
+        </picture>
+        <% if current_article.data.images.count > 1 %>
+          <nav class="-bottom-8 flex justify-center m-width-sm absolute w-full lg:bottom-0 lg:justify-start lg:left-0 lg:m-4">
+            <% current_article.data.images.each_with_index do |product_image, index| %>
+              <%= product_thumbnail product_image: product_image,
+                                    product: current_article,
+                                    index: index %>
+            <% end %>
+          </nav>
+        <% end %>
+      </figure>
+      <div class="product-content lg:w-2/5 bg-white px-6 py-12">
+        <div class="flex">
+          <% if current_article.data.price %>
+            <div class="flex-1 flex items-start">
+              <div class="mr-3">
+                <%= product_price(current_article, 'py-1 text-sm') %>
+            </div>
+            <%= product_discount(current_article, 'relative') %>
+          </div>
+        <% end %>
+        <div class="font-bold">
+          <% if current_article.data.in_stock == false %>
+            <%= t("webshop.out_of_stock") %>
+          <% elsif current_article.data.only_a_few_left %>
+            <%= t("webshop.only_a_few") %>
+          <% elsif current_article.data.in_stock %>
+            <%= t("webshop.in_stock") %>
+          <% end %>
+        </div>
+      </div>
+      <div class="italic text-sm mb-6">
+        <%= t("webshop.incl_tax") %> <%= link_to t("webshop.shipping"), "/shipping-and-returning.html" %>
+      </div>
+      <div class="prose mb-3">
+        <%= yield %>
+      </div>
+      <% if current_article.data.in_stock %>
+        <% if current_article.data.sizes && !current_article.data.sizes.empty? %>
+          <div class="mb-3">
+            <label class="w-full block font-bold mb-2">
+              Size
+            </label>
+            <select id="size" name="size" class="w-28 focus:border-green-default focus:ring-green-default">
+              <% current_article.data.sizes.each do |size| %>
+                <% if size.size_in_stock %>
+                  <option value="<%= size.name %>"><%= size.name %></option>
+                <% else %>
+                  <option value="<%= size.name %>" disabled><%= size.name %> (Out of Stock)</option>
+                <% end %>
+              <% end %>
+            </select>
+          </div>
+        <% end %>
+        <div class="mb-3">
+          <div class="inline-block">
+            <label class="font-bold block mb-2">
+              <%= t("webshop.quantity") %>
+            </label>
+            <div class="relative inline-flex">
+              <%= product_quantity_input max: current_article.data.max_quantity %>
+
+              <% product_quantity_button id: "quantity-minus", html: { class: "left-0 border-r", "aria-label": t("webshop.reduce_with_one")} do %>
+                <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 3">
+                  <path fill="#000" d="M21.5.5v2H.5v-2z" fill-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">−</span>
+              <% end %>
+
+              <% product_quantity_button id: "quantity-plus", html: { class: "right-0 border-l", "aria-label": t("webshop.increase_with_one")} do %>
+                <svg aria-hidden="true" focusable="false" role="presentation" class="inline-block w-2 h-2" viewBox="0 0 22 21">
+                  <path fill="#000" d="M12 11.5h9.5v-2H12V0h-2v9.5H.5v2H10V21h2v-9.5z" fill-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">+</span>
+              <% end %>
+            </div>
+          </div>
+          <%= buy_button product: current_article,
+                         html: { class: "mb-3" } %>
+        </div>
+      <% end %>
+      <div class="accordion border-t border-black">
+        <% if current_article.data.product_details && !current_article.data.product_details.empty? %>
+          <%= accordion_button text: t("webshop.product_details") %>
+          <% accordion_content do %>
+            <p>
+              <%= current_article.data.product_details %>
+            </p>
+          <% end %>
+        <% end %>
+
+        <% if current_article.data.show_size_information %>
+          <% if current_article.data.sizes.any? { |size| size['lxb'] } %>
+            <%= accordion_button text: t("webshop.sizes") %>
+            <% accordion_content do %>
+              <table class="product-size-table">
+                <thead>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th><%= t("webshop.length_x_waist") %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% current_article.data.sizes.each do |size| %>
+                    <tr>
+                      <td>
+                        <%= size.name %>
+                      </td>
+                      <td>
+                        <%= size.lxb %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <p>
+                <%= t("webshop.size_disclaimer") %>
+              </p>
+              <% if current_article.data.size_image %>
+                <div class="size-image">
+                  <%= image_tag("webshop/#{current_article.data.size_image}", alt: "Size Image", class: " lg:max-w-sm mx-auto") %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+          <%= accordion_button text: t("webshop.shipping_and_paying") %>
+          <% accordion_content do %>
+            <%= partial("partials/webshop/_shipping-conditions") %>
+          <% end %>
+      </div>
+    </div>
+  </section>
+  <section class="pt-10 pb-20">
+    <%= content_tag(:h2, t("webshop.more_products"), class: "mb-10 text-center text-4xl text-white") %>
+    <% grid content_tag: :div do %>
+      <% (stocked_products - [current_article]).sample(3).each do |product| %>
+        <%= product_card product: product %>
+      <% end %>
+    <% end %>
+    <div class="px-6 text-center">
+      <%= button text: "View all Products",
+                link: true,
+                href: "/webshop/",
+                type: :default_white,
+                html: { class: "inline-block" } %>
+    </div>
+  </section>
+<% end %>

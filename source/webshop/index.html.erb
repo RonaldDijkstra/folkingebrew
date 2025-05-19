@@ -1,0 +1,13 @@
+---
+title: Folkingebrew Webshop
+description: "Welcome to our webshop where you can buy fresh beer and merchandise. 18+ Only!"
+blog: webshop
+---
+
+<%= regular_header title: "Folkingebrew Webshop" %>
+
+<% grid html: { class: "mb-12" } do %>
+  <% blog.articles.each do |article| %>
+    <%= product_card product: article %>
+  <% end %>
+<% end %>
