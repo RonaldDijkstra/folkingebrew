@@ -16,7 +16,8 @@ module Components
         end
 
         def first_available_size(product)
-          product.sizes.select(&:size_in_stock).first.size
+          # puts product.data.sizes.select(&:size_in_stock).first
+          product.data.sizes.select(&:size_in_stock).first.name
         end
       end
 
@@ -24,7 +25,7 @@ module Components
         def button_data_base(product, product_image)
           {
             "item-name": product.title,
-            "item-id": product.product_id,
+            "item-id": product.data.product_id,
             "item-quantity": '1',
             "item-price": total_price(product),
             "item-url": "#{base_url}/webshop/#{product.slug}",

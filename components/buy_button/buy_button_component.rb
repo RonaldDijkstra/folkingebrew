@@ -5,7 +5,7 @@ module Components
         def buy_button(opts)
           product = opts[:product]
 
-          product_sizes = product.sizes.map { |x| x[:size] }.join('|') unless product.sizes.empty?
+          product_sizes = product.data.sizes.map { |x| x[:name] }.join('|') unless product.data.sizes.empty?
 
           classes = "snipcart-add-item inline-block w-28 py-2 px-2
                      bg-green-default border border-solid border-green-default
@@ -25,7 +25,7 @@ module Components
         end
 
         def product_image(product)
-          product.images ? product.images.first.url : placeholder
+          product.data.images ? product.data.images.first : placeholder
         end
       end
     end
