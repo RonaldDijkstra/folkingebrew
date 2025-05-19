@@ -17,6 +17,9 @@ sizes:
     size_in_stock: true
     lxb: "67 x 51"
   - name: "M"
+    size_in_stock: false
+    lxb: "70 x 56"
+  - name: "XXL"
     size_in_stock: true
     lxb: "70 x 56"
 size_image:

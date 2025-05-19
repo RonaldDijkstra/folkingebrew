@@ -42,7 +42,6 @@
             <%= t("webshop.in_stock") %>
           <% end %>
         </div>
-        <%#= yield %>
       </div>
       <div class="italic text-sm mb-6">
         <%= t("webshop.incl_tax") %> <%= link_to t("webshop.shipping"), "/shipping-and-returning.html" %>
@@ -50,6 +49,26 @@
       <div class="prose mb-3">
         <%= yield %>
       </div>
+      <% if current_article.data.in_stock %>
+        <% if !current_article.data.sizes.empty? %>
+          <div class="mb-3">
+            <label class="w-full block font-bold mb-2">
+              Size
+            </label>
+            <select id="size" name="size" class="w-28 focus:border-green-default focus:ring-green-default">
+              <% current_article.data.sizes.each do |size| %>
+                <% if size.size_in_stock %>
+                  <option value="<%= size.name %>"><%= size.name %></option>
+                <% else %>
+                  <option value="<%= size.name %>" disabled><%= size.name %> (Out of Stock)</option>
+                <% end %>
+              <% end %>
+            </select>
+          </div>
+        <% end %>
+        <!-- <div>Quantity</div>
+        <div>Buy</div> -->
+      <% end %>
     </div>
   </section>
 <% end %>
