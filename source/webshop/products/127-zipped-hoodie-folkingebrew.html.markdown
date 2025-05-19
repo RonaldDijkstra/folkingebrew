@@ -17,11 +17,20 @@ sizes:
     size_in_stock: true
     lxb: "67 x 51"
   - name: "M"
-    size_in_stock: false
-    lxb: "70 x 56"
-  - name: "XXL"
     size_in_stock: true
     lxb: "70 x 56"
+  - name: "L"
+    size_in_stock: true
+    lxb: "73 x 61"
+  - name: "XL"
+    size_in_stock: true
+    lxb: "76 x 65"
+  - name: "XXL"
+    size_in_stock: true
+    lxb: "79 x 69"
+  - name: "XXXL"
+    size_in_stock: true
+    lxb: "82 x 73"
 size_image:
 short_description: 
 product_details: "52% Cotton - 48% Polyester"

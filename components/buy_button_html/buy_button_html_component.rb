@@ -29,7 +29,7 @@ module Components
             "item-quantity": '1',
             "item-price": total_price(product),
             "item-url": "#{base_url}/webshop/#{product.slug}",
-            "item-image": product_image,
+            "item-image": image_path("webshop/#{product_image}"),
             "item-has-taxes-included": 'true'
           }
         end

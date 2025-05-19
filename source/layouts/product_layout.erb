@@ -93,6 +93,57 @@
                          html: { class: "mb-3" } %>
         </div>
       <% end %>
+      <div class="accordion border-t border-black">
+        <% if current_article.data.product_details && !current_article.data.product_details.empty? %>
+          <%= accordion_button text: t("webshop.product_details") %>
+          <% accordion_content do %>
+            <p>
+              <%= current_article.data.product_details %>
+            </p>
+          <% end %>
+        <% end %>
+
+        <% if current_article.data.show_size_information %>
+          <% if current_article.data.sizes.any? { |size| size['lxb'] } %>
+            <%= accordion_button text: t("webshop.sizes") %>
+            <% accordion_content do %>
+              <table class="product-size-table">
+                <thead>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th><%= t("webshop.length_x_waist") %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% current_article.data.sizes.each do |size| %>
+                    <tr>
+                      <td>
+                        <%= size.name %>
+                      </td>
+                      <td>
+                        <%= size.lxb %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <p>
+                <%= t("webshop.size_disclaimer") %>
+              </p>
+              <% if current_article.data.size_image %>
+                <div class="size-image">
+                  <%= image_tag current_article.data.size_image, alt: "Size Image", class: " lg:max-w-sm mx-auto" %>
+                </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+          <%= accordion_button text: t("webshop.shipping_and_paying") %>
+          <% accordion_content do %>
+            <%= partial("partials/webshop/_shipping-conditions") %>
+          <% end %>
+        
+      </div>
     </div>
   </section>
 <% end %>
