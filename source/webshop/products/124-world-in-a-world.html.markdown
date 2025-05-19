@@ -1,7 +1,7 @@
 ---
 title: "World in a World"
 type: "product"
-date: "31-12-2025"
+date: "31-12-2024"
 product_id: 124
 in_stock: true
 only_a_few_left: false

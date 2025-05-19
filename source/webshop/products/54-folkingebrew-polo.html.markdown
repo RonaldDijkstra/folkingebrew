@@ -1,7 +1,7 @@
 ---
 title: "Folkingebrew Polo"
 type: "product"
-date: "30-12-2025"
+date: "30-12-2024"
 product_id: 54
 in_stock: true
 only_a_few_left: true

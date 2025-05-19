@@ -1,7 +1,7 @@
 ---
 title: "Folkingebrew Snapback Gray"
 type: "product"
-date: "29-12-2025"
+date: "29-12-2024"
 product_id: 51
 in_stock: true
 only_a_few_left: true
