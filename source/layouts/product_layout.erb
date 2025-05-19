@@ -1,3 +1,28 @@
 <% wrap_layout :layout do %>
-  <%= yield %>
+  <%= regular_header title: current_article.title %>
+
+  <%
+  if current_article.data.images
+    product_image = current_article.data.images.first
+  end
+  %>
+
+  <section class="mb-12 max-w-7xl m-auto lg:px-6">
+    <div class="bg-white lg:flex">
+      <figure class="h-full relative lg:w-3/5">
+        <picture class="block h-full w-full relative bg-white">
+          <%= image_tag "webshop/#{product_image}", id: "product-image", class: "product-image w-full h-full object-cover" %>
+        </picture>
+        <% if current_article.data.images.count > 1 %>
+          <nav class="-bottom-8 flex justify-center m-width-sm absolute w-full lg:bottom-0 lg:justify-start lg:left-0 lg:m-4">
+            <% current_article.data.images.each_with_index do |product_image, index| %>
+              <%= product_thumbnail product_image: product_image,
+                                    product: current_article,
+                                    index: index %>
+            <% end %>
+          </nav>
+        <% end %>
+      </figure>
+    </div>
+  </section>
 <% end %>

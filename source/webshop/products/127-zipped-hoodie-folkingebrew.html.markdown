@@ -1,5 +1,6 @@
 ---
 title: "Zipped Hoodie Folkingebrew"
+type: "product"
 date: "01-01-2025"
 product_id: 127
 in_stock: true
