@@ -13,7 +13,7 @@ module Components
               end +
               content_tag(:div, class: 'flex') do
                 content_tag(:h2, product.title, class: 'flex-grow font-bold mr-2') +
-                content_tag(:div, product.price ? product_price(product) : "", class: 'flex flex-col items-end')
+                content_tag(:div, product.data.price ? product_price(product) : "", class: 'flex flex-col items-end')
               end
             end
           )
@@ -22,17 +22,14 @@ module Components
         private
 
         def image(product)
-          image_url = product.images.first.url
+          image_url = product.data.images.first
 
-          image_tag("#{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max",
+          image_tag("webshop/#{image_url}",
                     alt: product.title,
                     class: 'mb-3',
                     height: '540',
                     width: '540',
-                    loading: 'lazy',
-                    srcset: "#{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=1 1x,
-                             #{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=2 2x,
-                             #{image_url}?fm=webp&h=540&w=540&auto=enhance&fit=max&dpr=3 3x")
+                    loading: 'lazy')
         end
       end
     end

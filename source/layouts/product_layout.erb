@@ -142,8 +142,22 @@
           <% accordion_content do %>
             <%= partial("partials/webshop/_shipping-conditions") %>
           <% end %>
-        
       </div>
+    </div>
+  </section>
+  <section class="pt-10 pb-20">
+    <%= content_tag(:h2, t("webshop.more_products"), class: "mb-10 text-center text-4xl text-white") %>
+    <% grid content_tag: :div do %>
+      <% (stocked_products - [current_article]).sample(3).each do |product| %>
+        <%= product_card product: product %>
+      <% end %>
+    <% end %>
+    <div class="px-6 text-center">
+      <%= button text: "View all Products",
+                link: true,
+                href: "/webshop/",
+                type: :default_white,
+                html: { class: "inline-block" } %>
     </div>
   </section>
 <% end %>

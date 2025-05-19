@@ -107,8 +107,8 @@ module ApplicationHelpers
 
   def stocked_products
     products = []
-    dato.products.select do |product|
-      next unless product.in_stock
+    blog('webshop').articles.select do |product|
+      next unless product.data.in_stock
 
       products << product
     end
