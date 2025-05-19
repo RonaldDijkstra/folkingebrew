@@ -3,29 +3,29 @@ module Components
     class ProductPriceComponent < Middleman::Extension
       helpers do
         def product_price(product, classes = nil)
-          return old_price(product, classes) + current_price(product) if product.old_price
+          return old_price(product, classes) + current_price(product) if product.data.old_price
 
           current_price(product)
         end
 
         def current_price(product)
-          return current_real_price(product) + deposit(product) if product.deposit
+          return current_real_price(product) + deposit(product) if product.data.deposit
 
           current_real_price(product)
         end
 
         def current_real_price(product)
-          content_tag(:div, "#{price(product.price)}",
+          content_tag(:div, "#{price(product.data.price)}",
                       class: 'text-2xl font-bold whitespace-nowrap text-green-default')
         end
 
         def deposit(product)
-          content_tag(:div, "+ #{price(product.deposit)} deposit",
+          content_tag(:div, "+ #{price(product.data.deposit)} deposit",
                       class: 'text-sm whitespace-nowrap text-gray-400')
         end
 
         def old_price(product, classes)
-          content_tag(:div, "#{price(product.old_price)}",
+          content_tag(:div, "#{price(product.data.old_price)}",
                       class: "#{classes} line-through whitespace-nowrap text-gray-400")
         end
 
@@ -34,8 +34,8 @@ module Components
         end
 
         def total_price(product)
-          total_price = product.price
-          total_price += product.deposit if product.deposit
+          total_price = product.data.price
+          total_price += product.data.deposit if product.data.deposit
 
           return total_price
         end 

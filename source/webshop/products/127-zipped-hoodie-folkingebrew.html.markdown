@@ -8,9 +8,9 @@ only_a_few_left: false
 images:
   - "hoodie-zipped-front.webp"
   - "hoodie-zipped-back.webp"
-price: 
-old_price: 
-deposit:
+price: 44.99
+old_price: 49.99
+deposit: 1.00
 show_size_information: true
 sizes:
   - name: "S"

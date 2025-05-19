@@ -23,6 +23,33 @@
           </nav>
         <% end %>
       </figure>
+      <div class="product-content lg:w-2/5 bg-white px-6 py-12">
+        <div class="flex">
+          <% if current_article.data.price %>
+            <div class="flex-1 flex items-start">
+              <div class="mr-3">
+                <%= product_price(current_article, 'py-1 text-sm') %>
+            </div>
+            <%= product_discount(current_article, 'relative') %>
+          </div>
+        <% end %>
+        <div class="font-bold">
+          <% if current_article.data.in_stock == false %>
+            <%= t("webshop.out_of_stock") %>
+          <% elsif current_article.data.only_a_few_left %>
+            <%= t("webshop.only_a_few") %>
+          <% elsif current_article.data.in_stock %>
+            <%= t("webshop.in_stock") %>
+          <% end %>
+        </div>
+        <%#= yield %>
+      </div>
+      <div class="italic text-sm mb-6">
+        <%= t("webshop.incl_tax") %> <%= link_to t("webshop.shipping"), "/shipping-and-returning.html" %>
+      </div>
+      <div class="prose mb-3">
+        <%= yield %>
+      </div>
     </div>
   </section>
 <% end %>
