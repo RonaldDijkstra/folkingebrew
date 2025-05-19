@@ -5,7 +5,9 @@ module Components
         def buy_button(opts)
           product = opts[:product]
 
-          product_sizes = product.data.sizes.map { |x| x[:name] }.join('|') unless product.data.sizes.empty?
+          product_sizes = if product.data.sizes && !product.data.sizes.empty?
+            product.data.sizes.map { |x| x[:name] }.join('|')
+          end
 
           classes = "snipcart-add-item inline-block w-28 py-2 px-2
                      bg-green-default border border-solid border-green-default

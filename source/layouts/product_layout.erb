@@ -50,7 +50,7 @@
         <%= yield %>
       </div>
       <% if current_article.data.in_stock %>
-        <% if !current_article.data.sizes.empty? %>
+        <% if current_article.data.sizes && !current_article.data.sizes.empty? %>
           <div class="mb-3">
             <label class="w-full block font-bold mb-2">
               Size
@@ -132,7 +132,7 @@
               </p>
               <% if current_article.data.size_image %>
                 <div class="size-image">
-                  <%= image_tag current_article.data.size_image, alt: "Size Image", class: " lg:max-w-sm mx-auto" %>
+                  <%= image_tag("webshop/#{current_article.data.size_image}", alt: "Size Image", class: " lg:max-w-sm mx-auto") %>
                 </div>
               <% end %>
             <% end %>
