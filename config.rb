@@ -47,16 +47,6 @@ activate :dotenv
 activate :directory_indexes
 activate :inline_svg
 
-# Activate DatoCMS
-if ENV['DATO_PREVIEW']
-  activate :dato, preview: true, live_reload: true
-else
-  activate :dato, preview: false, live_reload: false
-end
-
-# Activate Pagination
-activate :pagination
-
 # Use kramdown for markdown
 set :markdown_engine, :kramdown
 
@@ -106,9 +96,6 @@ ready do
   proxy '_redirects', 'redirects', ignore: true
 end
 
-ignore '/templates/beers.html.erb'
-ignore '/templates/webshop.html.erb'
-
 activate :blog do |blog|
   blog.name = "blog"
   blog.prefix = "blog"
@@ -154,6 +141,3 @@ page "beers/*", layout: :beer_layout
 
 page "webshop/index.html", layout: :products_layout
 page "webshop/*", layout: :product_layout
-
-
-
