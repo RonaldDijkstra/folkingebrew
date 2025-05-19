@@ -31,7 +31,7 @@ description: Folkingebrew is a modern craft brewery based in Groningen, Netherla
 <section class="pt-10 pb-20">
   <%= content_tag(:h2, t("webshop.highlights"), class: "mb-10 text-center text-4xl text-white") %>
   <% grid content_tag: :div do %>
-    <% stocked_products[0..2].each do |product| %>
+    <% stocked_products.sample(3).each do |product| %>
       <%= product_card product: product %>
     <% end %>
   <% end %>
