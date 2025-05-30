@@ -46,9 +46,18 @@
     <% end %>
     <% footer_column do %>
       <%= content_tag(:h3, t("footer.adress"), class: "font-bold mb-3") %>
-      <%= content_tag(:address, markdownify(t("address")), class: "not-italic") %>
+      <h3 class="font-bold">Folkingebrew Brewery</h3>
+      <address class="not-italic">
+        Olgerweg 2-7<br>
+        9723 ED<br>
+        Groningen
+      </address>
       <%= footer_link text: "info@folkingebrew.nl",
                       link: "mailto:info@folkingebrew.nl" %>
+      <h3 class="font-bold mt-3">Folkingebrew The Pub</h3>
+      <%= content_tag(:address, markdownify(t("address")), class: "not-italic") %>
+      <%= footer_link text: "brewpub@folkingebrew.nl",
+                      link: "mailto:brewpub@folkingebrew.nl" %>
     <% end %>
   </div>
   <div class="max-w-7xl m-auto pb-6 px-3 flex justify-center">
