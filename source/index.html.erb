@@ -7,26 +7,59 @@ description: Folkingebrew is a modern craft brewery based in Groningen, Netherla
   transparent-header
 <% end %>
 
-<section class="bg-blend-soft-light bg-green-default px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= image_path 'hero-beers.jpg' %>">
+<section class="bg-blend-soft-light bg-green-default px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= image_path 'hero-pub.jpg' %>">
   <%= image_tag "assets/images/logo-folkingebrew-white.svg", alt: "logo Folkingebrew", class: "max-w-s mb-6" %>
   <h1 class="text-white text-3xl font-light">
     Modern Craft Beer from Groningen
   </h1>
 </section>
 
-<div class="bg-white py-20 px-6">
-  <div class="max-w-2xl m-auto">
-    <% markdown_content html: { class: "mb-6" } do %>
-      <h2 id="we-are-folkingebrew">We are Folkingebrew</h2>
-      <p>Since our start with the brewing adventure our motto is to never stop dreaming and learning. We are always tweaking our beers to create the best beer we possibly can.</p>
-    <% end %>
-    <%= button text: "More about us",
+<section class="bg-white py-10 md:py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div>
+        <h3 class="text-2xl font-bold mb-4">The Pub: Where our craft comes to life</h3>
+        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          Step into our newly opened taproom 'The Pub' at Boterdiep 75 in Groningen, where our passion for bold, modern beers meets a vibrant atmosphere. With 16 rotating taps, enjoy our latest releases, small-batch exclusives and select guest beers from breweries we admire. Pair your drink with our kitchen's offerings, all crafted to complement our brews.
+        <% end %>
+        <%= button text: "Discover More",
                link: true,
-               href: "/about.html",
+               href: "/the-pub.html",
                type: :default,
                html: { class: "inline-block" } %>
+      </div>
+      <div>
+        <% markdown_content html: { class: "mb-6" } do %>
+          <%= image_tag "assets/images/the-bar.webp", alt: "The Bar at Folkingebrew The Pub", class: "w-full h-auto" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<section class="bg-white py-10 md:py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div class="md:order-2">
+        <h3 class="text-2xl font-bold mb-4">We are Folkingebrew</h3>
+        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          Since our start with the brewing adventure our motto is to never stop dreaming and learning. We are always tweaking our beers to create the best beer we possibly can.
+        <% end %>
+        <%= button text: "More about us",
+                   link: true,
+                   href: "/about.html",
+                   type: :default,
+                   html: { class: "inline-block" } %>
+      </div>
+      <div class="md:order-1">
+        <figure>
+          <img src="<%= image_path 'the-team.jpg' %>" alt="Folkingebrew @ Bax by Hopster Magazine">
+          <figcaption>Source: <a href="https://www.hopstermagazine.com/" target="_blank">Hopster Magazine</a></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="pt-10 pb-20">
   <%= content_tag(:h2, t("webshop.highlights"), class: "mb-10 text-center text-4xl text-white") %>
