@@ -29,29 +29,6 @@ description: Folkingebrew is a modern craft brewery based in Groningen, Netherla
 <section class="bg-white py-10 md:py-20 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-      <div>
-        <h3 class="text-2xl font-bold mb-4">The Pub: Where our craft comes to life</h3>
-        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
-          Step into our newly opened taproom 'The Pub' at Boterdiep 75 in Groningen, where our passion for bold, modern beers meets a vibrant atmosphere. With 16 rotating taps, enjoy our latest releases, small-batch exclusives and select guest beers from breweries we admire. Pair your drink with our kitchen's offerings, all crafted to complement our brews.
-        <% end %>
-        <%= button text: "Discover More",
-                   link: true,
-                   href: "/the-pub.html",
-                  type: :default,
-                   html: { class: "inline-block" } %>
-      </div>
-      <div>
-        <% markdown_content html: { class: "mb-6" } do %>
-          <%= image_tag "assets/images/the-bar.webp", alt: "The Bar at Folkingebrew The Pub", class: "w-full h-auto" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="bg-white py-10 md:py-20 px-6">
-  <div class="max-w-6xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div class="md:order-2">
         <h3 class="text-2xl font-bold mb-4">We are Folkingebrew</h3>
         <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
@@ -68,6 +45,29 @@ description: Folkingebrew is a modern craft brewery based in Groningen, Netherla
           <img src="<%= image_path 'the-team.jpg' %>" alt="Folkingebrew @ Bax by Hopster Magazine">
           <figcaption>&copy; <a href="https://www.hopstermagazine.com/" target="_blank">Hopster Magazine</a></figcaption>
         </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white py-10 md:py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div>
+        <h3 class="text-2xl font-bold mb-4">The Pub: Where our craft comes to life</h3>
+        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          Step into our newly opened taproom 'The Pub' at Boterdiep 75 in Groningen, where our passion for bold, modern beers meets a vibrant atmosphere. With 16 rotating taps, enjoy our latest releases, small-batch exclusives and select guest beers from breweries we admire. Pair your drink with our kitchen's offerings, all crafted to complement our brews.
+        <% end %>
+        <%= button text: "Discover More",
+                   link: true,
+                   href: "/the-pub.html",
+                  type: :default,
+                   html: { class: "inline-block" } %>
+      </div>
+      <div>
+        <% markdown_content html: { class: "mb-6" } do %>
+          <%= image_tag "assets/images/the-bar.webp", alt: "The Bar at Folkingebrew The Pub", class: "w-full h-auto" %>
+        <% end %>
       </div>
     </div>
   </div>
