@@ -25,7 +25,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['Open Sans', 'sans-serif']
+        sans: ['Open Sans', 'sans-serif'],
+        black: ['Orbitron', 'sans-serif'],
       },
     }
   },

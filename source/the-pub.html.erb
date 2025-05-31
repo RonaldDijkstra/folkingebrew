@@ -7,14 +7,15 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
   transparent-header
 <% end %>
 
-<section class="relative px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= image_path 'background-the-pub.jpg' %>)">
+<section class="relative px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url(<%= image_path 'background-the-pub.jpg' %>); background-attachment: fixed;">
   <div class="absolute inset-0 bg-[#5C2D0C]/80"></div>
   <div class="relative">
-    <h1 class="text-white text-3xl sm:text-5xl font-bold mb-5">
-      Welcome to Folkingebrew The Pub
+    <h1 class="mt-16 sm:mt-20 text-white text-3xl sm:text-5xl font-black uppercase mb-12">
+      <span class="block tracking-widest mb-16 text-[32px] sm:text-[40px]">Folkingebrew</span>
+      <%= image_tag "assets/images/hopje.svg", alt: "", class: "max-w-[140px] sm:max-w-[200px] mx-auto mb-16" %>
+      <span class="text-[32px] sm:text-[40px]">The Pub</span>
     </h1>
-    <h2 class="text-white text-xl sm:text-2xl font-light">
-      Home of Modern Craft Beer in Groningen
+    <h2 class="text-white font-black text-xl sm:text-3xl">
     </h2>
   </div>
 </section>
@@ -23,9 +24,9 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div>
-        <h3 class="text-2xl font-bold mb-4">Our story</h3>
+        <h3 class="text-2xl font-bold mb-4">Welcome to Folkingebrew The Pub</h3>
         <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
-          What started as a passion for brewing bold, modern beers has grown into something bigger. After years of brewing, experimenting and sharing our beers across Europe, we've opened the doors to our own space in Groningen. A place where everything comes together: the beer, the food, the people and the energy of the city we call home.
+          What started as a passion for brewing bold, modern beers has grown into something bigger. After years of brewing, experimenting and sharing our beers across Europe, we've opened the doors to our own taproom in Groningen. A place where everything comes together: the beer, the food, the people and the energy of the city we call home.
         <% end %>
       </div>
       <div>

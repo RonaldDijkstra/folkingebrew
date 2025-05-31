@@ -42,6 +42,15 @@
          url('../fonts/open-sans-v27-latin-700.woff2') format('woff2'),
          url('../fonts/open-sans-v27-latin-700.woff') format('woff');
   }
+
+  @font-face {
+    font-family: 'Orbitron';
+    src: url('../fonts/Orbitron-Black.woff2') format('woff2'),
+        url('../fonts/Orbitron-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
 }
 
 [aria-current]:not([aria-current="false"]) {
