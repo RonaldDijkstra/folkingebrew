@@ -25,7 +25,9 @@
       </div>
        <div class="sm:flex pb-10">
         <div class="sm:w-2/3 sm:border-r sm:pr-10">
-          <%= yield %>
+          <div class="prose">
+            <%= yield %>
+          </div>
           <% if current_article.data.webshop_url && current_article.data.webshop_url.length > 0 %>
             <strong><%= link_to("Availabe in our webshop", "#{current_article.data.webshop_url}/", class: "block mt-4 text-green-default mb-4 lg:mb-0 underline hover:no-underline") %></strong>
           <% end %>
