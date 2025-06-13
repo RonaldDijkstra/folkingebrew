@@ -8,8 +8,8 @@ specs:
     malts: "Golden Promise, Wheat, Malted Oats, Flaked Oats"
     fermentation: "LAIII"
 release_month: "June 2025"
-webshop_url: ""
-untappd_url: ""
+webshop_url: https://www.folkingebrew.nl/webshop/welcome-to-the-pub/"
+untappd_url: "https://untappd.com/b/folkingebrew-welcome-to-the-pub/6298071"
 image: "welcome-to-the-pub.webp"
 wallpaper: "welcome-to-the-pub-wallpaper.webp"
 ---
