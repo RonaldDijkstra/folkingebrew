@@ -62,6 +62,24 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div>
+        <h3 class="text-2xl font-bold mb-4">Our brewery</h3>
+        <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
+          Right behind the bar, you'll find our small-scale brewhouse. This is where we experiment, refine recipes and brew exclusive beers you can only taste at The Pub or select festivals. It's beer brewed for the moment: fresh, direct and just meters from your glass.
+        <% end %>
+      </div>
+      <div>
+        <% markdown_content html: { class: "mb-6" } do %>
+          <%= image_tag "assets/images/the-brewery.webp", alt: "The Brewhouse at Folkingebrew The Pub", class: "w-full h-auto" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-[#fffaf8] py-10 md:py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div class="md:order-2">
         <h3 class="text-2xl font-bold mb-4">Craft meets Kitchen</h3>
         <% markdown_content html: { class: "mb-6 prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
           Our kitchen follows the same mindset as our brewing: bold, yet balanced.
@@ -76,7 +94,7 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
           Please be aware: our menu might change now and then, for example depending on what's in season or sparking joy in our kitchen.
         <% end %>
       </div>
-      <div>
+      <div class="md:order-1">
         <% markdown_content html: { class: "mb-6" } do %>
           <%= image_tag "assets/images/the-kitchen.webp", alt: "The Kitchen at Folkingebrew The Pub", class: "w-full h-auto" %>
         <% end %>
@@ -85,10 +103,10 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
   </div>
 </section>
 
-<section class="bg-[#fffaf8] py-10 md:py-20 px-6">
+<section class="bg-white py-10 md:py-20 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-      <div class="md:order-2">
+      <div>
         <h3 class="text-2xl font-bold mb-4">Hours of Operation</h3>
         <% markdown_content html: { class: "prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
           <table class="pub-hours-table"> 
@@ -133,7 +151,7 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
 
         </script>
       </div>
-      <div class="md:order-1">
+      <div >
         <% markdown_content html: { class: "mb-6" } do %>
           <%= image_tag "assets/images/the-tables.webp", alt: "The Tables at Folkingebrew The Pub", class: "w-full h-auto" %>
         <% end %>
@@ -142,10 +160,10 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
   </div>
 </section>
 
-<section class="bg-white py-10 md:py-20 px-6">
+<section class="bg-[#fffaf8] py-10 md:py-20 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-      <div>
+      <div class="md:order-2">
         <div class="mb-8">
           <h3 class="text-2xl font-bold mb-4">Address</h3>
           <% markdown_content html: { class: "prose prose-a:text-green-default hover:prose-a:text-green-default" } do %>
@@ -172,7 +190,7 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
         </div>
       </div>
 
-      <div class="h-[500px]">
+      <div class="h-[500px] md:order-1">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2388.6030602541236!2d6.561085677302513!3d53.224965172254365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c9cd5b4aa9d23f%3A0xd1f45df44e13974b!2sBoterdiep%2075%2C%209712%20LL%20Groningen!5e0!3m2!1snl!2snl!4v1746281250403!5m2!1snl!2snl"
           width="100%" 
