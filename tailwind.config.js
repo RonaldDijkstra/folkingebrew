@@ -27,6 +27,7 @@ module.exports = {
       fontFamily: {
         sans: ['Open Sans', 'sans-serif'],
         black: ['Orbitron', 'sans-serif'],
+        bebas: ['Bebas Neue', 'sans-serif'],
       },
     }
   },

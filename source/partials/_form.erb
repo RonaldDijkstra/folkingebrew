@@ -31,6 +31,18 @@
       </label>
       <input name="file" type="file" class="block mb-3" required />
     <% end %>
+    <% if locals[:fields].include? "team_name" %>
+      <label for="team_name" class="block font-bold">
+        Teamnaam
+      </label>
+      <input type="text" name="team_name" id="team_name" class="mb-3 w-full focus:border-green-default focus:ring-green-default" required>
+    <% end %>
+    <% if locals[:fields].include? "team_size" %>
+      <label for="team_size" class="block font-bold">
+        Aantal spelers (max 4)
+      </label>
+      <input type="number" name="team_size" id="team_size" class="mb-3 w-full focus:border-green-default focus:ring-green-default" min="1" max="4" required>
+    <% end %>
     <%= button text: t("buttons.submit"),
                type: :primary,
                html: { class: "" } %>
