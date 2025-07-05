@@ -33,10 +33,11 @@ description: "Sign up your team for The Pub Quiz."
     <% content_tag(:article, class: "prose mb-6 max-w-lg m-auto") do %>
       <%= markdownify("Schrijf je team nu in voor The Pub Quiz op woensdag 9 juli om 19:30!
 
-Een avond vol plezier, competitie, gezelligheid en goed bier met uitdagende algemene kennisvragen. Wie weet win jij met je team mooie (bier)prijzen!") %>
+Een avond vol plezier, competitie, gezelligheid en goed bier met uitdagende algemene kennisvragen. Wie weet win jij met je team mooie (bier)prijzen!
+
+<i>De inschrijvingen zijn gesloten, we zien jullie daar!</i>") %>
+
     <% end %>
-    <%= partial "partials/form", locals: { name: "pubquiz",
-                                          fields: ["name", "email", "team_name", "team_size"] } %>
   <% end %>
 </div>
 
