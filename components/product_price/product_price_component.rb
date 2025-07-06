@@ -3,6 +3,7 @@ module Components
     class ProductPriceComponent < Middleman::Extension
       helpers do
         def product_price(product, classes = nil)
+          return content_tag(:div, "Out of stock", class: 'text-sm whitespace-nowrap text-gray-400') if !product.data.in_stock
           return old_price(product, classes) + current_price(product) if product.data.old_price
 
           current_price(product)

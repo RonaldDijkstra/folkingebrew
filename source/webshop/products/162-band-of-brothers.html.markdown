@@ -3,7 +3,7 @@ title: "Band of Brothers (Investor Collab #1)"
 type: "product"
 date: "01-06-2025"
 product_id: 162
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "band-of-brothers.webp"
