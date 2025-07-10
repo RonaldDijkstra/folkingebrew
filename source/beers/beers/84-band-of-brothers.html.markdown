@@ -8,7 +8,7 @@ specs:
     malts: "Golden Promise, Wheat, Malted Oats, Flaked Oats"
     fermentation: "LAIII"
 release_month: "June 2025"
-webshop_url: "https://www.folkingebrew.nl/webshop/band-of-brothers/"
+webshop_url: ""
 untappd_url: "https://untappd.com/b/folkingebrew-band-of-brothers-investor-collab-1/6299291"
 image: "band-of-brothers.webp"
 wallpaper: "band-of-brothers-wallpaper.webp"
