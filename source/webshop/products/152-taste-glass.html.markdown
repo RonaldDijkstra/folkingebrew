@@ -3,7 +3,7 @@ title: "Taste Glass 'Harmony'"
 type: "product"
 date: "29-04-2025"
 product_id: 152
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "taste-glass.webp"
