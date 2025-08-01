@@ -7,7 +7,7 @@ blog: webshop
 <%= regular_header title: "Folkingebrew Webshop" %>
 
 <% grid html: { class: "mb-12" } do %>
-  <% blog.articles.each do |article| %>
+  <% stocked_products.each do |article| %>
     <%= product_card product: article %>
   <% end %>
 <% end %>
