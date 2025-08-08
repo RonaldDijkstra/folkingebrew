@@ -31,10 +31,8 @@ description: "Sign up your team for The Pub Quiz."
 <div class="bg-white w-full">
   <% regular_content html: {  } do %>
     <% content_tag(:article, class: "prose mb-6 max-w-lg m-auto") do %>
-      <%= markdownify("Schrijf je team nu in voor The Pub Quiz op woensdag 13 augustus om 19:30! Een avond vol plezier, competitie, gezelligheid en goed bier met uitdagende algemene kennisvragen. Wie weet win jij met je team mooie (bier)prijzen!") %>
+      <%= markdownify("Schrijf je team nu in voor The Pub Quiz op woensdag 13 augustus om 19:30! Een avond vol plezier, competitie, gezelligheid en goed bier met uitdagende algemene kennisvragen. Wie weet win jij met je team mooie (bier)prijzen!<br><br><i>De inschrijvingen zijn gesloten. We zien jullie op de avond!</i>") %>
     <% end %>
-    <%= partial "partials/form", locals: { name: "pubquiz",
-                                          fields: ["name", "email", "team_name", "team_size"] } %>
   <% end %>
 </div>
 
