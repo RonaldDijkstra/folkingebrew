@@ -3,7 +3,7 @@ title: "Cellar of Shadows BA"
 type: "product"
 date: "30-03-2025"
 product_id: 142
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "cellar-of-shadows-ba.webp"
