@@ -10,17 +10,13 @@ description: "Sign up your team for The Pub Quiz."
 <section class="bg-blend-soft-light bg-green-default px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center" style="background-image: url(<%= image_path 'background-the-pub-quiz.jpg' %>)">
   <div class="relative flex flex-col sm:flex-row items-center text-center sm:text-left max-w-[960px] mx-auto px-6">
     <div class="sm:mr-12 order-2 sm:order-1">
-      <h1 class="text-white text-[60px] sm:text-[72px] tracking-wider font-bebas uppercase m-0 p-0 leading-none">
+      <h1 class="text-white text-[60px] sm:text-[64px] md:text-[72px] tracking-wider font-bebas uppercase m-0 p-0 leading-none">
           THE PUB QUIZ
         </h1>
-        <h2 class="text-white text-[36px] sm:text-[48px] font-bebas uppercase leading-none mb-6">
+        <h2 class="text-white text-[24px] sm:text-[36px] md:text-[48px] font-bebas uppercase leading-none mb-6">
           WHERE BEER MEETS BRAINS
         </h2>
-        <p class="text-white text-2xl sm:text-3xl font-bebas uppercase">
-          FOLKINGEBREW THE PUB // 13 AUGUSTUS 2025 // 19:30 - 22:30<br>
-          MOOIE PRIJZEN // BEPERKT AANTAL PLEKKEN<br>
-          MAX. 4 PERSONEN PER TEAM // €2,50 P.P.
-        </p>
+       
     </div>
     <div class="order-1 sm:order-2 mb-6 sm:mb-0">
       <%= image_tag 'folkingebrew-pint.svg', class: 'w-full max-w-[100px] sm:max-w-[180px]' %>
@@ -31,7 +27,16 @@ description: "Sign up your team for The Pub Quiz."
 <div class="bg-white w-full">
   <% regular_content html: {  } do %>
     <% content_tag(:article, class: "prose mb-6 max-w-lg m-auto") do %>
-      <%= markdownify("Schrijf je team nu in voor The Pub Quiz op woensdag 13 augustus om 19:30! Een avond vol plezier, competitie, gezelligheid en goed bier met uitdagende algemene kennisvragen. Wie weet win jij met je team mooie (bier)prijzen!<br><br><i>De inschrijvingen zijn gesloten. We zien jullie op de avond!</i>") %>
+  
+      <%= markdownify("Schrijf je team nu in voor The Pub Quiz! Een avond vol plezier, competitie, gezelligheid en goed bier met uitdagende algemene kennisvragen. Wie weet win jij met je team mooie (bier)prijzen!") %>
+      <ul class="list-none">
+        <li>📅 Woensdag 10 september, 19:30 - 22:30</li>
+        <li>👤 Beperkt aantal plekken, €2,50 per deelnemer</li>
+        <li>🏆 Mooie prijzen</li>
+        <li>📍 Folkingebrew The Pub</li>
+      </ul>
+      <%= partial "partials/form", locals: { name: "pubquiz",
+                                          fields: ["name", "email", "team_name", "team_size"] } %>
     <% end %>
   <% end %>
 </div>
