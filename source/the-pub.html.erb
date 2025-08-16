@@ -11,7 +11,7 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
   <div class="absolute inset-0 bg-[#5C2D0C]/80"></div>
   <div class="relative">
     <h1 class="mt-16 sm:mt-20 text-white text-3xl sm:text-5xl font-black uppercase mb-6">
-      <span class="block tracking-widest mb-16 text-[32px] sm:text-[40px]">Folkingebrew</span>
+      <span class="block tracking-widest mb-16 text-[24px] sm:text-[40px] ">Folkingebrew</span>
       <%= image_tag "assets/images/hopje.svg", alt: "", class: "max-w-[140px] sm:max-w-[200px] mx-auto mb-16" %>
       <span class="text-[32px] sm:text-[40px]">The Pub</span>
     </h1>
@@ -114,42 +114,40 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
               <tr>
                 <th>Day</th>
                 <th>Opening Hours</th>
-                <th>Kitchen</th>
+                <th>Kitchen*</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Wednesday</td>
-                <td>16 - 24</td>
+                <td>16 - 02</td>
                 <td>16 - 22</td>
               </tr>
               <tr>
                 <td>Thursday</td>
-                <td>16 - 24</td>
+                <td>16 - 02</td>
                 <td>16 - 22</td>
               </tr>
               <tr>
                 <td>Friday</td>
-                <td>15 - 24</td>
+                <td>15 - 02</td>
                 <td>15 - 22</td>
               </tr>
               <tr>
                 <td>Saturday</td>
-                <td>15 - 24</td>
+                <td>15 - 02</td>
                 <td>15 - 22</td>
               </tr>
               <tr>
                 <td>Sunday</td>
-                <td>15 - 23</td>
+                <td>15 - 02</td>
                 <td>15 - 21</td>
               </tr>
+              <tr>
+                <td colspan="3" class="text-sm italic">*Fried snacks available until closing</td>
             </tbody>
           </table>
         <% end %>
-        
-        <script>
-
-        </script>
       </div>
       <div >
         <% markdown_content html: { class: "mb-6" } do %>
@@ -160,16 +158,16 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
   </div>
 </section>
 
-<section class="relative px-6 py-10 md:py-20 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover" style="background-image: url(<%= image_path 'background-the-pub.jpg' %>)">
+<section class="relative px-6 py-10 md:py-20 text-center bg-center bg-no-repeat bg-cover" style="background-image: url(<%= image_path 'background-the-pub.jpg' %>)">
   <div class="absolute inset-0 bg-[#5C2D0C]/80"></div>
-  <div class="max-w-xl mx-auto z-50 relative">
+  <div class="max-w-xl mx-auto relative">
     <h3 class="text-4xl font-bold mb-4 text-center text-white">Agenda</h3>
     <p class="text-center text-white mb-8">
       See what's coming up at Folkingebrew The Pub!
     </p>
     <div class="text-white text-left">
       <article class="border-0 border-b border-t flex border-white py-4 justify-between">
-        <div class="w-[120px] font-bold shrink-0">
+        <div class="w-[80px] md:w-[120px] font-bold shrink-0">
           14-08 /<br>24-08
         </div>
         <div class="w-full">
@@ -181,7 +179,7 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
         </div>
       </article>
       <article class="border-0 border-b flex border-white py-4 justify-between">
-        <div class="w-[120px] font-bold shrink-0">
+        <div class="w-[80px] md:w-[120px] font-bold shrink-0">
           17-08
         </div>
         <div class="w-full">
@@ -192,7 +190,7 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
         </div>
       </article>
       <article class="border-0 border-b flex border-white py-4 justify-between">
-        <div class="w-[120px] font-bold shrink-0">
+        <div class="w-[80px] md:w-[120px] font-bold shrink-0">
           24-08
         </div>
         <div class="w-full">
@@ -203,7 +201,7 @@ description: "Welcome to Folkingebrew The Pub, home of Modern Craft Beer in Gron
         </div>
       </article>
       <article class="border-0 border-b flex border-white py-4 justify-between">
-        <div class="w-[120px] font-bold shrink-0">
+        <div class="w-[80px] md:w-[120px] font-bold shrink-0">
           10-09
         </div>
         <div class="w-full">
