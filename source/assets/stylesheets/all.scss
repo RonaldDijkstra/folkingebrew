@@ -2,6 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+// Swiper styles
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
 @layer base {
   @font-face {
     font-family: 'Open Sans';
@@ -119,4 +124,26 @@ input::-webkit-inner-spin-button {
 // Hide native number controls on Firefox
 [type="number"] {
   -moz-appearance: textfield;
+}
+
+// Custom Swiper styles
+.testimonials-swiper {
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #16a34a; // green-600
+    
+    &:after {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: #d1d5db; // gray-300
+    opacity: 1;
+    
+    &-active {
+      background: #16a34a; // green-600
+    }
+  }
 }
