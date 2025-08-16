@@ -1,4 +1,5 @@
-import { Swiper, Navigation, Pagination, Autoplay } from 'swiper';
+import { Swiper } from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 export default function thePub() {
   document.addEventListener('DOMContentLoaded', () => {
@@ -33,26 +34,49 @@ export default function thePub() {
         slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
+        centeredSlides: false,
+        watchSlidesProgress: true,
+        watchOverflow: true,
         autoplay: {
           delay: 5000,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         },
         pagination: {
-          el: '.swiper-pagination',
+          el: '.testimonials-swiper .swiper-pagination',
           clickable: true,
+          dynamicBullets: false,
         },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.testimonials-swiper .swiper-button-next',
+          prevEl: '.testimonials-swiper .swiper-button-prev',
         },
         breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
           768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
             slidesPerView: 2,
             spaceBetween: 40,
           },
-          1024: {
+          1280: {
             slidesPerView: 3,
             spaceBetween: 50,
+          },
+        },
+        on: {
+          init: function () {
+            // Ensure proper height calculation
+            this.updateAutoHeight();
+          },
+          slideChange: function () {
+            // Update height on slide change if needed
+            this.updateAutoHeight();
           },
         },
       });

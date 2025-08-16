@@ -123,27 +123,86 @@ input::-webkit-inner-spin-button {
 
 // Hide native number controls on Firefox
 [type="number"] {
+  appearance: textfield;
   -moz-appearance: textfield;
 }
 
 // Custom Swiper styles
 .testimonials-swiper {
+  overflow: hidden;
+  padding: 0 50px; // Add padding for navigation buttons
+  
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+  
+  .swiper-slide {
+    height: auto;
+    display: flex;
+    align-items: stretch;
+    
+    > div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
   .swiper-button-next,
   .swiper-button-prev {
     color: #16a34a; // green-600
+    width: 40px;
+    height: 40px;
+    margin-top: -20px; // Center vertically
     
     &:after {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
     }
+    
+    &.swiper-button-disabled {
+      opacity: 0.3;
+    }
+  }
+  
+  .swiper-button-next {
+    right: 10px;
+  }
+  
+  .swiper-button-prev {
+    left: 10px;
   }
 
-  .swiper-pagination-bullet {
-    background: #d1d5db; // gray-300
-    opacity: 1;
+  .swiper-pagination {
+    position: relative;
+    margin-top: 2rem;
     
-    &-active {
-      background: #16a34a; // green-600
+    &-bullet {
+      background: #d1d5db; // gray-300
+      opacity: 1;
+      width: 10px;
+      height: 10px;
+      margin: 0 4px;
+      transition: background-color 0.3s ease;
+      
+      &-active {
+        background: #16a34a; // green-600
+      }
+    }
+  }
+}
+
+// Responsive adjustments for testimonials
+@media (max-width: 767px) {
+  .testimonials-swiper {
+    padding: 0 20px;
+    
+    .swiper-button-next {
+      right: 0;
+    }
+    
+    .swiper-button-prev {
+      left: 0;
     }
   }
 }
