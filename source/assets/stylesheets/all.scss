@@ -206,3 +206,9 @@ input::-webkit-inner-spin-button {
     }
   }
 }
+
+// Prevent scrolling when age gate is open
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}

@@ -32,14 +32,16 @@ export default function ageGate() {
 
     if (cookieValue !== 'true') {
       ageGateBox.classList.remove('hidden');
-      ageGateBox.classList.add('block', 'no-scroll');
+      ageGateBox.classList.add('block');
+      document.body.classList.add('no-scroll');
     } else {
       loadZenChefWidget();
     }
 
     function closeOverlay() {
-      ageGateBox.classList.remove('block', 'no-scroll');
+      ageGateBox.classList.remove('block');
       ageGateBox.classList.add('hidden');
+      document.body.classList.remove('no-scroll');
 
       Cookies.set(cookieName, true);
       loadZenChefWidget();

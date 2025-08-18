@@ -20,7 +20,7 @@ module Components
 
         def inner_classes
           'text-center absolute text-white left-1/2 top-1/2
-           transform -translate-y-1/2 -translate-x-1/2 md:max-w-10'
+           transform -translate-y-1/2 -translate-x-1/2'
         end
       end
 
