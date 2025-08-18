@@ -4,7 +4,7 @@ type: "product"
 date: "04-08-2025"
 product_id: 171
 in_stock: true
-only_a_few_left: false
+only_a_few_left: true
 images:
   - "all-flavour-pack.webp"
 price: 70.99
