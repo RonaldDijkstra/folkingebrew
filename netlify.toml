@@ -1,4 +1,0 @@
-[build]
-  command = "rake build"
-  publish = "build/"
-  
