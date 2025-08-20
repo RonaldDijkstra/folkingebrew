@@ -1,1 +1,75 @@
 @import "tailwindcss";
+/* @reference "./app.css"; */
+
+@theme {
+  --color-neutral: #131619;
+  --color-primary: #545454;
+  --color-sub-body: #545454;
+}
+
+#editor {
+  & .wp-block {
+    @apply px-5 py-6 w-full;
+  }
+  
+  & .wp-block-paragraph,
+  & .wp-block-list,
+  & .wp-block-shortcode {
+    @apply w-auto mx-5 mt-0 mb-5 bg-white;
+  }
+  
+  & .wp-block-list li {
+    @apply pl-0 ml-4;
+  }
+  
+  & .edit-post-visual-editor__post-title-wrapper {
+    @apply m-0 px-5 pt-10 pb-5 bg-neutral;
+  }
+  
+  & .wp-block-post-title {
+    @apply m-0 bg-white border-2 border-dashed border-sub-body;
+  }
+  
+  & .wp-block-post-content {
+    @apply bg-neutral;
+  }
+
+  .title-element {
+    @apply bg-[#f9f9f9] font-normal font-sans m-0 px-5 pt-2 pb-2 text-black text-xl;
+  }
+
+  .acf-fields > .acf-tab-wrap .acf-tab-group {
+    @apply border-t-0 pt-0;
+  }
+
+  .block-editor-block-toolbar > div:nth-of-type(2),
+  .block-editor-block-toolbar > div:nth-of-type(3) {
+    @apply hidden;
+  }
+
+  .edit-post-fullscreen-mode-close {
+    @apply bg-primary;
+  }
+
+  .edit-post-fullscreen-mode-close.components-button:before {
+    @apply shadow-none bg-center bg-no-repeat;
+    background-image: url(@images/icon-folkingebrew.svg);
+  }
+
+  .edit-post-fullscreen-mode-close > svg {
+    @apply hidden;
+  }
+
+  .editor-styles-wrapper::after {
+    @apply hidden;
+  }
+}
+
+.post-type-status-updates .acf-repeater > .acf-actions {
+  @apply text-left;
+
+  .acf-button {
+    @apply float-none mt-3;
+  }
+}
+

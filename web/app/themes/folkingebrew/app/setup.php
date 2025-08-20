@@ -9,18 +9,21 @@ namespace App;
 use Illuminate\Support\Facades\Vite;
 
 /**
- * Inject styles into the block editor.
+ * Enqueue editor styles for the block editor.
  *
- * @return array
+ * @return void
  */
-add_filter('block_editor_settings_all', function ($settings) {
-    $style = Vite::asset('resources/css/editor.css');
+add_action('enqueue_block_assets', function () {
+    if (!is_admin()) {
+        return;
+    }
 
-    $settings['styles'][] = [
-        'css' => "@import url('{$style}')",
-    ];
-
-    return $settings;
+    wp_enqueue_style(
+        'folkingebrew-editor-styles',
+        Vite::asset('resources/css/editor.css'),
+        [],
+        wp_get_theme()->get('Version')
+    );
 });
 
 /**
@@ -29,7 +32,7 @@ add_filter('block_editor_settings_all', function ($settings) {
  * @return void
  */
 add_filter('admin_head', function () {
-    if (! get_current_screen()?->is_block_editor()) {
+    if (!get_current_screen()?->is_block_editor()) {
         return;
     }
 
