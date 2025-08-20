@@ -13,6 +13,7 @@ class PostType implements ServiceInterface
         add_action('admin_init', [$this, 'addFeaturedImageColumn']);
         add_action('admin_head', [$this, 'featuredImageColumnStyling']);
         add_action('admin_footer', [$this, 'postStatusColor']);
+        add_action('admin_init', [$this, 'disableCommentsRedirect']);
     }
 
     /**
@@ -126,5 +127,20 @@ class PostType implements ServiceInterface
                 .status-private {background:#FFF1F1 !important; }
             </style>
             ";
+    }
+
+    /**
+     * Redirect to the home page if the user tries to access the comments admin page
+     *
+     * @return void
+     */
+    public function disableCommentsRedirect()
+    {
+        global $pagenow;
+
+        if ($pagenow === 'edit-comments.php' || $pagenow === 'comment.php') {
+            wp_redirect(admin_url());
+            exit;
+        }
     }
 }
