@@ -18,6 +18,7 @@ final class Init
         return [
             Admin\AdminBar::class,
             Admin\Dashboard::class,
+            Admin\Editor::class,
             Admin\Menu::class,
             Admin\Meta::class,
             Admin\Page::class,
