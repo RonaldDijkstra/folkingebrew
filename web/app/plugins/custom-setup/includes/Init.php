@@ -24,6 +24,7 @@ final class Init
             Admin\Page::class,
             Setup\PostType::class,
             Setup\Security::class,
+            Setup\Theme::class,
         ];
     }
 

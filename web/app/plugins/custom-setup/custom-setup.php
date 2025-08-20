@@ -35,7 +35,7 @@ register_deactivation_hook(__FILE__, function() {
 });
 
  // Initialize all the core classes of the plugin.
-add_action('init', function() {
+add_action('after_setup_theme', function() {
     if (class_exists('Custom\\Setup\\Init')) {
         Custom\Setup\Init::register_services();
     }
