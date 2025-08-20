@@ -16,6 +16,7 @@ final class Init
     public static function get_services(): array
     {
         return [
+            Admin\AdminBar::class,
             Admin\Dashboard::class,
         ];
     }

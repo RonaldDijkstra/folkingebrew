@@ -1,6 +1,6 @@
 <header class="banner">
   <a class="brand" href="{{ home_url('/') }}">
-    {!! $siteName !!}
+    <img src="{{ Vite::asset('resources/images/icon-folkingebrew.svg') }}" alt="{{ $siteName }}" class="h-8 w-auto">
   </a>
 
   @if (has_nav_menu('primary_navigation'))
