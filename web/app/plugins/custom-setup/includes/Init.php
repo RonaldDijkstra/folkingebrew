@@ -19,6 +19,7 @@ final class Init
             Admin\AdminBar::class,
             Admin\Dashboard::class,
             Admin\Meta::class,
+            Admin\Page::class,
         ];
     }
 
