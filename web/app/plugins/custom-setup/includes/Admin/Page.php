@@ -17,7 +17,6 @@ class Page implements ServiceInterface
     public function customLoginLogo(): void
     {
         $logoUrl = FileLocator::getViteAssetUrl('resources/images/logo-folkingebrew.svg');
-        // $path = "/app/themes/folkingebrew/public/build/$logo";
         $width = "240px";
         $height = "113px";
 
