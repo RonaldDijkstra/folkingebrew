@@ -6,5 +6,7 @@ use Custom\Setup\ServiceInterface;
 
 class Menu implements ServiceInterface
 {
-    public function register()
+    public function register() {
+        
+    }
 }

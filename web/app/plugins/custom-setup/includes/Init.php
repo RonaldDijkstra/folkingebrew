@@ -21,6 +21,7 @@ final class Init
             Admin\Menu::class,
             Admin\Meta::class,
             Admin\Page::class,
+            Setup\PostType::class,
             Setup\Security::class,
         ];
     }
