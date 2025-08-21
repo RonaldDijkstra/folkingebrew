@@ -1,4 +1,15 @@
-<header class="bg-black px-2 md:px-6 h-16 md:h-20 flex items-center justify-between">
+<header class="bg-black px-2 md:px-6 h-16 md:h-20 flex items-center justify-between" id="site-header">
+  <div class="md:hidden text-white text-left w-15 shrink-0 bg-blue-500">
+    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white cursor-pointer" aria-controls="mobile-menu" aria-expanded="false" id="menu-toggle">
+      <span class="sr-only">{{ __('Open main menu', 'folkingebrew') }}</span>
+      <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFFFFF" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFFFFF" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
   <div class="flex items-center w-full justify-center md:w-auto">
     <a class="inline-block md:w-15 md:shrink-0" href="{{ home_url('/') }}">
       <img src="{{ Vite::asset('resources/images/logo-folkingebrew-hop.svg') }}" alt="{{ $siteName }}" class="h-12 w-auto">
@@ -11,5 +22,5 @@
       @endforeach
     </nav>
   </div>
-  <div class="text-white text-right md:w-15 md:shrink-0">Cart</div>
+  <div class="text-white text-right bg-blue-500 w-15 shrink-0">Cart</div>
 </header>
