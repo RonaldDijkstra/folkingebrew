@@ -3,7 +3,7 @@ title: "Good Vibes Only (x 3 Sons Brewing)"
 type: "product"
 date: "01-07-2025"
 product_id: 165
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "good-vibes-only.webp"
