@@ -9,7 +9,7 @@ export default function header() {
 
   window.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', () => {
-      documentBody.classList.toggle('mobile-navigation-open');
+      documentBody.classList.toggle('menu-open');
       documentBody.classList.toggle('overflow-hidden');
       documentBody.classList.toggle('md:overflow-visible');
       return false;
@@ -28,10 +28,10 @@ export default function header() {
     if (scroll > lastScrollTop && scroll > navbarHeight) {
       navbar.classList.add('absolute');
       navbar.classList.add('opacity-0');
-      navbar.classList.remove('static');
+      navbar.classList.remove('fixed');
       navbar.classList.remove('opacity-100');
     } else if (scroll + windowHeight < documentHeight) {
-      navbar.classList.add('static');
+      navbar.classList.add('fixed');
       navbar.classList.add('opacity-100');
       navbar.classList.remove('absolute');
       navbar.classList.remove('opacity-0');

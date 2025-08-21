@@ -10,6 +10,10 @@
   --font-sans: 'Open Sans', sans-serif;
 }
 
+@custom-variant menu-open (.menu-open &);
+@custom-variant has-adminbar (.admin-bar &);
+@custom-variant at-the-top (.at-the-top &);
+
 @layer base {
   a {
     @apply underline;

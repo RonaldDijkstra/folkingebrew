@@ -1,11 +1,11 @@
-<header class="bg-black px-2 md:px-6 h-16 md:h-20 flex items-center justify-between" id="site-header">
-  <div class="md:hidden text-white text-left w-15 shrink-0 bg-blue-500">
+<header class="bg-black md:px-6 h-16 md:h-20 flex items-center justify-between transition-all duration-150 ease-in-out w-full left-0 top-0 z-10 fixed motion-reduce:transition-none has-adminbar:top-[46px] md:has-adminbar:top-[32px]" id="site-header">
+  <div class="text-white text-left w-15 shrink-0 md:hidden">
     <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white cursor-pointer" aria-controls="mobile-menu" aria-expanded="false" id="menu-toggle">
       <span class="sr-only">{{ __('Open main menu', 'folkingebrew') }}</span>
-      <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFFFFF" aria-hidden="true">
+      <svg class="block h-6 w-6 menu-open:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFFFFF" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
-      <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFFFFF" aria-hidden="true">
+      <svg class="hidden h-6 w-6 menu-open:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFFFFF" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
@@ -15,12 +15,13 @@
       <img src="{{ Vite::asset('resources/images/logo-folkingebrew-hop.svg') }}" alt="{{ $siteName }}" class="h-12 w-auto">
     </a>
   </div>
-  <div class="hidden md:block flex-1 text-white text-center">
-    <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+  <div class="hidden bg-black flex-1 text-white text-center md:block
+              max-md:menu-open:block max-md:menu-open:flex max-md:menu-open:min-h-screen max-md:menu-open:absolute max-md:menu-open:top-16 max-md:menu-open:w-full">
+    <nav class="nav-primary w-full max-md:menu-open:flex max-md:menu-open:flex-col max-md:menu-open:items-center max-md:menu-open:justify-center" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
       @foreach ($primaryNavigation as $item)
-        <a href="{{ $item->url }}" class="text-white no-underline hover:underline hover:text-primary px-2 text-md">{{ $item->label }}</a>
+        <a href="{{ $item->url }}" class="!no-underline hover:underline hover:text-primary px-2 text-md max-md:text-lg max-md:font-bold max-md:mb-5 {{ $item->active ? 'text-primary' : 'text-white' }}">{{ $item->label }}</a>
       @endforeach
     </nav>
   </div>
-  <div class="text-white text-right bg-blue-500 w-15 shrink-0">Cart</div>
+  <div class="text-white text-right w-15 shrink-0 pr-2 md:pr-0">Cart</div>
 </header>

@@ -22,6 +22,6 @@ add_filter('excerpt_more', function () {
  * @return array
  */
 add_filter('body_class', function ($classes) {
-    $classes[] = 'font-sans at-the-top';
+    $classes[] = 'at-the-top';
     return $classes;
 });
