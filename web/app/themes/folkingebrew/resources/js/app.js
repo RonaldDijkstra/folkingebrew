@@ -10,7 +10,7 @@ const init = async (err) => {
     console.error(err);
   }
 
-  await header();
+  header();
 };
 
 init();
