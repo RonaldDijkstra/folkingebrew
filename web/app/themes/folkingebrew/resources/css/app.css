@@ -1,0 +1,16 @@
+@import "tailwindcss" theme(static);
+@source "../views/";
+@source "../../app/";
+
+@theme {
+  /* Brand colors */
+  --color-primary: #54b848;
+  --color-body: #3f3f46;
+  --color-neutral: #171717;
+}
+
+@layer base {
+  a {
+    @apply underline;
+  }
+}
