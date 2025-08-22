@@ -1,4 +1,4 @@
-<header class="bg-black md:px-6 h-16 md:h-20 flex items-center justify-between transition-all duration-150 ease-in-out w-full left-0 top-0 z-10 fixed motion-reduce:transition-none has-adminbar:top-[46px] md:has-adminbar:top-[32px]" id="site-header">
+<header class="bg-black md:px-6 h-16 md:h-20 flex items-center justify-between transition-all duration-150 ease-in-out w-full left-0 top-0 z-10 fixed motion-reduce:transition-none has-adminbar:top-[46px] wp:has-adminbar:top-[32px]" id="site-header">
   <div class="text-white text-left w-15 shrink-0 md:hidden">
     <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white cursor-pointer" aria-controls="mobile-menu" aria-expanded="false" id="menu-toggle">
       <span class="sr-only">{{ __('Open main menu', 'folkingebrew') }}</span>

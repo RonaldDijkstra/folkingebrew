@@ -26,7 +26,7 @@
 
       @include('sections.header')
 
-      <main id="main" class="flex-grow -mt-16 md:-mt-20 pt-32 md:pt-40 bg-red-500">
+      <main id="main" class="flex-grow -mt-16 md:-mt-20 pt-32 md:pt-40">
         @yield('content')
       </main>
 

@@ -22,6 +22,6 @@ add_filter('excerpt_more', function () {
  * @return array
  */
 add_filter('body_class', function ($classes) {
-    $classes[] = 'at-the-top';
+    $classes[] = 'at-the-top bg-gradient-to-tr from-primary to-primary-dark';
     return $classes;
 });

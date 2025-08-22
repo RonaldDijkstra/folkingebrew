@@ -1,5 +1,5 @@
-<footer class="bg-green-500">
-  Footer<br>
-  Footer<br>
-  Footer<br>
+<footer class="bg-black text-gray-300">
+  <div class="container mx-auto px-4 py-8">
+    Footer
+  </div>
 </footer>

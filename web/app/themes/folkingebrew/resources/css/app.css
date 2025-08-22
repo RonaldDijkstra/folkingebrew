@@ -5,9 +5,12 @@
 @theme {
   /* Brand colors */
   --color-primary: #54b848;
+  --color-primary-dark: #326f2b;
   --color-body: #3f3f46;
   --color-neutral: #171717;
   --font-sans: 'Open Sans', sans-serif;
+
+  --breakpoint-wp: 782px;
 }
 
 @custom-variant menu-open (.menu-open &);
@@ -76,4 +79,8 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+#wpadminbar {
+  @apply fixed;
 }
