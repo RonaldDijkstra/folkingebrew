@@ -20,6 +20,16 @@
   }
 }
 
+@layer utilities {  
+  .admin-bar .has-adminbar\:min-h-screen-minus-admin-bar {
+    min-height: calc(100vh - 46px);
+    
+    @media (min-width: 768px) {
+      min-height: calc(100vh - 32px);
+    }
+  }
+}
+
 @font-face {
   font-family: 'Open Sans';
   src: url('@fonts/OpenSans-Light.woff2') format('woff2');

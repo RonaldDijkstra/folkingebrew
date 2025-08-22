@@ -19,14 +19,14 @@
   <body @php(body_class())>
     @php(wp_body_open())
 
-    <div id="app" class="flex flex-col min-h-screen font-sans">
+    <div id="app" class="flex flex-col font-sans min-h-screen has-adminbar:min-h-screen-minus-admin-bar">
       <a class="sr-only focus:not-sr-only" href="#main">
         {{ __('Skip to content', 'folkingebrew') }}
       </a>
 
       @include('sections.header')
 
-      <main id="main" class="flex-grow mt-16 md:mt-20">
+      <main id="main" class="flex-grow -mt-16 md:-mt-20 pt-32 md:pt-40 bg-red-500">
         @yield('content')
       </main>
 
