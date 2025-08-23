@@ -81,6 +81,7 @@ add_action('after_setup_theme', function () {
     register_nav_menus([
         'primary_navigation' => __('Primary Navigation', 'folkingebrew'),
         'footer_navigation' => __('Footer Navigation', 'folkingebrew'),
+        'bottom_navigation' => __('Bottom Navigation', 'folkingebrew'),
     ]);
 
     /**

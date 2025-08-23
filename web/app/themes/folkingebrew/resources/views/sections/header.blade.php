@@ -19,7 +19,7 @@
               max-md:menu-open:block max-md:menu-open:flex max-md:menu-open:min-h-screen max-md:menu-open:absolute max-md:menu-open:top-16 max-md:menu-open:w-full">
     <nav class="nav-primary w-full max-md:menu-open:flex max-md:menu-open:flex-col max-md:menu-open:items-center max-md:menu-open:justify-center" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
       @foreach ($primaryNavigation as $item)
-        <a href="{{ $item->url }}" class="!no-underline hover:underline hover:text-primary px-2 text-md max-md:text-lg max-md:font-bold max-md:mb-5 {{ $item->active ? 'text-primary' : 'text-white' }}">{{ $item->label }}</a>
+        <a href="{{ $item->url }}" class="no-underline hover:text-primary px-2 text-md max-md:text-lg max-md:font-bold max-md:mb-5 {{ $item->active ? 'text-primary' : 'text-white' }}">{{ $item->label }}</a>
       @endforeach
     </nav>
   </div>
