@@ -6,7 +6,7 @@ use Log1x\Navi\Facades\Navi;
 use Roots\Acorn\View\Composer;
 
 
-class Navigation extends Composer
+class PrimaryNavigation extends Composer
 {
     protected static $views = [
         'sections.header',
