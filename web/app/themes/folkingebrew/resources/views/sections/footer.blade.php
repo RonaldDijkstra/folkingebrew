@@ -2,9 +2,20 @@
   <div class="container mx-auto px-4 py-16 grid md:grid-cols-3">
     <div class="mb-6 md:mb-0 md:pr-4">
       <img src="{{ Vite::asset('resources/images/logo-folkingebrew-white.svg') }}" alt="{{ $siteName }}" class="max-w-[240px] mb-6">
-      <p class="text-lg">
+      <p class="text-lg mb-6">
         {{ __('Folkingebrew is a modern craft brewery located in Groningen, The Netherlands. We brew a diverse range of beers, from classic lagers to hazy IPAs and experimental brews.', 'folkingebrew') }}
       </p>
+      <div class="flex items-center gap-4">
+        <a href="https://www.untappd.com/Folkingebrew/" target="_blank">
+          <img src="{{ Vite::asset('resources/images/icon-untappd.svg') }}" alt="Untappd" class="w-6">
+        </a>
+        <a href="https://www.instagram.com/folkingebrew" target="_blank">
+          <img src="{{ Vite::asset('resources/images/icon-instagram.svg') }}" alt="Instagram" class="w-6">
+        </a>
+        <a href="https://www.facebook.com/Folkingebrew-167577637289407/" target="_blank">
+          <img src="{{ Vite::asset('resources/images/icon-facebook.svg') }}" alt="Facebook" class="w-6">
+        </a>
+      </div>
     </div>
     @if ($footerNavigation)
       <nav class="md:px-4 md:pt-6">
@@ -44,8 +55,8 @@
       <div>
       <h4 class="text-lg font-bold">Folkingebrew The Pub</h4>
         <address class="not-italic">Boterdiep 75, 9712 LL Groningen, The Netherlands</address>
-        <a href="mailto:brewpub@folkingebrew.nl" class="text-white hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-500">brewpub@folkingebrew.nl</a><br>
-        <a href="tel:+31628801883" class="text-white hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-500">+31 (0)6 28 80 18 83</a>
+        <a href="mailto:brewpub@folkingebrew.nl" class="text-white hover:text-slate-300">brewpub@folkingebrew.nl</a><br>
+        <a href="tel:+31628801883" class="text-white hover:text-slate-300">+31 (0)6 28 80 18 83</a>
       </div>
     </div>
   </div>
@@ -62,7 +73,7 @@
         </ul>
       </div>
       <div class="text-body text-center md:text-right mb-2 md:mb-0 order-2 md:order-3">
-        <a href="https://www.nix18.nl/" target="_blank">
+        <a href="https://www.nix18.nl/" class="inline-block" target="_blank">
           <img src="{{ Vite::asset('resources/images/nix18.svg') }}" alt="NIX18" class="w-16">
         </a>
       </div>
