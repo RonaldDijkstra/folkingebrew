@@ -11,6 +11,7 @@
   --font-sans: 'Open Sans', sans-serif;
 
   --breakpoint-wp: 782px;
+  --breakpoint-xs: 360px;
 }
 
 @custom-variant menu-open (.menu-open &);
@@ -29,6 +30,14 @@
     
     @media (min-width: 768px) {
       min-height: calc(100vh - 32px);
+    }
+  }
+
+  .admin-bar .has-adminbar\:min-h-screen-plus-admin-bar {
+    min-height: calc(100vh + 46px);
+    
+    @media (min-width: 768px) {
+      min-height: calc(100vh + 32px);
     }
   }
 }

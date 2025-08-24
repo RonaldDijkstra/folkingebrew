@@ -2,6 +2,10 @@
 
 namespace Custom\Setup\CustomFields;
 
+use Extended\ACF\Fields\Image;
+use Extended\ACF\Fields\Link;
+use Extended\ACF\Fields\RadioButton;
+use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Location;
 
@@ -20,7 +24,28 @@ class BlockHero extends AbstractField
         register_extended_field_group([
             'title' => 'Hero Options',
             'fields' => [
+                RadioButton::make('Background Type', 'background_type')
+                    ->choices([
+                        'primary' => 'Primary',
+                        'pub' => 'The Pub',
+                    ])
+                    ->default('primary'),
+                Image::make('Background Image', 'background_image')
+                    ->acceptedFileTypes(['jpg']),
+                Image::make('Image', 'image')
+                    ->acceptedFileTypes(['svg']),
                 Text::make('Title', 'title'),
+                Repeater::make('Buttons', 'buttons')
+                    ->layout('row')
+                    ->fields([
+                        Link::make('Link', 'link'),
+                        RadioButton::make('Type', 'type')
+                            ->choices([
+                                'primary' => 'Primary',
+                                'outline' => 'Outline',
+                            ])
+                            ->default('primary'),
+                    ]),
             ],
             'style' => 'default',
             'location' => [
