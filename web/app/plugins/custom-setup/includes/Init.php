@@ -22,8 +22,8 @@ final class Init
             Admin\Menu::class,
             Admin\Meta::class,
             Admin\Page::class,
+            CustomFields\OptionsFooter::class,
             Setup\PostType::class,
-            Setup\Search::class,
             Setup\Security::class,
         ];
     }

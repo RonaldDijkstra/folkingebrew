@@ -6,7 +6,7 @@ use Log1x\Navi\Facades\Navi;
 use Roots\Acorn\View\Composer;
 
 
-class FooterNavigation extends Composer
+class Footer extends Composer
 {
     protected static $views = [
         'sections.footer',
@@ -20,9 +20,15 @@ class FooterNavigation extends Composer
     public function with(): array
     {
         return [
+            'footerText' => $this->footerText(),
             'footerNavigation' => $this->footerNavigation(),
             'bottomNavigation' => $this->bottomNavigation(),
         ];
+    }
+
+    public function footerText(): string
+    {
+        return get_field('footer_text', 'option');
     }
 
     public function footerNavigation(): array

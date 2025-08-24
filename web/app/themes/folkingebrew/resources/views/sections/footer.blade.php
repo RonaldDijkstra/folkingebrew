@@ -2,9 +2,11 @@
   <div class="container mx-auto px-4 py-16 grid md:grid-cols-3">
     <div class="mb-6 md:mb-0 md:pr-4">
       <img src="{{ Vite::asset('resources/images/logo-folkingebrew-white.svg') }}" alt="{{ $siteName }}" class="max-w-[240px] mb-6">
-      <p class="text-lg mb-6">
-        {{ __('Folkingebrew is a modern craft brewery located in Groningen, The Netherlands. We brew a diverse range of beers, from classic lagers to hazy IPAs and experimental brews.', 'folkingebrew') }}
-      </p>
+      @if ($footerText)
+        <p class="text-lg mb-6">
+          {!! $footerText !!}
+        </p>
+      @endif
       <div class="flex items-center gap-4">
         <a href="https://www.untappd.com/Folkingebrew/" target="_blank">
           <img src="{{ Vite::asset('resources/images/icon-untappd.svg') }}" alt="Untappd" class="w-6">
