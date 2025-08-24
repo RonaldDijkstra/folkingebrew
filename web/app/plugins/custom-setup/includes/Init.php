@@ -23,6 +23,7 @@ final class Init
             Admin\Meta::class,
             Admin\Page::class,
             Setup\PostType::class,
+            Setup\Search::class,
             Setup\Security::class,
         ];
     }
