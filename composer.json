@@ -40,7 +40,8 @@
     "roots/wordpress": "6.8.2",
     "roots/wp-config": "1.0.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
-    "vinkla/extended-acf": "^14.5"
+    "vinkla/extended-acf": "^14.5",
+    "wpackagist-plugin/svg-support": "^2.5"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

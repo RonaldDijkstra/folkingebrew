@@ -1,7 +1,12 @@
 @import "tailwindcss";
 @reference "./app.css" theme;
 
+@theme {
+  --color-neutral: #f9f9f9;
+}
+
 #editor {
+  @apply !font-sans;
   & .wp-block {
     @apply px-5 py-6 w-full;
   }

@@ -2,10 +2,10 @@
 
 namespace Custom\Setup\CustomFields;
 
-use Extended\ACF\Fields\WYSIWYGEditor;
+use Extended\ACF\Fields\Text;
 use Extended\ACF\Location;
 
-class OptionsFooter extends AbstractField
+class BlockHero extends AbstractField
 {
     /**
      * register field group
@@ -17,16 +17,14 @@ class OptionsFooter extends AbstractField
             return;
         }
 
-        acf_add_options_sub_page('Footer');
-
         register_extended_field_group([
-            'title' => 'Footer Options',
+            'title' => 'Hero Options',
             'fields' => [
-                WYSIWYGEditor::make('Footer text', 'footer_text'),
+                Text::make('Title', 'title'),
             ],
             'style' => 'default',
             'location' => [
-                Location::where('options_page', 'acf-options-footer')
+                Location::where('block', '==', 'acf/hero')
             ],
         ]);
     }

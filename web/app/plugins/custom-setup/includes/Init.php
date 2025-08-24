@@ -22,6 +22,8 @@ final class Init
             Admin\Menu::class,
             Admin\Meta::class,
             Admin\Page::class,
+            Blocks\RegisterBlocks::class,
+            CustomFields\BlockHero::class,
             CustomFields\OptionsFooter::class,
             Setup\PostType::class,
             Setup\Security::class,
