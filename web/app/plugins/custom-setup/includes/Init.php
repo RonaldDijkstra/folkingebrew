@@ -26,6 +26,7 @@ final class Init
             CustomFields\BlockContent::class,
             CustomFields\BlockHero::class,
             CustomFields\OptionsFooter::class,
+            CustomFields\PageOptions::class,
             Setup\PostType::class,
             Setup\Security::class,
         ];

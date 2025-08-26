@@ -16,12 +16,18 @@ add_filter('excerpt_more', function () {
 });
 
 /**
- * Add font-sans class to body.
+ * Add custom classes to body.
  *
  * @param array $classes
  * @return array
  */
 add_filter('body_class', function ($classes) {
     $classes[] = 'at-the-top bg-gradient-to-tr from-primary to-primary-dark';
+    
+    // Add transparent header class if enabled
+    if (get_field('transparent_header')) {
+        $classes[] = 'transparent-header';
+    }
+    
     return $classes;
 });

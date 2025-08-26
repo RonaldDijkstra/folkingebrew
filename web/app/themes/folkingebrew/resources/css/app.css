@@ -17,6 +17,7 @@
 @custom-variant menu-open (.menu-open &);
 @custom-variant has-adminbar (.admin-bar &);
 @custom-variant at-the-top (.at-the-top &);
+@custom-variant transparent-header (.transparent-header.at-the-top &);
 
 @layer base {
   a {

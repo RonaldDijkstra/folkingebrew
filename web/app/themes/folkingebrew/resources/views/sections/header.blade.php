@@ -1,4 +1,4 @@
-<header class="bg-black md:px-6 h-16 md:h-20 flex items-center justify-between transition-all duration-150 ease-in-out w-full left-0 top-0 z-30 fixed motion-reduce:transition-none has-adminbar:top-[46px] wp:has-adminbar:top-[32px]" id="site-header">
+<header class="bg-black md:px-6 h-16 md:h-20 flex items-center justify-between transition-all duration-150 ease-in-out w-full left-0 top-0 z-30 fixed motion-reduce:transition-none has-adminbar:top-[46px] wp:has-adminbar:top-[32px] md:transparent-header:bg-transparent" id="site-header">
   <div class="text-white text-left w-15 shrink-0 md:hidden">
     <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white cursor-pointer" aria-controls="mobile-menu" aria-expanded="false" id="menu-toggle">
       <span class="sr-only">{{ __('Open main menu', 'folkingebrew') }}</span>
@@ -15,7 +15,7 @@
       <img src="{{ Vite::asset('resources/images/logo-folkingebrew-hop.svg') }}" alt="{{ $siteName }}" class="h-12 w-auto">
     </a>
   </div>
-  <div class="hidden bg-black flex-1 text-white text-center md:block
+  <div class="hidden bg-black md:bg-transparent flex-1 text-white text-center md:block
               max-md:menu-open:block max-md:menu-open:flex max-md:menu-open:min-h-screen max-md:menu-open:absolute max-md:menu-open:top-16 max-md:menu-open:w-full">
     <nav class="nav-primary w-full max-md:menu-open:flex max-md:menu-open:flex-col max-md:menu-open:items-center max-md:menu-open:justify-center" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
       @foreach ($primaryNavigation as $item)
