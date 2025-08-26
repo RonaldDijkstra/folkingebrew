@@ -18,6 +18,7 @@ export default function header() {
   document.addEventListener('scroll', () => {
     const scroll = window.scrollY;
 
+    // Handle at-the-top class for transparent header
     if (scroll >= navbarHeight / 10) {
       documentBody.classList.remove('at-the-top');
     } else {
@@ -29,29 +30,21 @@ export default function header() {
       clearTimeout(scrollTimeout);
     }
 
+    // Handle header visibility with smooth transitions
     if (scroll > lastScrollTop && scroll > navbarHeight) {
       // Scrolling down - hide navbar
-      navbar.classList.add('absolute');
-      navbar.classList.add('opacity-0');
-      navbar.classList.remove('fixed');
-      navbar.classList.remove('opacity-100');
+      documentBody.classList.add('header-hidden');
     } else if (scroll < lastScrollTop) {
       // Scrolling up - show navbar
-      navbar.classList.add('fixed');
-      navbar.classList.add('opacity-100');
-      navbar.classList.remove('absolute');
-      navbar.classList.remove('opacity-0');
+      documentBody.classList.remove('header-hidden');
     }
 
     // Show navbar when user stops scrolling (after 150ms of no scroll)
     scrollTimeout = setTimeout(() => {
       if (scroll > navbarHeight) {
-        navbar.classList.add('fixed');
-        navbar.classList.add('opacity-100');
-        navbar.classList.remove('absolute');
-        navbar.classList.remove('opacity-0');
+        documentBody.classList.remove('header-hidden');
       }
-    }, 10);
+    }, 150);
 
     lastScrollTop = scroll;
   });

@@ -18,6 +18,7 @@
 @custom-variant has-adminbar (.admin-bar &);
 @custom-variant at-the-top (.at-the-top &);
 @custom-variant transparent-header (.transparent-header.at-the-top &);
+@custom-variant header-hidden (.header-hidden &);
 
 @layer base {
   a {
@@ -39,6 +40,24 @@
     
     @media (min-width: 768px) {
       min-height: calc(100vh + 32px);
+    }
+  }
+
+  /* Header smooth transitions */
+  #site-header {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+  }
+
+  .header-hidden #site-header {
+    transform: translateY(-100%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #site-header {
+      transition: none;
     }
   }
 }
