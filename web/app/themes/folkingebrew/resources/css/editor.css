@@ -7,6 +7,7 @@
 
 #editor {
   @apply !font-sans;
+
   & .wp-block {
     @apply px-5 py-6 w-full;
   }
@@ -22,15 +23,15 @@
   }
   
   & .edit-post-visual-editor__post-title-wrapper {
-    @apply m-0 px-5 pt-10 pb-5 bg-neutral;
+    @apply m-0 px-5 pt-10 pb-5 bg-primary/10;
   }
   
   & .wp-block-post-title {
-    @apply m-0 bg-white border-2 border-dashed border-body;
+    @apply m-0 bg-white border-2 border-dashed border-body font-sans;
   }
   
   & .wp-block-post-content {
-    @apply bg-neutral;
+    @apply bg-primary/10;
   }
 
   .title-element {
