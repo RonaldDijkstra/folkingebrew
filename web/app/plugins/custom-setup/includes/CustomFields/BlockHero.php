@@ -42,7 +42,8 @@ class BlockHero extends AbstractField
                         RadioButton::make('Type', 'type')
                             ->choices([
                                 'primary' => 'Primary',
-                                'outline' => 'Outline',
+                                'outline' => 'Outline White',
+                                'outline-primary' => 'Outline Primary',
                             ])
                             ->default('primary'),
                     ]),

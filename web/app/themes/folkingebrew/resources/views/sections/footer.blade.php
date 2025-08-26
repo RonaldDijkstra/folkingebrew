@@ -1,5 +1,5 @@
 <footer class="bg-black text-gray-300">
-  <div class="container mx-auto px-4 py-16 grid md:grid-cols-3">
+  <x-container :classes="'py-16 grid md:grid-cols-3'">
     <div class="mb-6 md:mb-0 md:pr-4">
       <img src="{{ Vite::asset('resources/images/logo-folkingebrew-white.svg') }}" alt="{{ $siteName }}" class="max-w-[240px] mb-6">
       @if ($footerText)
@@ -61,9 +61,9 @@
         <a href="tel:+31628801883" class="text-white hover:text-slate-300">+31 (0)6 28 80 18 83</a>
       </div>
     </div>
-  </div>
+  </x-container>
   <div class="bg-white text-sm">
-    <div class="container mx-auto px-4 py-2 flex flex-col md:flex-row md:justify-between">
+    <x-container :classes="'py-2 flex flex-col md:flex-row md:justify-between'">
       <div class="text-body text-center md:text-left mb-2 md:mb-0 order-3 md:order-1">
           &copy; {{ date('Y') }} Folkingebrew
       </div>
@@ -79,6 +79,6 @@
           <img src="{{ Vite::asset('resources/images/nix18.svg') }}" alt="NIX18" class="w-16">
         </a>
       </div>
-    </div>
+    </x-container>
   </div>
 </footer>
