@@ -4,6 +4,7 @@ namespace Custom\Setup\CustomFields;
 
 use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Link;
+use Extended\ACF\Fields\RadioButton;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\TrueFalse;
 use Extended\ACF\Fields\WYSIWYGEditor;
@@ -20,7 +21,13 @@ class BlockContent extends AbstractField
         register_extended_field_group([
             'title' => 'Content Options',
             'fields' => [
-                TrueFalse::make('Text right?', 'text_right')
+                RadioButton::make('Background color', 'background_color')
+                    ->choices([
+                        'bg-white' => 'White',
+                        'bg-neutral-light-brown' => 'Neutral light brown',
+                    ])
+                    ->default('white'),
+                TrueFalse::make('Reverse layout?', 'text_right')
                     ->stylized(),
                 Text::make('Title', 'title'),
                 WYSIWYGEditor::make('Text', 'text'),

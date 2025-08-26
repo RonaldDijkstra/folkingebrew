@@ -1,4 +1,4 @@
-<section class="bg-white py-8 md:py-16">
+<x-section :backgroundColor="$backgroundColor">
   <x-container :classes="'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16'">
     <div class="order-1 {{ $textRight ? 'md:order-2' : 'md:order-1' }} md:flex md:flex-col md:justify-center">
       @if ($title)
@@ -21,4 +21,4 @@
       </div>
     @endif
   </x-container>
-</section>
+</x-section>
