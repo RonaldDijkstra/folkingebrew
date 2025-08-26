@@ -1,9 +1,7 @@
 export default function header() {
   const navbar = document.querySelector('#site-header');
   const navbarHeight = navbar.offsetHeight;
-  const windowHeight = window.innerHeight;
   const documentBody = document.body;
-  const documentHeight = documentBody.scrollHeight;
   const menuToggle = document.querySelector('#menu-toggle');
   let lastScrollTop = 0;
   let scrollTimeout;
