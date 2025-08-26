@@ -10,6 +10,9 @@ class RegisterBlocks implements ServiceInterface
     public function register(): void
     {
         add_action('acf/init', [$this, 'registerBlockTypes'], 20);
+        add_filter('allowed_block_types_all', [$this, 'allowedBlockTypes'], 10, 2);
+        add_filter('block_categories_all', [$this, 'blockCategories'], 10, 2);
+
     }
 
     public function registerBlockTypes(): void
@@ -45,6 +48,52 @@ class RegisterBlocks implements ServiceInterface
             ],
         ];
 
+        usort($blocks, function ($a, $b) {
+            return strcmp($a['title'], $b['title']);
+        });
+
         return $blocks;
+    }
+
+    public function allowedBlockTypes($allowedBlocks, \WP_Block_Editor_Context $blockEditorContext): array
+    {
+        $allowedBlocks = [];
+
+        if (!isset($blockEditorContext->post)) {
+            return $allowedBlocks;
+        }
+
+        $blocks = [
+            'acf/hero',
+        ];
+
+        $allowedBlocks = array_merge(
+            $allowedBlocks,
+            $blocks
+        );
+
+        return $allowedBlocks;
+    }
+
+    /**
+     * Define the block categories.
+     *
+     * @param array $blockCategories
+     * @param WP_Block_Editor_Context $blockEditorContext
+     * @return array
+     */
+    public function blockCategories(array $blockCategories, \WP_Block_Editor_Context $blockEditorContext): array
+    {
+        if (empty($blockEditorContext->post)) {
+            return $blockCategories;
+        }
+
+        return [
+            [
+                'slug'  => 'content',
+                'title' => 'Content Blocks',
+                'icon'  => null,
+            ],
+        ];
     }
 }
