@@ -11,6 +11,8 @@
   --color-neutral-light-brown: #fffaf8;
   --font-sans: 'Open Sans', sans-serif;
 
+  --swiper-pagination-color: var(--color-primary);
+
   --breakpoint-wp: 782px;
   --breakpoint-xs: 360px;
 }
@@ -21,7 +23,13 @@
 @custom-variant transparent-header (.transparent-header.at-the-top &);
 @custom-variant header-hidden (.header-hidden &);
 
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import './review-slider.css';
+
 @layer base {
+
   a {
     @apply underline;
   }

@@ -25,6 +25,7 @@ final class Init
             Blocks\RegisterBlocks::class,
             CustomFields\BlockContent::class,
             CustomFields\BlockHero::class,
+            CustomFields\BlockReviewSlider::class,
             CustomFields\OptionsFooter::class,
             CustomFields\PageOptions::class,
             Setup\PostType::class,

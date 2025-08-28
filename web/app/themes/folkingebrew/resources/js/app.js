@@ -4,6 +4,7 @@ import.meta.glob([
 ]);
 
 import header from "./header.js";
+import slider from "./slider.js";
 
 const init = async (err) => {
   if (err) {
@@ -11,6 +12,7 @@ const init = async (err) => {
   }
 
   header();
+  slider();
 };
 
 init();

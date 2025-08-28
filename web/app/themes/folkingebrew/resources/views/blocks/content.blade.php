@@ -5,7 +5,7 @@
         <h2 class="text-2xl font-bold mb-2">{!! $title !!}</h2>
       @endif
       @if ($text)
-        <div class="text-body mb-6">
+        <div class="text-body mb-6 text-lg">
           {!! $text !!}
         </div>
       @endif
