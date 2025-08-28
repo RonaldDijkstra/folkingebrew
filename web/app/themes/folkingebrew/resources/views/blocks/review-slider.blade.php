@@ -1,4 +1,4 @@
-<x-section>
+<x-section :classes="'bg-white'">
   <x-container>
     <h2 class="text-2xl md:text-3xl font-bold mb-3 text-center">{{ $title }}</h2>
     <p class="text-body mb-8 text-center text-lg">{{ $subtitle }}</p>

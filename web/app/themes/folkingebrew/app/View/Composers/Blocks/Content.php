@@ -6,6 +6,10 @@ use Roots\Acorn\View\Composer;
 
 class Content extends Composer
 {
+    protected static $views = [
+        'blocks.content',
+    ];
+
     public function with()
     {
         return [
@@ -17,9 +21,4 @@ class Content extends Composer
             'link' => get_field('link') ?? '',
         ];
     }
-
-    // public function backgroundColor(): string
-    // {
-    //     return get_field('background_color') ?? 'bg-white';
-    // }
 }

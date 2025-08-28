@@ -1,13 +1,15 @@
 @props([
   'backgroundColor' => null,
+  'classes' => null,
+  'backgroundImage' => null,
 ])
 
 @php($class = match ($backgroundColor) {
   'bg-white' => 'bg-white',
   'bg-neutral-light-brown' => 'bg-neutral-light-brown',
-  default => 'bg-white',
+  default => '',
 })
 
-<section class="{{ $class }} {{ $backgroundColor }} py-8 md:py-16">
+<section class="{{ $class }} {{ $backgroundColor }} {{ $classes }} relative py-8 md:py-16"@if($backgroundImage && isset($backgroundImage['url'])) style="background-image: url({{ $backgroundImage['url'] }})"@endif>
   {{ $slot }}
 </section>

@@ -76,6 +76,21 @@ class RegisterBlocks implements ServiceInterface
                     'align' => ['wide', 'full'],
                 ],
             ],
+            [
+                'name' => 'agenda',
+                'title' => 'Agenda',
+                'category' => 'content',
+                'icon' => '<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24"><!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  --><rect width="24" height="24" fill="none"/><path d="M12,4.9l1.6,5.1.2.5h5.9l-4.3,3.1-.4.3.2.5,1.6,5.1-4.3-3.1-.4-.3-.4.3-4.3,3.1,1.6-5.1.2-.5-.4-.3-4.3-3.1h5.9l.2-.5,1.6-5.1M12,2.5l-2.4,7.3H2l6.2,4.5-2.4,7.3,6.2-4.5,6.2,4.5-2.4-7.3,6.2-4.5h-7.6l-2.4-7.3h0Z"/></svg>',
+                'description' => 'A agenda block.',
+                'render_callback' => function () {
+                    echo view('blocks.agenda');
+                },
+                'mode' => 'edit',
+                'supports' => [
+                    'mode' => false,
+                    'align' => ['wide', 'full'],
+                ],
+            ],
         ];
 
         usort($blocks, function ($a, $b) {
@@ -85,26 +100,36 @@ class RegisterBlocks implements ServiceInterface
         return $blocks;
     }
 
-    public function allowedBlockTypes($allowedBlocks, \WP_Block_Editor_Context $blockEditorContext): array
+    public function allowedBlockTypes($allowed, \WP_Block_Editor_Context $context): array
     {
-        $allowedBlocks = [];
-
-        if (!isset($blockEditorContext->post)) {
-            return $allowedBlocks;
+        if (empty($context->post)) {
+            return [];
         }
 
-        $blocks = [
-            'acf/content',
-            'acf/hero',
-            'acf/review-slider',
+        // Get current template slug, normalize to the basename
+        $template = get_page_template_slug($context->post) ?: 'default';
+        $template = $template === 'default' ? 'default' : basename($template);
+
+        // Map templates to allowed blocks
+        $map = [
+            // Blade templates
+            'template-custom.blade.php' => ['acf/content'],
+
+            // Fallback
+            'default'                    => ['acf/agenda', 'acf/content', 'acf/hero', 'acf/review-slider'],
         ];
 
-        $allowedBlocks = array_merge(
-            $allowedBlocks,
-            $blocks
-        );
+        $base = $map[$template] ?? $map['default'];
 
-        return $allowedBlocks;
+        if ($allowed === true) {
+            return $base;
+        }
+
+        if (is_array($allowed) && $allowed) {
+            return array_values(array_intersect($allowed, $base));
+        }
+
+        return $base;
     }
 
     /**

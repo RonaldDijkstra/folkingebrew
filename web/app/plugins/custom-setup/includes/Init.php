@@ -23,6 +23,7 @@ final class Init
             Admin\Meta::class,
             Admin\Page::class,
             Blocks\RegisterBlocks::class,
+            CustomFields\BlockAgenda::class,
             CustomFields\BlockContent::class,
             CustomFields\BlockHero::class,
             CustomFields\BlockReviewSlider::class,

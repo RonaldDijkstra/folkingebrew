@@ -6,6 +6,10 @@ use Roots\Acorn\View\Composer;
 
 class Hero extends Composer
 {
+    protected static $views = [
+        'blocks.hero',
+    ];
+
     public function with(): array
     {
         return [
