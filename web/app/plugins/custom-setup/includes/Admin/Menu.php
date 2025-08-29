@@ -71,9 +71,9 @@ class Menu implements ServiceInterface
         remove_menu_page('upload.php');
         remove_menu_page('edit.php?post_type=page');
 
-        // if (class_exists('ACF')) {
-        //     remove_menu_page('edit.php?post_type=acf-field-group');
-        // }
+        if (class_exists('ACF')) {
+            remove_menu_page('edit.php?post_type=acf-field-group');
+        }
 
         // Re-add the default Pages and Posts menu items
         add_menu_page('Pages', 'Pages', 'edit_pages', 'edit.php?post_type=page', '', 'dashicons-admin-page', 5);
