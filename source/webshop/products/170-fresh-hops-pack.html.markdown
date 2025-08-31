@@ -3,7 +3,7 @@ title: "Fresh Hops Pack"
 type: "product"
 date: "03-08-2025"
 product_id: 170
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "fresh-hops-pack-10.webp"
