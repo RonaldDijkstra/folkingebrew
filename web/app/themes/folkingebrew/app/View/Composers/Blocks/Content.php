@@ -19,6 +19,8 @@ class Content extends Composer
             'image' => get_field('image') ?? '',
             'title' => get_field('title') ?? '',
             'link' => get_field('link') ?? '',
+            'contentType' => get_field('content_type') ?? 'text',
+            'openingHours' => get_field('the_pub_opening_hours', 'options')['hours'] ?? [],
         ];
     }
 }

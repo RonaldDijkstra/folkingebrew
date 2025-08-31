@@ -8,6 +8,7 @@ use Extended\ACF\Fields\RadioButton;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\TrueFalse;
 use Extended\ACF\Fields\WYSIWYGEditor;
+use Extended\ACF\ConditionalLogic;
 use Extended\ACF\Location;
 
 class BlockContent extends AbstractField
@@ -27,11 +28,31 @@ class BlockContent extends AbstractField
                         'bg-neutral-light-brown' => 'Neutral light brown',
                     ])
                     ->default('white'),
-                TrueFalse::make('Reverse layout?', 'text_right')
+                TrueFalse::make('Image left?', 'text_right')
                     ->stylized(),
+                RadioButton::make('Content type', 'content_type')
+                    ->choices([
+                        'text' => 'Text',
+                        'opening_hours' => 'Opening hours',
+                    ])
+                    ->default('text'),
                 Text::make('Title', 'title'),
-                WYSIWYGEditor::make('Text', 'text'),
-                Link::make('Button', 'link'),
+                WYSIWYGEditor::make('Text', 'text')
+                    ->conditionalLogic([
+                        ConditionalLogic::where(
+                            name: 'content_type',
+                            operator: '==',
+                            value: 'text',
+                        )
+                    ]),
+                Link::make('Button', 'link')
+                    ->conditionalLogic([
+                        ConditionalLogic::where(
+                            name: 'content_type',
+                            operator: '==',
+                            value: 'text',
+                        )
+                    ]),
                 Image::make('Image', 'image')
                     ->format('array')
                     ->previewSize('medium'),
