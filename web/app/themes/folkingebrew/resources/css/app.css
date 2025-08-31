@@ -9,12 +9,11 @@
   --color-body: #3f3f46;
   --color-neutral: #171717;
   --color-neutral-light-brown: #fffaf8;
+  --color-neutral-gray: #ccc;
   --font-sans: 'Open Sans', sans-serif;
-
-  --swiper-pagination-color: var(--color-primary);
-
   --breakpoint-wp: 782px;
   --breakpoint-xs: 360px;
+  
 }
 
 @custom-variant menu-open (.menu-open &);
@@ -23,13 +22,10 @@
 @custom-variant transparent-header (.transparent-header.at-the-top &);
 @custom-variant header-hidden (.header-hidden &);
 
-@import 'swiper/css';
-@import 'swiper/css/navigation';
-@import 'swiper/css/pagination';
+
 @import './review-slider.css';
 
 @layer base {
-
   a {
     @apply underline;
   }

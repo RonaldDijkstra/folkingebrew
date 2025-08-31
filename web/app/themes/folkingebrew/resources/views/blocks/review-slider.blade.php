@@ -2,10 +2,10 @@
   <x-container>
     <h2 class="text-2xl md:text-3xl font-bold mb-3 text-center">{{ $title }}</h2>
     <p class="text-body mb-8 text-center text-lg">{{ $subtitle }}</p>
-    <div class="review-slider swiper overflow-hidden">
-      <div class="swiper-wrapper">
+    <div class="review-slider swiper overflow-hidden px-16">
+      <div class="swiper-wrapper items-stretch">
         @foreach ($reviews as $review)
-          <div class="swiper-slide flex flex-col bg-neutral-light-brown p-6 rounded-lg text-center">
+          <div class="swiper-slide h-auto items-stretch flex flex-col bg-neutral-light-brown p-6 rounded-lg text-center">
             @if(isset($review['rating']))
               <div class="flex justify-center gap-1 mb-4">
                 @for ($i = 1; $i <= 5; $i++)
@@ -37,8 +37,8 @@
           </div>
         @endforeach
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next end-0 md:end-2"></div>
+      <div class="swiper-button-prev start-0 md:start-2"></div>
       <div class="swiper-pagination"></div>
     </div>
   </x-container>
