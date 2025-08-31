@@ -8,31 +8,31 @@
         <div class="text-body mb-6">
           @if(!empty($openingHours))
             <div class="overflow-x-auto">
-              <table class="w-full border-collapse">
+              <table class="w-full border-collapse" data-opening-hours-table>
                 <thead>
-                  <tr class="border-b-2 border-gray-200">
-                    <th class="text-left py-3 pr-8 font-semibold text-gray-900">Day</th>
-                    <th class="text-left py-3 pr-8 font-semibold text-gray-900">Opening Hours</th>
-                    <th class="text-left py-3 font-semibold text-gray-900">Kitchen Hours</th>
+                  <tr class="border-b border-b-1 border-neutral-gray">
+                    <th class="text-left pl-4 py-3 pr-8 font-semibold text-body">Day</th>
+                    <th class="text-left py-3 pr-8 font-semibold text-body">Opening Hours</th>
+                    <th class="text-left py-3 font-semibold text-body">Kitchen Hours</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach ($openingHours as $hour)
                     @if(isset($hour['is_closed']) && !$hour['is_closed'])
-                      <tr class="border-b border-gray-100">
-                        <td class="py-3 pr-8 font-medium text-gray-900">{{ $hour['day'] ?? 'Unknown' }}</td>
-                        <td class="py-3 pr-8 text-gray-700">
+                      <tr class="border-b border-neutral-gray transition-colors duration-200" data-day="{{ strtolower($hour['day'] ?? 'unknown') }}">
+                        <td class="py-3 pl-4 pr-8 text-body transition-colors duration-200">{{ $hour['day'] ?? 'Unknown' }}</td>
+                        <td class="py-3 pr-8 text-body">
                           @if(isset($hour['time_open']) && isset($hour['time_close']) && $hour['time_open'] && $hour['time_close'])
                             {{ $hour['time_open'] }} - {{ $hour['time_close'] }}
                           @else
-                            <span class="text-gray-400">Not available</span>
+                            <span class="text-body">Not available</span>
                           @endif
                         </td>
-                        <td class="py-3 text-gray-700">
+                        <td class="py-3 text-body">
                           @if(isset($hour['kitchen_open']) && isset($hour['kitchen_close']) && $hour['kitchen_open'] && $hour['kitchen_close'])
                             {{ $hour['kitchen_open'] }} - {{ $hour['kitchen_close'] }}
                           @else
-                            <span class="text-gray-400">Not available</span>
+                            <span class="text-body">Not available</span>
                           @endif
                         </td>
                       </tr>

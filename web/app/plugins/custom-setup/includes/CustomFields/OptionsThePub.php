@@ -30,8 +30,8 @@ class OptionsThePub extends AbstractField
                                 TrueFalse::make('Closed', 'is_closed')
                                     ->column(20),
                                 TimePicker::make('Open', 'time_open')
-                                    ->displayFormat('H:i')
-                                    ->format('H:i')
+                                    ->displayFormat('H')
+                                    ->format('H')
                                     ->conditionalLogic([
                                         ConditionalLogic::where(
                                             name: 'is_closed',
@@ -40,8 +40,8 @@ class OptionsThePub extends AbstractField
                                         )
                                     ]),
                                 TimePicker::make('Close', 'time_close')
-                                    ->displayFormat('H:i')
-                                    ->format('H:i')
+                                    ->displayFormat('H')
+                                    ->format('H')
                                     ->conditionalLogic([
                                         ConditionalLogic::where(
                                             name: 'is_closed',
@@ -50,8 +50,8 @@ class OptionsThePub extends AbstractField
                                         )
                                     ]),
                                 TimePicker::make('Kitchen open', 'kitchen_open')
-                                    ->displayFormat('H:i')
-                                    ->format('H:i')
+                                    ->displayFormat('H')
+                                    ->format('H')
                                     ->conditionalLogic([
                                         ConditionalLogic::where(
                                             name: 'is_closed',
@@ -60,8 +60,8 @@ class OptionsThePub extends AbstractField
                                         )
                                     ]),
                                 TimePicker::make('Kitchen close', 'kitchen_close')
-                                    ->displayFormat('H:i')
-                                    ->format('H:i')
+                                    ->displayFormat('H')
+                                    ->format('H')
                                     ->conditionalLogic([
                                         ConditionalLogic::where(
                                             name: 'is_closed',
