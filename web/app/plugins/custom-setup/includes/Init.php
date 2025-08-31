@@ -28,6 +28,7 @@ final class Init
             CustomFields\BlockHero::class,
             CustomFields\BlockReviewSlider::class,
             CustomFields\OptionsFooter::class,
+            CustomFields\OptionsThePub::class,
             CustomFields\PageOptions::class,
             Setup\PostType::class,
             Setup\Security::class,
