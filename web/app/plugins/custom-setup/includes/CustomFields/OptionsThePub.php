@@ -11,6 +11,7 @@ use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\TimePicker;
 use Extended\ACF\Fields\DatePicker;
+use Extended\ACF\Fields\WYSIWYGEditor;
 
 class OptionsThePub extends AbstractField
 {
@@ -23,6 +24,27 @@ class OptionsThePub extends AbstractField
         register_extended_field_group([
             'title' => 'The Pub Options',
             'fields' => [
+                Group::make('Company Details', 'company_details')
+                    ->fields([
+                        Text::make('Name', 'company_name'),
+                        Text::make('Address', 'company_address'),
+                        Text::make('Zipcode', 'company_zipcode'),
+                        Text::make('City', 'company_city'),
+                        Text::make('Phone', 'company_phone'),
+                        Text::make('Whatsapp', 'company_whatsapp'),
+                        Text::make('Email', 'company_email'),
+                        Text::make('Website', 'company_website'),
+                        Text::make('Facebook', 'company_facebook'),
+                        Text::make('Instagram', 'company_instagram'),
+                        Text::make('Google Maps', 'company_google_maps'),
+                    ])
+                    ->layout('row'),
+                Group::make('Directions', 'directions')
+                    ->fields([
+                        WYSIWYGEditor::make('Public Transport', 'public_transport'),
+                        WYSIWYGEditor::make('Car', 'car'),
+                    ])
+                    ->layout('row'),
                 Repeater::make('Opening Hours', 'hours')
                     ->fields([
                         Text::make('Week Day', 'day')

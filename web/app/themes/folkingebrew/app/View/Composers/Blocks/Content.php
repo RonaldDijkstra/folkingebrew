@@ -21,6 +21,8 @@ class Content extends Composer
             'link' => get_field('link') ?? '',
             'contentType' => get_field('content_type') ?? 'text',
             'openingHours' => get_field('hours', 'options') ?? [],
+            'companyDetails' => get_field('company_details', 'options') ?? [],
+            'directions' => get_field('directions', 'options') ?? [],
         ];
     }
 }

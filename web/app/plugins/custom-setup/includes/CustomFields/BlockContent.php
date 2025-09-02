@@ -34,9 +34,13 @@ class BlockContent extends AbstractField
                     ->choices([
                         'text' => 'Text',
                         'opening_hours' => 'Opening hours',
+                        'info' => 'Info (contact details)',
                     ])
                     ->default('text'),
-                Text::make('Title', 'title'),
+                Text::make('Title', 'title')
+                    ->conditionalLogic([
+                        ConditionalLogic::where('content_type', '!=', 'info')
+                    ]),
                 WYSIWYGEditor::make('Text', 'text')
                     ->conditionalLogic([
                         ConditionalLogic::where(
@@ -55,7 +59,10 @@ class BlockContent extends AbstractField
                     ]),
                 Image::make('Image', 'image')
                     ->format('array')
-                    ->previewSize('medium'),
+                    ->previewSize('medium')
+                    ->conditionalLogic([
+                        ConditionalLogic::where('content_type', '!=', 'info')
+                    ]),
             ],
             'style' => 'default',
             'location' => [
