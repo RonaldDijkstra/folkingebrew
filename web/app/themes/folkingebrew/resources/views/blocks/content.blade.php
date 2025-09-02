@@ -11,7 +11,7 @@
               <table class="w-full border-collapse" data-opening-hours-table>
                 <thead>
                   <tr class="border-b border-b-1 border-neutral-gray">
-                    <th class="text-left pl-4 py-3 pr-8 font-semibold text-body">Day</th>
+                    <th class="text-left py-3 pr-8 font-semibold text-body">Day</th>
                     <th class="text-left py-3 pr-8 font-semibold text-body">Opening Hours</th>
                     <th class="text-left py-3 font-semibold text-body">Kitchen Hours</th>
                   </tr>
@@ -20,7 +20,7 @@
                   @foreach ($openingHours as $hour)
                     @if(isset($hour['is_closed']) && !$hour['is_closed'])
                       <tr class="border-b border-neutral-gray transition-colors duration-200" data-day="{{ strtolower($hour['day'] ?? 'unknown') }}">
-                        <td class="py-3 pl-4 pr-8 text-body transition-colors duration-200">{{ $hour['day'] ?? 'Unknown' }}</td>
+                        <td class="py-3 pr-8 text-body transition-colors duration-200">{{ $hour['day'] ?? 'Unknown' }}</td>
                         <td class="py-3 pr-8 text-body">
                           @if(isset($hour['time_open']) && isset($hour['time_close']) && $hour['time_open'] && $hour['time_close'])
                             {{ $hour['time_open'] }} - {{ $hour['time_close'] }}
@@ -47,7 +47,7 @@
         </div>
       @elseif ($contentType === 'text')
         @if ($text)
-          <div class="text-body mb-6 text-lg">
+          <div class="text-body mb-6 text-lg prose prose-a:text-primary">
             {!! $text !!}
           </div>
         @endif

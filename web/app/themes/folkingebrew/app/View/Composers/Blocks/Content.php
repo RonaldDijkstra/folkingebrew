@@ -20,7 +20,7 @@ class Content extends Composer
             'title' => get_field('title') ?? '',
             'link' => get_field('link') ?? '',
             'contentType' => get_field('content_type') ?? 'text',
-            'openingHours' => get_field('the_pub_opening_hours', 'options')['hours'] ?? [],
+            'openingHours' => get_field('hours', 'options') ?? [],
         ];
     }
 }

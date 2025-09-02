@@ -28,7 +28,7 @@
 
 @layer base {
   a {
-    @apply underline;
+    @apply underline text-primary;
   }
 
   p {

@@ -3,16 +3,16 @@
   <x-container :classes="'max-w-xl z-20 text-white relative'">
     <h2 class="text-2xl md:text-3xl font-bold mb-3 text-center">{{ $title }}</h2>
     <p class="mb-8 text-center text-lg">{{ $subtitle }}</p>
-    @foreach ($agendaItems as $item)
+    @foreach ($events as $event)
       <div class="pb-3 sm:pb-2 mb-3 sm:flex justify-between w-full border border-b border-0 border-white">
-        <div class="text-lg w-32 shrink-0">{{ $item['date'] }}</div>
+        <div class="text-lg w-32 shrink-0">{{ $event['date'] }}</div>
         <div class="flex-1">
-          <h3 class="text-lg font-bold">{{ $item['title'] }}</h3>
-          @if ($item['description'])
-            <p class="text-body text-lg">{{ $item['description'] }}</p>
+          <h3 class="text-lg font-bold">{{ $event['title'] }}</h3>
+          @if ($event['description'])
+            <p class="text-white text-lg">{{ $event['description'] }}</p>
           @endif
         </div>
-        <a href="{{ $item['link']['url'] }}" class="text-white hover:no-underline" target="{{ $item['link']['target'] }}">{{ $item['link']['title'] }}</a>
+        <a href="{{ $event['link']['url'] }}" class="text-white hover:no-underline" target="{{ $event['link']['target'] }}">{{ $event['link']['title'] }}</a>
       </div>
     @endforeach
   </x-container>

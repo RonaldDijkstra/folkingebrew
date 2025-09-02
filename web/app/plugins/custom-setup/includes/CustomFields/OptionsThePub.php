@@ -6,9 +6,11 @@ use Extended\ACF\Location;
 use Extended\ACF\ConditionalLogic;
 use Extended\ACF\Fields\TrueFalse;
 use Extended\ACF\Fields\Group;
+use Extended\ACF\Fields\Link;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\TimePicker;
+use Extended\ACF\Fields\DatePicker;
 
 class OptionsThePub extends AbstractField
 {
@@ -21,55 +23,65 @@ class OptionsThePub extends AbstractField
         register_extended_field_group([
             'title' => 'The Pub Options',
             'fields' => [
-                Group::make('Opening Hours', 'the_pub_opening_hours')
+                Repeater::make('Opening Hours', 'hours')
                     ->fields([
-                        Repeater::make('Opening Hours', 'hours')
-                            ->fields([
-                                Text::make('Week Day', 'day')
-                                    ->column(20),
-                                TrueFalse::make('Closed', 'is_closed')
-                                    ->column(20),
-                                TimePicker::make('Open', 'time_open')
-                                    ->displayFormat('H')
-                                    ->format('H')
-                                    ->conditionalLogic([
-                                        ConditionalLogic::where(
-                                            name: 'is_closed',
-                                            operator: '==',
-                                            value: false,
-                                        )
-                                    ]),
-                                TimePicker::make('Close', 'time_close')
-                                    ->displayFormat('H')
-                                    ->format('H')
-                                    ->conditionalLogic([
-                                        ConditionalLogic::where(
-                                            name: 'is_closed',
-                                            operator: '==',
-                                            value: false,
-                                        )
-                                    ]),
-                                TimePicker::make('Kitchen open', 'kitchen_open')
-                                    ->displayFormat('H')
-                                    ->format('H')
-                                    ->conditionalLogic([
-                                        ConditionalLogic::where(
-                                            name: 'is_closed',
-                                            operator: '==',
-                                            value: false,
-                                        )
-                                    ]),
-                                TimePicker::make('Kitchen close', 'kitchen_close')
-                                    ->displayFormat('H')
-                                    ->format('H')
-                                    ->conditionalLogic([
-                                        ConditionalLogic::where(
-                                            name: 'is_closed',
-                                            operator: '==',
-                                            value: false,
-                                        )
-                                    ]),
+                        Text::make('Week Day', 'day')
+                            ->column(20),
+                        TrueFalse::make('Closed', 'is_closed')
+                            ->column(20),
+                        TimePicker::make('Open', 'time_open')
+                            ->displayFormat('H:i')
+                            ->format('H')
+                            ->conditionalLogic([
+                                ConditionalLogic::where(
+                                    name: 'is_closed',
+                                    operator: '==',
+                                    value: false,
+                                )
                             ]),
+                        TimePicker::make('Close', 'time_close')
+                            ->displayFormat('H:i')
+                            ->format('H')
+                            ->conditionalLogic([
+                                ConditionalLogic::where(
+                                    name: 'is_closed',
+                                    operator: '==',
+                                    value: false,
+                                )
+                            ]),
+                        TimePicker::make('Kitchen open', 'kitchen_open')
+                            ->displayFormat('H:i')
+                            ->format('H')
+                            ->conditionalLogic([
+                                ConditionalLogic::where(
+                                    name: 'is_closed',
+                                    operator: '==',
+                                    value: false,
+                                )
+                            ]),
+                        TimePicker::make('Kitchen close', 'kitchen_close')
+                            ->displayFormat('H:i')
+                            ->format('H')
+                            ->conditionalLogic([
+                                ConditionalLogic::where(
+                                    name: 'is_closed',
+                                    operator: '==',
+                                    value: false,
+                                )
+                            ]),
+                    ]),
+                    
+                Repeater::make('Events', 'events')
+                    ->fields([
+                        DatePicker::make('Date', 'date')
+                            ->helperText('Add the date of the event.')
+                            ->displayFormat('d-m')
+                            ->format('d-m-Y')
+                            ->defaultNow()
+                            ->required(),
+                        Text::make('Title', 'title'),
+                        Text::make('Subtitle', 'description'),
+                        Link::make('Link', 'link'),
                     ]),
             ],
             'style' => 'default',

@@ -14,17 +14,10 @@ class Agenda extends Composer
     public function with()
     {
         return [
-            'backgroundImage' => $this->backgroundImage(),
+            'backgroundImage' => get_field('background_image') ?: [],
             'title' => get_field('title') ?: '',
             'subtitle' => get_field('subtitle') ?: '',
-            'agendaItems' => get_field('agenda_items') ?: [],
+            'events' => get_field('events', 'options') ?: [],
         ];
-    }
-
-    public function backgroundImage(): array
-    {
-        $image = get_field('background_image');
-        
-        return $image ?: [];
     }
 }
