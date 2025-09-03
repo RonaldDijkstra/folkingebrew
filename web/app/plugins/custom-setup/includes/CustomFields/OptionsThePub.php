@@ -33,7 +33,6 @@ class OptionsThePub extends AbstractField
                         Text::make('Phone', 'company_phone'),
                         Text::make('Whatsapp', 'company_whatsapp'),
                         Text::make('Email', 'company_email'),
-                        Text::make('Website', 'company_website'),
                         Text::make('Facebook', 'company_facebook'),
                         Text::make('Instagram', 'company_instagram'),
                         Text::make('Google Maps', 'company_google_maps'),

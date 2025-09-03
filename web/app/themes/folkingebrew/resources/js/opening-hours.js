@@ -13,7 +13,7 @@ export default function openingHours() {
       
       if (dayAttribute === currentDayName) {
         
-        row.classList.add('font-bold', 'bg-neutral-light-gray');
+        row.classList.add('font-bold', 'bg-neutral-light-brown');
       }
     });
   });

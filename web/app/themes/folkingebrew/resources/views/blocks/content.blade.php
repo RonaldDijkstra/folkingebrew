@@ -33,7 +33,7 @@
                           @if(isset($hour['kitchen_open']) && isset($hour['kitchen_close']) && $hour['kitchen_open'] && $hour['kitchen_close'])
                             {{ $hour['kitchen_open'] }} - {{ $hour['kitchen_close'] }}
                           @else
-                            <span class="text-body">Not available</span>
+                            <span class="text-body">{{ __('Not available', 'folkingebrew') }}</span>
                           @endif
                         </td>
                       </tr>
@@ -43,7 +43,7 @@
               </table>
             </div>
           @else
-            <p class="text-gray-500">No opening hours available.</p>
+            <p class="text-gray-500">{{ __('No opening hours available.', 'folkingebrew') }}</p>
           @endif
         </div>
       @endif
@@ -62,7 +62,7 @@
       @endif
 
       @if ($contentType === 'info')
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-3">
           <h3 class="text-2xl font-bold mb-2">{{ __('Address', 'folkingebrew') }}</h3>
           <address class="not-italic text-lg">
             {!! $companyDetails['company_address'] !!}<br>
@@ -70,16 +70,16 @@
             {!! $companyDetails['company_city'] !!}
           </address>
         </div>
-        <div class="flex flex-col gap-2 mb-4">
+        <div class="flex flex-col gap-3 mb-4">
           <a class="text-primary" href="tel:{{ $companyDetails['company_phone'] }}">{{ $companyDetails['company_phone'] }}</a>
           <a class="text-primary" href="mailto:{{ $companyDetails['company_email'] }}">{{ $companyDetails['company_email'] }}</a>
           <a class="text-primary" href="https://www.google.com/maps/search/?api=1&query={{ $companyDetails['company_address'] }},{{ $companyDetails['company_zipcode'] }},{{ $companyDetails['company_city'] }}" target="_blank">Google Maps</a>
         </div>
-        <div class="flex flex-col gap-4">
-          <h3 class="text-2xl font-bold mb-1">{{ __('Directions', 'folkingebrew') }}</h3>
-          <h4 class="text-lg font-bold mb-1">{{ __('Public Transport', 'folkingebrew') }}</h4>
+        <div class="flex flex-col gap-3">
+          <h3 class="text-2xl font-bold">{{ __('Directions', 'folkingebrew') }}</h3>
+          <h4 class="text-xl font-bold">{{ __('Public Transport', 'folkingebrew') }}</h4>
           {!! $directions['public_transport'] !!}
-          <h4 class="text-lg font-bold mb-1">{{ __('Car', 'folkingebrew') }}</h4>
+          <h4 class="text-xl font-bold">{{ __('Car', 'folkingebrew') }}</h4>
           {!! $directions['car'] !!}
         </div>
 

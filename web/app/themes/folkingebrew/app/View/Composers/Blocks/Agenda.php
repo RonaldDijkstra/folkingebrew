@@ -17,7 +17,31 @@ class Agenda extends Composer
             'backgroundImage' => get_field('background_image') ?: [],
             'title' => get_field('title') ?: '',
             'subtitle' => get_field('subtitle') ?: '',
-            'events' => get_field('events', 'options') ?: [],
+            'events' => $this->getEvents(),
         ];
+    }
+
+    public function getEvents()
+    {
+        $events = get_field('events', 'options') ?: [];
+
+        $today = date('d-m-Y');
+        $filteredEvents = [];
+
+        foreach ($events as $event) {
+            $eventDate = $event['date'] ?? null;
+
+            if (!$eventDate) {
+                continue;
+            }
+
+            if ($eventDate >= $today) {
+                $filteredEvents[] = $event;
+            }
+        }
+
+        $events = $filteredEvents;
+
+        return $events;
     }
 }
