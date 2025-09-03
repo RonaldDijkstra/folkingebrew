@@ -30,6 +30,7 @@ final class Init
             CustomFields\OptionsFooter::class,
             CustomFields\OptionsThePub::class,
             CustomFields\PageOptions::class,
+            CustomFields\CustomPostTypeBeers::class,
             CustomPostTypes\Beers::class,
             Setup\PostType::class,
             Setup\Security::class,
