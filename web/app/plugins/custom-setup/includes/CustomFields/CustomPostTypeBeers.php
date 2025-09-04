@@ -14,8 +14,20 @@ class CustomPostTypeBeers extends AbstractField
 {
     public function register_acf_field_group(): void
     {
+        if (!function_exists('acf_add_options_page') || !function_exists('register_extended_field_group')) {
+            return;
+        }
+
+        acf_add_options_sub_page([
+            'page_title' => 'Archive Options',
+            'parent_slug' => 'acf-options',
+            'parent_slug' => 'edit.php?post_type=beers',
+            'menu_slug' => 'acf-options-beers',
+        ]);
+
         register_extended_field_group([
             'title' => 'Beers',
+            'key' => 'group_custom_post_type_beers',
             'fields' => [
                 Number::make('ID', 'id')
                     ->step(1)
@@ -29,9 +41,11 @@ class CustomPostTypeBeers extends AbstractField
                     ->step(0.1)
                     ->required(),
                 Image::make('Image', 'image')
+                    ->format('array')
                     ->column(50)
                     ->required(),
                 Image::make('Wallpaper', 'wallpaper')
+                    ->format('array')
                     ->column(50)
                     ->required(),
                 WYSIWYGEditor::make('Description', 'description')
@@ -51,6 +65,23 @@ class CustomPostTypeBeers extends AbstractField
             ],
             'location' => [
                 Location::where('post_type', '==', 'beers'),
+            ],
+        ]);
+
+        register_extended_field_group([
+            'title' => 'Archive Options',
+            'key' => 'custom_post_type_beers_archive',
+            'fields' => [
+                Text::make('Archive Title', 'archive_title')
+                    ->column(33)
+                    ->required(),
+                Number::make('Posts Per Page', 'posts_per_page')
+                    ->step(1)
+                    ->column(33)
+                    ->required(),
+            ],
+            'location' => [
+                Location::where('options_page', 'acf-options-beers'),
             ],
         ]);
     }

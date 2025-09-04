@@ -10,6 +10,6 @@
   default => '',
 })
 
-<section class="{{ $class }} {{ $backgroundColor }} {{ $classes }} relative py-8 md:py-16"@if($backgroundImage && isset($backgroundImage['url'])) style="background-image: url({{ $backgroundImage['url'] }})"@endif>
+<section class="relative py-8 md:py-16 {{ $class }} {{ $backgroundColor }} {{ $classes }}" @if($backgroundImage && isset($backgroundImage['url'])) style="background-image: url({{ $backgroundImage['url'] }})"@endif>
   {{ $slot }}
 </section>
