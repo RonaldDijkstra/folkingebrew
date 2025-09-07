@@ -10,6 +10,7 @@
 <section>
   <x-container>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-9 max-w-7xl m-auto px-6 mb-12">
+
       @foreach($beers as $beer)
         <a href="{{ $beer->url }}" class="bg-black relative no-underline">
           @if($beer->image && isset($beer->image['url']) && !empty($beer->image['url']))
@@ -22,6 +23,13 @@
         </a>
       @endforeach
     </div>
+    @if($numberOfPages > 1)
+      <div class="mt-8">
+        {{-- @include('components.pagination', ['numPages' => $numberOfPages, 'paged' => $paged]) --}}
+
+        <x-pagination :numberOfPages="$numberOfPages" :paged="$paged" />
+      </div>
+    @endif
   </x-container>
 </section>
 @endsection

@@ -29,7 +29,7 @@ class CustomPostTypeBeers extends AbstractField
             'title' => 'Beers',
             'key' => 'group_custom_post_type_beers',
             'fields' => [
-                Number::make('ID', 'id')
+                Number::make('Beer ID', 'beer_id')
                     ->step(1)
                     ->column(33)
                     ->required(),

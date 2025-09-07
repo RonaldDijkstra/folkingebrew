@@ -39,7 +39,7 @@
     }
   },
   "require": {
-    "php": ">=8.4",
+    "php": ">=8.3",
     "log1x/navi": "^3.1",
     "roots/acorn": "^5.0"
   },

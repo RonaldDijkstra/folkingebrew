@@ -23,11 +23,25 @@ add_filter('excerpt_more', function () {
  */
 add_filter('body_class', function ($classes) {
     $classes[] = 'at-the-top bg-gradient-to-tr from-primary to-primary-dark';
-    
+
     // Add transparent header class if enabled
     if (get_field('transparent_header')) {
         $classes[] = 'transparent-header';
     }
-    
+
     return $classes;
+});
+
+/**
+ * Modify the main query for beers archive to use custom posts per page setting.
+ *
+ * @param \WP_Query $query
+ * @return void
+ */
+add_action('pre_get_posts', function ($query) {
+    // Only modify the main query on the frontend for beers archive
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive('beers')) {
+        $postsPerPage = get_field('posts_per_page', 'option') ?: 2;
+        $query->set('posts_per_page', $postsPerPage);
+    }
 });

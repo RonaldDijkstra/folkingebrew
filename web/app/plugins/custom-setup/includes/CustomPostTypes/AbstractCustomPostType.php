@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Custom\Setup\CustomPostTypes;
 
@@ -91,7 +91,5 @@ abstract class AbstractCustomPostType implements ServiceInterface
         if (!post_type_exists($this->id)) {
             register_post_type($this->id, $args);
         }
-
-        flush_rewrite_rules();
     }
 }

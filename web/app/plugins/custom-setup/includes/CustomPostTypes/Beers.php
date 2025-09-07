@@ -7,7 +7,8 @@ use Custom\Setup\CustomPostTypes\AbstractCustomPostType;
 class Beers extends AbstractCustomPostType
 {
     protected string $id = 'beers';
-    protected string $label = 'Beers';
+    protected string $label = 'Beer';
+    protected string $plural_label = 'Beers';
     protected string $name = 'beers';
     protected string $instructions = 'Enable the custom post type <strong>Beers</strong>.';
     protected string $menu_icon = 'dashicons-beer';
@@ -15,7 +16,7 @@ class Beers extends AbstractCustomPostType
     protected bool $show_ui = true;
     protected bool $show_in_nav_menus = false;
     protected bool $publicly_queryable = true;
-    protected bool $hierarchical = true;
+    protected bool $hierarchical = false;
     protected string $query_var = 'beers';
     protected array|bool $rewrite = false;
     protected string|bool $has_archive = true;

@@ -12,57 +12,70 @@ class ArchiveBeers extends Composer
 
     public function with()
     {
-        $query = $this->getBeersQuery();
-        
+        $postsPerPage = get_field('posts_per_page', 'option') ?: 2;
+        $paged = $this->getPaged();
+
+        // Get all beers sorted by beer_id
+        $allBeers = $this->getAllBeersSorted();
+
+        // Calculate pagination
+        $totalBeers = count($allBeers);
+        $numberOfPages = (int) ceil($totalBeers / $postsPerPage);
+
+        // Get beers for current page
+        $offset = ($paged - 1) * $postsPerPage;
+        $beersForPage = array_slice($allBeers, $offset, $postsPerPage);
+
         return [
-            'beers' => $this->enhanceBeersWithAcfFields($query->posts),
-            'pagination' => [
-                'current_page' => max(1, get_query_var('paged')),
-                'total_pages' => $query->max_num_pages,
-                'total_posts' => $query->found_posts,
-                'posts_per_page' => $query->query_vars['posts_per_page'],
-            ],
+            'beers' => $beersForPage,
+            'numberOfPages' => $numberOfPages,
+            'paged' => $paged,
+            'postsPerPage' => $postsPerPage,
+            'totalPosts' => $totalBeers,
             'title' => get_field('archive_title', 'option'),
         ];
     }
 
-    private function getBeersQuery()
+    private function getAllBeersSorted(): array
     {
-        $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-        $posts_per_page = get_field('posts_per_page', 'option') ?: 10;
-
-        $args = [
+        // Get ALL beers without pagination
+        $allBeersQuery = new \WP_Query([
             'post_type' => 'beers',
+            'posts_per_page' => -1, // Get all posts
             'post_status' => 'publish',
-            'posts_per_page' => $posts_per_page,
-            'paged' => $paged,
-            'meta_key' => 'id',
-            'orderby' => 'meta_value_num',
-            'order' => 'DESC',
-            'meta_query' => [
-                [
-                    'key' => 'id',
-                    'compare' => 'EXISTS'
-                ]
-            ]
-        ];
+        ]);
 
-        return new \WP_Query($args);
+        // Enhance with ACF fields
+        $beers = $this->enhanceBeersWithAcfFields($allBeersQuery->posts);
+
+        // Sort beers by beer_id field (higher numbers first)
+        usort($beers, function ($a, $b) {
+            $aId = (int) $a->beer_id;
+            $bId = (int) $b->beer_id;
+            return $bId <=> $aId; // Descending order (higher numbers first)
+        });
+
+        return $beers;
     }
 
     private function enhanceBeersWithAcfFields($posts)
     {
         return array_map(function ($post) {
-            // Add ACF fields to the post object          
-          
+            // Add ACF fields to the post object
+
             $post->image = get_field('image', $post->ID);
-            
             $post->style = get_field('style', $post->ID);
-            $post->id = get_field('id', $post->ID);
+            $post->beer_id = get_field('beer_id', $post->ID);
             $post->abv = get_field('abv', $post->ID);
             $post->url = get_permalink($post->ID);
-            
+
             return $post;
         }, $posts);
+    }
+
+
+    private function getPaged(): int
+    {
+        return get_query_var('paged') ? (int) get_query_var('paged') : 1;
     }
 }
