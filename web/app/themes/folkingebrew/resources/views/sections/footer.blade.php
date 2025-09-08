@@ -34,7 +34,7 @@
                         @if($item->target)
                           target="{{ $item->target }}" rel="noopener noreferrer"
                         @endif
-                        class="text-lg text-white hover:text-slate-300 rounded-sm no-underline pb-2 block"
+                        class="text-lg text-white hover:text-primary rounded-sm no-underline pb-2 block"
                       >
                         {{ $item->label }}
                       </a>
@@ -52,13 +52,13 @@
       <div class="mb-4">
         <h4 class="text-lg font-bold">Folkingebrew VOF</h4>
         <address class="not-italic">Olgerweg 2-7, 9723 ED Groningen, The Netherlands</address>
-        <a href="mailto:info@folkingebrew.nl" class="text-white hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-500">info@folkingebrew.nl</a>
+        <a href="mailto:info@folkingebrew.nl" class="text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-slate-500">info@folkingebrew.nl</a>
       </div>
       <div>
       <h4 class="text-lg font-bold">Folkingebrew The Pub</h4>
         <address class="not-italic">Boterdiep 75, 9712 LL Groningen, The Netherlands</address>
-        <a href="mailto:brewpub@folkingebrew.nl" class="text-white hover:text-slate-300">brewpub@folkingebrew.nl</a><br>
-        <a href="tel:+31628801883" class="text-white hover:text-slate-300">+31 (0)6 28 80 18 83</a>
+        <a href="mailto:brewpub@folkingebrew.nl" class="text-white hover:text-primary">brewpub@folkingebrew.nl</a><br>
+        <a href="tel:+31628801883" class="text-white hover:text-primary">+31 (0)6 28 80 18 83</a>
       </div>
     </div>
   </x-container>
