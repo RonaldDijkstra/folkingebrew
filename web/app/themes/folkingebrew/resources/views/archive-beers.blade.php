@@ -17,7 +17,7 @@
             <img src="{{ $beer->image['url'] }}" alt="{{ $beer->image['alt'] }}" class="w-full h-full object-cover">
           @endif
           <div class="transition-all opacity-0 w-full h-full bg-black absolute top-0 left-0 flex flex-col justify-center text-center p-10 hover:opacity-100 motion-reduce:transition-none motion-reduce:transform-none">
-            <h2 class="text-white text-xl font-bold mb-2">{{ $beer->post_title }}</h2>
+            <h2 class="text-white text-xl font-medium mb-1">{{ $beer->post_title }}</h2>
             <p class="text-lg  text-primary">{{ $beer->style }}</p>
           </div>
         </a>
@@ -25,8 +25,6 @@
     </div>
     @if($numberOfPages > 1)
       <div class="mt-8">
-        {{-- @include('components.pagination', ['numPages' => $numberOfPages, 'paged' => $paged]) --}}
-
         <x-pagination :numberOfPages="$numberOfPages" :paged="$paged" />
       </div>
     @endif

@@ -1,4 +1,4 @@
-<div class="flex justify-center">
+<div class="flex justify-center pb-12"">
   <nav class="text-primary flex items-stretch h-10 gap-2">
     @php
       ob_start();
