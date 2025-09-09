@@ -20,7 +20,7 @@
   }
 
   .swiper-button-next,
-  .swiper-button-prev {    
+  .swiper-button-prev {
     &.swiper-button-disabled {
       @apply opacity-30;
     }

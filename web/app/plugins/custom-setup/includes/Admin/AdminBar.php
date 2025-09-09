@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Custom\Setup\Admin;
 
@@ -18,7 +18,7 @@ class AdminBar implements ServiceInterface
 
     /**
      * Remove default menu items from the admin top bar
-     * 
+     *
      * @return void
      */
     public function removeDefaultMenuItemsFromAdminBar(): void
@@ -38,7 +38,7 @@ class AdminBar implements ServiceInterface
 
     /**
      * Remove the WordPress icon from the admin top bar
-     * 
+     *
      * @return void
      */
     public function removeWPIcon(): void
@@ -50,7 +50,7 @@ class AdminBar implements ServiceInterface
 
     /**
      * Add the Folkingebrew icon to the admin top bar
-     * 
+     *
      * @return void
      */
     public function addFolkingebrewIcon(): void
@@ -69,7 +69,7 @@ class AdminBar implements ServiceInterface
 
     /**
      * Add styling for the admin bar icon
-     * 
+     *
      * @return void
      */
     public function adminBarStyling(): void
