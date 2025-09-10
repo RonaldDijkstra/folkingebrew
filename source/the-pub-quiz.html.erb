@@ -35,7 +35,8 @@ description: "Sign up your team for The Pub Quiz."
         <li>🏆 Mooie prijzen</li>
         <li>📍 Folkingebrew The Pub</li>
       </ul>
-      <p><i>De inschrijvingen zijn gesloten. We zien jullie op de avond!</i></p>
+      <%= partial "partials/form", locals: { name: "pubquiz",
+                                          fields: ["name", "email", "team_name", "team_size"] } %>
     <% end %>
   <% end %>
 </div>
