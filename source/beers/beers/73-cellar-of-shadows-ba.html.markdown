@@ -1,7 +1,7 @@
 ---
 title: 'Cellar of Shadows BA (x Baxbier Brewery)'
 date: 2024-12-19 9:00 CEST
-style: "Boubon Barrel Aged Imperial Stout"
+style: "Bourbon Barrel Aged Imperial Stout"
 abv: "13"
 specs:
     malts: "Golden Promise, Oats, Dark Malt, Chocolate Malt"
