@@ -40,7 +40,9 @@ class Customizations implements ServiceInterface
                         'quantity',
                         'option',
                         'shipping',
-                        'total'
+                        'total',
+                        'multiselect',
+                        'image_choice'
                     ]);
                 } );
 

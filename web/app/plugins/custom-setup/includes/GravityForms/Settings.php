@@ -16,6 +16,8 @@ class Settings implements ServiceInterface
         add_filter('gform_disable_css', '__return_true');
         // Disable auto-paragraphs in Gravity Forms fields
         add_filter('gform_enable_wpautop', '__return_false');
+        // Custom validation message
+        add_filter('gform_validation_message', [$this, 'renderValidationMessage'], 10, 2);
     }
 
     /**
@@ -36,5 +38,29 @@ class Settings implements ServiceInterface
         }
 
         return $content;
+    }
+
+    /**
+     * Render validation message with a Blade template
+     *
+     * @param string $validation_message The original validation message HTML
+     * @param array $form The form object
+     * @return string The rendered validation message HTML
+     */
+    public function renderValidationMessage($validation_message, $form): string
+    {
+        if(is_admin()) {
+            return $validation_message;
+        }
+
+        // Hardly needed, but just in case
+        if (function_exists('view') && view()->exists('gravity.validation-message')) {
+            return view('gravity.validation-message', [
+                'original_message' => $validation_message,
+                'form' => $form,
+            ])->render();
+        }
+
+        return $validation_message;
     }
 }

@@ -1,4 +1,5 @@
 @import "tailwindcss" theme(static);
+@import "flatpickr/dist/flatpickr.css";
 @source "../views/";
 @source "../../app/";
 
@@ -34,12 +35,33 @@
   p {
     @apply mb-4;
   }
+
+  /* Flatpickr custom styling */
+  .flatpickr-calendar {
+    @apply shadow-lg border border-gray-300 rounded;
+  }
+
+  .flatpickr-day.selected {
+    @apply bg-primary text-white;
+  }
+
+  .flatpickr-day.today {
+    @apply border border-primary;
+  }
+
+  .flatpickr-day:hover {
+    @apply bg-gray-100;
+  }
+
+  .flatpickr-months .flatpickr-month {
+    @apply text-primary;
+  }
 }
 
-@layer utilities {  
+@layer utilities {
   .admin-bar .has-adminbar\:min-h-screen-minus-admin-bar {
     min-height: calc(100vh - 46px);
-    
+
     @media (min-width: 768px) {
       min-height: calc(100vh - 32px);
     }
@@ -47,7 +69,7 @@
 
   .admin-bar .has-adminbar\:min-h-screen-plus-admin-bar {
     min-height: calc(100vh + 46px);
-    
+
     @media (min-width: 768px) {
       min-height: calc(100vh + 32px);
     }
@@ -55,7 +77,7 @@
 
   /* Header smooth transitions */
   #site-header {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                 background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(0);
@@ -69,6 +91,48 @@
     #site-header {
       transition: none;
     }
+  }
+
+  .gform_fields {
+    @apply grid gap-4 mb-4;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .gform_wrapper {
+    @apply md:w-xl md:mx-auto;
+  }
+
+  .gfield {
+    @apply col-span-12;
+  }
+
+  .gform_wrapper .gform_validation_container,
+  .gform_wrapper .gform_validation_container * {
+    @apply absolute left-[-10000px] top-auto w-1 h-1 overflow-hidden opacity-0 pointer-events-none;
+  }
+
+  .gfield--width-quarter {
+    @apply md:col-span-3;
+  }
+
+  .gfield--width-third {
+    @apply md:col-span-4;
+  }
+
+  .gfield--width-half {
+    @apply md:col-span-6;
+  }
+
+  .gfield--width-three-quarters {
+    @apply md:col-span-9;
+  }
+
+  .gfield--width-full {
+    @apply col-span-12;
+  }
+
+  .gform-page-footer {
+    @apply flex justify-between;
   }
 }
 
@@ -122,4 +186,16 @@
 
 #wpadminbar {
   @apply fixed;
+}
+
+.flatpickr-months .flatpickr-next-month:hover svg {
+  @apply fill-primary;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg {
+  @apply fill-primary;
+}
+
+.flatpickr-day.selected {
+  @apply border-primary bg-primary text-white;
 }
