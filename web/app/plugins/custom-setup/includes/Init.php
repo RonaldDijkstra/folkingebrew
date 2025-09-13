@@ -33,6 +33,7 @@ final class Init
             CustomFields\CustomPostTypeBeers::class,
             CustomPostTypes\Beers::class,
             GravityForms\Customizations::class,
+            GravityForms\Fields::class,
             GravityForms\Settings::class,
             GravityForms\ShowPagesWithForm::class,
             Setup\PostType::class,
