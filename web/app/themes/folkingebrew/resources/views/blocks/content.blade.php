@@ -92,13 +92,13 @@
     @endif
     @if ($contentType === 'info')
       <div class="order-2 h-[500px] {{ $textRight ? 'md:order-1' : 'md:order-2' }}">
-        <iframe 
+        <iframe
           src="{{ $companyDetails['company_google_maps'] }}"
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           class="w-full h-full">
         </iframe>
