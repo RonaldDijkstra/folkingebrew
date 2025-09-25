@@ -10,7 +10,7 @@ specs:
     malts: "Pilsener, Oats & Wheat"
     fermentation: "Philly Sour"
 release_month: "July 2024"
-webshop_url: "https://www.folkingebrew.nl/webshop/world-in-a-world/"
+webshop_url: 
 untappd_url: "https://untappd.com/b/folkingebrew-world-in-a-world/5911691"
 image: "world-in-a-world.webp"
 wallpaper: "world-in-a-world-wallpaper.webp"
