@@ -10,7 +10,7 @@ specs:
     adjuncts: "Lactose"
     fermentation: "Mixed Culture"
 release_month: "April 2025"
-webshop_url: "/sour-sequence-6-passion-fruit-banana/"
+webshop_url: 
 untappd_url: "https://untappd.com/b/folkingebrew-sour-sequence-6-banana-and-passion-fruit/6228008"
 image: "sour-sequence-6.webp"
 wallpaper: "sour-sequence-6-wallpaper.webp"
