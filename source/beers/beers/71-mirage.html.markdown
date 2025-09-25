@@ -9,7 +9,7 @@ specs:
     malts: "Pilsener, Oats, & Wheat"
     fermentation: "Philly Sour"
 release_month: "October 2024"
-webshop_url: "https://www.folkingebrew.nl/webshop/mirage/"
+webshop_url: 
 untappd_url: "https://untappd.com/b/folkingebrew-mirage/6038258"
 image: "mirage.webp"
 wallpaper: "mirage-wallpaper.webp"
