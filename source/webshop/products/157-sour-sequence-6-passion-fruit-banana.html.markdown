@@ -7,8 +7,8 @@ in_stock: true
 only_a_few_left: false
 images:
   - "sour-sequence-6.webp"
-price: 6.49
-old_price:
+price: 5.19
+old_price: 6.49
 deposit: 0.15
 show_size_information: false
 size_image:
