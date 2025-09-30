@@ -3,7 +3,7 @@ title: "Planet Hopper"
 type: "product"
 date: "02-08-2025"
 product_id: 169
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "planet-hopper.webp"
