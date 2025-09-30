@@ -3,7 +3,7 @@ title: "The Syndicate (Investor Collab #2)"
 type: "product"
 date: "01-08-2025"
 product_id: 168
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "the-syndicate.webp"
