@@ -34,7 +34,7 @@ final class Init
             CustomPostTypes\Beers::class,
             GravityForms\Customizations::class,
             GravityForms\Fields::class,
-            GravityForms\Pagination::class,
+            // GravityForms\Pagination::class,
             GravityForms\Settings::class,
             GravityForms\ShowPagesWithForm::class,
             Setup\PostType::class,

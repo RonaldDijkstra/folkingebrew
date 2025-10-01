@@ -3,7 +3,6 @@
 namespace Custom\Setup\GravityForms;
 
 use Custom\Setup\ServiceInterface;
-use GF_Field;
 
 class Fields implements ServiceInterface
 {
@@ -152,147 +151,23 @@ class Fields implements ServiceInterface
             return $content;
         }
 
-        // @dump($field);
-
         // 1) Reuse GF's wrapper attributes from the generated $content
         [$wrapperId, $wrapperClass, $dataAttrs] = $this->extractWrapperAttrs($content);
 
         // Get field type first
         $type = $field->type ?? '';
 
-        // 2) Map field type to a Blade view
-        $map = [
-            'text'       => 'gravity.fields.text',
-            'email'      => 'gravity.fields.email',
-            'textarea'   => 'gravity.fields.textarea',
-            'select'     => 'gravity.fields.select',
-            'number'     => 'gravity.fields.number',
-            'checkbox'   => 'gravity.fields.multiplechoice',
-            'radio'      => 'gravity.fields.radio',
-            'date'       => 'gravity.fields.date',
-            'fileupload' => 'gravity.fields.fileupload',
-            'html'       => 'gravity.fields.html',
-            'section'    => 'gravity.section',
-            'website'    => 'gravity.fields.website',
-            'name'       => 'gravity.fields.name',
-            'address'    => 'gravity.fields.address',
-            'time'       => 'gravity.fields.time',
-            'phone'      => 'gravity.fields.phone',
-            'consent'    => 'gravity.fields.consent',
-            'list'       => 'gravity.fields.list',
-            'multi_choice' => 'gravity.fields.multiplechoice',
-        ];
+        // 2) Use the field renderer factory
+        $factory = new \Custom\Setup\GravityForms\FieldRenderers\FieldRendererFactory();
+        $renderer = $factory->getRenderer($type);
 
-        if (!isset($map[$type])) {
-            // If no template, keep GF original content
+        if (!$renderer) {
+            // If no renderer, keep GF original content
             return $content;
         }
 
-        // 3) Build a view model
-        $vm = [
-            // Basics
-            'fieldId'      => (int) $field->id,
-            'type'         => $type,
-            'formId'       => (int) $formId,
-
-            // Label and help
-            'label'        => $field->label ?? '',
-            'isRequired'   => (bool) ($field->isRequired ?? false),
-            'description'  => $field->description ?? '',
-
-            // Value and choices
-            'value'        => $value,
-            'choices'      => (property_exists($field, 'choices') && is_array($field->choices)) ? $field->choices : [],
-
-            // Validation state
-            'failed'       => (bool) ($field->failed_validation ?? false),
-            'message'      => $field->validation_message ?? '',
-
-            // Common ids and names that match GF conventions
-            'inputId'      => sprintf('input_%d_%d', (int) $formId, (int) $field->id),
-            'inputName'    => sprintf('input_%d', (int) $field->id),
-
-            // Extra attributes
-            'placeholder'  => $field->placeholder ?? '',
-            'ariaDescId'   => sprintf('field_%d_%d_desc', (int) $formId, (int) $field->id),
-
-            // Pass the full field object for access to type-specific properties
-            'field'        => $field,
-            'size'         => $field->size ?? 'lage',
-
-            // Custom date field settings
-            'noPastDates'  => (bool) (property_exists($field, 'noPastDates') ? $field->noPastDates : false),
-        ];
-
-        // Minor tweaks for specialized types
-        if ($type === 'email')   $vm['htmlInputType'] = 'email';
-        if ($type === 'number')  $vm['htmlInputType'] = 'number';
-
-        // File upload specific properties
-        if ($type === 'fileupload') {
-            $vm['maxFileSize'] = property_exists($field, 'maxFileSize') ? $field->maxFileSize : null;
-            $vm['allowedExtensions'] = property_exists($field, 'allowedExtensions') ? $field->allowedExtensions : null;
-            $vm['multipleFiles'] = property_exists($field, 'multipleFiles') ? (bool) $field->multipleFiles : false;
-        }
-
-        // HTML field specific properties
-        if ($type === 'html') {
-            $vm['html'] = $field->content;
-        }
-
-        // Address field specific properties
-        if ($type === 'address') {
-            $vm['countries'] = $field->get_countries();
-        }
-
-        // Time field specific properties
-        if ($type === 'time') {
-            $vm['timeFormat'] = property_exists($field, 'timeFormat') ? $field->timeFormat : '12';
-        }
-
-        // Phone field specific properties
-        if ($type === 'phone') {
-            $vm['phoneFormat'] = property_exists($field, 'phoneFormat') ? $field->phoneFormat : null;
-        }
-
-        // Consent field specific properties
-        if ($type === 'consent') {
-            $vm['formId'] = (int) $formId;
-            $vm['checkboxLabel'] = property_exists($field, 'checkboxLabel') ? $field->checkboxLabel : __('I consent', 'folkingebrew');
-            $vm['consentVersion'] = class_exists('GFFormsModel') ? \GFFormsModel::get_latest_form_revisions_id($formId) : '';
-        }
-
-        // Multiple choice field specific properties (checkbox using multiplechoice template)
-        // Also add properties for radio fields that might have other choices
-        if ($type === 'checkbox' || $type === 'radio') {
-            // Selection mode configuration
-            $vm['selectMode'] = property_exists($field, 'selectMode') ? $field->selectMode :
-                               ($type === 'radio' ? 'single' : 'multiple');
-
-            // Exact count setting for 'exactly' mode
-            $vm['exactCount'] = property_exists($field, 'exactCount') ? (int) $field->exactCount : 1;
-
-            // Range settings for 'range' mode
-            $vm['minRange'] = property_exists($field, 'minRange') ? (int) $field->minRange : 0;
-            $vm['maxRange'] = property_exists($field, 'maxRange') ? (int) $field->maxRange : 0;
-
-            // Select all functionality
-            $vm['enableSelectAll'] = property_exists($field, 'enableSelectAll') ? (bool) $field->enableSelectAll : false;
-            $vm['selectAllText'] = property_exists($field, 'selectAllText') ? $field->selectAllText : __('Select All', 'folkingebrew');
-
-            // Other choice functionality
-            $vm['enableOtherChoice'] = property_exists($field, 'enableOtherChoice') ? (bool) $field->enableOtherChoice : false;
-            $vm['otherChoiceText'] = property_exists($field, 'otherChoiceText') ? $field->otherChoiceText : __('Other', 'folkingebrew');
-        }
-
-        // List field specific properties
-        if ($type === 'list') {
-            $vm['maxRows'] = property_exists($field, 'maxRows') ? (int) $field->maxRows : 0;
-            $vm['enableColumns'] = property_exists($field, 'enableColumns') ? (bool) $field->enableColumns : false;
-            $vm['listFields'] = property_exists($field, 'fields') ? $field->fields : [];
-        }
-
-        return view($map[$type], $vm)->render();
+        // 3) Use the renderer to build and render the field
+        return $renderer->render($field, $value, $formId, $leadId);
     }
 
     /**

@@ -17,7 +17,7 @@ class Settings implements ServiceInterface
         // Disable auto-paragraphs in Gravity Forms fields
         add_filter('gform_enable_wpautop', '__return_false');
         // Custom validation message
-        add_filter('gform_validation_message', [$this, 'renderValidationMessage'], 10, 2);
+        // add_filter('gform_validation_message', [$this, 'renderValidationMessage'], 10, 2);
     }
 
     /**

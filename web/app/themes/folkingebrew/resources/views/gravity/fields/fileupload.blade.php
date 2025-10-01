@@ -20,13 +20,13 @@
 
     @if(isset($field) && property_exists($field, 'maxFileSize') && $field->maxFileSize)
       <div class="text-xs text-gray-500 mt-1">
-        Maximum file size: {{ $field->maxFileSize }} MB
+         {{ __('Maximum file size', 'folkingebrew') }}: {{ $field->maxFileSize }} MB
       </div>
     @endif
 
     @if(isset($field) && property_exists($field, 'allowedExtensions') && $field->allowedExtensions)
       <div class="text-xs text-gray-500 mt-1">
-        Allowed file types: {{ $field->allowedExtensions }}
+        {{ __('Allowed file types', 'folkingebrew') }}: {{ $field->allowedExtensions }}
       </div>
     @endif
   </div>
@@ -39,4 +39,3 @@
     <div class="text-sm text-red-600">{{ wp_strip_all_tags($message) }}</div>
   @endif
 </div>
-
