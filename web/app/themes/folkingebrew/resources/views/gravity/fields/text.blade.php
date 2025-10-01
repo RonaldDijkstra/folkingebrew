@@ -1,8 +1,15 @@
-@if($label !== '')
+@if($label !== '' && $field->labelPlacement !== 'hidden_label')
   @include('gravity.label', [
     'label' => $label,
     'isRequired' => $isRequired,
     'inputId' => $inputId,
+  ])
+@endif
+
+@if($description && $descriptionPlacement == 'above')
+  @include('gravity.description', [
+    'description' => $description,
+    'ariaDescId' => $ariaDescId,
   ])
 @endif
 
@@ -18,8 +25,11 @@
     'classes' => ($size === 'small' ? 'w-1/3' : ($size === 'medium' ? 'w-1/2' : 'w-full ')),
   ])
 
-  @if($description)
-    <div id="{{ $ariaDescId }}" class="text-sm text-gray-600">{{ $description }}</div>
+  @if($description && $descriptionPlacement != 'above')
+    @include('gravity.description', [
+      'description' => $description,
+      'ariaDescId' => $ariaDescId,
+    ])
   @endif
 
   @if($failed && $message)

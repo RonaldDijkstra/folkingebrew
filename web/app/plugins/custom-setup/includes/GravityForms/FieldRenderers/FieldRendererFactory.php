@@ -20,7 +20,7 @@ class FieldRendererFactory
         $this->registerRenderer('email', new TextFieldRenderer());
         $this->registerRenderer('number', new TextFieldRenderer());
         $this->registerRenderer('website', new TextFieldRenderer());
-        $this->registerRenderer('phone', new TextFieldRenderer());
+        $this->registerRenderer('phone', new PhoneFieldRenderer());
         $this->registerRenderer('checkbox', new MultipleChoiceFieldRenderer());
         $this->registerRenderer('radio', new MultipleChoiceFieldRenderer());
         $this->registerRenderer('multi_choice', new MultipleChoiceFieldRenderer());

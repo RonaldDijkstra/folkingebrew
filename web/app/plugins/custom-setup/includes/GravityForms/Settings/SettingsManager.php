@@ -1,23 +1,26 @@
 <?php
 
-namespace Custom\Setup\GravityForms;
+namespace Custom\Setup\GravityForms\Settings;
 
-use Custom\Setup\ServiceInterface;
-
-class Settings implements ServiceInterface
+class SettingsManager
 {
-    public function register()
+    /**
+     * Register all Gravity Forms settings and configurations
+     */
+    public function register(): void
     {
         // Allow shortcodes in Gravity Forms fields
         add_filter('acf/format_value/type=textarea', 'do_shortcode');
         add_filter('acf/format_value/type=text', 'do_shortcode');
         add_filter('gform_field_content', [$this, 'processGravityFormsHtmlShortcodes'], 10, 5);
+
         // Disable Gravity Forms styling
         add_filter('gform_disable_css', '__return_true');
+
         // Disable auto-paragraphs in Gravity Forms fields
         add_filter('gform_enable_wpautop', '__return_false');
-        // Custom validation message
-        // add_filter('gform_validation_message', [$this, 'renderValidationMessage'], 10, 2);
+
+        add_filter('gform_disable_form_theme_css', '__return_true');
     }
 
     /**
@@ -38,29 +41,5 @@ class Settings implements ServiceInterface
         }
 
         return $content;
-    }
-
-    /**
-     * Render validation message with a Blade template
-     *
-     * @param string $validation_message The original validation message HTML
-     * @param array $form The form object
-     * @return string The rendered validation message HTML
-     */
-    public function renderValidationMessage($validation_message, $form): string
-    {
-        if(is_admin()) {
-            return $validation_message;
-        }
-
-        // Hardly needed, but just in case
-        if (function_exists('view') && view()->exists('gravity.validation-message')) {
-            return view('gravity.validation-message', [
-                'original_message' => $validation_message,
-                'form' => $form,
-            ])->render();
-        }
-
-        return $validation_message;
     }
 }

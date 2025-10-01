@@ -41,6 +41,7 @@ abstract class BaseFieldRenderer implements FieldRendererInterface
             // Extra attributes
             'placeholder'  => $field->placeholder ?? '',
             'ariaDescId'   => sprintf('field_%d_%d_desc', $formId, (int) $field->id),
+            'descriptionPlacement' => $field->descriptionPlacement ?? 'below',
 
             // Pass the full field object for access to type-specific properties
             'field'        => $field,

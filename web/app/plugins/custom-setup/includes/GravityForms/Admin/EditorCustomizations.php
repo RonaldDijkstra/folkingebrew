@@ -1,22 +1,8 @@
 <?php
+namespace Custom\Setup\GravityForms\Admin;
 
-namespace Custom\Setup\GravityForms;
-
-use Custom\Setup\ServiceInterface;
-
-class Customizations implements ServiceInterface
+class EditorCustomizations
 {
-    /**
-     * Register the service.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        add_filter('gform_add_field_buttons', [$this, 'removeFieldButtons']);
-        add_filter('gform_field_groups_form_editor', [$this, 'removeFieldGroups']);
-    }
-
     /**
      * Remove Post and Pricing fields from the field buttons in the editor.
      *

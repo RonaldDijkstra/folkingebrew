@@ -32,11 +32,7 @@ final class Init
             CustomFields\PageOptions::class,
             CustomFields\CustomPostTypeBeers::class,
             CustomPostTypes\Beers::class,
-            GravityForms\Customizations::class,
-            GravityForms\Fields::class,
-            // GravityForms\Pagination::class,
-            GravityForms\Settings::class,
-            GravityForms\ShowPagesWithForm::class,
+            GravityForms\Services\GravityFormsService::class,
             Setup\PostType::class,
             Setup\Security::class,
         ];
@@ -48,6 +44,7 @@ final class Init
      */
     public static function register_services()
     {
+        // Register all services
         foreach (self::get_services() as $class) {
             $service = self::instantiate($class);
             if (method_exists($service, 'register')) {

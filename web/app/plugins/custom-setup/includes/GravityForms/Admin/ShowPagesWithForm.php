@@ -1,6 +1,6 @@
 <?php
 
-namespace Custom\Setup\GravityForms;
+namespace Custom\Setup\GravityForms\Admin;
 
 use Custom\Setup\ServiceInterface;
 
