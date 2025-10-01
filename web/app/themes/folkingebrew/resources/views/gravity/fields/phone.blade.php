@@ -29,12 +29,11 @@
   </label>
 @endif
 
-
 <div class="flex flex-col gap-1">
   <input
+    type="{{ $inputType }}"
     id="{{ $inputId }}"
     name="{{ $inputName }}"
-    type="{{ $inputType }}"
     value="{{ is_string($value) ? $value : '' }}"
     autocomplete="{{ $autocompleteValue }}"
     pattern="[0-9\s\-\+\(\)\.x#]+"

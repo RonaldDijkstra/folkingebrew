@@ -2,6 +2,12 @@
   <label class="font-medium" for="{{ $inputId }}">
     {{ $label }} @if($isRequired)<span aria-hidden="true">*</span>@endif
   </label>
+
+  @include('gravity.label', [
+    'label' => $label,
+    'isRequired' => $isRequired,
+    'inputId' => $inputId,
+  ])
 @endif
 
 <div class="flex flex-col gap-1">
@@ -24,10 +30,15 @@
   </select>
 
   @if($description)
-    <p id="{{ $ariaDescId }}" class="text-sm text-gray-600">{{ $description }}</p>
+    @include('gravity.description', [
+      'description' => $description,
+      'ariaDescId' => $ariaDescId,
+    ])
   @endif
 
   @if($failed && $message)
-    <p class="text-sm text-red-600">{{ wp_strip_all_tags($message) }}</p>
+    @include('gravity.validation-field', [
+      'message' => $message,
+    ])
   @endif
 </div>

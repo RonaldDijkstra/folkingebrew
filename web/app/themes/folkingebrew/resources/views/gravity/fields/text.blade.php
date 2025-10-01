@@ -1,7 +1,3 @@
-@php
-  $t = $htmlInputType ?? ($type === 'email' ? 'email' : ($type === 'number' ? 'number' : 'text'));
-@endphp
-
 @if($label !== '')
   @include('gravity.label', [
     'label' => $label,
@@ -12,7 +8,7 @@
 
 <div class="flex flex-col gap-1">
   @include('gravity.fields.inputs.text', [
-    'type' => $t,
+    'type' => $type,
     'id' => $inputId,
     'name' => $inputName,
     'value' => $value,
@@ -27,6 +23,8 @@
   @endif
 
   @if($failed && $message)
-    <div class="text-sm text-red-600">{{ wp_strip_all_tags($message) }}</div>
+    @include('gravity.validation-field', [
+      'message' => $message,
+    ])
   @endif
 </div>

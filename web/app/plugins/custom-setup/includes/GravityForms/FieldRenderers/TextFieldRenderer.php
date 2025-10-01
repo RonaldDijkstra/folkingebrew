@@ -18,8 +18,7 @@ class TextFieldRenderer extends BaseFieldRenderer
     {
         $viewModel = parent::buildViewModel($field, $value, $formId, $leadId);
 
-        // Add HTML input type based on field type
-        $viewModel['htmlInputType'] = $this->getHtmlInputType($field->type ?? '');
+        $viewModel['type'] = $this->getHtmlInputType($field->type ?? '');
 
         return $viewModel;
     }
