@@ -17,7 +17,7 @@ const initFlatpickr = () => {
       dateFormat: "Y-m-d",
       allowInput: true,
       altInput: true,
-      altFormat: "F j, Y",
+      altFormat: "d-m-Y",
       placeholder: "Select a date...",
     };
 

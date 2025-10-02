@@ -1,4 +1,4 @@
-@if($label !== '')
+@if($label !== '' && $field->labelPlacement !== 'hidden_label')
   @include('gravity.label', [
     'label' => $label,
     'isRequired' => $isRequired,
@@ -7,6 +7,12 @@
 @endif
 
 <div class="flex flex-col gap-1">
+  @if($description && $descriptionPlacement == 'above')
+    @include('gravity.description', [
+      'description' => $description,
+      'ariaDescId' => $ariaDescId,
+    ])
+  @endif
   @if($field->dateType === 'datepicker')
     @include('gravity.fields.date.datepicker')
   @endif
@@ -19,7 +25,7 @@
     @include('gravity.fields.date.datedropdown')
   @endif
 
-  @if($description)
+  @if($description && $descriptionPlacement != 'above')
     @include('gravity.description', [
       'description' => $description,
       'ariaDescId' => $ariaDescId,

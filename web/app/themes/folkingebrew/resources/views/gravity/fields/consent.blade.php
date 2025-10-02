@@ -1,3 +1,19 @@
+@if($label !== '' && $field->labelPlacement !== 'hidden_label')
+  @include('gravity.label', [
+    'label' => $label,
+    'isRequired' => $isRequired,
+    'inputId' => $inputId,
+  ])
+@endif
+
+@if($description && $descriptionPlacement == 'above')
+  <div id="gfield_consent_description_{{ $formId }}_{{ $fieldId }}" class="border border-inactive text-sm bg-gray-50 rounded overflow-auto max-h-48 mb-3">
+    <div class="max-h-50 p-5">
+      {!! nl2br(e($description)) !!}
+    </div>
+  </div>
+@endif
+
 <div class="flex mb-2">
   @include('gravity.fields.inputs.checkbox', [
     'id' => $inputId,
@@ -15,7 +31,7 @@
     'message' => $message,
   ])
 @endif
-@if($description)
+@if($description && $descriptionPlacement != 'above')
   <div id="gfield_consent_description_{{ $formId }}_{{ $fieldId }}" class="border border-inactive text-sm bg-gray-50 rounded overflow-auto max-h-48">
     <div class="max-h-50 p-5">
       {!! nl2br(e($description)) !!}

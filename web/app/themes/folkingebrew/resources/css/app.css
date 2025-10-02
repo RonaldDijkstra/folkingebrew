@@ -19,6 +19,10 @@
   --breakpoint-xs: 360px;
 }
 
+.gform-theme--framework {
+  --gf-primary-color: #54b848;
+}
+
 @custom-variant menu-open (.menu-open &);
 @custom-variant has-adminbar (.admin-bar &);
 @custom-variant at-the-top (.at-the-top &);
@@ -133,6 +137,14 @@
 
   .gform-page-footer {
     @apply flex justify-between;
+  }
+
+  .ginput_counter {
+    @apply text-sm;
+  }
+
+  .gfield_validation_message {
+    @apply text-sm text-red-600 mt-1;
   }
 }
 

@@ -3,11 +3,18 @@
   $inputBorder = $failed ? 'border-red-500' : 'border-gray-300';
 @endphp
 
-@if(!empty($label ?? ''))
+@if($label !== '' && $field->labelPlacement !== 'hidden_label')
   @include('gravity.label', [
     'label' => $label,
     'isRequired' => $isRequired,
     'inputId' => $inputId,
+  ])
+@endif
+
+@if($description && $descriptionPlacement == 'above')
+  @include('gravity.description', [
+    'description' => $description,
+    'ariaDescId' => $ariaDescId,
   ])
 @endif
 
@@ -85,7 +92,7 @@
     @endif
   </div>
 
-  @if(!empty($description))
+  @if($description && $descriptionPlacement != 'above')
     @include('gravity.description', [
       'description' => $description,
       'ariaDescId' => $ariaDescId,
