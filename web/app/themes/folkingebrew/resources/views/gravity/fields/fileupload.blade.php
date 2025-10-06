@@ -1,48 +1,55 @@
-@if($label !== '')
-  @include('gravity.label', [
-    'label' => $label,
-    'isRequired' => $isRequired,
-    'inputId' => $inputId,
-  ])
+@if(!empty($label))
+  <label for="{{ $inputId }}">{{ $label }}@if(!empty($isRequired)) *@endif</label>
 @endif
 
-<div class="flex flex-col gap-1">
-  <div class="file-upload-wrapper">
-    <input
-      type="file"
-      id="{{ $inputId }}"
-      name="{{ $inputName }}"
-      @if($isRequired) aria-required="true" required @endif
-      @if($failed) aria-invalid="true" @endif
-      aria-describedby="{{ $ariaDescId }}"
-      class="block w-full text-sm text-body file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-primary/20 file:text-primary hover:file:bg-primary/30 border rounded @if($failed) border-red-500 @else border-gray-300 @endif"
-      @if(isset($field) && property_exists($field, 'multipleFiles') && $field->multipleFiles) multiple @endif
-      @if(isset($field) && property_exists($field, 'allowedExtensions') && $field->allowedExtensions) accept="{{ $field->allowedExtensions }}" @endif
-    />
+{{-- Single-file --}}
+@if(empty($multipleFiles))
+  <input
+    type="file"
+    id="{{ $inputId }}"
+    name="{{ $inputName }}"
+    @if(!empty($isRequired)) required @endif
+    @if($accept !== '*') accept="{{ $accept }}" @endif
+  />
+  @if(!empty($maxFileSize))
+    <div>Max file size: {{ $maxFileSizeMB }} MB</div>
+  @endif
+  @if($allowedRaw !== '*')
+    <div>Allowed types: {{ $allowedRaw }}</div>
+  @endif
+@endif
 
-    @if(isset($field) && property_exists($field, 'maxFileSize') && $field->maxFileSize)
-      <div class="text-xs text-gray-500 mt-1">
-         {{ __('Maximum file size', 'folkingebrew') }}: {{ $field->maxFileSize }} MB
+{{-- Multi-file --}}
+@if(!empty($multipleFiles))
+  <div id="{{ $fieldElementId }}">
+    <div>
+      <div
+        id="{{ $multiWrapId }}"
+        data-settings="{{ $settingsJson }}"
+        class="gform_fileupload_multifile"
+      >
+        <div id="{{ $dropAreaId }}">
+          <span>Drop files here or </span>
+          <button type="button" id="{{ $browseBtnId }}">Select files</button>
+        </div>
       </div>
-    @endif
 
-    @if(isset($field) && property_exists($field, 'allowedExtensions') && $field->allowedExtensions)
-      <div class="text-xs text-gray-500 mt-1">
-        {{ __('Allowed file types', 'folkingebrew') }}: {{ $field->allowedExtensions }}
+      <div id="{{ $rulesId }}">
+        Max file size: {{ $maxFileSizeMB }} MB
+        @if($maxFiles > 0). Max files: {{ $maxFiles }}@endif
       </div>
-    @endif
+
+      <ul id="{{ $messagesId }}"></ul>
+    </div>
+
+    <div id="{{ $previewId }}"></div>
   </div>
+@endif
 
-  @if($description)
-    @include('gravity.description', [
-      'description' => $description,
-      'ariaDescId' => $ariaDescId,
-    ])
-  @endif
+@if(!empty($description))
+  <div>{{ $description }}</div>
+@endif
 
-  @if($failed && $message)
-    @include('gravity.validation-field', [
-      'message' => $message,
-    ])
-  @endif
-</div>
+@if(!empty($failed) && !empty($message))
+  <div>{{ $message }}</div>
+@endif
