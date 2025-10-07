@@ -1,4 +1,4 @@
-@if($label !== '')
+@if($label !== '' && $field->labelPlacement !== 'hidden_label')
   @include('gravity.label', [
     'label' => $label,
     'isRequired' => $isRequired,

@@ -1,11 +1,18 @@
-@if($label !== '')
+@if($label !== '' && $field->labelPlacement !== 'hidden_label')
   <fieldset class="multiple-choice-field">
     @include('gravity.label', [
-      'label' => $label,
-      'isRequired' => $isRequired,
-      'inputId' => $inputId,
-    ])
+        'label' => $label,
+        'isRequired' => $isRequired,
+        'inputId' => $inputId,
+      ])
   </fieldset>
+@endif
+
+@if($description && $descriptionPlacement == 'above')
+  @include('gravity.description', [
+    'description' => $description,
+    'ariaDescId' => $ariaDescId,
+  ])
 @endif
 
 <div class="flex flex-col gap-1 multiple-choice-container"
@@ -171,7 +178,7 @@
     </div>
   @endif
 
-  @if($description)
+  @if($description && $descriptionPlacement != 'above')
     @include('gravity.description', [
       'description' => $description,
       'ariaDescId' => $ariaDescId,

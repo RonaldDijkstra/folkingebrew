@@ -1,12 +1,15 @@
 @if($label !== '')
-  <label class="font-medium" for="{{ $inputId }}">
-    {{ $label }} @if($isRequired)<span aria-hidden="true">*</span>@endif
-  </label>
-
   @include('gravity.label', [
     'label' => $label,
     'isRequired' => $isRequired,
     'inputId' => $inputId,
+  ])
+@endif
+
+@if($description && $descriptionPlacement == 'above')
+  @include('gravity.description', [
+    'description' => $description,
+    'ariaDescId' => $ariaDescId,
   ])
 @endif
 
@@ -29,7 +32,7 @@
     @endforeach
   </select>
 
-  @if($description)
+  @if($description && $descriptionPlacement != 'above')
     @include('gravity.description', [
       'description' => $description,
       'ariaDescId' => $ariaDescId,

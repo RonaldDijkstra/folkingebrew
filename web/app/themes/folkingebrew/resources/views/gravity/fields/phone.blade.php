@@ -1,8 +1,15 @@
-@if($label !== '')
+@if($label !== '' && $field->labelPlacement !== 'hidden_label')
   @include('gravity.label', [
     'label' => $label,
     'isRequired' => $isRequired,
     'inputId' => $inputId,
+  ])
+@endif
+
+@if($description && $descriptionPlacement == 'above')
+  @include('gravity.description', [
+    'description' => $description,
+    'ariaDescId' => $ariaDescId,
   ])
 @endif
 
@@ -22,7 +29,7 @@
     oninput="this.value = this.value.replace(/[^0-9\s\-\+\(\)\.x#]/g, '')"
   />
 
-  @if($description)
+  @if($description && $descriptionPlacement != 'above')
     @include('gravity.description', [
       'description' => $description,
       'ariaDescId' => $ariaDescId,

@@ -6,6 +6,13 @@
   ])
 @endif
 
+@if($description && $descriptionPlacement == 'above')
+  @include('gravity.description', [
+    'description' => $description,
+    'ariaDescId' => $ariaDescId,
+  ])
+@endif
+
 <div class="flex flex-col gap-1">
   <textarea
     id="{{ $inputId }}"
@@ -18,9 +25,9 @@
     class="border rounded px-3 py-2 w-full focus:outline-primary @if($failed) border-red-500 @else border-gray-300 @endif"
   >{{ is_string($value) ? $value : '' }}</textarea>
 
-  @if($description)
+  @if($description && $descriptionPlacement != 'above')
     @include('gravity.description', [
-      'message' => $message,
+      'description' => $description,
       'ariaDescId' => $ariaDescId,
     ])
   @endif
