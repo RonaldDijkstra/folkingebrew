@@ -50,11 +50,25 @@ class FileUploadFieldRenderer extends BaseFieldRenderer
         // Allowed extensions
         $allowedRaw = !empty($field->allowedExtensions) ? trim($field->allowedExtensions) : '*';
         $accept = '*';
+        $allowedExtensionsForJs = '*';
+
         if ($allowedRaw !== '*') {
+            // Process extensions for HTML accept attribute (with dots and MIME types)
             $accept = implode(',', array_filter(array_map(function ($e) {
                 $e = strtolower(trim($e));
                 return $e !== '' ? '.' . ltrim($e, '.') : '';
             }, explode(',', $allowedRaw))));
+
+            // Process extensions for JavaScript (clean format like Gravity Forms does)
+            if (class_exists('GFCommon') && method_exists('GFCommon', 'clean_extensions')) {
+                $allowedExtensionsForJs = implode(',', \GFCommon::clean_extensions(explode(',', strtolower($allowedRaw))));
+            } else {
+                // Fallback: manual cleaning
+                $allowedExtensionsForJs = implode(',', array_filter(array_map(function ($e) {
+                    $e = str_replace('.', '', str_replace(' ', '', strtolower(trim($e))));
+                    return $e !== '' ? $e : '';
+                }, explode(',', $allowedRaw))));
+            }
         }
 
         // Max files (0 = unlimited)
@@ -74,7 +88,7 @@ class FileUploadFieldRenderer extends BaseFieldRenderer
             'file_data_name' => 'file',
             'url' => $uploadUrl,
             'filters' => [
-                'mime_types' => [['title' => 'Allowed Files', 'extensions' => $allowedRaw]],
+                'mime_types' => [['title' => 'Allowed Files', 'extensions' => $allowedExtensionsForJs]],
                 'max_file_size' => $maxFileSizeBytes . 'b',
             ],
             'multipart' => true,
@@ -106,6 +120,7 @@ class FileUploadFieldRenderer extends BaseFieldRenderer
             'maxFileSizeBytes' => $maxFileSizeBytes,
             'allowedRaw' => $allowedRaw,
             'accept' => $accept,
+            'allowedExtensionsForJs' => $allowedExtensionsForJs,
             'maxFiles' => $maxFiles,
             'uploadUrl' => $uploadUrl,
             'settings' => $settings,

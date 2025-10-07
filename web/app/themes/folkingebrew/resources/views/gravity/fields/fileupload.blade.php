@@ -6,6 +6,13 @@
   ])
 @endif
 
+@if($description && $descriptionPlacement == 'above')
+  @include('gravity.description', [
+    'description' => $description,
+    'ariaDescId' => $ariaDescId,
+  ])
+@endif
+
 {{-- Single-file --}}
 @if(empty($multipleFiles))
   <input
@@ -41,7 +48,7 @@
         </div>
       </div>
 
-      <div id="{{ $rulesId }}" class="text-sm">
+      <div id="{{ $rulesId }}" class="text-sm mb-2">
         {{ __("Max file size", "folkingebrew") }}: {{ $maxFileSizeMB }} MB
         @if($maxFiles > 0)<br>{{ __("Max files", "folkingebrew") }}: {{ $maxFiles }}@endif
         @if($allowedRaw !== '*')<br>
@@ -49,15 +56,18 @@
         @endif
       </div>
 
-      <ul id="{{ $messagesId }}" class="!list-none prose prose-li:pl-0"></ul>
+      <ul id="{{ $messagesId }}" class="!list-none prose prose-li:pl-0 !mt-0 empty:hidden"></ul>
     </div>
 
     <div id="{{ $previewId }}"></div>
   </div>
 @endif
 
-@if(!empty($description))
-  <div>{{ $description }}</div>
+@if($description && $descriptionPlacement != 'above')
+  @include('gravity.description', [
+    'description' => $description,
+    'ariaDescId' => $ariaDescId,
+  ])
 @endif
 
 @if($failed && $message)
