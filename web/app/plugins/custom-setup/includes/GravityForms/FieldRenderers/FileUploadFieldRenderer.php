@@ -61,7 +61,7 @@ class FileUploadFieldRenderer extends BaseFieldRenderer
         $maxFiles = !empty($field->maxFiles) ? (int) $field->maxFiles : 0;
 
         // Upload URL
-        $uploadUrl = home_url('/wp/?gf_page=f2a4acb018eb444');
+        $uploadUrl = $this->getUploadUrl();
 
         // Uploader settings
         $settings = [
@@ -111,5 +111,23 @@ class FileUploadFieldRenderer extends BaseFieldRenderer
             'settings' => $settings,
             'settingsJson' => $settingsJson,
         ];
+    }
+
+    /**
+     * Get the dynamic upload URL with proper gf_page parameter
+     *
+     * @return string The upload URL
+     */
+    private function getUploadUrl(): string
+    {
+        // Try to get the upload page slug from Gravity Forms
+        if (class_exists('GFCommon') && method_exists('GFCommon', 'get_upload_page_slug')) {
+            $uploadPageSlug = \GFCommon::get_upload_page_slug();
+            return home_url('/wp/?gf_page=' . $uploadPageSlug);
+        }
+
+        // Fallback: use the default upload page format
+        // This maintains backward compatibility if Gravity Forms methods are not available
+        return home_url('/wp/?gf_page=upload');
     }
 }
