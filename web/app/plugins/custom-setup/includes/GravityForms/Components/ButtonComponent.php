@@ -41,7 +41,7 @@ class ButtonComponent implements ComponentInterface
         // Extract submit button settings from the form object
         $submitSettings = [
             'inputType' => $form['button']['type'] ?? 'text',
-            'text' => $form['button']['text'] ?? 'Submit',
+            'text' => !empty($form['button']['text']) ? $form['button']['text'] : 'Submit',
             'imageUrl' => $form['button']['imageUrl'] ?? '',
             'width' => $form['button']['width'] ?? 'auto',
             'location' => $form['button']['location'] ?? 'bottom',

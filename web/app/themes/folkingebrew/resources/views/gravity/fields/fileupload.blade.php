@@ -1,5 +1,9 @@
-@if(!empty($label))
-  <label for="{{ $inputId }}">{{ $label }}@if(!empty($isRequired)) *@endif</label>
+@if($label !== '')
+  @include('gravity.label', [
+    'label' => $label,
+    'isRequired' => $isRequired,
+    'inputId' => $inputId,
+  ])
 @endif
 
 {{-- Single-file --}}
@@ -12,10 +16,10 @@
     @if($accept !== '*') accept="{{ $accept }}" @endif
   />
   @if(!empty($maxFileSize))
-    <div>Max file size: {{ $maxFileSizeMB }} MB</div>
+    <div>{{ __("Max file size", "folkingebrew") }}: {{ $maxFileSizeMB }} MB</div>
   @endif
   @if($allowedRaw !== '*')
-    <div>Allowed types: {{ $allowedRaw }}</div>
+    <div>{{ __("Allowed types", "folkingebrew") }}: {{ $allowedRaw }}</div>
   @endif
 @endif
 
@@ -28,18 +32,21 @@
         data-settings="{{ $settingsJson }}"
         class="gform_fileupload_multifile"
       >
-        <div id="{{ $dropAreaId }}">
-          <span>Drop files here or </span>
-          <button type="button" id="{{ $browseBtnId }}">Select files</button>
+        <div id="{{ $dropAreaId }}" class="border-2 border-dashed border-primary rounded-md p-10 flex flex-col items-center justify-center mb-2 @if($failed) border-red-500 @endif">
+          <div class="text-md mb-2">{{ __("Drop files here or", "folkingebrew") }}</div>
+          <button type="button" id="{{ $browseBtnId }}" class="bg-primary text-white hover:bg-primary/80 cursor-pointer text-md px-3 py-1 no-underline">{{ __("Select files", "folkingebrew") }}</button>
         </div>
       </div>
 
-      <div id="{{ $rulesId }}">
-        Max file size: {{ $maxFileSizeMB }} MB
-        @if($maxFiles > 0). Max files: {{ $maxFiles }}@endif
+      <div id="{{ $rulesId }}" class="text-sm">
+        {{ __("Max file size", "folkingebrew") }}: {{ $maxFileSizeMB }} MB
+        @if($maxFiles > 0)<br>{{ __("Max files", "folkingebrew") }}: {{ $maxFiles }}@endif
+        @if($allowedRaw !== '*')<br>
+          {{ __("Allowed types", "folkingebrew") }}: {{ $allowedRaw }}
+        @endif
       </div>
 
-      <ul id="{{ $messagesId }}"></ul>
+      <ul id="{{ $messagesId }}" class="!list-none prose prose-li:pl-0"></ul>
     </div>
 
     <div id="{{ $previewId }}"></div>
@@ -50,6 +57,8 @@
   <div>{{ $description }}</div>
 @endif
 
-@if(!empty($failed) && !empty($message))
-  <div>{{ $message }}</div>
+@if($failed && $message)
+  @include('gravity.validation-field', [
+    'message' => $message,
+  ])
 @endif

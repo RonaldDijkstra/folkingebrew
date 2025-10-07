@@ -146,6 +146,36 @@
   .gfield_validation_message {
     @apply text-sm text-red-600 mt-1;
   }
+
+  .ginput_preview {
+    @apply grid grid-cols-[1fr_auto_auto_auto] items-center gap-2 py-2 px-3 odd:bg-gray-100;
+  }
+
+  .gfield_fileupload_filename {
+    @apply overflow-hidden text-ellipsis whitespace-nowrap;
+  }
+
+  .gfield_fileupload_filesize,
+  .gfield_fileupload_progress,
+  .gform_delete_file {
+    @apply whitespace-nowrap justify-self-end text-sm;
+  }
+
+  .gfield_fileupload_progress {
+    @apply flex items-center gap-1;
+  }
+
+  .gfield_fileupload_progressbar {
+    @apply w-8 h-1 bg-gray-200 rounded overflow-hidden;
+  }
+
+  .gfield_fileupload_progressbar_progress {
+    @apply block h-full bg-primary;
+  }
+
+  .gform_delete_file {
+    @apply bg-transparent border-0 text-red-500 cursor-pointer p-0;
+  }
 }
 
 @font-face {
