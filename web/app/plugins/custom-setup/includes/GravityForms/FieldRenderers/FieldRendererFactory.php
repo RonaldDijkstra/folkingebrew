@@ -17,7 +17,7 @@ class FieldRendererFactory
     private function registerDefaultRenderers(): void
     {
         $this->registerRenderer('text', new TextFieldRenderer());
-        $this->registerRenderer('email', new TextFieldRenderer());
+        $this->registerRenderer('email', new EmailFieldRenderer());
         $this->registerRenderer('number', new NumberFieldRenderer());
         $this->registerRenderer('website', new TextFieldRenderer());
         $this->registerRenderer('phone', new PhoneFieldRenderer());

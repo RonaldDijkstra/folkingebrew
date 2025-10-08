@@ -6,7 +6,7 @@ class TextFieldRenderer extends BaseFieldRenderer
 {
     public function supports(string $fieldType): bool
     {
-        return in_array($fieldType, ['text', 'email', 'website', 'phone']);
+        return in_array($fieldType, ['text', 'website', 'phone']);
     }
 
     public function getViewName(): string
@@ -26,7 +26,6 @@ class TextFieldRenderer extends BaseFieldRenderer
     private function getHtmlInputType(string $fieldType): string
     {
         return match($fieldType) {
-            'email' => 'email',
             'website' => 'url',
             'phone' => 'tel',
             default => 'text'
