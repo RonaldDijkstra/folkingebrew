@@ -1,3 +1,5 @@
+@if($visibility === 'administrative') @php return; @endphp @endif
+
 @if($label !== '')
   @include('gravity.label', [
     'label' => $label,

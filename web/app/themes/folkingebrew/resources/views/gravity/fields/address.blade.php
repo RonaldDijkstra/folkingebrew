@@ -1,3 +1,5 @@
+@if($visibility === 'administrative') @php return; @endphp @endif
+
 @php
   $inputBase = 'border rounded px-3 py-2 w-full';
   $inputBorder = $failed ? 'border-red-500' : 'border-gray-300';

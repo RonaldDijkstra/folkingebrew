@@ -17,6 +17,7 @@ abstract class BaseFieldRenderer implements FieldRendererInterface
     {
         return [
             // Basics
+            'visibility'   => $field->visibility ?? 'visible',
             'fieldId'      => (int) $field->id,
             'type'         => $field->type ?? '',
             'formId'       => $formId,

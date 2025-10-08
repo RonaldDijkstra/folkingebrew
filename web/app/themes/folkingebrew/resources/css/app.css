@@ -176,6 +176,14 @@
   .gform_delete_file {
     @apply bg-transparent border-0 text-red-500 cursor-pointer p-0;
   }
+
+  .gfield_visibility_hidden {
+    @apply !hidden;
+  }
+
+  .gfield_description {
+    @apply text-sm text-body;
+  }
 }
 
 @font-face {
