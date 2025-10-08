@@ -53,7 +53,8 @@
     "roots/wp-config": "1.0.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
     "vinkla/extended-acf": "14.6.0",
-    "wpackagist-plugin/svg-support": "^2.5"
+    "wpackagist-plugin/svg-support": "^2.5",
+    "wpackagist-plugin/woocommerce": "^10.2"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
