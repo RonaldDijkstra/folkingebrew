@@ -4,6 +4,7 @@ export default function forms() {
     initMultipleChoiceFields();
     initRadioOtherFields();
     initListFields();
+    initNumberFields();
   });
 }
 
@@ -536,4 +537,39 @@ function updateRowCount(container) {
 function triggerChangeEvent(element) {
   const event = new Event('change', { bubbles: true });
   element.dispatchEvent(event);
+}
+
+/**
+ * Initialize number field functionality with increase/decrease buttons
+ */
+function initNumberFields() {
+  // Use event delegation to handle dynamically generated fields
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('#increaseButton, #decreaseButton');
+    if (!target) return;
+
+    // Find the number input within the same parent container
+    const container = target.closest('.relative');
+    if (!container) return;
+
+    const input = container.querySelector('input[type="number"]');
+    if (!input) return;
+
+    e.preventDefault();
+
+    if (target.id === 'increaseButton') {
+      // Increase the value and respect the max attribute
+      const currentValue = parseInt(input.value || 0);
+      const maxValue = input.max ? parseInt(input.max) : Infinity;
+      input.value = Math.min(maxValue, currentValue + 1);
+    } else if (target.id === 'decreaseButton') {
+      // Decrease the value and respect the min attribute
+      const currentValue = parseInt(input.value || 0);
+      const minValue = input.min ? parseInt(input.min) : 0;
+      input.value = Math.max(minValue, currentValue - 1);
+    }
+
+    // Trigger change event for any listeners
+    triggerChangeEvent(input);
+  });
 }

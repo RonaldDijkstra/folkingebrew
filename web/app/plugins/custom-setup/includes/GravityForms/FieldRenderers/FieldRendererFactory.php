@@ -18,7 +18,7 @@ class FieldRendererFactory
     {
         $this->registerRenderer('text', new TextFieldRenderer());
         $this->registerRenderer('email', new TextFieldRenderer());
-        $this->registerRenderer('number', new TextFieldRenderer());
+        $this->registerRenderer('number', new NumberFieldRenderer());
         $this->registerRenderer('website', new TextFieldRenderer());
         $this->registerRenderer('phone', new PhoneFieldRenderer());
         $this->registerRenderer('checkbox', new MultipleChoiceFieldRenderer());
