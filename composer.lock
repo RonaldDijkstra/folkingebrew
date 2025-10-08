@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c69a1b7cd7bfc18bddf091069e13728",
+    "content-hash": "8f938c015bb4749143f281129cac6e66",
     "packages": [
         {
             "name": "composer/installers",
@@ -959,16 +959,16 @@
         },
         {
             "name": "vinkla/extended-acf",
-            "version": "14.5.0",
+            "version": "14.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vinkla/extended-acf.git",
-                "reference": "6b50666a791ae39a839e25c35a2567d7c0306410"
+                "reference": "28783149a4df742804e9537e21c3429fcec011a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vinkla/extended-acf/zipball/6b50666a791ae39a839e25c35a2567d7c0306410",
-                "reference": "6b50666a791ae39a839e25c35a2567d7c0306410",
+                "url": "https://api.github.com/repos/vinkla/extended-acf/zipball/28783149a4df742804e9537e21c3429fcec011a2",
+                "reference": "28783149a4df742804e9537e21c3429fcec011a2",
                 "shasum": ""
             },
             "require": {
@@ -984,7 +984,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "14.5-dev"
+                    "dev-master": "14.6-dev"
                 }
             },
             "autoload": {
@@ -1016,9 +1016,9 @@
             ],
             "support": {
                 "issues": "https://github.com/vinkla/extended-acf/issues",
-                "source": "https://github.com/vinkla/extended-acf/tree/14.5.0"
+                "source": "https://github.com/vinkla/extended-acf/tree/14.6.0"
             },
-            "time": "2025-08-11T12:15:51+00:00"
+            "time": "2025-10-07T17:40:36+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
