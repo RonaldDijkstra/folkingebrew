@@ -22,6 +22,8 @@
     'name' => $inputName,
     'value' => $value,
     'placeholder' => $placeholder,
+    'autocomplete' => $autocomplete,
+    'autocompleteAttribute' => $autocompleteAttribute,
     'isRequired' => $isRequired,
     'failed' => $failed,
     'classes' => ($size === 'small' ? 'w-1/3' : ($size === 'medium' ? 'w-1/2' : 'w-full ')),

@@ -10,12 +10,12 @@ final class AddressFieldRenderer extends BaseFieldRenderer
      * Gravity Forms address input suffix mapping.
      */
     private const TYPE_MAP = [
-        '1' => ['key' => 'street',   'placeholder' => 'Street Address', 'full' => true],
-        '2' => ['key' => 'address2', 'placeholder' => 'Address Line 2', 'full' => true],
-        '3' => ['key' => 'city',     'placeholder' => 'City', 'full' => false],
-        '4' => ['key' => 'state',    'placeholder' => 'State / Province / Region', 'full' => false],
-        '5' => ['key' => 'zip',      'placeholder' => 'ZIP / Postal Code', 'full' => false],
-        '6' => ['key' => 'country',  'placeholder' => 'Country', 'full' => false],
+        '1' => ['key' => 'street',   'placeholder' => 'Street Address', 'full' => true, 'autocomplete' => 'address-line1'],
+        '2' => ['key' => 'address2', 'placeholder' => 'Address Line 2', 'full' => true, 'autocomplete' => 'address-line2'],
+        '3' => ['key' => 'city',     'placeholder' => 'City', 'full' => false, 'autocomplete' => 'address-level2'],
+        '4' => ['key' => 'state',    'placeholder' => 'State / Province / Region', 'full' => false, 'autocomplete' => 'address-level1'],
+        '5' => ['key' => 'zip',      'placeholder' => 'ZIP / Postal Code', 'full' => false, 'autocomplete' => 'postal-code'],
+        '6' => ['key' => 'country',  'placeholder' => 'Country', 'full' => false, 'autocomplete' => 'country-name'],
     ];
 
     public function supports(string $fieldType): bool
@@ -41,6 +41,9 @@ final class AddressFieldRenderer extends BaseFieldRenderer
         // Countries (GF_Field_Address::get_countries) when available.
         $countries = method_exists($field, 'get_countries') ? (array) $field->get_countries() : [];
         $viewModel['countries'] = $countries;
+
+        // Check if autocomplete is enabled for this field
+        $viewModel['enableAutocomplete'] = (bool) ($field->enableAutocomplete ?? true);
 
         // Merge processed address data.
         return array_merge(
@@ -84,14 +87,15 @@ final class AddressFieldRenderer extends BaseFieldRenderer
             $meta = self::TYPE_MAP[$suffix];
 
             $inputData = [
-                'id'          => $normalized['id'],                              // e.g. "5.1"
-                'domId'       => "input_{$formId}_{$fieldId}_{$suffix}",         // GF convention
-                'name'        => "input_{$fieldId}_{$suffix}",                   // GF convention
-                'label'       => $normalized['label'],
-                'placeholder' => $normalized['placeholder'] ?: $meta['placeholder'],
-                'type'        => $meta['key'],                                   // street, city, zip, ...
-                'isFull'      => (bool) $meta['full'],
-                'value'       => $this->getInputValue($value, $normalized['id']),
+                'id'                    => $normalized['id'],                              // e.g. "5.1"
+                'domId'                 => "input_{$formId}_{$fieldId}_{$suffix}",         // GF convention
+                'name'                  => "input_{$fieldId}_{$suffix}",                   // GF convention
+                'label'                 => $normalized['label'],
+                'placeholder'           => $normalized['placeholder'] ?: $meta['placeholder'],
+                'type'                  => $meta['key'],                                   // street, city, zip, ...
+                'isFull'                => (bool) $meta['full'],
+                'value'                 => $this->getInputValue($value, $normalized['id']),
+                'autocompleteAttribute' => $meta['autocomplete'] ?? '',
             ];
 
             if ($meta['full']) {

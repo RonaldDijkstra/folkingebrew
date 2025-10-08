@@ -41,6 +41,8 @@
           'value' => $i['value'],
           'placeholder' => $i['placeholder'],
           'isRequired' => $isRequired && $i['type'] === 'street',
+          'enableAutocomplete' => $enableAutocomplete ?? true,
+          'autocompleteAttribute' => $i['autocompleteAttribute'] ?? '',
           'failed' => $failed,
           'ariaDescId' => $ariaDescId,
           'classes' => $inputBase . ' ' . $inputBorder,
@@ -68,6 +70,7 @@
                  name="{{ $i['name'] }}"
                  @if($isRequired && $i['type'] === 'city') aria-required="true" @endif
                  @if($failed) aria-invalid="true" @endif
+                 @if($enableAutocomplete ?? true) autocomplete="{{ $i['autocompleteAttribute'] ?? 'country-name' }}" @endif
                  aria-describedby="{{ $ariaDescId }}"
                  class="{{ $inputBase }} {{ $inputBorder }}">
                  <option value="" disabled @selected(empty($i['value']))>{{ $i['placeholder'] }}</option>
@@ -83,6 +86,8 @@
                 'value' => $i['value'],
                 'placeholder' => $i['placeholder'],
                 'isRequired' => $isRequired && $i['type'] === 'city',
+                'enableAutocomplete' => $enableAutocomplete ?? true,
+                'autocompleteAttribute' => $i['autocompleteAttribute'] ?? '',
                 'failed' => $failed,
                 'ariaDescId' => $ariaDescId,
                 'classes' => $inputBase . ' ' . $inputBorder,

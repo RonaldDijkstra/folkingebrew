@@ -29,7 +29,7 @@
       step="1"
       @if($min !== '') min="{{ $min }}" @endif
       @if($max !== '') max="{{ $max }}" @endif
-      @if($autocomplete) autocomplete="{{ $autocomplete }}" @endif
+      @if($autocomplete) autocomplete="{{ $autocompleteAttribute }}" @endif
       id="{{ $inputId }}"
       name="{{ $inputName }}"
       value="{{ $value ?: ($min !== '' ? $min : '') }}"

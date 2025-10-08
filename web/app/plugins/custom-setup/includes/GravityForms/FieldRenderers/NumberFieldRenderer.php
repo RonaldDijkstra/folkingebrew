@@ -21,7 +21,6 @@ class NumberFieldRenderer extends BaseFieldRenderer
         $viewModel['size'] = $field->size ?? '';
         $viewModel['min'] = $field->rangeMin ?? '';
         $viewModel['max'] = $field->rangeMax ?? '';
-        $viewModel['autocomplete'] = $field->enableAutocomplete ?? false;
 
         // Build range instruction text if min or max is set
         $rangeText = '';

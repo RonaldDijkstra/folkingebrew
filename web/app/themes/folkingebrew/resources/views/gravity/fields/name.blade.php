@@ -31,6 +31,7 @@
               id="input_{{ $fieldId }}_{{ $input['id'] }}"
               name="input_{{ $input['id'] }}"
               value="{{ is_array($value) && isset($value[$input['id']]) ? $value[$input['id']] : '' }}"
+              @if($autocomplete) autocomplete="{{ $input['autocompleteAttribute'] }}" @endif
               @if(!empty($input['placeholder'])) placeholder="{{ $input['placeholder'] }}" @endif
               @if($isRequired) aria-required="true" @endif
               @if($failed) aria-invalid="true" @endif

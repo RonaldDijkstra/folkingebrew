@@ -39,6 +39,10 @@ abstract class BaseFieldRenderer implements FieldRendererInterface
             'inputId'      => sprintf('input_%d_%d', $formId, (int) $field->id),
             'inputName'    => sprintf('input_%d', (int) $field->id),
 
+            // Autocomplete
+            'autocomplete' => $field->enableAutocomplete ?? false,
+            'autocompleteAttribute' => $field->autocompleteAttribute ?? '',
+
             // Extra attributes
             'placeholder'  => $field->placeholder ?? '',
             'ariaDescId'   => sprintf('field_%d_%d_desc', $formId, (int) $field->id),
