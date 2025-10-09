@@ -64,7 +64,8 @@
     "psr-4": {
       "App\\": "web/app/themes/folkingebrew/app/",
       "Load\\": "web/wp/",
-      "Custom\\Setup\\": "web/app/plugins/custom-setup/includes"
+      "Custom\\Setup\\": "web/app/plugins/custom-setup/includes",
+      "Custom\\Shop\\": "web/app/plugins/custom-shop/includes"
     },
     "exclude-from-classmap": [
       "web/wp/wp-includes/",
