@@ -4,7 +4,7 @@ type: "product"
 date: "06-09-2025"
 product_id: 179
 in_stock: true
-only_a_few_left: false
+only_a_few_left: true
 images:
   - "diversity-pack.webp"
 price: 67.29
