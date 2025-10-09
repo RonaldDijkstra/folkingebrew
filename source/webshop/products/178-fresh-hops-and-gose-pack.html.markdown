@@ -3,7 +3,7 @@ title: "Fresh Hops & Gose Pack"
 type: "product"
 date: "05-09-2025"
 product_id: 178
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "fresh-hops-gose-pack.webp"
