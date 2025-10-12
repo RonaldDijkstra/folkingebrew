@@ -35,6 +35,11 @@ class PrimaryNavigation extends Composer
             $navigation = $this->markBeersParentActive($navigation);
         }
 
+        // Make "Webshop" menu item active when on WooCommerce pages
+        if (function_exists('is_woocommerce') && is_woocommerce()) {
+            $navigation = $this->markWebshopActive($navigation);
+        }
+
         return $navigation;
     }
 
@@ -51,6 +56,27 @@ class PrimaryNavigation extends Composer
         foreach ($navigation as &$item) {
             // Check if this menu item links to the beers archive
             if ($item->url === $beersArchiveUrl) {
+                $item->active = true;
+                break;
+            }
+        }
+
+        return $navigation;
+    }
+
+    /**
+     * Mark the Webshop menu item as active when on WooCommerce pages.
+     *
+     * @param array $navigation
+     * @return array
+     */
+    protected function markWebshopActive(array $navigation): array
+    {
+        $shopUrl = function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '';
+
+        foreach ($navigation as &$item) {
+            // Check if this menu item links to the shop page
+            if ($item->url === $shopUrl) {
                 $item->active = true;
                 break;
             }

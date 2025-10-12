@@ -133,4 +133,11 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
      */
     add_theme_support('customize-selective-refresh-widgets');
+
+    /**
+     * Enable WooCommerce support.
+     *
+     * @link https://woocommerce.com/document/third-party-custom-theme-compatibility/
+     */
+    add_theme_support('woocommerce');
 }, 20);
