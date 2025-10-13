@@ -22,7 +22,13 @@ add_filter('excerpt_more', function () {
  * @return array
  */
 add_filter('body_class', function ($classes) {
-    $classes[] = 'at-the-top bg-gradient-to-tr from-primary to-primary-dark';
+    // If on a WooCommerce page, use white background
+    if (function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page())) {
+        $classes[] = 'at-the-top bg-white';
+    } else {
+        // Otherwise, add gradient background
+        $classes[] = 'at-the-top bg-gradient-to-tr from-primary to-primary-dark';
+    }
 
     // Add transparent header class if enabled
     if (get_field('transparent_header')) {

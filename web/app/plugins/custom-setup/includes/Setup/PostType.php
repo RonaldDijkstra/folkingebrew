@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Custom\Setup\Setup;
 
@@ -50,7 +50,12 @@ class PostType implements ServiceInterface
      */
     public function addFeaturedImageColumn()
     {
-        $post_types = get_post_types(array('public' => true), 'names');
+        $post_types = array_filter(
+            get_post_types(array('public' => true), 'names'),
+            function($post_type) {
+                return $post_type !== 'product';
+            }
+        );
 
         foreach ($post_types as $post_type) {
             if (post_type_supports($post_type, 'thumbnail')) {

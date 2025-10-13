@@ -43,7 +43,8 @@ class Menu implements ServiceInterface
         // Define custom positions and their headers
         $customSeparators = [
             4  => 'Content',
-            57 => 'Settings',
+            50 => 'Webshop',
+            60 => 'Settings',
         ];
 
         // Add custom menu items or separators
@@ -59,8 +60,8 @@ class Menu implements ServiceInterface
     }
 
     /**
-     * Rearranges the admin menu to a more logical order 
-     * 
+     * Rearranges the admin menu to a more logical order
+     *
      * @return void
      */
     public function rearrangeAdminMenu(): void
