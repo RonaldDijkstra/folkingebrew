@@ -10,4 +10,4 @@
   default => 'bg-primary text-white hover:bg-primary/80',
 })
 
-<a href="{{ $link['url'] }}" class="{{ $class }} inline-block text-lg md:text-xl px-4 py-3 no-underline">{{ $link['title'] }}</a>
+<a href="{{ $link['url'] }}" class="{{ $class }} font-sans inline-block text-lg md:text-xl px-4 py-3 no-underline">{{ $link['title'] }}</a>

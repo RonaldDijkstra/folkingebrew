@@ -2,38 +2,8 @@
 @reference "./app.css" theme;
 
 #editor {
-  & .wp-block {
-    @apply px-5 py-6 w-full;
-  }
-  
-  & .wp-block-paragraph,
-  & .wp-block-list,
-  & .wp-block-shortcode {
-    @apply w-auto mx-5 mt-0 mb-5 bg-white;
-  }
-  
-  & .wp-block-list li {
-    @apply pl-0 ml-4;
-  }
-  
-  & .edit-post-visual-editor__post-title-wrapper {
-    @apply m-0 px-5 pt-10 pb-5 bg-primary/10;
-  }
-  
   & .wp-block-post-title {
-    @apply m-0 bg-white border-2 border-dashed border-body font-sans;
-  }
-  
-  & .wp-block-post-content {
-    @apply bg-primary/10;
-  }
-
-  .title-element {
-    @apply bg-[#f9f9f9] font-normal font-sans m-0 px-5 pt-2 pb-2 text-black text-xl;
-  }
-
-  .acf-fields > .acf-tab-wrap .acf-tab-group {
-    @apply border-t-0 pt-0;
+    @apply m-0 bg-white border-2 border-dashed border-body font-sans p-5;
   }
 
   .block-editor-block-toolbar > div:nth-of-type(2),
@@ -59,11 +29,50 @@
   }
 }
 
-.post-type-status-updates .acf-repeater > .acf-actions {
-  @apply text-left;
-
-  .acf-button {
-    @apply float-none mt-3;
-  }
+@font-face {
+  font-family: 'Open Sans';
+  src: url('@fonts/OpenSans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url('@fonts/OpenSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('@fonts/OpenSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('@fonts/OpenSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('@fonts/Orbitron-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('@fonts/BebasNeue-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

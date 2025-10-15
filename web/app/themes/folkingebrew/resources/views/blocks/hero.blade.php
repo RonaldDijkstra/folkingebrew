@@ -1,4 +1,4 @@
-<div class="{{ $backgroundType === 'primary' ? 'bg-blend-soft-light bg-primary' : ''}} px-6 text-center -mt-16 sm:-mt-20 bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url({{ $backgroundImage['url'] ?? '' }})"
+<div class="{{ $backgroundType === 'primary' ? 'bg-blend-soft-light bg-primary' : ''}} px-6 text-center @if(!$is_preview)-mt-16 sm:-mt-20 @endif bg-center bg-no-repeat bg-cover h-screen flex flex-col justify-center items-center" style="background-image: url({{ $backgroundImage['url'] ?? '' }})"
 >
   @if ($backgroundType === 'pub')
     <div class="absolute inset-0 bg-[#5C2D0C]/80 has-adminbar:min-h-screen-plus-admin-bar z-10"></div>
@@ -10,7 +10,7 @@
       </div>
     @endif
     @if ($title)
-      <h1 class="text-white text-3xl md:text-4xl font-light text-center">
+      <h1 class="text-white text-3xl md:text-4xl font-light text-center font-sans m-0">
         {{ $title }}
       </h1>
     @endif

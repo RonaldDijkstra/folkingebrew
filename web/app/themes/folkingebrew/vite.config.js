@@ -2,9 +2,57 @@ import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite';
 import laravel from 'laravel-vite-plugin'
 import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
+import prefixSelector from 'postcss-prefix-selector';
 
 export default defineConfig({
   base: '/app/themes/folkingebrew/public/build/',
+  css: {
+    postcss: {
+      plugins: [
+        prefixSelector({
+          prefix: '.editor-styles-wrapper',
+          includeFiles: [/editor\.css$/],
+          transform: (prefix, selector, prefixedSelector) => {
+            // Don't prefix :root, html, body, or selectors that already have the wrapper
+            if (selector.match(/^(html|body|:root|::)/)) {
+              return selector;
+            }
+            if (selector.includes('.editor-styles-wrapper')) {
+              return selector;
+            }
+            if (selector.startsWith('@')) {
+              return selector;
+            }
+            if (selector.startsWith(':where') || selector.startsWith(':is')) {
+              return selector;
+            }
+            // All selectors need a space for WordPress editor styles
+            // This targets descendants of .editor-styles-wrapper
+            return `${prefix} ${selector}`;
+          },
+        }),
+        // Add !important only to declarations inside @layer utilities
+        {
+          postcssPlugin: 'add-important-to-layered-utilities',
+          Once(root, { result }) {
+            if (result.opts.from && result.opts.from.includes('editor.css')) {
+              let inUtilitiesLayer = false;
+
+              root.walkAtRules('layer', (atRule) => {
+                if (atRule.params === 'utilities') {
+                  atRule.walkDecls(decl => {
+                    if (!decl.important) {
+                      decl.important = true;
+                    }
+                  });
+                }
+              });
+            }
+          }
+        }
+      ],
+    },
+  },
   plugins: [
     tailwindcss(),
     laravel({
