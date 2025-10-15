@@ -3,7 +3,7 @@ title: "Diversity Pack"
 type: "product"
 date: "06-09-2025"
 product_id: 179
-in_stock: true
+in_stock: false
 only_a_few_left: true
 images:
   - "diversity-pack.webp"
