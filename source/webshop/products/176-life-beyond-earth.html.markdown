@@ -3,7 +3,7 @@ title: "Life Beyond Earth"
 type: "product"
 date: "03-09-2025"
 product_id: 176
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "life-beyond-earth.webp"
