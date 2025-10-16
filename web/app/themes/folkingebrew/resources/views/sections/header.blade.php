@@ -19,7 +19,25 @@
               max-md:menu-open:block max-md:menu-open:flex max-md:menu-open:min-h-screen max-md:menu-open:absolute max-md:menu-open:top-16 max-md:menu-open:w-full">
     <nav class="nav-primary w-full max-md:menu-open:flex max-md:menu-open:flex-col max-md:menu-open:items-center max-md:menu-open:justify-center" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
       @foreach ($primaryNavigation as $item)
-        <a href="{{ $item->url }}" class="no-underline hover:text-primary px-2 text-md max-md:text-lg max-md:font-bold max-md:mb-5 {{ $item->active ? 'text-primary' : 'text-white' }}">{{ $item->label }}</a>
+        @if (!empty($item->children))
+          <div class="nav-item-with-submenu inline-block relative group max-md:w-full max-md:mb-4">
+            <a href="{{ $item->url }}" class="no-underline hover:text-primary px-2 text-md max-md:text-lg max-md:font-bold max-md:mb-2 inline-flex items-center justify-center max-md:justify-start {{ $item->active || $item->activeParent || $item->activeAncestor ? 'text-primary' : 'text-white' }}">
+              {{ $item->label }}
+              <svg class="submenu-chevron w-4 h-4 md:ml-1 transition-transform duration-200 max-md:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <div class="submenu md:hidden md:group-hover:block touch-open:block md:absolute md:left-1/2 md:-translate-x-1/2 md:top-full md:bg-transparent md:min-w-[200px] max-md:w-full md:py-4">
+              <div class="md:bg-gray-900 md:py-3 md:relative md:before:content-[''] md:before:absolute md:before:top-0 md:before:left-1/2 md:before:-translate-x-1/2 md:before:-translate-y-full md:before:border-8 md:before:border-transparent md:before:border-b-gray-900">
+                @foreach ($item->children as $child)
+                  <a href="{{ $child->url }}" class="block no-underline py-2 hover:text-primary px-4 text-md max-md:text-sm {{ $child->active ? 'text-primary' : 'text-white' }}">{{ $child->label }}</a>
+                @endforeach
+              </div>
+            </div>
+          </div>
+        @else
+          <a href="{{ $item->url }}" class="no-underline hover:text-primary px-2 text-md max-md:text-lg max-md:font-bold max-md:mb-5 {{ $item->active ? 'text-primary' : 'text-white' }}">{{ $item->label }}</a>
+        @endif
       @endforeach
     </nav>
   </div>

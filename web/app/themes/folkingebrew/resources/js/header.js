@@ -13,6 +13,60 @@ export default function header() {
       documentBody.classList.toggle('md:overflow-visible');
       return false;
     });
+
+    // Handle touch devices (like iPad) for submenu interaction
+    const submenuParents = document.querySelectorAll('.nav-item-with-submenu');
+
+    submenuParents.forEach((parent) => {
+      const link = parent.querySelector('a');
+      const submenu = parent.querySelector('.submenu');
+      let touchStarted = false;
+
+      link.addEventListener('touchstart', (e) => {
+        // Check if we're on a tablet or larger screen (not mobile)
+        if (window.innerWidth >= 768) {
+          // If submenu is not visible, prevent navigation and show submenu
+          if (!parent.classList.contains('touch-open')) {
+            e.preventDefault();
+
+            // Close all other open submenus
+            submenuParents.forEach((otherParent) => {
+              if (otherParent !== parent) {
+                otherParent.classList.remove('touch-open');
+              }
+            });
+
+            // Open this submenu
+            parent.classList.add('touch-open');
+            touchStarted = true;
+          }
+        }
+      });
+
+      // Handle click event
+      link.addEventListener('click', (e) => {
+        // On touch devices with screen >= 768px
+        if (window.innerWidth >= 768 && touchStarted) {
+          // If submenu is now open, allow second click to navigate
+          if (parent.classList.contains('touch-open')) {
+            // Let the link navigate normally
+            return true;
+          } else {
+            // Prevent navigation on first click
+            e.preventDefault();
+          }
+        }
+      });
+    });
+
+    // Close submenus when clicking outside
+    document.addEventListener('touchstart', (e) => {
+      if (!e.target.closest('.nav-item-with-submenu')) {
+        submenuParents.forEach((parent) => {
+          parent.classList.remove('touch-open');
+        });
+      }
+    });
   });
 
   document.addEventListener('scroll', () => {

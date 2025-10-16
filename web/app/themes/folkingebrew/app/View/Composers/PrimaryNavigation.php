@@ -57,7 +57,20 @@ class PrimaryNavigation extends Composer
             // Check if this menu item links to the beers archive
             if ($item->url === $beersArchiveUrl) {
                 $item->active = true;
+                $item->activeParent = true;
                 break;
+            }
+
+            // Check children
+            if (!empty($item->children)) {
+                foreach ($item->children as &$child) {
+                    if ($child->url === $beersArchiveUrl) {
+                        $child->active = true;
+                        $item->activeParent = true;
+                        $item->activeAncestor = true;
+                        break 2;
+                    }
+                }
             }
         }
 
@@ -78,7 +91,20 @@ class PrimaryNavigation extends Composer
             // Check if this menu item links to the shop page
             if ($item->url === $shopUrl) {
                 $item->active = true;
+                $item->activeParent = true;
                 break;
+            }
+
+            // Check children
+            if (!empty($item->children)) {
+                foreach ($item->children as &$child) {
+                    if ($child->url === $shopUrl) {
+                        $child->active = true;
+                        $item->activeParent = true;
+                        $item->activeAncestor = true;
+                        break 2;
+                    }
+                }
             }
         }
 

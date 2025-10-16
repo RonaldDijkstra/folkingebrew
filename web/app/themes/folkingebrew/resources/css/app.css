@@ -28,6 +28,7 @@
 @custom-variant at-the-top (.at-the-top &);
 @custom-variant transparent-header (.transparent-header.at-the-top &);
 @custom-variant header-hidden (.header-hidden &);
+@custom-variant touch-open (.touch-open &);
 
 @import './review-slider.css';
 
@@ -100,10 +101,6 @@
   .gform_fields {
     @apply grid gap-4 mb-4;
     grid-template-columns: repeat(12, 1fr);
-  }
-
-  .gform_wrapper {
-    @apply md:w-xl md:mx-auto;
   }
 
   .gfield {

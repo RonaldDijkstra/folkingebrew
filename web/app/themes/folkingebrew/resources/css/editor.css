@@ -2,8 +2,11 @@
 @reference "./app.css" theme;
 
 #editor {
+  & .editor-visual-editor__post-title-wrapper {
+    @apply m-0 px-5 mb-3;
+  }
   & .wp-block-post-title {
-    @apply m-0 bg-white border-2 border-dashed border-body font-sans p-5;
+    @apply m-0 bg-white border-2 border-dashed border-body font-sans p-5 mx-auto;
   }
 
   .block-editor-block-toolbar > div:nth-of-type(2),

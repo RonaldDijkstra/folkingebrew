@@ -1,6 +1,6 @@
 <x-section :backgroundColor="$backgroundColor">
   <x-container :classes="'grid grid-cols-1 gap-8 md:gap-16 ' . ($image || ($contentType === 'info' && $companyDetails['company_google_maps']) ? 'md:grid-cols-2' : 'md:place-items-center')">
-    <div class="order-1 {{ $textRight ? 'md:order-2' : 'md:order-1' }} md:flex md:flex-col md:justify-center {{ !$image ? 'md:max-w-2xl' : '' }}">
+    <div class="order-1 {{ $textRight ? 'md:order-2' : 'md:order-1' }} md:flex md:flex-col md:justify-center {{ !$image ? 'md:max-w-xl' : '' }}">
       @if ($title)
         <h2 class="text-2xl font-bold mb-2">{!! $title !!}</h2>
       @endif
