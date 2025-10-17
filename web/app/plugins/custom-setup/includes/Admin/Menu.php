@@ -71,6 +71,7 @@ class Menu implements ServiceInterface
         remove_menu_page('edit.php');
         remove_menu_page('upload.php');
         remove_menu_page('edit.php?post_type=page');
+        remove_menu_page('edit.php?post_type=beers');
 
         if (class_exists('ACF')) {
             remove_menu_page('edit.php?post_type=acf-field-group');
@@ -78,20 +79,7 @@ class Menu implements ServiceInterface
 
         // Re-add the default Pages and Posts menu items
         add_menu_page('Pages', 'Pages', 'edit_pages', 'edit.php?post_type=page', '', 'dashicons-admin-page', 5);
-        add_menu_page('Posts', 'Posts', 'edit_posts', 'edit.php', '', 'dashicons-admin-post', 6);
-
-        // Move the Forms item to a lower position while respecting user capabilities.
-        // $gravityFormsSlugs = ['gf_edit_forms', 'gf_entries', 'gf_settings', 'gf_addons', 'gf_new_form', 'gf_export', 'gf_system_status'];
-        // $newFormsPosition = 16;
-
-        // foreach ($menu as $key => $value) {
-        //     if (isset($value[2]) && in_array($value[2], $gravityFormsSlugs)) {
-        //         $gravityFormsItem = $menu[$key];
-        //         unset($menu[$key]);
-        //         $menu[$newFormsPosition] = $gravityFormsItem;
-        //         break;
-        //     }
-        // }
+        add_menu_page('Beers', 'Beers', 'edit_posts', 'edit.php?post_type=beers', '', 'dashicons-beer', 6);
 
         add_menu_page('Media', 'Media', 'upload_files', 'upload.php', '', 'dashicons-admin-media', 17);
         add_menu_page('Menus', 'Menu\'s', 'edit_theme_options', 'nav-menus.php', '', 'dashicons-list-view', 18);
