@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Composers\WooCommerce;
+namespace App\View\Composers\Webshop;
 
 use Roots\Acorn\View\Composer;
 use WP_Post;
@@ -10,7 +10,7 @@ class ArchiveProduct extends Composer
 {
     /** @var string[] */
     protected static $views = [
-        'woocommerce/archive-product',
+        'webshop/archive-product',
     ];
 
     /** @var array<string,int> */

@@ -1,3 +1,3 @@
 <?php
 
-echo \Roots\view('woocommerce.archive-product')->render();
+echo \Roots\view('webshop.archive-product')->render();
