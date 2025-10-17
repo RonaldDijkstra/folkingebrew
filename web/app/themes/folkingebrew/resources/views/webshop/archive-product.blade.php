@@ -21,9 +21,6 @@
               <h2 class="text-2xl font-semibold text-body mb-6">
                 {{ $categoryGroup['category_name'] }}
               </h2>
-          @else
-            <div class="mt-8">
-          @endif
 
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 @foreach($categoryGroup['products'] as $product)
@@ -31,6 +28,7 @@
                 @endforeach
               </div>
             </div>
+          @endif
         @endif
       @endforeach
     @endif

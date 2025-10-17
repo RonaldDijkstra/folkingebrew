@@ -42,7 +42,7 @@ class Menu implements ServiceInterface
 
         // Define custom positions and their headers
         $customSeparators = [
-            4  => 'Content',
+            4  => 'Website',
             50 => 'Webshop',
             60 => 'Settings',
         ];

@@ -11,6 +11,7 @@ class ArchiveProduct extends Composer
     /** @var string[] */
     protected static $views = [
         'webshop/archive-product',
+        'webshop/archive-product-category',
     ];
 
     /** @var array<string,int> */
@@ -30,6 +31,7 @@ class ArchiveProduct extends Composer
             'notFoundText'       => __('No products found', 'folkingebrew'),
             'title'              => $this->getTitle(),
             'isShopPage'         => $this->isShopLanding(),
+            'breadcrumbs'        => $this->getBreadcrumbs(),
         ];
     }
 
@@ -236,7 +238,16 @@ class ArchiveProduct extends Composer
     {
         if (is_product_category() || is_product_tag()) {
             $term = $this->getQueriedTerm();
-            return $term ? $term->name : __('Products', 'folkingebrew');
+
+            if (is_product_category()) {
+                $prefix = __('Category: ', 'folkingebrew');
+                return $term ? $prefix . $term->name : __('Products', 'folkingebrew');
+            }
+
+            if (is_product_tag()) {
+                $prefix = __('Tag: ', 'folkingebrew');
+                return $term ? $prefix . $term->name : __('Products', 'folkingebrew');
+            }
         }
 
         return __('All Products', 'folkingebrew');
@@ -263,5 +274,37 @@ class ArchiveProduct extends Composer
         $this->queriedTerm = ($obj instanceof WP_Term) ? $obj : null;
 
         return $this->queriedTerm;
+    }
+
+    /**
+     * Build breadcrumb navigation items.
+     *
+     * @return array<int,array{text:string,url:string}>
+     */
+    private function getBreadcrumbs(): array
+    {
+        $breadcrumbs = [
+            [
+                'text' => __('Home', 'folkingebrew'),
+                'url'  => home_url('/'),
+            ],
+            [
+                'text' => __('Webshop', 'folkingebrew'),
+                'url'  => get_permalink(wc_get_page_id('shop')),
+            ],
+        ];
+
+        // Add category or tag as the final item
+        if (is_product_category() || is_product_tag()) {
+            $term = $this->getQueriedTerm();
+            if ($term) {
+                $breadcrumbs[] = [
+                    'text' => $term->name,
+                    'url'  => get_term_link($term),
+                ];
+            }
+        }
+
+        return $breadcrumbs;
     }
 }
