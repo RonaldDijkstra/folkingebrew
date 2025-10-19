@@ -22,6 +22,7 @@ class PageOptions extends AbstractField
             ],
             'location' => [
                 Location::where('post_type', 'page')
+                    ->and('page_template', '!=', 'template-cart.blade.php')
             ],
             'position' => 'side',
             'menu_order' => 1,

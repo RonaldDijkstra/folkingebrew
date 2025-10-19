@@ -144,7 +144,7 @@ class RegisterBlocks implements ServiceInterface
             'template-custom.blade.php' => ['acf/content'],
 
             // Fallback
-            'default'                    => ['acf/agenda', 'acf/content', 'acf/hero', 'acf/review-slider'],
+            'default'                    => ['acf/agenda', 'acf/content', 'acf/hero', 'acf/review-slider', 'woocommerce/cart'],
         ];
 
         $base = $map[$template] ?? $map['default'];

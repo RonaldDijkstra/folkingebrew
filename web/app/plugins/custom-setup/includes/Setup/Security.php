@@ -5,10 +5,10 @@ namespace Custom\Setup\Setup;
 use Custom\Setup\ServiceInterface;
 
 class Security implements ServiceInterface
-{   
-    /** 
+{
+    /**
      * Register services
-     * 
+     *
      * @return void
      */
     public function register()
@@ -23,13 +23,13 @@ class Security implements ServiceInterface
      *
      * @return string
      */
-    public function hideWpVersion(): string 
+    public function hideWpVersion(): string
     {
         return '';
     }
 
     /**
-     * Restrict REST API to logged-in users, except for specific public CPTs
+     * Restrict REST API to logged-in users, except for specific public endpoints
      *
      * @param mixed $result The existing response or `null`.
      * @return mixed Returns `WP_Error` if blocked, otherwise passes through `$result`.
@@ -39,6 +39,22 @@ class Security implements ServiceInterface
         // Allow logged-in users
         if (is_user_logged_in()) {
             return $result;
+        }
+
+        // Get the current REST route
+        $route = isset($_SERVER['REQUEST_URI']) ? parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) : '';
+
+        // Whitelist WooCommerce Store API endpoints (required for guest checkout)
+        $allowed_patterns = [
+            '/wp-json/wc/store/',           // WooCommerce Store API (blocks, checkout, cart)
+            '/wp-json/wc/v3/',              // WooCommerce API v3
+            '/wp-json/wc-analytics/',       // WooCommerce Analytics
+        ];
+
+        foreach ($allowed_patterns as $pattern) {
+            if (strpos($route, $pattern) !== false) {
+                return $result;
+            }
         }
 
         // Block everything else
