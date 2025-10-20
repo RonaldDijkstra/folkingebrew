@@ -246,3 +246,13 @@
 .flatpickr-day.selected {
   @apply border-primary bg-primary text-white;
 }
+
+.wp-block-woocommerce-cart,
+.wp-block-woocommerce-checkout,
+.wp-block-woocommerce-account {
+  @apply max-w-[1320px] px-4 mx-auto;
+}
+
+.wc-block-components-product-name {
+  @apply text-xl text-body font-bold no-underline;
+}

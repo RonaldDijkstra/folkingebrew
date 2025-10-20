@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="py-8">
+  <x-container>
+    <x-breadcrumb :items="$breadcrumbs ?? []" classes="pt-4" />
     <h1 class="text-3xl font-bold text-body text-center uppercase">
       {{ $title }}
     </h1>
-  </div>
+  </x-container>
 
   <x-container classes="pb-16">
-    <x-breadcrumb :items="$breadcrumbs ?? []" classes="pt-8" />
     @if(empty($productsByCategory) || count($productsByCategory) === 0)
       <p class="text-center">
         {{ $notFoundText }}

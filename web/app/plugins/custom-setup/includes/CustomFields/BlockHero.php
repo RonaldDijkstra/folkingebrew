@@ -36,7 +36,7 @@ class BlockHero extends AbstractField
                     ->acceptedFileTypes(['svg']),
                 Text::make('Title', 'title'),
                 Repeater::make('Buttons', 'buttons')
-                    ->layout('row')
+                    ->layout('block')
                     ->fields([
                         Link::make('Link', 'link'),
                         RadioButton::make('Type', 'type')

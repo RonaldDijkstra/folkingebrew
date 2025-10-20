@@ -36,7 +36,7 @@ class PrimaryNavigation extends Composer
         }
 
         // Make "Webshop" menu item active when on WooCommerce pages
-        if (function_exists('is_woocommerce') && is_woocommerce()) {
+        if (function_exists('is_woocommerce') && is_woocommerce() || is_cart() || is_checkout() || is_account_page()) {
             $navigation = $this->markWebshopActive($navigation);
         }
 
