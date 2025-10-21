@@ -256,3 +256,19 @@
 .wc-block-components-product-name {
   @apply text-xl text-body font-bold no-underline;
 }
+
+.woocommerce-message {
+  @apply bg-primary/10 border border-primary rounded text-primary-dark px-4 py-2 rounded-md mb-6 outline-none;
+
+  a {
+    @apply text-primary-dark underline;
+  }
+}
+
+.woocommerce-error {
+  @apply bg-red-100 border border-red-300 rounded text-red-800 px-4 py-2 rounded-md mb-6 outline-none;
+
+  a {
+    @apply text-red-800 underline;
+  }
+}

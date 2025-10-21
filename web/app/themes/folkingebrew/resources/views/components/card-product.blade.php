@@ -25,7 +25,7 @@
   @endif
 
   @if($product['price'])
-    <div class="text-body text-lg text-primary font-bold mt-2">
+    <div class="text-body text-lg font-bold mt-2">
       {!! $product['price'] !!}
     </div>
   @endif
@@ -35,7 +35,7 @@
       @if($product['product_type'] === 'variable')
         <a
           href="{{ $product['permalink'] }}"
-          class="button bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
+          class="button bg-primary hover:bg-primary-dark text-white font-normal py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
         >
           {{ __('Select options', 'folkingebrew') }}
         </a>
@@ -45,7 +45,7 @@
           data-quantity="1"
           data-product_id="{{ $product['id'] }}"
           data-product_sku=""
-          class="button add_to_cart_button ajax_add_to_cart bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
+          class="button add_to_cart_button ajax_add_to_cart bg-primary hover:bg-primary-dark text-white font-normal py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
           rel="nofollow"
         >
           {{ __('Add to cart', 'folkingebrew') }}
