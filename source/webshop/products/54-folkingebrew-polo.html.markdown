@@ -26,7 +26,7 @@ sizes:
     size_in_stock: false
     lxb: "76 x 65"
   - name: "XXL"
-    size_in_stock: true
+    size_in_stock: false
     lxb: "79 x 69"
   - name: "XXXL"
     size_in_stock: false
