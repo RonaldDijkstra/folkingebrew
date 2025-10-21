@@ -100,6 +100,12 @@ class ArchiveProduct extends Composer
             'order'          => 'ASC',
             // Keep filters enabled so Woo can adjust queries if needed
             'suppress_filters' => false,
+            // Exclude out of stock products
+            'meta_query'     => [[
+                'key'     => '_stock_status',
+                'value'   => 'outofstock',
+                'compare' => '!=',
+            ]],
         ], $extraArgs);
 
         /** @var WP_Post[] $posts */
