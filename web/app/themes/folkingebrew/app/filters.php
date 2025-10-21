@@ -51,3 +51,24 @@ add_action('pre_get_posts', function ($query) {
         $query->set('posts_per_page', $postsPerPage);
     }
 });
+
+/**
+ * Fix WooCommerce cart quantity validation - allow reducing/removing items without stock errors.
+ * This only bypasses validation when quantity is being reduced or removed.
+ */
+add_filter('woocommerce_update_cart_validation', function ($passed, $cart_item_key, $values, $quantity) {
+    // Allow removal (quantity = 0)
+    if ($quantity <= 0) {
+        return true;
+    }
+
+    $current_quantity = isset($values['quantity']) ? $values['quantity'] : 0;
+
+    // Allow reducing quantity without validation
+    if ($quantity < $current_quantity) {
+        return true;
+    }
+
+    // For increases, let WooCommerce handle normal validation
+    return $passed;
+}, 10, 4);

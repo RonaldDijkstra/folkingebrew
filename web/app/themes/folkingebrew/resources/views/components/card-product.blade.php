@@ -32,16 +32,25 @@
 
   @if($product['is_purchasable'] && $product['is_in_stock'])
     <div class="mt-4 flex justify-center gap-2 items-center">
-      <a
-        href="{{ $product['add_to_cart_url'] }}"
-        data-quantity="1"
-        data-product_id="{{ $product['id'] }}"
-        data-product_sku=""
-        class="button add_to_cart_button ajax_add_to_cart bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
-        rel="nofollow"
-      >
-        {{ __('Add to cart', 'folkingebrew') }}
-      </a>
+      @if($product['product_type'] === 'variable')
+        <a
+          href="{{ $product['permalink'] }}"
+          class="button bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
+        >
+          {{ __('Select options', 'folkingebrew') }}
+        </a>
+      @else
+        <a
+          href="{{ $product['add_to_cart_url'] }}"
+          data-quantity="1"
+          data-product_id="{{ $product['id'] }}"
+          data-product_sku=""
+          class="button add_to_cart_button ajax_add_to_cart bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
+          rel="nofollow"
+        >
+          {{ __('Add to cart', 'folkingebrew') }}
+        </a>
+      @endif
     </div>
   @elseif(!$product['is_in_stock'])
     <div class="mt-4">

@@ -19,6 +19,8 @@ class SingleProduct extends Composer
             'breadcrumbs' => $this->getBreadcrumbs($product),
             'discountPercentage' => $this->getDiscountPercentage($product),
             'attributes' => $this->getAttributes($product),
+            'variations' => $this->getVariations($product),
+            'isVariable' => $product && $product->is_type('variable'),
         ];
     }
 
@@ -77,7 +79,7 @@ class SingleProduct extends Composer
             }
         }
 
-        // Add product name as the last item (without URL to indicate current page)
+        // Add product name as the last item
         $breadcrumbs[] = [
             'text' => get_the_title(),
             'url'  => '',
@@ -86,6 +88,15 @@ class SingleProduct extends Composer
         return $breadcrumbs;
     }
 
+    /**
+     * Get the attributes for the product.
+     *
+     * @param \WC_Product $product
+     * @return array
+     * @throws \Exception
+     * @throws \WC_Data_Exception
+     * @throws \WC_REST_Exception
+     */
     private function getAttributes($product): array
     {
         if (!$product) {
@@ -127,5 +138,44 @@ class SingleProduct extends Composer
         }
 
         return $attributes;
+    }
+
+    /**
+     * Get variations for variable products.
+     *
+     * @param \WC_Product $product
+     * @return array
+     */
+    private function getVariations($product): array
+    {
+        if (!$product || !$product->is_type('variable')) {
+            return [];
+        }
+
+        $variations = [];
+        $variableProduct = new \WC_Product_Variable($product->get_id());
+        $availableVariations = $variableProduct->get_available_variations();
+
+        foreach ($availableVariations as $variation) {
+            $variationObj = wc_get_product($variation['variation_id']);
+
+            if (!$variationObj) {
+                continue;
+            }
+
+            $variationData = [
+                'variation_id' => $variation['variation_id'],
+                'attributes' => $variation['attributes'],
+                'is_in_stock' => $variationObj->is_in_stock(),
+                'stock_quantity' => $variationObj->get_stock_quantity(),
+                'price' => $variationObj->get_price(),
+                'regular_price' => $variationObj->get_regular_price(),
+                'sale_price' => $variationObj->get_sale_price(),
+            ];
+
+            $variations[] = $variationData;
+        }
+
+        return $variations;
     }
 }

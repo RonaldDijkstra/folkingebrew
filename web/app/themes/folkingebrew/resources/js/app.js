@@ -8,6 +8,7 @@ import header from "./header.js";
 import slider from "./slider.js";
 import openingHours from "./opening-hours.js";
 import forms from "./forms.js";
+import webshop from "./webshop.js";
 
 const initFlatpickr = () => {
   const dateInputs = document.querySelectorAll('.flatpickr-input');
@@ -40,6 +41,7 @@ const init = async (err) => {
   slider();
   forms();
   initFlatpickr();
+  webshop();
 };
 
 init();
