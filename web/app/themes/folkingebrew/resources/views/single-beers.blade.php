@@ -19,6 +19,13 @@
         <p class="text-base sm:text-lg font-medium mb-6">
           {!! $description !!}
         </p>
+        @if($webshopProduct && $webshopProduct['stock_status'] === 'instock')
+          <div class="mb-6">
+            <a href="{{ $webshopProduct['url'] }}" class="text-primary font-bold hover:no-underline">
+              {{ __('Buy this beer in our webshop', 'folkingebrew') }}
+            </a>
+          </div>
+        @endif
       </div>
       <div class="sm:w-1/3 sm:pl-5 mb-6 sm:mb-0">
         @if($specs && !empty($specs))

@@ -5,6 +5,7 @@ namespace Custom\Setup\CustomFields;
 use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Link;
 use Extended\ACF\Fields\Number;
+use Extended\ACF\Fields\PostObject;
 use Extended\ACF\Fields\Repeater;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\WYSIWYGEditor;
@@ -62,6 +63,11 @@ class CustomPostTypeBeers extends AbstractField
                     ]),
                 Link::make('Untappd Link', 'untappd_link')
                     ->column(100),
+                PostObject::make('Webshop Product', 'webshop_product')
+                    ->postTypes(['product'])
+                    ->nullable()
+                    ->column(100)
+                    ->helperText('Select the corresponding product from the webshop if this beer is available for purchase.'),
             ],
             'location' => [
                 Location::where('post_type', '==', 'beers'),
