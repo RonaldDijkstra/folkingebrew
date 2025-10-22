@@ -8,7 +8,8 @@
 </x-container>
 
 <x-container classes="pb-16">
-  <div id="product-{{ $product->get_id() }}" {{ wc_product_class('grid grid-cols-1 lg:grid-cols-2 gap-8', $product) }}>
+
+  <div id="product-{{ $product->get_id() }}" {{ wc_product_class('grid grid-cols-1 lg:grid-cols-2 gap-8', $product) }} @if($isVariable) data-product-variations='@json($availableVariations)' @endif>
     <div class="space-y-4">
       <div class="bg-white overflow-hidden product-main-image">
         {!! $mainImageId ? wp_get_attachment_image($mainImageId, 'large', false, ['class' => 'w-full h-auto']) : wc_placeholder_img('large') !!}
@@ -47,20 +48,43 @@
             <span>{{ $product->get_attribute('abv') }}%</span>
           </span>
         @endif
-        <div class="mt-2 text-xl font-bold">{!! $product->get_price_html() !!}</div>
+        <div class="mt-2 text-xl font-bold" id="product-price">{!! $product->get_price_html() !!}</div>
       </div>
-
-      @if ($lowStockAmount && $product->get_stock_quantity() <= $lowStockAmount)
-        <div class="w-fit py-1 px-2 text-sm bg-white border border-black rounded">
-          {{ __('Only a few left in stock!', 'folkingebrew') }}
-        </div>
-      @endif
 
       {{-- Add to cart form --}}
       <div>
         @if($product->is_purchasable() && $product->is_in_stock())
           <form class="cart" action="{{ esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())) }}" method="post" enctype='multipart/form-data'>
             @php do_action('woocommerce_before_add_to_cart_button'); @endphp
+
+            {{-- Variation selector for variable products --}}
+            @if($isVariable && !empty($variationAttributes))
+              <div class="space-y-4 mb-6">
+                @foreach($variationAttributes as $attributeKey => $attribute)
+                  <div>
+                    <label class="block text-sm font-medium mb-2 capitalize">
+                      {{ $attribute['name'] }}
+                    </label>
+                    <div class="flex flex-wrap gap-2">
+                      @foreach($attribute['options'] as $option)
+                        <button
+                          type="button"
+                          class="variation-option px-4 py-2 border border-gray-300 hover:border-black transition-colors rounded"
+                          data-attribute="{{ $attributeKey }}"
+                          data-value="{{ esc_attr($option) }}"
+                        >
+                          {{ esc_html($option) }}
+                        </button>
+                      @endforeach
+                    </div>
+                  </div>
+                @endforeach
+              </div>
+              <input type="hidden" name="variation_id" id="variation_id" value="" />
+              @foreach($variationAttributes as $attributeKey => $attribute)
+                <input type="hidden" name="{{ $attributeKey }}" class="variation-attribute" value="" />
+              @endforeach
+            @endif
 
              <div class="flex items-center gap-4">
                @if(!$product->is_sold_individually())

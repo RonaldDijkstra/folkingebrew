@@ -41,5 +41,7 @@
       @endforeach
     </nav>
   </div>
-  <div class="text-white text-right w-15 shrink-0 pr-2 md:pr-0">Cart</div>
+  <div class="text-white text-right w-15 shrink-0 pr-2 md:pr-0">
+    @include('webshop.header-cart')
+  </div>
 </header>

@@ -9,8 +9,8 @@
   </x-container>
 
   <x-container classes="pb-16">
-    @if(empty($productsByCategory) || count($productsByCategory) === 0)
-      <p class="text-center">
+    @if(empty($productsByCategory) || count($productsByCategory) === 0 || collect($productsByCategory)->every(fn($category) => empty($category['products'])))
+      <p class="text-center py-16">
         {{ $notFoundText }}
       </p>
     @else

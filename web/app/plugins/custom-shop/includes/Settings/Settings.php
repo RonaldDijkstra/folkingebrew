@@ -55,6 +55,19 @@ class Settings implements ServiceInterface
             <?php
         }, 100);
 
+        add_filter('woocommerce_add_to_cart_fragments', function ($fragments) {
+          if (! function_exists('WC') || ! WC()->cart) {
+              $html = '<span class="text-sm leading-none" id="header-cart-count" data-cart-count>0</span>';
+          } else {
+              $count = WC()->cart->get_cart_contents_count();
+              $html  = '<span class="text-sm leading-none" id="header-cart-count" data-cart-count>'. intval($count) .'</span>';
+          }
+
+          // Key must be a CSS selector that matches your element in the DOM.
+          $fragments['span[data-cart-count]'] = $html;
+
+          return $fragments;
+      });
 
         // Restrict allowed countries to specific European countries
         add_filter('woocommerce_countries_allowed_countries', [$this, 'restrictAllowedCountries']);

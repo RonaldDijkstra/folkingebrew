@@ -246,8 +246,7 @@ class ArchiveProduct extends Composer
             $term = $this->getQueriedTerm();
 
             if (is_product_category()) {
-                $prefix = __('Category: ', 'folkingebrew');
-                return $term ? $prefix . $term->name : __('Products', 'folkingebrew');
+                return $term ? $term->name : __('Products', 'folkingebrew');
             }
 
             if (is_product_tag()) {
@@ -256,7 +255,7 @@ class ArchiveProduct extends Composer
             }
         }
 
-        return __('All Products', 'folkingebrew');
+        return __('Webshop', 'folkingebrew');
     }
 
     /**

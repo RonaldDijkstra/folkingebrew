@@ -272,3 +272,16 @@
     @apply text-red-800 underline;
   }
 }
+
+/* Variation options */
+.variation-option.selected {
+  @apply bg-black text-white border-black;
+}
+
+.variation-option:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.variation-option:not(:disabled):hover {
+  @apply border-black;
+}
