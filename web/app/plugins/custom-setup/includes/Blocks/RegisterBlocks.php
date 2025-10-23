@@ -100,13 +100,22 @@ class RegisterBlocks implements ServiceInterface
                 'category' => 'content',
                 'icon' => '<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24"><!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  --><rect width="24" height="24" fill="none"/><path d="M12,4.9l1.6,5.1.2.5h5.9l-4.3,3.1-.4.3.2.5,1.6,5.1-4.3-3.1-.4-.3-.4.3-4.3,3.1,1.6-5.1.2-.5-.4-.3-4.3-3.1h5.9l.2-.5,1.6-5.1M12,2.5l-2.4,7.3H2l6.2,4.5-2.4,7.3,6.2-4.5,6.2,4.5-2.4-7.3,6.2-4.5h-7.6l-2.4-7.3h0Z"/></svg>',
                 'description' => 'A review slider block.',
+                'apiVersion' => 3,
                 'render_callback' => function () {
                     echo view('blocks.review-slider');
                 },
-                'mode' => 'edit',
+                'mode' => 'preview',
                 'supports' => [
                     'mode' => false,
                     'align' => ['wide', 'full'],
+                    'anchor' => true,
+                    'jsx' => true,
+                ],
+                'example' => [
+                    'attributes' => [
+                        'mode' => 'preview',
+                        'data' => [],
+                    ]
                 ],
             ],
             [

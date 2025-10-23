@@ -1,6 +1,20 @@
 @import "tailwindcss";
 @reference "./app.css" theme;
 
+/* Color variables for editor (needed for Swiper and other components) */
+:root {
+  --color-primary: #54b848;
+  --color-primary-dark: #326f2b;
+  --color-body: #3f3f46;
+  --color-neutral: #171717;
+  --color-neutral-light-brown: #fffaf8;
+  --color-neutral-gray: #ccc;
+  --color-neutral-light-gray: #eee;
+}
+
+/* Swiper styles for editor */
+@import './review-slider.css';
+
 .editor-visual-editor__post-title-wrapper {
   @apply m-0 px-5 mb-3;
 }

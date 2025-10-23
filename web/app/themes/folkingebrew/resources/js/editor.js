@@ -1,11 +1,13 @@
 import domReady from '@wordpress/dom-ready';
 
 import openingHours from "./opening-hours.js";
+import slider from "./slider.js";
 
 domReady(() => {
   // Array of initialization functions to run when content is loaded/changed
   const initFunctions = [
     openingHours,
+    slider,
     // Add more functions here as needed
     // exampleFunction,
   ];
