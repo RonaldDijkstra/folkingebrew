@@ -1,5 +1,5 @@
 <x-section :backgroundColor="$backgroundColor">
-  <x-container :classes="'grid grid-cols-1 gap-8 md:gap-16 ' . ($image || ($contentType === 'info' && $companyDetails['company_google_maps']) ? 'md:grid-cols-2' : 'md:place-items-center')">
+  <x-container :classes="'font-sans grid grid-cols-1 gap-8 md:gap-16 ' . ($image || ($contentType === 'info' && $companyDetails['company_google_maps']) ? 'md:grid-cols-2' : 'md:place-items-center')">
     <div class="order-1 {{ $textRight ? 'md:order-2' : 'md:order-1' }} md:flex md:flex-col md:justify-center {{ !$image ? 'md:max-w-xl' : '' }}">
       @if ($title)
         <h2 class="text-2xl font-bold mb-2">{!! $title !!}</h2>
@@ -62,27 +62,28 @@
       @endif
 
       @if ($contentType === 'info')
-        <div class="flex flex-col gap-3">
-          <h3 class="text-2xl font-bold mb-2">{{ __('Address', 'folkingebrew') }}</h3>
-          <address class="not-italic text-lg">
-            {!! $companyDetails['company_address'] !!}<br>
-            {!! $companyDetails['company_zipcode'] !!}<br>
-            {!! $companyDetails['company_city'] !!}
-          </address>
+        <div class="prose prose-a:text-primary prose-a:underline prose-p:p-0 prose-p:m-0">
+          <div class="flex flex-col gap-3">
+            <h3 class="text-2xl font-bold mb-2">{{ __('Address', 'folkingebrew') }}</h3>
+            <address class="not-italic text-lg">
+              {!! $companyDetails['company_address'] !!}<br>
+              {!! $companyDetails['company_zipcode'] !!}<br>
+              {!! $companyDetails['company_city'] !!}
+            </address>
+          </div>
+          <div class="flex flex-col mb-4">
+            <a class="text-primary underline" href="tel:{{ $companyDetails['company_phone'] }}">{{ $companyDetails['company_phone'] }}</a>
+            <a class="text-primary" href="mailto:{{ $companyDetails['company_email'] }}">{{ $companyDetails['company_email'] }}</a>
+            <a class="text-primary" href="https://www.google.com/maps/search/?api=1&query={{ $companyDetails['company_address'] }},{{ $companyDetails['company_zipcode'] }},{{ $companyDetails['company_city'] }}" target="_blank">Google Maps</a>
+          </div>
+          <div class="flex flex-col gap-3">
+            <h3 class="text-2xl font-bold">{{ __('Directions', 'folkingebrew') }}</h3>
+            <h4 class="text-xl font-bold">{{ __('Public Transport', 'folkingebrew') }}</h4>
+            {!! $directions['public_transport'] !!}
+            <h4 class="text-xl font-bold">{{ __('Car', 'folkingebrew') }}</h4>
+            {!! $directions['car'] !!}
+          </div>
         </div>
-        <div class="flex flex-col gap-3 mb-4">
-          <a class="text-primary" href="tel:{{ $companyDetails['company_phone'] }}">{{ $companyDetails['company_phone'] }}</a>
-          <a class="text-primary" href="mailto:{{ $companyDetails['company_email'] }}">{{ $companyDetails['company_email'] }}</a>
-          <a class="text-primary" href="https://www.google.com/maps/search/?api=1&query={{ $companyDetails['company_address'] }},{{ $companyDetails['company_zipcode'] }},{{ $companyDetails['company_city'] }}" target="_blank">Google Maps</a>
-        </div>
-        <div class="flex flex-col gap-3">
-          <h3 class="text-2xl font-bold">{{ __('Directions', 'folkingebrew') }}</h3>
-          <h4 class="text-xl font-bold">{{ __('Public Transport', 'folkingebrew') }}</h4>
-          {!! $directions['public_transport'] !!}
-          <h4 class="text-xl font-bold">{{ __('Car', 'folkingebrew') }}</h4>
-          {!! $directions['car'] !!}
-        </div>
-
       @endif
     </div>
     @if ($image && $contentType !== 'info')

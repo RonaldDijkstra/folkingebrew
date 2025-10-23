@@ -18,9 +18,10 @@ class Hero extends Composer
             'title' => $this->title(),
             'image' => $this->image(),
             'buttons' => $this->buttons(),
+            'isPreview' => $this->isPreview(),
         ];
     }
-    
+
     public function title(): string
     {
         return get_field('title') ?: '';
@@ -29,7 +30,7 @@ class Hero extends Composer
     public function image(): array
     {
         $image = get_field('image');
-        
+
         return $image ?: [];
     }
 
@@ -46,5 +47,11 @@ class Hero extends Composer
     public function buttons(): array
     {
         return get_field('buttons') ?: [];
+    }
+
+    public function isPreview(): bool
+    {
+        // Check if we're in the block editor context
+        return is_admin() || (defined('REST_REQUEST') && REST_REQUEST);
     }
 }
