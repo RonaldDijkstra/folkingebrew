@@ -54,7 +54,8 @@
     "wpackagist-theme/twentytwentyfive": "^1.0",
     "vinkla/extended-acf": "14.6.0",
     "wpackagist-plugin/svg-support": "^2.5",
-    "wpackagist-plugin/woocommerce": "^10.2"
+    "wpackagist-plugin/woocommerce": "^10.2",
+    "wpackagist-plugin/mollie-payments-for-woocommerce": "^8.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

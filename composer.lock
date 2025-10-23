@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da32023dce3677b6f507e00299f0c6db",
+    "content-hash": "d7bfc9645ddf2984ce415441f5d7a5f9",
     "packages": [
         {
             "name": "composer/installers",
@@ -1103,6 +1103,24 @@
                 }
             ],
             "time": "2025-04-30T23:37:27+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/mollie-payments-for-woocommerce",
+            "version": "8.0.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/mollie-payments-for-woocommerce/",
+                "reference": "tags/8.0.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/mollie-payments-for-woocommerce.8.0.6.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/mollie-payments-for-woocommerce/"
         },
         {
             "name": "wpackagist-plugin/svg-support",
