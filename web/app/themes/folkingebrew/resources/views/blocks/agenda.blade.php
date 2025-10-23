@@ -6,14 +6,14 @@
     @foreach ($events as $event)
       <div class="pb-3 sm:pb-2 mb-3 sm:flex justify-between w-full border border-b border-0 border-white">
         <div class="text-lg w-32 shrink-0 font-sans">{{ $event['date'] }}</div>
-        <div class="flex-1 mb-3 sm:mb-0">
+        <div class="flex-1 mb-2 sm:mb-3">
           <h3 class="text-lg font-bold font-sans m-0">{{ $event['title'] }}</h3>
           @if ($event['description'])
-            <p class="text-white text-lg m-0 font-sans">{{ $event['description'] }}</p>
+            <p class="text-white text-sm m-0 font-sans">{{ $event['description'] }}</p>
           @endif
         </div>
         @if($event['link'])
-          <a href="{{ $event['link']['url'] }}" class="text-white hover:no-underline font-sans" target="{{ $event['link']['target'] }}">{{ $event['link']['title'] }}</a>
+          <a href="{{ $event['link']['url'] }}" class="text-white underline hover:no-underline font-sans" target="{{ $event['link']['target'] }}">{{ $event['link']['title'] }}</a>
         @endif
       </div>
     @endforeach

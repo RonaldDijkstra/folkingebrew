@@ -26,6 +26,10 @@ export default defineConfig({
             if (selector.startsWith(':where') || selector.startsWith(':is')) {
               return selector;
             }
+            // Don't prefix WordPress UI elements that are outside the editor canvas
+            if (selector.match(/^\.edit-post-|^\.block-editor-block-toolbar/)) {
+              return selector;
+            }
             // All selectors need a space for WordPress editor styles
             // This targets descendants of .editor-styles-wrapper
             return `${prefix} ${selector}`;

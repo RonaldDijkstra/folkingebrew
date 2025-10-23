@@ -25,7 +25,7 @@ class Agenda extends Composer
     {
         $events = get_field('events', 'options') ?: [];
 
-        $today = date('d-m-Y');
+        $today = strtotime(date('Y-m-d'));
         $filteredEvents = [];
 
         foreach ($events as $event) {
@@ -35,8 +35,22 @@ class Agenda extends Composer
                 continue;
             }
 
-            if ($eventDate >= $today) {
-                $filteredEvents[] = $event;
+            // Parse the date - assuming format is dd-mm or dd-mm-YYYY
+            $dateParts = explode('-', $eventDate);
+            if (count($dateParts) === 2) {
+                // If only dd-mm, add current year
+                $eventDate = $dateParts[0] . '-' . $dateParts[1] . '-' . date('Y');
+            }
+
+            // Convert to Y-m-d format for comparison
+            $eventDateParts = explode('-', $eventDate);
+            if (count($eventDateParts) === 3) {
+                $eventDateFormatted = $eventDateParts[2] . '-' . $eventDateParts[1] . '-' . $eventDateParts[0];
+                $eventTimestamp = strtotime($eventDateFormatted);
+
+                if ($eventTimestamp && $eventTimestamp >= $today) {
+                    $filteredEvents[] = $event;
+                }
             }
         }
 
