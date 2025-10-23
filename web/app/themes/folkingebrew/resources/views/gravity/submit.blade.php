@@ -5,16 +5,24 @@
       src="{{ $imageUrl }}"
       id="gform_submit_button_{{ $form['id'] }}"
       class="gform_image_button {{ $widthClass }}"
-      onclick="gform.submission.handleButtonClick(this);"
-      data-submission-type="submit"
+      @if(isset($isPreview) && $isPreview)
+        disabled
+      @else
+        onclick="gform.submission.handleButtonClick(this);"
+        data-submission-type="submit"
+      @endif
       alt="{{ $buttonText }}">
   @else
     <input
       type="submit"
       id="gform_submit_button_{{ $form['id'] }}"
       class="gform_button button bg-primary text-white p-4 cursor-pointer hover:bg-primary-dark {{ $widthClass }}"
-      onclick="gform.submission.handleButtonClick(this);"
-      data-submission-type="submit"
+      @if(isset($isPreview) && $isPreview)
+        disabled
+      @else
+        onclick="gform.submission.handleButtonClick(this);"
+        data-submission-type="submit"
+      @endif
       value="{{ $buttonText }}">
   @endif
 </div>

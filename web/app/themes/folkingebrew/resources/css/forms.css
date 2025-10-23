@@ -1,0 +1,85 @@
+@layer utilities {
+  .gform_fields {
+    @apply grid gap-4 mb-4;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .gfield {
+    @apply col-span-12;
+  }
+
+  .gform_wrapper .gform_validation_container,
+  .gform_wrapper .gform_validation_container * {
+    @apply absolute left-[-10000px] top-auto w-1 h-1 overflow-hidden opacity-0 pointer-events-none;
+  }
+
+  .gfield--width-quarter {
+    @apply md:col-span-3;
+  }
+
+  .gfield--width-third {
+    @apply md:col-span-4;
+  }
+
+  .gfield--width-half {
+    @apply md:col-span-6;
+  }
+
+  .gfield--width-three-quarters {
+    @apply md:col-span-9;
+  }
+
+  .gfield--width-full {
+    @apply col-span-12;
+  }
+
+  .gform-page-footer {
+    @apply flex justify-between;
+  }
+
+  .ginput_counter {
+    @apply text-sm;
+  }
+
+  .gfield_validation_message {
+    @apply text-sm text-red-600 mt-1;
+  }
+
+  .ginput_preview {
+    @apply grid grid-cols-[1fr_auto_auto_auto] items-center gap-2 py-2 px-3 odd:bg-gray-100;
+  }
+
+  .gfield_fileupload_filename {
+    @apply overflow-hidden text-ellipsis whitespace-nowrap;
+  }
+
+  .gfield_fileupload_filesize,
+  .gfield_fileupload_progress,
+  .gform_delete_file {
+    @apply whitespace-nowrap justify-self-end text-sm;
+  }
+
+  .gfield_fileupload_progress {
+    @apply flex items-center gap-1;
+  }
+
+  .gfield_fileupload_progressbar {
+    @apply w-8 h-1 bg-gray-200 rounded overflow-hidden;
+  }
+
+  .gfield_fileupload_progressbar_progress {
+    @apply block h-full bg-primary;
+  }
+
+  .gform_delete_file {
+    @apply bg-transparent border-0 text-red-500 cursor-pointer p-0;
+  }
+
+  .gfield_visibility_hidden {
+    @apply !hidden;
+  }
+
+  .gfield_description {
+    @apply text-sm text-body;
+  }
+}

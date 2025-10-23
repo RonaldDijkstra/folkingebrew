@@ -50,7 +50,7 @@
 
       @if ($contentType === 'text')
         @if ($text)
-          <div class="text-body mb-6 text-lg prose prose-a:text-primary prose-ul:list-disc prose-ul:pl-4">
+          <div class="text-body mb-6 text-lg prose prose-a:text-primary prose-ul:list-disc">
             {!! $text !!}
           </div>
         @endif
