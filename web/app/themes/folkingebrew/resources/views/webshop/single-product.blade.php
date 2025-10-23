@@ -147,12 +147,7 @@
     </div>
   </div>
 
-  {{-- Tabs + upsells + related via Woo hooks to keep compatibility --}}
-  {{-- <div class="mt-12">
-    @php
-      do_action('woocommerce_after_single_product_summary'); // tabs, upsell, related
-    @endphp
-  </div> --}}
+  @include('webshop.related-products')
 
   <meta itemprop="url" content="{{ get_permalink($product->get_id()) }}" />
 </x-container>

@@ -6,7 +6,7 @@
   <div class="relative mb-6 z-20 flex flex-col items-center">
     @if ($image && isset($image['url']) && !empty($image['url']))
       <div class="mb-6">
-        <img src="{{ $image['url'] }}" alt="{{ $image['alt'] ?? '' }}" class="w-[240px] xs:w-[320px] md:w-[480px] h-auto">
+        <img src="{{ $image['url'] }}" alt="{{ $image['alt'] ?? '' }}" class="w-[240px] xs:w-[320px] md:w-[400px] h-auto">
       </div>
     @endif
     @if ($title)

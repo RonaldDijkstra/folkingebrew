@@ -55,6 +55,17 @@ class ArchiveProduct extends Composer
                 // Transform products into prepared data arrays
                 $preparedProducts = array_map([$this, 'prepareProductData'], $products);
 
+                // Sort products to prioritize sale items
+                usort($preparedProducts, static function ($a, $b) {
+                    // Prioritize sale items (sale = true comes first)
+                    if ($a['sale'] !== $b['sale']) {
+                        return $b['sale'] <=> $a['sale'];
+                    }
+
+                    // If both are on sale or both are not, maintain original order
+                    return 0;
+                });
+
                 return [[
                     'category_name' => $category->name,
                     'category_slug' => $category->slug,
@@ -179,6 +190,20 @@ class ArchiveProduct extends Composer
             return $aOrder <=> $bOrder;
         });
 
+        // Sort products within each category to prioritize sale items
+        foreach ($grouped as &$categoryData) {
+            usort($categoryData['products'], static function ($a, $b) {
+                // Prioritize sale items (sale = true comes first)
+                if ($a['sale'] !== $b['sale']) {
+                    return $b['sale'] <=> $a['sale'];
+                }
+
+                // If both are on sale or both are not, maintain original order
+                return 0;
+            });
+        }
+        unset($categoryData); // Break reference
+
         return $grouped;
     }
 
@@ -197,6 +222,7 @@ class ArchiveProduct extends Composer
             'title'            => $post->post_title,
             'permalink'        => get_permalink($post->ID),
             'price'            => $wcProduct ? $wcProduct->get_price_html() : '',
+            'sale'             => false,
             'thumbnail'        => null,
             'abv'              => null,
             'style'            => null,
@@ -204,6 +230,8 @@ class ArchiveProduct extends Composer
             'is_purchasable'   => false,
             'is_in_stock'      => false,
             'product_type'     => '',
+            'new'              => false,
+            'date_created'     => 0,
         ];
 
         // Get featured image
@@ -232,6 +260,8 @@ class ArchiveProduct extends Composer
             $data['is_purchasable']  = $wcProduct->is_purchasable();
             $data['is_in_stock']     = $wcProduct->is_in_stock();
             $data['product_type']    = $wcProduct->get_type();
+            $data['sale']            = $wcProduct->is_on_sale();
+            $data['new']             = $wcProduct->get_date_created()->format('Y-m-d') > date('Y-m-d', strtotime('-3 days'));
         }
 
         return $data;
@@ -313,3 +343,4 @@ class ArchiveProduct extends Composer
         return $breadcrumbs;
     }
 }
+

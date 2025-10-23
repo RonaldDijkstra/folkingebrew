@@ -52,12 +52,12 @@ class Content extends Composer
                 return $this->renderGfStaticPreview($formId, $text);
             }
 
-            // Frontend: normal shortcode rendering
-            return do_shortcode($text);
+            // Frontend: apply wpautop first, then process shortcodes
+            return do_shortcode(wpautop($text));
         }
 
-        // No Gravity Form shortcode — just render normal text/shortcodes
-        return $this->isPreview() ? wpautop($text) : do_shortcode($text);
+        // No Gravity Form shortcode — apply wpautop first, then process shortcodes
+        return $this->isPreview() ? wpautop($text) : do_shortcode(wpautop($text));
     }
 
     private function renderGfStaticPreview(int $formId, string $text): string
@@ -80,10 +80,16 @@ class Content extends Composer
             return wpautop($text);
         }
 
+        // Apply wpautop first to convert line breaks to paragraphs
+        $text = wpautop($text);
+
         // Replace the shortcode with our blade-rendered form
+        // Also remove any <p> tags that wpautop may have added around the shortcode
+        $text = preg_replace('/<p>\s*\[gravityform[^]]*\]\s*<\/p>/i', $formHtml, $text);
+
+        // Fallback: replace shortcode if it wasn't wrapped in <p> tags
         $text = preg_replace('/\[gravityform[^]]*\]/i', $formHtml, $text);
 
-        // Return the HTML without wpautop since form HTML is already complete
         return $text;
     }
 
@@ -137,7 +143,7 @@ class Content extends Composer
 
         $formHtml .= '<form method="post" id="gform_' . esc_attr($formId) . '">';
         $formHtml .= '<div class="gform_body">';
-        $formHtml .= '<ul class="w-full list-none !p-0 !m-0 !ms-0 !ps-0 !pl-0">';
+        $formHtml .= '<ul class="gform_fields w-full list-none not-prose pl-0">';
         $formHtml .= $fieldsHtml;
         $formHtml .= '</ul>';
         $formHtml .= '</div>';

@@ -16,7 +16,7 @@
     <input
       type="submit"
       id="gform_submit_button_{{ $form['id'] }}"
-      class="gform_button button bg-primary text-white p-4 cursor-pointer hover:bg-primary-dark {{ $widthClass }}"
+      class="gform_button bg-primary text-white py-2 px-6 cursor-pointer hover:bg-primary-dark {{ $widthClass }}"
       @if(isset($isPreview) && $isPreview)
         disabled
       @else

@@ -1,5 +1,10 @@
-<div class="text-center">
+<div class="text-center relative">
   <a href="{{ $product['permalink'] }}" class="no-underline">
+    @if($product['sale'])
+      <div class="absolute bg-primary text-white text-sm font-normal py-1 px-2 top-4 right-4">{{ __('SALE', 'folkingebrew') }}</div>
+    @elseif($product['new'])
+      <div class="absolute bg-black text-white text-sm font-normal py-1 px-2 top-4 right-4">{{ __('NEW', 'folkingebrew') }}</div>
+    @endif
     @if($product['thumbnail'])
       <div class="figure w-full h-auto overflow-hidden mb-3">
         {!! $product['thumbnail'] !!}
@@ -35,7 +40,7 @@
       @if($product['product_type'] === 'variable')
         <a
           href="{{ $product['permalink'] }}"
-          class="button bg-primary hover:bg-primary-dark text-white font-normal py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
+          class="button bg-black hover:bg-black/80 text-white font-normal py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
         >
           {{ __('Select options', 'folkingebrew') }}
         </a>
@@ -45,7 +50,7 @@
           data-quantity="1"
           data-product_id="{{ $product['id'] }}"
           data-product_sku=""
-          class="button add_to_cart_button ajax_add_to_cart bg-primary hover:bg-primary-dark text-white font-normal py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
+          class="button add_to_cart_button ajax_add_to_cart bg-black hover:bg-black/80 text-white font-normal py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
           rel="nofollow"
         >
           {{ __('Add to cart', 'folkingebrew') }}
