@@ -4,6 +4,7 @@ namespace Custom\Setup\Blocks;
 
 use Custom\Setup\ServiceInterface;
 use function Roots\view;
+use Illuminate\Support\Facades\Vite;
 
 class RegisterBlocks implements ServiceInterface
 {
@@ -38,8 +39,15 @@ class RegisterBlocks implements ServiceInterface
                 'icon' => '<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24"><!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  --><rect width="24" height="24" fill="none"/><path d="M12,4.9l1.6,5.1.2.5h5.9l-4.3,3.1-.4.3.2.5,1.6,5.1-4.3-3.1-.4-.3-.4.3-4.3,3.1,1.6-5.1.2-.5-.4-.3-4.3-3.1h5.9l.2-.5,1.6-5.1M12,2.5l-2.4,7.3H2l6.2,4.5-2.4,7.3,6.2-4.5,6.2,4.5-2.4-7.3,6.2-4.5h-7.6l-2.4-7.3h0Z"/></svg>',
                 'description' => 'A hero block',
                 'apiVersion' => 3,
-                'render_callback' => function () {
-                    echo view('blocks.hero');
+                'render_callback' => function ($block, $content = '', $is_preview = false) {
+                    // Check if this is the block inserter example (no data yet)
+                    $is_example = empty($block['data']) || (empty(get_fields()) && $is_preview);
+
+                    if ($is_example) {
+                        $this->getBlockPreviewImage($block['name']);
+                    } else {
+                        echo view('blocks.hero');
+                    }
                 },
                 'mode' => 'preview',
                 'supports' => [
@@ -62,8 +70,15 @@ class RegisterBlocks implements ServiceInterface
                 'icon' => '<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24"><!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  --><rect width="24" height="24" fill="none"/><path d="M12,4.9l1.6,5.1.2.5h5.9l-4.3,3.1-.4.3.2.5,1.6,5.1-4.3-3.1-.4-.3-.4.3-4.3,3.1,1.6-5.1.2-.5-.4-.3-4.3-3.1h5.9l.2-.5,1.6-5.1M12,2.5l-2.4,7.3H2l6.2,4.5-2.4,7.3,6.2-4.5,6.2,4.5-2.4-7.3,6.2-4.5h-7.6l-2.4-7.3h0Z"/></svg>',
                 'description' => 'A content block with text and image.',
                 'apiVersion' => 3,
-                'render_callback' => function () {
-                    echo view('blocks.content');
+                'render_callback' => function ($block, $content = '', $is_preview = false) {
+                    // Check if this is the block inserter example (no data yet)
+                    $is_example = empty($block['data']) || (empty(get_fields()) && $is_preview);
+
+                    if ($is_example) {
+                        $this->getBlockPreviewImage($block['name']);
+                    } else {
+                        echo view('blocks.content');
+                    }
                 },
                 'mode' => 'preview',
                 'supports' => [
@@ -183,6 +198,25 @@ class RegisterBlocks implements ServiceInterface
                 'title' => 'Content Blocks',
                 'icon'  => null,
             ],
+            [
+                'slug'  => 'woocommerce',
+                'title' => 'Webshop',
+                'icon'  => null,
+            ],
         ];
+    }
+
+    private function getBlockPreviewImage($blockName)
+    {
+        // Remove 'acf/' prefix if present in $blockName
+        if (strpos($blockName, 'acf/') === 0) {
+            $blockName = substr($blockName, 4);
+        }
+
+        $imageUrl = Vite::asset('resources/images/blocks/' . $blockName . '.png');
+
+        echo '<div style="background: #f0f0f0; border-radius: 4px;overflow:hidden;border:1px solid #ccc;">';
+        echo '<img src="' . esc_url($imageUrl) . '" alt="' . esc_attr($blockName) . ' Preview" style="max-width: 100%; height: auto;" />';
+        echo '</div>';
     }
 }
