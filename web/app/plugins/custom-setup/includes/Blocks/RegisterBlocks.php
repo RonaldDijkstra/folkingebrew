@@ -40,27 +40,36 @@ class RegisterBlocks implements ServiceInterface
                 'description' => 'A hero block',
                 'apiVersion' => 3,
                 'render_callback' => function ($block, $content = '', $is_preview = false) {
-                    // Check if this is the block inserter example (no data yet)
-                    $is_example = empty($block['data']) || (empty(get_fields()) && $is_preview);
+                    $is_example = !empty($block['data']['is_example']);
 
-                    if ($is_example) {
+                    if ($is_example && $is_preview) {
+                        // Inserter thumbnail only
                         $this->getBlockPreviewImage($block['name']);
-                    } else {
-                        echo view('blocks.hero');
+                        return;
                     }
+
+                    // Render the real block (even when fields are empty)
+                    $fields = function_exists('get_fields') ? (get_fields() ?: []) : [];
+                    echo view('blocks.hero', [
+                        'fields'     => $fields,
+                        'is_preview' => $is_preview,
+                    ]);
                 },
                 'mode' => 'preview',
                 'supports' => [
-                    'mode' => false,
-                    'align' => ['wide', 'full'],
+                    'mode'   => false,
+                    'align'  => ['wide', 'full'],
                     'anchor' => true,
-                    'jsx' => true,
+                    'jsx'    => true,
                 ],
+                // Mark example explicitly so it only applies to inserter
                 'example' => [
                     'attributes' => [
                         'mode' => 'preview',
-                        'data' => [],
-                    ]
+                        'data' => [
+                            'is_example' => true,
+                        ],
+                    ],
                 ],
             ],
             [
@@ -71,27 +80,36 @@ class RegisterBlocks implements ServiceInterface
                 'description' => 'A content block with text and image.',
                 'apiVersion' => 3,
                 'render_callback' => function ($block, $content = '', $is_preview = false) {
-                    // Check if this is the block inserter example (no data yet)
-                    $is_example = empty($block['data']) || (empty(get_fields()) && $is_preview);
+                    $is_example = !empty($block['data']['is_example']);
 
-                    if ($is_example) {
+                    if ($is_example && $is_preview) {
+                        // Inserter thumbnail only
                         $this->getBlockPreviewImage($block['name']);
-                    } else {
-                        echo view('blocks.content');
+                        return;
                     }
+
+                    // Render the real block (even when fields are empty)
+                    $fields = function_exists('get_fields') ? (get_fields() ?: []) : [];
+                    echo view('blocks.content', [
+                        'fields'     => $fields,
+                        'is_preview' => $is_preview,
+                    ]);
                 },
                 'mode' => 'preview',
                 'supports' => [
-                    'mode' => false,
-                    'align' => ['wide', 'full'],
+                    'mode'   => false,
+                    'align'  => ['wide', 'full'],
                     'anchor' => true,
-                    'jsx' => true,
+                    'jsx'    => true,
                 ],
+                // Mark example explicitly so it only applies to inserter
                 'example' => [
                     'attributes' => [
                         'mode' => 'preview',
-                        'data' => [],
-                    ]
+                        'data' => [
+                            'is_example' => true,
+                        ],
+                    ],
                 ],
             ],
             [
@@ -101,21 +119,37 @@ class RegisterBlocks implements ServiceInterface
                 'icon' => '<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24"><!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  --><rect width="24" height="24" fill="none"/><path d="M12,4.9l1.6,5.1.2.5h5.9l-4.3,3.1-.4.3.2.5,1.6,5.1-4.3-3.1-.4-.3-.4.3-4.3,3.1,1.6-5.1.2-.5-.4-.3-4.3-3.1h5.9l.2-.5,1.6-5.1M12,2.5l-2.4,7.3H2l6.2,4.5-2.4,7.3,6.2-4.5,6.2,4.5-2.4-7.3,6.2-4.5h-7.6l-2.4-7.3h0Z"/></svg>',
                 'description' => 'A review slider block.',
                 'apiVersion' => 3,
-                'render_callback' => function () {
-                    echo view('blocks.review-slider');
+                'render_callback' => function ($block, $content = '', $is_preview = false) {
+                    $is_example = !empty($block['data']['is_example']);
+
+                    if ($is_example && $is_preview) {
+                        // Inserter thumbnail only
+                        $this->getBlockPreviewImage($block['name']);
+                        return;
+                    }
+
+                    // Render the real block (even when fields are empty)
+                    $fields = function_exists('get_fields') ? (get_fields() ?: []) : [];
+                    echo view('blocks.review-slider', [
+                        'fields'     => $fields,
+                        'is_preview' => $is_preview,
+                    ]);
                 },
                 'mode' => 'preview',
                 'supports' => [
-                    'mode' => false,
-                    'align' => ['wide', 'full'],
+                    'mode'   => false,
+                    'align'  => ['wide', 'full'],
                     'anchor' => true,
-                    'jsx' => true,
+                    'jsx'    => true,
                 ],
+                // Mark example explicitly so it only applies to inserter
                 'example' => [
                     'attributes' => [
                         'mode' => 'preview',
-                        'data' => [],
-                    ]
+                        'data' => [
+                            'is_example' => true,
+                        ],
+                    ],
                 ],
             ],
             [
@@ -125,26 +159,37 @@ class RegisterBlocks implements ServiceInterface
                 'icon' => '<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24"><!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  --><rect width="24" height="24" fill="none"/><path d="M12,4.9l1.6,5.1.2.5h5.9l-4.3,3.1-.4.3.2.5,1.6,5.1-4.3-3.1-.4-.3-.4.3-4.3,3.1,1.6-5.1.2-.5-.4-.3-4.3-3.1h5.9l.2-.5,1.6-5.1M12,2.5l-2.4,7.3H2l6.2,4.5-2.4,7.3,6.2-4.5,6.2,4.5-2.4-7.3,6.2-4.5h-7.6l-2.4-7.3h0Z"/></svg>',
                 'description' => 'An agenda block.',
                 'apiVersion' => 3,
-                'render_callback' => function ($block, $content = '', $is_preview = false, $post_id = 0, $wp_block = null, $context = []) {
+                'render_callback' => function ($block, $content = '', $is_preview = false) {
+                    $is_example = !empty($block['data']['is_example']);
+
+                    if ($is_example && $is_preview) {
+                        // Inserter thumbnail only
+                        $this->getBlockPreviewImage($block['name']);
+                        return;
+                    }
+
+                    // Render the real block (even when fields are empty)
+                    $fields = function_exists('get_fields') ? (get_fields() ?: []) : [];
                     echo view('blocks.agenda', [
-                        'block' => $block,
+                        'fields'     => $fields,
                         'is_preview' => $is_preview,
-                        'post_id' => $post_id,
-                        'context' => $context,
                     ]);
                 },
                 'mode' => 'preview',
                 'supports' => [
-                    'mode' => false,
-                    'align' => ['wide', 'full'],
+                    'mode'   => false,
+                    'align'  => ['wide', 'full'],
                     'anchor' => true,
-                    'jsx' => true,
+                    'jsx'    => true,
                 ],
+                // Mark example explicitly so it only applies to inserter
                 'example' => [
                     'attributes' => [
                         'mode' => 'preview',
-                        'data' => [],
-                    ]
+                        'data' => [
+                            'is_example' => true,
+                        ],
+                    ],
                 ],
             ],
         ];
