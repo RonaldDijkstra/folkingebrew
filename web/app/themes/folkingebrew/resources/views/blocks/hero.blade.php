@@ -11,7 +11,7 @@
     @endif
     @if ($title)
       <h1 class="text-white text-3xl md:text-4xl font-light text-center font-sans m-0">
-        {{ $title }}
+        {!! $title !!}
       </h1>
     @endif
   </div>
