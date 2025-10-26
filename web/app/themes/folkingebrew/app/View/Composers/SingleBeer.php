@@ -51,12 +51,46 @@ class SingleBeer extends Composer
             return null;
         }
 
+        // For variable products, show only the SINGLE variant price
+        $priceHtml = $product->get_price_html();
+        if ($product->is_type('variable')) {
+            $singleVariationPrice = $this->getSingleVariantPrice($product);
+            if ($singleVariationPrice) {
+                $priceHtml = $singleVariationPrice;
+            }
+        }
+
         return [
             'id' => $product->get_id(),
             'title' => $product->get_name(),
             'url' => get_permalink($product->get_id()),
-            'price' => $product->get_price_html(),
+            'price' => $priceHtml,
             'stock_status' => $product->get_stock_status(),
         ];
+    }
+
+    /**
+     * Get price HTML for the SINGLE variant of a variable product.
+     *
+     * @param \WC_Product_Variable $product
+     * @return string|null
+     */
+    private function getSingleVariantPrice($product): ?string
+    {
+        $variations = $product->get_available_variations();
+
+        foreach ($variations as $variation) {
+            // Check if this variation has "SINGLE" in any of its attributes
+            foreach ($variation['attributes'] as $attributeKey => $attributeValue) {
+                if (stripos($attributeValue, 'SINGLE') !== false) {
+                    $variationProduct = wc_get_product($variation['variation_id']);
+                    if ($variationProduct) {
+                        return $variationProduct->get_price_html();
+                    }
+                }
+            }
+        }
+
+        return null;
     }
 }

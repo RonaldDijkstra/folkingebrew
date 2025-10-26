@@ -241,6 +241,14 @@ class ArchiveProduct extends Composer
 
         // Get attributes and cart data if WooCommerce product exists
         if ($wcProduct) {
+            // For variable beer products, show only the SINGLE variant price
+            if ($this->isInBeerCategory($post->ID) && $wcProduct->is_type('variable')) {
+                $singleVariationPrice = $this->getSingleVariantPrice($wcProduct);
+                if ($singleVariationPrice) {
+                    $data['price'] = $singleVariationPrice;
+                }
+            }
+
             // Get ABV attribute
             $abv = $wcProduct->get_attribute('pa_abv');
             if (!$abv) {
@@ -265,6 +273,54 @@ class ArchiveProduct extends Composer
         }
 
         return $data;
+    }
+
+    /**
+     * Check if product is in the beer category.
+     *
+     * @param int $productId
+     * @return bool
+     */
+    private function isInBeerCategory(int $productId): bool
+    {
+        $terms = get_the_terms($productId, 'product_cat');
+
+        if (!$terms || is_wp_error($terms)) {
+            return false;
+        }
+
+        foreach ($terms as $term) {
+            if (strtolower($term->slug) === 'beer' || strtolower($term->slug) === 'beers') {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Get price HTML for the SINGLE variant of a variable product.
+     *
+     * @param \WC_Product_Variable $product
+     * @return string|null
+     */
+    private function getSingleVariantPrice($product): ?string
+    {
+        $variations = $product->get_available_variations();
+
+        foreach ($variations as $variation) {
+            // Check if this variation has "SINGLE" in any of its attributes
+            foreach ($variation['attributes'] as $attributeKey => $attributeValue) {
+                if (stripos($attributeValue, 'SINGLE') !== false) {
+                    $variationProduct = wc_get_product($variation['variation_id']);
+                    if ($variationProduct) {
+                        return $variationProduct->get_price_html();
+                    }
+                }
+            }
+        }
+
+        return null;
     }
 
     /**
