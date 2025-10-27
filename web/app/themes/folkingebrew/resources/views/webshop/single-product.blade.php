@@ -48,7 +48,15 @@
             <span>{{ $product->get_attribute('abv') }}%</span>
           </span>
         @endif
-        <div class="mt-2 text-xl font-bold" id="product-price">{!! $product->get_price_html() !!}</div>
+        <div class="mt-2 text-xl font-bold" id="product-price">
+          @if($isBeer && $singleVariantPrice)
+            {{-- Show only the SINGLE variant price for beer products --}}
+            {!! $singleVariantPrice !!}
+          @else
+            {{-- Show default price for non-beer or simple products --}}
+            {!! $product->get_price_html() !!}
+          @endif
+        </div>
       </div>
 
       {{-- Add to cart form --}}

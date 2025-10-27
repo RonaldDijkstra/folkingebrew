@@ -12,16 +12,30 @@ class SingleProduct extends Composer
 
     public function with()
     {
+        $product = $this->getProduct();
+        $isBeer = $this->isInBeerCategory(get_the_ID());
+        $singleVariantPrice = null;
+
+        // For beer products with a single variant, get that variant's price
+        if ($isBeer && $product && $product->is_type('variable')) {
+            $singleVariantData = $this->getSingleVariantData($product);
+            if ($singleVariantData) {
+                $singleVariantPrice = $singleVariantData['price'];
+            }
+        }
+
         return [
-            'product' => $this->getProduct(),
+            'product' => $product,
             'galleryIds' => $this->getGalleryIds(),
             'mainImageId' => $this->getMainImageId(),
-            'breadcrumbs' => $this->getBreadcrumbs($this->getProduct()),
-            'description' => $this->getDescription($this->getProduct()),
-            'lowStockAmount' => $this->getLowStockAmount($this->getProduct()),
+            'breadcrumbs' => $this->getBreadcrumbs($product),
+            'description' => $this->getDescription($product),
+            'lowStockAmount' => $this->getLowStockAmount($product),
             'isVariable' => $this->isVariable(),
             'variationAttributes' => $this->getVariationAttributes(),
             'availableVariations' => $this->getAvailableVariations(),
+            'isBeer' => $isBeer,
+            'singleVariantPrice' => $singleVariantPrice,
         ];
     }
 
@@ -202,5 +216,57 @@ class SingleProduct extends Composer
         }
 
         return $available_variations;
+    }
+
+    /**
+     * Check if product is in the beer category.
+     *
+     * @param int $productId
+     * @return bool
+     */
+    private function isInBeerCategory(int $productId): bool
+    {
+        $terms = get_the_terms($productId, 'product_cat');
+
+        if (!$terms || is_wp_error($terms)) {
+            return false;
+        }
+
+        foreach ($terms as $term) {
+            if (strtolower($term->slug) === 'beer' || strtolower($term->slug) === 'beers') {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Get data for the SINGLE variant of a variable product.
+     *
+     * @param \WC_Product_Variable $product
+     * @return array{id: int, price: string, attributes: array}|null
+     */
+    private function getSingleVariantData($product): ?array
+    {
+        $variations = $product->get_available_variations();
+
+        foreach ($variations as $variation) {
+            // Check if this variation has "SINGLE" in any of its attributes
+            foreach ($variation['attributes'] as $attributeKey => $attributeValue) {
+                if (stripos($attributeValue, 'SINGLE') !== false) {
+                    $variationProduct = wc_get_product($variation['variation_id']);
+                    if ($variationProduct) {
+                        return [
+                            'id' => $variation['variation_id'],
+                            'price' => $variationProduct->get_price_html(),
+                            'attributes' => $variation['attributes'],
+                        ];
+                    }
+                }
+            }
+        }
+
+        return null;
     }
 }
