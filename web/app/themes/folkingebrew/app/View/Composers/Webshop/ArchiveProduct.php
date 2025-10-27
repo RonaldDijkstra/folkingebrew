@@ -248,12 +248,15 @@ class ArchiveProduct extends Composer
             $data['is_beer'] = $this->isInBeerCategory($post->ID);
 
             // For variable beer products, show only the SINGLE variant price
+            $singleVariantProduct = null;
             if ($data['is_beer'] && $wcProduct->is_type('variable')) {
                 $singleVariantData = $this->getSingleVariantData($wcProduct);
                 if ($singleVariantData) {
                     $data['price'] = $singleVariantData['price'];
                     $data['single_variant_id'] = $singleVariantData['id'];
                     $data['single_variant_attributes'] = $singleVariantData['attributes'];
+                    // Get the variant product for sale check
+                    $singleVariantProduct = wc_get_product($singleVariantData['id']);
                 }
             }
 
@@ -276,7 +279,15 @@ class ArchiveProduct extends Composer
             $data['is_purchasable']  = $wcProduct->is_purchasable();
             $data['is_in_stock']     = $wcProduct->is_in_stock();
             $data['product_type']    = $wcProduct->get_type();
-            $data['sale']            = $wcProduct->is_on_sale();
+
+            // For beer products with a single variant, check if that variant is on sale
+            // Otherwise, check if the parent product is on sale
+            if ($data['is_beer'] && $singleVariantProduct) {
+                $data['sale'] = $singleVariantProduct->is_on_sale();
+            } else {
+                $data['sale'] = $wcProduct->is_on_sale();
+            }
+
             $data['new']             = $wcProduct->get_date_created()->format('Y-m-d') > date('Y-m-d', strtotime('-3 days'));
         }
 
