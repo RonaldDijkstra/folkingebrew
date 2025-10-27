@@ -22,12 +22,12 @@
     name="{{ $inputName }}"
     value="{{ is_string($value) ? $value : '' }}"
     autocomplete="{{ $autocompleteValue }}"
-    pattern="[0-9\s\-\+\(\)\.x#]+"
+    @if(!is_admin() && !(defined('REST_REQUEST') && REST_REQUEST)) pattern="[0-9\s\-\+\(\)\.x#]+" @endif
     @if($placeholder) placeholder="{{ $placeholder }}" @endif
     @if($isRequired) aria-required="true" required @endif
     @if($failed) aria-invalid="true" @endif
     aria-describedby="{{ $ariaDescId }}"
-    class="border rounded px-3 py-2 @if($size === 'small') w-1/3 @elseif($size === 'medium') w-1/2 @else w-full @endif @if($failed) border-red-500 @else border-gray-300 @endif"
+    class="border rounded px-3 py-2 focus:outline-primary @if($size === 'small') w-1/3 @elseif($size === 'medium') w-1/2 @else w-full @endif @if($failed) border-red-500 @else border-gray-300 @endif"
     oninput="this.value = this.value.replace(/[^0-9\s\-\+\(\)\.x#]/g, '')"
   />
 
