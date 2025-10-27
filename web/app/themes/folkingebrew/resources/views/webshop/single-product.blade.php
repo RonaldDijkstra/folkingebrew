@@ -86,7 +86,7 @@
               @endforeach
             @endif
 
-             <div class="flex items-center gap-4">
+             <div class="flex items-center gap-4 product-actions-wrapper-{{ $product->get_id() }}">
                @if(!$product->is_sold_individually())
                  <div class="quantity flex items-center border border-gray-300 rounded">
                    <label class="sr-only" for="quantity">{{ __('Quantity', 'woocommerce') }}</label>
@@ -110,7 +110,8 @@
                 type="submit"
                 name="add-to-cart"
                 value="{{ esc_attr($product->get_id()) }}"
-                class="flex-1 bg-black text-white px-6 py-2 border-black border hover:bg-gray-800 transition-colors font-medium"
+                class="flex-1 bg-black text-white px-6 py-2 border-black border hover:bg-gray-800 transition-colors font-medium ajax_add_to_cart"
+                data-product_id="{{ $product->get_id() }}"
               >
                 {{ $product->single_add_to_cart_text() }}
               </button>

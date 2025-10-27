@@ -232,6 +232,9 @@ class ArchiveProduct extends Composer
             'product_type'     => '',
             'new'              => false,
             'date_created'     => 0,
+            'single_variant_id' => null,
+            'single_variant_attributes' => [],
+            'is_beer'          => false,
         ];
 
         // Get featured image
@@ -241,11 +244,16 @@ class ArchiveProduct extends Composer
 
         // Get attributes and cart data if WooCommerce product exists
         if ($wcProduct) {
+            // Check if product is in beer category
+            $data['is_beer'] = $this->isInBeerCategory($post->ID);
+
             // For variable beer products, show only the SINGLE variant price
-            if ($this->isInBeerCategory($post->ID) && $wcProduct->is_type('variable')) {
-                $singleVariationPrice = $this->getSingleVariantPrice($wcProduct);
-                if ($singleVariationPrice) {
-                    $data['price'] = $singleVariationPrice;
+            if ($data['is_beer'] && $wcProduct->is_type('variable')) {
+                $singleVariantData = $this->getSingleVariantData($wcProduct);
+                if ($singleVariantData) {
+                    $data['price'] = $singleVariantData['price'];
+                    $data['single_variant_id'] = $singleVariantData['id'];
+                    $data['single_variant_attributes'] = $singleVariantData['attributes'];
                 }
             }
 
@@ -306,6 +314,18 @@ class ArchiveProduct extends Composer
      */
     private function getSingleVariantPrice($product): ?string
     {
+        $data = $this->getSingleVariantData($product);
+        return $data ? $data['price'] : null;
+    }
+
+    /**
+     * Get data for the SINGLE variant of a variable product.
+     *
+     * @param \WC_Product_Variable $product
+     * @return array{id: int, price: string, attributes: array}|null
+     */
+    private function getSingleVariantData($product): ?array
+    {
         $variations = $product->get_available_variations();
 
         foreach ($variations as $variation) {
@@ -314,7 +334,11 @@ class ArchiveProduct extends Composer
                 if (stripos($attributeValue, 'SINGLE') !== false) {
                     $variationProduct = wc_get_product($variation['variation_id']);
                     if ($variationProduct) {
-                        return $variationProduct->get_price_html();
+                        return [
+                            'id' => $variation['variation_id'],
+                            'price' => $variationProduct->get_price_html(),
+                            'attributes' => $variation['attributes'],
+                        ];
                     }
                 }
             }

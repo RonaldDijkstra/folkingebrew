@@ -36,8 +36,32 @@
   @endif
 
   @if($product['is_purchasable'] && $product['is_in_stock'])
-    <div class="mt-4 flex justify-center gap-2 items-center">
-      @if($product['product_type'] === 'variable')
+    <div class="mt-4 flex justify-center gap-2 items-center product-actions-wrapper-{{ $product['id'] }}">
+      @if($product['product_type'] === 'variable' && $product['is_beer'] && $product['single_variant_id'])
+        {{-- Beer products with SINGLE variant: Add SINGLE variant directly to cart --}}
+        <form class="inline-block beer-variant-cart-form" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="add-to-cart" value="{{ $product['id'] }}" />
+          <input type="hidden" name="product_id" value="{{ $product['id'] }}" />
+          <input type="hidden" name="variation_id" value="{{ $product['single_variant_id'] }}" />
+          <input type="hidden" name="quantity" value="1" />
+
+          @if(!empty($product['single_variant_attributes']))
+            @foreach($product['single_variant_attributes'] as $attrKey => $attrValue)
+              <input type="hidden" name="{{ esc_attr($attrKey) }}" value="{{ esc_attr($attrValue) }}" />
+            @endforeach
+          @endif
+
+          <button
+            type="submit"
+            class="button bg-black hover:bg-black/80 text-white font-normal py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg cursor-pointer border-0"
+            data-product_id="{{ $product['id'] }}"
+            data-variation_id="{{ $product['single_variant_id'] }}"
+          >
+            {{ __('Add to cart', 'folkingebrew') }}
+          </button>
+        </form>
+      @elseif($product['product_type'] === 'variable')
+        {{-- Other variable products: Show select options --}}
         <a
           href="{{ $product['permalink'] }}"
           class="button bg-black hover:bg-black/80 text-white font-normal py-2 px-6 transition-colors duration-200 inline-block no-underline text-lg"
@@ -45,6 +69,7 @@
           {{ __('Select options', 'folkingebrew') }}
         </a>
       @else
+        {{-- Simple products: Add to cart --}}
         <a
           href="{{ $product['add_to_cart_url'] }}"
           data-quantity="1"

@@ -296,6 +296,197 @@ const initProductVariations = () => {
   });
 };
 
+const initAddToCartViewCart = () => {
+  // Track which products have already had view cart links added to prevent duplicates
+  const processedProducts = new Set();
+
+  // Helper function to add view cart link (used by all handlers - primarily for variable products)
+  const addViewCartLink = (productId) => {
+    // Check if already processed
+    if (processedProducts.has(productId)) {
+      return false;
+    }
+
+    // Mark as processed immediately to prevent duplicates
+    processedProducts.add(productId);
+
+    // Find the product actions wrapper
+    const wrapper = document.querySelector(`.product-actions-wrapper-${productId}`);
+    if (!wrapper) return false;
+
+    // Check if link already exists
+    const existingLink = wrapper.querySelector('a[href*="cart"]');
+    if (existingLink && existingLink.textContent.includes('View cart')) {
+      return false;
+    }
+
+    // Reset the button text
+    const addToCartButton = wrapper.querySelector('.add_to_cart_button, button[name="add-to-cart"]');
+    if (addToCartButton) {
+      const originalText = addToCartButton.getAttribute('data-original-text');
+      if (originalText) {
+        addToCartButton.textContent = originalText;
+        addToCartButton.removeAttribute('data-original-text');
+      }
+    }
+
+    // Get cart URL
+    const cartUrl = window.wc_add_to_cart_params?.cart_url || '/cart/';
+
+    // Create view cart link
+    const viewCartLink = document.createElement('a');
+    viewCartLink.href = cartUrl;
+    viewCartLink.className = 'view-cart-link text-primary hover:text-primary/80 font-normal underline transition-colors duration-200';
+    viewCartLink.textContent = window.wc_add_to_cart_params?.i18n_view_cart || 'View cart';
+
+    // Add the link to the wrapper
+    wrapper.appendChild(viewCartLink);
+
+    return true;
+  };
+
+  // Handle beer variant form submissions via AJAX
+  document.addEventListener('submit', async (e) => {
+    if (e.target.classList.contains('beer-variant-cart-form')) {
+      e.preventDefault();
+
+      const form = e.target;
+      const button = form.querySelector('button[type="submit"]');
+      const productId = form.querySelector('[name="product_id"]')?.value;
+
+      if (!button || !productId) return;
+
+      // Disable button and show loading state
+      const originalText = button.textContent;
+      button.disabled = true;
+      button.textContent = 'Adding...';
+
+      try {
+        // Get form data
+        const formData = new FormData(form);
+
+        // Submit via AJAX
+        const response = await fetch(window.location.href, {
+          method: 'POST',
+          body: formData,
+          credentials: 'same-origin'
+        });
+
+        if (response.ok) {
+          // Reset button state
+          button.disabled = false;
+          button.textContent = originalText;
+
+          // Trigger WooCommerce events for cart counter update
+          // The added_to_cart event listener will handle adding the view cart link
+          document.body.dispatchEvent(new CustomEvent('added_to_cart', {
+            detail: { product_id: productId }
+          }));
+
+          // Trigger fragment refresh
+          if (window.jQuery) {
+            window.jQuery(document.body).trigger('wc_fragment_refresh');
+          }
+        } else {
+          // Error
+          button.disabled = false;
+          button.textContent = originalText;
+          alert('Failed to add product to cart. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error adding to cart:', error);
+        button.disabled = false;
+        button.textContent = originalText;
+        alert('Failed to add product to cart. Please try again.');
+      }
+    }
+  });
+
+  // Add loading state to add to cart buttons
+  document.addEventListener('click', (e) => {
+    const button = e.target;
+    if (button.classList.contains('ajax_add_to_cart') ||
+        (button.getAttribute('name') === 'add-to-cart' && button.getAttribute('type') === 'submit')) {
+      // Only set loading state if not already set
+      if (!button.getAttribute('data-original-text')) {
+        button.setAttribute('data-original-text', button.textContent);
+        button.textContent = 'Adding...';
+      }
+    }
+  });
+
+  // Listen for WooCommerce's added_to_cart event
+  document.body.addEventListener('added_to_cart', (event) => {
+    const productId = event.detail?.productId || event.detail?.product_id;
+    if (productId) {
+      // Delay to let WooCommerce add its default link first
+      setTimeout(() => {
+        const wrapper = document.querySelector(`.product-actions-wrapper-${productId}`);
+        if (!wrapper) return;
+
+        // Reset the button text
+        const addToCartButton = wrapper.querySelector('.add_to_cart_button, button[name="add-to-cart"]');
+        if (addToCartButton) {
+          const originalText = addToCartButton.getAttribute('data-original-text');
+          if (originalText) {
+            addToCartButton.textContent = originalText;
+            addToCartButton.removeAttribute('data-original-text');
+          }
+        }
+
+        // Check if WooCommerce already added its link (for simple products)
+        const wcLink = wrapper.querySelector('.added_to_cart.wc-forward');
+        if (wcLink) {
+          // WooCommerce added the link, just style it
+          wcLink.classList.remove('button', 'wc-forward');
+          wcLink.classList.add('text-primary', 'hover:text-primary/80', 'font-normal', 'underline', 'transition-colors', 'duration-200');
+          processedProducts.add(productId);
+        } else {
+          // No WooCommerce link, add our own (for variable products)
+          addViewCartLink(productId);
+        }
+      }, 100);
+    }
+  });
+
+  // Also handle jQuery trigger for older WooCommerce versions
+  if (window.jQuery) {
+    window.jQuery(document.body).on('added_to_cart', (event, fragments, cart_hash, $button) => {
+      if ($button) {
+        const productId = $button.data('product_id');
+        if (productId) {
+          setTimeout(() => {
+            const wrapper = document.querySelector(`.product-actions-wrapper-${productId}`);
+            if (!wrapper) return;
+
+            // Reset the button text
+            const addToCartButton = wrapper.querySelector('.add_to_cart_button, button[name="add-to-cart"]');
+            if (addToCartButton) {
+              const originalText = addToCartButton.getAttribute('data-original-text');
+              if (originalText) {
+                addToCartButton.textContent = originalText;
+                addToCartButton.removeAttribute('data-original-text');
+              }
+            }
+
+            // Check if WooCommerce already added its link
+            const wcLink = wrapper.querySelector('.added_to_cart.wc-forward');
+            if (wcLink) {
+              // WooCommerce added the link, just style it
+              wcLink.classList.remove('button', 'wc-forward');
+              wcLink.classList.add('text-primary', 'hover:text-primary/80', 'font-normal', 'underline', 'transition-colors', 'duration-200');
+              processedProducts.add(productId);
+            } else {
+              // No WooCommerce link, add our own
+              addViewCartLink(productId);
+            }
+          }, 100);
+        }
+      }
+    });
+  }
+};
+
 const initCartCounter = () => {
   const el = document.querySelector('[data-cart-count]');
   if (!el) return;
@@ -444,6 +635,7 @@ const init = async (err) => {
   initQuantityButtons();
   initProductGallery();
   initProductVariations();
+  initAddToCartViewCart();
   initCartCounter();
 };
 

@@ -3,6 +3,7 @@
 @section('content')
   <x-container>
     <x-breadcrumb :items="$breadcrumbs ?? []" classes="pt-4" />
+    {!! wc_print_notices() !!}
     <h1 class="text-3xl font-bold text-body text-center uppercase">
       {{ $title }}
     </h1>
