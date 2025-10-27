@@ -55,14 +55,19 @@ class ArchiveProduct extends Composer
                 // Transform products into prepared data arrays
                 $preparedProducts = array_map([$this, 'prepareProductData'], $products);
 
-                // Sort products to prioritize sale items
+                // Sort products: sale first, then new, then rest
                 usort($preparedProducts, static function ($a, $b) {
                     // Prioritize sale items (sale = true comes first)
                     if ($a['sale'] !== $b['sale']) {
                         return $b['sale'] <=> $a['sale'];
                     }
 
-                    // If both are on sale or both are not, maintain original order
+                    // Then prioritize new items (new = true comes first)
+                    if ($a['new'] !== $b['new']) {
+                        return $b['new'] <=> $a['new'];
+                    }
+
+                    // If both have same sale/new status, maintain original order
                     return 0;
                 });
 
@@ -190,7 +195,7 @@ class ArchiveProduct extends Composer
             return $aOrder <=> $bOrder;
         });
 
-        // Sort products within each category to prioritize sale items
+        // Sort products within each category: sale first, then new, then rest
         foreach ($grouped as &$categoryData) {
             usort($categoryData['products'], static function ($a, $b) {
                 // Prioritize sale items (sale = true comes first)
@@ -198,7 +203,12 @@ class ArchiveProduct extends Composer
                     return $b['sale'] <=> $a['sale'];
                 }
 
-                // If both are on sale or both are not, maintain original order
+                // Then prioritize new items (new = true comes first)
+                if ($a['new'] !== $b['new']) {
+                    return $b['new'] <=> $a['new'];
+                }
+
+                // If both have same sale/new status, maintain original order
                 return 0;
             });
         }

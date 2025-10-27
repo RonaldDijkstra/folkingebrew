@@ -69,9 +69,12 @@ class RelatedProducts extends Composer
             return [];
         }
 
+        // Fetch more products initially so we can sort and pick the best ones
+        $fetchLimit = max($limit * 3, 20);
+
         $args = [
             'post_type'      => 'product',
-            'posts_per_page' => $limit,
+            'posts_per_page' => $fetchLimit,
             'post__not_in'   => $excludeIds,
             'tax_query'      => [
                 [
@@ -97,7 +100,24 @@ class RelatedProducts extends Composer
             wp_reset_postdata();
         }
 
-        return $products;
+        // Sort products: sale first, then new, then rest
+        usort($products, static function ($a, $b) {
+            // Prioritize sale items (sale = true comes first)
+            if ($a['sale'] !== $b['sale']) {
+                return $b['sale'] <=> $a['sale'];
+            }
+
+            // Then prioritize new items (new = true comes first)
+            if ($a['new'] !== $b['new']) {
+                return $b['new'] <=> $a['new'];
+            }
+
+            // If both have same sale/new status, maintain original order
+            return 0;
+        });
+
+        // Return only the requested limit after sorting
+        return array_slice($products, 0, $limit);
     }
 
     /**
