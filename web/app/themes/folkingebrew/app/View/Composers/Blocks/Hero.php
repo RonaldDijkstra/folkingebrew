@@ -16,9 +16,12 @@ class Hero extends Composer
             'backgroundType' => $this->backgroundType(),
             'backgroundImage' => $this->backgroundImage(),
             'title' => $this->title(),
+            'subtitle' => $this->subtitle(),
             'image' => $this->image(),
+            'imageWidth' => $this->imageWidth(),
             'buttons' => $this->buttons(),
             'isPreview' => $this->isPreview(),
+            'font' => $this->font(),
         ];
     }
 
@@ -27,11 +30,21 @@ class Hero extends Composer
         return get_field('title') ?: '';
     }
 
+    public function subtitle(): string
+    {
+        return get_field('subtitle') ?: '';
+    }
+
     public function image(): array
     {
         $image = get_field('image');
 
         return $image ?: [];
+    }
+
+    public function imageWidth(): string
+    {
+        return get_field('image_width') ?: 'medium';
     }
 
     public function backgroundType(): string
@@ -47,6 +60,11 @@ class Hero extends Composer
     public function buttons(): array
     {
         return get_field('buttons') ?: [];
+    }
+
+    public function font(): string
+    {
+        return get_field('font') ?: 'sans';
     }
 
     public function isPreview(): bool

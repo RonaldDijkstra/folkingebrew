@@ -6,6 +6,7 @@ use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\Link;
 use Extended\ACF\Fields\RadioButton;
 use Extended\ACF\Fields\Repeater;
+use Extended\ACF\Fields\Select;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Location;
 
@@ -28,13 +29,28 @@ class BlockHero extends AbstractField
                     ->choices([
                         'primary' => 'Primary',
                         'pub' => 'The Pub',
+                        'solid' => 'Solid',
                     ])
                     ->default('primary'),
                 Image::make('Background Image', 'background_image')
-                    ->acceptedFileTypes(['jpg']),
+                    ->acceptedFileTypes(['jpg', 'png']),
+                RadioButton::make('Font', 'font')
+                    ->choices([
+                        'sans' => 'Regular',
+                        'bebas' => 'Bebas Neue',
+                    ])
+                    ->default('sans'),
                 Image::make('Image', 'image')
                     ->acceptedFileTypes(['svg']),
+                Select::make('Image Width', 'image_width')
+                    ->choices([
+                        'small' => 'Small',
+                        'medium' => 'Medium',
+                        'large' => 'Large',
+                    ])
+                    ->default('medium'),
                 Text::make('Title', 'title'),
+                Text::make('Subtitle', 'subtitle'),
                 Repeater::make('Buttons', 'buttons')
                     ->layout('block')
                     ->fields([

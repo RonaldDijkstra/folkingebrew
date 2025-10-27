@@ -6,13 +6,18 @@
   <div class="relative mb-6 z-20 flex flex-col items-center">
     @if ($image && isset($image['url']) && !empty($image['url']))
       <div class="mb-6">
-        <img src="{{ $image['url'] }}" alt="{{ $image['alt'] ?? '' }}" class="w-[240px] xs:w-[320px] md:w-[400px] h-auto">
+        <img src="{{ $image['url'] }}" alt="{{ $image['alt'] ?? '' }}" class="w-[240px] @if($imageWidth === 'small') w-[240px] @elseif($imageWidth === 'medium') w-[320px] @else xs:w-[320px] md:w-[400px] w-[400px] @endif h-auto">
       </div>
     @endif
     @if ($title)
-      <h1 class="text-white text-3xl md:text-4xl font-light text-center font-sans m-0">
+      <h1 class="text-white font-light text-center @if($font == 'bebas') text-5xl md:text-[90px] font-bebas @else text-3xl md:text-4xl font-sans @endif m-0">
         {!! $title !!}
       </h1>
+    @endif
+    @if ($subtitle)
+      <h2 class="text-white text-center @if($font == 'bebas') text-3xl md:text-4xl font-bebas @else text-sm md:text-base font-sans @endif m-0">
+        {!! $subtitle !!}
+      </h2>
     @endif
   </div>
   <div class="flex flex-col xs:flex-row gap-4 z-20">

@@ -58,6 +58,21 @@ class RelatedProducts extends Composer
             $relatedProducts = array_merge($relatedProducts, $categoryProducts);
         }
 
+        // If we still don't have enough products, fill with products from other categories
+        if (count($relatedProducts) < $maxProducts) {
+            $otherProducts = $this->getProductsFromOtherCategories(
+                $product,
+                $maxProducts - count($relatedProducts),
+                array_merge(
+                    [$product->get_id()],
+                    $upsellIds,
+                    array_column($relatedProducts, 'id')
+                )
+            );
+
+            $relatedProducts = array_merge($relatedProducts, $otherProducts);
+        }
+
         return $relatedProducts;
     }
 
@@ -94,6 +109,66 @@ class RelatedProducts extends Composer
                 $query->the_post();
                 $categoryProduct = wc_get_product(get_the_ID());
                 if ($categoryProduct && $categoryProduct->is_visible()) {
+                    $products[] = $this->prepareProductData(get_post(get_the_ID()));
+                }
+            }
+            wp_reset_postdata();
+        }
+
+        // Sort products: sale first, then new, then rest
+        usort($products, static function ($a, $b) {
+            // Prioritize sale items (sale = true comes first)
+            if ($a['sale'] !== $b['sale']) {
+                return $b['sale'] <=> $a['sale'];
+            }
+
+            // Then prioritize new items (new = true comes first)
+            if ($a['new'] !== $b['new']) {
+                return $b['new'] <=> $a['new'];
+            }
+
+            // If both have same sale/new status, maintain original order
+            return 0;
+        });
+
+        // Return only the requested limit after sorting
+        return array_slice($products, 0, $limit);
+    }
+
+    private function getProductsFromOtherCategories($product, $limit, $excludeIds = [])
+    {
+        $categoryIds = $product->get_category_ids();
+
+        // Fetch more products initially so we can sort and pick the best ones
+        $fetchLimit = max($limit * 3, 20);
+
+        $args = [
+            'post_type'      => 'product',
+            'posts_per_page' => $fetchLimit,
+            'post__not_in'   => $excludeIds,
+            'orderby'        => 'rand',
+        ];
+
+        // Exclude products from the same categories if we have any
+        if (!empty($categoryIds)) {
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => 'product_cat',
+                    'field'    => 'term_id',
+                    'terms'    => $categoryIds,
+                    'operator' => 'NOT IN',
+                ],
+            ];
+        }
+
+        $query = new \WP_Query($args);
+        $products = [];
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                $otherProduct = wc_get_product(get_the_ID());
+                if ($otherProduct && $otherProduct->is_visible()) {
                     $products[] = $this->prepareProductData(get_post(get_the_ID()));
                 }
             }
