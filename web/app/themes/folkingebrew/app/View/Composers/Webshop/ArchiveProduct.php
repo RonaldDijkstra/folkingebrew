@@ -245,6 +245,7 @@ class ArchiveProduct extends Composer
             'single_variant_id' => null,
             'single_variant_attributes' => [],
             'is_beer'          => false,
+            'deposit'          => null,
         ];
 
         // Get featured image
@@ -283,6 +284,12 @@ class ArchiveProduct extends Composer
                 $style = $wcProduct->get_attribute('style');
             }
             $data['style'] = $style ?: null;
+
+            // Get Deposit amount
+            $depositAmount = get_field('deposit_amount', $post->ID);
+            if ($depositAmount) {
+                $data['deposit'] = wc_price($depositAmount);
+            }
 
             // Add to cart data
             $data['add_to_cart_url'] = $wcProduct->add_to_cart_url();

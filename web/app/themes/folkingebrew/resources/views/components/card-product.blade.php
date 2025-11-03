@@ -15,7 +15,7 @@
     </h3>
   </a>
 
-  @if($product['abv'] || $product['style'])
+  @if($product['abv'] || $product['style'] || $product['deposit'])
     <div class="text-sm text-body/80 mt-1">
       @if($product['style'])
         <span>{{ $product['style'] }}</span>
@@ -25,6 +25,12 @@
       @endif
       @if($product['abv'])
         <span>{{ $product['abv'] }}%</span>
+      @endif
+      @if($product['deposit'] && ($product['abv'] || $product['style']))
+        <span class="mx-1">|</span>
+      @endif
+      @if($product['deposit'])
+        <span>{{ __('Deposit', 'folkingebrew') }}: {!! $product['deposit'] !!}</span>
       @endif
     </div>
   @endif
