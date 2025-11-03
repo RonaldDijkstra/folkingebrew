@@ -57,6 +57,11 @@
             {!! $product->get_price_html() !!}
           @endif
         </div>
+        @if($depositAmount)
+          <div class="mt-2 text-sm text-gray-500">
+            {{ __('Deposit', 'folkingebrew') }}: {!! $depositAmount !!}
+          </div>
+        @endif
       </div>
 
       {{-- Add to cart form --}}

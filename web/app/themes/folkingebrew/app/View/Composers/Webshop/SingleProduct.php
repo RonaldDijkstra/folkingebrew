@@ -36,6 +36,7 @@ class SingleProduct extends Composer
             'availableVariations' => $this->getAvailableVariations(),
             'isBeer' => $isBeer,
             'singleVariantPrice' => $singleVariantPrice,
+            'depositAmount' => $this->getDepositAmount($product),
         ];
     }
 
@@ -267,6 +268,16 @@ class SingleProduct extends Composer
             }
         }
 
+        return null;
+    }
+
+    private function getDepositAmount($product): ?string
+    {
+        $depositAmount = get_field('deposit_amount', $product->get_id());
+
+        if ($depositAmount) {
+            return wc_price($depositAmount);
+        }
         return null;
     }
 }
