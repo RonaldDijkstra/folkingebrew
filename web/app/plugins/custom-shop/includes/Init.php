@@ -16,7 +16,8 @@ final class Init
     public static function get_services(): array
     {
         return [
-            Settings\Settings::class
+            Settings\Settings::class,
+            CustomFields\Product::class,
         ];
     }
 
