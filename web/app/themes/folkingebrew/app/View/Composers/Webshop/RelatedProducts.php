@@ -38,7 +38,7 @@ class RelatedProducts extends Composer
                 }
 
                 $upsellProduct = wc_get_product($upsellId);
-                if ($upsellProduct && $upsellProduct->is_visible()) {
+                if ($upsellProduct && $upsellProduct->is_visible() && $upsellProduct->is_in_stock()) {
                     $post = get_post($upsellId);
                     if ($post) {
                         $relatedProducts[] = $this->prepareProductData($post);
@@ -108,7 +108,7 @@ class RelatedProducts extends Composer
             while ($query->have_posts()) {
                 $query->the_post();
                 $categoryProduct = wc_get_product(get_the_ID());
-                if ($categoryProduct && $categoryProduct->is_visible()) {
+                if ($categoryProduct && $categoryProduct->is_visible() && $categoryProduct->is_in_stock()) {
                     $products[] = $this->prepareProductData(get_post(get_the_ID()));
                 }
             }
@@ -168,7 +168,7 @@ class RelatedProducts extends Composer
             while ($query->have_posts()) {
                 $query->the_post();
                 $otherProduct = wc_get_product(get_the_ID());
-                if ($otherProduct && $otherProduct->is_visible()) {
+                if ($otherProduct && $otherProduct->is_visible() && $otherProduct->is_in_stock()) {
                     $products[] = $this->prepareProductData(get_post(get_the_ID()));
                 }
             }

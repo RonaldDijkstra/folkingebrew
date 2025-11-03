@@ -22,6 +22,8 @@ class Product implements ServiceInterface
             'title' => 'Deposit',
             'fields' => [
                 Number::make('Deposit', 'deposit_amount')
+                    ->helperText('The deposit amount for the product. This is the amount that will be charged when the product is ordered.')
+                    ->column(10)
                     ->step(0.01),
             ],
             'location' => [
