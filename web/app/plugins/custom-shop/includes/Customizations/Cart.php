@@ -9,6 +9,20 @@ class Cart implements ServiceInterface
     public function register()
     {
         add_action('woocommerce_cart_calculate_fees', [$this, 'addDepositToCart'], 20);
+
+        add_filter('woocommerce_shipping_rate_label', [$this, 'changeShippingLabel'], 10, 2);
+    }
+
+    /**
+     * Change the shipping label to 'Shipping'.
+     *
+     * @param string $label
+     * @param \WC_Shipping_Rate $rate
+     * @return string
+     */
+    public function changeShippingLabel($label, $rate)
+    {
+        return __('Shipping', 'folkingebrew');
     }
 
     /**

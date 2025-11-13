@@ -156,3 +156,73 @@
 .variation-option:not(:disabled):hover {
   @apply border-black;
 }
+
+.woocommerce-account .woocommerce {
+  @apply max-w-[960px] mx-auto py-12 px-4;
+}
+
+.woocommerce-account .woocommerce .u-columns.col2-set {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+
+  h2 {
+    @apply text-2xl font-bold;
+  }
+}
+
+.woocommerce-MyAccount-navigation {
+  @apply pb-4;
+
+  ul {
+    @apply list-none space-y-2 flex flex-col md:flex-row bg-black justify-center;
+  }
+
+  li {
+    @apply list-none mb-0;
+  }
+
+  a {
+    @apply text-lg text-white no-underline px-4 py-2 block;
+  }
+}
+
+.woocommerce-orders-table,
+.woocommerce-table--order-details {
+  @apply w-full;
+
+  th {
+    @apply text-left;
+  }
+
+  td {
+    @apply text-left p-2;
+  }
+}
+
+.woocommerce-Button,
+.woocommerce-button:not(.view),
+.woocommerce-address-fields button[type="submit"]  {
+  @apply bg-primary text-white px-4 py-2 no-underline;
+}
+
+.woocommerce-form-row,
+.woocommerce-address-fields__field-wrapper {
+  label {
+    @apply block text-sm text-body font-bold;
+  }
+
+  input {
+    @apply w-full p-2 border border-gray-300 rounded;
+  }
+}
+
+.woocommerce-form__label {
+  @apply block text-sm text-body font-bold;
+}
+
+.woocommerce-form-login__rememberme {
+  @apply mb-3;
+
+  &.woocommerce-form__label {
+    @apply text-sm text-body font-normal;
+  }
+}
