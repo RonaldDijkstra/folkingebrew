@@ -16,8 +16,8 @@
     </a>
   </div>
   <div class="hidden bg-black md:bg-transparent flex-1 text-white text-center md:block
-              max-md:menu-open:block max-md:menu-open:flex max-md:menu-open:min-h-screen max-md:menu-open:absolute max-md:menu-open:top-16 max-md:menu-open:w-full">
-    <nav class="nav-primary w-full max-md:menu-open:flex max-md:menu-open:flex-col max-md:menu-open:items-center max-md:menu-open:justify-center" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+              max-md:menu-open:block max-md:menu-open:flex max-md:menu-open:absolute max-md:menu-open:inset-x-0 max-md:menu-open:top-16 max-md:menu-open:w-full max-md:menu-open:max-h-[calc(100vh-4rem)] max-md:menu-open:overflow-y-auto">
+    <nav class="nav-primary w-full max-md:menu-open:h-full max-md:menu-open:py-10 max-md:menu-open:flex max-md:menu-open:flex-col max-md:menu-open:items-center max-md:menu-open:justify-center" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
       @foreach ($primaryNavigation as $item)
         @if (!empty($item->children))
           <div class="nav-item-with-submenu inline-block relative group max-md:w-full max-md:mb-4">

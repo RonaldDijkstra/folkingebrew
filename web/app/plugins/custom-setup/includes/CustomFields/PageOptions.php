@@ -19,10 +19,13 @@ class PageOptions extends AbstractField
             'fields' => [
                 TrueFalse::make('Transparent header', 'transparent_header')
                     ->stylized(),
+                TrueFalse::make('Show ZenChef widget', 'show_zenchef_widget')
+                    ->stylized(),
             ],
             'location' => [
                 Location::where('post_type', 'page')
-                    ->and('page_template', '!=', 'template-cart.blade.php')
+                    ->and('page_template', '!=', 'template-cart.blade.php'),
+                Location::where('post_type', 'product')
             ],
             'position' => 'side',
             'menu_order' => 1,
