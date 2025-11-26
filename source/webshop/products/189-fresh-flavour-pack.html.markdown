@@ -25,3 +25,5 @@ All our current beers (excluding collabs) in one 12 pack!
 1 x Smoothie Sequence #3 <br>
 1 x Smoothie Sequence #4 <br>
 1 x Go With the Flow <br>
+
+Includes free shipping in the Netherlands.
