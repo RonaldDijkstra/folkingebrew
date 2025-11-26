@@ -3,7 +3,7 @@ title: "Sour Sequence #6: Banana & Passion Fruit"
 type: "product"
 date: "01-05-2025"
 product_id: 157
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "sour-sequence-6.webp"
