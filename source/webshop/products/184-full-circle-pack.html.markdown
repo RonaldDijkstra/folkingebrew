@@ -3,7 +3,7 @@ title: "Full Circle Pack"
 type: "product"
 date: "05-10-2025"
 product_id: 184
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "full-circle-pack.webp"
