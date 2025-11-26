@@ -3,7 +3,7 @@ title: "Full Circle"
 type: "product"
 date: "02-10-2025"
 product_id: 180
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "full-circle.webp"
