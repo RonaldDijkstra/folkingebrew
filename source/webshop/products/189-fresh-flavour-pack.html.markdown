@@ -7,8 +7,8 @@ in_stock: true
 only_a_few_left: false
 images:
   - "all-beers-pack.webp"
-price: "72.79"
-old_price: "80.88"
+price: 72.79
+old_price: 80.88
 deposit: 1.80
 show_size_information: false
 size_image:

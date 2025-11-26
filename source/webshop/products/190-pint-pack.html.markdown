@@ -7,8 +7,8 @@ in_stock: true
 only_a_few_left: false
 images:
   - "pint-pack.webp"
-price: "55.69"
-old_price: "61.90"
+price: 55.69
+old_price: 61.90
 deposit: 1.50
 show_size_information: false
 size_image:
