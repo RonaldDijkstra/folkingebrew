@@ -3,7 +3,7 @@ title: "Army of Four"
 type: "product"
 date: "04-11-2025"
 product_id: 188
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "army-of-four.webp"
