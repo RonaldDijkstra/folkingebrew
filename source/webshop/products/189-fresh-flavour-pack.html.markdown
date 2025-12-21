@@ -3,7 +3,7 @@ title: "Fresh Flavour Pack"
 type: "product"
 date: "05-11-2025"
 product_id: 189
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "all-beers-pack.webp"
