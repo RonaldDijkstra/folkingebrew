@@ -1,5 +1,5 @@
 ---
-title: "Mindset (x SOMA beer)"
+title: "No Pyro No Party! (x Outer Range French Alps)"
 type: "product"
 date: "02-12-2025"
 product_id: 192
