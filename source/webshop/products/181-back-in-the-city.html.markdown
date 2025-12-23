@@ -3,7 +3,7 @@ title: "Back in the City (Investor Collab #3)"
 type: "product"
 date: "02-10-2025"
 product_id: 181
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "back-in-the-city.webp"
