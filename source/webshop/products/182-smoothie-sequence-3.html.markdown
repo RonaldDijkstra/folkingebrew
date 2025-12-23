@@ -3,7 +3,7 @@ title: "Smoothie Sequence #3: Mango & Pineapple"
 type: "product"
 date: "03-10-2025"
 product_id: 182
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "smoothie-sequence-3.webp"
