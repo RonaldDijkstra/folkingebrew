@@ -3,7 +3,7 @@ title: "Hop Heaven"
 type: "product"
 date: "01-11-2025"
 product_id: 185
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "hop-heaven.webp"
