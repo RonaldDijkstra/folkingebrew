@@ -3,7 +3,7 @@ title: "Smoothie Sequence #4: Papaya, Orange & Guava"
 type: "product"
 date: "04-10-2025"
 product_id: 183
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "smoothie-sequence-4.webp"
