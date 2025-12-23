@@ -3,7 +3,7 @@ title: "Pint Pack"
 type: "product"
 date: "06-11-2025"
 product_id: 190
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "pint-pack.webp"
