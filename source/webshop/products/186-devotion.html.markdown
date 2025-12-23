@@ -3,7 +3,7 @@ title: "Devotion (Investor Collab #4)"
 type: "product"
 date: "02-11-2025"
 product_id: 186
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "devotion.webp"
