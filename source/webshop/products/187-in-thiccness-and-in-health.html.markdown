@@ -3,7 +3,7 @@ title: "In Thiccness & In Health"
 type: "product"
 date: "03-11-2025"
 product_id: 187
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "in-thiccness-and-in-health.webp"
