@@ -3,7 +3,7 @@ title: "Sword of the Ancients"
 type: "product"
 date: "03-12-2025"
 product_id: 193
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "sword-of-the-ancients.webp"
