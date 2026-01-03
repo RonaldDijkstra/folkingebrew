@@ -3,7 +3,7 @@ title: "Fresh Pack"
 type: "product"
 date: "04-12-2025"
 product_id: 194
-in_stock: true
+in_stock: false
 only_a_few_left: false
 images:
   - "freshies-pack.webp"
